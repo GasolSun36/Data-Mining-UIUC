@@ -1,0 +1,430 @@
+1
+00:00:00,790 --> 00:00:03,000
+When we're using
+three-dimensional graphics for
+
+2
+00:00:03,000 --> 00:00:06,740
+data visualization, often we don't want
+something that looks like a photograph.
+
+3
+00:00:06,740 --> 00:00:09,620
+We want something that looks
+more like an illustration.
+
+4
+00:00:09,620 --> 00:00:15,010
+In this case, we want to use something
+called non-photorealistic rendering.
+
+5
+00:00:15,010 --> 00:00:18,730
+If we can photograph or
+render with computer graphics everything,
+
+6
+00:00:18,730 --> 00:00:22,130
+then why do we need things
+like illustrations?
+
+7
+00:00:22,130 --> 00:00:26,129
+And the answer is is that
+illustrations can more clearly depict
+
+8
+00:00:26,129 --> 00:00:30,690
+a three-dimensional configuration
+than a photograph can.
+
+9
+00:00:30,690 --> 00:00:34,058
+And so then the question is how can we use
+three-dimensional computer graphics to
+
+10
+00:00:34,058 --> 00:00:35,250
+render an illustration?
+
+11
+00:00:37,030 --> 00:00:41,874
+So, a good example of this form
+of non-photorealistic rendering
+
+12
+00:00:41,874 --> 00:00:43,436
+is Gray's Anatomy.
+
+13
+00:00:43,436 --> 00:00:48,161
+And here's an illustration of
+the human heart from Gray's Anatomy,
+
+14
+00:00:48,161 --> 00:00:50,091
+and it's not a photograph.
+
+15
+00:00:50,091 --> 00:00:52,794
+A photograph would be gory and
+covered with blood, and
+
+16
+00:00:52,794 --> 00:00:55,400
+it would be hard to see all
+of these configurations.
+
+17
+00:00:55,400 --> 00:00:59,660
+But with an illustration, the artist has
+much more control over the lighting, and
+
+18
+00:00:59,660 --> 00:01:00,570
+the texturing, and
+
+19
+00:01:00,570 --> 00:01:05,830
+the cutaways in order to more clearly
+denote the structures of the heart.
+
+20
+00:01:05,830 --> 00:01:10,240
+What we'd like to do is be able to do
+the same thing with data visualization.
+
+21
+00:01:12,040 --> 00:01:15,925
+So, for example, if I have a simple
+model of a pig, I could render it using
+
+22
+00:01:15,925 --> 00:01:21,970
+photorealistic illumination and occlusion
+and fills to get this shape here.
+
+23
+00:01:21,970 --> 00:01:27,390
+But I could also use non-photorealistic
+techniques to get a more cartoony
+
+24
+00:01:27,390 --> 00:01:31,830
+version of this pig that conveys
+much the same information.
+
+25
+00:01:31,830 --> 00:01:37,160
+And you'll notice that this pig has
+outline strokes and it has fills.
+
+26
+00:01:37,160 --> 00:01:39,556
+And so the outline strokes
+are created from contours.
+
+27
+00:01:39,556 --> 00:01:42,681
+And from a three-dimensional scene,
+
+28
+00:01:42,681 --> 00:01:46,571
+the way we get those
+contours is by tracing them.
+
+29
+00:01:46,571 --> 00:01:49,496
+They create things like silhouette curves,
+the border between the shape and
+
+30
+00:01:49,496 --> 00:01:50,171
+the background.
+
+31
+00:01:50,171 --> 00:01:55,012
+And sometimes this boundary
+will cover itself,
+
+32
+00:01:55,012 --> 00:01:58,561
+and other contours of the shading.
+
+33
+00:01:58,561 --> 00:02:02,858
+And so sometimes these contours will
+trace behind other surfaces, and
+
+34
+00:02:02,858 --> 00:02:05,231
+so we still need to respect occlusion.
+
+35
+00:02:05,231 --> 00:02:10,065
+So we have to trim away portions of the
+contour that are hidden by other regions.
+
+36
+00:02:10,065 --> 00:02:13,625
+But that leaves us with a set
+of outlines and a set of regions
+
+37
+00:02:13,625 --> 00:02:18,375
+that we can then render using some
+of our vector graphics techniques
+
+38
+00:02:18,375 --> 00:02:23,030
+instead of some of our three-dimensional
+photorealistic techniques.
+
+39
+00:02:23,030 --> 00:02:27,533
+So, when we fill in the surfaces we may
+not want to use photorealistic lighting.
+
+40
+00:02:27,533 --> 00:02:32,682
+So, this top line shows a bunch of spheres
+rendered with photorealistic lighting.
+
+41
+00:02:32,682 --> 00:02:37,574
+And you can see that, in each case,
+we have a diffuse color illumination and
+
+42
+00:02:37,574 --> 00:02:39,799
+then a white specular highlight.
+
+43
+00:02:39,799 --> 00:02:44,330
+So we're getting diffuse illumination and
+specular illumination.
+
+44
+00:02:44,330 --> 00:02:51,160
+The light source is to the up and
+right of the object.
+
+45
+00:02:51,160 --> 00:02:56,070
+And yet we don't see any information
+in the dark side of the moon here,
+
+46
+00:02:56,070 --> 00:02:57,489
+the dark side of the sphere.
+
+47
+00:02:58,820 --> 00:03:03,470
+That's because this is shadowed
+because of photorealistic lighting.
+
+48
+00:03:03,470 --> 00:03:05,833
+You're not going to see any
+information in the shadows.
+
+49
+00:03:05,833 --> 00:03:10,207
+You can still see the color of the object
+because there's enough ambient light
+
+50
+00:03:10,207 --> 00:03:12,137
+bouncing around to get the color.
+
+51
+00:03:12,137 --> 00:03:14,560
+But you don't see any
+orientation information,
+
+52
+00:03:14,560 --> 00:03:16,990
+this very well could be
+a disk instead of a sphere.
+
+53
+00:03:16,990 --> 00:03:20,760
+We know it's a sphere because
+of the illuminated side.
+
+54
+00:03:20,760 --> 00:03:23,390
+And so we can create better depictions,
+
+55
+00:03:24,480 --> 00:03:29,090
+better illumination of the sphere
+using non-photorealistic illumination.
+
+56
+00:03:29,090 --> 00:03:32,090
+In this case, replacing
+the diffuse illumination here with
+
+57
+00:03:32,090 --> 00:03:37,220
+a non-photorealistic diffuse illumination
+that we get by taking the color map.
+
+58
+00:03:37,220 --> 00:03:42,561
+In this case, going from red to black,
+and then mixing it with
+
+59
+00:03:42,561 --> 00:03:47,825
+a cool-to-warm, in this case,
+blue to yellow color map.
+
+60
+00:03:47,825 --> 00:03:52,898
+And that creates a gradation that goes
+from a cool form of red, kind of a bluer
+
+61
+00:03:52,898 --> 00:03:57,516
+shade of red, all the way to a warmer
+shade of red, kind of an orange.
+
+62
+00:03:57,516 --> 00:04:00,367
+So, we're going from
+a violet to an orange.
+
+63
+00:04:00,367 --> 00:04:04,489
+And then we can apply that to
+the entire sphere based on
+
+64
+00:04:04,489 --> 00:04:08,622
+the orientation of the surface and
+the light source.
+
+65
+00:04:08,622 --> 00:04:12,987
+And then we get more information on the
+shadowed side of the object in addition to
+
+66
+00:04:12,987 --> 00:04:15,018
+the illuminated side of the object.
+
+67
+00:04:15,018 --> 00:04:20,285
+And these shapes look even more spherical
+than they do in the physical case.
+
+68
+00:04:20,285 --> 00:04:25,465
+So when we're displaying three-dimensional
+shapes, in this case, skeletal shapes.
+
+69
+00:04:25,465 --> 00:04:30,232
+With photorealistic illumination you're
+not seeing anything in the dark sides of
+
+70
+00:04:30,232 --> 00:04:34,058
+these objects because of the nature
+of shadows and illumination.
+
+71
+00:04:34,058 --> 00:04:38,724
+But when we apply non-photorealistic
+illumination, we can see these contours.
+
+72
+00:04:38,724 --> 00:04:43,516
+These divots in the bone that are revealed
+by this non-photorealistic shading
+
+73
+00:04:43,516 --> 00:04:46,920
+that are also hidden in
+photorealistic shading.
+
+74
+00:04:46,920 --> 00:04:47,670
+In both cases,
+
+75
+00:04:47,670 --> 00:04:52,650
+we've also added the contour to better
+indicate the outlines of these shapes.
+
+76
+00:04:52,650 --> 00:04:53,870
+Here's another example.
+
+77
+00:04:53,870 --> 00:04:56,520
+This is a photorealistic
+rendering of a part, and
+
+78
+00:04:56,520 --> 00:04:59,307
+this is a non-photorealistic
+rendering of a part.
+
+79
+00:04:59,307 --> 00:05:02,713
+You're missing all of the shape
+information of the orientation
+
+80
+00:05:02,713 --> 00:05:04,677
+of the surface on the shadowed side.
+
+81
+00:05:04,677 --> 00:05:07,860
+And we gain that with our
+non-photorealistic shading.
+
+82
+00:05:07,860 --> 00:05:12,033
+And also the contours help
+us see the configuration and
+
+83
+00:05:12,033 --> 00:05:16,760
+the definite occlusion of
+the individual pieces.
+
+84
+00:05:16,760 --> 00:05:20,344
+So whereas photorealistic rendering
+focuses on the physics of light,
+
+85
+00:05:20,344 --> 00:05:24,940
+non-photorealistic rendering focuses
+on the psychology of perception.
+
+86
+00:05:24,940 --> 00:05:28,701
+It emphasizes other parts of the image,
+for example, the outlines,
+
+87
+00:05:28,701 --> 00:05:30,627
+the visual contours of the object.
+
+88
+00:05:30,627 --> 00:05:35,062
+And it uses non-photorealistic shading
+to better communicate shape that would
+
+89
+00:05:35,062 --> 00:05:37,289
+otherwise take very complex lighting.
+
+90
+00:05:37,289 --> 00:05:43,949
+[MUSIC]

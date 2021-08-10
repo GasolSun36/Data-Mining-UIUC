@@ -1,0 +1,399 @@
+1
+00:00:00,008 --> 00:00:04,165
+[SOUND]
+
+2
+00:00:08,047 --> 00:00:11,184
+So, if we create stacked graph layouts,
+
+3
+00:00:11,184 --> 00:00:17,101
+stacked bar charts, and stacked line
+graphs of a lot of dependent variables,
+
+4
+00:00:17,101 --> 00:00:21,520
+then you get some interesting
+effects as displayed here.
+
+5
+00:00:21,520 --> 00:00:26,390
+You start to see kind of a stream effect,
+and you can see the same
+
+6
+00:00:26,390 --> 00:00:31,590
+data variable evolving as it
+moves across the horizontal axis.
+
+7
+00:00:31,590 --> 00:00:35,850
+But you also see some other
+problems with this representation.
+
+8
+00:00:35,850 --> 00:00:40,800
+One is that the variants
+in the lower variables
+
+9
+00:00:40,800 --> 00:00:44,780
+in the stack can influence
+the shape of the higher variables.
+
+10
+00:00:44,780 --> 00:00:49,430
+And it can be harder to see when things
+get sheared towards the outsides,
+
+11
+00:00:49,430 --> 00:00:53,210
+whether they're representing the variables
+the same value or if it's increasing or
+
+12
+00:00:53,210 --> 00:00:53,980
+decreasing.
+
+13
+00:00:53,980 --> 00:00:58,800
+And also you can see that by the time
+you get to the very top of the graph,
+
+14
+00:00:58,800 --> 00:01:03,060
+it's changing quite violently because
+it's the sum of all the changes that have
+
+15
+00:01:03,060 --> 00:01:03,900
+happened below it.
+
+16
+00:01:05,140 --> 00:01:08,170
+We can analyze this by
+using a few variables.
+
+17
+00:01:08,170 --> 00:01:12,622
+If we let each variable at a given
+horizontal position on the horizontal
+
+18
+00:01:12,622 --> 00:01:17,220
+axis, each variable be represented by say,
+f1 for the first variable,
+
+19
+00:01:17,220 --> 00:01:20,730
+f2 for the second variable And
+so on, f1, f2, f3.
+
+20
+00:01:20,730 --> 00:01:26,128
+Then we can define, basically,
+ground zero, g0, to be the baseline level.
+
+21
+00:01:26,128 --> 00:01:30,708
+And in this case, we're just setting g0
+to be 0, just at the horizontal axis.
+
+22
+00:01:30,708 --> 00:01:36,680
+Then g i is the position of the top
+of the plot of the i'th variable.
+
+23
+00:01:36,680 --> 00:01:41,620
+And the top of the plot of the i'th
+variable g i is just equal to g0
+
+24
+00:01:41,620 --> 00:01:46,480
+plus that variable and
+all the variables below it in the stack.
+
+25
+00:01:47,860 --> 00:01:49,600
+And we can start to do some analysis.
+
+26
+00:01:51,330 --> 00:01:57,690
+And because of this analysis, there is
+an alternative layout called ThemeRiver.
+
+27
+00:01:57,690 --> 00:02:02,640
+And ThemeRiver basically
+centered the vertical plot,
+
+28
+00:02:02,640 --> 00:02:06,420
+the stack of variables
+along the horizontal axis.
+
+29
+00:02:06,420 --> 00:02:13,180
+Set it set g0 to be one-half of the total
+height of the stack of variables.
+
+30
+00:02:13,180 --> 00:02:18,330
+And by doing that, it basically said that
+the way this thing is varying at the top
+
+31
+00:02:18,330 --> 00:02:22,020
+will be a mirror image of the way
+this thing is varying at the bottom.
+
+32
+00:02:22,020 --> 00:02:28,490
+And you get more of a, the appearance of
+a river that data is kind of streaming by
+
+33
+00:02:28,490 --> 00:02:33,470
+and evolving and it reduced the amount
+of shearing that was happening,
+
+34
+00:02:33,470 --> 00:02:36,070
+but it didn't eliminate it completely.
+
+35
+00:02:36,070 --> 00:02:41,339
+You can see for example, this region
+right here, is creating a large
+
+36
+00:02:42,980 --> 00:02:50,370
+shift in the data around it that
+you'd like to be able to minimize.
+
+37
+00:02:50,370 --> 00:02:57,560
+So just by centering the vertical stack
+of data around the horizontal axis
+
+38
+00:02:57,560 --> 00:03:03,640
+minimizes the heighth of the chart around
+
+39
+00:03:03,640 --> 00:03:08,680
+that horizontal axis and it also minimizes
+the slope at the top and the bottom.
+
+40
+00:03:08,680 --> 00:03:12,290
+There's a Streamgraph layout that
+does an even better job of this and
+
+41
+00:03:12,290 --> 00:03:16,780
+it does this just by changing
+where the position g0 is.
+
+42
+00:03:16,780 --> 00:03:22,200
+Streamgraph sets g0 equal to
+the result of this formula.
+
+43
+00:03:22,200 --> 00:03:25,956
+So you just evaluate this formula
+based on your data values f i,
+
+44
+00:03:25,956 --> 00:03:29,110
+and we won't go through
+the derivation of this formula.
+
+45
+00:03:29,110 --> 00:03:34,165
+But by just changing where the base
+of this stacked bar chart or
+
+46
+00:03:34,165 --> 00:03:40,190
+stacked line chart occurs and
+then stacking based to that new baseline,
+
+47
+00:03:40,190 --> 00:03:44,400
+we get an even smoother appearance and
+it makes it even easier for
+
+48
+00:03:44,400 --> 00:03:49,060
+us to make comparisons as we move
+horizontally across this chart,
+
+49
+00:03:49,060 --> 00:03:54,500
+to determine relative changes to
+each of these dependent variables.
+
+50
+00:03:54,500 --> 00:03:59,942
+It minimizes the deviation and
+the wiggle, the deviation being how far
+
+51
+00:03:59,942 --> 00:04:05,280
+a variable's plot moves from its previous
+position on the horizontal axis,
+
+52
+00:04:05,280 --> 00:04:11,373
+and the wiggle is minimizing the slope,
+basically the sheer effect
+
+53
+00:04:11,373 --> 00:04:17,900
+that you get from the wiggle.
+
+54
+00:04:17,900 --> 00:04:23,210
+You can also improve the appearance
+by changing the order in which you
+
+55
+00:04:23,210 --> 00:04:25,720
+add variables.
+
+56
+00:04:25,720 --> 00:04:31,590
+So, if variables are zero until a certain
+position on the horizontal axis,
+
+57
+00:04:31,590 --> 00:04:33,410
+and then they change
+from zero to some value,
+
+58
+00:04:33,410 --> 00:04:38,880
+you can change where they appear
+in the stack of variables.
+
+59
+00:04:38,880 --> 00:04:44,100
+And so in this case, they're just
+stacked in some fixed ordering,
+
+60
+00:04:44,100 --> 00:04:45,730
+some arbitrary ordering.
+
+61
+00:04:45,730 --> 00:04:49,290
+And you can see kind of
+a stream in the coloring.
+
+62
+00:04:49,290 --> 00:04:53,000
+Coloring each variable differently
+helps perceive that stream.
+
+63
+00:04:54,300 --> 00:04:58,020
+In this case they're colored
+based on when the variable
+
+64
+00:04:58,020 --> 00:05:00,190
+starts to take on a value other than zero.
+
+65
+00:05:01,360 --> 00:05:04,710
+But you can also add new variables
+
+66
+00:05:04,710 --> 00:05:07,460
+when the variables take on
+a value other than zero.
+
+67
+00:05:07,460 --> 00:05:10,640
+You can always add them to
+the outside of the graph.
+
+68
+00:05:10,640 --> 00:05:15,050
+And what that does,
+is it takes variables that start out
+
+69
+00:05:15,050 --> 00:05:18,990
+at a certain point on the horizontal axis,
+as soon as they take on the nonzero value,
+
+70
+00:05:18,990 --> 00:05:21,990
+you add them but
+you add them to the outside, so
+
+71
+00:05:21,990 --> 00:05:26,640
+their initial surge in value doesn't
+disturb the other variables.
+
+72
+00:05:26,640 --> 00:05:29,320
+It's happening on
+the outside of the graph.
+
+73
+00:05:29,320 --> 00:05:33,640
+And then as it's waning, other variables
+
+74
+00:05:33,640 --> 00:05:37,780
+are taking non-zero values and
+being added to the outside of the graph.
+
+75
+00:05:37,780 --> 00:05:43,570
+And so you get this nice, flowing
+appearance where you can see the relative
+
+76
+00:05:43,570 --> 00:05:51,280
+change in values of these variables as
+you move right on the horizontal axis,
+
+77
+00:05:51,280 --> 00:05:56,340
+even though we're looking at 10 or
+20 variables in a given stack, vertically.
+
+78
+00:05:56,340 --> 00:05:58,470
+So we learned how to make a stream graph,
+and
+
+79
+00:05:58,470 --> 00:06:02,070
+how something as simple as
+stacking a bar chart can become
+
+80
+00:06:02,070 --> 00:06:07,300
+a point of further investigation in
+order to how to display it effectively.
+
+81
+00:06:07,300 --> 00:06:09,856
+We also learned that, for example,
+
+82
+00:06:09,856 --> 00:06:15,306
+a pie chart can become misleading
+especially when shown in three dimensions.
+
+83
+00:06:15,306 --> 00:06:25,306
+[MUSIC]

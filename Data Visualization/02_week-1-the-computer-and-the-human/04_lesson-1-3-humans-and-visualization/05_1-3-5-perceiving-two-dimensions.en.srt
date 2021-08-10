@@ -1,0 +1,579 @@
+1
+00:00:00,940 --> 00:00:03,830
+So we perceive light with our retina, but
+
+2
+00:00:03,830 --> 00:00:07,420
+it still needs to be processed on
+its way to our cognitive system.
+
+3
+00:00:07,420 --> 00:00:10,020
+That processing is performed by ganglia.
+
+4
+00:00:10,020 --> 00:00:14,060
+And that's how we perceive
+individual impulses of light and
+
+5
+00:00:14,060 --> 00:00:15,770
+turn them into actual shapes.
+
+6
+00:00:17,940 --> 00:00:23,140
+So as we present data
+visually to a human observer,
+
+7
+00:00:23,140 --> 00:00:26,690
+we want to make sure that that
+data is perceived correctly.
+
+8
+00:00:26,690 --> 00:00:30,120
+And that means that the data
+that's sensed by the rods and
+
+9
+00:00:30,120 --> 00:00:34,190
+cones in our retina ends up
+being processed further by our
+
+10
+00:00:34,190 --> 00:00:37,980
+perceptual system before it even
+gets to our cognitive system.
+
+11
+00:00:37,980 --> 00:00:41,800
+How can we make sure that the visual
+data is going to be presented so
+
+12
+00:00:41,800 --> 00:00:43,690
+that it's perceived properly and
+correctly?
+
+13
+00:00:45,000 --> 00:00:46,729
+So in the Model Human Processor,
+
+14
+00:00:46,729 --> 00:00:51,009
+this data that's coming from the human
+retina goes through a visual image store.
+
+15
+00:00:51,009 --> 00:00:53,678
+Where it goes through significant
+perceptual processing,
+
+16
+00:00:53,678 --> 00:00:58,130
+before you even think about it, before
+you even realize what you're looking at.
+
+17
+00:00:58,130 --> 00:01:00,750
+And this perceptual processing starts
+
+18
+00:01:00,750 --> 00:01:04,720
+right after the data has been
+sensed by the rods and cones.
+
+19
+00:01:04,720 --> 00:01:07,680
+This is an image from Gray's Anatomy, and
+
+20
+00:01:07,680 --> 00:01:12,800
+you can see that as soon as
+the data has been sensed,
+
+21
+00:01:12,800 --> 00:01:18,080
+we've got other cells, these nerves called
+ganglia, that are processing the data.
+
+22
+00:01:18,080 --> 00:01:22,610
+In this case a horizontal cell is
+actually comparing the results
+
+23
+00:01:22,610 --> 00:01:26,530
+of what's being sensed by the rods and
+the cones.
+
+24
+00:01:26,530 --> 00:01:31,160
+And this helps us to detect patterns and
+accentuate and
+
+25
+00:01:31,160 --> 00:01:35,210
+exaggerate differences
+in neighboring sensors.
+
+26
+00:01:35,210 --> 00:01:40,447
+This helps us detect edges and motion and
+tigers hiding in the bush because
+
+27
+00:01:40,447 --> 00:01:45,698
+tigers hiding in the bush will create
+patterns in our peripheral vision.
+
+28
+00:01:45,698 --> 00:01:47,571
+And those patterns can change over time.
+
+29
+00:01:47,571 --> 00:01:50,865
+And these horizontal cells
+that are comparing and
+
+30
+00:01:50,865 --> 00:01:54,953
+exaggerating those differences
+can tell us to then run away.
+
+31
+00:01:54,953 --> 00:01:58,801
+So for example,
+when we see a shade of gray,
+
+32
+00:01:58,801 --> 00:02:03,810
+we see that in context of
+the surrounding shades of gray.
+
+33
+00:02:03,810 --> 00:02:08,170
+And so here we have a gray color
+surrounded by a lighter color.
+
+34
+00:02:08,170 --> 00:02:10,955
+And here we have a gray color
+surrounded by a darker gray color.
+
+35
+00:02:10,955 --> 00:02:16,040
+And this box looks like
+it's darker than this box,
+
+36
+00:02:16,040 --> 00:02:18,620
+so this is a darker shade
+of gray than this gray.
+
+37
+00:02:18,620 --> 00:02:21,650
+When in fact those two shades
+of gray are identical.
+
+38
+00:02:21,650 --> 00:02:23,588
+They're the same shade of gray.
+
+39
+00:02:23,588 --> 00:02:29,724
+It's just when we surround them with
+these boxes in different context,
+
+40
+00:02:29,724 --> 00:02:34,568
+our perceptual system will
+accentuate the difference.
+
+41
+00:02:34,568 --> 00:02:39,076
+And make this gray look darker,
+and this gray look brighter.
+
+42
+00:02:39,076 --> 00:02:40,890
+When in fact,
+they're the same shade of gray.
+
+43
+00:02:41,930 --> 00:02:43,830
+This also works with color.
+
+44
+00:02:43,830 --> 00:02:46,550
+And so on the left block I,
+
+45
+00:02:46,550 --> 00:02:52,380
+you can see that these two
+block I's are the same color.
+
+46
+00:02:52,380 --> 00:02:55,315
+But here the color appears lighter,
+
+47
+00:02:55,315 --> 00:02:59,298
+because these squares
+are next to white squares.
+
+48
+00:02:59,298 --> 00:03:03,230
+And here they appear darker because
+these squares are next to green squares.
+
+49
+00:03:06,376 --> 00:03:09,270
+And you can also demonstrate
+this with Mach bands.
+
+50
+00:03:09,270 --> 00:03:13,150
+Here I've got a gradation
+from dark gray to light gray.
+
+51
+00:03:13,150 --> 00:03:17,760
+And here I've got a plot of basically
+the number of photons coming from each of
+
+52
+00:03:17,760 --> 00:03:20,710
+these bands to our eye.
+
+53
+00:03:20,710 --> 00:03:24,030
+And in fact, what our rods and
+cones are sensing for
+
+54
+00:03:24,030 --> 00:03:27,510
+each one of these bands is
+proportional to this graph.
+
+55
+00:03:27,510 --> 00:03:32,483
+What's actually being sent to our brain
+from our perceptual system though looks
+
+56
+00:03:32,483 --> 00:03:33,220
+like this.
+
+57
+00:03:33,220 --> 00:03:38,188
+And you can see that this flat gray
+rectangle next to this lighter
+
+58
+00:03:38,188 --> 00:03:43,370
+gray rectangle,
+this darker rectangle gets darker here.
+
+59
+00:03:43,370 --> 00:03:46,858
+And this lighter rectangle
+is lighter here.
+
+60
+00:03:46,858 --> 00:03:51,670
+You can see it get lighter here and
+that's not because I've changed any color.
+
+61
+00:03:51,670 --> 00:03:53,850
+This is all the same shade of gray.
+
+62
+00:03:53,850 --> 00:03:58,568
+It's that our visual system is
+making this shade of gray brighter
+
+63
+00:03:58,568 --> 00:04:01,331
+because it's next to a darker color.
+
+64
+00:04:01,331 --> 00:04:05,951
+And our visual system wants to
+accentuate the existence of
+
+65
+00:04:05,951 --> 00:04:10,770
+this edge when these two shades
+are very close to each other.
+
+66
+00:04:10,770 --> 00:04:13,052
+And this can cause problems too.
+
+67
+00:04:13,052 --> 00:04:16,131
+In this case we've got
+the lateral inhibitors,
+
+68
+00:04:16,131 --> 00:04:20,348
+which are these cells comparing
+neighboring rod and cone values.
+
+69
+00:04:20,348 --> 00:04:24,079
+In our peripheral vision,
+if I look at any one of these junctions,
+
+70
+00:04:24,079 --> 00:04:25,830
+I see a solid gray color.
+
+71
+00:04:25,830 --> 00:04:27,420
+But the junctions and
+
+72
+00:04:27,420 --> 00:04:32,170
+neighboring cells start to flicker
+black and white because of this
+
+73
+00:04:32,170 --> 00:04:36,860
+lateral inhibition of our perceptual
+system trying to accentuate those edges.
+
+74
+00:04:37,890 --> 00:04:39,725
+This also works with orientations,
+
+75
+00:04:39,725 --> 00:04:45,560
+our perception of orientation is also
+based on sort of this local comparison.
+
+76
+00:04:45,560 --> 00:04:48,750
+And so
+these lines look like they are diverging.
+
+77
+00:04:48,750 --> 00:04:51,970
+It looks like these two parallel lines
+are getting further apart as they
+
+78
+00:04:51,970 --> 00:04:56,816
+move this direction because they
+are the sum of all of these intersections
+
+79
+00:04:56,816 --> 00:05:00,280
+that are slightly askew from these cubes.
+
+80
+00:05:00,280 --> 00:05:04,920
+But if I remove these cubes, you see
+that these lines really are parallel.
+
+81
+00:05:04,920 --> 00:05:11,435
+And the perception that the lines are not
+parallel is basically because of adding up
+
+82
+00:05:11,435 --> 00:05:16,941
+all of those misperceptions of
+orientations due to the offset cubes.
+
+83
+00:05:20,388 --> 00:05:24,322
+Similarly, I can take this diamond
+shape made from four straight lines and
+
+84
+00:05:24,322 --> 00:05:28,131
+if I superimpose on top of these four
+straight lines of this diamond shape
+
+85
+00:05:28,131 --> 00:05:30,300
+a bunch of concentric circles.
+
+86
+00:05:30,300 --> 00:05:34,490
+This diamond shape, these lines start
+to look like they're bowed inside.
+
+87
+00:05:34,490 --> 00:05:39,270
+And that's because the orientation
+of this line is based on
+
+88
+00:05:39,270 --> 00:05:45,160
+our perception of
+the orientations relative to
+
+89
+00:05:45,160 --> 00:05:48,230
+these concentric circles, and
+we get this bowing effect.
+
+90
+00:05:50,080 --> 00:05:53,920
+At a much higher level,
+it can also confuse our cognitive system.
+
+91
+00:05:53,920 --> 00:05:59,537
+In this case,
+we have an 8 x 8 block of shapes and
+
+92
+00:05:59,537 --> 00:06:05,021
+that should give us 64
+units squared of area.
+
+93
+00:06:05,021 --> 00:06:09,809
+If I take these very same shapes and
+reorganize them here,
+
+94
+00:06:09,809 --> 00:06:16,560
+I'm now covering a 13 x 5 area which
+gives me 65 unit squares of area.
+
+95
+00:06:16,560 --> 00:06:21,500
+And so somehow I've taken the same
+shape with the same area.
+
+96
+00:06:21,500 --> 00:06:26,250
+And gotten an extra unit
+square of area on the right.
+
+97
+00:06:26,250 --> 00:06:30,540
+And the reason is the accuracy of
+our perception of orientation.
+
+98
+00:06:32,430 --> 00:06:39,509
+We have basically this triangle's angle
+going into this rhombus' angle here.
+
+99
+00:06:41,120 --> 00:06:46,479
+And the slope of these triangles
+is basically three-eighths.
+
+100
+00:06:46,479 --> 00:06:49,405
+And the slope of these quadrilaterals,
+
+101
+00:06:49,405 --> 00:06:53,064
+this edge of this
+quadrilateral is two-fifths.
+
+102
+00:06:53,064 --> 00:06:55,070
+And two-fifths is just not
+equal to three-eighths but
+
+103
+00:06:55,070 --> 00:06:56,270
+we just don't see the difference.
+
+104
+00:06:58,050 --> 00:07:00,400
+We also see size in context.
+
+105
+00:07:00,400 --> 00:07:03,470
+And so here I have two blue discs.
+
+106
+00:07:03,470 --> 00:07:09,240
+This blue disc is sitting
+amidst some small yellow discs.
+
+107
+00:07:09,240 --> 00:07:13,480
+And this blue disc is sitting
+amidst some large yellow discs.
+
+108
+00:07:13,480 --> 00:07:16,450
+And this blue disc looks
+large as a result and
+
+109
+00:07:16,450 --> 00:07:18,920
+this blue disc looks small as a result.
+
+110
+00:07:18,920 --> 00:07:23,950
+But in fact they are the same size,
+and so we see things in
+
+111
+00:07:23,950 --> 00:07:29,410
+context because of these local comparisons
+that our perceptual system does.
+
+112
+00:07:29,410 --> 00:07:33,950
+So lateral inhibition helps us perceive
+shapes by emphasizing edges and
+
+113
+00:07:33,950 --> 00:07:35,420
+other differences.
+
+114
+00:07:35,420 --> 00:07:40,580
+But lateral inhibition can also interfere
+with data visualization when we have
+
+115
+00:07:40,580 --> 00:07:43,800
+big changes in data happening
+close to each other.
+
+116
+00:07:43,800 --> 00:07:47,350
+So we have to understand how
+the human visual system works
+
+117
+00:07:47,350 --> 00:07:49,550
+at this higher perceptual level so
+
+118
+00:07:49,550 --> 00:07:54,680
+that we can more effectively use it
+to display data to be perceived.
+
+119
+00:07:54,680 --> 00:07:58,341
+For example, we want to make sure we're
+sensitive to the context of the data.
+
+120
+00:07:58,341 --> 00:08:02,899
+And that we keep data in the same
+context when we're making comparisons.
+
+121
+00:08:05,190 --> 00:08:15,750
+[MUSIC]
+
+122
+00:08:15,750 --> 00:08:19,333
+[SOUND]

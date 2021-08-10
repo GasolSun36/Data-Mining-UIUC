@@ -1,0 +1,767 @@
+1
+00:00:05,450 --> 00:00:10,050
+So, now that we understand
+
+2
+00:00:10,050 --> 00:00:14,250
+information visualization and information visualization systems,
+
+3
+00:00:14,250 --> 00:00:18,270
+we can start to use them to visualize data held in databases,
+
+4
+00:00:18,270 --> 00:00:21,940
+and we can use them in concert with data mining.
+
+5
+00:00:22,300 --> 00:00:25,525
+So, often, when we visualize data,
+
+6
+00:00:25,525 --> 00:00:28,920
+the data is going to come from a database and it'll
+
+7
+00:00:28,920 --> 00:00:32,470
+be quite useful and effective if during
+
+8
+00:00:32,470 --> 00:00:36,640
+the interactive visualization session when we're trying to investigate
+
+9
+00:00:36,640 --> 00:00:41,045
+data for our own purposes and gain insight into the data.
+
+10
+00:00:41,045 --> 00:00:46,600
+If we can connect the tools for visualization into queries to that database,
+
+11
+00:00:46,600 --> 00:00:50,290
+so that it's easier to dig deeper into the data directly.
+
+12
+00:00:50,290 --> 00:00:53,610
+So, there are databases that support this.
+
+13
+00:00:53,610 --> 00:00:58,350
+Often, modern databases support OLAP processing,
+
+14
+00:00:58,350 --> 00:01:01,960
+Online Analytical Processing which basically allows
+
+15
+00:01:01,960 --> 00:01:06,660
+them to be accessed over the web using standard protocols.
+
+16
+00:01:07,030 --> 00:01:14,895
+Conceptually, a good mental model for the data is this data cube metaphor.
+
+17
+00:01:14,895 --> 00:01:17,730
+If you have for example, a sales database that
+
+18
+00:01:17,730 --> 00:01:20,400
+represents the amount of sales on a given date,
+
+19
+00:01:20,400 --> 00:01:22,650
+of a given product at a given location,
+
+20
+00:01:22,650 --> 00:01:26,420
+then you can think of the keys to that dataset, the date,
+
+21
+00:01:26,420 --> 00:01:30,875
+the product and location has dimensions of for example a cube here.
+
+22
+00:01:30,875 --> 00:01:37,010
+So, each row of this data corresponds to a cell in this dataset.
+
+23
+00:01:37,010 --> 00:01:40,995
+So if the date is the horizontal axis,
+
+24
+00:01:40,995 --> 00:01:43,540
+the product is the vertical axis,
+
+25
+00:01:43,540 --> 00:01:47,740
+and the location is the depth axis in this cube,
+
+26
+00:01:47,740 --> 00:01:52,250
+then you've got three coordinates and that gives you a particular cell in
+
+27
+00:01:52,250 --> 00:01:55,100
+this cube and that cell will represent the amount
+
+28
+00:01:55,100 --> 00:01:58,320
+of sales at that date of that product at that location.
+
+29
+00:01:58,320 --> 00:02:02,960
+The challenge is going to be taking this dataset and visualizing it.
+
+30
+00:02:02,960 --> 00:02:04,850
+I'm using an example of a cube with
+
+31
+00:02:04,850 --> 00:02:09,020
+three dimensions and we used to perceiving three dimensions,
+
+32
+00:02:09,020 --> 00:02:11,370
+but we perceive three dimensions by projecting it
+
+33
+00:02:11,370 --> 00:02:14,295
+into two dimensions and looking at that.
+
+34
+00:02:14,295 --> 00:02:17,685
+In real-world applications you're going to have many more keys
+
+35
+00:02:17,685 --> 00:02:21,240
+and this data cube is actually a data hypercube and you'll have
+
+36
+00:02:21,240 --> 00:02:25,230
+many more than just three dimensions of data and
+
+37
+00:02:25,230 --> 00:02:29,230
+the challenge is going to be taking this high dimensional data space,
+
+38
+00:02:29,230 --> 00:02:35,700
+this data hypercube and then finding the appropriate two dimensions in
+
+39
+00:02:35,700 --> 00:02:38,805
+which to investigate and then you can always add
+
+40
+00:02:38,805 --> 00:02:43,610
+more dimensions as glyphs or other visualization tools.
+
+41
+00:02:44,790 --> 00:02:48,190
+So, the way we're going to reduce
+
+42
+00:02:48,190 --> 00:02:51,655
+the dimensions of the dataset is going to be largely with
+
+43
+00:02:51,655 --> 00:02:53,800
+data aggregation and there's a large number of
+
+44
+00:02:53,800 --> 00:02:57,730
+database visualization tools based on data aggregation.
+
+45
+00:02:57,730 --> 00:03:01,720
+The common ones like Tableau or SAP's
+
+46
+00:03:01,720 --> 00:03:07,270
+Lumina or even the pivot tables that are available in Microsoft Excel
+
+47
+00:03:07,270 --> 00:03:11,620
+or are based on data aggregation as a way of simplifying a dataset and
+
+48
+00:03:11,620 --> 00:03:17,470
+reducing the dimensions of variation by providing summaries of the data.
+
+49
+00:03:17,470 --> 00:03:21,970
+So, for example, here's some data we're plotting some quantitative value
+
+50
+00:03:21,970 --> 00:03:26,145
+vertically as we change some other quantitative value horizontally, you got that?
+
+51
+00:03:26,145 --> 00:03:29,205
+An independent variable here and a dependent variable here.
+
+52
+00:03:29,205 --> 00:03:31,295
+This is a two-dimensional plot,
+
+53
+00:03:31,295 --> 00:03:34,840
+we could always project this onto a one-dimensional axis,
+
+54
+00:03:34,840 --> 00:03:37,305
+and we can also summarize this data.
+
+55
+00:03:37,305 --> 00:03:38,460
+These would be values,
+
+56
+00:03:38,460 --> 00:03:39,520
+these would be measures,
+
+57
+00:03:39,520 --> 00:03:42,340
+changing across one axis into
+
+58
+00:03:42,340 --> 00:03:47,170
+a single value by representing it by the mean value or the maximum value,
+
+59
+00:03:47,170 --> 00:03:49,980
+the minimum value or the sum of these values.
+
+60
+00:03:49,980 --> 00:03:53,995
+The mean is just going to be the sum divided by all the values of the dimension.
+
+61
+00:03:53,995 --> 00:03:55,690
+The dimension of the dimension.
+
+62
+00:03:55,690 --> 00:03:57,880
+So, we have various operators,
+
+63
+00:03:57,880 --> 00:04:00,565
+some mean, median, minimum, maximum,
+
+64
+00:04:00,565 --> 00:04:04,830
+there's other statistical operators like standard deviation or variance or
+
+65
+00:04:04,830 --> 00:04:07,710
+other characteristics you can use that will
+
+66
+00:04:07,710 --> 00:04:11,320
+simplify data and basically remove one dimension.
+
+67
+00:04:11,320 --> 00:04:14,160
+In this case, removing the change in value over
+
+68
+00:04:14,160 --> 00:04:18,675
+one dimension to a single value over no dimension.
+
+69
+00:04:18,675 --> 00:04:22,500
+We can also convert quantitative continuous data
+
+70
+00:04:22,500 --> 00:04:26,890
+into quantitative-discrete data or ordinal or nominal data,
+
+71
+00:04:26,890 --> 00:04:29,120
+and the count function does that.
+
+72
+00:04:29,120 --> 00:04:33,190
+For example, if we have these blue red and green data points,
+
+73
+00:04:33,190 --> 00:04:34,940
+there's three categories here,
+
+74
+00:04:34,940 --> 00:04:38,340
+they're being plotted over two-dimensional area that's
+
+75
+00:04:38,340 --> 00:04:43,110
+going to represent continuous quantitative data horizontally and vertically.
+
+76
+00:04:43,110 --> 00:04:48,400
+We can then remove those axes and just have a single axis representing the count,
+
+77
+00:04:48,400 --> 00:04:49,580
+the number of blue items,
+
+78
+00:04:49,580 --> 00:04:53,005
+the number of red items and the number of green items.
+
+79
+00:04:53,005 --> 00:04:58,580
+That reduces the dimensionality of this dataset from varying over two dimensions with
+
+80
+00:04:58,580 --> 00:05:04,270
+a third category into just a category over essentially one dimension.
+
+81
+00:05:04,270 --> 00:05:05,865
+Finally, there's binning.
+
+82
+00:05:05,865 --> 00:05:11,360
+Binning is a discretization method that converts a quantitative continuous data
+
+83
+00:05:11,360 --> 00:05:17,175
+into quantitative discrete data or ordinal or nominal data depending on how you use it.
+
+84
+00:05:17,175 --> 00:05:20,320
+For example, we may have our continuous function,
+
+85
+00:05:20,320 --> 00:05:25,175
+these are values that are varying over a single dimension.
+
+86
+00:05:25,175 --> 00:05:31,720
+Instead of having these values represented continuously over a continuous dimension,
+
+87
+00:05:31,720 --> 00:05:33,915
+we can discretize this dimension.
+
+88
+00:05:33,915 --> 00:05:38,320
+Then we have our quantitative variable that's being sampled
+
+89
+00:05:38,320 --> 00:05:42,810
+on four regions and represented by in this case,
+
+90
+00:05:42,810 --> 00:05:48,230
+the mean value over those four bin areas.
+
+91
+00:05:48,230 --> 00:05:52,245
+So, we're doing a projection operator in
+
+92
+00:05:52,245 --> 00:05:55,725
+this case over four areas instead of over the single area.
+
+93
+00:05:55,725 --> 00:06:01,165
+But again, that does reduce the dimensionality of the dataset.
+
+94
+00:06:01,165 --> 00:06:04,115
+Finally, we can use this to create a histogram.
+
+95
+00:06:04,115 --> 00:06:06,625
+A histogram is binning, in this case,
+
+96
+00:06:06,625 --> 00:06:09,535
+in the vertical direction instead of the horizontal direction.
+
+97
+00:06:09,535 --> 00:06:12,630
+So, instead of having bins over the dimension,
+
+98
+00:06:12,630 --> 00:06:16,425
+you are having bins over the value that you're plotting over that dimension.
+
+99
+00:06:16,425 --> 00:06:19,845
+In this case, we've separated the values into an A,
+
+100
+00:06:19,845 --> 00:06:22,555
+B, C, D and E range.
+
+101
+00:06:22,555 --> 00:06:25,340
+Then we're adding up all the values in the A range,
+
+102
+00:06:25,340 --> 00:06:27,025
+all the values in the B range,
+
+103
+00:06:27,025 --> 00:06:28,680
+all the values in the C range,
+
+104
+00:06:28,680 --> 00:06:32,640
+and all the values in the D range and just plotting those sums.
+
+105
+00:06:32,640 --> 00:06:34,815
+There's no values in the E range so,
+
+106
+00:06:34,815 --> 00:06:38,355
+there would be zero for the E range.
+
+107
+00:06:38,355 --> 00:06:43,440
+So, this histogram, when you choose these buckets,
+
+108
+00:06:43,440 --> 00:06:45,015
+the size of these bins,
+
+109
+00:06:45,015 --> 00:06:47,760
+gives you other characteristics of the data that can
+
+110
+00:06:47,760 --> 00:06:51,150
+reduce the dimensionality of the data or at least reduce
+
+111
+00:06:51,150 --> 00:06:58,870
+a continuous variable into discrete categories of a continuous variable.
+
+112
+00:06:59,440 --> 00:07:06,630
+So, our data cubes can use these aggregation operations to simplify
+
+113
+00:07:06,630 --> 00:07:14,115
+a dataset and that provides a useful tool for investigating the dataset.
+
+114
+00:07:14,115 --> 00:07:18,800
+So for example, we can take our data cube in this case,
+
+115
+00:07:18,800 --> 00:07:20,720
+it has location horizontally,
+
+116
+00:07:20,720 --> 00:07:23,545
+products vertically and time in depth.
+
+117
+00:07:23,545 --> 00:07:25,260
+If we for example,
+
+118
+00:07:25,260 --> 00:07:30,000
+if we want to look at all of our sales of tea, coffee,
+
+119
+00:07:30,000 --> 00:07:35,000
+espresso or other products over time at different times,
+
+120
+00:07:35,000 --> 00:07:36,860
+but we don't care about the location,
+
+121
+00:07:36,860 --> 00:07:39,445
+then we can project this data cube
+
+122
+00:07:39,445 --> 00:07:45,540
+into basically this square region, this two-dimensional region.
+
+123
+00:07:45,540 --> 00:07:50,560
+So this is a two-dimensional projection that's summing up all of
+
+124
+00:07:50,560 --> 00:07:56,440
+the sales at any given time of a given product regardless of location.
+
+125
+00:07:56,440 --> 00:07:59,080
+So it's summing them up over all the locations and
+
+126
+00:07:59,080 --> 00:08:02,080
+that projection gives us something we can then visualize.
+
+127
+00:08:02,080 --> 00:08:06,790
+We can further summarize that projecting this two-dimensional data cube into
+
+128
+00:08:06,790 --> 00:08:12,340
+a one-dimensional data cube by summing in this case, over product.
+
+129
+00:08:12,340 --> 00:08:14,420
+We don't care about the differences of the products.
+
+130
+00:08:14,420 --> 00:08:16,420
+If we don't want to differentiate the product,
+
+131
+00:08:16,420 --> 00:08:21,170
+we can aggregate the product axis sum over that,
+
+132
+00:08:21,170 --> 00:08:23,855
+and now we have a one-dimensional basically,
+
+133
+00:08:23,855 --> 00:08:29,890
+just a list of numbers that tells us the amount of sales for the first quarter,
+
+134
+00:08:29,890 --> 00:08:32,155
+second quarter, third quarter or fourth quarter.
+
+135
+00:08:32,155 --> 00:08:33,500
+If we don't care about the time,
+
+136
+00:08:33,500 --> 00:08:37,320
+then we can just look at the total sales over a given amount of time,
+
+137
+00:08:37,320 --> 00:08:39,030
+over a given set of products,
+
+138
+00:08:39,030 --> 00:08:40,875
+over a given set of locations,
+
+139
+00:08:40,875 --> 00:08:45,170
+add all those up and that gives us a zero-dimensional data cube here.
+
+140
+00:08:45,170 --> 00:08:48,575
+So, here's an example using Tableau to show how
+
+141
+00:08:48,575 --> 00:08:52,640
+aggregations are used for data cube operations.
+
+142
+00:08:52,640 --> 00:08:55,660
+Here we have some dimensions of our data.
+
+143
+00:08:55,660 --> 00:08:59,310
+The data is collected over ten years.
+
+144
+00:08:59,310 --> 00:09:04,950
+So we have separate data by year and over a variety of different countries.
+
+145
+00:09:04,950 --> 00:09:07,380
+Then we've got the,
+
+146
+00:09:07,380 --> 00:09:12,640
+what I'm showing here is our standard method for plotting population logarithmically,
+
+147
+00:09:12,640 --> 00:09:16,660
+horizontally, over life expectancy vertically.
+
+148
+00:09:16,660 --> 00:09:21,795
+You'll see that we're averaging the data and we have a single data point.
+
+149
+00:09:21,795 --> 00:09:24,890
+We basically have a zero-dimensional data,
+
+150
+00:09:24,890 --> 00:09:27,440
+it's all being projected to a single point
+
+151
+00:09:27,440 --> 00:09:31,565
+because we're averaging over all these dimensions.
+
+152
+00:09:31,565 --> 00:09:35,000
+Specifically at the time dimension over all the years that we
+
+153
+00:09:35,000 --> 00:09:38,395
+have data and over all the countries that we have data.
+
+154
+00:09:38,395 --> 00:09:40,835
+If we want to disaggregate this data,
+
+155
+00:09:40,835 --> 00:09:48,440
+then we can do that by basically dragging into this marks area.
+
+156
+00:09:48,440 --> 00:09:50,215
+For example, country.
+
+157
+00:09:50,215 --> 00:09:53,570
+Now, we spread out the data,
+
+158
+00:09:53,570 --> 00:09:55,340
+each one of these data points represents
+
+159
+00:09:55,340 --> 00:09:59,660
+a different country that these averages are just averages over
+
+160
+00:09:59,660 --> 00:10:06,220
+the year that the data's collected on and add over the country and the region.
+
+161
+00:10:06,220 --> 00:10:10,250
+We can further disaggregate over the year and we get
+
+162
+00:10:10,250 --> 00:10:15,270
+this plot which shows you each country that's how it's changing over the year.
+
+163
+00:10:15,270 --> 00:10:18,620
+If we want to see correspondences between countries,
+
+164
+00:10:18,620 --> 00:10:24,310
+then I can drag the country into color so that each country gets its own color.
+
+165
+00:10:24,310 --> 00:10:26,210
+So you can see how the colors,
+
+166
+00:10:26,210 --> 00:10:32,850
+you can use the color to follow the country over the years it's been disaggregated.
+
+167
+00:10:32,850 --> 00:10:39,050
+We can start adding more and more dimensions from our data cube into this visualization.
+
+168
+00:10:39,050 --> 00:10:46,640
+So, when you're looking at an individual cell of these different forms of data cubes,
+
+169
+00:10:46,640 --> 00:10:50,990
+you can work from a less detailed view to a more detailed view.
+
+170
+00:10:50,990 --> 00:10:53,970
+A single cube when it's averaged,
+
+171
+00:10:53,970 --> 00:10:56,120
+could represent a range of products,
+
+172
+00:10:56,120 --> 00:10:57,490
+a range of locations,
+
+173
+00:10:57,490 --> 00:11:00,450
+a range of times or it could represent
+
+174
+00:11:00,450 --> 00:11:04,085
+the values in a specific location at a specific time.
+
+175
+00:11:04,085 --> 00:11:09,640
+In its disaggregated form it's representing an actual data point.
+
+176
+00:11:09,640 --> 00:11:11,525
+In its aggregated form,
+
+177
+00:11:11,525 --> 00:11:16,320
+it's representing an aggregate of the values over these ranges.
+
+178
+00:11:16,320 --> 00:11:20,839
+So, this could be the total sales of all products,
+
+179
+00:11:20,839 --> 00:11:24,300
+over all markets, over all time.
+
+180
+00:11:24,300 --> 00:11:31,990
+Then you can start to drill down to these details by basically focusing for example,
+
+181
+00:11:31,990 --> 00:11:35,400
+on a particular instance of time,
+
+182
+00:11:35,400 --> 00:11:37,509
+or on a particular product,
+
+183
+00:11:37,509 --> 00:11:39,240
+or on a particular type.
+
+184
+00:11:39,240 --> 00:11:40,930
+Each time you do that,
+
+185
+00:11:40,930 --> 00:11:44,260
+you're replacing an aggregated dimension where you have
+
+186
+00:11:44,260 --> 00:11:47,680
+a single value representing a range of one of
+
+187
+00:11:47,680 --> 00:11:54,580
+these dimensions with a specific product or a specific data point along that dimension,
+
+188
+00:11:54,580 --> 00:11:57,800
+a specific coordinate along that dimension.
+
+189
+00:11:57,800 --> 00:11:59,065
+So by doing that,
+
+190
+00:11:59,065 --> 00:12:04,320
+this data cube approach allows you while you're performing
+
+191
+00:12:04,320 --> 00:12:07,410
+your visualization to be able to drill down in the details
+
+192
+00:12:07,410 --> 00:12:12,030
+and tend to back out into more summary views.

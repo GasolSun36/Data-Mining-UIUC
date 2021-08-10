@@ -1,0 +1,645 @@
+1
+00:00:00,000 --> 00:00:04,447
+[MUSIC]
+
+2
+00:00:08,068 --> 00:00:11,087
+So when we want to visualize
+hierarchical relationships,
+
+3
+00:00:11,087 --> 00:00:14,730
+there's a particularly good method for
+doing that called a tree map.
+
+4
+00:00:16,330 --> 00:00:22,640
+So as we visualize graphs, and graphs
+represent relations between data items.
+
+5
+00:00:22,640 --> 00:00:27,860
+One relation that we'll want to visualize
+often is hierarchical relationships,
+
+6
+00:00:27,860 --> 00:00:31,980
+things like parents and
+child relationships, ancestry and
+
+7
+00:00:31,980 --> 00:00:33,670
+descendant relationships.
+
+8
+00:00:33,670 --> 00:00:36,550
+And so
+in an undirected graph if you have a tree,
+
+9
+00:00:36,550 --> 00:00:38,720
+any of these nodes could
+serve as the root.
+
+10
+00:00:38,720 --> 00:00:42,240
+But often in layouts we
+can identify a root node.
+
+11
+00:00:42,240 --> 00:00:46,950
+And we can look at ancestry and
+descendants relationships
+
+12
+00:00:46,950 --> 00:00:51,490
+based on that root node based on the edge
+distance from a node to that root node.
+
+13
+00:00:51,490 --> 00:00:54,030
+In a directed graph, we can set up
+
+14
+00:00:54,030 --> 00:00:59,220
+a more definitive parent child
+relationship using a directed edge.
+
+15
+00:00:59,220 --> 00:01:02,850
+And we can have child nodes
+point towards parent nodes,
+
+16
+00:01:02,850 --> 00:01:06,430
+or the other way around
+if we set it up that way.
+
+17
+00:01:06,430 --> 00:01:09,567
+We can specify a root
+node that has no parent,
+
+18
+00:01:09,567 --> 00:01:12,385
+in this directed edge representation.
+
+19
+00:01:12,385 --> 00:01:16,221
+And we can create hierarchies where
+a node could have multiple parents, where
+
+20
+00:01:16,221 --> 00:01:20,480
+we could make them an actual tree, in
+which case each node has a single parent.
+
+21
+00:01:20,480 --> 00:01:23,085
+And then we can also
+speak of a tree depth,
+
+22
+00:01:23,085 --> 00:01:28,235
+which is basically the number of parents a
+node has at the bottom level of the tree.
+
+23
+00:01:28,235 --> 00:01:32,651
+Or the number of descendants, the maximum
+number of descendants a root node would
+
+24
+00:01:32,651 --> 00:01:34,640
+have along one chain of these edges.
+
+25
+00:01:36,170 --> 00:01:38,890
+And so
+we often need to visualize these trees.
+
+26
+00:01:38,890 --> 00:01:41,920
+This is an example from genetics of fish,
+and
+
+27
+00:01:41,920 --> 00:01:44,962
+the nodes in this case
+are laid out radially.
+
+28
+00:01:44,962 --> 00:01:48,680
+And then the tree structure
+is shown on the inside.
+
+29
+00:01:48,680 --> 00:01:51,150
+Here's another example
+from the Tree of Life.
+
+30
+00:01:51,150 --> 00:01:54,090
+And you can go to this website and
+zoom in on this image and
+
+31
+00:01:54,090 --> 00:01:56,110
+see a lot more detail than is shown here.
+
+32
+00:01:56,110 --> 00:02:01,500
+But this is a layout that shows
+a hierarchical relationship as well.
+
+33
+00:02:02,700 --> 00:02:05,030
+One of the methods for
+
+34
+00:02:05,030 --> 00:02:09,800
+displaying hierarchical relationships
+that I've found quite useful is treemaps.
+
+35
+00:02:09,800 --> 00:02:13,920
+Treemaps were introduced by
+Ben Schneiderman in 1992.
+
+36
+00:02:13,920 --> 00:02:18,870
+And, they map hierarchical organizations
+of quantities into areas, so
+
+37
+00:02:18,870 --> 00:02:26,160
+it's a very visual method for displaying
+hierarchies based on subset operations.
+
+38
+00:02:26,160 --> 00:02:31,440
+And so, we have an example of this
+in a utility called WinDirStat,
+
+39
+00:02:31,440 --> 00:02:34,720
+which displays a Windows file system.
+
+40
+00:02:34,720 --> 00:02:39,180
+And it represents the entire
+file system by this rectangle.
+
+41
+00:02:39,180 --> 00:02:43,642
+And then that root directory is
+subdivided into smaller rectangles
+
+42
+00:02:43,642 --> 00:02:45,995
+representing sub-directories.
+
+43
+00:02:45,995 --> 00:02:49,472
+And each smaller rectangle is subdivided
+into smaller rectangles which
+
+44
+00:02:49,472 --> 00:02:52,340
+are sub-directories of that subdirectory.
+
+45
+00:02:52,340 --> 00:02:54,200
+All the way down to individual rectangles,
+
+46
+00:02:54,200 --> 00:02:57,969
+where each of these individual
+rectangles represents a single file.
+
+47
+00:02:57,969 --> 00:03:02,680
+And so it gives you this nice broad
+overview of your file system, but
+
+48
+00:03:02,680 --> 00:03:08,643
+it also shows you how the file system is
+divvied up into individual directories and
+
+49
+00:03:08,643 --> 00:03:10,563
+sub-directories and files.
+
+50
+00:03:10,563 --> 00:03:14,590
+And so it's a good indication of
+quantitative views, in this case,
+
+51
+00:03:14,590 --> 00:03:16,030
+of disk space.
+
+52
+00:03:16,030 --> 00:03:18,300
+It's telling me how my files and
+
+53
+00:03:18,300 --> 00:03:21,530
+subdirectories are taking up
+different amounts of disk space.
+
+54
+00:03:21,530 --> 00:03:24,870
+And so it's mapping disk space to area.
+
+55
+00:03:24,870 --> 00:03:28,590
+And I can get a pretty good
+quantitative measure of that
+
+56
+00:03:28,590 --> 00:03:33,590
+disk space based on the area relationship
+of each of these sub-rectangles.
+
+57
+00:03:33,590 --> 00:03:35,100
+So how do we compute a tree map?
+
+58
+00:03:36,210 --> 00:03:39,050
+Well, if you're given some hierarchy,
+some tree.
+
+59
+00:03:40,220 --> 00:03:42,730
+And for a tree map, it has to be a tree.
+
+60
+00:03:42,730 --> 00:03:45,060
+It can't just be a regular hierarchy.
+
+61
+00:03:45,060 --> 00:03:47,410
+Each node has to have a single parent.
+
+62
+00:03:47,410 --> 00:03:50,690
+You have some value,
+usually at the bottom level.
+
+63
+00:03:50,690 --> 00:03:51,990
+For that previous example,
+
+64
+00:03:51,990 --> 00:03:57,020
+this would be the disk space
+taken up by each individual file.
+
+65
+00:03:57,020 --> 00:04:01,810
+And so we first need to do a bottom up
+procedure that takes our tree nodes, and
+
+66
+00:04:01,810 --> 00:04:04,000
+for the parent nodes of our tree,
+
+67
+00:04:04,000 --> 00:04:07,450
+adds up the child nodes in
+order to assign them a value.
+
+68
+00:04:07,450 --> 00:04:11,310
+So now each of the parent nodes is
+equal to the sum of its child nodes.
+
+69
+00:04:11,310 --> 00:04:12,842
+This parent is equal to 4.
+
+70
+00:04:12,842 --> 00:04:14,271
+It's 1 plus 2 plus 1.
+
+71
+00:04:14,271 --> 00:04:17,429
+This parent is equal to 11,
+because it's 4 plus 4 plus 3.
+
+72
+00:04:17,429 --> 00:04:24,185
+And finally 16, which is the sum
+of all of these adds up to 16.
+
+73
+00:04:24,185 --> 00:04:28,286
+And then we're going to use that
+parent-child relationship and
+
+74
+00:04:28,286 --> 00:04:33,403
+the values that it represents in order
+to subdivide some rectangular region.
+
+75
+00:04:33,403 --> 00:04:39,959
+In order to display how these small
+quantities at the bottom are organized,
+
+76
+00:04:39,959 --> 00:04:45,500
+as portions of this full 16 value
+at the top, at the root node.
+
+77
+00:04:47,040 --> 00:04:51,830
+And so the first thing we do is we need
+to subdivide our rectangle into portions
+
+78
+00:04:51,830 --> 00:04:56,422
+representing the first set of descendants,
+11 and 5.
+
+79
+00:04:57,470 --> 00:05:01,450
+And so we subdivide the rectangle into
+a portion that is eleven sixteenths and
+
+80
+00:05:01,450 --> 00:05:02,990
+five sixteenths.
+
+81
+00:05:02,990 --> 00:05:08,269
+And so, we subdivide it horizontally
+with a single vertical division
+
+82
+00:05:08,269 --> 00:05:13,930
+at eleven-sixteenths of the way
+from this edge to this edge.
+
+83
+00:05:13,930 --> 00:05:17,220
+Into a portion that's
+eleven-sixteenths and five-sixteenths.
+
+84
+00:05:17,220 --> 00:05:18,610
+Now we have two portions,
+
+85
+00:05:18,610 --> 00:05:21,640
+and these portions are actually
+taller than they are wide.
+
+86
+00:05:21,640 --> 00:05:24,580
+So we're going to subdivide them
+vertically instead of horizontally for
+
+87
+00:05:24,580 --> 00:05:25,240
+the next step.
+
+88
+00:05:26,580 --> 00:05:30,950
+So now we've got this portion
+here on the left representing 11.
+
+89
+00:05:30,950 --> 00:05:35,130
+We need to subdivide that into
+portions representing 4, 4, and 3.
+
+90
+00:05:35,130 --> 00:05:39,670
+So we subdivide them into a portion
+that's four-elevenths along the way,
+
+91
+00:05:39,670 --> 00:05:42,285
+another four-elevenths along the way,
+and then finally another
+
+92
+00:05:42,285 --> 00:05:45,870
+three-elevenths along the way,
+representing each of these three nodes.
+
+93
+00:05:46,940 --> 00:05:49,860
+And now these are wider
+than they are tall, so
+
+94
+00:05:49,860 --> 00:05:53,820
+we're going to subdivide them horizontally
+instead of vertically at the next step.
+
+95
+00:05:53,820 --> 00:06:00,521
+And so we do this again, and we
+subdivide this top node into one-fourth,
+
+96
+00:06:00,521 --> 00:06:05,834
+two-fourth, and
+one-fourth portions horizontally.
+
+97
+00:06:05,834 --> 00:06:08,792
+We do this with all the rest of the nodes,
+
+98
+00:06:08,792 --> 00:06:12,710
+and we get this tree map of
+all of the nodes we see here.
+
+99
+00:06:13,970 --> 00:06:18,550
+And so here I've got 1, 2, 1.
+
+100
+00:06:18,550 --> 00:06:25,360
+One-fourth, one-half, one-fourth of
+this rectangle representing four units.
+
+101
+00:06:25,360 --> 00:06:29,669
+I've got 1, 1, and
+2 of this rectangle representing 4 units,
+
+102
+00:06:29,669 --> 00:06:33,840
+and then 2 and
+1 of this rectangle representing 3 units.
+
+103
+00:06:33,840 --> 00:06:36,660
+All together, those represent 11 units.
+
+104
+00:06:36,660 --> 00:06:41,256
+And on this side, these 5 units,
+that were five-sixteenths
+
+105
+00:06:41,256 --> 00:06:45,514
+of the entire triangle are being
+represented by 3 and 2.
+
+106
+00:06:45,514 --> 00:06:49,910
+And I've got a slightly thicker line
+here differentiating between them.
+
+107
+00:06:49,910 --> 00:06:53,110
+And then this 3 unit is
+by individual units here,
+
+108
+00:06:53,110 --> 00:06:55,640
+and this 2 unit is by
+individual units here.
+
+109
+00:06:55,640 --> 00:07:00,710
+And so, we're using area and
+a hierarchy of area into finer and
+
+110
+00:07:00,710 --> 00:07:07,971
+finer rectangles in order to divvy up this
+large rectangle into its component pieces.
+
+111
+00:07:08,980 --> 00:07:12,303
+You'll notice that for example,
+
+112
+00:07:12,303 --> 00:07:17,231
+this rectangle here is
+eleven forty-eighths wide
+
+113
+00:07:17,231 --> 00:07:22,282
+because it's one-third
+of eleven-sixteenths.
+
+114
+00:07:22,282 --> 00:07:27,801
+It's one-third of the eleven-sixteenths
+on this side of this thick black line.
+
+115
+00:07:27,801 --> 00:07:31,715
+So one-third times eleven-sixteenths
+is eleven forty-eighths.
+
+116
+00:07:31,715 --> 00:07:36,125
+This bottom, the height of this
+is equal to three-elevenths.
+
+117
+00:07:36,125 --> 00:07:38,797
+It was three-elevenths of this whole unit.
+
+118
+00:07:38,797 --> 00:07:43,564
+And so we have three-elevenths times
+eleven forty-eighths is equal to
+
+119
+00:07:43,564 --> 00:07:47,975
+one-sixteenth, which is exactly
+the portion one-sixteenth.
+
+120
+00:07:47,975 --> 00:07:48,503
+Where is it?
+
+121
+00:07:48,503 --> 00:07:53,604
+Right here, one-sixteenth of the entire
+area that we wanted to represent.
+
+122
+00:07:53,604 --> 00:07:58,531
+And so that gives you a good
+visual connection between the area
+
+123
+00:07:58,531 --> 00:08:02,427
+of this tree map layout as
+a portion of the whole.
+
+124
+00:08:02,427 --> 00:08:07,280
+And the organization of this
+node representing one unit of
+
+125
+00:08:07,280 --> 00:08:11,520
+this root node representing 16 units.
+
+126
+00:08:11,520 --> 00:08:19,030
+Can also see some of the difficulty in
+doing ordinal connections between area.
+
+127
+00:08:20,120 --> 00:08:23,980
+This is 2 units of area, and
+this is 2 units of area.
+
+128
+00:08:23,980 --> 00:08:27,820
+If I didn't have these numbers here,
+it may not be as easy to see that this
+
+129
+00:08:27,820 --> 00:08:33,720
+rectangle is the same area as
+this more square region is.
+
+130
+00:08:33,720 --> 00:08:38,800
+So area's not that good at
+representing ordinal amounts.
+
+131
+00:08:38,800 --> 00:08:45,168
+But it is a pretty good tool for
+representing quantities in general.
+
+132
+00:08:45,168 --> 00:08:50,857
+So the tree map is a good method for
+visualizing hierarchies because it relates
+
+133
+00:08:50,857 --> 00:08:57,290
+the region of that hierarchy to a region
+on the screen, associating it with area.
+
+134
+00:08:57,290 --> 00:09:02,220
+That is,
+we've seen area can be a decent but
+
+135
+00:09:02,220 --> 00:09:07,426
+not great method for
+ordinal relationships.
+
+136
+00:09:07,426 --> 00:09:16,481
+[MUSIC]

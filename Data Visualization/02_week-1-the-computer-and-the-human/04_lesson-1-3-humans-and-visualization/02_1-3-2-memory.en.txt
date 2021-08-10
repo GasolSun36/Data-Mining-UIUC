@@ -1,0 +1,151 @@
+So the point of data visualization is
+to get data out of the computer and into the human brain. And part of that process is going
+to be memorizing that data and learning from that data. And so we have to understand
+how human memory works. So we're going to learn what's
+the difference between, for example, short-term memory, and
+long-term memory and sensory memory? And how can we get things between
+short-term and long-term memory? How can we remember things better? And, essentially,
+how can we can learn better? So we'll start again with this model human
+processor, except we'll reorganize it. I want to focus on the memory of this and
+that's the visual image store, the auditory image store,
+the working memory, the long-term memory. And these are connected by the perceptual
+processors and the cognitive processors. And so I can reorganize this,
+we have the sensory image stores go to the perceptual processor, which
+places information in the working memory. Which then goes to
+the cognitive processor and places information in
+the long-term memory. And this process of taking
+information from your senses and putting it in the working
+memory is based on attention. And when you're paying attention
+to something, like, for example, the fact that I'm pointing
+the pointer and talking to you right now. You are taking the elements in your
+very very short-term sensory stores. And you are processing them and
+putting them in your working memory. Now because this is classroom material,
+you want to remember that. And so you need to take these details
+that I'm describing to you and take them from working memory and
+put them in long-term memory. And that's a process that's
+usually called rehearsal. There's a number of ways to do that,
+but it's effectively called rehearsal. And you'll notice working memory
+only holds about seven items. And those items are available for
+about seven seconds. You can hold one item much longer, but for
+several items it's about seven seconds. Before they decay, and
+I've got several things on the screen. So you're processing each of these like
+the perceptual store attention and perceptual processor. And trying to rehearse those and put those in long-term memory before
+you try to memorize these other things. So, sensory memory is really
+short-term device memory. On a cell phone, it would be the CCD
+array that's recording the image data. And it'd be the registers
+that are used to store and organize that information before
+being sent as an image to the CPU. Visually, we have iconic memory,
+this is persistence of vision. You look at something
+flashed on the screen, and you can remember it even
+though it's not there anymore. That's your iconic memory,
+your visual sensory memory, it only last about half a second. You have echoic memory for hearing
+things that lasts for about one and a half seconds. And then you have haptic memory,
+which you can remember touch as well. And then, these constants can go up or
+down based on arousal. How much attention are you paying? Arousal means that you're
+paying more attention. And that can increase both
+the severity of the memory and how long it lasts in your memory. And these things get placed
+into working memory so your cognitive processor can process them. And this is like human dynamic RAM
+memory because it needs to be refreshed. It dies about every 200 milliseconds,
+and so it needs to be refreshed. And it has about 70
+milliseconds access time. But it's very small, it only holds
+about seven chunks, digits or words, seven things. And again recency effects are important,
+the last thing that goes in the memory is usually the strongest and things start
+to fade after a certain amount of time. And so we can have fun looking at
+the working memory figuring out how things are organised in our short-term
+working memory that we use to process. So I can give you a sequence of digits,
+here's a sequence of digits 25439762608. And I'll hide those now, now,
+what were those numbers? If you're like me, I can remember
+maybe two, three, something or other. I don't remember any of those digits. And that's because it
+overflowed my working memory, I couldn't remember that many Items for
+that long. Let me take another set of the same number
+of items, these are going to be different items, different numbers, but
+the same number of digits. 456 295 1413, and you notice we've organized them into chunks, 456 295 1413. Now I hide them and
+I can remember 456 293 1413. Oop, and I got wrong,
+456 295 1413, 456 295 1413. Because I'm remembering chunks
+instead of individual digits. And you can do the same thing, same
+thing is true for characters and words. Here's some random characters,
+HEC, ATR, ANU, PTH, ETR, EET. If I hide those, I don't know if you can
+remember those particular characters. But I can remember them, those characters are HEC, ATR, ANU, PTR, EET. And the reason I can remember them
+is that if I start with this T, and then go back to the beginning,
+this spells out, the cat ran up the tree. And I can remember the cat ran up
+the tree, that's only five words. Whereas, I'm looking at 18
+different letters here, which would overflow my working memory. So, items are processed better
+in working memory when we chunk them together into higher level objects. Then once things are in our short-term
+memory, our working memory, we need to get them in our long-term
+memory, so we can remember them later. And long-term memory is kind of
+like the human world wide web, it's a persistent memory. It's effectively infinite and
+lasts forever. And there's two types of long-term memory,
+there's episodic memory and semantic memory. Episodic memory is time bearing memory, we remember sequences, events,
+things that are organized temporally. This is how we remember songs,
+you remember the lyrics. And you may not be able to remember every
+word to a song unless you sing the song to get to that word. And semantic memory is
+memory that's facts, but they're organized associatively,
+there's links. So you get this stream of consciousness
+where you you remember one thing. And then you can remember
+something related to that, and something related to that. And so there's various representations for
+these kinds of memories. There's semantic nets,
+which are really just a graph. There's frames, which are kind
+of a database with fields and entries that you can create relations and
+create the associations between them. And then there's scripts,
+which are similar to frames, that basically define the roles, scenes,
+props and so on for various memories. So when we go through
+the process of remembering, there's a couple concepts to keep in mind. One is the total time hypothesis. And that says that you can remember
+something if you spend more time with it. The more time you spend on something,
+the more likely you are to remember it. This could be memorizing by rote,
+where you just keep repeating something. But it's not necessarily
+best to always repeat and learn something by repeating it over and
+over again. It's sometimes better to remember things
+by working with them differently, but still spending time on them. There's the distribution
+of practice effect, which means you can't memorize
+a bunch of stuff all at once. It's better to memorize a few things at
+a time, and then go do something else. And then come back and
+remember a few things at a time. By distributing the memories over
+a wider time and not all at once. Concrete things are easier to
+remember than abstract things. And so we remember meanings. So if I read off the words faith,
+age, cold, tenet, quiet, logic, idea, value, past. Those are harder to remember. But if I read off,
+because they're abstract concepts. If I read off more concrete objects
+like boat, tree, cat, child, rug, plate, gun, flame, head,
+they tend to paint a picture in your mind. And it becomes a little bit easier for
+you to remember those. And so we tend to memorize
+things based on structure, based on familiarity,
+mostly based on concreteness. So in the right, I've got an example,
+if you want to memorize numbers, if you have the digits 1 through 0,
+effectively 1 through 10 here. But 1 through 0, and you want to
+memorize along sequence of numbers, for example, pie,
+if you don't remember pi is 3.14159. If it's difficult to remember those
+digits, those arbitrary digits. You can make them more concrete
+by associating each digit with a concrete word that rhymes with it. So instead of 314,
+you remember tree bun door. And the words tree, burn,
+door start to paint a picture. And if I go tree, burn,
+door, burn hive wine, I start to tell a little bit of a story. And you can start using more of your
+episodic memory to remember these abstract ideas. We also forget, even when things
+are put in our long-term memory. They will decay over time, and
+that decay is logarithmic. We forget most things earlier and
+then we forget fewer things longer away, this leads to Jost's Law. If you have two equally strong memories, then the older of the two
+memories is more durable. If you don't forget something quickly, then your chances of memorizing
+it forever are much greater. And then there's interference,
+one of the reasons we forget things is that we learn things that
+conflict with that memory. For example, there's proactive inhibition which means
+you can't teach an old dog new tricks. If you've learned something one way,
+then that one way, which has been in your long=term memory for a long time,
+is going to be a strong memory. And it's going to be difficult to rewrite
+that memory with new information. Because that old memory is so
+much stronger and you're more likely to forget things
+you've learned more recently. There's also retroactive interference. This is when you've just received so
+much information t hat you start to forget things
+because of the amount of information. This is, for example,
+why it's not good to cram for an exam. Because you're filling your brain with so
+much information that the more recent information is overriding
+the less recent information. And because the information is less
+recent, it's less strong in your memory. And finally, emotion,
+we remember the good old days, we forget the mundane day-to-day details
+that were boring about the good old days. You remember things based
+on strong emotions. And so, if you can change your
+emotional state when you're studying, that might help, but
+it might also exhaust you. But it does have an impact on how you
+remember and how you forget things. So there's three different
+kinds of memory. There's sensory memory
+that decays very quickly. There's working memory that
+contains just a few objects that don't last for very long. And then there's long-term memory and things get into our long-term memory
+through a process of learning. And we can improve our learning if
+we can vary our learning styles. [MUSIC] [SOUND]

@@ -1,0 +1,645 @@
+1
+00:00:00,370 --> 00:00:03,204
+[MUSIC]
+
+2
+00:00:07,510 --> 00:00:12,830
+So as we use our data visualization
+tools to visualize databases,
+
+3
+00:00:12,830 --> 00:00:18,080
+to visualize data cubes,
+these data cubes are data hypercubes.
+
+4
+00:00:18,080 --> 00:00:25,900
+They're going to be high-dimensional
+databases with lots of dimensions.
+
+5
+00:00:25,900 --> 00:00:29,060
+Our challenge is going to be getting
+that information presented on
+
+6
+00:00:29,060 --> 00:00:31,980
+a two-dimensional screen.
+
+7
+00:00:31,980 --> 00:00:34,950
+And as we've seen before,
+we can use worlds within worlds.
+
+8
+00:00:34,950 --> 00:00:39,878
+In this case, we're visualizing
+a four-dimensional hypercube
+
+9
+00:00:39,878 --> 00:00:43,130
+of our World Bank indicator data.
+
+10
+00:00:43,130 --> 00:00:47,830
+We're looking at life expectancy
+versus infant mortality, but
+
+11
+00:00:47,830 --> 00:00:54,610
+we're also looking at that over different
+regions and also over different years.
+
+12
+00:00:54,610 --> 00:00:56,180
+And so we have this worlds within worlds.
+
+13
+00:00:56,180 --> 00:01:01,780
+We're looking at a four-dimensional
+hypercube where we're plotting a table
+
+14
+00:01:01,780 --> 00:01:07,060
+of region versus year, and
+each element in that table is,
+
+15
+00:01:07,060 --> 00:01:12,060
+itself, a two-dimensional plot of life
+expectancy versus infant mortality.
+
+16
+00:01:13,340 --> 00:01:19,320
+So this gives us a four-dimensional view
+that we can expand from just that worlds
+
+17
+00:01:19,320 --> 00:01:24,830
+within worlds idea to the general idea
+of the organization of these axes.
+
+18
+00:01:24,830 --> 00:01:29,180
+And each of these axes is representing
+different dimensions of our data.
+
+19
+00:01:29,180 --> 00:01:34,170
+And the relationship of the dimensions
+of our data is organized quite well
+
+20
+00:01:34,170 --> 00:01:38,249
+in OLAP databases as
+the relationship between keys.
+
+21
+00:01:40,090 --> 00:01:43,170
+So these database visualization systems
+
+22
+00:01:43,170 --> 00:01:46,960
+have special tools designed
+to help organize axes,
+
+23
+00:01:46,960 --> 00:01:52,040
+especially since those axes are often
+used to display multiple dimensions or
+
+24
+00:01:52,040 --> 00:01:57,620
+represent different aggregations or
+projections of multiple dimensions
+
+25
+00:01:57,620 --> 00:02:02,730
+in order to reduce the dimensionality
+of a large hypercube.
+
+26
+00:02:02,730 --> 00:02:05,820
+And these are rows from
+a paper on Polaris.
+
+27
+00:02:05,820 --> 00:02:10,850
+Polaris is an early prototype system
+that was a precursor to Tableau.
+
+28
+00:02:10,850 --> 00:02:14,210
+So one of the things you can do
+with axes is concatenate them.
+
+29
+00:02:14,210 --> 00:02:16,310
+You can take two dimensions and
+
+30
+00:02:16,310 --> 00:02:22,080
+place one dimension after the other in
+order to display that on a single axis.
+
+31
+00:02:22,080 --> 00:02:24,230
+And it provides, basically,
+multiple views of the data.
+
+32
+00:02:24,230 --> 00:02:27,360
+For example,
+here's our sales data plotted by quarter.
+
+33
+00:02:28,360 --> 00:02:32,160
+And so you can see that the sales were
+low in the first two quarters and
+
+34
+00:02:32,160 --> 00:02:35,010
+then they increased in
+the second two quarters.
+
+35
+00:02:35,010 --> 00:02:40,670
+And so
+we can concatenate the time dimension
+
+36
+00:02:40,670 --> 00:02:46,230
+with the product dimension into a single
+axis that has time followed by product.
+
+37
+00:02:46,230 --> 00:02:51,370
+And so we're getting two views of the same
+data, but in the first half of the axis
+
+38
+00:02:51,370 --> 00:02:54,970
+we're seeing the data plotted over time,
+separated by quarter.
+
+39
+00:02:54,970 --> 00:02:59,260
+And in the second half of the axis
+we're seeing the same data plotted but
+
+40
+00:02:59,260 --> 00:03:00,790
+separated by product.
+
+41
+00:03:02,100 --> 00:03:06,690
+And so we can see that this
+general trend of sales over time
+
+42
+00:03:06,690 --> 00:03:11,880
+is being followed by the three
+different products, but it's
+
+43
+00:03:11,880 --> 00:03:15,310
+more accentuated with one of the products
+than it is perhaps with the other two.
+
+44
+00:03:15,310 --> 00:03:15,930
+And so
+
+45
+00:03:15,930 --> 00:03:20,830
+that makes sense to concatenate a time
+axis with a product axis in this case.
+
+46
+00:03:20,830 --> 00:03:24,450
+It may not make sense to
+concatenate a quarter axis with
+
+47
+00:03:24,450 --> 00:03:29,370
+a month axis because they're
+both time dimensions, and
+
+48
+00:03:29,370 --> 00:03:34,290
+so you'd be seeing the same plot here
+over the demarcations of quarter and
+
+49
+00:03:34,290 --> 00:03:38,970
+then the same plot over
+the demarcations of a month.
+
+50
+00:03:38,970 --> 00:03:44,280
+And you'd be using half of
+the space to build this up, and
+
+51
+00:03:44,280 --> 00:03:47,480
+so it doesn't make as
+much sense in that case.
+
+52
+00:03:47,480 --> 00:03:49,800
+We can also take two dimensions and
+
+53
+00:03:49,800 --> 00:03:53,180
+create an axis from the product
+of those two dimensions.
+
+54
+00:03:53,180 --> 00:03:57,920
+For example, if we have the data
+over time, over four quarters.
+
+55
+00:03:57,920 --> 00:04:03,232
+And we have the data over products
+instead of showing them side-by-side,
+
+56
+00:04:03,232 --> 00:04:08,793
+we might show the data for the coffee,
+espresso and tea, the product values for
+
+57
+00:04:08,793 --> 00:04:13,026
+quarter one, quarter two,
+quarter three, quarter four.
+
+58
+00:04:13,026 --> 00:04:17,854
+And so this product basically gives
+you every combination of coffee and
+
+59
+00:04:17,854 --> 00:04:22,439
+quarter so that you can see how your
+data's performing over time and
+
+60
+00:04:22,439 --> 00:04:27,428
+product simultaneously, with a single
+axis here representing these two
+
+61
+00:04:27,428 --> 00:04:31,410
+dimensions by looking at
+all the combinations.
+
+62
+00:04:31,410 --> 00:04:34,510
+Similarly, we could look
+at quarter times month.
+
+63
+00:04:34,510 --> 00:04:38,860
+This doesn't make much sense either,
+because we'd be looking at the first
+
+64
+00:04:38,860 --> 00:04:42,440
+quarter, which should represent
+just the first three months and yet
+
+65
+00:04:42,440 --> 00:04:44,930
+I'm plotting all 12 months here.
+
+66
+00:04:44,930 --> 00:04:50,340
+And so just doing a simple product
+of two time axes doesn't really
+
+67
+00:04:50,340 --> 00:04:55,290
+help, because I'd only have data for
+the first quarter showing up in
+
+68
+00:04:55,290 --> 00:04:59,710
+the first three months, and then
+the other nine months would basically be
+
+69
+00:04:59,710 --> 00:05:03,130
+zero valued because there wouldn't
+be data for these months.
+
+70
+00:05:03,130 --> 00:05:04,740
+That was also in the first quarter.
+
+71
+00:05:05,900 --> 00:05:10,120
+What makes sense for this case is
+to do something called nesting, and
+
+72
+00:05:10,120 --> 00:05:14,190
+nesting is a way of
+limiting the combinations
+
+73
+00:05:14,190 --> 00:05:17,930
+to the combinations that
+are available in the database.
+
+74
+00:05:17,930 --> 00:05:24,160
+And so in quarter one maybe we
+didn't have any sales of tea.
+
+75
+00:05:24,160 --> 00:05:28,570
+In quarter three maybe we didn't
+have any sales of espresso.
+
+76
+00:05:29,860 --> 00:05:34,850
+And so by doing this nesting operation,
+it's basically similar
+
+77
+00:05:34,850 --> 00:05:38,510
+to a product except we're not looking
+at every possible combination.
+
+78
+00:05:38,510 --> 00:05:42,630
+We're only showing on the axes
+the combinations that actually exist in
+
+79
+00:05:42,630 --> 00:05:44,250
+the database.
+
+80
+00:05:44,250 --> 00:05:48,750
+And so now, if we have the month
+nested inside quarter,
+
+81
+00:05:48,750 --> 00:05:51,700
+if you have quarter as the major axis.
+
+82
+00:05:51,700 --> 00:05:54,280
+And then the minor axis is the month.
+
+83
+00:05:54,280 --> 00:05:58,670
+We're not seeing January, February, March,
+April, May, June all in quarter one.
+
+84
+00:05:58,670 --> 00:06:02,440
+We're only seeing the months in
+quarter one where we have actual
+
+85
+00:06:02,440 --> 00:06:04,660
+data values in the database.
+
+86
+00:06:04,660 --> 00:06:08,055
+And since January, February,
+March are the three months in quarter one,
+
+87
+00:06:08,055 --> 00:06:11,570
+we'll have data values there, but
+we wouldn't for April, May and June.
+
+88
+00:06:11,570 --> 00:06:15,310
+We won't have any data values for April,
+May and June in quarter one because April,
+
+89
+00:06:15,310 --> 00:06:17,510
+May and June are in quarter two.
+
+90
+00:06:17,510 --> 00:06:21,110
+And so that nicely nests
+this higher resolution time
+
+91
+00:06:21,110 --> 00:06:25,870
+axis into this coarser resolution
+time axis, into a single axis.
+
+92
+00:06:25,870 --> 00:06:31,520
+So Tableau has some functionality
+that helps organize axes nicely.
+
+93
+00:06:31,520 --> 00:06:36,090
+If we take our life expectancy data and
+display that,
+
+94
+00:06:36,090 --> 00:06:45,090
+we get an average over all
+time over all the countries.
+
+95
+00:06:45,090 --> 00:06:50,460
+And so we can start to
+disaggregate this data by country.
+
+96
+00:06:50,460 --> 00:06:54,198
+And what we will get is an alphabetized
+list of all the countries.
+
+97
+00:06:54,198 --> 00:06:59,780
+If we want to organize this better,
+we can organize it by the continents.
+
+98
+00:07:01,540 --> 00:07:04,130
+And now we get continents on the top and
+
+99
+00:07:04,130 --> 00:07:06,740
+then all the countries
+alphabetized by the continents.
+
+100
+00:07:06,740 --> 00:07:10,130
+And then we can insert a subregion in
+here that further refines the data
+
+101
+00:07:10,130 --> 00:07:11,630
+by subregion.
+
+102
+00:07:11,630 --> 00:07:16,530
+So you get this nice organization that
+Tableau can automatically discover
+
+103
+00:07:16,530 --> 00:07:20,280
+based on the data that's in there
+because the data's in there by country,
+
+104
+00:07:20,280 --> 00:07:22,140
+by region and by subregion.
+
+105
+00:07:22,140 --> 00:07:24,969
+And it can detect how that data should be
+
+106
+00:07:24,969 --> 00:07:29,960
+organized hierarchically in the axis
+by each one of these sections.
+
+107
+00:07:29,960 --> 00:07:33,761
+So it's by region, then subregion,
+then country and region, and
+
+108
+00:07:33,761 --> 00:07:36,294
+so we've got Africa and
+Eastern Africa, and
+
+109
+00:07:36,294 --> 00:07:40,710
+then we have all the countries
+alphabetically in Eastern Africa.
+
+110
+00:07:40,710 --> 00:07:42,580
+We can further subdivide this axis.
+
+111
+00:07:42,580 --> 00:07:46,410
+For example,
+if we want to disaggregate by the year,
+
+112
+00:07:46,410 --> 00:07:49,640
+each one of these bars represents
+the average over a year.
+
+113
+00:07:49,640 --> 00:07:53,810
+If we want to drill down into how
+the performance is over each year,
+
+114
+00:07:53,810 --> 00:07:58,800
+I can add for each country
+the performance over each year.
+
+115
+00:07:58,800 --> 00:08:04,010
+And now for each country,
+I've got the performance per year.
+
+116
+00:08:04,010 --> 00:08:07,440
+And this might look better
+actually as a line graph so
+
+117
+00:08:07,440 --> 00:08:11,342
+that we can see how each country's
+improving its performance in life
+
+118
+00:08:11,342 --> 00:08:17,950
+expectancy over the 11 years
+that we've recorded it here.
+
+119
+00:08:17,950 --> 00:08:21,060
+You can also move the year in between,
+and so
+
+120
+00:08:21,060 --> 00:08:26,990
+now we're seeing the performance
+on a per region basis.
+
+121
+00:08:26,990 --> 00:08:32,760
+This is how each of the countries in
+a given region are performing over a year.
+
+122
+00:08:32,760 --> 00:08:36,890
+And then finally,
+you can move year all the way out and
+
+123
+00:08:36,890 --> 00:08:41,730
+now we're seeing for each year
+the different breakdown in the countries.
+
+124
+00:08:44,260 --> 00:08:50,340
+And so you can set up these hierarchical
+axes and get worlds within worlds.
+
+125
+00:08:50,340 --> 00:08:57,140
+You could even put it on the vertical axis
+and you can get a higher dimensional view
+
+126
+00:08:57,140 --> 00:09:02,950
+of your data by basically implementing
+a worlds within worlds visualization.
+
+127
+00:09:02,950 --> 00:09:05,920
+Where you have a table of plots and
+
+128
+00:09:05,920 --> 00:09:10,452
+each cell of a two-dimensional data
+is itself a two-dimensional plot, or
+
+129
+00:09:10,452 --> 00:09:15,510
+two-dimensional table, or in this case,
+a two-dimensional bar chart.
+
+130
+00:09:15,510 --> 00:09:19,749
+So we can see how information
+visualization systems specifically
+
+131
+00:09:19,749 --> 00:09:22,247
+designed for visualizing databases,
+
+132
+00:09:22,247 --> 00:09:26,032
+specifically OLAP data cube
+style databases, can provide
+
+133
+00:09:26,032 --> 00:09:30,661
+a database user with visualization
+tools to gain insight into the data.
+
+134
+00:09:30,661 --> 00:09:40,182
+[MUSIC]

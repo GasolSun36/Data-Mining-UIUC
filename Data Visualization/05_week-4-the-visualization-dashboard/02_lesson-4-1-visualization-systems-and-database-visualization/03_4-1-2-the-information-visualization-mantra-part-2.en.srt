@@ -1,0 +1,607 @@
+1
+00:00:00,050 --> 00:00:08,345
+[SOUND] So the next step of
+the mantra is Zoom and Filter.
+
+2
+00:00:08,345 --> 00:00:10,167
+So let's look at zooming.
+
+3
+00:00:10,167 --> 00:00:11,430
+What does zooming do?
+
+4
+00:00:11,430 --> 00:00:15,662
+Zooming helps us focus on
+a portion of the plotted data.
+
+5
+00:00:15,662 --> 00:00:21,100
+It removes extraneous data that's
+outside of our zoomed in area.
+
+6
+00:00:21,100 --> 00:00:27,280
+So here's an example of a plot of
+data across the United States.
+
+7
+00:00:27,280 --> 00:00:33,570
+And in this case, we've zoomed in on
+a portion of the West to the Midwest.
+
+8
+00:00:33,570 --> 00:00:37,410
+And then we've zoomed in again on
+a portion of Northern California.
+
+9
+00:00:38,940 --> 00:00:41,650
+And by zooming in at each of these levels,
+
+10
+00:00:41,650 --> 00:00:44,550
+we're removing a large
+portion of our dataset.
+
+11
+00:00:44,550 --> 00:00:47,830
+So we can focus on a smaller
+portion of our dataset.
+
+12
+00:00:47,830 --> 00:00:53,293
+And by expanding that smaller portion
+of our dataset to the entire screen,
+
+13
+00:00:53,293 --> 00:00:59,207
+it allows us to use the resolution of the
+entire display to display more details.
+
+14
+00:00:59,207 --> 00:01:03,143
+So at the highest level, we're just
+showing the state boundaries, but
+
+15
+00:01:03,143 --> 00:01:06,236
+as we zoom in,
+we can start to show county boundaries.
+
+16
+00:01:06,236 --> 00:01:10,630
+And then at the finer level,
+we have enough room to where we can
+
+17
+00:01:10,630 --> 00:01:14,389
+add the names of counties, and
+other data about each of the counties.
+
+18
+00:01:15,680 --> 00:01:18,858
+And so by focusing on
+a small portion of our data,
+
+19
+00:01:18,858 --> 00:01:21,271
+we can ignore large amounts of data.
+
+20
+00:01:21,271 --> 00:01:25,905
+And we can add more detail about
+the data we're specifically looking at,
+
+21
+00:01:25,905 --> 00:01:28,240
+and so there's two ways of zooming.
+
+22
+00:01:28,240 --> 00:01:32,690
+There's this way where we're
+looking at a portion of
+
+23
+00:01:34,710 --> 00:01:40,350
+the displayed coordinates of our datset
+by, for example, clicking a window.
+
+24
+00:01:40,350 --> 00:01:42,880
+Or we can also expand axis fields.
+
+25
+00:01:42,880 --> 00:01:46,313
+So for example,
+if you're plotting data over time,
+
+26
+00:01:46,313 --> 00:01:48,790
+you might be looking at it by year.
+
+27
+00:01:48,790 --> 00:01:53,784
+If you want to focus on the year 2014
+then you could click on 2014, and
+
+28
+00:01:53,784 --> 00:01:55,667
+expand that into quarters.
+
+29
+00:01:55,667 --> 00:02:00,056
+And we could look at, say, the first three
+quarters of 2014, and ignore 2013 and
+
+30
+00:02:00,056 --> 00:02:00,650
+2015.
+
+31
+00:02:00,650 --> 00:02:05,480
+So we can use our resolution to
+more clearly see what's happening
+
+32
+00:02:05,480 --> 00:02:06,800
+at each quarter.
+
+33
+00:02:06,800 --> 00:02:10,276
+And then, we may be interested in Q2,
+and you could expand that.
+
+34
+00:02:10,276 --> 00:02:15,224
+And look at the individual months,
+April, May and June of Q2, and ignore,
+
+35
+00:02:15,224 --> 00:02:17,840
+for example, the months in Q1 and Q3.
+
+36
+00:02:17,840 --> 00:02:23,280
+So in each of these cases, zooming
+allows us to take the displayed data,
+
+37
+00:02:23,280 --> 00:02:28,470
+and to expand it to be able to focus
+on a portion of the displayed data.
+
+38
+00:02:28,470 --> 00:02:34,200
+And ignore the rest of our dataset that's
+not in that subset of our displayed data.
+
+39
+00:02:34,200 --> 00:02:39,837
+So here we've used Tableau to plot our
+life expectancy data versus population for
+
+40
+00:02:39,837 --> 00:02:43,930
+every country in the world, and
+some of the data clumps up.
+
+41
+00:02:43,930 --> 00:02:48,814
+We have a big collection here of a bunch
+of countries that have similar populations
+
+42
+00:02:48,814 --> 00:02:50,240
+and life expectancy.
+
+43
+00:02:50,240 --> 00:02:52,760
+And there's not enough resolution
+to be able to know which
+
+44
+00:02:52,760 --> 00:02:55,560
+one we're pointing at if
+we're looking at that.
+
+45
+00:02:55,560 --> 00:03:00,721
+So if I want to find out in these
+clumpy areas what's going on,
+
+46
+00:03:00,721 --> 00:03:05,290
+I would zoom, and so
+it would show the Zoom Controls.
+
+47
+00:03:05,290 --> 00:03:11,880
+Go over here and zoom in on this data,
+and that will spread things out.
+
+48
+00:03:11,880 --> 00:03:16,974
+And I can see, for example,
+this clump was Norway, Singapore,
+
+49
+00:03:16,974 --> 00:03:22,821
+and New Zealand that all have similar
+populations and life expectancies.
+
+50
+00:03:22,821 --> 00:03:25,710
+And some of these other
+clumps can be differentiated.
+
+51
+00:03:25,710 --> 00:03:30,911
+For example, West Bank,
+and Gaza, and Lithuania
+
+52
+00:03:30,911 --> 00:03:35,720
+have similar life expectancy
+in populations, or
+
+53
+00:03:35,720 --> 00:03:42,350
+over here we've got Argentina and Poland.
+
+54
+00:03:42,350 --> 00:03:47,127
+And so by zooming in on the data,
+we can use the resolution available on our
+
+55
+00:03:47,127 --> 00:03:50,837
+Display Screen to better
+differentiate similar items.
+
+56
+00:03:50,837 --> 00:03:54,084
+And then we can always zoom back if
+we want to see where things are in
+
+57
+00:03:54,084 --> 00:03:55,300
+the original context.
+
+58
+00:03:57,921 --> 00:04:02,992
+When we zoom in on a portion of our
+plotted data we're ignoring, we're
+
+59
+00:04:02,992 --> 00:04:09,670
+completely ignoring, the portion of the
+data that's outside of that zoom window.
+
+60
+00:04:09,670 --> 00:04:12,410
+Often that can cause us
+to get lost in the data.
+
+61
+00:04:12,410 --> 00:04:17,300
+We're looking at a fine level, and we
+forget where that fine level of data that
+
+62
+00:04:17,300 --> 00:04:22,640
+we're focusing on sits
+within the larger dataset.
+
+63
+00:04:22,640 --> 00:04:26,695
+So, there are tools that help us to
+combine the focus of zooming with
+
+64
+00:04:26,695 --> 00:04:29,911
+the context of the big picture
+of the entire dataset.
+
+65
+00:04:29,911 --> 00:04:31,600
+And, these are called lenses.
+
+66
+00:04:31,600 --> 00:04:33,890
+They're interactive lenses
+that you can drag around.
+
+67
+00:04:33,890 --> 00:04:37,642
+Sometimes they're called magic lenses,
+depending on what they show.
+
+68
+00:04:37,642 --> 00:04:39,303
+And they allow you to zoom in on details.
+
+69
+00:04:39,303 --> 00:04:44,730
+For example, here's a dataset, and
+we can drag around this zoom lens.
+
+70
+00:04:44,730 --> 00:04:48,150
+And it uniformly magnifies
+everything underneath it, but
+
+71
+00:04:48,150 --> 00:04:53,650
+you can still see where you
+are relative to the large dataset.
+
+72
+00:04:53,650 --> 00:04:56,810
+But in this case,
+we have a uniform level of magnification,
+
+73
+00:04:56,810 --> 00:05:01,070
+so the data that's underneath the
+periphery of this lens is being obscured.
+
+74
+00:05:01,070 --> 00:05:04,800
+We're magnifying this portion
+of the data but for example,
+
+75
+00:05:04,800 --> 00:05:09,765
+we've really lost the detail of the region
+of data away from that magnified edge.
+
+76
+00:05:09,765 --> 00:05:12,300
+Because it's being obscured
+by the magnified data.
+
+77
+00:05:13,730 --> 00:05:18,098
+There are fisheye distortion
+lenses that help fix that problem.
+
+78
+00:05:18,098 --> 00:05:23,980
+In a fisheye lens, you've got a lot of
+magnification at the center of the lens.
+
+79
+00:05:23,980 --> 00:05:27,660
+And as you move away from the center,
+you've got less magnification.
+
+80
+00:05:27,660 --> 00:05:33,170
+And as you get towards the periphery
+of the lens, you get no magnification.
+
+81
+00:05:33,170 --> 00:05:38,070
+The magnification goes to one, and so
+you basically as you cross the lens,
+
+82
+00:05:38,070 --> 00:05:42,712
+you don't see any change in magnification.
+
+83
+00:05:42,712 --> 00:05:46,390
+That way we can push away some of
+the details from the center, and
+
+84
+00:05:46,390 --> 00:05:50,380
+we get this seamless transition
+from the outer context
+
+85
+00:05:50,380 --> 00:05:53,070
+into the zoom details
+that we're looking at.
+
+86
+00:05:53,070 --> 00:05:57,260
+In this case, these three spheres,
+these three light green spheres,
+
+87
+00:05:57,260 --> 00:06:03,130
+are the three large spheres that were
+basically occluding everything here.
+
+88
+00:06:03,130 --> 00:06:07,380
+And as we push them away,
+because they're away from the center,
+
+89
+00:06:07,380 --> 00:06:09,460
+we can start to magnify five very,
+
+90
+00:06:09,460 --> 00:06:12,840
+very small spheres that were being
+occluded by these large spheres.
+
+91
+00:06:14,760 --> 00:06:18,450
+For example, these three spheres
+are basically these three spheres.
+
+92
+00:06:19,720 --> 00:06:23,240
+They're uniformly distributed one,
+two, three here, and
+
+93
+00:06:23,240 --> 00:06:27,381
+you can see that the first sphere here
+is farther away than the other two.
+
+94
+00:06:27,381 --> 00:06:31,075
+That's because of the magnification
+of this sphere is greater than
+
+95
+00:06:31,075 --> 00:06:33,160
+the magnification of these spheres.
+
+96
+00:06:33,160 --> 00:06:37,790
+And so the distance is getting
+magnified more here than it was here.
+
+97
+00:06:38,960 --> 00:06:44,780
+And so these fisheye distortion
+lenses give us a nice combination
+
+98
+00:06:44,780 --> 00:06:49,880
+of the ability to zoom in on data, but
+to see it in a context of the big picture.
+
+99
+00:06:51,670 --> 00:06:55,249
+So the D3 JavaScript library
+has some good tools for
+
+100
+00:06:55,249 --> 00:06:59,080
+doing a fisheye distortion
+that nicely demonstrated.
+
+101
+00:06:59,080 --> 00:07:02,047
+So here, for example, we have a graph, and
+
+102
+00:07:02,047 --> 00:07:06,230
+you can see that the graph contains
+a lot of clusters of nodes.
+
+103
+00:07:06,230 --> 00:07:10,140
+And it's hard to see what's going on with
+all the edges inside those clusters.
+
+104
+00:07:10,140 --> 00:07:13,862
+But if I put the mouse near it,
+than we get a magnification, and
+
+105
+00:07:13,862 --> 00:07:16,280
+you can start to see the differences.
+
+106
+00:07:16,280 --> 00:07:20,986
+There's still a lot of lines there,
+but you can magnify the positions
+
+107
+00:07:20,986 --> 00:07:25,798
+of the nodes, spread the nodes out
+with this fisheye distortion lens.
+
+108
+00:07:25,798 --> 00:07:28,641
+And see what's going on with the edges,
+
+109
+00:07:28,641 --> 00:07:33,500
+while still connecting to the context
+of the remainder of the graph.
+
+110
+00:07:33,500 --> 00:07:36,210
+So you still get your big
+picture of the whole graph.
+
+111
+00:07:36,210 --> 00:07:40,110
+You can zoom in on individual elements.
+
+112
+00:07:40,110 --> 00:07:45,270
+And later on in the page, they show
+an example of how this distortion works.
+
+113
+00:07:45,270 --> 00:07:50,640
+It's basically creating a small vector
+field that offsets the vertices or
+
+114
+00:07:50,640 --> 00:07:55,360
+pixels, depending on if you're looking
+at primitive data, left vertices, or
+
+115
+00:07:55,360 --> 00:07:58,290
+if you're looking at
+image data with pixels.
+
+116
+00:08:00,090 --> 00:08:04,390
+And then you can do
+
+117
+00:08:04,390 --> 00:08:09,000
+the lensing to the entire screen
+in a rectal-linear way, or
+
+118
+00:08:09,000 --> 00:08:13,960
+you can just do it to a small cylindrical
+or a small disk-shaped portion.
+
+119
+00:08:15,630 --> 00:08:16,981
+And here's some other data.
+
+120
+00:08:16,981 --> 00:08:21,122
+In this case, you've got data
+that's plotted by area, and
+
+121
+00:08:21,122 --> 00:08:26,090
+there's a lot of overlap, and
+a lot of small details and large details.
+
+122
+00:08:26,090 --> 00:08:32,190
+And as you drag over these regions,
+by distorting the entire field, then
+
+123
+00:08:32,190 --> 00:08:37,680
+you can see the intricate relationship
+between the data in your focus.
+
+124
+00:08:37,680 --> 00:08:42,040
+While still maintaining the context
+of where that data lies
+
+125
+00:08:42,040 --> 00:08:45,776
+in the context of the rest of the dataset.
+
+126
+00:08:45,776 --> 00:08:52,869
+So these fisheye lenses provide a nice
+compromise of both focus and context.
+
+127
+00:08:52,869 --> 00:09:00,220
+[MUSIC]

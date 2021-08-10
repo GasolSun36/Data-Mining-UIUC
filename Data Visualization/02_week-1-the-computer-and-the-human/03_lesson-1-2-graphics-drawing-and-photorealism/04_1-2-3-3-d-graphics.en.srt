@@ -1,0 +1,672 @@
+1
+00:00:00,280 --> 00:00:03,240
+In some cases, we'll need to use
+three-dimensional computer graphics for
+
+2
+00:00:03,240 --> 00:00:04,936
+data visualization.
+
+3
+00:00:04,936 --> 00:00:08,020
+To understand how three-dimensional
+computer graphics works,
+
+4
+00:00:08,020 --> 00:00:12,920
+you have to understand how light leaves
+a light source, reflects off of an object,
+
+5
+00:00:12,920 --> 00:00:14,860
+and then reaches your eye,
+so it can be perceived.
+
+6
+00:00:16,970 --> 00:00:20,980
+So now we'll discuss three-dimensional
+graphics for visualization.
+
+7
+00:00:20,980 --> 00:00:21,990
+So what will we learn?
+
+8
+00:00:21,990 --> 00:00:26,210
+We'll learn about the real-world ways
+that light leaves a light source,
+
+9
+00:00:26,210 --> 00:00:28,020
+and reaches our eye.
+
+10
+00:00:28,020 --> 00:00:31,619
+We'll learn the physics of why is
+the sky blue, why is the sun yellow,
+
+11
+00:00:31,619 --> 00:00:32,663
+why is grass green?
+
+12
+00:00:32,663 --> 00:00:37,420
+And in general, how does three-dimensional
+graphic simulate these physical processes?
+
+13
+00:00:38,600 --> 00:00:44,170
+And so here is a typical scene of the real
+world, and how we would perceive that?
+
+14
+00:00:44,170 --> 00:00:48,950
+We have a light source,
+an object reflecting light, and a sensor,
+
+15
+00:00:48,950 --> 00:00:50,580
+which is our eye.
+
+16
+00:00:50,580 --> 00:00:53,690
+And light leaves,
+in this case, the sun and
+
+17
+00:00:53,690 --> 00:00:59,762
+it's the slightest powerful across the
+spectrum, and so it's essentially white.
+
+18
+00:00:59,762 --> 00:01:04,761
+But then that light goes to the sky, and
+the sky scatters the light differently
+
+19
+00:01:04,761 --> 00:01:08,490
+based on which region of
+the spectrum it's dealing with.
+
+20
+00:01:08,490 --> 00:01:12,150
+So light at the red wavelengths
+will get scattered less, and
+
+21
+00:01:12,150 --> 00:01:15,840
+light at the blue wavelengths will get
+scattered more, so that light gets
+
+22
+00:01:15,840 --> 00:01:19,670
+scattered to other locations in the sky,
+which makes the sky blue.
+
+23
+00:01:19,670 --> 00:01:21,810
+And which makes the sun appear yellow,
+
+24
+00:01:21,810 --> 00:01:24,910
+because that light's hitting
+all the way through.
+
+25
+00:01:24,910 --> 00:01:30,574
+That yellow sunlight hits a tree,
+or grass, or any other biome.
+
+26
+00:01:30,574 --> 00:01:36,325
+And certain wavelengths of that light are
+getting absorbed by chlorophyll molecules,
+
+27
+00:01:36,325 --> 00:01:40,650
+and turned into hotosynthate,
+which feeds the tree.
+
+28
+00:01:40,650 --> 00:01:45,250
+And so the chlorophyll is absorbing light,
+
+29
+00:01:45,250 --> 00:01:50,070
+mostly in the blue regions, in the blue
+wavelengths, and in the red wavelengths,
+
+30
+00:01:50,070 --> 00:01:54,100
+and reflecting light, not absorbing
+the light, in the green wavelengths.
+
+31
+00:01:54,100 --> 00:01:58,094
+So the light reflected off
+of a tree is mostly green.
+
+32
+00:01:58,094 --> 00:02:01,429
+And so then, it hits it in the eye,
+
+33
+00:02:01,429 --> 00:02:07,071
+reaches our sensor in our eye,
+so that we can perceive it.
+
+34
+00:02:07,071 --> 00:02:11,209
+And there it gets sensed by,
+essentially, cones, the colors,
+
+35
+00:02:11,209 --> 00:02:15,724
+the wavelengths of light,
+stimulate three different kinds of cones,
+
+36
+00:02:15,724 --> 00:02:19,808
+a mostly red cone, a mostly green cone,
+and a mostly blue cone.
+
+37
+00:02:19,808 --> 00:02:23,895
+And these send three different
+responses to our perceptual system.
+
+38
+00:02:23,895 --> 00:02:29,905
+And so you may have a complex wavelength
+of light indicating its color.
+
+39
+00:02:29,905 --> 00:02:33,147
+But at some point,
+when the eye perceives that,
+
+40
+00:02:33,147 --> 00:02:37,814
+that gets turned into three numbers
+instead of a bunch of numbers, and
+
+41
+00:02:37,814 --> 00:02:41,551
+so we get this tristimulus
+theory of light perception.
+
+42
+00:02:41,551 --> 00:02:45,270
+And that's why we display
+things using red, green,
+
+43
+00:02:45,270 --> 00:02:50,893
+blue colors in pixels on graphics displays
+to directly stimulate the red cones,
+
+44
+00:02:50,893 --> 00:02:53,556
+the green cones, and the blue cones.
+
+45
+00:02:55,639 --> 00:03:01,598
+So we can simulate this process, and
+we can look, for example, at a camera.
+
+46
+00:03:01,598 --> 00:03:06,404
+And a modern camera, in this case,
+a pin-hole camera that has a very small
+
+47
+00:03:06,404 --> 00:03:10,981
+aperture, is getting light reflected
+off of an object, in this case,
+
+48
+00:03:10,981 --> 00:03:14,755
+this blue bunny rabbit,
+that goes through a focal point.
+
+49
+00:03:14,755 --> 00:03:19,168
+And it gets projected onto an image plane
+that would be sensed then in modern
+
+50
+00:03:19,168 --> 00:03:20,580
+cameras by a CCD array.
+
+51
+00:03:22,140 --> 00:03:26,540
+We can take that image plane, and we can
+just bring that in front of the camera,
+
+52
+00:03:26,540 --> 00:03:29,140
+and we get the exact same
+image that's not inverted.
+
+53
+00:03:29,140 --> 00:03:30,300
+It's just placed in front.
+
+54
+00:03:30,300 --> 00:03:32,718
+And you can think of this
+as being a window, and
+
+55
+00:03:32,718 --> 00:03:36,817
+you're looking through a window out
+into the world, and seeing a blue bunny.
+
+56
+00:03:36,817 --> 00:03:41,110
+You could imagine where that blue bunny
+would be on the window that you see there.
+
+57
+00:03:41,110 --> 00:03:45,650
+And that's the exact same image inverted
+that you would get on the film plane,
+
+58
+00:03:45,650 --> 00:03:48,490
+because of the geometry
+of this camera system.
+
+59
+00:03:49,900 --> 00:03:51,980
+Well, we can remove the camera system, and
+
+60
+00:03:51,980 --> 00:03:57,270
+we can put an eye right at that focal
+point, and this gives us this image plane.
+
+61
+00:03:57,270 --> 00:04:01,430
+And so basically when we're looking out
+into a three-dimensional scene, what we're
+
+62
+00:04:01,430 --> 00:04:06,020
+seeing is the same thing that would be
+projected onto a two-dimensional window to
+
+63
+00:04:06,020 --> 00:04:12,800
+the world through those some projectors
+just a certain fixed distance away.
+
+64
+00:04:12,800 --> 00:04:16,390
+And that's the way we can simulate
+with a two-dimensional image
+
+65
+00:04:16,390 --> 00:04:18,439
+what the eye would see in
+a three-dimensional world.
+
+66
+00:04:20,140 --> 00:04:25,610
+And in computer graphics, as we discussed
+before with two-dimensional graphics,
+
+67
+00:04:25,610 --> 00:04:28,530
+we're going to simulate shapes
+using primitives, in this case,
+
+68
+00:04:28,530 --> 00:04:29,635
+vector primitives.
+
+69
+00:04:29,635 --> 00:04:32,820
+Except these are now three-dimensional
+vector primitives, and
+
+70
+00:04:32,820 --> 00:04:35,520
+so we have triangles.
+
+71
+00:04:35,520 --> 00:04:38,760
+And the triangles are specified
+by three vertices.
+
+72
+00:04:38,760 --> 00:04:42,160
+And those three vertices have
+edges between them and a region,
+
+73
+00:04:42,160 --> 00:04:44,280
+we'll call a polygonal face.
+
+74
+00:04:44,280 --> 00:04:47,680
+And you can create a mesh of these
+triangles to define a three-dimensional
+
+75
+00:04:47,680 --> 00:04:50,190
+object, in this case, a bunny rabbit.
+
+76
+00:04:50,190 --> 00:04:54,370
+And those triangles are then
+projected by what's called
+
+77
+00:04:54,370 --> 00:04:59,363
+a three-dimensional graphics pipeline
+onto a two-dimensional image plane.
+
+78
+00:05:02,010 --> 00:05:04,760
+And then the polygons
+on that two-dimensional
+
+79
+00:05:04,760 --> 00:05:07,220
+image plane are then
+discretized into pixels.
+
+80
+00:05:07,220 --> 00:05:12,170
+This is a rasterization process and,
+in fact, the same rasterization process we
+
+81
+00:05:12,170 --> 00:05:16,620
+were discussing in two-dimensional
+graphics, where regions and
+
+82
+00:05:16,620 --> 00:05:23,620
+edges are discretized into pixels, instead
+of straight lines and continuous regions.
+
+83
+00:05:23,620 --> 00:05:27,890
+And so the way 3D graphics works is for
+each one of these triangles,
+
+84
+00:05:27,890 --> 00:05:31,430
+each one of these primitives, we're
+going to figure out its illumination by
+
+85
+00:05:31,430 --> 00:05:35,650
+simulating the light coming from
+a light source reflecting off of it.
+
+86
+00:05:35,650 --> 00:05:38,910
+And then we're going to
+project that triangle and
+
+87
+00:05:38,910 --> 00:05:41,481
+its lumination onto this image plane.
+
+88
+00:05:41,481 --> 00:05:46,109
+And then we're going to rasterize that
+triangle by filling its region in with
+
+89
+00:05:46,109 --> 00:05:47,100
+pixels.
+
+90
+00:05:47,100 --> 00:05:49,970
+And that's what gets displayed
+on the pixel display.
+
+91
+00:05:49,970 --> 00:05:54,820
+And so we can speak of these
+processes as vertex processing.
+
+92
+00:05:54,820 --> 00:05:56,850
+This is also called transform and
+lighting,
+
+93
+00:05:56,850 --> 00:06:02,640
+where we're taking vertices of triangles,
+and projecting them on to an image plane.
+
+94
+00:06:02,640 --> 00:06:06,716
+Rasterization, taking those
+two-dimensional triangles, and
+
+95
+00:06:06,716 --> 00:06:08,615
+converting them into pixels.
+
+96
+00:06:08,615 --> 00:06:11,908
+And then pixel processing which
+takes those pixel regions,
+
+97
+00:06:11,908 --> 00:06:14,950
+and figures out what color
+should be on their interior.
+
+98
+00:06:16,910 --> 00:06:19,791
+We also will need to view
+three-dimensional scenes.
+
+99
+00:06:19,791 --> 00:06:23,510
+We need to figure out where
+is the eye in the scene.
+
+100
+00:06:23,510 --> 00:06:27,080
+And so we'll set up things
+like world coordinate systems.
+
+101
+00:06:27,080 --> 00:06:31,660
+And this eye and
+this teapot example will be
+
+102
+00:06:31,660 --> 00:06:35,440
+located at positions in three-dimensional
+coordinates in the same way that
+
+103
+00:06:35,440 --> 00:06:39,380
+primitives were located in two-dimensional
+coordinates in the previous example.
+
+104
+00:06:39,380 --> 00:06:43,620
+So we use this world coordinate system,
+and its origin is off some place, and
+
+105
+00:06:43,620 --> 00:06:46,709
+we can describe everything relative
+to this coordinate system.
+
+106
+00:06:48,180 --> 00:06:53,290
+And we will specify a view, basically,
+where are we and what are we looking at?
+
+107
+00:06:53,290 --> 00:06:57,463
+Our eye point will be located at a certain
+set of coordinates in world coordinates.
+
+108
+00:06:57,463 --> 00:07:01,920
+And will be looking at a point also
+specified as a set of coordinates in world
+
+109
+00:07:01,920 --> 00:07:04,770
+coordinates, three coordinates, x, y, z.
+
+110
+00:07:06,480 --> 00:07:11,100
+And then that view is going to be
+transformed into a new coordinate system
+
+111
+00:07:11,100 --> 00:07:14,580
+that looks very similar to our
+canvas coordinate system, so
+
+112
+00:07:14,580 --> 00:07:17,050
+that we have an x axis and a y axis.
+
+113
+00:07:17,050 --> 00:07:21,130
+And, in this case,
+we're extending from (-1,-1) to (1,1).
+
+114
+00:07:21,130 --> 00:07:25,500
+And these coordinates are the coordinates
+of the window we were looking through
+
+115
+00:07:25,500 --> 00:07:26,800
+that forms the image plane.
+
+116
+00:07:28,760 --> 00:07:32,980
+And another thing we want to do is
+to create a sense of perspective, so
+
+117
+00:07:32,980 --> 00:07:38,470
+that things farther away appear smaller,
+and things closer to us appear larger.
+
+118
+00:07:38,470 --> 00:07:44,380
+In computer graphics, we do that by
+processing the primitives themselves.
+
+119
+00:07:44,380 --> 00:07:47,680
+We actually make the things that
+are farther away smaller, and
+
+120
+00:07:47,680 --> 00:07:49,720
+the things that are closer to us larger.
+
+121
+00:07:49,720 --> 00:07:54,122
+So this may look correct for a perspective
+scene of a teapot on a table, but
+
+122
+00:07:54,122 --> 00:07:58,737
+if I look at it from the side view, what
+I've actually done is made the front of
+
+123
+00:07:58,737 --> 00:08:02,087
+the table larger, and
+the back of the table is smaller.
+
+124
+00:08:02,087 --> 00:08:05,543
+So that when it gets projected
+onto my 2-D image plane,
+
+125
+00:08:05,543 --> 00:08:09,000
+I get correct proportions for
+a perspective rendering.
+
+126
+00:08:10,300 --> 00:08:15,340
+And from this point,
+we've processed our primitives, and
+
+127
+00:08:15,340 --> 00:08:19,948
+we would then rasterize them and fill them
+in, in the same fashions that we did for
+
+128
+00:08:19,948 --> 00:08:23,220
+two-dimensional graphics examples.
+
+129
+00:08:23,220 --> 00:08:25,690
+So we learned that
+three-dimensional graphics
+
+130
+00:08:25,690 --> 00:08:29,070
+displays objects that are made
+out of triangle meshes.
+
+131
+00:08:29,070 --> 00:08:32,920
+And that these triangle meshes
+are projected onto an image plane.
+
+132
+00:08:32,920 --> 00:08:36,760
+And we specify how that
+projection happens with a view.
+
+133
+00:08:36,760 --> 00:08:42,620
+We specify that view with an eye point, a
+viewing direction, and in an up direction.
+
+134
+00:08:42,620 --> 00:08:45,050
+And then we use perspective
+to do that projection,
+
+135
+00:08:45,050 --> 00:08:49,680
+so that things closer to us appear
+larger than things farther away.
+
+136
+00:08:49,680 --> 00:08:54,657
+Also, the way the computer processes
+three-dimensional computer graphics is
+
+137
+00:08:54,657 --> 00:08:59,414
+with a pipeline consisting of vertex
+processing, then rasterization, and
+
+138
+00:08:59,414 --> 00:09:00,961
+then pixel processing.
+
+139
+00:09:00,961 --> 00:09:09,797
+[MUSIC]
+
+140
+00:09:11,589 --> 00:09:17,374
+[SOUND]

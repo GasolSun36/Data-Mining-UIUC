@@ -1,0 +1,216 @@
+1
+00:00:00,025 --> 00:00:05,637
+[SOUND] So in this module we're going to
+
+2
+00:00:05,637 --> 00:00:11,818
+be looking at visualization systems.
+
+3
+00:00:11,818 --> 00:00:16,739
+So before we do that,
+we should nail down some concepts.
+
+4
+00:00:16,739 --> 00:00:20,701
+And so there's going to be several
+concepts that we'll need to review and
+
+5
+00:00:20,701 --> 00:00:24,344
+introduce on these visualization
+systems that'll be helpful.
+
+6
+00:00:24,344 --> 00:00:28,114
+The first one we've seen before
+is information visualization.
+
+7
+00:00:29,595 --> 00:00:32,445
+We've used that as a term to
+describe the plotting of data
+
+8
+00:00:32,445 --> 00:00:35,275
+that uses different coordinates
+than what was provided.
+
+9
+00:00:35,275 --> 00:00:39,978
+In information visualization as
+opposed to scientific visualization or
+
+10
+00:00:39,978 --> 00:00:45,359
+other domain visualization where the data
+comes to you in a more concrete metaphor,
+
+11
+00:00:45,359 --> 00:00:50,136
+information visualization the information
+is much more abstract, and so
+
+12
+00:00:50,136 --> 00:00:54,986
+the challenge is going to be being able
+to take that abstract information and
+
+13
+00:00:54,986 --> 00:00:58,850
+find a concrete metaphor to
+communicate it to the viewer, so
+
+14
+00:00:58,850 --> 00:01:01,092
+it can be more easily understood.
+
+15
+00:01:01,092 --> 00:01:03,739
+The second is large data visualization.
+
+16
+00:01:03,739 --> 00:01:08,030
+We often hear of big data and
+there's also big data visualization.
+
+17
+00:01:08,030 --> 00:01:12,160
+The focus of big data or large data
+visualization is sometimes just on
+
+18
+00:01:12,160 --> 00:01:15,720
+the computation mechanics of
+handling large data sets.
+
+19
+00:01:15,720 --> 00:01:20,500
+But we're going to focus specifically on
+the visualization of large data, where
+
+20
+00:01:20,500 --> 00:01:24,890
+the data is so large that it's visually
+overwhelming if you display everything,
+
+21
+00:01:24,890 --> 00:01:28,500
+and so you have to be very
+selective about what you display so
+
+22
+00:01:28,500 --> 00:01:30,760
+that you can keep it mentally organized.
+
+23
+00:01:30,760 --> 00:01:35,132
+And so, we're going to depend on
+interactivity, the interactive aspect
+
+24
+00:01:35,132 --> 00:01:38,572
+of these visualization system
+to be able to, over time,
+
+25
+00:01:38,572 --> 00:01:43,160
+focus on certain elements of our
+visualization that we're interested in,
+
+26
+00:01:43,160 --> 00:01:46,958
+and to be able to ignore other elements so
+that these data sets,
+
+27
+00:01:46,958 --> 00:01:51,717
+which would be very large, don't
+overwhelm our cognitive understandings.
+
+28
+00:01:51,717 --> 00:01:56,712
+Third is visual analytics, visual
+analytics is an area that grew out of
+
+29
+00:01:56,712 --> 00:02:00,462
+business analytics and
+business intelligence, and
+
+30
+00:02:00,462 --> 00:02:06,290
+it's specifically on visualization, being
+able to look at data sets visually and
+
+31
+00:02:06,290 --> 00:02:10,285
+to be able to analyze them,
+draw conclusions from them,
+
+32
+00:02:10,285 --> 00:02:14,946
+and it focuses also on being able to
+make a decision based on data and
+
+33
+00:02:14,946 --> 00:02:20,026
+that decision is implied by
+the visualization, that the visualization
+
+34
+00:02:20,026 --> 00:02:25,401
+is giving you the insight in order to
+make a good decision based on your data.
+
+35
+00:02:25,401 --> 00:02:30,009
+And finally the goal of this week is
+to make a visualization dashboard.
+
+36
+00:02:30,009 --> 00:02:33,809
+We want to be able to organize
+the visualizations when we have multiple
+
+37
+00:02:33,809 --> 00:02:36,510
+visualizations and we have a lot of data.
+
+38
+00:02:36,510 --> 00:02:41,090
+We'll want to be able to produce
+a dashboard view that gives you everything
+
+39
+00:02:41,090 --> 00:02:44,850
+you need in order to be able to make
+a good decision based on the data.
+
+40
+00:02:48,040 --> 00:02:49,260
+So those are some of the terms,
+
+41
+00:02:49,260 --> 00:02:53,360
+some of the main concepts we use when
+we talk about visualization system.
+
+42
+00:02:53,360 --> 00:02:57,034
+We start with information
+visualization but our goal for
+
+43
+00:02:57,034 --> 00:03:01,932
+the week is going to be to understand
+how to make a visualization dashboard,
+
+44
+00:03:01,932 --> 00:03:06,239
+how to make a visualization system
+that we can use to make decisions
+
+45
+00:03:06,239 --> 00:03:15,411
+[MUSIC]

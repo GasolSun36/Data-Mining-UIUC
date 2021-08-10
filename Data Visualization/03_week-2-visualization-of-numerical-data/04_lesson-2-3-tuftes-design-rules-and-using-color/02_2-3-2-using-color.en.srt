@@ -1,0 +1,714 @@
+1
+00:00:00,310 --> 00:00:03,430
+[SOUND]
+
+2
+00:00:10,480 --> 00:00:13,340
+So we often use color
+in data visualization.
+
+3
+00:00:13,340 --> 00:00:18,153
+And it's important to understand how
+best to use color to trigger perceptual
+
+4
+00:00:18,153 --> 00:00:21,650
+cues and other ways of sensing the data.
+
+5
+00:00:21,650 --> 00:00:25,390
+These rules have come from Colin Ware's
+book on information visualization.
+
+6
+00:00:28,020 --> 00:00:32,620
+As we're picking out colors, it's often
+better to think of colors not in their
+
+7
+00:00:32,620 --> 00:00:37,420
+component values that are used to store
+them in the computer, basically red,
+
+8
+00:00:37,420 --> 00:00:40,880
+green, and blue, or
+a certain portion of red, green, and blue.
+
+9
+00:00:40,880 --> 00:00:46,470
+It's better to think of them in a more
+natural set of three components.
+
+10
+00:00:46,470 --> 00:00:49,800
+Basically hue, saturation, and value.
+
+11
+00:00:49,800 --> 00:00:53,180
+Hue is basically where the color
+is in the color wheel.
+
+12
+00:00:53,180 --> 00:00:58,429
+Is it red, yellow, green, cyan, blue,
+or magenta, or some place in between.
+
+13
+00:01:00,120 --> 00:01:03,670
+Saturation is how intense a color is,
+
+14
+00:01:03,670 --> 00:01:08,270
+what is its distance from a dull grey
+to a vibrant version of that hue.
+
+15
+00:01:08,270 --> 00:01:13,310
+And then value is how bright the color is,
+its distance from black.
+
+16
+00:01:13,310 --> 00:01:18,240
+And so if you're given a color in RGB,
+there's a little bit of
+
+17
+00:01:18,240 --> 00:01:21,260
+code here that would show you
+what the color should be in HSV.
+
+18
+00:01:21,260 --> 00:01:27,145
+And a similar color space is used any time
+you're picking colors in applications.
+
+19
+00:01:27,145 --> 00:01:30,765
+For example, in Microsoft applications
+you get this color space,
+
+20
+00:01:30,765 --> 00:01:35,695
+where hue is shown horizontally
+
+21
+00:01:35,695 --> 00:01:40,365
+as we go from red to yellow,
+to green, to cyan, to blue,
+
+22
+00:01:40,365 --> 00:01:45,700
+to magenta, and back to red, and
+then saturation is vertically.
+
+23
+00:01:45,700 --> 00:01:50,490
+And we're moving from a gray
+through some muted versions of
+
+24
+00:01:50,490 --> 00:01:54,600
+the hues all the way to the full
+intensity versions of the hues here.
+
+25
+00:01:54,600 --> 00:02:00,160
+And so you're picking your hue and
+your saturation here in this space.
+
+26
+00:02:00,160 --> 00:02:03,060
+And then value is kind of denoted here,
+
+27
+00:02:03,060 --> 00:02:08,600
+going from black to full intensity,
+and in this case it's going to white.
+
+28
+00:02:08,600 --> 00:02:12,330
+This isn't quite a value axis,
+but it's very closely related.
+
+29
+00:02:12,330 --> 00:02:17,310
+So, hues as we've seen before,
+hues are a good choice for
+
+30
+00:02:17,310 --> 00:02:21,540
+representing nominal variables,
+for representing categories.
+
+31
+00:02:21,540 --> 00:02:27,500
+And we've seen that five or ten hues
+are quite effective in visualizations.
+
+32
+00:02:27,500 --> 00:02:29,050
+You don't want to have too many colors.
+
+33
+00:02:29,050 --> 00:02:34,611
+But five to ten different hues can
+be quite effective at denoting,
+
+34
+00:02:34,611 --> 00:02:37,760
+at mapping different values
+of a nominal variable.
+
+35
+00:02:40,230 --> 00:02:44,070
+There's as many as twelve colors,
+twelve good colors that you can pick from
+
+36
+00:02:45,120 --> 00:02:48,960
+that are based on Ward's extension
+of some work by Berlin and Kay.
+
+37
+00:02:50,310 --> 00:02:54,190
+And so, there's the main six colors,
+white, black, red, yellow,
+
+38
+00:02:54,190 --> 00:02:54,908
+green, and blue.
+
+39
+00:02:54,908 --> 00:02:59,640
+And these are uniformly
+chosen across cultures
+
+40
+00:02:59,640 --> 00:03:03,350
+as being good different colors,
+basic colors.
+
+41
+00:03:03,350 --> 00:03:05,780
+To that you can add six more colors.
+
+42
+00:03:05,780 --> 00:03:09,070
+Grey, pink, orange,
+brown, purple, and cyan.
+
+43
+00:03:09,070 --> 00:03:12,870
+And so this is a good choice, starting
+with the first six and then picking colors
+
+44
+00:03:12,870 --> 00:03:17,970
+from the next six, if you need good
+colors to map to a nominal variable.
+
+45
+00:03:17,970 --> 00:03:26,208
+Saturation is helpful when you're mapping
+various elements of a visualization.
+
+46
+00:03:26,208 --> 00:03:31,510
+You want to use fully saturated colors for
+small things in a visualization,
+
+47
+00:03:31,510 --> 00:03:35,730
+if you have a thin line,
+you want to use a fully saturated color.
+
+48
+00:03:35,730 --> 00:03:40,759
+It's easier to see this saturated
+red-orange and a saturated blue than
+
+49
+00:03:40,759 --> 00:03:45,690
+a desaturated red-orange and
+a desaturated blue on these two lines.
+
+50
+00:03:45,690 --> 00:03:48,880
+Both, with a white background,
+or a black background,
+
+51
+00:03:48,880 --> 00:03:53,340
+it's still easier to see the saturated
+lines than the desaturated lines.
+
+52
+00:03:54,680 --> 00:03:59,540
+You want to use desaturated colors for
+fills, so you want saturated strokes and
+
+53
+00:03:59,540 --> 00:04:01,220
+desaturated fills.
+
+54
+00:04:01,220 --> 00:04:05,990
+And so here's bar graph with blue and
+orange using desaturated blue and
+
+55
+00:04:05,990 --> 00:04:09,090
+orange, you can still see the differences.
+
+56
+00:04:09,090 --> 00:04:14,290
+When you have saturated large fills,
+the aesthetic can be a bit harsh and
+
+57
+00:04:14,290 --> 00:04:17,550
+also it could be a little bit distracting.
+
+58
+00:04:17,550 --> 00:04:22,650
+So it's better to have desaturated
+fills and saturated strokes.
+
+59
+00:04:26,030 --> 00:04:28,960
+It's also important to pay
+attention to contrast.
+
+60
+00:04:28,960 --> 00:04:32,630
+You want to use brighter colors
+in order to gain attention.
+
+61
+00:04:32,630 --> 00:04:38,310
+So here, for example I've got desaturated
+bars, and I've got one saturated bar
+
+62
+00:04:38,310 --> 00:04:44,410
+in case I want to draw attention to this
+particular data value in a visualization.
+
+63
+00:04:44,410 --> 00:04:48,910
+And then you want to pay
+attention to brightness contrast,
+
+64
+00:04:48,910 --> 00:04:50,290
+not just color contrast.
+
+65
+00:04:50,290 --> 00:04:53,950
+So, contrast means a difference.
+
+66
+00:04:53,950 --> 00:04:58,580
+Ordinarily contrast deals
+with luminance or brightness.
+
+67
+00:04:58,580 --> 00:05:02,720
+And you look at the brightness of one
+color versus the brightness of another
+
+68
+00:05:02,720 --> 00:05:07,300
+color, or
+
+69
+00:05:07,300 --> 00:05:10,950
+the value of one color versus
+the value of another color.
+
+70
+00:05:10,950 --> 00:05:16,590
+But you also want to make sure
+there's good luminance contrast.
+
+71
+00:05:16,590 --> 00:05:20,580
+Color contrast is often just
+a difference in hue, but
+
+72
+00:05:20,580 --> 00:05:22,990
+not necessarily
+a difference in brightness.
+
+73
+00:05:22,990 --> 00:05:29,060
+Here I've got orange text
+on top of a blue hue,
+
+74
+00:05:29,060 --> 00:05:30,980
+and I'm just changing the saturation and
+
+75
+00:05:30,980 --> 00:05:36,650
+value of this blue hue from black
+to full intensity to white.
+
+76
+00:05:37,890 --> 00:05:41,250
+And you can see that even though
+there's sufficient color contrast,
+
+77
+00:05:41,250 --> 00:05:45,690
+there's differences in the color, there's
+not much difference in the brightness here
+
+78
+00:05:45,690 --> 00:05:47,320
+and it becomes very difficult to read.
+
+79
+00:05:47,320 --> 00:05:50,890
+And so you want to make sure you
+maintain good brightness contrast,
+
+80
+00:05:50,890 --> 00:05:55,330
+value contrast,
+in addition to just color contrast.
+
+81
+00:05:55,330 --> 00:05:59,780
+So the recommended usage,
+you don't want to use colors
+
+82
+00:05:59,780 --> 00:06:04,110
+to represent quantitative
+variables when you want to
+
+83
+00:06:06,230 --> 00:06:11,179
+measure the difference between
+neighboring values in a visualization.
+
+84
+00:06:12,310 --> 00:06:17,860
+It is a good indication, we can use
+density to represent brightness or
+
+85
+00:06:17,860 --> 00:06:21,210
+value, and
+then we have saturation and hue.
+
+86
+00:06:21,210 --> 00:06:26,470
+It is good for ordinal variables, so
+we can tell that one color is brighter
+
+87
+00:06:26,470 --> 00:06:31,130
+than another color, we can tell that one
+color is different than another color, or
+
+88
+00:06:31,130 --> 00:06:37,570
+closer to, for example,
+red, or by different hues,
+
+89
+00:06:37,570 --> 00:06:42,430
+or we can tell that one color is
+more intense than another color.
+
+90
+00:06:42,430 --> 00:06:46,090
+So these are good for
+
+91
+00:06:46,090 --> 00:06:51,940
+ordinal variables even though we can't
+tell how much different they would be.
+
+92
+00:06:53,670 --> 00:06:58,927
+And for categories,
+hue is an excellent choice for categories.
+
+93
+00:06:58,927 --> 00:07:04,760
+Changing the value or the brightness,
+or changing the saturation.
+
+94
+00:07:04,760 --> 00:07:08,620
+How grey a color is versus
+how intense is not as good
+
+95
+00:07:08,620 --> 00:07:11,660
+a differentiator of categories.
+
+96
+00:07:11,660 --> 00:07:15,100
+So the horizontal axis of a bar graph,
+
+97
+00:07:15,100 --> 00:07:20,630
+you don't necessarily want the bars
+to be going between grayer and
+
+98
+00:07:21,640 --> 00:07:27,620
+brighter, but it is good to have them
+be different colors, different hues.
+
+99
+00:07:30,750 --> 00:07:34,500
+You can use color maps to
+represent quantitative values,
+
+100
+00:07:34,500 --> 00:07:36,580
+and this is a very common thing to do.
+
+101
+00:07:36,580 --> 00:07:39,380
+We see it in weather maps all the time,
+for example,
+
+102
+00:07:39,380 --> 00:07:44,110
+when we're displaying the temperature
+in a geographic region.
+
+103
+00:07:45,630 --> 00:07:53,570
+The choice of colormaps
+can be problematic.
+
+104
+00:07:53,570 --> 00:07:57,020
+And so as we saw before in this
+three-dimensional visualization,
+
+105
+00:07:57,020 --> 00:07:59,300
+we're just using an ordinary
+rainbow colormap.
+
+106
+00:07:59,300 --> 00:08:03,830
+It's darker here, it's a little dark here,
+and it's brighter here and here.
+
+107
+00:08:03,830 --> 00:08:07,740
+And those changes in brightness
+in the colors chosen for
+
+108
+00:08:07,740 --> 00:08:12,890
+the colormap can interfere with
+the perception of light and
+
+109
+00:08:12,890 --> 00:08:15,940
+shadow used to get the orientation
+of the surfaces here.
+
+110
+00:08:17,290 --> 00:08:22,630
+And it looks like this blue area is
+darker than it should be by the shading.
+
+111
+00:08:22,630 --> 00:08:27,340
+And it looks like this skull has
+a divot here when it actually doesn't.
+
+112
+00:08:28,770 --> 00:08:34,195
+So it's best to avoid brightness and
+saturation variations in a colormap for
+
+113
+00:08:34,195 --> 00:08:37,660
+illuminated three-dimensional objects.
+
+114
+00:08:37,660 --> 00:08:40,260
+And in general, mapping brightness and
+
+115
+00:08:40,260 --> 00:08:46,310
+saturation to actual quantitative values
+is more error prone than hue maps.
+
+116
+00:08:46,310 --> 00:08:50,600
+So if this is a direct hue map,
+then it's easier for
+
+117
+00:08:50,600 --> 00:08:55,290
+us to make a reference into a legend for
+what those values are.
+
+118
+00:08:55,290 --> 00:09:00,820
+And this overcomes the problem hue
+would ordinarily have as a quantitative
+
+119
+00:09:00,820 --> 00:09:05,220
+variable representation, because we
+have this legend here on the side.
+
+120
+00:09:06,900 --> 00:09:08,930
+So here's some examples.
+
+121
+00:09:08,930 --> 00:09:13,740
+Two dimensions and three dimensions,
+and we seen the rainbow map is not
+
+122
+00:09:13,740 --> 00:09:18,880
+a very good choice for three dimensional
+data because of its light and dark values.
+
+123
+00:09:18,880 --> 00:09:22,300
+But, in two dimensions it does a pretty
+good job of showing positive and
+
+124
+00:09:22,300 --> 00:09:24,980
+negative values in this region.
+
+125
+00:09:24,980 --> 00:09:28,770
+A light to dark map is good for
+showing magnitude,
+
+126
+00:09:28,770 --> 00:09:33,380
+not necessarily positive or
+negative here, but just magnitude here.
+
+127
+00:09:33,380 --> 00:09:35,590
+And it's really a poor choice,
+
+128
+00:09:35,590 --> 00:09:39,530
+you don't want to use luminance mapping
+to map variables that are plotted on
+
+129
+00:09:39,530 --> 00:09:43,810
+a three-dimensional surface because it
+really interferes with the lighting.
+
+130
+00:09:43,810 --> 00:09:50,120
+So for a three dimensional surface,
+you want to try to pick some hue scale
+
+131
+00:09:50,120 --> 00:09:56,020
+that doesn't affect saturation or
+value of the color, so that the shading
+
+132
+00:09:56,020 --> 00:10:01,960
+isn't affected by the mapping of the
+variable that is plotted over the surface.
+
+133
+00:10:03,030 --> 00:10:09,620
+And so in these two cases we have
+uniform brightness, uniform value and
+
+134
+00:10:09,620 --> 00:10:16,710
+saturation, well, at least uniform
+value across the colormap,
+
+135
+00:10:16,710 --> 00:10:20,490
+and so it doesn't interfere with
+the lighting of a three-dimensional shape.
+
+136
+00:10:20,490 --> 00:10:25,580
+Although, these aren't necessarily the
+best colormaps to use for two dimensions
+
+137
+00:10:25,580 --> 00:10:31,050
+where you can get away with
+more of a change in luminance.
+
+138
+00:10:31,050 --> 00:10:36,805
+And there's a really good website for
+choosing colors called,
+
+139
+00:10:36,805 --> 00:10:42,530
+colorbrewer2.org, and I'd encourage all
+of you to take a look at that website.
+
+140
+00:10:42,530 --> 00:10:48,860
+It's designed for picking color maps for
+geographical data.
+
+141
+00:10:50,350 --> 00:10:51,600
+And I'll point you to it here and
+
+142
+00:10:51,600 --> 00:10:53,360
+encourage you to go take
+a look at it right now.
+
+143
+00:10:54,670 --> 00:10:57,020
+So we've learned that it's
+best to think of color for
+
+144
+00:10:57,020 --> 00:11:02,280
+data visualization as being a hue,
+a saturation, and a value.
+
+145
+00:11:02,280 --> 00:11:05,630
+And we don't always want to
+choose a rainbow colormap
+
+146
+00:11:05,630 --> 00:11:07,310
+when we're displaying our data.
+
+147
+00:11:07,310 --> 00:11:10,368
+We want to look at what kind
+of data we're displaying and
+
+148
+00:11:10,368 --> 00:11:12,630
+choose the best colormap for that data.
+
+149
+00:11:14,590 --> 00:11:21,220
+[MUSIC]

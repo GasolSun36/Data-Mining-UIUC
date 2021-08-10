@@ -1,0 +1,78 @@
+So when we visualize data we usually
+want to make a decision based on that data. That means we need to
+reason about the data. And so we need to learn the different ways
+that the human cognitive system reasons. So what we'll learn is how does a human
+observer understand a visualization? And how does a human observer
+respond to a visualization? What are they thinking about when they
+see this data presented to them visually? So we use the model human processor, but
+we're going to focus on the cognitive processor, and the information provided
+to it through the visual image store and visual perception, and
+how we reason about that information. And there's three kind of reasoning
+that we'll look at, deductive reasoning, inductive reasoning, and
+abductive reasoning. Deductive reasoning is basically
+drawing a conclusion based on the data. It's based on logic, if A then B so, if you see A then you can conclude
+that B is going to exist. And if B doesn't exist you might
+conclude that A doesn't exist, because if A happened
+then B would've happened. So these are all valid logical
+conclusions based on visual data. Sherlock Holmes used to say,
+when you have eliminated the impossible, whatever remains, however improbably,
+must be the truth. And that's basically just
+the process of elimination, which is again a deductive reasoning
+method for drawing a conclusion. And so, for example,
+these reasoning examples, I'm going to use this
+life expectancy data. This is average data for
+all countries in the world. And our life expectancy has grown in
+the 1960s from an average of 54 years, to an average of about 71 years in 2012. And so based on this data, I might deduce that I'm one of the members of one of the countries that was
+used to create this data. I might expect that my life
+expectancy has similarly increased over the past few decades. And that would be a logical conclusion
+based on the information from this graph. Also you can see a correlation
+here anytime you have a graph that's increasing this way. It's showing a correlation
+between time and between life expectancy,
+and so we're deducing, we are concluding that life
+expectancy is increasing over time. And so people nowadays are living longer
+than they were a few decades ago, and that's a reasonable deduction. We have to be careful that this is
+showing correlation and not causation. And that we're not showing that
+because people are growing older, time is passing necessarily. There are many other cases
+where two items are correlated, but one does not necessarily
+cause the other. Or you get the causation
+in the wrong direction. There's also inductive reasoning, which basically says if something is
+true for x then it's true for x +1, and you know that's it's true for x,
+so in that case it's true for all x. If it's true for one specific case,
+it's true for all of the cases. And these are generalizations. We can use this to extrapolate data,
+for example, life expectancy. I can look at this shape and I might
+expect that life expectancy is going to continue to grow at the rate of about
+ten years every decade and a half. And so
+eventually we'll live to be 200 years old. And so some generalizations are helpful,
+some generalizations aren't helpful, and we have to be careful with
+those kinds of extrapolations. Also interpolation, I've got this data
+yearly, but I'm drawing this as a smooth line which is an inductive
+reasoning prediction that says that this is varying smoothly in
+between the data items, it's interpolated. And it's not varying widely between
+an individual year and the next year. So inductive reasoning allows
+us to infer missing data. It allows us to extrapolate data,
+either before or after the graph, but it's less reliable than deductive
+reasoning, but still can be helpful. And finally, abductive reasoning. This is based on sort of the human
+need for meaning, to ask why. And so given this data that life
+expectancy on average has been increasing over the past few decades, we might start to ask why is that
+the case, and we might create models. And so in this case the graph is
+increasing almost like a straight line, and so you can do regression. You can fit a line to this data and
+create a model for this data. And you can use that model
+to replace the data, and in our minds we might not think of
+every single detail of this data. And we might think in general,
+the data is growing at the rate of our life expectancies, growing at the
+rate of ten years every decade and a half. And those models are good but
+they create a problem. For example, cognitive dissonance, it's our ability to entertain simultaneous
+contradictory opinions at the same time. So it may be difficult for
+us to think of two things, two opposite models at the same time,
+even though we don't know which model is correct,
+and so we tend to take sides. And if our evidence disagrees with our
+model, sometimes the model is so powerful in our minds, that we tend to disregard
+the evidence, and that can be dangerous. And so as we go about with visualization,
+we have sort of the baggage of our models, our expectations
+of the way the world works, and our abductive reasoning is trying
+to fit this data to those models. So there are three different
+kinds of reasoning. There's deduction,
+where we draw a conclusion. There's induction,
+where we make a generalization. And then there's abduction, where we
+try to predict how an event happened. And all three of those are at play
+when we're understanding the data that we're seeing in a visualization. [MUSIC] [SOUND]

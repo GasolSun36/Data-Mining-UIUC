@@ -1,0 +1,296 @@
+1
+00:00:08,814 --> 00:00:12,064
+So when we visualize data,
+we're plotting the data.
+
+2
+00:00:12,064 --> 00:00:16,198
+And then we need to figure out what we're
+going to use to represent each piece
+
+3
+00:00:16,198 --> 00:00:17,520
+of data.
+
+4
+00:00:17,520 --> 00:00:20,320
+That piece of data we're
+going to call a glyph
+
+5
+00:00:20,320 --> 00:00:23,520
+when it's represented visually
+as part of a data visualization.
+
+6
+00:00:25,230 --> 00:00:31,280
+So as we saw before, charts display data,
+and the choice of chart and the elements
+
+7
+00:00:31,280 --> 00:00:36,270
+of a chart are often dependent on the
+kinds of data that we want to indicate.
+
+8
+00:00:36,270 --> 00:00:41,440
+We can use glyphs in charts to further
+display data, either new data or
+
+9
+00:00:41,440 --> 00:00:43,290
+to reinforce existing data.
+
+10
+00:00:43,290 --> 00:00:47,610
+For example, the shapes at the top of
+a bar chart, or the actual shapes of
+
+11
+00:00:47,610 --> 00:00:52,840
+the bars in a bar chart or a Gantt
+chart can change based on the data.
+
+12
+00:00:52,840 --> 00:00:57,070
+In this case, the thickness of the bars
+can change based on the data value.
+
+13
+00:00:57,070 --> 00:00:59,190
+If we're plotting a line chart or
+a scatter chart,
+
+14
+00:00:59,190 --> 00:01:03,720
+we can use different values for the data
+points, different glyphs to represent
+
+15
+00:01:03,720 --> 00:01:08,480
+different values of the data points of yet
+a third variable.
+
+16
+00:01:08,480 --> 00:01:13,460
+Tables, as you're plotting two nominal
+values here, two categories, and
+
+17
+00:01:13,460 --> 00:01:17,460
+looking at the intersection of those
+two categories we can plot yet
+
+18
+00:01:17,460 --> 00:01:23,940
+a third variable based on the shape or
+other decorations of the values.
+
+19
+00:01:23,940 --> 00:01:31,660
+So glyphs are items that indicate data
+points in a chart or a data visualization,
+
+20
+00:01:31,660 --> 00:01:36,610
+and they have other dimensions that
+they can use to encode other measures.
+
+21
+00:01:38,000 --> 00:01:42,440
+So for example,
+here is a simulation of a tornado
+
+22
+00:01:42,440 --> 00:01:46,390
+that's part of a presentation
+visualization at the NCSA.
+
+23
+00:01:46,390 --> 00:01:51,790
+And on the ground we have an array,
+basically a grid of cones laid out.
+
+24
+00:01:51,790 --> 00:01:55,877
+And these cones are glyphs
+that are indicating
+
+25
+00:01:55,877 --> 00:01:59,750
+the ground wind speed and direction.
+
+26
+00:01:59,750 --> 00:02:03,940
+And so speed is being mapped
+to the length of the cone, and
+
+27
+00:02:03,940 --> 00:02:08,420
+length is a good perceptual
+indicator of a quantitative value.
+
+28
+00:02:08,420 --> 00:02:14,990
+And then we have the direction, the wind
+direction is the orientation of the cone.
+
+29
+00:02:14,990 --> 00:02:20,230
+And ordinarily, we wouldn't care about any
+one direction being greater than another,
+
+30
+00:02:20,230 --> 00:02:24,860
+but we're using the differences in wind
+direction from one cone to another
+
+31
+00:02:24,860 --> 00:02:28,119
+in order to indicate convergence or
+divergence of the wind.
+
+32
+00:02:29,610 --> 00:02:31,600
+And so, we're using perspective here.
+
+33
+00:02:31,600 --> 00:02:34,580
+So we can see some of the details
+of the cones here in the forefront,
+
+34
+00:02:34,580 --> 00:02:36,570
+and then we can see some
+textures in the background.
+
+35
+00:02:36,570 --> 00:02:39,970
+And then you can see some
+color changes in these glyphs.
+
+36
+00:02:39,970 --> 00:02:43,610
+These cones are being coded in color.
+
+37
+00:02:43,610 --> 00:02:46,660
+If they're orange,
+it represents an updraft, and
+
+38
+00:02:46,660 --> 00:02:50,780
+if they're in blue, then it's a downdraft.
+
+39
+00:02:50,780 --> 00:02:56,280
+And so we're using color to emphasize
+
+40
+00:02:56,280 --> 00:03:00,330
+a directional change in a particularly
+important direction of up or down.
+
+41
+00:03:01,510 --> 00:03:05,420
+And so these glyphs give us
+the opportunity to encode additional
+
+42
+00:03:05,420 --> 00:03:10,164
+data variables in what would ordinarily
+be just a two dimensional chart
+
+43
+00:03:10,164 --> 00:03:13,197
+here on the ground of this
+three-dimensional visualization.
+
+44
+00:03:14,610 --> 00:03:18,480
+So in terms of our analysis
+of perceptual effectiveness,
+
+45
+00:03:18,480 --> 00:03:20,740
+we're mapping quantitative values.
+
+46
+00:03:20,740 --> 00:03:24,620
+For example, wind speed and
+wind direction as length and angle.
+
+47
+00:03:24,620 --> 00:03:26,320
+And direction as a quantitative value,
+
+48
+00:03:26,320 --> 00:03:30,900
+because we're looking at the differences
+between neighboring points quantitatively.
+
+49
+00:03:30,900 --> 00:03:33,050
+We have some nominal
+values that we're mapping.
+
+50
+00:03:33,050 --> 00:03:36,810
+For example, updrafts or
+downdrafts are being mapped as hue.
+
+51
+00:03:36,810 --> 00:03:39,280
+We're not saying that one
+is greater than the other,
+
+52
+00:03:39,280 --> 00:03:41,810
+just that they're different categories,
+
+53
+00:03:41,810 --> 00:03:45,810
+fundamental categories of wind direction,
+whether the wind is going up or down.
+
+54
+00:03:45,810 --> 00:03:46,970
+And we're mapping that to hue,
+
+55
+00:03:46,970 --> 00:03:51,389
+which is a very effective use of
+a mapping value to a data value.
+
+56
+00:03:52,390 --> 00:03:57,070
+And then finally, the shape is nominal in
+the fact that if I go back to the original
+
+57
+00:03:57,070 --> 00:04:03,050
+slide, the actual particles are being
+mapped with spheres and cylinders.
+
+58
+00:04:03,050 --> 00:04:07,320
+Whereas, the wind speed on the ground
+is being mapped with a cone.
+
+59
+00:04:07,320 --> 00:04:12,100
+And so that shape difference Is another
+nominal indication that you're looking at
+
+60
+00:04:12,100 --> 00:04:16,880
+data from ground wind speed versus
+airborne wind speeds from the particles.
+
+61
+00:04:16,880 --> 00:04:20,346
+So you can map other data too.
+
+62
+00:04:20,346 --> 00:04:30,126
+[MUSIC]

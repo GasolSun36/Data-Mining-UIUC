@@ -1,0 +1,111 @@
+So when we display data the data will then
+need to be perceived by a human observer. That perception starts
+with the human retina. And so, we need to understand
+how the retina perceives light. We're going to learn about the eye and
+how does the eye sense light. And based on that knowledge of how
+the eye physically senses the light, we can figure out how small the details
+of a visualization can be and what color should you
+use in a visualization. So we're going to focus on the eye,
+and the mechanics of the eye. And this is a image of the eye and
+illustration from Grey's Anatomy. And the eye consist of a lens
+that focuses the light that receives from the aperture
+that is control by this iris. And it focuses that
+light onto this retina. And this retina contains the sensors that
+basically determine what light is hitting, what part of this image plane. So we don't have an image plane,
+it's more of a hemisphere. And the important part here
+is this fovea centralis. This is your center of vision. When you look at something, it's because
+that something you're looking at is getting focused onto the fovea centralis. This is where you have a lot of sensors
+that can tell a lot of detail about what you're looking at, then less sensors
+as you get farther away from that. You also have an optic nerve that
+connects to your retina, and you don't have any sensors here to be able
+to see the light that's coming in, so there's a blind spot that we have, and we
+don't even realize we have the blind spot, because our perceptual system
+is covering it up with, in a way that we don't
+even realize is happening. So this leads to visual acuity,
+the notion of visual acuity. How sharp is your vision? What can you see, how small of
+a detail can you present to a viewer? And we measure our visual acuity
+when we go to an eye doctor, when we look at one of these eye charts
+and it tells us our Snellen ratio. 20/X, which means you can distinguishes
+at 20 feet what the average person can distinguish at X feet. So if you can only see this letter E,
+then you have 200 vision, meaning you can see this E at 20 feet
+when the average person can see this E even as far away as 200 feet. And if you can see below this red line, you have better than 20/20,
+better than average vision. And the reason you can distinguish these
+letters [COUGH] is that their features project to a certain distance
+apart on the retina, and if your lens is doing a good job
+of focusing that information, then the sensors on your retina
+can resolve those details. If your lens is not doing such a good job,
+then the image that's getting presented isn't going to be resolved
+as well by your sensors. And so, your retina basically is
+going to consist of rods and cones. Rods perceive the brightness and
+cones perceive color. And there's three varieties of cones. Cones that perceive mostly red colors,
+[COUGH] cones that perceive mostly red colors,
+cones that perceive mostly green colors, and cones that perceive
+mostly blue colors. And then, there's a variety of
+additional processing that happens by the ganglion's,
+these other nerve cells after the retina. But this rods and cones are useful
+to look at for the moment. You have 80 million rods and
+only 5 million cones. So your intensity vision is much
+better by your color vision. Your rods are denser away from the fovea. Your fovea, your center of vision,
+is mostly cones, as it turns out. So astronomers have learned, when they're
+looking at very dim stars, to look slightly away from the star, look slightly
+off to the side of what they're studying. So that their rods can process
+the information and not their cones, because their rods are more
+sensitive to the changes in light. And they're quite sensitive, they
+don't even turn on when it's daylight. And then, you have cones,
+and they're, again, sensitive to various colors or
+various wavelengths of light. They're very dense in the fovea,
+anywhere from a 100,000 to 325,000 cones per millimeter
+squared in the fovea and they can distinguish about 150 hues and combined between the different hues,
+a hue is a colour in the rainbow. And the different shades and intensities
+and saturations, you end up with about 7 million different shades that
+you can distinguish with your eye. Depending on how on your lens, all lenses exhibits some form
+of chromatic aberration. And that means that refraction
+depends on the wavelength of light. Light at the red wavelengths is
+going to focus at a different location than light in the green
+wavelengths to the blue wavelengths, and this creates a dispersion that
+can create problems of focus, and this is why blue blocker sunglasses or
+amber sunglasses which are nothing more than just amber shaded
+filters on your sunglasses. They're going to age our vision because
+they're filtering out blue light and blue tense to focus off
+the retina whereas red and green tend to focus closer to the retina. So the blue wavelengths are actually
+blurring the image and the red and green wavelengths are generally
+sharper on the retina. So it'd be good to avoid pure blue text or at least desaturate it with
+a little bit of red or green colors to aid in focusing on
+edges of text or important figures. There's some interesting
+properties of color, this isn't necessarily chromatic
+aberration, but we tend to perceive the red is being closer than the blue, and
+this is our part of our perceptual system. For color perception, there's
+a difference in brightness, as well. Blue is generally a darker
+color than red or green. If you look at the pure
+luminance of a color, the luminance of that color will be
+30% of its red component + 59% of its green component + 10%
+of its blue component. That means that green is six
+times as bright as blue, and green is twice as bright as red and
+red three times as bright as blue. And if you have yellow, you can create yellow in the additive
+color system by red plus green. Yellow is very bright. It's 31% plus 59% gives
+you 90% brightness. And you can figure out the luminance
+of these other colors based on that. Also, it's important to acknowledge
+that a good number of people, in particular, 10% of males,
+are color blind. And if you're displaying
+information with color, you may want to add additional
+ques to that information. So that people that are color
+blind can also understand it, and also to pay attention to contrast. Because if you're displaying
+something only with color, then people who are color blind aren't
+going to be able to tell the difference. Just color contrast and so you may want to
+change the brightness of the color as well and use this formula to make sure enabling
+colors have different brightnesses and addition to different use. And these colors, these red, green and blue colors yet
+change into a different color space. Space brightness, brightness shade. And then, a brightness minus blue, and a red minus green channel. So you get a color space that goes
+from black to white, yellow to blue, and red to green. This is the black white channel,
+this is the yellow blue channel. And this is the red green channel. That's what actually gets into
+the brain after some processing of the retinal image. And so, you're cones and
+rods will start to get exhausted [COUGH] if you stare at the plus
+sign in the middle of the screen here, you'll start to see that the purple dot
+that's missing instead of missing will start to turn green because it's turning
+into the complement of the purple color. And once it starts, if you keep staring at
+the plus eventually that green dot will eat up the rest of the dots and
+you're left with a solid gray screen. And this is all due to, basically,
+some exhaustion of the rods and cones in your perceptual system. So the human retina perceives
+light using rods and cones. Cones perceive color,
+rods perceive brightness. We have more cones near our fovea,
+our center of vision, and more rods in our peripheral vision. Also, we tend to expect warmer
+colors to be in the forefront, and cooler colors to be in the background. [MUSIC] [SOUND

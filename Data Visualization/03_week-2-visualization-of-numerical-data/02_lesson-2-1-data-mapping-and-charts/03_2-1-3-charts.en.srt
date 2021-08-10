@@ -1,0 +1,634 @@
+1
+00:00:00,025 --> 00:00:07,167
+[SOUND] So, data visualization can
+consist of some very simple charts,
+
+2
+00:00:07,167 --> 00:00:13,357
+but the success of a data
+visualization can often depend on how
+
+3
+00:00:13,357 --> 00:00:19,208
+we map our data variables to
+the elements of those charts.
+
+4
+00:00:19,208 --> 00:00:21,600
+So we can start with a Bar Chart.
+
+5
+00:00:21,600 --> 00:00:25,030
+And the bar chart has
+two axises typically.
+
+6
+00:00:25,030 --> 00:00:28,620
+You've got a horizontal axis and
+a vertical axis.
+
+7
+00:00:28,620 --> 00:00:33,000
+And you're usually measuring
+discrete values here, and
+
+8
+00:00:33,000 --> 00:00:37,210
+some either discrete or
+continuous value vertically.
+
+9
+00:00:37,210 --> 00:00:43,560
+And this benefits from the fact
+that you're mapping a variable,
+
+10
+00:00:43,560 --> 00:00:48,770
+a data variable, to both position,
+the actual height of these bars,
+
+11
+00:00:48,770 --> 00:00:52,170
+as well as to a length,
+the size of the bar.
+
+12
+00:00:52,170 --> 00:00:56,040
+And so you do a really good
+job of not only seeing.
+
+13
+00:00:56,040 --> 00:00:59,310
+That, for example, the orange bar
+is larger than the blue bar, but
+
+14
+00:00:59,310 --> 00:01:05,310
+how much larger the orange bar
+is to the blue bar because
+
+15
+00:01:05,310 --> 00:01:10,980
+position and length are both at the top
+of perceptual effectiveness for
+
+16
+00:01:10,980 --> 00:01:13,160
+displaying quantitative values.
+
+17
+00:01:13,160 --> 00:01:17,840
+And so usually vertically we have some
+sort of quantitative dependent variable.
+
+18
+00:01:17,840 --> 00:01:20,500
+And then horizontally
+these can be categories.
+
+19
+00:01:20,500 --> 00:01:26,220
+And so we have some nominal variable or
+at least some discreet variable here
+
+20
+00:01:26,220 --> 00:01:29,830
+indicating the individual
+bars that we're plotting.
+
+21
+00:01:29,830 --> 00:01:33,040
+And this is an independent variable,
+a dimension.
+
+22
+00:01:33,040 --> 00:01:35,650
+And then this is some kind of
+measure of that dimension.
+
+23
+00:01:35,650 --> 00:01:40,550
+It's a dependant variable depending on
+the value of this independent variable.
+
+24
+00:01:40,550 --> 00:01:42,680
+Similarly, you have a line chart.
+
+25
+00:01:42,680 --> 00:01:45,710
+A line chart has data points
+that are connected by a line.
+
+26
+00:01:45,710 --> 00:01:48,280
+And so
+this is very very similar to a bar chart.
+
+27
+00:01:48,280 --> 00:01:52,660
+These data points are at the same
+altitude as the tops of the bars.
+
+28
+00:01:52,660 --> 00:01:55,910
+So they benefit from position but
+they don't have the length.
+
+29
+00:01:55,910 --> 00:01:59,490
+That you visually see with
+the bars in a bar chart.
+
+30
+00:02:00,540 --> 00:02:04,070
+So you still do a pretty good job of
+
+31
+00:02:04,070 --> 00:02:08,670
+being able to discern quantitative values
+and their relationship of quantitative
+
+32
+00:02:08,670 --> 00:02:13,540
+values in the altitudes of these
+data points in a line chart.
+
+33
+00:02:13,540 --> 00:02:18,260
+And so again we have a quantitative
+dependent variable vertically that's
+
+34
+00:02:19,880 --> 00:02:24,220
+changing based on some quantitative
+independent variable horizontally.
+
+35
+00:02:24,220 --> 00:02:30,110
+But now the horizontal value is some
+quantitative continuous variable and
+
+36
+00:02:30,110 --> 00:02:33,600
+the vertical value also needs to be
+a quantitative continuous variable
+
+37
+00:02:33,600 --> 00:02:38,620
+because we're drawing lines between
+these data points and these lines imply
+
+38
+00:02:38,620 --> 00:02:42,400
+that there's a continuity of values
+between these data points and
+
+39
+00:02:42,400 --> 00:02:45,320
+these data points have a horizontal and
+a vertical component.
+
+40
+00:02:45,320 --> 00:02:48,060
+These lines have a horizontal and
+vertical component.
+
+41
+00:02:48,060 --> 00:02:54,060
+So you don't want to use a line chart to
+display data across categories because
+
+42
+00:02:54,060 --> 00:02:57,690
+that's implying that there's in between
+values in between these categories and
+
+43
+00:02:57,690 --> 00:03:00,760
+if they're nominal categories,
+if they're discreet,
+
+44
+00:03:00,760 --> 00:03:02,950
+then there should not
+be in between values.
+
+45
+00:03:02,950 --> 00:03:06,945
+Your visualization shouldn't imply
+that there's in between being values.
+
+46
+00:03:08,365 --> 00:03:11,445
+If we remove the lines,
+we get a scatter plot.
+
+47
+00:03:11,445 --> 00:03:14,405
+And a scatter plot gives
+us some other flexibility.
+
+48
+00:03:14,405 --> 00:03:18,405
+When we display a line plot,
+we're displaying a function.
+
+49
+00:03:18,405 --> 00:03:22,020
+We're displaying some dependent variable
+
+50
+00:03:22,020 --> 00:03:24,790
+that's changing according
+to an independent variable.
+
+51
+00:03:24,790 --> 00:03:28,520
+So that there's one dependent value for
+every independent value.
+
+52
+00:03:29,640 --> 00:03:33,610
+So there's basically one measure for
+each change in dimension.
+
+53
+00:03:33,610 --> 00:03:38,050
+When we do a scatter plot,
+we have two independent variables so
+
+54
+00:03:38,050 --> 00:03:41,870
+that I can have the same
+horizontal value here and
+
+55
+00:03:41,870 --> 00:03:47,630
+I can have two values associated with
+that and so that can be a powerful value.
+
+56
+00:03:47,630 --> 00:03:51,630
+You usually don't connect these with
+a line unless there is some order in
+
+57
+00:03:51,630 --> 00:03:54,880
+which the data is coming in that you
+want to associate with a line and
+
+58
+00:03:54,880 --> 00:03:58,286
+that would be an additional dimension
+you could indicate on a scatter plot.
+
+59
+00:03:58,286 --> 00:04:05,230
+But the line doesn't infer that
+you're plotting a function, because
+
+60
+00:04:05,230 --> 00:04:10,270
+a scatter plot doesn't plot a function
+unless the data's organized that way.
+
+61
+00:04:10,270 --> 00:04:13,710
+And so you have two independent variables,
+a horizontal independent variable and
+
+62
+00:04:13,710 --> 00:04:15,960
+a vertical independent variable.
+
+63
+00:04:15,960 --> 00:04:21,590
+And you're getting an indication of
+position, both, horizontally and
+
+64
+00:04:21,590 --> 00:04:26,140
+vertically, for the quantitative
+values on each of the two axes.
+
+65
+00:04:26,140 --> 00:04:30,977
+You also get some cues based on density if
+these points tend to cluster in certain
+
+66
+00:04:30,977 --> 00:04:31,491
+areas.
+
+67
+00:04:35,462 --> 00:04:37,550
+You can also create a Gantt Chart,
+
+68
+00:04:37,550 --> 00:04:42,518
+which is kind of looks like a sideways bar
+chart, except the bases of objects don't
+
+69
+00:04:42,518 --> 00:04:46,130
+line up with one of the axises
+like they would in a bar chart.
+
+70
+00:04:47,200 --> 00:04:50,160
+And so in this case,
+we have two independent variables,
+
+71
+00:04:50,160 --> 00:04:52,310
+things that are no longer
+related as a function, but
+
+72
+00:04:52,310 --> 00:04:55,150
+you still get the benefits of position and
+length.
+
+73
+00:04:55,150 --> 00:04:59,160
+Gantt charts are usually
+processed diagrams that tell you
+
+74
+00:04:59,160 --> 00:05:01,930
+the various stages of a project.
+
+75
+00:05:01,930 --> 00:05:06,710
+And so horizontally a Gantt chart
+would usually be some display of time.
+
+76
+00:05:06,710 --> 00:05:12,160
+This may be a quarter, or
+date, or some other time axis.
+
+77
+00:05:12,160 --> 00:05:17,510
+And then vertically, this is some
+categorical, often a discrete or nominal
+
+78
+00:05:17,510 --> 00:05:21,920
+independent variable here vertically,
+and this is typically the tasks.
+
+79
+00:05:21,920 --> 00:05:24,700
+So you'll have the first tasks and
+then the second task, and
+
+80
+00:05:24,700 --> 00:05:28,390
+the second task may start
+before the first task finishes.
+
+81
+00:05:28,390 --> 00:05:36,280
+And tasks may stop and then start up
+again, and so you get this overlap.
+
+82
+00:05:36,280 --> 00:05:38,770
+Again, it benefits from both position and
+length.
+
+83
+00:05:38,770 --> 00:05:41,470
+but it operates from two
+independent variables.
+
+84
+00:05:41,470 --> 00:05:46,610
+Again one could be quantitative and one
+could be nominal similarly to a bar chart.
+
+85
+00:05:46,610 --> 00:05:50,740
+But in a bar chart you have
+one dependent variable
+
+86
+00:05:50,740 --> 00:05:53,300
+plotted over an independent variable.
+
+87
+00:05:53,300 --> 00:06:00,850
+In a Gantt chart you have to independent
+variables And, finally, you have a table.
+
+88
+00:06:00,850 --> 00:06:05,790
+In this case, you have two nominal
+variables, two categories,
+
+89
+00:06:05,790 --> 00:06:08,430
+for example,
+they're independent variables.
+
+90
+00:06:08,430 --> 00:06:13,270
+One doesn't depend on
+the other necessarily and
+
+91
+00:06:13,270 --> 00:06:17,850
+you're just looking at two
+separate dimensions, and
+
+92
+00:06:17,850 --> 00:06:23,220
+in plotting some value that would be
+the entry in each of these table entries.
+
+93
+00:06:23,220 --> 00:06:27,600
+So it really benefits from position only,
+and again, that position is discrete or
+
+94
+00:06:27,600 --> 00:06:28,220
+nominal.
+
+95
+00:06:29,420 --> 00:06:34,080
+It's not a continuous position,
+as it would be in a scatter plot.
+
+96
+00:06:34,080 --> 00:06:37,670
+It's in discrete, quantized regions.
+
+97
+00:06:37,670 --> 00:06:40,560
+You might also notice if you
+look at this long enough,
+
+98
+00:06:40,560 --> 00:06:43,380
+you can see some flashing
+happening at the intersections.
+
+99
+00:06:43,380 --> 00:06:48,330
+And it's, again, important to
+remember your perceptual psychology
+
+100
+00:06:48,330 --> 00:06:52,800
+to know when you're laying these
+things out to pay attention to
+
+101
+00:06:52,800 --> 00:06:56,780
+contrast to make sure that you don't
+get some unwanted perceptual features.
+
+102
+00:06:59,490 --> 00:07:04,620
+So here's a table that
+visualizes the decision
+
+103
+00:07:04,620 --> 00:07:10,370
+you need to make of what chart
+to use in various situations,
+
+104
+00:07:10,370 --> 00:07:14,310
+depending on the data
+that you want to display.
+
+105
+00:07:16,320 --> 00:07:20,820
+Very often you have at least one
+independent variable and then you
+
+106
+00:07:20,820 --> 00:07:25,760
+may have a dependent variable on it or
+you may have an independent variable.
+
+107
+00:07:27,430 --> 00:07:32,840
+And your independent variable might be
+discreet or nominal, some category,
+
+108
+00:07:32,840 --> 00:07:36,750
+or it might be some some quantity
+tha varies continuously and
+
+109
+00:07:36,750 --> 00:07:41,640
+your dependent value could similarly be
+continuous or discrete, or an independent
+
+110
+00:07:41,640 --> 00:07:47,310
+variable could be a category, or
+it could be a continuously changing value.
+
+111
+00:07:47,310 --> 00:07:52,340
+Independent of your horizontal axis,
+and so depending on each
+
+112
+00:07:52,340 --> 00:07:56,700
+of these configurations you could look
+up in this table which you want to use.
+
+113
+00:07:56,700 --> 00:07:58,560
+If you have an independent variable and
+
+114
+00:07:58,560 --> 00:08:03,450
+a dependent variable, then most
+often you want to use a bar chart.
+
+115
+00:08:03,450 --> 00:08:08,370
+You can use a line chart, but only when
+you have a continuous dependent variable
+
+116
+00:08:08,370 --> 00:08:12,270
+and a continuous independent variable,
+because the lines indicate
+
+117
+00:08:12,270 --> 00:08:15,670
+that they're in between values
+both horizontally and vertically.
+
+118
+00:08:15,670 --> 00:08:21,025
+You want to use a Gantt chart if
+you have a independent variable.
+
+119
+00:08:21,025 --> 00:08:26,840
+That's continuous and
+a categorical axis vertically or
+
+120
+00:08:26,840 --> 00:08:32,310
+a categorical axis horizontally and
+a continuous value vertically.
+
+121
+00:08:32,310 --> 00:08:34,030
+Either one of those will
+form a Gantt chart.
+
+122
+00:08:35,690 --> 00:08:39,740
+If you have two categorical axes,
+you want to make a table.
+
+123
+00:08:40,820 --> 00:08:44,570
+And if you have two continuous
+axes that are both independent,
+
+124
+00:08:44,570 --> 00:08:45,740
+you want to make a scatter plot.
+
+125
+00:08:47,430 --> 00:08:52,590
+So we use the kind of data that
+we're trying to visualize nominal,
+
+126
+00:08:52,590 --> 00:08:55,610
+ordered, quantitative,
+whether it's continuous,
+
+127
+00:08:55,610 --> 00:09:00,810
+whether it's discreet, whether
+variables are dependent or independent.
+
+128
+00:09:00,810 --> 00:09:04,250
+To not only figure out how they
+map to chart elements, but
+
+129
+00:09:04,250 --> 00:09:07,914
+more importantly to decide
+which chart best displays them.
+
+130
+00:09:10,561 --> 00:09:18,925
+[MUSIC]

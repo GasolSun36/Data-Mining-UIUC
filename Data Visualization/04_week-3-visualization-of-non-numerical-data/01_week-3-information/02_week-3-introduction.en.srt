@@ -1,0 +1,80 @@
+1
+00:00:08,680 --> 00:00:11,430
+So in module three,
+we're going to be visualizing data that
+
+2
+00:00:11,430 --> 00:00:14,406
+doesn't have coordinates
+associated with it explicitly.
+
+3
+00:00:14,406 --> 00:00:18,780
+That means we're going to have to
+derive the coordinates from the data,
+
+4
+00:00:18,780 --> 00:00:23,180
+through analysis, through mathematics,
+and specifically through linear algebra.
+
+5
+00:00:23,180 --> 00:00:27,160
+So if you don't have experience
+with linear algebra, don't worry.
+
+6
+00:00:27,160 --> 00:00:30,762
+I'm going to be going into a lot of
+details involving linear algebra and
+
+7
+00:00:30,762 --> 00:00:34,927
+other mathematical techniques for
+people that understand those techniques so
+
+8
+00:00:34,927 --> 00:00:37,238
+that they can implement these algorithms.
+
+9
+00:00:37,238 --> 00:00:39,690
+But if you don't have experience
+with those techniques,
+
+10
+00:00:39,690 --> 00:00:41,697
+with this area of mathematics,
+that's fine.
+
+11
+00:00:41,697 --> 00:00:43,043
+We're not going to be quizzed on it.
+
+12
+00:00:43,043 --> 00:00:45,263
+You're not going to be
+required to implement it for
+
+13
+00:00:45,263 --> 00:00:46,841
+the project at the end of the week.
+
+14
+00:00:46,841 --> 00:00:51,856
+We have tools that will provide that for
+you, so just bear with us.
+
+15
+00:00:51,856 --> 00:00:56,426
+And you'll get an appreciation for
+the tools that are used to
+
+16
+00:00:56,426 --> 00:01:01,005
+lay out data when we don't have
+coordinates assigned to it.
+
+17
+00:01:01,005 --> 00:01:10,747
+[MUSIC]

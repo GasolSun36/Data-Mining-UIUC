@@ -1,0 +1,672 @@
+1
+00:00:00,002 --> 00:00:03,498
+[MUSIC]
+
+2
+00:00:09,557 --> 00:00:13,381
+So in our previous discussions,
+we've been focusing on the relationship
+
+3
+00:00:13,381 --> 00:00:17,610
+between data points, where we're
+plotting the data points as points.
+
+4
+00:00:17,610 --> 00:00:21,310
+In some cases, you want to display more
+than just points, you want to display
+
+5
+00:00:21,310 --> 00:00:26,760
+shapes to represent the data, and in that
+case you want to pack the shapes together.
+
+6
+00:00:26,760 --> 00:00:32,236
+So here's an example called a word cloud,
+and this is basically the overview
+
+7
+00:00:32,236 --> 00:00:36,884
+text from our data visualization
+course from the Coursera page.
+
+8
+00:00:36,884 --> 00:00:42,324
+And I've just passed this through
+a web page called Wordle.net and
+
+9
+00:00:42,324 --> 00:00:48,433
+it created this word cloud which
+basically displays the most common words,
+
+10
+00:00:48,433 --> 00:00:54,850
+the words that are distinctive that
+aren't everyday words like the, and and.
+
+11
+00:00:54,850 --> 00:00:59,670
+And words that are used multiple
+times get displayed larger than
+
+12
+00:00:59,670 --> 00:01:01,540
+the words that are smaller.
+
+13
+00:01:01,540 --> 00:01:07,280
+And then there's a process that
+packs these words into a collection,
+
+14
+00:01:07,280 --> 00:01:12,450
+so instead of just displaying
+the words in order horizontally
+
+15
+00:01:12,450 --> 00:01:17,669
+that you might see in a tag cloud,
+this word cloud is packed together.
+
+16
+00:01:17,669 --> 00:01:21,250
+And there is a spiral
+algorithm that it uses
+
+17
+00:01:21,250 --> 00:01:24,560
+to basically find a first open
+space to pack a new word in it.
+
+18
+00:01:24,560 --> 00:01:28,750
+Tries to start with the largest words
+first and then packs in the small ones
+
+19
+00:01:28,750 --> 00:01:34,210
+later based on that same spiral trial and
+error techniques spiraling out from
+
+20
+00:01:34,210 --> 00:01:40,111
+the middle to try to pack the words into
+the location that they'll fit into first.
+
+21
+00:01:40,111 --> 00:01:43,818
+And so these techniques tend
+to use area as a measure, and
+
+22
+00:01:43,818 --> 00:01:46,611
+we've looked at area as a measure before.
+
+23
+00:01:46,611 --> 00:01:52,210
+It's a pretty good quantitative measure,
+but ordinal, it's not very good.
+
+24
+00:01:52,210 --> 00:01:55,380
+Being able to tell whether two different
+shapes have the same area can be quite
+
+25
+00:01:55,380 --> 00:01:56,000
+difficult.
+
+26
+00:01:56,000 --> 00:01:58,131
+So if you have consistent shapes.
+
+27
+00:01:58,131 --> 00:02:02,885
+It's hard to tell if I have the same
+amount of area in the blue circle as in
+
+28
+00:02:02,885 --> 00:02:04,860
+this orange square.
+
+29
+00:02:04,860 --> 00:02:08,809
+But if you have consistent shapes,
+if I have two circles,
+
+30
+00:02:08,809 --> 00:02:13,011
+then I can tell that the areas
+are the same based on the length.
+
+31
+00:02:13,011 --> 00:02:17,843
+And then if the shapes are aligned,
+if they share the same base,
+
+32
+00:02:17,843 --> 00:02:22,584
+then I can just look at the height
+at the position, at the top and
+
+33
+00:02:22,584 --> 00:02:27,264
+tell if the orange circle is less
+than the blue circle in area.
+
+34
+00:02:27,264 --> 00:02:30,519
+And so area is very difficult
+to determine, especially
+
+35
+00:02:30,519 --> 00:02:35,300
+when you have inconsistent shapes, but
+becomes useful if you have consistent and
+
+36
+00:02:35,300 --> 00:02:40,465
+aligned shapes, because then you're
+using actual length and position.
+
+37
+00:02:40,465 --> 00:02:44,760
+Also area, as the area increases or
+decreases,
+
+38
+00:02:44,760 --> 00:02:50,470
+the length is going to increase or
+decrease as the square root of the area,
+
+39
+00:02:50,470 --> 00:02:55,760
+and so that also complicates figuring out
+a quantitative difference between shapes.
+
+40
+00:02:57,430 --> 00:03:02,270
+And so, if we want to plot a bunch of data
+without any coordinates attached to it,
+
+41
+00:03:02,270 --> 00:03:05,340
+you could just pack the data
+together using, for example,
+
+42
+00:03:05,340 --> 00:03:06,880
+area to display the data.
+
+43
+00:03:06,880 --> 00:03:11,700
+So this is a Tableau plot
+of the population from our
+
+44
+00:03:12,970 --> 00:03:17,320
+WDI database, and
+you can see some of the larger
+
+45
+00:03:17,320 --> 00:03:22,010
+items are labeled if the label
+will fit in the region, but
+
+46
+00:03:22,010 --> 00:03:28,540
+here the area is basically indicating
+population, total number of people.
+
+47
+00:03:28,540 --> 00:03:31,497
+The area is proportional
+to the number of people.
+
+48
+00:03:31,497 --> 00:03:36,224
+And because these are all the same
+shape we can do a pretty good job of
+
+49
+00:03:36,224 --> 00:03:37,750
+finding an ordinal.
+
+50
+00:03:37,750 --> 00:03:39,988
+I can tell that China has
+more people than India.
+
+51
+00:03:39,988 --> 00:03:42,286
+India has more people than United States.
+
+52
+00:03:42,286 --> 00:03:47,185
+United States has more people than Brazi,
+and so on.
+
+53
+00:03:47,185 --> 00:03:51,646
+And so we get a good indication,
+at least an ordinal indication,
+
+54
+00:03:51,646 --> 00:03:56,350
+of the differences in population,
+and we don't need to use any other
+
+55
+00:03:56,350 --> 00:04:01,840
+coordinates because we're we're just
+comparing the areas to each other.
+
+56
+00:04:01,840 --> 00:04:04,448
+We're not plotting anything
+horizontally or vertically,
+
+57
+00:04:04,448 --> 00:04:07,936
+we're just using the horizontal and
+vertical axis to keep our shapes disjoint.
+
+58
+00:04:11,535 --> 00:04:15,411
+So another way of plotting
+things horizontally or
+
+59
+00:04:15,411 --> 00:04:19,838
+vertically is to display them on a map,
+and in this case,
+
+60
+00:04:19,838 --> 00:04:23,270
+we've distorted the map into a cartogram.
+
+61
+00:04:24,420 --> 00:04:29,537
+Here's an ordinary atlas of the world,
+and here's that same atlas
+
+62
+00:04:29,537 --> 00:04:34,655
+distorted based on population, so
+that the amount of distortion,
+
+63
+00:04:34,655 --> 00:04:39,079
+the area of the region is
+proportional to its population.
+
+64
+00:04:39,079 --> 00:04:43,614
+And you can see that certain regions have
+grown larger than they were before, and
+
+65
+00:04:43,614 --> 00:04:46,290
+certain regions have
+grown to be much smaller.
+
+66
+00:04:46,290 --> 00:04:52,700
+There's not very many people in Siberia,
+and so that's very small given it's area.
+
+67
+00:04:52,700 --> 00:04:56,710
+India and China have a lot of population,
+
+68
+00:04:56,710 --> 00:05:02,580
+high population density, and so
+their regions have grown much larger.
+
+69
+00:05:02,580 --> 00:05:07,370
+In Africa you can see that Nigeria
+has grown to be quite large.
+
+70
+00:05:09,060 --> 00:05:12,311
+And so
+this is a a way of indicating with area,
+
+71
+00:05:12,311 --> 00:05:15,748
+certain data that you
+would want to visualize.
+
+72
+00:05:15,748 --> 00:05:18,280
+Again, it's relative.
+
+73
+00:05:18,280 --> 00:05:25,470
+It would be difficult to tell ordinally
+if the there's more people in for
+
+74
+00:05:25,470 --> 00:05:30,159
+example, France or Germany, based on this
+display because the shapes are different,
+
+75
+00:05:30,159 --> 00:05:34,860
+and it's difficult to judge area
+relationships between different shapes,
+
+76
+00:05:34,860 --> 00:05:38,525
+but we can certainly tell that
+Germany is is roughly the same
+
+77
+00:05:38,525 --> 00:05:43,585
+shape it's just grown larger with a little
+bit of distortion than it was before.
+
+78
+00:05:43,585 --> 00:05:46,705
+And so that's the distinction we're
+trying to make with the cartogram.
+
+79
+00:05:48,305 --> 00:05:51,015
+So how do you create those cartograms?
+
+80
+00:05:51,015 --> 00:05:54,948
+Well you start, in this case,
+with a grid of density data.
+
+81
+00:05:54,948 --> 00:05:56,860
+And this is an old algorithm for
+doing this.
+
+82
+00:05:56,860 --> 00:05:59,615
+There's better techniques that
+are more sophisticated but
+
+83
+00:05:59,615 --> 00:06:00,970
+also much more complicated.
+
+84
+00:06:00,970 --> 00:06:04,383
+This is a nice way to do it.
+
+85
+00:06:04,383 --> 00:06:09,410
+If you just fill a grid in with
+density data such as your local
+
+86
+00:06:09,410 --> 00:06:16,170
+population density so within some unit
+area, what is the population density?
+
+87
+00:06:16,170 --> 00:06:19,468
+And so it could be heavily
+populated in this area and
+
+88
+00:06:19,468 --> 00:06:22,670
+lightly populated in these areas.
+
+89
+00:06:22,670 --> 00:06:26,030
+And so you create a grid like
+that of rectangular cells and
+
+90
+00:06:26,030 --> 00:06:30,940
+then you just scale each
+cell by that density value.
+
+91
+00:06:30,940 --> 00:06:35,793
+So the squares that have
+a population density
+
+92
+00:06:35,793 --> 00:06:40,783
+of one-half get shrunk
+by one-half in area.
+
+93
+00:06:40,783 --> 00:06:43,730
+So that's about 70% horizontally and
+vertically.
+
+94
+00:06:43,730 --> 00:06:47,297
+The areas that have population
+density one stay the same size, and
+
+95
+00:06:47,297 --> 00:06:51,629
+the areas that have larger population
+densities would grow proportionally, so
+
+96
+00:06:51,629 --> 00:06:56,107
+these squares would become twice as big,
+these squares become three times as big.
+
+97
+00:06:56,107 --> 00:07:01,750
+And then you can see that what we had as
+a grid before now becomes disconnected.
+
+98
+00:07:01,750 --> 00:07:06,880
+And so to reconnect it, we want to
+reconnect these corners to their average
+
+99
+00:07:06,880 --> 00:07:09,420
+of the four corners that
+shared that corner.
+
+100
+00:07:09,420 --> 00:07:11,400
+So we want to find a new point for
+
+101
+00:07:11,400 --> 00:07:16,390
+this corner equal to the average of
+these four previous corner points.
+
+102
+00:07:16,390 --> 00:07:19,352
+So we create a new set
+of grid vertices equal
+
+103
+00:07:19,352 --> 00:07:23,892
+to the average of the four grid
+vertices that shared them before.
+
+104
+00:07:23,892 --> 00:07:27,890
+Or three or two depending on, or
+one, if you're on the perimeter.
+
+105
+00:07:27,890 --> 00:07:31,729
+And so we create this new grid and
+this new grid is deformed.
+
+106
+00:07:31,729 --> 00:07:36,113
+And so based on this deformed grid
+We keep iterating that over and
+
+107
+00:07:36,113 --> 00:07:39,116
+over until we get a final deformed grid,
+and
+
+108
+00:07:39,116 --> 00:07:43,742
+then we look at the differences
+between the original grid points and
+
+109
+00:07:43,742 --> 00:07:48,470
+their new positions in the deformed
+grid that sets up a deformation.
+
+110
+00:07:48,470 --> 00:07:53,146
+It basically tells us what direction
+we should move data points.
+
+111
+00:07:53,146 --> 00:07:57,619
+Then, we take our shape vertices of
+the outline data of our original map and
+
+112
+00:07:57,619 --> 00:08:01,666
+deform them based on these arrows,
+and we can smoothly interpolate
+
+113
+00:08:01,666 --> 00:08:06,140
+these arrows if we need in between
+values in order to create the cartogram.
+
+114
+00:08:06,140 --> 00:08:07,172
+Its basically,
+
+115
+00:08:07,172 --> 00:08:11,965
+we take a vector graphics representation
+of our data of our map and then deform
+
+116
+00:08:11,965 --> 00:08:16,790
+the vertices based on this type of
+deformation to create the cartogram.
+
+117
+00:08:16,790 --> 00:08:20,826
+So another technique that might be
+better than a cartogram is the ordinary
+
+118
+00:08:20,826 --> 00:08:23,638
+choropleth, and
+we see choropleths all the time.
+
+119
+00:08:23,638 --> 00:08:28,350
+It's basically data that's
+plotted over regions of a map.
+
+120
+00:08:28,350 --> 00:08:31,179
+This is that same population data but
+
+121
+00:08:31,179 --> 00:08:35,386
+plotted inside the original
+outlines of our regions.
+
+122
+00:08:35,386 --> 00:08:41,097
+In here, population is Is just given
+by the saturation of the color,
+
+123
+00:08:41,097 --> 00:08:44,740
+and when we're looking at ordinal values,
+
+124
+00:08:44,740 --> 00:08:50,450
+basically we can see that China has
+more population than India does,
+
+125
+00:08:50,450 --> 00:08:57,650
+has more population than the U.S., which
+has more population than Brazil and so on.
+
+126
+00:08:57,650 --> 00:09:03,710
+So you get a better indication of the
+order of these things from a chloropleth
+
+127
+00:09:03,710 --> 00:09:09,772
+than you might with a cardogram because
+area is such a poor indicator order,
+
+128
+00:09:09,772 --> 00:09:15,455
+whereas density saturation hue,
+density being intensity of a color or
+
+129
+00:09:15,455 --> 00:09:20,120
+saturation in hue,
+are much better indicators of order.
+
+130
+00:09:22,256 --> 00:09:26,397
+So there's several techniques now for
+plotting data without using coordinate
+
+131
+00:09:26,397 --> 00:09:28,940
+data associated with the data for
+it's layout.
+
+132
+00:09:28,940 --> 00:09:31,240
+We're deriving coordinate data.
+
+133
+00:09:31,240 --> 00:09:35,300
+In these most recent examples we are using
+geographical data, where we have maybe
+
+134
+00:09:35,300 --> 00:09:40,210
+a region name, or a country name, and then
+we're deriving the actual coordinates of
+
+135
+00:09:40,210 --> 00:09:45,470
+that, perhaps an outline to fill in,
+or a location on a map to generate.
+
+136
+00:09:45,470 --> 00:09:49,390
+Or we're using some other packing or
+layout algorithm to distribute the data.
+
+137
+00:09:49,390 --> 00:09:54,550
+Those are all useful techniques in In the
+case where you've got data that you don't
+
+138
+00:09:54,550 --> 00:09:59,726
+want to use the explicit coordinates in
+the data as coordinates for their display.
+
+139
+00:09:59,726 --> 00:10:08,786
+[MUSIC]

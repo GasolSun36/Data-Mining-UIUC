@@ -1,0 +1,15 @@
+[SOUND]
+So if you want to try any of these
+scalable vector graphics examples, you can go to wthreeschools.com and
+there's an SVG tutorial section there. And it gives you a window here
+where you can type in SVG code. For example, here and
+it's output comes here. So for example, this one's
+setting up a drawing canvas, and it's specified in pixels. So the canvas coordinates are going to
+be equal to the display coordinates, going from 00 here, to 100, 100 here,
+it's drawing a circle centered. If, 50/50 in the middle of radius 40. If I can that to a 50 and
+then see the results you can see that it's extending out to the boundary
+of the drawing canvas. We can use this to interactively
+change different attributes of an SVG drawing and
+see the results being plotted. And that way you can experiment with
+different methods for setting up coordinate systems or drawing various
+shapes in scalable vector graphics. [MUSIC]

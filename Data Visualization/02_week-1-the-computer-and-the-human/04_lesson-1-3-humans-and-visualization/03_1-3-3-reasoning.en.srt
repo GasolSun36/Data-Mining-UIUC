@@ -1,0 +1,456 @@
+1
+00:00:00,910 --> 00:00:04,150
+So when we visualize data we usually
+want to make a decision based on
+
+2
+00:00:04,150 --> 00:00:04,930
+that data.
+
+3
+00:00:04,930 --> 00:00:07,640
+That means we need to
+reason about the data.
+
+4
+00:00:07,640 --> 00:00:12,633
+And so we need to learn the different ways
+that the human cognitive system reasons.
+
+5
+00:00:14,073 --> 00:00:19,510
+So what we'll learn is how does a human
+observer understand a visualization?
+
+6
+00:00:20,510 --> 00:00:24,640
+And how does a human observer
+respond to a visualization?
+
+7
+00:00:24,640 --> 00:00:28,440
+What are they thinking about when they
+see this data presented to them visually?
+
+8
+00:00:29,690 --> 00:00:33,670
+So we use the model human processor, but
+we're going to focus on the cognitive
+
+9
+00:00:33,670 --> 00:00:38,920
+processor, and the information provided
+to it through the visual image store and
+
+10
+00:00:38,920 --> 00:00:42,440
+visual perception, and
+how we reason about that information.
+
+11
+00:00:43,500 --> 00:00:47,440
+And there's three kind of reasoning
+that we'll look at, deductive reasoning,
+
+12
+00:00:47,440 --> 00:00:49,840
+inductive reasoning, and
+abductive reasoning.
+
+13
+00:00:51,230 --> 00:00:56,770
+Deductive reasoning is basically
+drawing a conclusion based on the data.
+
+14
+00:00:56,770 --> 00:01:00,215
+It's based on logic, if A then B so,
+
+15
+00:01:00,215 --> 00:01:05,566
+if you see A then you can conclude
+that B is going to exist.
+
+16
+00:01:05,566 --> 00:01:09,096
+And if B doesn't exist you might
+conclude that A doesn't exist,
+
+17
+00:01:09,096 --> 00:01:12,790
+because if A happened
+then B would've happened.
+
+18
+00:01:12,790 --> 00:01:16,584
+So these are all valid logical
+conclusions based on visual data.
+
+19
+00:01:18,162 --> 00:01:21,956
+Sherlock Holmes used to say,
+when you have eliminated the impossible,
+
+20
+00:01:21,956 --> 00:01:25,205
+whatever remains, however improbably,
+must be the truth.
+
+21
+00:01:25,205 --> 00:01:29,063
+And that's basically just
+the process of elimination,
+
+22
+00:01:29,063 --> 00:01:33,895
+which is again a deductive reasoning
+method for drawing a conclusion.
+
+23
+00:01:33,895 --> 00:01:37,368
+And so, for example,
+these reasoning examples,
+
+24
+00:01:37,368 --> 00:01:40,290
+I'm going to use this
+life expectancy data.
+
+25
+00:01:40,290 --> 00:01:44,010
+This is average data for
+all countries in the world.
+
+26
+00:01:44,010 --> 00:01:49,310
+And our life expectancy has grown in
+the 1960s from an average of 54 years,
+
+27
+00:01:49,310 --> 00:01:52,630
+to an average of about 71 years in 2012.
+
+28
+00:01:52,630 --> 00:01:57,819
+And so based on this data, I might deduce
+
+29
+00:01:57,819 --> 00:02:02,399
+that I'm one of the members of one of
+
+30
+00:02:02,399 --> 00:02:09,180
+the countries that was
+used to create this data.
+
+31
+00:02:09,180 --> 00:02:13,790
+I might expect that my life
+expectancy has similarly increased
+
+32
+00:02:14,900 --> 00:02:17,140
+over the past few decades.
+
+33
+00:02:17,140 --> 00:02:22,490
+And that would be a logical conclusion
+based on the information from this graph.
+
+34
+00:02:23,580 --> 00:02:27,950
+Also you can see a correlation
+here anytime you have
+
+35
+00:02:27,950 --> 00:02:30,600
+a graph that's increasing this way.
+
+36
+00:02:30,600 --> 00:02:34,286
+It's showing a correlation
+between time and
+
+37
+00:02:34,286 --> 00:02:38,554
+between life expectancy,
+and so we're deducing,
+
+38
+00:02:38,554 --> 00:02:43,893
+we are concluding that life
+expectancy is increasing over time.
+
+39
+00:02:43,893 --> 00:02:49,262
+And so people nowadays are living longer
+than they were a few decades ago,
+
+40
+00:02:49,262 --> 00:02:52,950
+and that's a reasonable deduction.
+
+41
+00:02:52,950 --> 00:02:57,880
+We have to be careful that this is
+showing correlation and not causation.
+
+42
+00:02:57,880 --> 00:03:01,960
+And that we're not showing that
+because people are growing older,
+
+43
+00:03:01,960 --> 00:03:03,840
+time is passing necessarily.
+
+44
+00:03:04,900 --> 00:03:10,040
+There are many other cases
+where two items are correlated,
+
+45
+00:03:10,040 --> 00:03:12,670
+but one does not necessarily
+cause the other.
+
+46
+00:03:12,670 --> 00:03:14,818
+Or you get the causation
+in the wrong direction.
+
+47
+00:03:16,985 --> 00:03:19,661
+There's also inductive reasoning,
+
+48
+00:03:19,661 --> 00:03:24,842
+which basically says if something is
+true for x then it's true for x +1,
+
+49
+00:03:24,842 --> 00:03:30,620
+and you know that's it's true for x,
+so in that case it's true for all x.
+
+50
+00:03:30,620 --> 00:03:34,810
+If it's true for one specific case,
+it's true for all of the cases.
+
+51
+00:03:34,810 --> 00:03:37,420
+And these are generalizations.
+
+52
+00:03:37,420 --> 00:03:42,650
+We can use this to extrapolate data,
+for example, life expectancy.
+
+53
+00:03:42,650 --> 00:03:48,570
+I can look at this shape and I might
+expect that life expectancy is going
+
+54
+00:03:48,570 --> 00:03:55,020
+to continue to grow at the rate of about
+ten years every decade and a half.
+
+55
+00:03:55,020 --> 00:03:59,610
+And so
+eventually we'll live to be 200 years old.
+
+56
+00:03:59,610 --> 00:04:04,690
+And so some generalizations are helpful,
+some generalizations aren't helpful, and
+
+57
+00:04:04,690 --> 00:04:07,990
+we have to be careful with
+those kinds of extrapolations.
+
+58
+00:04:07,990 --> 00:04:12,870
+Also interpolation, I've got this data
+yearly, but I'm drawing this as a smooth
+
+59
+00:04:12,870 --> 00:04:18,643
+line which is an inductive
+reasoning prediction
+
+60
+00:04:18,643 --> 00:04:26,250
+that says that this is varying smoothly in
+between the data items, it's interpolated.
+
+61
+00:04:26,250 --> 00:04:32,030
+And it's not varying widely between
+an individual year and the next year.
+
+62
+00:04:32,030 --> 00:04:35,550
+So inductive reasoning allows
+us to infer missing data.
+
+63
+00:04:35,550 --> 00:04:41,420
+It allows us to extrapolate data,
+either before or after the graph,
+
+64
+00:04:41,420 --> 00:04:44,890
+but it's less reliable than deductive
+reasoning, but still can be helpful.
+
+65
+00:04:46,340 --> 00:04:47,972
+And finally, abductive reasoning.
+
+66
+00:04:47,972 --> 00:04:53,917
+This is based on sort of the human
+need for meaning, to ask why.
+
+67
+00:04:53,917 --> 00:04:58,529
+And so given this data that life
+expectancy on average has been
+
+68
+00:04:58,529 --> 00:05:01,456
+increasing over the past few decades,
+
+69
+00:05:01,456 --> 00:05:07,650
+we might start to ask why is that
+the case, and we might create models.
+
+70
+00:05:07,650 --> 00:05:11,910
+And so in this case the graph is
+increasing almost like a straight line,
+
+71
+00:05:11,910 --> 00:05:13,230
+and so you can do regression.
+
+72
+00:05:13,230 --> 00:05:18,750
+You can fit a line to this data and
+create a model for this data.
+
+73
+00:05:18,750 --> 00:05:21,310
+And you can use that model
+to replace the data, and
+
+74
+00:05:21,310 --> 00:05:26,360
+in our minds we might not think of
+every single detail of this data.
+
+75
+00:05:26,360 --> 00:05:31,430
+And we might think in general,
+the data is growing at the rate
+
+76
+00:05:31,430 --> 00:05:36,569
+of our life expectancies, growing at the
+rate of ten years every decade and a half.
+
+77
+00:05:38,260 --> 00:05:41,640
+And those models are good but
+they create a problem.
+
+78
+00:05:41,640 --> 00:05:43,985
+For example, cognitive dissonance,
+
+79
+00:05:43,985 --> 00:05:49,250
+it's our ability to entertain simultaneous
+contradictory opinions at the same time.
+
+80
+00:05:49,250 --> 00:05:53,595
+So it may be difficult for
+us to think of two things,
+
+81
+00:05:53,595 --> 00:05:58,649
+two opposite models at the same time,
+even though we don't
+
+82
+00:05:58,649 --> 00:06:04,080
+know which model is correct,
+and so we tend to take sides.
+
+83
+00:06:04,080 --> 00:06:09,130
+And if our evidence disagrees with our
+model, sometimes the model is so powerful
+
+84
+00:06:09,130 --> 00:06:13,930
+in our minds, that we tend to disregard
+the evidence, and that can be dangerous.
+
+85
+00:06:13,930 --> 00:06:18,850
+And so as we go about with visualization,
+we have sort of the baggage of
+
+86
+00:06:18,850 --> 00:06:24,120
+our models, our expectations
+of the way the world works,
+
+87
+00:06:24,120 --> 00:06:28,180
+and our abductive reasoning is trying
+to fit this data to those models.
+
+88
+00:06:29,440 --> 00:06:31,560
+So there are three different
+kinds of reasoning.
+
+89
+00:06:31,560 --> 00:06:33,945
+There's deduction,
+where we draw a conclusion.
+
+90
+00:06:33,945 --> 00:06:37,134
+There's induction,
+where we make a generalization.
+
+91
+00:06:37,134 --> 00:06:41,728
+And then there's abduction, where we
+try to predict how an event happened.
+
+92
+00:06:41,728 --> 00:06:46,409
+And all three of those are at play
+when we're understanding the data that
+
+93
+00:06:46,409 --> 00:06:48,720
+we're seeing in a visualization.
+
+94
+00:06:48,720 --> 00:06:57,211
+[MUSIC]
+
+95
+00:06:59,036 --> 00:07:02,110
+[SOUND]

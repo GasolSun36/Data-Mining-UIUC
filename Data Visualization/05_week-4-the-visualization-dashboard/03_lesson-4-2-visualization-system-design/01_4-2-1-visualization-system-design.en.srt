@@ -1,0 +1,1043 @@
+1
+00:00:00,150 --> 00:00:03,771
+[MUSIC]
+
+2
+00:00:08,405 --> 00:00:11,400
+So now we understand
+information visualization.
+
+3
+00:00:11,400 --> 00:00:14,290
+We can start to think of how
+we would design an information
+
+4
+00:00:14,290 --> 00:00:15,580
+visualization system.
+
+5
+00:00:17,090 --> 00:00:22,330
+So when creating a visualization system,
+you're really creating a user interface.
+
+6
+00:00:22,330 --> 00:00:27,300
+It's an interface between the user and
+the data facilitated by a computer.
+
+7
+00:00:27,300 --> 00:00:32,340
+And so data visualization systems
+are really graphical user interfaces.
+
+8
+00:00:32,340 --> 00:00:36,680
+You're using the computer to
+graphically represent the data.
+
+9
+00:00:36,680 --> 00:00:41,630
+So principles from user interface design
+are important in constructing a good,
+
+10
+00:00:41,630 --> 00:00:44,300
+effective visualization system.
+
+11
+00:00:44,300 --> 00:00:46,950
+You already have
+an understanding of the system,
+
+12
+00:00:46,950 --> 00:00:51,360
+of how the graphics works in the system,
+and how we display data with the system.
+
+13
+00:00:51,360 --> 00:00:54,150
+You have a good understanding
+of how users work
+
+14
+00:00:54,150 --> 00:00:58,080
+based on what we covered
+in Module 1 of this course.
+
+15
+00:00:58,080 --> 00:01:00,080
+We'll also need to focus on the goals.
+
+16
+00:01:00,080 --> 00:01:02,370
+What does the user hope to achieve, and
+
+17
+00:01:02,370 --> 00:01:05,690
+the tasks that they'll be
+performing to achieve those goals.
+
+18
+00:01:05,690 --> 00:01:06,995
+And also the interaction.
+
+19
+00:01:06,995 --> 00:01:11,112
+We'll need to be able to represent and
+understand the interaction of the user and
+
+20
+00:01:11,112 --> 00:01:15,690
+the system, and, for example,
+describe a dialogue,
+
+21
+00:01:15,690 --> 00:01:20,220
+a language of clicks and
+selections, and so on, so
+
+22
+00:01:20,220 --> 00:01:25,430
+that the users can perform tasks in
+a way that's intuitive and productive.
+
+23
+00:01:27,270 --> 00:01:32,950
+So we'll follow some standard
+sequences of forming a system design.
+
+24
+00:01:32,950 --> 00:01:38,400
+Designing a visualization system is
+similar to designing a software system or
+
+25
+00:01:38,400 --> 00:01:39,750
+other systems in general.
+
+26
+00:01:39,750 --> 00:01:43,460
+We start with a basic
+requirement specification.
+
+27
+00:01:43,460 --> 00:01:46,810
+And that's basically going to
+try to figure out what specific
+
+28
+00:01:46,810 --> 00:01:48,760
+problems the system is going to solve.
+
+29
+00:01:48,760 --> 00:01:50,840
+Who's the system going to serve?
+
+30
+00:01:50,840 --> 00:01:53,490
+And how will that person
+be able to make a decision
+
+31
+00:01:53,490 --> 00:01:55,350
+based on your visualization system?
+
+32
+00:01:56,350 --> 00:01:59,860
+This involves a lot of
+discussions with the user.
+
+33
+00:01:59,860 --> 00:02:04,480
+I see focus groups used for this, but
+it's important that the focus groups and
+
+34
+00:02:04,480 --> 00:02:08,620
+interviews with the user aren't asking
+the user specifically what kind of
+
+35
+00:02:08,620 --> 00:02:11,970
+interface or what kind of
+visualization system they want,
+
+36
+00:02:11,970 --> 00:02:14,960
+because you're going to be the expert
+of the visualization system.
+
+37
+00:02:14,960 --> 00:02:18,940
+Often the users don't know what's
+out there, what's available,
+
+38
+00:02:18,940 --> 00:02:23,790
+what will serve them best, and so you want
+to focus on what questions they want to
+
+39
+00:02:23,790 --> 00:02:28,080
+answer with the system and how can
+you get that information to them so
+
+40
+00:02:28,080 --> 00:02:31,680
+that they'll have everything they
+need to answer those questions.
+
+41
+00:02:31,680 --> 00:02:35,220
+Then there's an architectural design, and
+
+42
+00:02:35,220 --> 00:02:40,310
+this is breaking the full system
+down into component systems.
+
+43
+00:02:40,310 --> 00:02:42,360
+If you're making
+a visualization dashboard,
+
+44
+00:02:42,360 --> 00:02:45,690
+then these would be the individual
+elements of that dashboard.
+
+45
+00:02:45,690 --> 00:02:48,210
+And then there's a component design that
+
+46
+00:02:48,210 --> 00:02:51,030
+you're going to figure out how to
+implement each of those elements.
+
+47
+00:02:52,310 --> 00:02:56,210
+And then you go through a step of
+actually implementing, actually coding or
+
+48
+00:02:56,210 --> 00:03:00,290
+setting up the system for
+each of these components.
+
+49
+00:03:00,290 --> 00:03:03,780
+Then you do some debugging to
+test each of the components.
+
+50
+00:03:03,780 --> 00:03:06,730
+And then an important
+step is user evaluation.
+
+51
+00:03:06,730 --> 00:03:10,100
+Once you have these components,
+you'll want to make sure and
+
+52
+00:03:10,100 --> 00:03:14,380
+test them with users to make sure they're
+doing want they're supposed to be doing,
+
+53
+00:03:14,380 --> 00:03:18,780
+that the user is using them the way
+that you intended to use them.
+
+54
+00:03:18,780 --> 00:03:23,240
+And also to use some statistics to make
+sure that you're not just basing your
+
+55
+00:03:23,240 --> 00:03:25,970
+evaluation on anecdotal evidence, but
+
+56
+00:03:25,970 --> 00:03:30,070
+that the user is actually
+using the system effectively.
+
+57
+00:03:30,070 --> 00:03:35,210
+And then finally maintenance
+documentations for the system and fixing.
+
+58
+00:03:35,210 --> 00:03:40,074
+It's easy to underestimate this process,
+and when people make estimates of how
+
+59
+00:03:40,074 --> 00:03:44,938
+long it will take to implement such
+systems they, focus on implementation, and
+
+60
+00:03:44,938 --> 00:03:48,678
+you'll see implementation is
+maybe one of seven steps here.
+
+61
+00:03:48,678 --> 00:03:53,164
+And that's why we say when we're designing
+software systems or user interfaces or
+
+62
+00:03:53,164 --> 00:03:57,393
+visualization systems, you want to take
+the amount of time you think it should
+
+63
+00:03:57,393 --> 00:04:00,270
+take, and then you want to double it.
+
+64
+00:04:00,270 --> 00:04:03,810
+And by doubling it, you're then realizing
+that you're going to have to be
+
+65
+00:04:03,810 --> 00:04:07,090
+doing debugging and some component design.
+
+66
+00:04:07,090 --> 00:04:11,240
+And then you want to double it again,
+because you also need to do the analysis
+
+67
+00:04:11,240 --> 00:04:15,350
+and the requirements specification and
+the evaluation and the maintenance.
+
+68
+00:04:15,350 --> 00:04:19,130
+And so, if we tend to underestimate
+by just looking at implementation,
+
+69
+00:04:19,130 --> 00:04:25,000
+it really takes six to eight times
+as long to actually create a system
+
+70
+00:04:25,000 --> 00:04:26,560
+when you're doing it right.
+
+71
+00:04:26,560 --> 00:04:31,310
+Some other advice when making these
+systems is to use prototypes.
+
+72
+00:04:31,310 --> 00:04:35,310
+We talk about user evaluation here at
+the end, but you should be doing user
+
+73
+00:04:35,310 --> 00:04:40,260
+evaluations and user testings at every
+stage of this, checking with the user
+
+74
+00:04:40,260 --> 00:04:44,455
+in some form or another, either with a
+model of the user or with the actual user.
+
+75
+00:04:44,455 --> 00:04:48,700
+And so you want to use prototypes to
+simulate how the system might work when
+
+76
+00:04:48,700 --> 00:04:52,860
+you're doing a requirement specification
+and then move to an architectural design.
+
+77
+00:04:52,860 --> 00:04:56,590
+For the architectural design,
+you might want to have a mockup of
+
+78
+00:04:56,590 --> 00:05:01,100
+a possible interface and put that in
+front of the user to determine that that
+
+79
+00:05:01,100 --> 00:05:05,790
+meets the requirements that
+the system needs to provide.
+
+80
+00:05:05,790 --> 00:05:09,160
+Or, you may even have a Wizard of Oz
+system where you simulate the system
+
+81
+00:05:09,160 --> 00:05:13,650
+without it actually working the way it's
+supposed to on a very specific case.
+
+82
+00:05:13,650 --> 00:05:16,340
+You can hard-code a system to work and
+
+83
+00:05:16,340 --> 00:05:21,280
+you can see as you're doing component
+design if that was in a biosystem,
+
+84
+00:05:21,280 --> 00:05:25,410
+that simulation of the system that
+you designed is going to satisfy it
+
+85
+00:05:25,410 --> 00:05:28,580
+before you actually invest the time
+in implementing the system.
+
+86
+00:05:28,580 --> 00:05:31,900
+You don't always have to go back
+to the user to get these answers.
+
+87
+00:05:31,900 --> 00:05:37,260
+Often, especially as you're working
+on the design stages of the system,
+
+88
+00:05:37,260 --> 00:05:41,640
+that you can use models of the task and
+dialog.
+
+89
+00:05:41,640 --> 00:05:45,230
+So the user model, based on
+the requirement specification you'll have
+
+90
+00:05:45,230 --> 00:05:48,130
+an idea of what goals
+the user will want to solve.
+
+91
+00:05:48,130 --> 00:05:50,660
+And you can start decomposing tasks and
+
+92
+00:05:50,660 --> 00:05:54,989
+creating task analyses that go
+into the layout of components
+
+93
+00:05:56,450 --> 00:06:01,610
+that can make sure that they meet
+the requirements as specified.
+
+94
+00:06:01,610 --> 00:06:03,500
+And finally, as I mentioned before,
+
+95
+00:06:03,500 --> 00:06:06,570
+don't wait until the very end
+to do this component testing.
+
+96
+00:06:06,570 --> 00:06:11,250
+You'll want to test each of these if
+you've created a good model of the user,
+
+97
+00:06:11,250 --> 00:06:13,310
+and the dialog, and the tasks, and so on.
+
+98
+00:06:13,310 --> 00:06:18,013
+You can start to do some testing of
+your design before you've invested in
+
+99
+00:06:18,013 --> 00:06:19,796
+the implementation time.
+
+100
+00:06:22,501 --> 00:06:27,030
+So for user modeling, there's a variety of
+different techniques for modeling users.
+
+101
+00:06:27,030 --> 00:06:32,370
+You want to focus on what the user
+needs to answer a question.
+
+102
+00:06:32,370 --> 00:06:37,510
+You want to provide a visualization that
+will help the user answer a question, and
+
+103
+00:06:37,510 --> 00:06:41,030
+you don't necessarily want to create
+the fanciest visualization or
+
+104
+00:06:41,030 --> 00:06:46,450
+use every facility that's
+available on the computer system.
+
+105
+00:06:46,450 --> 00:06:49,080
+You want to try to get
+into the head of the user.
+
+106
+00:06:49,080 --> 00:06:53,580
+Try to look at the system from the user's
+point of view instead of, for example,
+
+107
+00:06:53,580 --> 00:06:59,780
+the programmer's point of view, or
+a system designer's point of view.
+
+108
+00:06:59,780 --> 00:07:01,390
+And you want to know your user.
+
+109
+00:07:01,390 --> 00:07:03,860
+What's the user familiar with?
+
+110
+00:07:03,860 --> 00:07:05,760
+What other tools are they using?
+
+111
+00:07:05,760 --> 00:07:09,070
+What's the user's role among other users,
+or
+
+112
+00:07:09,070 --> 00:07:11,450
+among other people in their organization?
+
+113
+00:07:11,450 --> 00:07:15,550
+What might the user know, and
+what might the user not understand?
+
+114
+00:07:15,550 --> 00:07:18,430
+And then finally, what's the users
+motivation in using the system?
+
+115
+00:07:18,430 --> 00:07:21,690
+How can you best provide
+the information in a way that the user
+
+116
+00:07:21,690 --> 00:07:26,910
+will want to use the system and know
+what to do to properly use the system?
+
+117
+00:07:26,910 --> 00:07:29,320
+Finally, it's good to do
+a cognitive walkthrough,
+
+118
+00:07:29,320 --> 00:07:35,200
+put yourself in the head of the user and
+map out, write out in diagrams
+
+119
+00:07:35,200 --> 00:07:40,530
+what should be on the mind of the user as
+they're using your visualization system,
+
+120
+00:07:40,530 --> 00:07:47,310
+so that you can better present data based
+on what the user is currently focusing on.
+
+121
+00:07:47,310 --> 00:07:51,775
+And so there's a variety of user modelling
+techniques, one of them is an old one,
+
+122
+00:07:51,775 --> 00:07:52,890
+it's called GOMS.
+
+123
+00:07:52,890 --> 00:07:55,820
+It stands for goals, operators,
+methods, and selections,
+
+124
+00:07:55,820 --> 00:08:01,050
+and it helps you to understand
+what a user might be thinking of.
+
+125
+00:08:01,050 --> 00:08:05,658
+Users are going to be goal-oriented, and
+so it's good to map out the goals for
+
+126
+00:08:05,658 --> 00:08:06,950
+the system.
+
+127
+00:08:06,950 --> 00:08:10,810
+It's also good to think of the operators
+as you're designing the system.
+
+128
+00:08:10,810 --> 00:08:12,060
+What are the operations,
+
+129
+00:08:12,060 --> 00:08:17,156
+the basic user actions that the user's
+going to be using to achieve the goals?
+
+130
+00:08:17,156 --> 00:08:22,380
+And the user's going to be forming methods
+by stringing together these operations,
+
+131
+00:08:22,380 --> 00:08:25,340
+and there may be multiple
+methods of achieving a goal.
+
+132
+00:08:25,340 --> 00:08:28,420
+Which ones are you going to support,
+try to support as many of them,
+
+133
+00:08:28,420 --> 00:08:30,980
+there's more than one way to skin a cat.
+
+134
+00:08:30,980 --> 00:08:34,160
+Users will have different
+methods to achieve a goal, and
+
+135
+00:08:34,160 --> 00:08:36,890
+you want to be as flexible as
+possible in supporting those.
+
+136
+00:08:36,890 --> 00:08:38,790
+And then finally, selections.
+
+137
+00:08:38,790 --> 00:08:42,830
+When there's multiple methods, the user's
+going to have different ways of selecting
+
+138
+00:08:42,830 --> 00:08:46,670
+which method to use, and you want to
+provide as much information as possible to
+
+139
+00:08:46,670 --> 00:08:49,918
+be able to make an appropriate selection.
+
+140
+00:08:49,918 --> 00:08:54,000
+A user's going to have a goal, and
+each goal is going to have a task or
+
+141
+00:08:54,000 --> 00:08:57,790
+multiple tasks associated with
+achieving that goal, and so
+
+142
+00:08:57,790 --> 00:09:03,610
+you want to make sure that your
+system can connect tasks into goals,
+
+143
+00:09:03,610 --> 00:09:08,960
+and so this is the principal of user
+interface design called synthesizability.
+
+144
+00:09:08,960 --> 00:09:13,890
+Is a user sitting in front of your system
+going to know how to use your system
+
+145
+00:09:13,890 --> 00:09:17,850
+to arrive at an answer if you
+have a visualization dashboard?
+
+146
+00:09:17,850 --> 00:09:22,350
+Is the user going to know where to look
+at on your dashboard in order to be
+
+147
+00:09:22,350 --> 00:09:25,960
+able to come to a conclusion based
+on the information presented?
+
+148
+00:09:25,960 --> 00:09:29,070
+And so these tasks often get complicated,
+and so
+
+149
+00:09:29,070 --> 00:09:34,360
+you'll need to decompose tasks into
+subtasks and goals into subgoals,
+
+150
+00:09:34,360 --> 00:09:38,440
+and then tasks will follow a sequence,
+and those sequences are plans.
+
+151
+00:09:38,440 --> 00:09:42,810
+And how can you articulate that plan so
+that the user can synthesize it when
+
+152
+00:09:42,810 --> 00:09:45,770
+they're sitting in front of
+you visualization system?
+
+153
+00:09:45,770 --> 00:09:51,070
+You may want to look at conditional
+tasks when a selection needs to be made.
+
+154
+00:09:51,070 --> 00:09:53,340
+What are the triggers for
+a conditional task?
+
+155
+00:09:53,340 --> 00:09:56,260
+When does a subwindow need to be opened?
+
+156
+00:09:56,260 --> 00:10:00,010
+When can some operations be avoided?
+
+157
+00:10:00,010 --> 00:10:06,010
+You might also consider wait times,
+delays in information processing, or
+
+158
+00:10:06,010 --> 00:10:11,790
+when the user is interrupted,
+cyclic tasks or multiple parallel tasks.
+
+159
+00:10:11,790 --> 00:10:15,650
+And then you can use all of these
+results to sort of imply the best
+
+160
+00:10:15,650 --> 00:10:20,590
+dashboard layout that best facilitates
+the user getting the information they need
+
+161
+00:10:20,590 --> 00:10:23,490
+to be able to make a good
+informed decision.
+
+162
+00:10:23,490 --> 00:10:25,390
+So here's some examples of dashboards.
+
+163
+00:10:25,390 --> 00:10:30,730
+This is a old dashboard from
+2001 SIGCHI visualization,
+
+164
+00:10:30,730 --> 00:10:34,380
+but it would still be
+used in modern contexts.
+
+165
+00:10:34,380 --> 00:10:39,460
+It's used if you're monitoring
+newsgroups or online conversations.
+
+166
+00:10:39,460 --> 00:10:42,700
+We've had these for 15 years and longer.
+
+167
+00:10:42,700 --> 00:10:46,470
+And this one's shown to work really well.
+
+168
+00:10:46,470 --> 00:10:50,930
+It starts with a thread tree, and it's
+basically a conversation with a subject,
+
+169
+00:10:50,930 --> 00:10:53,810
+and then people replying to that subject.
+
+170
+00:10:53,810 --> 00:10:56,640
+And other people are replying
+to the original subject, and
+
+171
+00:10:56,640 --> 00:10:59,370
+people are replying to the second
+reply to the original subject.
+
+172
+00:10:59,370 --> 00:11:02,420
+And so you get this tree like behavior.
+
+173
+00:11:02,420 --> 00:11:05,170
+And it's organized chronologically,
+vertically but
+
+174
+00:11:05,170 --> 00:11:08,140
+then you form a hierarchy
+based on replying.
+
+175
+00:11:09,510 --> 00:11:12,470
+Which messages reply to
+which other messages?
+
+176
+00:11:12,470 --> 00:11:17,550
+And then you've got the users, and
+the users are provided here in this
+
+177
+00:11:17,550 --> 00:11:22,210
+second visualization, and you have kind
+of a Gantt chart called a piano roll.
+
+178
+00:11:22,210 --> 00:11:27,260
+And it's basically corresponding
+to posting which messages in
+
+179
+00:11:27,260 --> 00:11:31,539
+time horizontally, and then you've got it
+sorted vertically by the number of posts.
+
+180
+00:11:33,070 --> 00:11:38,420
+And then you've got this sociogram,in
+this case it's just a social network,
+
+181
+00:11:38,420 --> 00:11:45,400
+just a graph where you've got connections
+based on who's replying to whose message.
+
+182
+00:11:45,400 --> 00:11:48,500
+But the horizontal and
+vertical position of nodes
+
+183
+00:11:48,500 --> 00:11:53,540
+is indicating horizontally the number
+of responses each person sends, and
+
+184
+00:11:53,540 --> 00:11:55,990
+vertically by the number
+of responses they get.
+
+185
+00:11:55,990 --> 00:12:00,070
+And so this original poster is
+getting a lot of responses,
+
+186
+00:12:00,070 --> 00:12:04,580
+and the rest of these are getting
+some responses to their posts.
+
+187
+00:12:04,580 --> 00:12:07,650
+And then finally we
+want details on demand.
+
+188
+00:12:07,650 --> 00:12:11,300
+You've got this detail selection so
+you can select a node here.
+
+189
+00:12:11,300 --> 00:12:16,390
+You can select a person here, it gets
+highlighted in the thread tree here.
+
+190
+00:12:16,390 --> 00:12:19,040
+You can select an individual node here and
+
+191
+00:12:19,040 --> 00:12:23,690
+see what the actual post is in order
+to drill down to those details.
+
+192
+00:12:24,970 --> 00:12:30,210
+Another example of a dashboard is the CDC,
+Center for
+
+193
+00:12:30,210 --> 00:12:35,680
+Disease Control,
+FluView which shows in the US how the flu
+
+194
+00:12:35,680 --> 00:12:40,430
+is progressing through the year and
+which strains of the flu are occurring.
+
+195
+00:12:40,430 --> 00:12:46,040
+And so you can see peak times for flu,
+which strains of the flu are happening,
+
+196
+00:12:46,040 --> 00:12:50,040
+you get a map here so
+you can determine by region.
+
+197
+00:12:50,040 --> 00:12:53,600
+For example, this is the region where
+the University of Illinois is, and
+
+198
+00:12:53,600 --> 00:12:56,590
+I can see which flus I should
+be on the lookout for and
+
+199
+00:12:56,590 --> 00:12:58,920
+which times I should
+be on the lookout for.
+
+200
+00:12:58,920 --> 00:13:04,210
+And I can start to make a decision
+based on this data how at risk I am or
+
+201
+00:13:04,210 --> 00:13:06,500
+other people I know might be at risk for
+the flu.
+
+202
+00:13:07,660 --> 00:13:12,336
+Andt here's also a Uuniversity of Illinois
+at Urbana-Chmpaign strategic plan
+
+203
+00:13:12,336 --> 00:13:13,500
+dashboard.
+
+204
+00:13:13,500 --> 00:13:17,808
+And we have a strategic plan
+that has several elements.
+
+205
+00:13:17,808 --> 00:13:22,080
+For example, fostering scholarship,
+discovering innovation, providing
+
+206
+00:13:22,080 --> 00:13:28,430
+transformative learning experiences,
+societal impact, stewarding resources.
+
+207
+00:13:28,430 --> 00:13:32,500
+And then we have individual graphs in
+our dashboard that we can select for
+
+208
+00:13:32,500 --> 00:13:36,370
+each of these elements that tell us how
+we're doing with each of these elements.
+
+209
+00:13:36,370 --> 00:13:40,850
+But the graphs also don't just
+give the raw data, they give, for
+
+210
+00:13:40,850 --> 00:13:44,640
+example, goals, where we want to
+be with some of these elements.
+
+211
+00:13:44,640 --> 00:13:47,300
+In some cases we're doing
+well compared to our goals,
+
+212
+00:13:47,300 --> 00:13:50,850
+in some cases we're not doing
+as well compared to our goals.
+
+213
+00:13:50,850 --> 00:13:53,430
+And then that can motivate
+us to do a better job.
+
+214
+00:13:56,190 --> 00:14:01,215
+So following these design rules, these
+sequences for designing a visualization
+
+215
+00:14:01,215 --> 00:14:05,509
+system, you can start to design your
+own dashboard that focuses these
+
+216
+00:14:05,509 --> 00:14:10,424
+visualization tools on your own data so
+you can use it to make better decisions.
+
+217
+00:14:10,424 --> 00:14:20,424
+[MUSIC]

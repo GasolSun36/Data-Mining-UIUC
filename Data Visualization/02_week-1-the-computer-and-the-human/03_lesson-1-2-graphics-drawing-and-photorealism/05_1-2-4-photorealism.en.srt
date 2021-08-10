@@ -1,0 +1,681 @@
+1
+00:00:00,550 --> 00:00:04,170
+When we use three dimensional graphics for
+data visualization, we're going to need to
+
+2
+00:00:04,170 --> 00:00:09,740
+add photorealism in order to cue us to the
+three-dimensional spacial configuration
+
+3
+00:00:09,740 --> 00:00:13,217
+of shapes that are being displayed
+to us in a two-dimensional image.
+
+4
+00:00:15,240 --> 00:00:20,583
+So photorealism describes visual cues that
+tell our perceptual system that when it
+
+5
+00:00:20,583 --> 00:00:26,255
+see a two-dimensional image, it's seeing
+a depiction of a three dimensional scene.
+
+6
+00:00:26,255 --> 00:00:28,980
+Some of these cues are occlusion.
+
+7
+00:00:28,980 --> 00:00:34,587
+Occlusion is shown here, the fact that
+this boys hand is in front of the frame.
+
+8
+00:00:34,587 --> 00:00:38,600
+It's start to trigger your perceptual
+system to think that this is
+
+9
+00:00:38,600 --> 00:00:41,681
+a three-dimensional scene
+of a boy climbing out of
+
+10
+00:00:41,681 --> 00:00:45,640
+the frame instead of a two-dimensional
+image of a boy on a frame.
+
+11
+00:00:45,640 --> 00:00:50,620
+Other things like perspective,
+the fact that this water's receding into
+
+12
+00:00:50,620 --> 00:00:55,296
+the horizon and details are getting
+closer together in the distance.
+
+13
+00:00:55,296 --> 00:00:56,782
+Others like lighting,
+
+14
+00:00:56,782 --> 00:01:00,944
+the light bouncing off the forehead
+of this boy or attenuation that
+
+15
+00:01:00,944 --> 00:01:05,046
+the water is becoming whiter as
+the fog is attenuating the light.
+
+16
+00:01:05,046 --> 00:01:09,601
+All of these add cues, so that your
+perceptual system that's looking at
+
+17
+00:01:09,601 --> 00:01:12,671
+a two-dimensional image
+can understand that.
+
+18
+00:01:12,671 --> 00:01:15,495
+It's actually a three-dimensional
+scene that's being depicted.
+
+19
+00:01:17,615 --> 00:01:20,922
+One of the strongest cues
+of these is occlusion.
+
+20
+00:01:20,922 --> 00:01:25,392
+For example, this red-orange rectangle
+is in front of this blue rectangle,
+
+21
+00:01:25,392 --> 00:01:28,586
+because you can see all of
+this red-orange rectangle.
+
+22
+00:01:28,586 --> 00:01:31,431
+You can't see all of this blue rectangle,
+
+23
+00:01:31,431 --> 00:01:36,090
+because it's being occluded and
+this sets up a depth ordering.
+
+24
+00:01:36,090 --> 00:01:39,720
+We don't know how much closer
+the red-orange rectangle is to us from
+
+25
+00:01:39,720 --> 00:01:42,460
+the blue rectangle, but
+we do know that it is closer.
+
+26
+00:01:43,470 --> 00:01:46,047
+An occlusion is the strongest cue and
+
+27
+00:01:46,047 --> 00:01:51,379
+it is fun to play with it with optical
+illusions, because of that strength.
+
+28
+00:01:51,379 --> 00:01:55,934
+Illumination helps us perceive
+the orientation of surfaces and
+
+29
+00:01:55,934 --> 00:01:59,990
+there's two kinds of illuminations
+that we tend to use.
+
+30
+00:01:59,990 --> 00:02:01,862
+One is diffuse illumination,
+
+31
+00:02:01,862 --> 00:02:05,462
+which is brightest when a surface
+is facing a light source.
+
+32
+00:02:05,462 --> 00:02:10,956
+And we usually see this from soft objects,
+rough objects, things like cloth or
+
+33
+00:02:10,956 --> 00:02:16,546
+pencil erasers or other surfaces that
+are scattering light in many directions.
+
+34
+00:02:16,546 --> 00:02:21,133
+And then there's specular illumination and
+that adds these white highlights and
+
+35
+00:02:21,133 --> 00:02:24,930
+we usually see these on shiny objects,
+metallic objects.
+
+36
+00:02:24,930 --> 00:02:30,480
+And these highlights are added in regions
+of the surface that are facing in
+
+37
+00:02:30,480 --> 00:02:36,046
+a mirror reflection that would reflect
+the light source towards the eye.
+
+38
+00:02:36,046 --> 00:02:39,922
+And so, we can combine these when
+we're doing data visualization.
+
+39
+00:02:39,922 --> 00:02:45,842
+This is an example of particles that
+are leaving trails to show the simulation
+
+40
+00:02:45,842 --> 00:02:51,504
+of the flow of blood in the abdominal
+aorta and we're using certain cues.
+
+41
+00:02:51,504 --> 00:02:56,239
+For example, occlusion that some of these
+trails are in front of other trails as you
+
+42
+00:02:56,239 --> 00:02:59,296
+can see this green trail is
+in front of the blue trail.
+
+43
+00:02:59,296 --> 00:03:03,962
+We're using lighting, because you can
+see that these trails are cylindrical.
+
+44
+00:03:03,962 --> 00:03:08,171
+They have a brighter side and the darker
+side, because of diffused sliding.
+
+45
+00:03:08,171 --> 00:03:12,042
+Also loosing perspectives,
+we see larger things here and
+
+46
+00:03:12,042 --> 00:03:15,210
+smaller things more detailed at the back.
+
+47
+00:03:15,210 --> 00:03:21,064
+And all of those add up to give you better
+sense of the shape of this aorta and
+
+48
+00:03:21,064 --> 00:03:23,338
+the blood flow inside of it.
+
+49
+00:03:23,338 --> 00:03:25,129
+There's some other cues
+that are important.
+
+50
+00:03:25,129 --> 00:03:26,671
+One is shadowing.
+
+51
+00:03:26,671 --> 00:03:30,880
+Shadowing is an inclusion cue from
+a second viewpoint where that second
+
+52
+00:03:30,880 --> 00:03:32,921
+viewpoint is at the light source.
+
+53
+00:03:32,921 --> 00:03:35,837
+So here,
+I've got two two-dimensional images.
+
+54
+00:03:35,837 --> 00:03:40,836
+In both cases, we can think of these
+due to perspective as a flat blue
+
+55
+00:03:40,836 --> 00:03:44,256
+plain with a red-orange ball on top of it,
+but
+
+56
+00:03:44,256 --> 00:03:50,043
+we don't know if this red orange ball is
+hovering over the middle of the plain or
+
+57
+00:03:50,043 --> 00:03:53,754
+if it's laying on the plain
+toward the back of it.
+
+58
+00:03:53,754 --> 00:03:57,022
+If I had a shadow,
+you can see on the left case here,
+
+59
+00:03:57,022 --> 00:04:01,129
+the red orange ball is laying on
+the blue plane towards its back.
+
+60
+00:04:01,129 --> 00:04:05,392
+But in this case, which is the exact
+same image I've just changed the shadow,
+
+61
+00:04:05,392 --> 00:04:09,545
+we can see that this blue ball is hovering
+over the middle of the blue square.
+
+62
+00:04:09,545 --> 00:04:13,503
+And so in, for example,
+this visualization of a molecule,
+
+63
+00:04:13,503 --> 00:04:18,394
+you can use these shadows to get a better
+sense of depth due to the directions
+
+64
+00:04:18,394 --> 00:04:23,396
+that the shadows are being cast from
+in understood light source direction.
+
+65
+00:04:23,396 --> 00:04:28,169
+There's also a perspective in addition
+to being able to see more detail
+
+66
+00:04:28,169 --> 00:04:30,087
+far away with perspective.
+
+67
+00:04:30,087 --> 00:04:33,130
+Perspective is based on size constancy.
+
+68
+00:04:33,130 --> 00:04:38,337
+That objects are the same size,
+but farther ones appear smaller.
+
+69
+00:04:38,337 --> 00:04:41,254
+You don't think that the object
+is changing its size.
+
+70
+00:04:41,254 --> 00:04:46,318
+You understand that the visual
+system is looking at a larger area
+
+71
+00:04:46,318 --> 00:04:52,413
+that's further away, because of the way
+it gets projected onto our retina or
+
+72
+00:04:52,413 --> 00:04:56,754
+onto our image plane in
+the case of computer graphics.
+
+73
+00:04:56,754 --> 00:05:01,583
+In computer graphics, the way we do
+this is we actually make things that
+
+74
+00:05:01,583 --> 00:05:06,332
+are farther away smaller and make
+things that are closer to us larger by
+
+75
+00:05:06,332 --> 00:05:11,504
+actually moving the vertices and
+then projecting onto a projection plane.
+
+76
+00:05:11,504 --> 00:05:15,432
+And so to get this perspective view where
+you've got the front of the table larger
+
+77
+00:05:15,432 --> 00:05:18,840
+than the back of the table,
+what we've actually done is actually made
+
+78
+00:05:18,840 --> 00:05:22,462
+the primitives of the table, larger
+in the front and smaller at the back.
+
+79
+00:05:22,462 --> 00:05:25,493
+But computer graphics does this for
+you automatically, so
+
+80
+00:05:25,493 --> 00:05:27,380
+you don't actually have to do this.
+
+81
+00:05:29,650 --> 00:05:34,765
+And so these examples are demonstrated
+in this animation from
+
+82
+00:05:34,765 --> 00:05:39,705
+the National Center for Supercomputing
+Application on an F3 tornado.
+
+83
+00:05:39,705 --> 00:05:42,421
+And you can see, we're using perspective.
+
+84
+00:05:42,421 --> 00:05:48,293
+The perspective allows us to see the
+glyphs in the front of this visualization
+
+85
+00:05:48,293 --> 00:05:53,461
+and also the patterns that these
+glyphs form as you go farther away.
+
+86
+00:05:53,461 --> 00:05:58,101
+And so this is a storm chaser view and you
+can see the occlusions of these arrows, so
+
+87
+00:05:58,101 --> 00:06:01,398
+you can get a sense and
+the arrows are larger in the front and
+
+88
+00:06:01,398 --> 00:06:02,930
+smaller in the back.
+
+89
+00:06:02,930 --> 00:06:08,078
+So you can get a sense of the depth of the
+simulation of this tornado and the paths
+
+90
+00:06:08,078 --> 00:06:12,921
+that these particles are tracing, and
+also we see shadows on the ground.
+
+91
+00:06:12,921 --> 00:06:16,467
+Shadows being cast of one
+primitive to another and
+
+92
+00:06:16,467 --> 00:06:21,281
+also the lighting that these
+primitives are illuminated on one side
+
+93
+00:06:21,281 --> 00:06:26,350
+better than they're illuminated or
+more brightly than on another side
+
+94
+00:06:26,350 --> 00:06:31,089
+to give you a sense that the shape
+of these arrows are cylindrical.
+
+95
+00:06:31,089 --> 00:06:34,617
+Also, as the storm chaser
+moves through the dataset,
+
+96
+00:06:34,617 --> 00:06:39,462
+things in the front are moving by
+the viewer faster than things in the back.
+
+97
+00:06:39,462 --> 00:06:42,879
+That's another 3D cue
+called motion parallax.
+
+98
+00:06:42,879 --> 00:06:45,087
+And finally, there's stereo.
+
+99
+00:06:45,087 --> 00:06:49,504
+We can use stereo in
+the absence of other cues.
+
+100
+00:06:49,504 --> 00:06:54,261
+In this case, I was just plotting points
+of a mathematical equation to create
+
+101
+00:06:54,261 --> 00:06:58,431
+some shapes and the way you visualize
+this is you hold your fingers up
+
+102
+00:06:58,431 --> 00:07:01,671
+in front of your two eyes and
+right across your eyes.
+
+103
+00:07:01,671 --> 00:07:04,553
+So that your right eye is
+looking at the left image and
+
+104
+00:07:04,553 --> 00:07:08,942
+your left eye is looking at the right
+image, basically by focusing on the finger
+
+105
+00:07:08,942 --> 00:07:12,628
+until those two images in
+the background start to merge together.
+
+106
+00:07:12,628 --> 00:07:17,491
+If you do that, then you get a stereogram
+and this two-dimensional set of points on
+
+107
+00:07:17,491 --> 00:07:22,090
+this image plane should pop-out into
+a three-dimensional configuration.
+
+108
+00:07:22,090 --> 00:07:27,296
+If you want to simulate this, then you can
+simulate this with two separate views.
+
+109
+00:07:27,296 --> 00:07:30,033
+A view from a left eye and
+a view from a right eye,
+
+110
+00:07:30,033 --> 00:07:31,962
+looking in parallel at the data.
+
+111
+00:07:31,962 --> 00:07:34,379
+Just make sure you don't
+rotate those views.
+
+112
+00:07:34,379 --> 00:07:38,004
+You want to make sure
+the views are in parallel.
+
+113
+00:07:38,004 --> 00:07:39,546
+So, what did we learn?
+
+114
+00:07:39,546 --> 00:07:44,209
+We learned that occlusion is
+the strongest of all the depth cues and
+
+115
+00:07:44,209 --> 00:07:49,046
+that shadowing is an occlusion from
+a viewpoint at the light source.
+
+116
+00:07:49,046 --> 00:07:50,825
+Illumination is useful for
+
+117
+00:07:50,825 --> 00:07:55,546
+surface orientation that helps reveal
+details and perspective gives us
+
+118
+00:07:55,546 --> 00:08:00,587
+different scales of visualization in
+addition to adding depth perception.
+
+119
+00:08:00,587 --> 00:08:03,446
+And when none of these
+cues are available to us,
+
+120
+00:08:03,446 --> 00:08:06,170
+sometimes some of
+the other cues can be used.
+
+121
+00:08:06,170 --> 00:08:07,880
+For example, stereo.
+
+122
+00:08:07,880 --> 00:08:12,520
+We can use stereo in
+the absence of other cues.
+
+123
+00:08:12,520 --> 00:08:16,976
+In this case, I was just plotting points
+of a mathematical equation to create some
+
+124
+00:08:16,976 --> 00:08:17,504
+shapes.
+
+125
+00:08:17,504 --> 00:08:22,285
+And the way you visualize this is you hold
+your finger up in front of your two eyes
+
+126
+00:08:22,285 --> 00:08:27,138
+and try to close your eyes, so that your
+right eye is looking at the left image and
+
+127
+00:08:27,138 --> 00:08:29,837
+your left eye is looking
+at the right image.
+
+128
+00:08:29,837 --> 00:08:34,136
+Basically, by focusing on the finger until
+those to images in the background start to
+
+129
+00:08:34,136 --> 00:08:35,620
+merge together.
+
+130
+00:08:35,620 --> 00:08:40,357
+If you do that, then you get a stereogram
+and this two-dimensional set of points on
+
+131
+00:08:40,357 --> 00:08:44,838
+this image plane should pop-out into
+a three-dimensional configuration.
+
+132
+00:08:44,838 --> 00:08:50,005
+If you want to simulate this, then you can
+simulate this with two separate views.
+
+133
+00:08:50,005 --> 00:08:54,755
+A view from a left eye and a view from a
+right eye looking in parallel at the data.
+
+134
+00:08:54,755 --> 00:08:57,712
+Just make sure you don't
+rotate those views.
+
+135
+00:08:57,712 --> 00:08:59,629
+You want to make sure
+the views are in parallel.
+
+136
+00:09:01,150 --> 00:09:04,602
+We learn that occlusion is
+the strongest of these depth cues and
+
+137
+00:09:04,602 --> 00:09:08,129
+we learned that shadows are just
+occlusion from a light source.
+
+138
+00:09:08,129 --> 00:09:12,784
+We also learned that illumination cues
+us to the orientation of surfaces and
+
+139
+00:09:12,784 --> 00:09:14,966
+we also learned that perspective,
+
+140
+00:09:14,966 --> 00:09:18,547
+allows us to visualize multiple
+scales in the same image.
+
+141
+00:09:18,547 --> 00:09:28,547
+[MUSIC]

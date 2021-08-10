@@ -1,0 +1,763 @@
+1
+00:00:00,117 --> 00:00:05,644
+[MUSIC]
+
+2
+00:00:05,644 --> 00:00:08,253
+So at this point I think
+it's good to basically do
+
+3
+00:00:08,253 --> 00:00:11,960
+an overview of the different kinds
+of visualization that there are.
+
+4
+00:00:14,650 --> 00:00:17,020
+For example,
+there's mathematical visualization.
+
+5
+00:00:17,020 --> 00:00:20,990
+This is the visualization of data
+generated from a mathematical equation
+
+6
+00:00:20,990 --> 00:00:24,941
+that's readily available just by running
+a computer program to generate the data.
+
+7
+00:00:26,400 --> 00:00:30,310
+A good example of this is the Mandelbrot
+set here, this black object.
+
+8
+00:00:32,610 --> 00:00:36,000
+This is basically a shape
+that's in the complex plane,
+
+9
+00:00:36,000 --> 00:00:38,230
+these are all complex numbers, and
+
+10
+00:00:38,230 --> 00:00:43,590
+you get this shape basically by starting
+with zero in the complex plane, zero-zero,
+
+11
+00:00:43,590 --> 00:00:48,410
+and you take that and you multiply it
+times itself and add a constant, and
+
+12
+00:00:48,410 --> 00:00:52,860
+then multiply that result times itself and
+add the same constant.
+
+13
+00:00:52,860 --> 00:00:55,440
+Then keep multiplying it times
+itself adding a constant.
+
+14
+00:00:56,930 --> 00:01:00,920
+Depending on which constant you have
+corresponds to a point in the complex
+
+15
+00:01:00,920 --> 00:01:01,890
+plane.
+
+16
+00:01:01,890 --> 00:01:05,060
+And if you start at zero and
+keep adding that constant, squaring and
+
+17
+00:01:05,060 --> 00:01:05,969
+adding that constant.
+
+18
+00:01:07,040 --> 00:01:10,960
+If that goes off to infinity,
+you're out in this purplish region.
+
+19
+00:01:10,960 --> 00:01:13,680
+If that sticks around,
+you're in the black region.
+
+20
+00:01:13,680 --> 00:01:17,540
+Now mathematicians knew that
+these dynamics were interesting
+
+21
+00:01:17,540 --> 00:01:21,000
+in the early 1900s, but
+
+22
+00:01:21,000 --> 00:01:26,250
+they did know how interesting
+the dynamics were or what was going on.
+
+23
+00:01:26,250 --> 00:01:29,620
+And it wasn't until plotted this.
+
+24
+00:01:29,620 --> 00:01:33,410
+Using data visualization to plot
+the results of these points,
+
+25
+00:01:33,410 --> 00:01:36,550
+to find that the dynamics
+were very interesting.
+
+26
+00:01:36,550 --> 00:01:38,160
+You got all this great structure.
+
+27
+00:01:38,160 --> 00:01:42,950
+You could zoom into a little section here,
+and see even more, and more detail, and
+
+28
+00:01:42,950 --> 00:01:46,630
+that was something we just hadn't
+encountered before in mathematics, and
+
+29
+00:01:46,630 --> 00:01:50,710
+so visualization kind of revolutionized
+this area of mathematics in our
+
+30
+00:01:50,710 --> 00:01:55,370
+understanding of this area of mathematics
+by basically getting the data
+
+31
+00:01:55,370 --> 00:02:00,100
+out of this mathematical equation and
+through our visual
+
+32
+00:02:00,100 --> 00:02:03,742
+perception into a cognitive process so
+we could better understand it.
+
+33
+00:02:03,742 --> 00:02:07,255
+So, if If you pick a point inside this and
+
+34
+00:02:07,255 --> 00:02:12,265
+you start to look at the dynamics,
+you get what's called a Julia set.
+
+35
+00:02:12,265 --> 00:02:14,975
+And this plotted in the complex plane.
+
+36
+00:02:14,975 --> 00:02:17,505
+And one of the things
+I worked on with this
+
+37
+00:02:17,505 --> 00:02:22,145
+was to take this complex Julia set and
+look what's going on in the quaternions.
+
+38
+00:02:22,145 --> 00:02:25,455
+And again, data visualization is
+really helpful because you get
+
+39
+00:02:25,455 --> 00:02:27,280
+these whorl patterns.
+
+40
+00:02:27,280 --> 00:02:31,266
+That are basically connecting different
+parts of this Julia set to other parts of
+
+41
+00:02:31,266 --> 00:02:34,139
+this Julia set through these
+additional dimensions, and
+
+42
+00:02:34,139 --> 00:02:38,183
+you couldn't understand that very well
+without actually being able to visualize
+
+43
+00:02:38,183 --> 00:02:40,138
+how those connections are being made.
+
+44
+00:02:43,342 --> 00:02:46,330
+There's also scientific visualization.
+
+45
+00:02:46,330 --> 00:02:48,980
+And this is the visualization
+of scientific data.
+
+46
+00:02:48,980 --> 00:02:54,750
+And that data tends to either be measured
+from real world scientific devices or it.
+
+47
+00:02:54,750 --> 00:02:59,490
+Comes as the result of a lengthy
+expensive supercomputer simulation.
+
+48
+00:03:00,790 --> 00:03:04,840
+In here visualization can be really
+useful because if you have supercomputer
+
+49
+00:03:04,840 --> 00:03:10,080
+simulation, you can use the visualization
+as the simulation is being generated
+
+50
+00:03:10,080 --> 00:03:12,590
+to determine if there's
+problems with the simulation or
+
+51
+00:03:12,590 --> 00:03:18,780
+if you want to steer the simulation
+in a more productive direction.
+
+52
+00:03:18,780 --> 00:03:25,470
+This tends to be coordinate data, spatial
+coordinates, XYZ coordinates, time.
+
+53
+00:03:25,470 --> 00:03:30,450
+It measures things like temperature and
+pressure and other physical quantities,
+
+54
+00:03:30,450 --> 00:03:35,170
+and this is an example from my own work
+where we're visualizing sort of the fronts
+
+55
+00:03:35,170 --> 00:03:39,010
+of the blood flow as it's coming through
+
+56
+00:03:39,010 --> 00:03:43,530
+a lower aorta that happens
+to be has an aneurysm here.
+
+57
+00:03:43,530 --> 00:03:44,560
+It's bulging.
+
+58
+00:03:45,770 --> 00:03:50,200
+And the actual calculation of these
+fronts requires a tremendous amount of
+
+59
+00:03:50,200 --> 00:03:51,000
+computer time.
+
+60
+00:03:52,290 --> 00:03:58,010
+Work in this area has recently taken as
+long as a month to compute these fronts.
+
+61
+00:03:58,010 --> 00:04:03,026
+But we're able to visualize it
+very quickly and interactively so
+
+62
+00:04:03,026 --> 00:04:08,497
+we can see what's going on to better
+understand the complicated nature
+
+63
+00:04:08,497 --> 00:04:13,719
+of this flow which is resulting
+from millions of simulation steps.
+
+64
+00:04:16,958 --> 00:04:19,860
+And finally there's
+information visualization.
+
+65
+00:04:19,860 --> 00:04:24,060
+This is the visualization of more
+abstract, non-coordinate data.
+
+66
+00:04:24,060 --> 00:04:28,920
+For example, what we'll look at in our
+Data Visualization Course will be,
+
+67
+00:04:28,920 --> 00:04:31,530
+for example, relationship data.
+
+68
+00:04:31,530 --> 00:04:34,140
+And this happens to be
+a visualization that my students and
+
+69
+00:04:34,140 --> 00:04:38,210
+I worked on a few years ago, these are
+basically connections between different
+
+70
+00:04:38,210 --> 00:04:42,450
+flicker users on the flicker
+photo sharing website.
+
+71
+00:04:42,450 --> 00:04:45,290
+And there's 7 million of
+these connections and so
+
+72
+00:04:45,290 --> 00:04:50,100
+it's far to many to be able to understand
+by looking at just an ordinary.
+
+73
+00:04:51,440 --> 00:04:55,570
+Graph, but by coloring and
+clustering and laying things out,
+
+74
+00:04:55,570 --> 00:04:59,680
+we can start to see certain people
+are more popular and certain
+
+75
+00:05:00,990 --> 00:05:05,240
+photo collections are gaining
+more attention and we can provide
+
+76
+00:05:05,240 --> 00:05:09,399
+an overview of all of t hat data that
+you can then investigate in more detail.
+
+77
+00:05:10,740 --> 00:05:15,660
+And so it relies more heavily on
+this information visualization.
+
+78
+00:05:15,660 --> 00:05:19,720
+It relies more heavily on
+the ability to process the data
+
+79
+00:05:19,720 --> 00:05:24,680
+from its abstract form into something
+geometric, something concrete that we
+
+80
+00:05:24,680 --> 00:05:27,960
+can then transmit to our brain
+from our visual channels.
+
+81
+00:05:27,960 --> 00:05:31,140
+But that conversion becomes more
+challenging with information
+
+82
+00:05:31,140 --> 00:05:35,400
+visualization, then perhaps it is with
+scientific or mathematical visualization.
+
+83
+00:05:36,800 --> 00:05:42,890
+And there's a variety of different
+domains that visualization is used in.
+
+84
+00:05:42,890 --> 00:05:44,760
+It's used in medical imaging.
+
+85
+00:05:44,760 --> 00:05:47,840
+For example taking CT Scans and
+
+86
+00:05:47,840 --> 00:05:50,840
+being able to reconstruct three
+dimensional shapes from that so
+
+87
+00:05:50,840 --> 00:05:56,941
+you can get a better context of where
+you are spaciouly and the patient data.
+
+88
+00:05:56,941 --> 00:06:02,705
+Being able to take business intelligence
+information marketing results and being
+
+89
+00:06:02,705 --> 00:06:08,150
+able to present those in a way that makes
+it easier to make a business decision.
+
+90
+00:06:09,170 --> 00:06:13,580
+Educational visualization, this is a
+visualization of how quaternions multiply,
+
+91
+00:06:13,580 --> 00:06:15,330
+that I made a few years ago
+
+92
+00:06:17,270 --> 00:06:21,390
+that helps the user understand
+geometrically what's
+
+93
+00:06:21,390 --> 00:06:25,910
+going on with an otherwise abstract
+four dimensional number system.
+
+94
+00:06:25,910 --> 00:06:33,367
+Or geographic information systems,
+taking data that's geographic in nature,
+
+95
+00:06:33,367 --> 00:06:38,335
+and being able to plot that
+in ways that helps you reason
+
+96
+00:06:38,335 --> 00:06:42,890
+about your region, or
+about the world as a whole.
+
+97
+00:06:42,890 --> 00:06:46,092
+And finally,
+there's some modes of visualization, and
+
+98
+00:06:46,092 --> 00:06:50,029
+these are important to understand for
+data visualization in general.
+
+99
+00:06:51,210 --> 00:06:54,860
+There's three that we'll go over.,
+the first is interactive visualization and
+
+100
+00:06:54,860 --> 00:06:57,780
+this is the kind of visualization
+that's used for discovery.
+
+101
+00:06:59,160 --> 00:07:02,510
+Basically, a single
+investigator would use this.
+
+102
+00:07:02,510 --> 00:07:06,180
+Maybe one or
+two collaborators might join in, but
+
+103
+00:07:06,180 --> 00:07:09,750
+its basically a single investigator
+in front of a computer.
+
+104
+00:07:09,750 --> 00:07:14,580
+And, plotting data to try to understand
+what's going on with the data.
+
+105
+00:07:14,580 --> 00:07:18,660
+You've got full control of the data and
+you can change what data sets and
+
+106
+00:07:18,660 --> 00:07:23,630
+how it's displayed on the fly in order to
+help understand what you're looking at.
+
+107
+00:07:25,670 --> 00:07:29,470
+And that's different than, for
+example, presentation visualization.
+
+108
+00:07:29,470 --> 00:07:32,720
+Presentation visualization is the kind
+of visualization that we use for
+
+109
+00:07:32,720 --> 00:07:33,990
+communication.
+
+110
+00:07:33,990 --> 00:07:38,370
+Its a kind of visualization that
+you would see in a video or
+
+111
+00:07:38,370 --> 00:07:45,190
+in a slide presentation and
+its intended for a large group or
+
+112
+00:07:45,190 --> 00:07:52,360
+mass audience to basically communicate
+some aspect of data to that mass audience.
+
+113
+00:07:52,360 --> 00:07:55,430
+And the difference between
+presentation visualization and
+
+114
+00:07:55,430 --> 00:07:56,720
+interactive visualization,
+
+115
+00:07:56,720 --> 00:08:01,560
+mainly, is that presentation
+visualization doesn't support user input.
+
+116
+00:08:01,560 --> 00:08:02,630
+So you're just sitting there and
+
+117
+00:08:02,630 --> 00:08:06,490
+observing, but
+you can't really interact with the data.
+
+118
+00:08:06,490 --> 00:08:08,850
+You're just sort of getting
+
+119
+00:08:08,850 --> 00:08:12,840
+the data packaged in a way that helps you
+understand it, without the interaction.
+
+120
+00:08:14,110 --> 00:08:18,840
+In between here, there's the Internet
+has basically enabled this third mode of
+
+121
+00:08:18,840 --> 00:08:24,030
+visualization that has been
+called interactive storytelling.
+
+122
+00:08:24,030 --> 00:08:26,670
+And these are presentation visualizations,
+but
+
+123
+00:08:26,670 --> 00:08:29,600
+they are presented via
+interactive web pages.
+
+124
+00:08:29,600 --> 00:08:34,160
+And so they allow the viewer to interact
+with the data in some limited fashions.
+
+125
+00:08:34,160 --> 00:08:36,480
+The viewer can't change the dataset.
+
+126
+00:08:36,480 --> 00:08:39,860
+But they can sort of investigate
+a little bit further and
+
+127
+00:08:39,860 --> 00:08:42,950
+there's more information that
+can be presented all at once,
+
+128
+00:08:42,950 --> 00:08:45,220
+as it would be with
+a presentation visualization.
+
+129
+00:08:49,060 --> 00:08:53,110
+And so another way of describing
+these differences is to visualize
+
+130
+00:08:53,110 --> 00:08:56,100
+the modes of visualization, and
+so I've laid them out in a table.
+
+131
+00:08:58,210 --> 00:09:01,490
+We can compare them in
+terms of user interaction.
+
+132
+00:09:01,490 --> 00:09:02,730
+Interactive visualization,
+
+133
+00:09:02,730 --> 00:09:07,760
+the user controls everything including
+what data set you're looking at.
+
+134
+00:09:07,760 --> 00:09:12,630
+In presentation visualization the user is
+only observing, there is no interaction.
+
+135
+00:09:12,630 --> 00:09:16,150
+In interactive storytelling
+there's a presentation, but
+
+136
+00:09:16,150 --> 00:09:20,560
+the user can still filter the data,
+or inspect details of the data, but
+
+137
+00:09:20,560 --> 00:09:25,500
+can't necessarily change the data
+set that they're looking at.
+
+138
+00:09:25,500 --> 00:09:28,080
+There's different graphics
+rendering methods.
+
+139
+00:09:28,080 --> 00:09:30,270
+You would use real-time rendering.
+
+140
+00:09:30,270 --> 00:09:33,850
+Anytime you're supporting interaction
+as you make changes, your
+
+141
+00:09:33,850 --> 00:09:38,870
+display needs to respond to those changes
+so you need real time graphics to do that.
+
+142
+00:09:38,870 --> 00:09:43,340
+Where as presentation visualization,
+the rendering is precomputed and stores,
+
+143
+00:09:43,340 --> 00:09:46,109
+say on video or images in a slide show.
+
+144
+00:09:48,190 --> 00:09:50,250
+The target audiences are different.
+
+145
+00:09:50,250 --> 00:09:53,790
+For presentation visualization,
+you're targeting a mass audience,
+
+146
+00:09:53,790 --> 00:09:58,900
+your colleagues or everybody that goes
+to your webpage, whereas the target for
+
+147
+00:09:58,900 --> 00:10:03,460
+interactive visualization is an individual
+investigator or maybe a small group of.
+
+148
+00:10:03,460 --> 00:10:07,660
+Collaborators that are working
+on understanding some data.
+
+149
+00:10:07,660 --> 00:10:10,070
+And finally, the medium is different.
+
+150
+00:10:10,070 --> 00:10:12,050
+When you're running
+interactive visualization,
+
+151
+00:10:12,050 --> 00:10:16,250
+you're running software and the Internet
+can enable some software to be run, but
+
+152
+00:10:16,250 --> 00:10:20,400
+it's basically running a software
+program on a computer.
+
+153
+00:10:20,400 --> 00:10:21,640
+In order to display the data.
+
+154
+00:10:22,680 --> 00:10:26,490
+When you're doing interactive
+storytelling, you're working mostly on
+
+155
+00:10:26,490 --> 00:10:32,120
+the Internet or some other information
+kiosk that can support a mass audience.
+
+156
+00:10:32,120 --> 00:10:36,341
+When you're working on
+presentation visualization,
+
+157
+00:10:36,341 --> 00:10:41,547
+you're working on slide shows, or
+video, or some other format that
+
+158
+00:10:41,547 --> 00:10:47,583
+allows you to prerecord the visuals, and
+then present them to a mass audience.
+
+159
+00:10:47,583 --> 00:10:57,401
+[MUSIC]

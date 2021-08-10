@@ -1,0 +1,775 @@
+1
+00:00:00,229 --> 00:00:03,504
+[MUSIC]
+
+2
+00:00:11,989 --> 00:00:14,126
+So some of the rules of visual design
+can help take a data visualization and
+
+3
+00:00:14,126 --> 00:00:15,920
+make it more appealing so
+that people will want to look at it and
+
+4
+00:00:15,920 --> 00:00:16,585
+investigate it more.
+
+5
+00:00:16,585 --> 00:00:22,049
+We don't have time to go into
+all the rules of visual design,
+
+6
+00:00:22,049 --> 00:00:29,336
+but I can basically summarize a few of the
+rules that have come from Edward Tufte,
+
+7
+00:00:29,336 --> 00:00:33,543
+who's written several
+books on the subject.
+
+8
+00:00:33,543 --> 00:00:37,560
+The first one is to let the data speak.
+
+9
+00:00:37,560 --> 00:00:42,010
+It's very easy when we're collecting
+data and doing our data processing.
+
+10
+00:00:42,010 --> 00:00:45,840
+To smooth our data,
+to try to remove outliers and
+
+11
+00:00:45,840 --> 00:00:49,130
+try to fill in missing data gaps and
+so on.
+
+12
+00:00:49,130 --> 00:00:54,320
+Sometimes it's best just to display
+the data and let human reasoning,
+
+13
+00:00:54,320 --> 00:00:59,390
+the reasoning of our cognitive systems
+be able to take care of those details.
+
+14
+00:00:59,390 --> 00:01:04,640
+For example, here's life expectancy data
+for two countries, Belize and Bermuda.
+
+15
+00:01:04,640 --> 00:01:10,510
+Belize has data for
+all the years from 1960 to 2012 and
+
+16
+00:01:10,510 --> 00:01:12,880
+Bermuda is missing a lot of data.
+
+17
+00:01:12,880 --> 00:01:15,662
+It's got a lot of gaps
+here until the year 2000.
+
+18
+00:01:15,662 --> 00:01:20,100
+And so I could have filled this in with
+
+19
+00:01:21,130 --> 00:01:24,400
+plausible data or
+drawn lines between these.
+
+20
+00:01:24,400 --> 00:01:30,020
+But it's better to just let your
+inductive system fill these in with
+
+21
+00:01:30,020 --> 00:01:34,700
+what you would expect to be
+between these data points.
+
+22
+00:01:34,700 --> 00:01:38,890
+And also to let your abductive reasoning
+try to figure out why the data wasn't
+
+23
+00:01:38,890 --> 00:01:40,930
+being gathered in these gaps.
+
+24
+00:01:43,470 --> 00:01:47,582
+Another design rule is that
+a picture's worth a thousand words.
+
+25
+00:01:47,582 --> 00:01:51,200
+So you can often show with a diagram or
+
+26
+00:01:51,200 --> 00:01:55,040
+a picture things that it would
+take a lot of text to describe.
+
+27
+00:01:55,040 --> 00:01:56,790
+This is a very old illustration.
+
+28
+00:01:56,790 --> 00:02:01,860
+It's a visualization by Charles Minard
+in 1869 of Napoleon's army
+
+29
+00:02:01,860 --> 00:02:04,010
+as it's marching towards Moscow.
+
+30
+00:02:04,010 --> 00:02:08,120
+And the width of this line
+is the size of the army.
+
+31
+00:02:08,120 --> 00:02:09,550
+And it gets to Moscow, and
+
+32
+00:02:09,550 --> 00:02:13,360
+it's withered down to a small size
+compared to what it started with.
+
+33
+00:02:13,360 --> 00:02:14,915
+And then it begins a retreat.
+
+34
+00:02:14,915 --> 00:02:20,070
+The size of the army becomes even smaller,
+
+35
+00:02:20,070 --> 00:02:23,770
+in part because of the falling
+temperatures which are plotted down here.
+
+36
+00:02:23,770 --> 00:02:31,260
+It may take a lot of text or annotation in
+order to describe what the army size was.
+
+37
+00:02:31,260 --> 00:02:36,210
+But you can see visually here,
+based on this pictorially,
+
+38
+00:02:36,210 --> 00:02:39,500
+what's going on a lot better and
+in a smaller space.
+
+39
+00:02:41,890 --> 00:02:46,470
+With that said, even though you
+can say a lot with pictures,
+
+40
+00:02:46,470 --> 00:02:48,700
+you still need to say a lot with words.
+
+41
+00:02:48,700 --> 00:02:53,560
+Most importantly you should
+not forget to label your axes.
+
+42
+00:02:53,560 --> 00:02:56,350
+It's very important to label your axes.
+
+43
+00:02:56,350 --> 00:03:00,460
+Here's a couple diagrams from some of my
+own publications where we're plotting
+
+44
+00:03:00,460 --> 00:03:03,880
+various data or various behaviors.
+
+45
+00:03:03,880 --> 00:03:08,700
+You can see there's a lot of attention
+that needs to go into annotations to not
+
+46
+00:03:08,700 --> 00:03:14,060
+only make sure that the reader
+understands what's being plotted,
+
+47
+00:03:14,060 --> 00:03:18,480
+but also understands
+the semantics behind the graph.
+
+48
+00:03:18,480 --> 00:03:23,850
+What bars at this altitude
+versus this altitude mean?
+
+49
+00:03:23,850 --> 00:03:27,080
+What this line means here
+versus this line here?
+
+50
+00:03:27,080 --> 00:03:31,490
+So annotation words are still
+important to visualization and
+
+51
+00:03:31,490 --> 00:03:35,010
+it's the relationship
+between the words and
+
+52
+00:03:35,010 --> 00:03:39,250
+the geometry often that gets
+the job done in a visualization.
+
+53
+00:03:41,260 --> 00:03:45,320
+You can also add too much
+information to a visualization.
+
+54
+00:03:45,320 --> 00:03:50,790
+Tufte's advice is encapsulated
+nicely in the term chart junk.
+
+55
+00:03:50,790 --> 00:03:56,100
+Which basically says that when you try to
+make a visualization look prettier and
+
+56
+00:03:56,100 --> 00:04:01,760
+add a lot of elements to a visualization,
+those elements can detract from
+
+57
+00:04:01,760 --> 00:04:06,640
+the actual message that the visualization
+is trying to provide to the observer.
+
+58
+00:04:07,860 --> 00:04:13,220
+Very commonly three dimensions can make a
+two-dimensional graph look more engaging.
+
+59
+00:04:13,220 --> 00:04:17,570
+This three-dimensional graph looks
+nicer than this two dimensional graph.
+
+60
+00:04:17,570 --> 00:04:22,690
+But as we've seen with perspective,
+if I've got a bar that's farther away,
+
+61
+00:04:22,690 --> 00:04:25,920
+if I have a bar in the forefront and
+a bar in the background,
+
+62
+00:04:25,920 --> 00:04:31,070
+sometimes it can be difficult to see if
+a bar in the background is shorter because
+
+63
+00:04:31,070 --> 00:04:36,490
+it's farther away or is it shorter because
+it's representing a smaller amount?
+
+64
+00:04:36,490 --> 00:04:40,230
+So it's better to avoid three dimensions.
+
+65
+00:04:40,230 --> 00:04:45,420
+And it's better to avoid adding a lot
+of extraneous details to a chart that
+
+66
+00:04:45,420 --> 00:04:50,020
+may make it look more engaging but
+could detract from its real message.
+
+67
+00:04:50,020 --> 00:04:54,987
+A nice quantitative measure of
+chart junk is the data-ink ratio.
+
+68
+00:04:54,987 --> 00:04:59,860
+The data-ink ratio basically states that
+
+69
+00:04:59,860 --> 00:05:04,250
+how much data are you displaying
+in your visualization
+
+70
+00:05:04,250 --> 00:05:09,280
+divided by how much ink are you
+using in the visualization.
+
+71
+00:05:10,290 --> 00:05:13,275
+So, you want to maximize
+the data-ink ratio.
+
+72
+00:05:13,275 --> 00:05:17,170
+Meaning, you want to display as much
+data as possible using as little ink
+
+73
+00:05:17,170 --> 00:05:17,880
+as possible.
+
+74
+00:05:18,970 --> 00:05:25,362
+So for example, here's a perfectly
+good bar chart displaying some item
+
+75
+00:05:25,362 --> 00:05:31,490
+in units of one, two, three,
+four, and five unit gaps there.
+
+76
+00:05:31,490 --> 00:05:36,140
+I can display the exact same thing
+without these horizontal lines,
+
+77
+00:05:36,140 --> 00:05:40,830
+without even the annotations here on the
+left, because the annotations are changing
+
+78
+00:05:40,830 --> 00:05:44,530
+by counting numbers one,
+two, three, four, and five.
+
+79
+00:05:44,530 --> 00:05:49,330
+I can just display them as
+stacked discreet bar segments and
+
+80
+00:05:49,330 --> 00:05:52,870
+I can see the same information that
+
+81
+00:05:52,870 --> 00:05:56,810
+this is basically some value
+a little more than four.
+
+82
+00:05:56,810 --> 00:06:01,840
+This is some value a bit larger than two.
+
+83
+00:06:01,840 --> 00:06:03,290
+I can see the same information here,
+
+84
+00:06:03,290 --> 00:06:07,640
+I've used less ink and
+I can focus more on the actual data.
+
+85
+00:06:09,130 --> 00:06:14,630
+This is an example where Ed Tufte
+reveals that he's really a minimalist.
+
+86
+00:06:14,630 --> 00:06:20,210
+He wants as little decoration
+as possible in visualizations.
+
+87
+00:06:20,210 --> 00:06:24,370
+There are other people working
+in visualization who have set up
+
+88
+00:06:24,370 --> 00:06:28,900
+different design aesthetics that have
+also generated effective visualizations.
+
+89
+00:06:28,900 --> 00:06:33,780
+So Tufte is not the only name in
+visualization and the only advice you
+
+90
+00:06:33,780 --> 00:06:38,330
+should follow, but these are good
+recommendations in any case.
+
+91
+00:06:40,300 --> 00:06:46,330
+Another principle is the micro and
+the macro of a visualization.
+
+92
+00:06:46,330 --> 00:06:51,610
+So you've got micro level details and
+macro level details.
+
+93
+00:06:51,610 --> 00:06:56,310
+The best example is, again, from the NCSA,
+here's another visualization of a tornado.
+
+94
+00:06:57,460 --> 00:07:01,950
+On the bottom here we've got
+wind being displayed, perhaps,
+
+95
+00:07:01,950 --> 00:07:03,420
+as little stalks of wheat.
+
+96
+00:07:03,420 --> 00:07:06,320
+You can see wind direction
+here in the foreground and
+
+97
+00:07:06,320 --> 00:07:09,360
+in the background that
+becomes more of a texture.
+
+98
+00:07:09,360 --> 00:07:12,640
+So you've got micro-level and
+macro-level details.
+
+99
+00:07:12,640 --> 00:07:14,660
+We can create zoomable interfaces.
+
+100
+00:07:14,660 --> 00:07:17,570
+Zoomable interfaces allow us to change
+
+101
+00:07:17,570 --> 00:07:22,420
+which details are at the macro
+level that we can look at, and
+
+102
+00:07:22,420 --> 00:07:27,660
+which details are at the micro level
+which we can get a broad overview of.
+
+103
+00:07:27,660 --> 00:07:30,150
+This leads to this mantra for
+
+104
+00:07:30,150 --> 00:07:35,360
+doing large data visualization, where you
+want to see a broad overview first, and
+
+105
+00:07:35,360 --> 00:07:41,240
+then get the details on demand, and
+be able to zoom into those details,
+
+106
+00:07:41,240 --> 00:07:45,502
+and be able to switch from
+a macro view to a micro view.
+
+107
+00:07:45,502 --> 00:07:50,930
+It's also
+
+108
+00:07:50,930 --> 00:07:55,510
+to think of information as
+being organized into layers.
+
+109
+00:07:55,510 --> 00:08:01,560
+This is a visualization project that I was
+a part of a few years ago, where we were
+
+110
+00:08:01,560 --> 00:08:08,500
+visualizing the structure of music in a
+different layout than is usual for music.
+
+111
+00:08:08,500 --> 00:08:13,110
+So we're visualizing, for example,
+note values here in blue and
+
+112
+00:08:13,110 --> 00:08:18,440
+we're visualizing similar chord
+structures in black characters.
+
+113
+00:08:18,440 --> 00:08:22,720
+And I'm showing some relationships in
+light grey of neighboring elements to
+
+114
+00:08:22,720 --> 00:08:25,750
+a given relationship organized
+in heavy black here.
+
+115
+00:08:27,520 --> 00:08:31,680
+So by using these different design
+elements, changing the color,
+
+116
+00:08:31,680 --> 00:08:35,390
+changing typeface, italics or bold,
+
+117
+00:08:35,390 --> 00:08:40,520
+you can organize the visual display
+of information a little bit better,
+
+118
+00:08:40,520 --> 00:08:45,180
+give hints to the viewer of
+the different categories.
+
+119
+00:08:45,180 --> 00:08:50,280
+This is very similar to the display
+of nominal data using hue,
+
+120
+00:08:50,280 --> 00:08:56,140
+for example, or
+using a different type face, or
+
+121
+00:08:56,140 --> 00:09:02,700
+a different decoration as a way of
+discriminating between nominal variable.
+
+122
+00:09:06,320 --> 00:09:09,186
+Also multiples, Tufte speaks of multiples.
+
+123
+00:09:09,186 --> 00:09:13,520
+That is to basically maintain
+a consistent design and
+
+124
+00:09:13,520 --> 00:09:17,850
+have multiple visualizations using
+that same consistent design so
+
+125
+00:09:17,850 --> 00:09:22,330
+that you can see the differences
+as the data changes.
+
+126
+00:09:22,330 --> 00:09:28,990
+So in this example from one of my own
+papers we have several different graphs.
+
+127
+00:09:28,990 --> 00:09:34,785
+In each case, I've tried to maintain
+the exact same the same vertical axis.
+
+128
+00:09:34,785 --> 00:09:38,895
+The same annotation for
+the different cases.
+
+129
+00:09:38,895 --> 00:09:43,875
+And, in fact, as much as possible,
+the same horizontal axis, although it
+
+130
+00:09:43,875 --> 00:09:49,055
+changes a little bit, so that you can
+see the difference from graph to graph
+
+131
+00:09:49,055 --> 00:09:54,380
+in addition to the individual changes in
+the data variables inside each graph.
+
+132
+00:09:54,380 --> 00:09:59,700
+Visualizations, especially
+
+133
+00:09:59,700 --> 00:10:04,800
+presentation visualization and
+interactive storytelling, tell a story.
+
+134
+00:10:05,870 --> 00:10:10,800
+So you might think, what sort of story is
+your data visualization actually telling?
+
+135
+00:10:10,800 --> 00:10:16,501
+The best way to think of this is,
+what's happening over time?
+
+136
+00:10:16,501 --> 00:10:18,931
+What's happening across space?
+
+137
+00:10:18,931 --> 00:10:21,601
+Here is a plot of life
+expectancy in Rwanda and
+
+138
+00:10:21,601 --> 00:10:23,790
+the neighboring Republic of Congo.
+
+139
+00:10:23,790 --> 00:10:29,320
+And you see this huge dip in
+the life expectancy in Rwanda.
+
+140
+00:10:29,320 --> 00:10:34,240
+This is just tragic and
+a lot's going on here.
+
+141
+00:10:34,240 --> 00:10:39,290
+These two lines are telling quite
+a story because they're describing two
+
+142
+00:10:39,290 --> 00:10:44,290
+neighboring countries and very different
+circumstances in the two countries.
+
+143
+00:10:46,040 --> 00:10:47,670
+And finally, color.
+
+144
+00:10:47,670 --> 00:10:51,290
+Your choice of color can be
+important if it's used properly, but
+
+145
+00:10:51,290 --> 00:10:53,707
+color chosen arbitrarily
+can be quite harmful.
+
+146
+00:10:53,707 --> 00:10:59,160
+In this example, rainbow is not the best.
+
+147
+00:10:59,160 --> 00:11:04,760
+As we'll see next, the choice of
+color could be very important and
+
+148
+00:11:04,760 --> 00:11:08,730
+there's additional design decisions to
+be made based on the choice of color.
+
+149
+00:11:08,730 --> 00:11:11,470
+Here we're looking at
+a three-dimensional object and
+
+150
+00:11:11,470 --> 00:11:15,630
+we're using a rainbow map that
+has bright and dark spots in it.
+
+151
+00:11:15,630 --> 00:11:16,330
+Those bright and
+
+152
+00:11:16,330 --> 00:11:21,370
+dark spots can interfere with our
+perception of the three-dimensional shape.
+
+153
+00:11:21,370 --> 00:11:24,600
+Also the shading of the three-dimensional
+shape can interfere
+
+154
+00:11:24,600 --> 00:11:28,430
+with our perception of the variable
+that's being mapped to color.
+
+155
+00:11:31,520 --> 00:11:34,040
+So these rules came from Tufte's books.
+
+156
+00:11:34,040 --> 00:11:36,720
+Tufte tends to be a minimalist.
+
+157
+00:11:36,720 --> 00:11:40,560
+He tends to want to use the least amount
+
+158
+00:11:40,560 --> 00:11:44,650
+of presentation possible
+in a visualization.
+
+159
+00:11:44,650 --> 00:11:47,180
+And that's one design criterion.
+
+160
+00:11:47,180 --> 00:11:49,440
+But it's only one of
+many design criterions.
+
+161
+00:11:49,440 --> 00:11:55,862
+I encourage you to look at other
+visualizations from other designers and
+
+162
+00:11:55,862 --> 00:12:00,188
+to maybe explore your own
+sense of design style.
+
+163
+00:12:00,188 --> 00:12:10,188
+[MUSIC]

@@ -1,0 +1,188 @@
+1
+00:00:00,003 --> 00:00:06,879
+[SOUND] In last week's module we learned
+about different visualization systems,
+
+2
+00:00:06,879 --> 00:00:10,863
+how computer graphics is
+used to present data,
+
+3
+00:00:10,863 --> 00:00:14,550
+and most importantly
+how we observe data and
+
+4
+00:00:14,550 --> 00:00:18,656
+perceive the data based
+on how it's presented.
+
+5
+00:00:18,656 --> 00:00:22,060
+In this week's module,
+we'll be focusing on the data and
+
+6
+00:00:22,060 --> 00:00:24,839
+different attributes of the data and
+how best to
+
+7
+00:00:24,839 --> 00:00:29,230
+incorporate that into a visualization
+system for its effective display.
+
+8
+00:00:30,730 --> 00:00:35,090
+Here's an example using Tableau,
+which is one of several different
+
+9
+00:00:35,090 --> 00:00:38,910
+visualization systems that are available
+to help with visualizing data.
+
+10
+00:00:38,910 --> 00:00:41,130
+We have data on the left.
+
+11
+00:00:41,130 --> 00:00:44,670
+And the is the data from
+the World Bank Indicators.
+
+12
+00:00:44,670 --> 00:00:48,930
+And, for example,
+we might be interested in life expectancy.
+
+13
+00:00:48,930 --> 00:00:50,470
+And we might also want to see,
+
+14
+00:00:50,470 --> 00:00:54,620
+how does infant mortality affect
+the estimate of life expectancy?
+
+15
+00:00:54,620 --> 00:00:57,840
+And then we might want to separate
+that by country or region.
+
+16
+00:00:59,800 --> 00:01:03,990
+So Tableau, for example, has this Show Me
+button here in the upper right corner.
+
+17
+00:01:03,990 --> 00:01:06,560
+The Show Me button,
+you can click that, and
+
+18
+00:01:06,560 --> 00:01:09,760
+based on the data you've selected, Tableau
+
+19
+00:01:09,760 --> 00:01:14,460
+will show you the specific kinds of charts
+you may want to use to display that data.
+
+20
+00:01:14,460 --> 00:01:18,740
+We click on one of those, and we
+automatically get a visualization of that
+
+21
+00:01:18,740 --> 00:01:25,570
+data, where the, horizontally the columns
+are showing infant mortality.
+
+22
+00:01:25,570 --> 00:01:30,260
+Vertically, the rows are showing
+us the average life expectancy.
+
+23
+00:01:30,260 --> 00:01:35,690
+So, as we move vertically up,
+we're seeing life expectancy.
+
+24
+00:01:35,690 --> 00:01:38,190
+Horizontally, we're
+seeing infant mortality.
+
+25
+00:01:38,190 --> 00:01:41,870
+And then each one of these
+circles is indicating a different
+
+26
+00:01:41,870 --> 00:01:43,800
+country that we might be looking at.
+
+27
+00:01:43,800 --> 00:01:49,060
+And so, if you use Tableau
+you can use this Show Me
+
+28
+00:01:49,060 --> 00:01:53,980
+screen in order to automatically find the
+appropriate kinds of visualization methods
+
+29
+00:01:53,980 --> 00:01:55,290
+you would use for that.
+
+30
+00:01:55,290 --> 00:01:59,420
+What I'm going to be talking about
+this week and actually in module four
+
+31
+00:02:00,930 --> 00:02:05,530
+in the fourth week of the class
+is the background information.
+
+32
+00:02:05,530 --> 00:02:09,580
+The papers that have been
+written on the subject
+
+33
+00:02:09,580 --> 00:02:14,130
+that went in to creating this Show Me
+button so that we can figure out how this
+
+34
+00:02:14,130 --> 00:02:18,840
+Show Me button automatically laid out
+this data in the appropriate manner.
+
+35
+00:02:18,840 --> 00:02:23,320
+So that you can use any tool you
+like to set up your visualizations.
+
+36
+00:02:23,320 --> 00:02:27,658
+There's obviously other reasons
+you would want to use Tableau, but
+
+37
+00:02:27,658 --> 00:02:32,291
+you'll know enough to be able to do
+the same thing that the Show Me button is
+
+38
+00:02:32,291 --> 00:02:35,461
+doing on your own with
+any visualization system.
+
+39
+00:02:35,461 --> 00:02:44,748
+[MUSIC]

@@ -1,0 +1,81 @@
+1
+00:00:00,012 --> 00:00:06,426
+[SOUND]
+So
+
+2
+00:00:06,426 --> 00:00:11,130
+if you want to try any of these
+scalable vector graphics examples,
+
+3
+00:00:11,130 --> 00:00:17,090
+you can go to wthreeschools.com and
+there's an SVG tutorial section there.
+
+4
+00:00:17,090 --> 00:00:21,320
+And it gives you a window here
+where you can type in SVG code.
+
+5
+00:00:21,320 --> 00:00:23,890
+For example, here and
+it's output comes here.
+
+6
+00:00:24,970 --> 00:00:28,597
+So for example, this one's
+setting up a drawing canvas, and
+
+7
+00:00:28,597 --> 00:00:30,282
+it's specified in pixels.
+
+8
+00:00:30,282 --> 00:00:34,464
+So the canvas coordinates are going to
+be equal to the display coordinates,
+
+9
+00:00:34,464 --> 00:00:39,057
+going from 00 here, to 100, 100 here,
+it's drawing a circle centered.
+
+10
+00:00:39,057 --> 00:00:42,553
+If, 50/50 in the middle of radius 40.
+
+11
+00:00:42,553 --> 00:00:46,903
+If I can that to a 50 and
+then see the results you can see that
+
+12
+00:00:46,903 --> 00:00:52,050
+it's extending out to the boundary
+of the drawing canvas.
+
+13
+00:00:52,050 --> 00:00:58,070
+We can use this to interactively
+change different attributes
+
+14
+00:00:58,070 --> 00:01:02,340
+of an SVG drawing and
+see the results being plotted.
+
+15
+00:01:08,750 --> 00:01:13,912
+And that way you can experiment with
+different methods for setting up
+
+16
+00:01:13,912 --> 00:01:19,704
+coordinate systems or drawing various
+shapes in scalable vector graphics.
+
+17
+00:01:19,704 --> 00:01:29,538
+[MUSIC]

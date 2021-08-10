@@ -1,0 +1,362 @@
+1
+00:00:00,008 --> 00:00:07,680
+[SOUND]
+So
+
+2
+00:00:07,680 --> 00:00:12,001
+often we want to visualize
+multiple variables simultaneously.
+
+3
+00:00:12,001 --> 00:00:16,798
+And so we generate stacked graphs
+that can display several variables
+
+4
+00:00:16,798 --> 00:00:19,370
+changing along the same dimension.
+
+5
+00:00:21,150 --> 00:00:25,030
+For a bar chart, we may want to look
+at more than just a single quantitative
+
+6
+00:00:25,030 --> 00:00:29,670
+dependent variable measured across
+an independent variable dimension.
+
+7
+00:00:31,840 --> 00:00:34,820
+One way of doing this is
+with a stacked bar chart.
+
+8
+00:00:34,820 --> 00:00:39,780
+In this case we can have two or
+more dependent variables plotted.
+
+9
+00:00:39,780 --> 00:00:44,090
+In this case, the blue bars are
+representing one dependent variable and
+
+10
+00:00:44,090 --> 00:00:47,830
+the red bars are representing
+a second dependent variable.
+
+11
+00:00:47,830 --> 00:00:52,440
+And so we're using q to represent
+different nominal value, basically
+
+12
+00:00:52,440 --> 00:00:57,740
+the second dependent variable is different
+than the first dependent variable.
+
+13
+00:00:58,880 --> 00:01:03,020
+And then the total amount of
+the contribution of both variables
+
+14
+00:01:03,020 --> 00:01:08,270
+is represented by the height of
+the top of these stacked bars.
+
+15
+00:01:08,270 --> 00:01:12,520
+And the relative proportion
+is being represented by
+
+16
+00:01:12,520 --> 00:01:17,770
+the proportion of the bar being
+one color versus another color.
+
+17
+00:01:17,770 --> 00:01:21,850
+And if we want to emphasize
+that relative proportion.
+
+18
+00:01:21,850 --> 00:01:24,950
+We can have the bars stacked to 100% and
+
+19
+00:01:24,950 --> 00:01:28,940
+just plot the percentage of
+the contribution of one variable versus
+
+20
+00:01:28,940 --> 00:01:34,083
+the other variable as the difference
+in the colors of the bars.
+
+21
+00:01:35,820 --> 00:01:41,664
+This kind of relative contribution is
+also represented in a pie chart but
+
+22
+00:01:41,664 --> 00:01:46,640
+in a pie chart you're representing
+the contribution based on angle and
+
+23
+00:01:46,640 --> 00:01:50,320
+a little bit by area than on position and
+length.
+
+24
+00:01:50,320 --> 00:01:56,090
+Here in a pie chart the relative
+proportion of the blue category
+
+25
+00:01:56,090 --> 00:02:00,140
+versus the orange category versus the
+green category versus the yellow category
+
+26
+00:02:00,140 --> 00:02:05,940
+is being represented by the angle
+as the angle's sum to 360 degrees.
+
+27
+00:02:05,940 --> 00:02:11,450
+It's also proportional to the area
+represented by each of these four regions.
+
+28
+00:02:11,450 --> 00:02:15,590
+That indication can be degraded
+somewhat if you try to
+
+29
+00:02:15,590 --> 00:02:18,200
+show a pie chart in three dimensions.
+
+30
+00:02:18,200 --> 00:02:22,270
+And that's because in three
+dimensions we are still perceiving
+
+31
+00:02:22,270 --> 00:02:26,970
+a three dimensional scene
+as a two dimensional image.
+
+32
+00:02:26,970 --> 00:02:32,160
+And the visual cues we're using include
+foreshortening and perspective.
+
+33
+00:02:32,160 --> 00:02:36,790
+And those cues can get in the way of our
+ability to perceive a region, say in
+
+34
+00:02:36,790 --> 00:02:42,220
+the foreground, as being larger or smaller
+than a region in the background because of
+
+35
+00:02:42,220 --> 00:02:47,260
+our expectation that perspective is going
+to make regions in the foreground larger.
+
+36
+00:02:47,260 --> 00:02:51,180
+Or at least appear larger and
+regions in the background appear smaller,
+
+37
+00:02:51,180 --> 00:02:57,110
+even if it's just a orthographic
+non-perspective projection.
+
+38
+00:02:57,110 --> 00:03:01,410
+So, it's best not to use three
+dimensions for pie charts and, in fact,
+
+39
+00:03:01,410 --> 00:03:05,610
+it's better just to use a stacked
+bar chart instead of a pie chart.
+
+40
+00:03:05,610 --> 00:03:10,130
+In this case, each one of these bars
+can represent a separate pie chart
+
+41
+00:03:10,130 --> 00:03:14,980
+because it's representing the separate
+relative contribution to the whole of
+
+42
+00:03:14,980 --> 00:03:20,170
+multiple dependent variables, as they
+vary across some independent variable.
+
+43
+00:03:22,460 --> 00:03:24,920
+Also, stacking order matters.
+
+44
+00:03:24,920 --> 00:03:28,600
+I've got the same data plotted
+in the left and in the right.
+
+45
+00:03:28,600 --> 00:03:31,470
+In the left,
+I've plotted the blue variable first.
+
+46
+00:03:31,470 --> 00:03:34,430
+And then I've stacked the red
+variable on top of that.
+
+47
+00:03:34,430 --> 00:03:37,180
+On the right side,
+I've plugged the red variable first and
+
+48
+00:03:37,180 --> 00:03:40,120
+I've stacked the blue
+variable on top of that.
+
+49
+00:03:40,120 --> 00:03:43,690
+On the right it's easy to see that
+the red variable isn't changing
+
+50
+00:03:43,690 --> 00:03:45,400
+across the horizontal axis.
+
+51
+00:03:46,765 --> 00:03:50,275
+On the left, you can still see that
+the red variable isn't changing, but
+
+52
+00:03:50,275 --> 00:03:53,085
+you have to see that because
+the lengths aren't changing.
+
+53
+00:03:53,085 --> 00:03:56,975
+Whereas on the right,
+the actual positions aren't changing.
+
+54
+00:03:56,975 --> 00:04:02,245
+Which further verifies that position is
+a stronger indicator than the length of
+
+55
+00:04:02,245 --> 00:04:07,125
+the actual data values in terms
+of mapping two geometric and
+
+56
+00:04:07,125 --> 00:04:10,435
+spacial display elements.
+
+57
+00:04:14,010 --> 00:04:18,600
+You can avoid that stacking order problem
+by using diverging stacked bar charts if
+
+58
+00:04:18,600 --> 00:04:22,870
+you have the red variable creating
+bars growing upwards, and
+
+59
+00:04:22,870 --> 00:04:26,300
+the blue variable creating
+bars growing downward.
+
+60
+00:04:26,300 --> 00:04:29,810
+But that stops working when you
+have three or more variables.
+
+61
+00:04:30,860 --> 00:04:37,720
+Another way to avoid having one variable
+dominate the other in stacking order
+
+62
+00:04:37,720 --> 00:04:42,690
+is to stack them and then re-center
+the bar across the horizontal axis.
+
+63
+00:04:42,690 --> 00:04:45,970
+So instead of growing up
+from the horizontal axis
+
+64
+00:04:45,970 --> 00:04:48,990
+the bar is just centered
+at the horizontal axis.
+
+65
+00:04:48,990 --> 00:04:54,350
+And this give us the same
+displacement on the top and
+
+66
+00:04:54,350 --> 00:04:59,350
+the bottom of the bar chart,
+but it helps us to pay more
+
+67
+00:04:59,350 --> 00:05:04,580
+attention to the areas of the elements
+instead of their actual position.
+
+68
+00:05:08,980 --> 00:05:14,420
+It's much better if you have continuously
+changing horizontal and vertical
+
+69
+00:05:15,670 --> 00:05:20,960
+axis variables to use stacked line graphs,
+then stacked bar charts.
+
+70
+00:05:20,960 --> 00:05:25,813
+If we can connect their data values
+by lines instead of having them
+
+71
+00:05:25,813 --> 00:05:30,580
+discrete bars, then it's easier
+to see when areas are changing
+
+72
+00:05:30,580 --> 00:05:35,083
+versus areas are remaining
+constant as they move across even
+
+73
+00:05:35,083 --> 00:05:39,877
+though they're displaced by
+the variance of other variables.
+
+74
+00:05:42,094 --> 00:05:51,825
+[MUSIC]

@@ -1,0 +1,611 @@
+1
+00:00:00,000 --> 00:00:04,000
+So in order to use two-dimensional computer graphics for visualization,
+
+2
+00:00:04,000 --> 00:00:06,640
+we'll need to plot our data in two-dimensional graphics.
+
+3
+00:00:06,640 --> 00:00:10,689
+So we'll need to learn how to draw things in two-dimensional graphics and how to
+
+4
+00:00:10,689 --> 00:00:15,875
+set up a drawing canvas in a specific two-dimensional graphics system.
+
+5
+00:00:15,875 --> 00:00:20,515
+So now we can learn how to draw two-dimensional graphics.
+
+6
+00:00:20,515 --> 00:00:22,489
+What we're going to learn is how to set up
+
+7
+00:00:22,489 --> 00:00:26,225
+a two-dimensional drawing canvas and then how to draw things in it.
+
+8
+00:00:26,225 --> 00:00:28,429
+And we're going to learn how to do this using
+
+9
+00:00:28,429 --> 00:00:32,914
+this scalable vector graphics specification for two-dimensional graphics.
+
+10
+00:00:32,914 --> 00:00:36,710
+The scalable vector graphics specification is
+
+11
+00:00:36,710 --> 00:00:41,405
+a method for describing two-dimensional graphics for a variety of systems.
+
+12
+00:00:41,405 --> 00:00:44,005
+One of the systems that it works with is HTML,
+
+13
+00:00:44,005 --> 00:00:48,350
+so you can embed two-dimensional graphics in a web page by
+
+14
+00:00:48,350 --> 00:00:53,299
+putting an SVG tag in your HTML code for the web page.
+
+15
+00:00:53,299 --> 00:00:57,005
+And this is an example svg tag - it has a width,
+
+16
+00:00:57,005 --> 00:00:59,134
+a height and a view box.
+
+17
+00:00:59,134 --> 00:01:04,069
+The width and the height describe the width and height, usually in pixels,
+
+18
+00:01:04,069 --> 00:01:07,140
+of how the graphics will appear in your web page
+
+19
+00:01:07,140 --> 00:01:12,575
+The viewbox describes the coordinates that you'll be drawing with.
+
+20
+00:01:12,575 --> 00:01:15,019
+And so these are your canvas coordinates.
+
+21
+00:01:15,019 --> 00:01:22,460
+It'll start with an x and y coordinates and the canvas will extend to the point x plus w,
+
+22
+00:01:22,460 --> 00:01:27,380
+y plus h. So it'll have a width and height of w and h units for drawing.
+
+23
+00:01:27,380 --> 00:01:32,275
+And so the important thing to remember for svg is that this origin,
+
+24
+00:01:32,275 --> 00:01:35,329
+this x and y, is the upper left corner
+
+25
+00:01:35,329 --> 00:01:38,469
+and not the lower left corner in my previous example.
+
+26
+00:01:38,469 --> 00:01:42,290
+svg, particularly when it's being used for a web page,
+
+27
+00:01:42,290 --> 00:01:44,785
+is being used to describe a document system.
+
+28
+00:01:44,785 --> 00:01:46,700
+And we tend to read left-to-right,
+
+29
+00:01:46,700 --> 00:01:52,819
+top-to-bottom and the coordinate system is set up appropriately.
+
+30
+00:01:52,819 --> 00:01:55,879
+The other thing to remember is that when we set up this viewbox,
+
+31
+00:01:55,879 --> 00:01:58,540
+we're setting up our canvas coordinate system.
+
+32
+00:01:58,540 --> 00:02:01,730
+These are the coordinates we're going to be drawing with and when
+
+33
+00:02:01,730 --> 00:02:05,484
+we describe the width and the height of the svg tag,
+
+34
+00:02:05,484 --> 00:02:11,419
+that's describing the actual display pixels of the - of the result.
+
+35
+00:02:11,419 --> 00:02:14,539
+And so we're automatically getting a canvas to
+
+36
+00:02:14,539 --> 00:02:20,030
+screen transformation between these two coordinate systems.
+
+37
+00:02:20,030 --> 00:02:23,441
+So here's an example of that plot of a parabola y
+
+38
+00:02:23,441 --> 00:02:28,150
+equals x squared using svg graphing coordinates.
+
+39
+00:02:28,150 --> 00:02:30,044
+Here's our svg tag.
+
+40
+00:02:30,044 --> 00:02:32,900
+We'll set up some width and height for some - some number
+
+41
+00:02:32,900 --> 00:02:35,740
+of pixels depending on our output device,
+
+42
+00:02:35,740 --> 00:02:39,259
+but we set up a viewbox that's going to give us the coordinates -
+
+43
+00:02:39,259 --> 00:02:43,185
+the canvas coordinates - that we're going to use to draw the graph.
+
+44
+00:02:43,185 --> 00:02:47,659
+And so we'll set up coordinate systems going from 0, 0 to 1,
+
+45
+00:02:47,659 --> 00:02:52,985
+1 for canvas coordinates to draw in and we'll draw the axes title and other decorations.
+
+46
+00:02:52,985 --> 00:02:57,250
+Then we can set up another canvas with another svg tag.
+
+47
+00:02:57,250 --> 00:02:59,030
+And so one of the elements of
+
+48
+00:02:59,030 --> 00:03:04,775
+the scalable vector graphics specification is another scalable vector graphics canvas.
+
+49
+00:03:04,775 --> 00:03:11,534
+And in this case, we're going to put the canvas at a point 10 percent in,
+
+50
+00:03:11,534 --> 00:03:14,245
+since our original canvas goes from zero to one,
+
+51
+00:03:14,245 --> 00:03:22,099
+10 percent will be 0.1 units by - so we'd have a point 0.1, 0.1 here - that's the x,
+
+52
+00:03:22,099 --> 00:03:27,540
+y coordinate of the upper left corner of our canvas, our blue canvas.
+
+53
+00:03:27,540 --> 00:03:30,020
+And it's going to have a width of 80 percent,
+
+54
+00:03:30,020 --> 00:03:33,319
+that'll be 80 percent of the original drawing coordinates,
+
+55
+00:03:33,319 --> 00:03:36,349
+so it'll go from 0.1, 0.1 to 0.9, 0.9.
+
+56
+00:03:36,349 --> 00:03:43,629
+And its width will be 0.8 units and its height will be 0.8 units.
+
+57
+00:03:43,629 --> 00:03:46,219
+And so I can set this canvas up -
+
+58
+00:03:46,219 --> 00:03:50,219
+this sub canvas up - and I can set its own canvas coordinate systems.
+
+59
+00:03:50,219 --> 00:03:52,039
+So this is the coordinates that's going to be
+
+60
+00:03:52,039 --> 00:03:55,004
+displayed in - in the outer coordinate system.
+
+61
+00:03:55,004 --> 00:03:57,860
+And then these are the inner coordinates, the blue coordinates,
+
+62
+00:03:57,860 --> 00:04:01,460
+that we're going to use to draw things in this blue coordinate system.
+
+63
+00:04:01,460 --> 00:04:11,155
+So its canvas coordinates extend from 0, 0 to 1, 1; 0, 0 to 0 plus 1, 0 plus 1.
+
+64
+00:04:11,155 --> 00:04:13,370
+So then we can plot the data.
+
+65
+00:04:13,370 --> 00:04:16,250
+In this case, since we're starting at the lower left system,
+
+66
+00:04:16,250 --> 00:04:19,184
+we have to plot it as x comma 1 minus y,
+
+67
+00:04:19,184 --> 00:04:21,399
+but we can use a coordinate system where we don't need to
+
+68
+00:04:21,399 --> 00:04:24,410
+rescale things inside the center coordinates.
+
+69
+00:04:24,410 --> 00:04:26,254
+When we plot data here,
+
+70
+00:04:26,254 --> 00:04:29,089
+it goes through a coordinate transformation to figure out where
+
+71
+00:04:29,089 --> 00:04:32,629
+the point is in the yellow coordinate system and then it goes through
+
+72
+00:04:32,629 --> 00:04:37,189
+another coordinate transformation to get out of the yellow canvas coordinates
+
+73
+00:04:37,189 --> 00:04:41,985
+into the display coordinates defined by your width and height.
+
+74
+00:04:41,985 --> 00:04:45,404
+So there's several coordinate system transformations that are happening,
+
+75
+00:04:45,404 --> 00:04:48,980
+but we're setting up coordinate systems to make it more convenient for us
+
+76
+00:04:48,980 --> 00:04:52,579
+to draw and letting the computer take care of all the transformations.
+
+77
+00:04:52,579 --> 00:04:58,339
+As before, we're going to draw primitives by specifying vertices and
+
+78
+00:04:58,339 --> 00:05:00,439
+then we're going to connect those vertices with
+
+79
+00:05:00,439 --> 00:05:04,529
+either straight lines or smooth paths - those are called strokes.
+
+80
+00:05:04,529 --> 00:05:07,850
+And then we can fill in regions with fills and we can
+
+81
+00:05:07,850 --> 00:05:11,555
+specify various properties for fills and strokes and so on.
+
+82
+00:05:11,555 --> 00:05:14,660
+And so we can go through the different drawing primitives
+
+83
+00:05:14,660 --> 00:05:18,060
+available to us in the scalable vector graphics specification.
+
+84
+00:05:18,060 --> 00:05:21,569
+A very simple one is a circle.
+
+85
+00:05:21,569 --> 00:05:26,310
+So if I've set my canvas coordinates to go from 0, 0 to 1, 1,
+
+86
+00:05:26,310 --> 00:05:30,532
+I can specify a circle by specifying its center at the point cx,
+
+87
+00:05:30,532 --> 00:05:32,430
+cy in canvas coordinates;
+
+88
+00:05:32,430 --> 00:05:34,394
+in this case, one-half, one-half.
+
+89
+00:05:34,394 --> 00:05:38,759
+And I can set its radius to be four-tenths of a unit.
+
+90
+00:05:38,759 --> 00:05:41,579
+Since five-tenths of the unit would get me to the edge,
+
+91
+00:05:41,579 --> 00:05:43,839
+it leaves about one-tenth of a unit there.
+
+92
+00:05:43,839 --> 00:05:46,439
+I can set a property of the stroke to be
+
+93
+00:05:46,439 --> 00:05:49,785
+the color black and I can take - set the property of its fill
+
+94
+00:05:49,785 --> 00:05:56,569
+to be the color blue and I get a black circle with a blue interior as a result.
+
+95
+00:05:56,569 --> 00:05:57,899
+And that will be embedded,
+
+96
+00:05:57,899 --> 00:06:00,569
+in this case, in my web page.
+
+97
+00:06:00,569 --> 00:06:02,250
+You can also specify a rectangle.
+
+98
+00:06:02,250 --> 00:06:06,060
+And this is going to be another useful data visualization tool.
+
+99
+00:06:06,060 --> 00:06:12,329
+Again, we set up a canvas - a drawing canvas - and then I say rect and I specify a point;
+
+100
+00:06:12,329 --> 00:06:15,990
+in this case, 0.3, 0.2 gives me a single point and then I
+
+101
+00:06:15,990 --> 00:06:19,954
+specify the width and the height of the rectangle.
+
+102
+00:06:19,954 --> 00:06:24,475
+And this point I've specified will be the upper left point of the rectangle.
+
+103
+00:06:24,475 --> 00:06:28,319
+And then I say that I want the lines the - the strokes of
+
+104
+00:06:28,319 --> 00:06:32,550
+the rectangle to be black and I want it to be filled with a blue color.
+
+105
+00:06:32,550 --> 00:06:36,850
+And I get this resulting rectangle.
+
+106
+00:06:36,850 --> 00:06:39,220
+You can also specify paths.
+
+107
+00:06:39,220 --> 00:06:41,279
+In this case, I've specified
+
+108
+00:06:41,279 --> 00:06:44,279
+a path by specifying a bunch of points - 0.2, 0.1; 0.2, 0.3; 0.4,
+
+109
+00:06:44,279 --> 00:06:52,680
+0.3 through here and
+
+110
+00:06:52,680 --> 00:06:55,664
+then I've specified a bunch of commands.
+
+111
+00:06:55,664 --> 00:06:58,273
+And these commands are moved to the point - 0.2, 0.1;
+
+112
+00:06:58,273 --> 00:07:02,129
+so move without drawing a line and then,
+
+113
+00:07:02,129 --> 00:07:04,112
+move while drawing a line from 0.2, 0.1 to 0.2, 0.3.
+
+114
+00:07:04,112 --> 00:07:12,557
+And that way, I can specify a line by starting here and ending here at 0.2, 0.3.
+
+115
+00:07:12,557 --> 00:07:14,730
+And then I can specify
+
+116
+00:07:14,730 --> 00:07:19,199
+the next line by starting at the current position and moving to a new position, 0.4, 0.3.
+
+117
+00:07:19,199 --> 00:07:25,769
+So these Ms mean move from the previous position to a new position
+
+118
+00:07:25,769 --> 00:07:28,680
+without drawing a line and these Ls mean move from
+
+119
+00:07:28,680 --> 00:07:33,319
+a position to a new position while drawing a line.
+
+120
+00:07:33,319 --> 00:07:35,310
+This way I don't need to - if I'm drawing
+
+121
+00:07:35,310 --> 00:07:39,764
+a continuous line from one point through several other points,
+
+122
+00:07:39,764 --> 00:07:41,694
+I don't need to respecify these points,
+
+123
+00:07:41,694 --> 00:07:44,430
+I don't need to say draw a line from here to here and
+
+124
+00:07:44,430 --> 00:07:47,160
+then from here to here and specify this point twice,
+
+125
+00:07:47,160 --> 00:07:51,915
+I can specify this point once and say just draw a point to here from the previous point,
+
+126
+00:07:51,915 --> 00:07:55,220
+which is the end point of the previous line.
+
+127
+00:07:55,220 --> 00:07:57,899
+And so this will draw what I wanted to be a block,
+
+128
+00:07:57,899 --> 00:08:01,125
+I - but I'm missing this - this top part.
+
+129
+00:08:01,125 --> 00:08:04,535
+And this is part of the path specifications.
+
+130
+00:08:04,535 --> 00:08:08,274
+I'm drawing a path and this d is the data for the path.
+
+131
+00:08:08,274 --> 00:08:11,189
+If I want to get this missing line at the top,
+
+132
+00:08:11,189 --> 00:08:13,214
+I just need to add a z at the bottom.
+
+133
+00:08:13,214 --> 00:08:16,334
+And the z is - just says close the path.
+
+134
+00:08:16,334 --> 00:08:18,990
+That means take - draw one last line from
+
+135
+00:08:18,990 --> 00:08:23,295
+the last point I specified to the first point I specified.
+
+136
+00:08:23,295 --> 00:08:26,629
+And that will close the path.
+
+137
+00:08:26,629 --> 00:08:29,779
+And then I can finally - I can fill in
+
+138
+00:08:29,779 --> 00:08:33,710
+that closed path by just specifying a fill specification.
+
+139
+00:08:33,710 --> 00:08:35,945
+In this case, I didn't say stroke equals black,
+
+140
+00:08:35,945 --> 00:08:38,455
+because it may have been set up before that way,
+
+141
+00:08:38,455 --> 00:08:45,200
+but that would give you a - a black outline of a blue region.
+
+142
+00:08:45,200 --> 00:08:46,404
+So what did we learn?
+
+143
+00:08:46,404 --> 00:08:51,620
+We learned how to use the scalable vector graphics specification to make
+
+144
+00:08:51,620 --> 00:08:58,220
+our own line art for web pages and we figured out how to set up an svg drawing canvas,
+
+145
+00:08:58,220 --> 00:09:00,440
+which has its origin specification
+
+146
+00:09:00,440 --> 00:09:03,075
+in the upper left corner instead of the lower left corner.
+
+147
+00:09:03,075 --> 00:09:07,309
+And then we figured out how to draw a circle or rectangle and any polygonal shape.
+
+148
+00:09:07,309 --> 00:09:08,330
+So we learned how to set up
+
+149
+00:09:08,330 --> 00:09:12,700
+an svg drawing canvas and be able to draw simple shapes in it.
+
+150
+00:09:12,700 --> 00:09:15,460
+The svg canvas can be embedded in a web page.
+
+151
+00:09:15,460 --> 00:09:18,200
+So this is the first step in being able to set up
+
+152
+00:09:18,200 --> 00:09:20,450
+an interactive storytelling mode for
+
+153
+00:09:20,450 --> 00:09:24,629
+data visualization that you can embed in your own web pages.

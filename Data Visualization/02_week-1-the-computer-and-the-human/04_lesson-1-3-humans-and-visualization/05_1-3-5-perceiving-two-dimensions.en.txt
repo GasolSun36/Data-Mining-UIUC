@@ -1,0 +1,93 @@
+So we perceive light with our retina, but it still needs to be processed on
+its way to our cognitive system. That processing is performed by ganglia. And that's how we perceive
+individual impulses of light and turn them into actual shapes. So as we present data
+visually to a human observer, we want to make sure that that
+data is perceived correctly. And that means that the data
+that's sensed by the rods and cones in our retina ends up
+being processed further by our perceptual system before it even
+gets to our cognitive system. How can we make sure that the visual
+data is going to be presented so that it's perceived properly and
+correctly? So in the Model Human Processor, this data that's coming from the human
+retina goes through a visual image store. Where it goes through significant
+perceptual processing, before you even think about it, before
+you even realize what you're looking at. And this perceptual processing starts right after the data has been
+sensed by the rods and cones. This is an image from Gray's Anatomy, and you can see that as soon as
+the data has been sensed, we've got other cells, these nerves called
+ganglia, that are processing the data. In this case a horizontal cell is
+actually comparing the results of what's being sensed by the rods and
+the cones. And this helps us to detect patterns and
+accentuate and exaggerate differences
+in neighboring sensors. This helps us detect edges and motion and
+tigers hiding in the bush because tigers hiding in the bush will create
+patterns in our peripheral vision. And those patterns can change over time. And these horizontal cells
+that are comparing and exaggerating those differences
+can tell us to then run away. So for example,
+when we see a shade of gray, we see that in context of
+the surrounding shades of gray. And so here we have a gray color
+surrounded by a lighter color. And here we have a gray color
+surrounded by a darker gray color. And this box looks like
+it's darker than this box, so this is a darker shade
+of gray than this gray. When in fact those two shades
+of gray are identical. They're the same shade of gray. It's just when we surround them with
+these boxes in different context, our perceptual system will
+accentuate the difference. And make this gray look darker,
+and this gray look brighter. When in fact,
+they're the same shade of gray. This also works with color. And so on the left block I, you can see that these two
+block I's are the same color. But here the color appears lighter, because these squares
+are next to white squares. And here they appear darker because
+these squares are next to green squares. And you can also demonstrate
+this with Mach bands. Here I've got a gradation
+from dark gray to light gray. And here I've got a plot of basically
+the number of photons coming from each of these bands to our eye. And in fact, what our rods and
+cones are sensing for each one of these bands is
+proportional to this graph. What's actually being sent to our brain
+from our perceptual system though looks like this. And you can see that this flat gray
+rectangle next to this lighter gray rectangle,
+this darker rectangle gets darker here. And this lighter rectangle
+is lighter here. You can see it get lighter here and
+that's not because I've changed any color. This is all the same shade of gray. It's that our visual system is
+making this shade of gray brighter because it's next to a darker color. And our visual system wants to
+accentuate the existence of this edge when these two shades
+are very close to each other. And this can cause problems too. In this case we've got
+the lateral inhibitors, which are these cells comparing
+neighboring rod and cone values. In our peripheral vision,
+if I look at any one of these junctions, I see a solid gray color. But the junctions and neighboring cells start to flicker
+black and white because of this lateral inhibition of our perceptual
+system trying to accentuate those edges. This also works with orientations, our perception of orientation is also
+based on sort of this local comparison. And so
+these lines look like they are diverging. It looks like these two parallel lines
+are getting further apart as they move this direction because they
+are the sum of all of these intersections that are slightly askew from these cubes. But if I remove these cubes, you see
+that these lines really are parallel. And the perception that the lines are not
+parallel is basically because of adding up all of those misperceptions of
+orientations due to the offset cubes. Similarly, I can take this diamond
+shape made from four straight lines and if I superimpose on top of these four
+straight lines of this diamond shape a bunch of concentric circles. This diamond shape, these lines start
+to look like they're bowed inside. And that's because the orientation
+of this line is based on our perception of
+the orientations relative to these concentric circles, and
+we get this bowing effect. At a much higher level,
+it can also confuse our cognitive system. In this case,
+we have an 8 x 8 block of shapes and that should give us 64
+units squared of area. If I take these very same shapes and
+reorganize them here, I'm now covering a 13 x 5 area which
+gives me 65 unit squares of area. And so somehow I've taken the same
+shape with the same area. And gotten an extra unit
+square of area on the right. And the reason is the accuracy of
+our perception of orientation. We have basically this triangle's angle
+going into this rhombus' angle here. And the slope of these triangles
+is basically three-eighths. And the slope of these quadrilaterals, this edge of this
+quadrilateral is two-fifths. And two-fifths is just not
+equal to three-eighths but we just don't see the difference. We also see size in context. And so here I have two blue discs. This blue disc is sitting
+amidst some small yellow discs. And this blue disc is sitting
+amidst some large yellow discs. And this blue disc looks
+large as a result and this blue disc looks small as a result. But in fact they are the same size,
+and so we see things in context because of these local comparisons
+that our perceptual system does. So lateral inhibition helps us perceive
+shapes by emphasizing edges and other differences. But lateral inhibition can also interfere
+with data visualization when we have big changes in data happening
+close to each other. So we have to understand how
+the human visual system works at this higher perceptual level so that we can more effectively use it
+to display data to be perceived. For example, we want to make sure we're
+sensitive to the context of the data. And that we keep data in the same
+context when we're making comparisons. [MUSIC] [SOUND]

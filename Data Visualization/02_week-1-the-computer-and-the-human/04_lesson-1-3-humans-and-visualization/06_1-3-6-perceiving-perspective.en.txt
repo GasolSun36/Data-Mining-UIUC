@@ -1,0 +1,95 @@
+So when we use three dimensional computer
+graphics for data visualization. We need to queue the viewer that they're
+looking at a three dimensional scene even though they're seeing
+a two dimensional image. That means we need to add three
+dimensional perceptional queues to an image, but those perceptional queues
+can interfere with our perception if three dimensions or two dimensions. So we'll learn how we perceive a 3D
+world from the two dimensional image on our retina and how that ability to
+perceive the 3D world can interfere with the visual presentation
+of two dimensional data. And what we can do to
+avoid that misperception. So again, we'll look at the visual
+part of the model human processor. Basically, our eye is going to be sensing
+data that's going to be processed by this perceptual processor. And as perceptual processor
+has been developed to understand three dimensional scenes
+more that two dimensional scenes. In particular, perspective. Perspective is a broad word. It includes things like foreshortening. The fact that three dimensional objects
+are projected onto an image plane or onto our retinal hemisphere. And that projection creates
+foreshortening, so if I look at a unit cube, when I look at a projection
+of the unit cube on an image plane. Some of the edges
+are shorter than the others. The edges in the depth direction
+are going to be shorter than the edges in the transverse directions. And so that's foreshortening, the effect that this edge is shorter
+than this edge in the projection, even though in the three-dimensional
+scene they're the same length. And so lengths in a projection
+are not necessarily accurate compared to the lengths in the real world,
+but perceptually we've grown to understand that these lengths
+could be the same length. And the differences are the result of
+the projection onto the image plane. And then there's Linear Perspective, and you can see that here we have
+a projector which is basically aligned from the object to a focal point
+through an image plane here. That's being used by this early
+artist in order to create a perspective drawing of this object as a, When we were first understanding
+how perspective worked. Basically, linear perspective said
+that object that are further away appears smaller and you can see that here. And then we have size constancy. We know that object like this musical
+instrument aren't going to change size. And so
+if an object appears to be changing size, it must be moving farther away from us or
+closer to us, and that objects that appear smaller than
+other objects must be farther away. That's a size constancy
+expectation we have, and our perceptual system depends on that. So it can also malfunction. And so
+here I've got a very simple line drawing. With two parallel lines, A and B,
+and then I've got two lines that are receding in the distance, that are,
+kind of sloped against each other. And these two lines can set up
+the appearance of, for example, railroad tracks or
+some two lines that are converging to a vanishing point in
+a perspective drawing. And if that's the case, then line A,
+if this was a perspective rendering of a three-dimensional scene, line A should
+be farther away from us than line B. And if that's the case,
+line A should be much bigger. And in fact, A looks bigger in
+this image because of that. But actually line A and
+line B are the same size. But, when we add these additional lines
+in here, when we add a perspective context to these lines, line A looks
+bigger, because it's farther away. Similarly, I could have two equal
+length vertical lines here. And if I add a few other decorations,
+suddenly I've changed the length and now this line looks shorter and this line looks taller even though I
+know that they are the same length. After adding these additional lines,
+I've decreased the size of this line and increase the size of
+this line perceptually. And the reason is if I follow
+these out further I'm thinking of this line in perspective as being
+the front corner of a cube. And this line is being the back corner of
+for example a room if this is the floor and the ceiling and this is to the wall
+this is the back corner of the room. And this is the closest corner of
+an external cube, if that's the case then I would expect this line to be farther
+away because it's the back corner and this line to be closer to me,
+because it's the front corner. And in perspective, if I have two lines,
+but this line is closer to me, and this line is farther away, even though
+these two lines are the same length, this one looks bigger,
+because it's farther away. Perspective can also confuse
+us just from foreshortening, not from linear perspectives. So, here I've got a parallelogram, and anytime you have parallel lines that
+aren't meeting at ninety degree angles, we expect them to be
+receding in other distance. And so here,
+even though this is just a parallelogram, you want it to be a quadrilateral
+with right angles or rectangle. That just happens to be receding Into the
+distance and that it's being foreshortened into a parallelogram because it's
+being projected on to our retina. If that as the case, then if this
+is receding into the distance, then the fact that B is closer to
+this point than it is to this point, would make this line
+A shorter than line C. And just looking at the figure it looks
+like line AB is shorter than line BC, when in fact line AB and BC are the same
+length for this is an isosceles triangle. This also works with texture. Here I just have
+an arrangement of lipsoids, a two dimensional arrangement of lipsoids. We tend to perceive it as for example the tops of oil barrels
+receding off in the distance. Because I've smaller features and
+more features in the distance and so I've got a higher frequency of
+smaller features in the distance and they lower frequency of
+fewer larger features. In the foreground, and we tend to attribute that to a projection
+of linear perspective, as well. And we also have certain
+lighting assumptions. So we're used to the sun being over head. And so we're used to objects,
+seeing the front sides of objects, and those objects are illuminated from above. And so we see this dot illuminated
+from above as a convex sphere, and we see this dot illuminated
+from below with the illumination on the bottom side as being
+a concave indentation. Because we don't expect illumination
+to come from the bottom, we expect illumination
+to come from the top. And the only way for this to be
+illuminated from the top like this, is if it was an indentation instead of
+a bulge, as it is on the left side. So when we use three dimensional graphics
+for data visualization, our perception of size is based on our perception of
+how far the object is away from us. And that can sometimes mislead us to
+what the actual size of the object is. So we want to avoid using
+three-dimensional computer graphics for data visualization when we can, and only
+use it when it's absolutely necessary. [MUSIC]

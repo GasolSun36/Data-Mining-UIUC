@@ -1,0 +1,119 @@
+When we use three dimensional graphics for
+data visualization, we're going to need to add photorealism in order to cue us to the
+three-dimensional spacial configuration of shapes that are being displayed
+to us in a two-dimensional image. So photorealism describes visual cues that
+tell our perceptual system that when it see a two-dimensional image, it's seeing
+a depiction of a three dimensional scene. Some of these cues are occlusion. Occlusion is shown here, the fact that
+this boys hand is in front of the frame. It's start to trigger your perceptual
+system to think that this is a three-dimensional scene
+of a boy climbing out of the frame instead of a two-dimensional
+image of a boy on a frame. Other things like perspective,
+the fact that this water's receding into the horizon and details are getting
+closer together in the distance. Others like lighting, the light bouncing off the forehead
+of this boy or attenuation that the water is becoming whiter as
+the fog is attenuating the light. All of these add cues, so that your
+perceptual system that's looking at a two-dimensional image
+can understand that. It's actually a three-dimensional
+scene that's being depicted. One of the strongest cues
+of these is occlusion. For example, this red-orange rectangle
+is in front of this blue rectangle, because you can see all of
+this red-orange rectangle. You can't see all of this blue rectangle, because it's being occluded and
+this sets up a depth ordering. We don't know how much closer
+the red-orange rectangle is to us from the blue rectangle, but
+we do know that it is closer. An occlusion is the strongest cue and it is fun to play with it with optical
+illusions, because of that strength. Illumination helps us perceive
+the orientation of surfaces and there's two kinds of illuminations
+that we tend to use. One is diffuse illumination, which is brightest when a surface
+is facing a light source. And we usually see this from soft objects,
+rough objects, things like cloth or pencil erasers or other surfaces that
+are scattering light in many directions. And then there's specular illumination and
+that adds these white highlights and we usually see these on shiny objects,
+metallic objects. And these highlights are added in regions
+of the surface that are facing in a mirror reflection that would reflect
+the light source towards the eye. And so, we can combine these when
+we're doing data visualization. This is an example of particles that
+are leaving trails to show the simulation of the flow of blood in the abdominal
+aorta and we're using certain cues. For example, occlusion that some of these
+trails are in front of other trails as you can see this green trail is
+in front of the blue trail. We're using lighting, because you can
+see that these trails are cylindrical. They have a brighter side and the darker
+side, because of diffused sliding. Also loosing perspectives,
+we see larger things here and smaller things more detailed at the back. And all of those add up to give you better
+sense of the shape of this aorta and the blood flow inside of it. There's some other cues
+that are important. One is shadowing. Shadowing is an inclusion cue from
+a second viewpoint where that second viewpoint is at the light source. So here,
+I've got two two-dimensional images. In both cases, we can think of these
+due to perspective as a flat blue plain with a red-orange ball on top of it,
+but we don't know if this red orange ball is
+hovering over the middle of the plain or if it's laying on the plain
+toward the back of it. If I had a shadow,
+you can see on the left case here, the red orange ball is laying on
+the blue plane towards its back. But in this case, which is the exact
+same image I've just changed the shadow, we can see that this blue ball is hovering
+over the middle of the blue square. And so in, for example,
+this visualization of a molecule, you can use these shadows to get a better
+sense of depth due to the directions that the shadows are being cast from
+in understood light source direction. There's also a perspective in addition
+to being able to see more detail far away with perspective. Perspective is based on size constancy. That objects are the same size,
+but farther ones appear smaller. You don't think that the object
+is changing its size. You understand that the visual
+system is looking at a larger area that's further away, because of the way
+it gets projected onto our retina or onto our image plane in
+the case of computer graphics. In computer graphics, the way we do
+this is we actually make things that are farther away smaller and make
+things that are closer to us larger by actually moving the vertices and
+then projecting onto a projection plane. And so to get this perspective view where
+you've got the front of the table larger than the back of the table,
+what we've actually done is actually made the primitives of the table, larger
+in the front and smaller at the back. But computer graphics does this for
+you automatically, so you don't actually have to do this. And so these examples are demonstrated
+in this animation from the National Center for Supercomputing
+Application on an F3 tornado. And you can see, we're using perspective. The perspective allows us to see the
+glyphs in the front of this visualization and also the patterns that these
+glyphs form as you go farther away. And so this is a storm chaser view and you
+can see the occlusions of these arrows, so you can get a sense and
+the arrows are larger in the front and smaller in the back. So you can get a sense of the depth of the
+simulation of this tornado and the paths that these particles are tracing, and
+also we see shadows on the ground. Shadows being cast of one
+primitive to another and also the lighting that these
+primitives are illuminated on one side better than they're illuminated or
+more brightly than on another side to give you a sense that the shape
+of these arrows are cylindrical. Also, as the storm chaser
+moves through the dataset, things in the front are moving by
+the viewer faster than things in the back. That's another 3D cue
+called motion parallax. And finally, there's stereo. We can use stereo in
+the absence of other cues. In this case, I was just plotting points
+of a mathematical equation to create some shapes and the way you visualize
+this is you hold your fingers up in front of your two eyes and
+right across your eyes. So that your right eye is
+looking at the left image and your left eye is looking at the right
+image, basically by focusing on the finger until those two images in
+the background start to merge together. If you do that, then you get a stereogram
+and this two-dimensional set of points on this image plane should pop-out into
+a three-dimensional configuration. If you want to simulate this, then you can
+simulate this with two separate views. A view from a left eye and
+a view from a right eye, looking in parallel at the data. Just make sure you don't
+rotate those views. You want to make sure
+the views are in parallel. So, what did we learn? We learned that occlusion is
+the strongest of all the depth cues and that shadowing is an occlusion from
+a viewpoint at the light source. Illumination is useful for surface orientation that helps reveal
+details and perspective gives us different scales of visualization in
+addition to adding depth perception. And when none of these
+cues are available to us, sometimes some of
+the other cues can be used. For example, stereo. We can use stereo in
+the absence of other cues. In this case, I was just plotting points
+of a mathematical equation to create some shapes. And the way you visualize this is you hold
+your finger up in front of your two eyes and try to close your eyes, so that your
+right eye is looking at the left image and your left eye is looking
+at the right image. Basically, by focusing on the finger until
+those to images in the background start to merge together. If you do that, then you get a stereogram
+and this two-dimensional set of points on this image plane should pop-out into
+a three-dimensional configuration. If you want to simulate this, then you can
+simulate this with two separate views. A view from a left eye and a view from a
+right eye looking in parallel at the data. Just make sure you don't
+rotate those views. You want to make sure
+the views are in parallel. We learn that occlusion is
+the strongest of these depth cues and we learned that shadows are just
+occlusion from a light source. We also learned that illumination cues
+us to the orientation of surfaces and we also learned that perspective, allows us to visualize multiple
+scales in the same image. [MUSIC]

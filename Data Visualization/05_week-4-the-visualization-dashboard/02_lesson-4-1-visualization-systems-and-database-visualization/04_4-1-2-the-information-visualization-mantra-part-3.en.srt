@@ -1,0 +1,371 @@
+1
+00:00:00,012 --> 00:00:07,646
+[SOUND]
+So
+
+2
+00:00:07,646 --> 00:00:10,620
+filtering allows us to remove extraneous.
+
+3
+00:00:12,500 --> 00:00:16,800
+Zooming is a kind of filter where
+remove extraneous data based on
+
+4
+00:00:16,800 --> 00:00:19,480
+the plotted coordinates of the data.
+
+5
+00:00:19,480 --> 00:00:20,840
+When we select a zoom window,
+
+6
+00:00:20,840 --> 00:00:25,660
+we chose to focus on some of the data
+based on its displayed coordinates and
+
+7
+00:00:25,660 --> 00:00:30,170
+to eliminate data outside of a window
+based on its displayed coordinates.
+
+8
+00:00:30,170 --> 00:00:35,140
+That's a kind of filter based on displayed
+coordinates, but a filter can be applied
+
+9
+00:00:35,140 --> 00:00:39,206
+to other attributes of the data
+besides the displayed coordinates.
+
+10
+00:00:39,206 --> 00:00:44,392
+And so in this case,
+we've got our plot of all the countries
+
+11
+00:00:44,392 --> 00:00:48,940
+of based on population and
+life expectancy.
+
+12
+00:00:48,940 --> 00:00:53,349
+We can filter out all the countries
+that are in other continents and
+
+13
+00:00:53,349 --> 00:00:56,907
+focus just on the countries
+that are in say, Africa.
+
+14
+00:00:56,907 --> 00:01:01,998
+And so by filtering on Africa,
+we only plot the countries in Africa and
+
+15
+00:01:01,998 --> 00:01:06,650
+the data is spread out nicely and
+there's much less data here.
+
+16
+00:01:06,650 --> 00:01:12,448
+So we've got room to be able to plot
+the names of the individual countries and
+
+17
+00:01:12,448 --> 00:01:18,621
+you can start to see the subset of the
+larger dataset that corresponds to Africa.
+
+18
+00:01:18,621 --> 00:01:23,085
+And you realize that many of
+the countries that have low life
+
+19
+00:01:23,085 --> 00:01:27,283
+expectancy are in Africa,
+but also there's a separate
+
+20
+00:01:27,283 --> 00:01:32,210
+band of countries in Africa that
+have higher life expectancies.
+
+21
+00:01:32,210 --> 00:01:36,473
+And by plotting the names, you've now
+got room to see more of the details,
+
+22
+00:01:36,473 --> 00:01:37,903
+because of this filter.
+
+23
+00:01:37,903 --> 00:01:44,086
+You can see that those countries are
+the ones located in Northern Africa and
+
+24
+00:01:44,086 --> 00:01:49,500
+there's different ways of selecting
+data by applying filters.
+
+25
+00:01:49,500 --> 00:01:54,014
+If you have ordinal or nominal data,
+for example, continent.
+
+26
+00:01:54,014 --> 00:01:59,510
+Then you can click a check box, you can
+show all of the different categories and
+
+27
+00:01:59,510 --> 00:02:04,506
+select the ones that you want to look
+at and the ones that you don't want to
+
+28
+00:02:04,506 --> 00:02:08,270
+be plotted or
+if you want to look at quantitative data.
+
+29
+00:02:08,270 --> 00:02:13,765
+For example, if we want to look at
+countries based on gross domestic product
+
+30
+00:02:13,765 --> 00:02:19,000
+or other quantitative fields,
+then we can set a range with a minimum and
+
+31
+00:02:19,000 --> 00:02:23,711
+a maximum value and filter out
+data above or below these extremal
+
+32
+00:02:23,711 --> 00:02:28,795
+values in order to focus on certain
+subsets of a quantitative range.
+
+33
+00:02:28,795 --> 00:02:33,503
+So in tableau, it's quite easy to
+filter data based on attributes,
+
+34
+00:02:33,503 --> 00:02:37,830
+you would just drag the attribute
+into this filter box.
+
+35
+00:02:37,830 --> 00:02:41,982
+And so in this case,
+if we have our countries displayed here
+
+36
+00:02:41,982 --> 00:02:45,970
+differentiated by putting
+the country in the marks box,
+
+37
+00:02:45,970 --> 00:02:49,889
+we may want to filter
+the countries based on continent.
+
+38
+00:02:49,889 --> 00:02:54,680
+And so, I dragged the Region
+dimension into the filter box and
+
+39
+00:02:54,680 --> 00:02:57,960
+that will filter based on regions.
+
+40
+00:02:57,960 --> 00:03:02,883
+And so now since region,
+these continents are basically a category,
+
+41
+00:03:02,883 --> 00:03:05,814
+they're presented to me in check boxes.
+
+42
+00:03:05,814 --> 00:03:10,241
+And so if I want to only look
+at a subset of the country say,
+
+43
+00:03:10,241 --> 00:03:14,225
+Africa, I can just click Africa and
+then click OK.
+
+44
+00:03:15,900 --> 00:03:21,820
+And now I'm only looking at the countries
+associated with Africa, the countries
+
+45
+00:03:21,820 --> 00:03:26,320
+on the continent of Africa and you can
+see there's a big differentiation here
+
+46
+00:03:26,320 --> 00:03:30,235
+between these countries Entries t
+the top and the countries at the bottom.
+
+47
+00:03:30,235 --> 00:03:33,255
+And in fact, we can zoom in a little
+bit further to give us more
+
+48
+00:03:33,255 --> 00:03:35,295
+screen resolution to take a look at them.
+
+49
+00:03:36,545 --> 00:03:42,025
+And then if we want to know what those
+countries are, then I can drag country
+
+50
+00:03:42,025 --> 00:03:48,020
+into the label box here and we can get
+labels for each one of these countries.
+
+51
+00:03:48,020 --> 00:03:53,025
+And you can see that the countries
+in Northern Africa tend to have
+
+52
+00:03:53,025 --> 00:03:58,224
+a higher life expectancy than
+the countries in the rest of Africa.
+
+53
+00:03:58,224 --> 00:04:03,729
+We don't want to overwhelm a display of
+a lot of information with further details,
+
+54
+00:04:03,729 --> 00:04:07,082
+especially when those
+details are extraneous and
+
+55
+00:04:07,082 --> 00:04:11,788
+distract us from general trends that
+we should be seeing in the data and
+
+56
+00:04:11,788 --> 00:04:15,700
+a very common way of doing
+this is with a tool tip.
+
+57
+00:04:15,700 --> 00:04:20,560
+If your mouse is sitting over a data item,
+then a little pop-up
+
+58
+00:04:20,560 --> 00:04:25,344
+window will come up and
+give you the detail based on that data.
+
+59
+00:04:25,344 --> 00:04:30,765
+And maybe some items that,
+like you can select only that item or
+
+60
+00:04:30,765 --> 00:04:37,130
+you can exclude that item and look at
+other operations based on that item.
+
+61
+00:04:37,130 --> 00:04:40,821
+A second way of finding details
+on demand is a field selection.
+
+62
+00:04:40,821 --> 00:04:43,992
+You can select a field of your dataset and
+
+63
+00:04:43,992 --> 00:04:48,375
+you can find the data points
+that field corresponds to or
+
+64
+00:04:48,375 --> 00:04:53,890
+a certain setting of that field
+corresponds to that get highlighted.
+
+65
+00:04:53,890 --> 00:04:57,928
+And so there's all sorts of interactive
+details that you can make available
+
+66
+00:04:57,928 --> 00:04:58,504
+to a user.
+
+67
+00:04:58,504 --> 00:05:02,594
+You just want to make them available
+only when they're requested and
+
+68
+00:05:02,594 --> 00:05:05,640
+not all at once, so
+as to not overwhelm the viewer.
+
+69
+00:05:07,570 --> 00:05:10,703
+So those are the basic steps for
+setting up a good
+
+70
+00:05:10,703 --> 00:05:15,649
+information visualization system to
+understand abstract information.
+
+71
+00:05:15,649 --> 00:05:19,450
+That first step, you want to set up
+an overview to see all the data.
+
+72
+00:05:19,450 --> 00:05:24,125
+The second step is you want to be
+able to drill down to the details of
+
+73
+00:05:24,125 --> 00:05:27,599
+that data by focusing, zooming, filtering.
+
+74
+00:05:27,599 --> 00:05:31,180
+And then that third step, you want to be
+able to provide details on your data, but
+
+75
+00:05:31,180 --> 00:05:32,630
+only when they're requested.
+
+76
+00:05:32,630 --> 00:05:35,319
+Only details on demand.
+
+77
+00:05:35,319 --> 00:05:43,841
+[MUSIC]

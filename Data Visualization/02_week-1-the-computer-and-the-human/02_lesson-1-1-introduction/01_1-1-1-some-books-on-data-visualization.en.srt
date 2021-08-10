@@ -1,0 +1,205 @@
+1
+00:00:00,012 --> 00:00:07,161
+[SOUND]
+So
+
+2
+00:00:07,161 --> 00:00:10,390
+there's a number of really good
+books on data visualization.
+
+3
+00:00:10,390 --> 00:00:14,080
+I've got a couple of them, and I've used
+them in putting together this course.
+
+4
+00:00:14,080 --> 00:00:17,638
+I'd like to talk about
+some of them right now.
+
+5
+00:00:17,638 --> 00:00:21,740
+Ed Tufte, the professor at Yale,
+has a number of really good books
+
+6
+00:00:23,290 --> 00:00:26,690
+on visualization on the presentation
+of visual information.
+
+7
+00:00:26,690 --> 00:00:31,180
+These are mostly on static formats,
+basically constructing images and
+
+8
+00:00:31,180 --> 00:00:34,810
+being able to understand
+the data based on that image.
+
+9
+00:00:34,810 --> 00:00:38,730
+And they're mostly focused on
+graphic design principles as
+
+10
+00:00:38,730 --> 00:00:41,880
+opposed to the computer
+processing of information.
+
+11
+00:00:41,880 --> 00:00:46,880
+To make it more readily available for
+visualization.
+
+12
+00:00:46,880 --> 00:00:51,090
+But it's a good place to start, if you
+want to understand sort of the layout and
+
+13
+00:00:52,500 --> 00:00:55,160
+the graphic design aspects
+of data visualization.
+
+14
+00:00:57,350 --> 00:01:01,070
+Also there's a really good book for
+scientific visualization,
+
+15
+00:01:01,070 --> 00:01:04,680
+called The Visualization Handbook,
+and this is by Chuck Hansen and
+
+16
+00:01:04,680 --> 00:01:07,470
+Chris Johnson at the University of Utah.
+
+17
+00:01:07,470 --> 00:01:13,084
+And it's mostly curated chapters
+written by a large number of experts
+
+18
+00:01:13,084 --> 00:01:19,080
+in scientific visualization, or
+the visualization of scientific data,
+
+19
+00:01:19,080 --> 00:01:22,981
+or in general,
+data that's coordinate based,
+
+20
+00:01:22,981 --> 00:01:27,097
+based on scientific instruments or
+simulations.
+
+21
+00:01:30,624 --> 00:01:33,140
+We're going to be talking
+about data visualization.
+
+22
+00:01:33,140 --> 00:01:38,220
+And so, I used as a source book
+a little bit this book on information
+
+23
+00:01:38,220 --> 00:01:43,600
+visualization by Stuart Card,
+Jock Mackinlay and Ben Schneiderman.
+
+24
+00:01:43,600 --> 00:01:46,960
+And this is another curated
+collection of chapters,
+
+25
+00:01:46,960 --> 00:01:48,860
+the chapters are research papers.
+
+26
+00:01:48,860 --> 00:01:53,360
+The version I have came out in 2000,
+so it's a little bit older.
+
+27
+00:01:53,360 --> 00:01:57,150
+But the fundamentals really haven't
+changed in information visualization, and
+
+28
+00:01:57,150 --> 00:01:59,880
+this was a good book for me to use,
+
+29
+00:01:59,880 --> 00:02:03,110
+to sort of get those
+fundamentals into this course.
+
+30
+00:02:04,400 --> 00:02:10,080
+More recently, there's a good book,
+Information Visualization Perception for
+
+31
+00:02:10,080 --> 00:02:13,690
+Design by Colin Ware at
+the University of New Hampshire.
+
+32
+00:02:13,690 --> 00:02:18,750
+And, this is a book on perceptual
+principles applied to data visualization.
+
+33
+00:02:18,750 --> 00:02:24,559
+So, it tells you how to lay out your data,
+so it can be perceived more readily.
+
+34
+00:02:25,560 --> 00:02:29,200
+Focusing on user interface and
+user interaction issues.
+
+35
+00:02:30,250 --> 00:02:35,187
+And, finally, there's a really good,
+really recent book, Visualization Analysis
+
+36
+00:02:35,187 --> 00:02:39,670
+& Design, by Tamara Munzner at
+University of British Columbia.
+
+37
+00:02:39,670 --> 00:02:42,970
+And it coves both scientific and
+information visualization, and
+
+38
+00:02:42,970 --> 00:02:50,100
+includes task analysis and other user
+interface details, that's quite good.
+
+39
+00:02:50,100 --> 00:02:56,501
+Tamara Munzner is very well respected
+in the data visualization community,
+
+40
+00:02:56,501 --> 00:03:01,423
+and this book just came out,
+and so it's very current, and
+
+41
+00:03:01,423 --> 00:03:07,542
+a really good volume of sort of the state
+of the art in data visualization.
+
+42
+00:03:07,542 --> 00:03:16,911
+[MUSIC]

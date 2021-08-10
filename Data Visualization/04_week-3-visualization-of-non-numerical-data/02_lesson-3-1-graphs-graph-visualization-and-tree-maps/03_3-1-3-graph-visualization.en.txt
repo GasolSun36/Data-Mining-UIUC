@@ -1,0 +1,156 @@
+So tut's method tells you how to lay out
+the nodes of a planar graph in a plane so that the edges don't cross. If you don't have a planar graph, if you
+have an arbitrary graph, you need to use a more specific methods to lay out a graph
+so that it could be easily visualized. So as we saw in the last set of slides
+tut's method for laying out a planar graph places each node at a position that's
+the average of it's neighboring nodes. And so each of the nodes is applying
+a force to the current nodes position and so that's an example of
+a force directed layout. Then there's quite a few
+different force directed layouts, a popular one is called Gem and that's
+what was used to layout this example. This is a interaction graph
+between yeast proteins, there is about 1500 yeast proteins and
+about 2000 interactions and so the yeast proteins are indicated by nodes and
+the interactions are indicated by edges. So in the GEM algorithm for
+forced directed layout, we're simulating the force
+of a spring system. So each edge between two nodes
+corresponds to a spring, and that spring has a rust length if the nodes
+are farther than that rest length and they'll be attracted to each other. If they're closer than that rest length
+then they'll be repelling each other. And also, if you have high degree nodes,
+if you have a node with a lot of neighbors, then Jim will make
+that rest length of the springs larger to try to push away those
+neighbors since there are so many of those neighbors sharing
+an edge with that high degree node. There's also a repulsion between nodes even if there are not
+connected by a spring so that nodes don't end up on top of each other
+even if they're not connected by an edge. And that repulsion force is basically
+equal to one over the distance between the node, between any two nodes. And then finally all the nodes experience
+a force of gravity towards the center of the graft to keep things
+from wandering too far away. And a small random perturbation
+force just to make sure that nodes take unique positions. As we talk about the layout of graphs,
+by placing nodes, it's good to think of
+the centrality of nodes. And centralities are ways of analyzing you know where a node should
+be positioned in a layout. Should it be more central or
+should it be on the periphery here? So these nodes that are blue
+in color are central nodes. These nodes that are red in
+color are non-central nodes. There's many different centrality metrics. Ways of measuring how central
+a node should be in a layout. Node degree is a simple method where
+you just count the number of edges that a node has. And so nodes with high degree should
+be placed towards the center and nodes with low degree might
+appear on the boundary. Page rank is a kind of centrality measure
+which Google uses to find popular webpages by basically counting the number
+of incoming links from other webpages. Another is based on the isolation metric. You can think of
+the distance between nodes. For example this green node here to this red node has three edges between
+that, so it's distance would be three. It's the length of the shortest number or edges to get from one node to
+another node is the distance. The isolation matrix basically adds up the distance from a given node to
+all the other nodes in the graph. And if I add those up then
+I'll get a smaller result for nodes towards the center of this graph. And a larger result to nodes in
+the periphery of this graph, in this particular layout. And so you can think of closeness
+centrality as basically the inverse of that isolation metric. So that nodes with high closeness
+centrality would have low isolation metric. And you can also think of graph
+centrality, which is like the isolation metric except I'm not taking the distance
+to all the nodes and adding them up. I'm taking the distance between the node
+and the farthest node away from it, and one over that gives me what's
+called the graph centrality. And finally,
+there's between the centrality. Between the centrality basically
+looks at every pair of nodes, and finds the shortest path
+between that pair of nodes. If I take the shortest paths between
+any node and any other node, all of those shortest paths, how many of those
+shortest paths go through a given node? That tells me the betweenness
+centrality of that node. And so, if I take every shortest path
+between every node and every other node. Those shortest paths will likely go
+through these central nodes more than they will go through these peripheral nodes. And so that's what we have plotted
+here is nodes plotted based on their betweenness centrality. How many of the shortest paths between any
+two nodes go through each of these nodes. It's high for
+these nodes that are blue in color and low for these nodes that are red in color. And you can also compute that for an edge, how many shortest
+paths go through an edge? So, we can use use that
+between the centrality or any of these centrality
+metrics to simplify a graph. And so, for example, if I compute
+the between the centrality of edges of my network of yeast proteins. Edges that have low
+between the centrality, have few shortest paths
+going through them. And edges with high between the centrality
+have a lot of edges going through them. And so a lot of shortest
+paths going through them. And so if I remove edges that have
+few shortest paths going through them you might think the impact would be less
+than if I have a lot of shortest paths going through that edge. So I've plotted the between the centrality
+of edges here, and I basically removed the lowest between the centrality,
+the ones that are very dark blue and left the highest between the centrality
+edges, the ones that are in red here. And I've not removed any edge if
+it creates a disconnected graph. So the result is a graph that has as many edges as it has nodes,
+about 1500 edges and 1500 nodes. So I guess something like a tree
+that's minimally connected, but have retained the high
+between the centrality edges. And removed the lowest
+between the centrality edges. And so what's left is kind of
+the communications backbone, the most often used edges when I'm finding
+the shortest path between any two nodes. And that simplifies the layout. Now I've got fewer edges
+in order to compute spring distances when I use the same
+gem layout, force-directed layout for this graph on the right than I'm using for
+this graph on the left. The nodes spread out more
+because I've got fewer springs. And the nodes are freer to
+move around to unique places. And you can visually see the relationship
+between nodes better in this layout than in this layout. You're also looking at fewer edges, so you could always add back
+in the edges as necessary, to add back in those low between the
+centrality edges to see a more complete view of this graph, but the nodes would
+still be positioned better than they are. When you try to compute the layout
+using all of those edges. So there's other techniques for
+laying out graphs. Here's an example technique called edge
+bundles where we just put all of the nodes in a ring and we make a circle, a radial
+layout of nodes and then we draw the edges in the region inside this disk
+surrounded by this circle of nodes. And we can start to group edges together if we have some way of measuring
+the similarity of edges. We can create basically wire bundles
+called edge bundles that simplify the visualization of this graph. In this case, these are emails that
+were part of the litigation for a company called Enron between
+132 employees back in 2001. And here's a couple different layouts. This is a force directed layout
+of these node positions and then instead of having the edges,
+just go straight line. Connecting each node we've tried
+to bundle the edges together so you can kind of see main communication
+pathways in these representations. How do you find two edges to be similar or not similar to each other so
+that you can bundle them? Well this, for
+that task it's useful to form communities to try to cluster nodes together
+in communities that are sharing similar edge behaviors,
+similar edge connections. And so in order to find communities we
+can remove edges in order of decreasing centrality, or decreasing between
+the centrality, which is what we used. So instead of removing the low
+centrality edges like we did for node layout before,
+now we're removing high centrality edges. So now we're moving the edges that are
+part of the main communication pathways. What that does is that disconnects
+a graph and it isolates nodes. It isolates nodes in clumps and those clumps form clusters
+that form communities. So you can think of a community
+of nodes communicating through another community of node, across a high
+between the centrality edge, and so by removing our edges from the highest
+between the centrality to the lowest centrality edges, we're creating
+a hierarchy of these communities. As we remove those edges, we can create
+nodes that represent where those edges connected communities to and so we can use
+the resulting communities to figure out the order in which to lay our vertices
+on the periphery on this circle. And then by merging those clumps together
+we can place vertices in the interior to denote higher level communities. These are called community notes,
+they're not part of the original graph. They're just used to
+represent communities, to represent mergings of clumps of nodes. And so here's some examples
+of Edge Bundle Communities. In this case we took every football game
+between colleges in the United States. University of Illinois is
+one of these colleges. And by just taking, any time any
+college played another college, we would connect that with an edge and
+by looking at the final graph, removing the high between the centrality edges,
+they started to isolate communities and we were able to figure out a layout that
+represented these low-level communities. We basically rediscovered the conferences. And so, just by looking at all
+the games played between, games of football played between one university and
+another in the US we were able to discover the conferences that organized
+the games between colleges in the US. And then we can use that community
+structure to figure out an edge metric. So, edges from one
+section of the community to another section of a community can then
+be clumped together and form these edge bundles by basically attracting
+them to these edge node positions. So here's an example of the actual
+communities from Enron, and here's the communities we discovered. These don't lie in the same
+position as the rest of these. For example here's where
+the president of Enron is and he's listed here in the CEO section here. But we found the same actual
+communities were discovered by basically removing high between
+the centrology edges from the graph of all emails from one employee to another
+ended up revealing these communities. And as we'll see later it's useful
+to be able to filter out and look at details interactively
+in these edge bundle examples or in any large data set, so we can click for
+example on the CEO of Enron, Kenneth Lay. And see all the email that was sent in
+this data set to all the other employees, to all the other communities. For example I can click on Illinois, and I can see all the other Big 10
+conference games that it had, but I can also see the games it had to
+other places outside of its conference. So there's a variety of methods that
+we've just seen to visualize graphs. Not necessarily planar graphs,
+but any graph. Social networks and other graphs. And they're based largely on analyses
+that are enabled by that centrality, the definition of some kind
+of centrality of the nodes. [MUSIC]

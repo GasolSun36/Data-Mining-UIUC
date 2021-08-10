@@ -1,0 +1,393 @@
+1
+00:00:00,363 --> 00:00:05,981
+[MUSIC]
+
+2
+00:00:05,981 --> 00:00:11,782
+So, in a bar chart for example, we can
+use glyphs to represent more than just
+
+3
+00:00:11,782 --> 00:00:18,170
+the actual value of data elements, we can
+use glyphs to represent their variants.
+
+4
+00:00:18,170 --> 00:00:22,880
+So in this case if we have bars,
+we can put a glyph at the top of each bar
+
+5
+00:00:22,880 --> 00:00:27,340
+indicating the value, but
+we can also add information, for
+
+6
+00:00:27,340 --> 00:00:30,985
+example, standard deviation or variants.
+
+7
+00:00:30,985 --> 00:00:37,045
+And, in fact, where the mean or
+median value is indicated and
+
+8
+00:00:37,045 --> 00:00:43,595
+where the data varies, so
+these could be 25%, 75% bars.
+
+9
+00:00:43,595 --> 00:00:48,082
+And we can see in some cases that
+the distribution of data that gets
+
+10
+00:00:48,082 --> 00:00:51,185
+aggregated and
+represented as a single bar,
+
+11
+00:00:51,185 --> 00:00:55,612
+the actual distribution is skewed
+in one direction or another.
+
+12
+00:00:58,433 --> 00:01:03,265
+In tables, you can use glyphs,
+you can represent entries as, for
+
+13
+00:01:03,265 --> 00:01:08,460
+example, colors, and that's a kind
+of a glyph, a very simple glyph.
+
+14
+00:01:09,960 --> 00:01:13,990
+But mapping table values to color
+is a very common thing, and
+
+15
+00:01:13,990 --> 00:01:21,520
+we're all used to this and seeing weather
+maps where heat is mapped to color,
+
+16
+00:01:21,520 --> 00:01:27,720
+as for example, this example here.
+
+17
+00:01:27,720 --> 00:01:33,340
+Quantitatively mapping
+color is not necessarily
+
+18
+00:01:33,340 --> 00:01:37,660
+the most effective way for
+perceptual accuracy.
+
+19
+00:01:37,660 --> 00:01:41,640
+We can tell that it's colder up here and
+warmer down here,
+
+20
+00:01:41,640 --> 00:01:46,690
+we just might not be able to tell how much
+colder or how much warmer it is unless
+
+21
+00:01:46,690 --> 00:01:51,640
+we go to the reference here, and
+try to make an equivalence on this
+
+22
+00:01:51,640 --> 00:01:56,800
+legend here showing what the average
+temperature is for this particular month.
+
+23
+00:01:56,800 --> 00:01:58,450
+And you can do this discretely as well.
+
+24
+00:01:58,450 --> 00:02:02,660
+This is an example of
+continuous variables.
+
+25
+00:02:02,660 --> 00:02:06,370
+You can do this discretely, and we do
+this in computer science all the time.
+
+26
+00:02:06,370 --> 00:02:11,980
+If I have a program that I'm trying to
+optimize, I might change one parameter
+
+27
+00:02:11,980 --> 00:02:14,540
+some discrete number of times,
+and some other parameter some
+
+28
+00:02:14,540 --> 00:02:18,520
+discrete number of times, and try to find
+the sweet spot in terms of performance.
+
+29
+00:02:18,520 --> 00:02:22,040
+The lowest performance here
+I'm displaying in red,
+
+30
+00:02:22,040 --> 00:02:27,650
+233 is the optimal value here,
+
+31
+00:02:27,650 --> 00:02:31,720
+and I can see which parameter of
+values are giving me worse results.
+
+32
+00:02:31,720 --> 00:02:35,080
+And these things may
+jump around quite a bit.
+
+33
+00:02:35,080 --> 00:02:39,030
+Programs tend to behave non-linearly
+as you change these parameters
+
+34
+00:02:39,030 --> 00:02:41,590
+because the systems they run
+on are quite complicated.
+
+35
+00:02:41,590 --> 00:02:47,290
+But having these glyphs, basically these
+numbers represented as color as well,
+
+36
+00:02:47,290 --> 00:02:49,870
+helps you hone in on the good values.
+
+37
+00:02:49,870 --> 00:02:52,870
+And this one was enabled
+just using Microsoft Excel.
+
+38
+00:02:52,870 --> 00:02:57,030
+The conditional formatting
+option allows you to
+
+39
+00:02:57,030 --> 00:02:59,330
+represent values with color as well.
+
+40
+00:03:00,970 --> 00:03:04,650
+So you can also use glyphs to do
+high dimensional visualization.
+
+41
+00:03:04,650 --> 00:03:08,640
+So in this case this is
+worlds within worlds,
+
+42
+00:03:08,640 --> 00:03:12,880
+I've set up horizontal and
+vertical nominal,
+
+43
+00:03:12,880 --> 00:03:18,030
+categorical axes and
+when I'm plotting inside
+
+44
+00:03:18,030 --> 00:03:23,110
+each of these table cells,
+is a separate plot, it's a scatter plot.
+
+45
+00:03:23,110 --> 00:03:26,850
+I just happen to have one data
+point in the scatter plot, so
+
+46
+00:03:26,850 --> 00:03:32,310
+I've embedded a two dimensional plot in
+each element of a two dimensional table.
+
+47
+00:03:32,310 --> 00:03:37,350
+So that enables you to look
+at four dimensional data
+
+48
+00:03:37,350 --> 00:03:41,385
+as basically a two dimensional
+table of two-dimensional plots.
+
+49
+00:03:41,385 --> 00:03:46,255
+In this case what I'm doing is I've
+got a two-dimensional table of glyphs.
+
+50
+00:03:46,255 --> 00:03:49,575
+Each glyph happens to be
+a two-dimensional plot.
+
+51
+00:03:49,575 --> 00:03:53,714
+And so I'm looking in this
+case at life expectancy, and
+
+52
+00:03:53,714 --> 00:03:59,529
+I'm looking at the rates of infant
+mortality inside each year from 2000,
+
+53
+00:03:59,529 --> 00:04:03,073
+2001, 2002, 2003, 2004.
+
+54
+00:04:03,073 --> 00:04:07,764
+And then vertically I'm looking at
+the various continents or regions, and
+
+55
+00:04:07,764 --> 00:04:12,176
+I'm looking at the life expectancy
+measured inside each one of those.
+
+56
+00:04:12,176 --> 00:04:16,956
+So I've got an outer table
+that's looking at the year and
+
+57
+00:04:16,956 --> 00:04:21,239
+vertically looking at
+the region of the world, and
+
+58
+00:04:21,239 --> 00:04:25,521
+then inside each year and
+each region of the world,
+
+59
+00:04:25,521 --> 00:04:30,920
+I'm plotting infant mortality
+versus life expectancy.
+
+60
+00:04:30,920 --> 00:04:37,280
+You can see some shifts in the data as we
+move across different areas of the world.
+
+61
+00:04:37,280 --> 00:04:40,700
+And you can see some shifts
+in infant mortality, but
+
+62
+00:04:40,700 --> 00:04:45,260
+you can see that there aren't as many
+shifts as you move from year to year.
+
+63
+00:04:45,260 --> 00:04:50,520
+There's another interesting glyph that
+you can use called Chernoff faces, and
+
+64
+00:04:50,520 --> 00:04:54,050
+in this case you're creating a table,
+some other layout, but
+
+65
+00:04:54,050 --> 00:04:59,560
+the data points are being plotted with
+faces, and the attributes of the face
+
+66
+00:04:59,560 --> 00:05:05,060
+are indicating various measures of
+some dimension of the data set.
+
+67
+00:05:05,060 --> 00:05:10,150
+In this case this is 12 state judges as
+
+68
+00:05:10,150 --> 00:05:15,500
+rated by lawyers and you can map
+certain features, certain aspects,
+
+69
+00:05:15,500 --> 00:05:19,530
+of the way the state judges were being
+measured, for example, the number of
+
+70
+00:05:19,530 --> 00:05:24,750
+times they were overturned, might change
+the expression from happy to sad.
+
+71
+00:05:24,750 --> 00:05:28,230
+And the size of the face may be
+the number of cases they've seen.
+
+72
+00:05:28,230 --> 00:05:33,760
+So, you know, this face may look
+quite large, and this face look
+
+73
+00:05:33,760 --> 00:05:40,632
+quite small because this state judge has
+reviewed more cases than has this judge.
+
+74
+00:05:40,632 --> 00:05:47,070
+And so you can't make value judgments
+based on the appearance of the faces, but
+
+75
+00:05:47,070 --> 00:05:52,580
+the appearance of the faces and
+the expressions that they
+
+76
+00:05:52,580 --> 00:05:57,200
+have can give you another data channel
+that you can perceive and remember,
+
+77
+00:05:57,200 --> 00:06:02,340
+actually quite well as a way of finding
+interesting aspects of the data,
+
+78
+00:06:02,340 --> 00:06:03,740
+things in the data that stand out.
+
+79
+00:06:04,740 --> 00:06:10,028
+So we learned that we can use glyphs
+to display many other attributes
+
+80
+00:06:10,028 --> 00:06:15,615
+of our data when we're using a chart or
+some other data visualization.
+
+81
+00:06:15,615 --> 00:06:25,615
+[MUSIC]

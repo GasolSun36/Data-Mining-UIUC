@@ -1,0 +1,580 @@
+1
+00:00:00,012 --> 00:00:07,845
+[SOUND]
+So
+
+2
+00:00:07,845 --> 00:00:10,973
+we're used to seeing
+two-dimensional images, and
+
+3
+00:00:10,973 --> 00:00:15,907
+we can use two-dimensional images to
+perceive our three-dimensional world, and
+
+4
+00:00:15,907 --> 00:00:18,825
+we perceive time as maybe
+a fourth dimension, but
+
+5
+00:00:18,825 --> 00:00:24,180
+then our ability to perceive dimensions is
+limited to those three or four dimensions.
+
+6
+00:00:24,180 --> 00:00:27,540
+Parallel coordinates offer us a way
+of plotting even higher dimensional
+
+7
+00:00:27,540 --> 00:00:28,479
+spaces than that.
+
+8
+00:00:30,860 --> 00:00:34,470
+So in looking at the higher
+dimensional drawings or
+
+9
+00:00:34,470 --> 00:00:38,880
+higher dimensional spaces,
+you can think of something like a square.
+
+10
+00:00:38,880 --> 00:00:42,190
+A square consists of two
+one-dimensional lines,
+
+11
+00:00:42,190 --> 00:00:45,980
+these two vertical lines,
+that are separated horizontally.
+
+12
+00:00:45,980 --> 00:00:50,820
+I've taken a one dimensional line,
+copied into a second vertical line and
+
+13
+00:00:50,820 --> 00:00:54,340
+then connected them up with
+lines between the vertices.
+
+14
+00:00:54,340 --> 00:00:57,330
+So I've now got a two-dimensional square.
+
+15
+00:00:57,330 --> 00:01:00,910
+If I want to make this two-dimensional
+square into a three-dimensional cube,
+
+16
+00:01:00,910 --> 00:01:06,150
+I just copy the square, and move it in
+a direction, and then I just link up
+
+17
+00:01:06,150 --> 00:01:10,560
+the corresponding vertices with lines, and
+that gives me a three-dimensional cube.
+
+18
+00:01:10,560 --> 00:01:15,430
+If I want a four-dimensional cube,
+I just take the three-dimensional cube and
+
+19
+00:01:15,430 --> 00:01:19,330
+I make another copy of it and
+offset it in another direction, and
+
+20
+00:01:19,330 --> 00:01:22,620
+then just draw lines between
+the corresponding vertices and it gives me
+
+21
+00:01:22,620 --> 00:01:27,630
+a tesseract, some two-dimensional
+projection of a four-dimensional cube.
+
+22
+00:01:27,630 --> 00:01:30,350
+And so you can do this, but
+it's not very helpful for
+
+23
+00:01:30,350 --> 00:01:34,970
+visualization, because you've got all
+these different directions that are being
+
+24
+00:01:34,970 --> 00:01:40,340
+projected into a two-dimensional image,
+and after three dimensions, we're just
+
+25
+00:01:40,340 --> 00:01:45,080
+not used to perceiving the world in four
+or higher dimensions, and so we just have
+
+26
+00:01:45,080 --> 00:01:50,550
+difficulty perceiving four-dimensional or
+higher data being projected that way.
+
+27
+00:01:50,550 --> 00:01:56,250
+If I have a scatter plot, for example,
+I can pretty readily see x and
+
+28
+00:01:56,250 --> 00:02:01,790
+y encoded in the positional Cartesian
+coordinates of x and y here.
+
+29
+00:02:01,790 --> 00:02:04,160
+If I had a z coordinate
+that's being projected,
+
+30
+00:02:04,160 --> 00:02:08,700
+z is being foreshortened as
+it's being projected here, and
+
+31
+00:02:08,700 --> 00:02:14,050
+I've gotta mentally remember that z
+is some combination of horizontal and
+
+32
+00:02:14,050 --> 00:02:18,440
+vertical that's different than
+the horizontal x or the vertical y axis.
+
+33
+00:02:18,440 --> 00:02:22,670
+So you can draw these hints that
+are basically similar to a shadow,
+
+34
+00:02:22,670 --> 00:02:26,300
+where I'm indicating,
+with these dashed lines,
+
+35
+00:02:26,300 --> 00:02:30,540
+what the coordinates of this green
+dot are in three dimensions,
+
+36
+00:02:30,540 --> 00:02:34,600
+because it lacks other visual cues
+of where it is in three dimensions.
+
+37
+00:02:34,600 --> 00:02:36,863
+If you try to do this in four dimensions,
+
+38
+00:02:36,863 --> 00:02:40,267
+then it becomes a nightmare to
+manage all those dimensions.
+
+39
+00:02:40,267 --> 00:02:44,789
+So there's a better technique for doing
+this called parallel coordinates that
+
+40
+00:02:44,789 --> 00:02:48,028
+Al Inselberg demonstrated to
+me back in the early 90s,
+
+41
+00:02:48,028 --> 00:02:52,817
+when they were first invented, and I was
+quite blown away by his demonstration, and
+
+42
+00:02:52,817 --> 00:02:54,660
+I'll try to reproduce it here.
+
+43
+00:02:55,790 --> 00:03:00,250
+So on parallel coordinates, we're
+going to take the Cartesian coordinates.
+
+44
+00:03:00,250 --> 00:03:04,150
+We have a horizontal x-axis and
+a vertical y-axis, and
+
+45
+00:03:04,150 --> 00:03:06,610
+we're going to take these axes and
+we're going to
+
+46
+00:03:06,610 --> 00:03:12,430
+make them parallel instead of orthogonal,
+at right angles, as they usually are.
+
+47
+00:03:12,430 --> 00:03:15,594
+So I'm going to take the x-axis,
+I'm going to put it here, and
+
+48
+00:03:15,594 --> 00:03:18,520
+I'm going to take the y-axis and
+I'm going to put it here.
+
+49
+00:03:18,520 --> 00:03:23,142
+And so I'll label this axis x and
+this axis y.
+
+50
+00:03:23,142 --> 00:03:26,229
+So now the two axes are not orthogonal.
+
+51
+00:03:26,229 --> 00:03:30,550
+They're parallel to each other and
+they don't extend from the same origin.
+
+52
+00:03:30,550 --> 00:03:34,550
+So the origin here is
+horizontally at the bottom and
+
+53
+00:03:34,550 --> 00:03:39,540
+increasing x goes up this axis,
+increasing y goes up this axis.
+
+54
+00:03:39,540 --> 00:03:43,400
+So now I've got the data points, and I
+need to figure out where these data points
+
+55
+00:03:43,400 --> 00:03:48,100
+occur, so if I take the y-coordinates
+of each data point,
+
+56
+00:03:48,100 --> 00:03:53,970
+I can map each point onto its
+corresponding position on the y-axis.
+
+57
+00:03:53,970 --> 00:03:58,680
+I'm just basically dragging them across
+horizontally, because their position in y
+
+58
+00:03:58,680 --> 00:04:05,089
+in this chart corresponds to
+their height along this y-axis.
+
+59
+00:04:05,089 --> 00:04:05,628
+If I want to do the same for
+
+60
+00:04:05,628 --> 00:04:10,580
+the x-axis, I'm going to basically take
+the x position of each point, and then I'm
+
+61
+00:04:10,580 --> 00:04:15,490
+going to drag it to the corresponding
+x position on this vertical x-axis, so
+
+62
+00:04:15,490 --> 00:04:20,540
+the horizontal length here corresponds
+to the vertical length here, and
+
+63
+00:04:20,540 --> 00:04:25,060
+so blue and red are at the same
+horizontal x coordinate, and so
+
+64
+00:04:25,060 --> 00:04:28,460
+they overlap each other on the x-axis.
+
+65
+00:04:28,460 --> 00:04:31,730
+And in green is a little bit
+farther to the right, so
+
+66
+00:04:31,730 --> 00:04:35,020
+it's going to be a little bit
+higher on the parallel x-axis.
+
+67
+00:04:35,020 --> 00:04:36,790
+Yellow is a little bit
+farther to the right so
+
+68
+00:04:36,790 --> 00:04:38,530
+it's going to be a little bit higher.
+
+69
+00:04:38,530 --> 00:04:43,130
+And then this blue green color
+dot is the farthest right so
+
+70
+00:04:43,130 --> 00:04:45,900
+it'll be the highest on the x-axis.
+
+71
+00:04:45,900 --> 00:04:50,779
+So now I've got this one set of
+points that's now appearing as two
+
+72
+00:04:50,779 --> 00:04:55,570
+sets of points, and
+I've got a correspondence between color,
+
+73
+00:04:55,570 --> 00:05:00,006
+and color's a good perceptual
+indicator of category, but
+
+74
+00:05:00,006 --> 00:05:04,290
+it's very difficult to
+perceive what's going on here.
+
+75
+00:05:04,290 --> 00:05:10,145
+So what we're going to do is, instead of
+displaying these as points on the axis,
+
+76
+00:05:10,145 --> 00:05:13,676
+I'm going to connect these
+points with lines, and
+
+77
+00:05:13,676 --> 00:05:16,862
+I'm going to delete the original points,
+and
+
+78
+00:05:16,862 --> 00:05:21,942
+now we get this nice duality between
+points in the coordinate system,
+
+79
+00:05:21,942 --> 00:05:25,672
+here, and
+lines in the coordinate system, here.
+
+80
+00:05:25,672 --> 00:05:31,420
+So, this orange point, here,
+has an x-coordinate and a y-coordinate.
+
+81
+00:05:31,420 --> 00:05:37,640
+It corresponds to this line connecting
+its x-coordinate to its y-coordinate.
+
+82
+00:05:37,640 --> 00:05:42,700
+And so each one of these five points
+in the Cartesian x y coordinate
+
+83
+00:05:42,700 --> 00:05:47,730
+system corresponds to a line in
+the parallel x y coordinate system here.
+
+84
+00:05:49,220 --> 00:05:54,310
+Some other features are collinearity,
+so if these three points lie along
+
+85
+00:05:54,310 --> 00:06:00,000
+the same line, then you get this nice
+convergence in parallel coordinates.
+
+86
+00:06:00,000 --> 00:06:03,960
+And so you can see some co-linearity
+that happens, because lines in parallel
+
+87
+00:06:03,960 --> 00:06:09,760
+coordinates, corresponding to points in
+Cartesian coordinates that are collinear,
+
+88
+00:06:09,760 --> 00:06:13,140
+will basically converge in a point
+in the parallel coordinate system.
+
+89
+00:06:13,140 --> 00:06:14,990
+So you can add extra dimensions.
+
+90
+00:06:14,990 --> 00:06:19,289
+If I add a z-axis here, I'd have to add
+all sorts of three-dimensional queues to
+
+91
+00:06:19,289 --> 00:06:23,720
+these data points to figure out
+where they are in three dimensions.
+
+92
+00:06:23,720 --> 00:06:27,910
+In parallel coordinates,
+I just add a z-axis here.
+
+93
+00:06:27,910 --> 00:06:31,606
+And then I can connect
+the z-coordinates to the y-coordinates,
+
+94
+00:06:31,606 --> 00:06:36,740
+and follow this line from its x-coordinate
+to its y-coordinate to its z-coordinate.
+
+95
+00:06:36,740 --> 00:06:38,630
+And if I add a fourth w-axis.
+
+96
+00:06:38,630 --> 00:06:41,610
+It's actually easy to
+add a fourth axis here.
+
+97
+00:06:41,610 --> 00:06:47,155
+And in fact, all of these points may be
+collinear in the z w coordinate system,
+
+98
+00:06:47,155 --> 00:06:52,480
+and you can see because these lines
+are kind of converging to the same point.
+
+99
+00:06:52,480 --> 00:06:56,900
+The point that they converge to doesn't
+necessarily have to be between the axes.
+
+100
+00:06:56,900 --> 00:07:01,240
+But there are some ways of helping
+a person to see these points.
+
+101
+00:07:01,240 --> 00:07:05,750
+And so these parallel coordinates are
+really useful for high-dimensional data.
+
+102
+00:07:07,020 --> 00:07:11,627
+And you get this correspondence of being
+able to follow these lines through
+
+103
+00:07:11,627 --> 00:07:15,940
+the various coordinates and
+have them correspond to points here, and
+
+104
+00:07:15,940 --> 00:07:18,710
+it's easier to see some relationships.
+
+105
+00:07:18,710 --> 00:07:23,410
+There could be correspondences
+between the w-axis and the y-axis, and
+
+106
+00:07:23,410 --> 00:07:27,653
+we wouldn't see those unless we
+also had lines from these points on
+
+107
+00:07:27,653 --> 00:07:32,651
+the w-axis to the points on the y-axis,
+and so you get a bit of a combinatorial
+
+108
+00:07:32,651 --> 00:07:37,220
+nightmare when you try to connect
+every axis to every other axis.
+
+109
+00:07:37,220 --> 00:07:40,710
+So there's some decision making that
+needs to happen if you're going to show
+
+110
+00:07:40,710 --> 00:07:42,650
+correspondences between axes,
+
+111
+00:07:42,650 --> 00:07:46,780
+to choose to have those axes next to each
+other in the parallel coordinates system.
+
+112
+00:07:49,620 --> 00:07:53,530
+So parallel coordinates take
+the orthogonal axes of the Cartesian
+
+113
+00:07:53,530 --> 00:07:58,343
+coordinate system and they lay them out in
+parallel, and you can have any number of
+
+114
+00:07:58,343 --> 00:08:02,808
+these parallel coordinate axes laid
+next to each other, and you can start to
+
+115
+00:08:02,808 --> 00:08:07,048
+perceive higher dimensional data
+using these parallel coordinates.
+
+116
+00:08:07,048 --> 00:08:11,369
+Some of the problems of parallel
+coordinates are the fact that you're only
+
+117
+00:08:11,369 --> 00:08:16,172
+seeing the pairwise relationship between
+the axes, but they can be very useful for
+
+118
+00:08:16,172 --> 00:08:20,306
+finding certain features in your data,
+for example, collinearity.
+
+119
+00:08:20,306 --> 00:08:29,978
+[MUSIC]

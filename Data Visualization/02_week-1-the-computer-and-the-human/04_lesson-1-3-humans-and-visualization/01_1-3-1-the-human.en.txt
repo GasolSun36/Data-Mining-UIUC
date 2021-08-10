@@ -1,0 +1,125 @@
+So in data visualization, we're using
+a computer to display data to a human. And now we need to focus on how
+the human perceives that data. And so, I'd like to spend the next
+few videos talking about the human, which is sometimes a foreign subject
+to many computer science students. We can use what's called the model human
+processor to describe how a human works in terms of how a computer works. So here's a computer. This might be a diagram of a computer
+that might be computer in a cellphone, for example. You're going to have a CPU,
+some central processing unit. And there'll be memory. You'll have Cache memory and then RAM. The Cache is sort of a short term memory
+that makes the slower RAM run faster for the CPU because the Cache is faster. You might have an output processor
+that generates graphics or causes the phone to vibrate or
+do other things. And there might be an input processor,
+some media processor that takes the video input from a camera,
+and the audio input from a microphone. And so we can use the same design to
+sort of understand how a human works. And this is called the model
+human processor, and it was invented by
+Stuart Card back in 1981 as a way of describing how humans work
+to people that work in with computers. And so with the model of human processor,
+we don't have a CPU, we have our cognitive processor. And we don't have a media processor
+accepting video input and audio input, we have eyes and ears that generate
+media in a Visual Image Store and an Auditory Image Store that is then
+processed by a perceptual processor before they're processed by
+the Cognitive Processor, the brain. And we don't have cache and RAM, we have
+a working memory, and a long term memory. And we don't have a graphics processor and something that will vibrate a phone,
+we have a motor process for the controls, how our hands work and for example how
+our hands might draw a picture for us. And in each case these,
+each of these processes, memories and processors have certain decay and
+cycle times, storage sizes that we can discuss in
+the same way that we discuss storage sizes of random access memory or
+the processing time of a processor. So first we might look at video
+processing, visual processing. We have an eye, and
+the eye takes 230 milliseconds to access. Meaning we need something from the eye,
+we get it about 230 milliseconds later. And that can vary between up to 70 and
+to 700 milliseconds. So we can get things as fast as 70
+milliseconds from the eye, right? And then we have a Visual Image Store,
+and the size is about 17 and we're going to talk not necessarily
+in terms of bits, bytes or words. We're going to talk about letters or
+chunks. And we can store about 17 things
+in our Visual Image Stores, and that depends on what those things are. And the Visual Image Store is very,
+very brief. It decays in about 200 milliseconds. And this 200 milliseconds is
+our persistence of the vision. It's the fact that something
+can be flashed to our eye. And our eye remembers what it sees for
+about two tenths of a second. And that's enough time for
+the perceptual processor to catch it. It's also enough time to do
+certain processes like reading. And so when we read it may appear,
+when you read the text on the slide, that your eye is moving forward
+in a very continuous fashion. Because it's how we're
+processing the information. And it may seem like we are processing
+every letter at a time, but that's not what's happening. What happens is we have this Saccades and
+our eyes jerking from one location to another, and we do those very quickly, and
+the our eye fixates on a single portion. And we look at that portion and
+the surrounding images on our retina. And we don't perceive our Saccades. Our eye is jerking left and
+right, and we don't see that. Our perceptual system blanks that
+out from our conscience selves. In terms of reading,
+we can read smaller fonts and larger fonts about at the same rate. Although larger fonts we
+probably feel are easier to read, we read them at the same rate. And we still tend to read printed
+pages faster than we read displays. This text on the right shows that
+you're not processing every letter, but you're processing letters in chunks, and we can still read this even though it's
+doesn't itself itself really make sense. There's also audio processing,
+and I haven't drawn the ear yet. But you have an ear that sends
+signals to an Auditory Image Store. And again, about five letters of
+information, five things of information. And when you hear something, you have
+about a minute and a half to process it. So if you're not paying attention to
+something, if somebody's talking to you and you're not paying attention,
+and they say, what did I just say? If they said it in the last one and a half
+seconds, then you have a pretty good chance of being able to recover it,
+without even thinking about it. And so the way that the ear works,
+there is an auditory canal in your ear that focuses sounds
+that vibrates in eardrum, that basically vibrates some mechanical structures that
+then works its way around the cochlea. That's basically figuring out what
+frequency composes the sound and stimulates the cilia that then
+sends signals to the rest of your perceptual system. And the sound, there's Pitch,
+Loudness, and Timbre. Pitch is the frequency,
+where in the cochlea it gets sensed. Loudness is the amplitude of the waveform. And then timbre is the shape of the
+waveform, and that can differ based on for example, different instruments
+produce different timbres of sound. We can do stereo location of a source. We have two ears, and we can do some
+stereo location of a source, but in general it's not very accurate. The more important thing is we have
+a cocktail party effect that means that we can focus on a particular
+conversation and mentally filter out some of
+the other noise that's going on and humans still much better than
+computers ever have and able to. And finally, Hand-Eye Coordination. And this pathway's a little
+bit more involved. We have an eye, a Visual Image Store, that's helping us process
+the imagery from the eye. Then a Perceptual Processor that's
+actually doing the processing on the data in this Visual Image Store. That gets sent to the brain that
+decides what to do with it. And then the Motor Processor, the hand. So we've got this Hand-Eye Coordination
+that goes through all these paths. And you can start adding up the time,
+230 milliseconds for the eye. Another 100 milliseconds for
+you to perceive what the eye is seeing. Another 70 seconds for
+you to think about the eye. Then another 70 seconds for your hand to
+respond to instructions from your brain. And so you can use that to
+figure out how long it takes for you to react, or how long it takes for
+you to move the mouse. If I have the mouse in some location,
+and I want to move the mouse say to this figure's head, I can figure out how
+long it's going to take me to do that. And this is based on several
+properties of the human kinesthesis, the fact that we know where our limbs are. We know where our fingers
+bringing things to. And also the fact that
+larger movements are faster. I can move the mouse quickly across
+the screen and click as well. I can move the mouse quickly across
+the screen, but I do it less accurately. And so we tend to, when we're finding
+a target like if I want to find the center of the zero and that 70 milliseconds,
+I move quickly towards the 0 but then I have to do a series of finer and
+finer steps. So we do large lunges followed
+by finer and finer refinements. And so that gives us a logarithmic
+rate at which we find things. And so, if I need to move things farther
+than the distance, D gets larger. But if I need to get to a smaller object,
+then the size matters as well. So I need to divide by the size,
+larger things. If I need to point to a larger thing,
+it should take me less time, so it's one over the size. So the distance divided by the size gives
+me an indication I can point to the larger things farther away as fast as I can
+point to smaller things closer to me. And we take the logarithm because the
+number of steps I need is based on this distance over size,
+I'm taking shorter and shorter steps. So this is a log base 2. And then we have 240 milliseconds it
+takes for each one of those lunges. 240 milliseconds is 70
+milliseconds to move your hand, takes you 100 milliseconds to be able
+to see the result of your lunge. And then another 70 milliseconds to decide
+how to correct it with your next lunge. So 70 milliseconds to move the hand,
+100 milliseconds to see the result, and then another 70 milliseconds to figure out
+what the next Instruction to your hand ought to be. That's 240 millisecond on average. And then you need about 600 milliseconds,
+six-tenths of a step, just to prepare yourself to
+be able to do this exercise. So this is a rough approximation called
+Fitt's Law that tells you how quickly it should take you to move
+the mouse to a certain region of the screen based on where
+the mouse is to begin with. So what did we learn? We learned the model human processor, which describes the human
+in terms of a computer. Which might be more familiar to
+some computer science students. And we can use that model to predict
+how a human will perceive data, and react to data. [MUSIC] [SOUND]

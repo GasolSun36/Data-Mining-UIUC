@@ -1,0 +1,545 @@
+1
+00:00:00,000 --> 00:00:04,480
+[SOUND].
+So there's a nice connection between these
+
+2
+00:00:04,480 --> 00:00:07,320
+OLAP data cube operations and
+
+3
+00:00:07,320 --> 00:00:12,321
+various Infovis operations
+that we've looked at,
+
+4
+00:00:12,321 --> 00:00:16,490
+for example in Shneiderman's mantra.
+
+5
+00:00:16,490 --> 00:00:19,580
+A common data cube operation is slicing.
+
+6
+00:00:19,580 --> 00:00:24,710
+And that's basically taking
+a summarized axis or
+
+7
+00:00:24,710 --> 00:00:30,310
+some full axis and looking at
+a specific value along that axis.
+
+8
+00:00:30,310 --> 00:00:33,370
+So, for example,
+this could be the location axis,
+
+9
+00:00:33,370 --> 00:00:38,640
+and this data cube represents all of
+your data across all the locations.
+
+10
+00:00:38,640 --> 00:00:42,510
+You can pick a particular location and
+then start to look at just the data for
+
+11
+00:00:42,510 --> 00:00:44,460
+that particular location, that slicing.
+
+12
+00:00:45,880 --> 00:00:51,980
+And we do that in Infovis just by
+filtering value along that dimension.
+
+13
+00:00:51,980 --> 00:00:58,510
+Similarly dicing, if we have the full
+data cube representing all of the ranges,
+
+14
+00:00:58,510 --> 00:01:04,230
+we can limit those ranges by dicing,
+by looking at sub cubes of the data cube.
+
+15
+00:01:04,230 --> 00:01:10,220
+And we do that in Infovis by setting
+up filter ranges instead of ordinal or
+
+16
+00:01:10,220 --> 00:01:15,990
+nominal filter values, or individual
+values, we have a range of values.
+
+17
+00:01:15,990 --> 00:01:19,430
+And if those values correspond to
+the coordinates used for plotting,
+
+18
+00:01:19,430 --> 00:01:23,380
+then we do the same thing where
+we zoom a plot area in Infovis.
+
+19
+00:01:23,380 --> 00:01:26,820
+So slicing could reduce
+the dimension of the data cube.
+
+20
+00:01:26,820 --> 00:01:29,410
+We can also aggregate to reduce
+the dimension of the data cube.
+
+21
+00:01:29,410 --> 00:01:34,322
+And so if we sum along, or find some other
+aggregation measure in average across one
+
+22
+00:01:34,322 --> 00:01:38,815
+of the dimensions, then that reduces
+the dimensionality of the data cube,
+
+23
+00:01:38,815 --> 00:01:40,990
+makes it easier to see the value.
+
+24
+00:01:40,990 --> 00:01:42,642
+That's the standard aggregation operation.
+
+25
+00:01:42,642 --> 00:01:43,145
+And then there is also disaggregation, and
+
+26
+00:01:43,145 --> 00:01:44,025
+when we aggregate the data in data cube
+terminology we call that a roll-up.
+
+27
+00:01:44,025 --> 00:01:49,803
+We're rolling up all the values
+
+28
+00:01:49,803 --> 00:01:53,869
+into average values or
+
+29
+00:01:53,869 --> 00:01:58,370
+aggregate values here.
+
+30
+00:01:59,560 --> 00:02:02,800
+If we do the opposite operation
+that's called a drill down,
+
+31
+00:02:02,800 --> 00:02:04,670
+we drill down into the details.
+
+32
+00:02:04,670 --> 00:02:06,940
+So we're disaggregating.
+
+33
+00:02:06,940 --> 00:02:12,160
+We're taking our average values here and
+expanding them out to the data.
+
+34
+00:02:12,160 --> 00:02:16,060
+And we see this all the time
+when we zoom on fields or
+
+35
+00:02:16,060 --> 00:02:19,310
+get details on demand in Tableau.
+
+36
+00:02:19,310 --> 00:02:23,340
+It's when we start dragging fields
+on the shelves in order to expand,
+
+37
+00:02:23,340 --> 00:02:27,460
+based on the dimensions
+associated with those fields.
+
+38
+00:02:28,560 --> 00:02:33,420
+And finally the pivot term,
+and this is where pivot table
+
+39
+00:02:33,420 --> 00:02:37,320
+gets the term pivot from,
+is basically a rotation of the data cube.
+
+40
+00:02:37,320 --> 00:02:41,772
+You're changing which faces your
+looking at, you're swapping axes.
+
+41
+00:02:41,772 --> 00:02:49,560
+So you're changing the role of a dimension
+on a particular visualization of the data.
+
+42
+00:02:49,560 --> 00:02:51,730
+We do that simply by field selection.
+
+43
+00:02:51,730 --> 00:02:54,540
+In Tableau,
+we're just dragging fields around to see
+
+44
+00:02:54,540 --> 00:02:56,999
+what we're looking at
+at any given instance.
+
+45
+00:02:58,190 --> 00:03:03,759
+We can show, for example, how all of
+the data cube operations on a database,
+
+46
+00:03:03,759 --> 00:03:07,788
+in this case the data cube of
+the world bank indicators,
+
+47
+00:03:07,788 --> 00:03:11,645
+how all of our data cube
+operations can be implemented
+
+48
+00:03:11,645 --> 00:03:16,640
+using an information visualization tool,
+in this case, Tableau.
+
+49
+00:03:18,160 --> 00:03:24,880
+So I'm displaying here a plot of
+infant mortality over life expectancy,
+
+50
+00:03:24,880 --> 00:03:31,020
+and infant mortality is measured
+over deaths per 1,000 children,
+
+51
+00:03:31,020 --> 00:03:34,160
+and so you want a lower infant mortality.
+
+52
+00:03:34,160 --> 00:03:37,600
+And this is the the infant
+mortality rate and
+
+53
+00:03:37,600 --> 00:03:43,270
+the life expectancy average over the
+dimensions of our dataset, basically time.
+
+54
+00:03:43,270 --> 00:03:49,130
+Our dataset is measures every year
+over ten years, and then by country.
+
+55
+00:03:49,130 --> 00:03:51,610
+It's being averaged over
+every country in the world.
+
+56
+00:03:51,610 --> 00:03:57,010
+And so we can look at the different data
+cube operations we can apply to this
+
+57
+00:03:57,010 --> 00:04:02,610
+data cube, in our presentation,
+for example, slicing.
+
+58
+00:04:02,610 --> 00:04:07,740
+So if I take this dataset and I expand it,
+
+59
+00:04:07,740 --> 00:04:13,870
+disaggregate it by region, we'll assign
+region the color, I get the continents.
+
+60
+00:04:13,870 --> 00:04:16,169
+Basically I desegregate by continent.
+
+61
+00:04:17,290 --> 00:04:20,250
+And now we can see how each
+of the continents is doing.
+
+62
+00:04:20,250 --> 00:04:22,640
+I can slice the dataset by looking at,
+basically,
+
+63
+00:04:22,640 --> 00:04:26,310
+one data point and
+I can keep only that data point.
+
+64
+00:04:26,310 --> 00:04:28,690
+That creates a filter operation
+
+65
+00:04:28,690 --> 00:04:33,000
+in our information tool that's
+doing the slice operation.
+
+66
+00:04:33,000 --> 00:04:34,938
+We've sliced by a continent and
+
+67
+00:04:34,938 --> 00:04:38,672
+that continent represents
+a collection of countries, and so
+
+68
+00:04:38,672 --> 00:04:42,710
+that operation is actually also performed,
+the dice operation.
+
+69
+00:04:42,710 --> 00:04:46,713
+And by basically focusing on a range
+of items, a sub cube, and so
+
+70
+00:04:46,713 --> 00:04:51,180
+we can see what countries are represented
+by bringing over countries.
+
+71
+00:04:51,180 --> 00:04:58,140
+And so if I disaggregate by country, now
+these averages are basically over time.
+
+72
+00:04:58,140 --> 00:05:02,690
+But each country represents an average
+over time of the infant mortality and and
+
+73
+00:05:02,690 --> 00:05:05,440
+life expectancy of
+the countries in Europe.
+
+74
+00:05:05,440 --> 00:05:10,030
+And so I've diced our dataset
+into just the European portion.
+
+75
+00:05:11,390 --> 00:05:13,070
+And then we can roll these back up.
+
+76
+00:05:13,070 --> 00:05:15,237
+If you want to do a roll-up,
+we're going to simplify,
+
+77
+00:05:15,237 --> 00:05:16,580
+we're going to aggregate again.
+
+78
+00:05:16,580 --> 00:05:21,170
+And so for example,
+I can get rid of the country and
+
+79
+00:05:21,170 --> 00:05:24,693
+just look at Europe.
+
+80
+00:05:24,693 --> 00:05:32,340
+And that's sort of a roll-up of all
+that data back into a summary view.
+
+81
+00:05:32,340 --> 00:05:35,490
+So we're averaging over all the countries
+in Europe for that data point.
+
+82
+00:05:35,490 --> 00:05:39,000
+And then we can remove the dice and
+slice operation and
+
+83
+00:05:39,000 --> 00:05:42,640
+just look at the original dataset.
+
+84
+00:05:42,640 --> 00:05:45,660
+Now we might want to drill down
+into some of the details of this.
+
+85
+00:05:45,660 --> 00:05:48,950
+By drilling down,
+we're doing the opposite of a roll-up.
+
+86
+00:05:48,950 --> 00:05:51,990
+Instead of aggregating by averaging or
+
+87
+00:05:51,990 --> 00:05:55,820
+summing, we're going to disaggregate
+to drill down into the details.
+
+88
+00:05:55,820 --> 00:06:00,606
+We've already drilled
+down into the regions,
+
+89
+00:06:00,606 --> 00:06:04,320
+we can also drill down into the date.
+
+90
+00:06:04,320 --> 00:06:08,086
+Each one of these dots represents
+an average over ten years, for
+
+91
+00:06:08,086 --> 00:06:09,700
+each of these continents.
+
+92
+00:06:09,700 --> 00:06:14,601
+So I can disaggregate to drill
+down into the performance
+
+93
+00:06:14,601 --> 00:06:18,260
+per year by just dragging into year here.
+
+94
+00:06:19,550 --> 00:06:24,050
+We can use a line plot to look
+at this better and you can see
+
+95
+00:06:24,050 --> 00:06:29,070
+the trends that each of these continents
+is basically improving over each year.
+
+96
+00:06:29,070 --> 00:06:33,040
+2005, 6, 7, 2009.
+
+97
+00:06:33,040 --> 00:06:39,490
+Each one of these continents is
+improving its life expectancy.
+
+98
+00:06:39,490 --> 00:06:43,980
+Increasing its life expectancy,
+decreasing its infant mortality.
+
+99
+00:06:43,980 --> 00:06:47,410
+And so we can drill down even
+further by differentiating
+
+100
+00:06:47,410 --> 00:06:50,690
+each of these continents by
+its individual countries.
+
+101
+00:06:51,980 --> 00:06:58,007
+And we get a plot like this, and so
+we've drilled down into finer details for
+
+102
+00:06:58,007 --> 00:07:00,657
+each country in each continent.
+
+103
+00:07:00,657 --> 00:07:06,060
+And we can see how each
+individual country is performing,
+
+104
+00:07:06,060 --> 00:07:14,230
+as it tries to reduce its infant mortality
+and increase its life expectancy.
+
+105
+00:07:14,230 --> 00:07:17,469
+And then finally there's
+the pivot operation,
+
+106
+00:07:17,469 --> 00:07:19,760
+if I go back to the continent view.
+
+107
+00:07:19,760 --> 00:07:23,230
+Pivot operation is basically
+a rotation of the data cube.
+
+108
+00:07:23,230 --> 00:07:27,612
+We're differentiating by region here,
+by continent here,
+
+109
+00:07:27,612 --> 00:07:32,770
+the performance of infant
+mortality versus life expectancy.
+
+110
+00:07:32,770 --> 00:07:37,290
+I can cycle fields in Tableau and
+that basically performs a rotation.
+
+111
+00:07:37,290 --> 00:07:43,739
+Now I'm coloring by year and
+then by region,
+
+112
+00:07:43,739 --> 00:07:48,840
+so I've just cycled those fields.
+
+113
+00:07:48,840 --> 00:07:54,652
+And we can continue to
+cycle the fields and
+
+114
+00:07:54,652 --> 00:07:59,799
+see different views of our data based
+
+115
+00:07:59,799 --> 00:08:05,624
+on different rotations of the data cube.
+
+116
+00:08:05,624 --> 00:08:10,099
+[MUSIC]

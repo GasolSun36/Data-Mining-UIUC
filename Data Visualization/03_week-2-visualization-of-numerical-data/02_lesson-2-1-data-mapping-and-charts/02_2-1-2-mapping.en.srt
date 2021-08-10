@@ -1,0 +1,612 @@
+1
+00:00:01,030 --> 00:00:04,186
+[MUSIC]
+
+2
+00:00:08,063 --> 00:00:11,881
+So when we map data,
+we figure out how to convert the data
+
+3
+00:00:11,881 --> 00:00:16,758
+into some graphics primitive that
+we can display, and that conversion
+
+4
+00:00:16,758 --> 00:00:21,472
+is going to depend on how we perceive
+different graphical objects and
+
+5
+00:00:21,472 --> 00:00:26,210
+connect their characteristics to
+the characteristics of the data.
+
+6
+00:00:28,750 --> 00:00:30,050
+So, as we saw before,
+
+7
+00:00:30,050 --> 00:00:33,500
+the data visualization framework
+has this mapping layer.
+
+8
+00:00:33,500 --> 00:00:37,671
+And this mapping layer takes
+data in our data collection, and
+
+9
+00:00:37,671 --> 00:00:41,480
+takes its abstract data values, and
+
+10
+00:00:41,480 --> 00:00:45,660
+assigns them more concrete geometric
+values, and those geometric
+
+11
+00:00:45,660 --> 00:00:49,390
+values are used by the graphics layer
+to display the data for visualization.
+
+12
+00:00:51,290 --> 00:00:55,310
+So there's been some studies in
+the 80s that basically uncovered
+
+13
+00:00:55,310 --> 00:00:59,610
+how effective different
+geometric mappings are in
+
+14
+00:00:59,610 --> 00:01:02,830
+the perception of quantitative
+values that they're mapped to.
+
+15
+00:01:03,990 --> 00:01:09,580
+So, for example, we have this list here,
+and it's sorted by perceptual accuracy.
+
+16
+00:01:09,580 --> 00:01:12,800
+So when we see data
+
+17
+00:01:13,980 --> 00:01:17,980
+Indicated by mapping to position,
+we do a better job
+
+18
+00:01:17,980 --> 00:01:22,640
+of understanding the quantities than we do
+if the data is mapped to color or density.
+
+19
+00:01:24,700 --> 00:01:29,145
+So, if we have data varying
+along the horizontal axis here,
+
+20
+00:01:29,145 --> 00:01:31,508
+we can map the data to position.
+
+21
+00:01:31,508 --> 00:01:35,709
+And we can see that the right
+bar is farther along.
+
+22
+00:01:35,709 --> 00:01:37,730
+It's higher than the left bar.
+
+23
+00:01:37,730 --> 00:01:39,990
+It's got a greater position.
+
+24
+00:01:39,990 --> 00:01:42,930
+And, in fact, we can see how
+much greater the position is.
+
+25
+00:01:42,930 --> 00:01:46,800
+We can also see it from length, and
+the right bar is longer than the left bar.
+
+26
+00:01:48,080 --> 00:01:53,160
+And these are very good methods for
+displaying quantitative data.
+
+27
+00:01:53,160 --> 00:01:56,440
+And you can see that if you
+combine the two of these,
+
+28
+00:01:56,440 --> 00:01:59,410
+you basically get
+the elements of a bar chart.
+
+29
+00:01:59,410 --> 00:02:04,330
+Similarly, you can map data to angle or
+slope,
+
+30
+00:02:04,330 --> 00:02:08,280
+and you can see that this right angle
+is greater than this left angle.
+
+31
+00:02:08,280 --> 00:02:10,120
+That's a little bit less effective, but
+
+32
+00:02:10,120 --> 00:02:13,730
+these are the elements that you would see
+in a pie chart, and pie charts are just
+
+33
+00:02:13,730 --> 00:02:17,359
+a little less effective at displaying
+quantitative data than are bar charts.
+
+34
+00:02:18,920 --> 00:02:21,620
+You can also map data to area.
+
+35
+00:02:21,620 --> 00:02:25,400
+And so the circle on the right is
+smaller than the circle on the left.
+
+36
+00:02:25,400 --> 00:02:27,520
+It represents a smaller area.
+
+37
+00:02:27,520 --> 00:02:30,230
+It's just a little harder to
+figure out how much smaller
+
+38
+00:02:30,230 --> 00:02:33,390
+the circle on the right is
+than the circle on the left.
+
+39
+00:02:33,390 --> 00:02:38,520
+And you can also map to volume,
+and so the sphere on the right
+
+40
+00:02:38,520 --> 00:02:41,850
+represents a smaller volume than
+the sphere on the left, but
+
+41
+00:02:41,850 --> 00:02:46,090
+it's even more difficult to figure out
+how much smaller the volume is here
+
+42
+00:02:46,090 --> 00:02:49,780
+in the orange sphere on the right than
+it is for the blue sphere on the left.
+
+43
+00:02:49,780 --> 00:02:51,190
+And finally, color or density.
+
+44
+00:02:52,360 --> 00:02:55,370
+In this case,
+we have two equal size spheres.
+
+45
+00:02:55,370 --> 00:02:59,580
+This sphere on the right is lighter,
+and the sphere on the left is darker.
+
+46
+00:02:59,580 --> 00:03:02,615
+It's just difficult to know how much
+lighter the sphere on the right is,
+
+47
+00:03:02,615 --> 00:03:04,127
+compared to the sphere on the left.
+
+48
+00:03:07,052 --> 00:03:11,816
+So it's interesting to note that,
+as we move farther down the list and
+
+49
+00:03:11,816 --> 00:03:16,825
+find less effective ways of mapping
+data to geometric or spatial values,
+
+50
+00:03:16,825 --> 00:03:21,350
+that we move from one-dimensional
+values of position, length,
+
+51
+00:03:21,350 --> 00:03:24,824
+angle, and
+slope to two-dimensional values, or
+
+52
+00:03:24,824 --> 00:03:28,730
+three-dimensional values,
+of area or volume.
+
+53
+00:03:28,730 --> 00:03:30,699
+And when we get to color or density,
+
+54
+00:03:30,699 --> 00:03:33,729
+we're no longer talking
+about spatial values at all.
+
+55
+00:03:33,729 --> 00:03:37,932
+These are non-spatial values.
+
+56
+00:03:39,720 --> 00:03:45,547
+And so further studies have investigated
+this at a finer level of detail and
+
+57
+00:03:45,547 --> 00:03:47,220
+expanded that list.
+
+58
+00:03:47,220 --> 00:03:51,310
+Again, we have position and
+length being the most effective
+
+59
+00:03:51,310 --> 00:03:56,630
+representations of data for
+spatially, or geometrically.
+
+60
+00:03:56,630 --> 00:04:00,070
+But, for example, angle and
+slope have been divided so
+
+61
+00:04:00,070 --> 00:04:05,840
+that angle is slightly better than slope
+for discerning quantitative values.
+
+62
+00:04:05,840 --> 00:04:09,790
+And, finally, density has been expanded
+to density, saturation, and hue, so
+
+63
+00:04:09,790 --> 00:04:13,460
+we've basically got brightness,
+the intensity of a color,
+
+64
+00:04:13,460 --> 00:04:17,750
+how saturated it is,
+how brilliant the color is, and
+
+65
+00:04:17,750 --> 00:04:19,920
+then which color you actually
+pick in the color wheel.
+
+66
+00:04:22,010 --> 00:04:26,800
+So these are all representing, and these
+are consistent with the previous study,
+
+67
+00:04:26,800 --> 00:04:31,230
+representing quantitative values that
+you may want to display geometrically or
+
+68
+00:04:31,230 --> 00:04:31,970
+spatially.
+
+69
+00:04:31,970 --> 00:04:33,830
+We can also display other values.
+
+70
+00:04:33,830 --> 00:04:37,880
+For example, ordinal values,
+values, again,
+
+71
+00:04:37,880 --> 00:04:44,260
+that you'll want to map
+to a visual display.
+
+72
+00:04:44,260 --> 00:04:47,250
+In ordinal's case,
+instead of quantitative,
+
+73
+00:04:47,250 --> 00:04:51,110
+we don't know how much greater
+one value is to another.
+
+74
+00:04:51,110 --> 00:04:55,210
+We just know that one value is bigger than
+another or greater than another value.
+
+75
+00:04:55,210 --> 00:04:56,650
+For example, shirt sizes.
+
+76
+00:04:56,650 --> 00:04:59,260
+We know that medium shirt is
+larger than a small shirt.
+
+77
+00:04:59,260 --> 00:05:00,620
+We just don't know how much larger.
+
+78
+00:05:01,860 --> 00:05:06,850
+So for ordinal data,
+position still wins out,
+
+79
+00:05:06,850 --> 00:05:12,320
+so position is still at the top of the
+list for indicating ordinal data values.
+
+80
+00:05:12,320 --> 00:05:19,360
+But then we have density, saturation, and
+hue second, third, and fourth in the list.
+
+81
+00:05:19,360 --> 00:05:26,440
+So whereas the brightness of a color,
+or how intense the color is,
+
+82
+00:05:26,440 --> 00:05:33,170
+or which color you pick, it's difficult
+to make actual quantitative comparisons.
+
+83
+00:05:33,170 --> 00:05:37,530
+It is actually quite easy to
+make the comparison itself.
+
+84
+00:05:37,530 --> 00:05:40,330
+You can tell when one object is
+brighter than another object,
+
+85
+00:05:40,330 --> 00:05:42,010
+you just don't know how
+much brighter it is.
+
+86
+00:05:43,420 --> 00:05:47,160
+And then the remainder of
+these stays in the same order,
+
+87
+00:05:47,160 --> 00:05:49,970
+it just falls further down on the list.
+
+88
+00:05:49,970 --> 00:05:55,440
+So length, angle, slope, area, and
+volume are a little bit less effective at
+
+89
+00:05:56,680 --> 00:06:01,590
+looking at relative orders of things
+that don't have quantitative values.
+
+90
+00:06:01,590 --> 00:06:07,270
+And this gap here is filled in with
+some geometric mappings that don't
+
+91
+00:06:07,270 --> 00:06:11,978
+make sense for quantitative values, things
+like texture, connection, and containment.
+
+92
+00:06:11,978 --> 00:06:18,415
+And so we wouldn't think of one texture
+as being different, quantitatively,
+
+93
+00:06:18,415 --> 00:06:23,750
+than another texture, but you can make
+value judgments between textures, and
+
+94
+00:06:23,750 --> 00:06:29,230
+so this is more textured than this is.
+
+95
+00:06:29,230 --> 00:06:32,430
+You can make connections between objects,
+and
+
+96
+00:06:32,430 --> 00:06:34,840
+these two objects are connected and
+this one isn't, and
+
+97
+00:06:34,840 --> 00:06:38,390
+that sets up an ordering that's
+not necessarily quantitative.
+
+98
+00:06:38,390 --> 00:06:43,030
+And finally, containment, the fact that
+one object contains another object, and
+
+99
+00:06:43,030 --> 00:06:45,350
+a third object is not
+contained by that object,
+
+100
+00:06:45,350 --> 00:06:49,810
+is another ordinal organization that
+doesn't make sense for quantitative data.
+
+101
+00:06:51,840 --> 00:06:54,920
+And finally, there's a third category
+of data we can look at, nominal.
+
+102
+00:06:54,920 --> 00:06:57,420
+These are categories of data.
+
+103
+00:06:57,420 --> 00:07:01,070
+Ordinals are values that we can compare,
+but
+
+104
+00:07:01,070 --> 00:07:04,560
+that we don't know how much
+greater one is to another.
+
+105
+00:07:04,560 --> 00:07:09,080
+With nominal values, these
+are categories that aren't comparable,
+
+106
+00:07:09,080 --> 00:07:12,420
+things like comparing
+a square to a circle.
+
+107
+00:07:12,420 --> 00:07:15,700
+A square isn't greater than a circle or
+less than a circle.
+
+108
+00:07:15,700 --> 00:07:16,726
+They're just different.
+
+109
+00:07:16,726 --> 00:07:21,930
+And so, again, position is still
+
+110
+00:07:21,930 --> 00:07:26,928
+the strongest indicator of difference for
+nominal data values,
+
+111
+00:07:26,928 --> 00:07:30,970
+but then what would ordinarily be second?
+
+112
+00:07:30,970 --> 00:07:33,680
+Density, saturation, hue,
+texture, connection, and
+
+113
+00:07:33,680 --> 00:07:38,050
+containment remains as powerful for
+nominal axes, except that hue and
+
+114
+00:07:38,050 --> 00:07:43,920
+texture become stronger, and the rest
+of these become a little bit weaker.
+
+115
+00:07:44,990 --> 00:07:50,300
+And so hue, the actual color in a color
+wheel, is a good indicator of category,
+
+116
+00:07:50,300 --> 00:07:53,620
+even though it's a very poor
+indicator of actual quantities.
+
+117
+00:07:53,620 --> 00:07:56,240
+And then, finally, length,
+angle, slope, volume, and
+
+118
+00:07:56,240 --> 00:08:00,810
+area end up being similarly poor for
+
+119
+00:08:02,410 --> 00:08:08,220
+describing categories as they are for
+describing base sizes.
+
+120
+00:08:08,220 --> 00:08:13,870
+There's an additional value here that you
+can map categories to shape, so you can
+
+121
+00:08:13,870 --> 00:08:18,980
+map nominal data to shape, and I've been
+using shape as an example of nominal data,
+
+122
+00:08:18,980 --> 00:08:23,880
+circle, square, and so on, and that's more
+effective than mapping categories to,
+
+123
+00:08:23,880 --> 00:08:27,070
+for example, the length or
+angle of geometry.
+
+124
+00:08:30,980 --> 00:08:35,324
+So we've learned that there's many
+different ways of connecting our
+
+125
+00:08:35,324 --> 00:08:40,037
+data to different graphics attributes
+when we display data graphically for
+
+126
+00:08:40,037 --> 00:08:45,338
+data visualization, and we've learned that
+some of these ways are better perceived
+
+127
+00:08:45,338 --> 00:08:50,597
+than others depending on whether the data
+is nominal, ordered, or quantitative.
+
+128
+00:08:50,597 --> 00:08:59,326
+[MUSIC]

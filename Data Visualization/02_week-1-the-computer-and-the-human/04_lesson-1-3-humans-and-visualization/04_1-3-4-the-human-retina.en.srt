@@ -1,0 +1,665 @@
+1
+00:00:00,420 --> 00:00:06,010
+So when we display data the data will then
+need to be perceived by a human observer.
+
+2
+00:00:06,010 --> 00:00:08,890
+That perception starts
+with the human retina.
+
+3
+00:00:08,890 --> 00:00:12,472
+And so, we need to understand
+how the retina perceives light.
+
+4
+00:00:12,472 --> 00:00:16,587
+We're going to learn about the eye and
+how does the eye sense light.
+
+5
+00:00:16,587 --> 00:00:21,495
+And based on that knowledge of how
+the eye physically senses the light,
+
+6
+00:00:21,495 --> 00:00:26,145
+we can figure out how small the details
+of a visualization can be and
+
+7
+00:00:26,145 --> 00:00:29,415
+what color should you
+use in a visualization.
+
+8
+00:00:29,415 --> 00:00:33,629
+So we're going to focus on the eye,
+and the mechanics of the eye.
+
+9
+00:00:33,629 --> 00:00:39,530
+And this is a image of the eye and
+illustration from Grey's Anatomy.
+
+10
+00:00:39,530 --> 00:00:44,340
+And the eye consist of a lens
+that focuses the light
+
+11
+00:00:46,070 --> 00:00:52,740
+that receives from the aperture
+that is control by this iris.
+
+12
+00:00:52,740 --> 00:00:55,110
+And it focuses that
+light onto this retina.
+
+13
+00:00:55,110 --> 00:01:01,140
+And this retina contains the sensors that
+basically determine what light is hitting,
+
+14
+00:01:01,140 --> 00:01:02,380
+what part of this image plane.
+
+15
+00:01:02,380 --> 00:01:06,060
+So we don't have an image plane,
+it's more of a hemisphere.
+
+16
+00:01:06,060 --> 00:01:09,690
+And the important part here
+is this fovea centralis.
+
+17
+00:01:09,690 --> 00:01:10,980
+This is your center of vision.
+
+18
+00:01:10,980 --> 00:01:15,097
+When you look at something, it's because
+that something you're looking at is
+
+19
+00:01:15,097 --> 00:01:17,379
+getting focused onto the fovea centralis.
+
+20
+00:01:17,379 --> 00:01:21,222
+This is where you have a lot of sensors
+that can tell a lot of detail about what
+
+21
+00:01:21,222 --> 00:01:25,020
+you're looking at, then less sensors
+as you get farther away from that.
+
+22
+00:01:25,020 --> 00:01:28,700
+You also have an optic nerve that
+connects to your retina, and
+
+23
+00:01:28,700 --> 00:01:34,100
+you don't have any sensors here to be able
+to see the light that's coming in, so
+
+24
+00:01:34,100 --> 00:01:38,380
+there's a blind spot that we have, and we
+don't even realize we have the blind spot,
+
+25
+00:01:38,380 --> 00:01:41,760
+because our perceptual system
+is covering it up with,
+
+26
+00:01:41,760 --> 00:01:46,980
+in a way that we don't
+even realize is happening.
+
+27
+00:01:48,820 --> 00:01:52,860
+So this leads to visual acuity,
+the notion of visual acuity.
+
+28
+00:01:52,860 --> 00:01:54,550
+How sharp is your vision?
+
+29
+00:01:54,550 --> 00:02:00,060
+What can you see, how small of
+a detail can you present to a viewer?
+
+30
+00:02:00,060 --> 00:02:03,310
+And we measure our visual acuity
+when we go to an eye doctor,
+
+31
+00:02:03,310 --> 00:02:07,212
+when we look at one of these eye charts
+and it tells us our Snellen ratio.
+
+32
+00:02:07,212 --> 00:02:11,804
+20/X, which means you can distinguishes
+at 20 feet what the average
+
+33
+00:02:11,804 --> 00:02:14,270
+person can distinguish at X feet.
+
+34
+00:02:14,270 --> 00:02:18,180
+So if you can only see this letter E,
+then you have 200 vision,
+
+35
+00:02:18,180 --> 00:02:23,230
+meaning you can see this E at 20 feet
+when the average person can see this E
+
+36
+00:02:23,230 --> 00:02:24,850
+even as far away as 200 feet.
+
+37
+00:02:26,670 --> 00:02:28,510
+And if you can see below this red line,
+
+38
+00:02:28,510 --> 00:02:31,760
+you have better than 20/20,
+better than average vision.
+
+39
+00:02:31,760 --> 00:02:36,810
+And the reason you can distinguish these
+letters [COUGH] is that their features
+
+40
+00:02:36,810 --> 00:02:41,680
+project to a certain distance
+apart on the retina, and
+
+41
+00:02:41,680 --> 00:02:45,230
+if your lens is doing a good job
+of focusing that information,
+
+42
+00:02:45,230 --> 00:02:48,480
+then the sensors on your retina
+can resolve those details.
+
+43
+00:02:48,480 --> 00:02:53,020
+If your lens is not doing such a good job,
+then the image that's getting presented
+
+44
+00:02:53,020 --> 00:02:56,480
+isn't going to be resolved
+as well by your sensors.
+
+45
+00:02:58,840 --> 00:03:04,390
+And so, your retina basically is
+going to consist of rods and cones.
+
+46
+00:03:04,390 --> 00:03:08,830
+Rods perceive the brightness and
+cones perceive color.
+
+47
+00:03:10,600 --> 00:03:13,650
+And there's three varieties of cones.
+
+48
+00:03:13,650 --> 00:03:19,082
+Cones that perceive mostly red colors,
+[COUGH] cones that perceive
+
+49
+00:03:19,082 --> 00:03:24,223
+mostly red colors,
+cones that perceive mostly green colors,
+
+50
+00:03:24,223 --> 00:03:27,922
+and cones that perceive
+mostly blue colors.
+
+51
+00:03:27,922 --> 00:03:32,796
+And then, there's a variety of
+additional processing that happens by
+
+52
+00:03:32,796 --> 00:03:37,030
+the ganglion's,
+these other nerve cells after the retina.
+
+53
+00:03:38,730 --> 00:03:44,440
+But this rods and cones are useful
+to look at for the moment.
+
+54
+00:03:44,440 --> 00:03:48,490
+You have 80 million rods and
+only 5 million cones.
+
+55
+00:03:48,490 --> 00:03:54,379
+So your intensity vision is much
+better by your color vision.
+
+56
+00:03:56,280 --> 00:03:59,580
+Your rods are denser away from the fovea.
+
+57
+00:03:59,580 --> 00:04:05,330
+Your fovea, your center of vision,
+is mostly cones, as it turns out.
+
+58
+00:04:05,330 --> 00:04:09,240
+So astronomers have learned, when they're
+looking at very dim stars, to look
+
+59
+00:04:09,240 --> 00:04:13,800
+slightly away from the star, look slightly
+off to the side of what they're studying.
+
+60
+00:04:13,800 --> 00:04:18,779
+So that their rods can process
+the information and not their cones,
+
+61
+00:04:18,779 --> 00:04:23,421
+because their rods are more
+sensitive to the changes in light.
+
+62
+00:04:23,421 --> 00:04:26,880
+And they're quite sensitive, they
+don't even turn on when it's daylight.
+
+63
+00:04:26,880 --> 00:04:31,036
+And then, you have cones,
+and they're, again,
+
+64
+00:04:31,036 --> 00:04:36,171
+sensitive to various colors or
+various wavelengths of light.
+
+65
+00:04:36,171 --> 00:04:41,719
+They're very dense in the fovea,
+anywhere from a 100,000
+
+66
+00:04:41,719 --> 00:04:47,069
+to 325,000 cones per millimeter
+squared in the fovea and
+
+67
+00:04:47,069 --> 00:04:50,635
+they can distinguish about 150 hues and
+
+68
+00:04:50,635 --> 00:04:56,610
+combined between the different hues,
+a hue is a colour in the rainbow.
+
+69
+00:04:56,610 --> 00:05:00,944
+And the different shades and intensities
+and saturations, you end up with
+
+70
+00:05:00,944 --> 00:05:05,296
+about 7 million different shades that
+you can distinguish with your eye.
+
+71
+00:05:07,753 --> 00:05:09,742
+Depending on how on your lens,
+
+72
+00:05:09,742 --> 00:05:13,870
+all lenses exhibits some form
+of chromatic aberration.
+
+73
+00:05:13,870 --> 00:05:18,700
+And that means that refraction
+depends on the wavelength of light.
+
+74
+00:05:18,700 --> 00:05:23,110
+Light at the red wavelengths is
+going to focus at a different
+
+75
+00:05:23,110 --> 00:05:27,390
+location than light in the green
+wavelengths to the blue wavelengths, and
+
+76
+00:05:27,390 --> 00:05:32,550
+this creates a dispersion that
+can create problems of focus, and
+
+77
+00:05:32,550 --> 00:05:37,370
+this is why blue blocker sunglasses or
+amber sunglasses which are nothing more
+
+78
+00:05:37,370 --> 00:05:40,220
+than just amber shaded
+filters on your sunglasses.
+
+79
+00:05:40,220 --> 00:05:44,290
+They're going to age our vision because
+they're filtering out blue light and
+
+80
+00:05:44,290 --> 00:05:48,060
+blue tense to focus off
+the retina whereas red and
+
+81
+00:05:48,060 --> 00:05:50,230
+green tend to focus closer to the retina.
+
+82
+00:05:50,230 --> 00:05:54,680
+So the blue wavelengths are actually
+blurring the image and the red and
+
+83
+00:05:54,680 --> 00:05:58,170
+green wavelengths are generally
+sharper on the retina.
+
+84
+00:05:59,250 --> 00:06:02,870
+So it'd be good to avoid pure blue text or
+
+85
+00:06:02,870 --> 00:06:07,128
+at least desaturate it with
+a little bit of red or
+
+86
+00:06:07,128 --> 00:06:13,421
+green colors to aid in focusing on
+edges of text or important figures.
+
+87
+00:06:13,421 --> 00:06:16,470
+There's some interesting
+properties of color,
+
+88
+00:06:16,470 --> 00:06:20,899
+this isn't necessarily chromatic
+aberration, but we tend to perceive
+
+89
+00:06:20,899 --> 00:06:26,230
+the red is being closer than the blue, and
+this is our part of our perceptual system.
+
+90
+00:06:26,230 --> 00:06:29,850
+For color perception, there's
+a difference in brightness, as well.
+
+91
+00:06:29,850 --> 00:06:33,010
+Blue is generally a darker
+color than red or green.
+
+92
+00:06:33,010 --> 00:06:35,920
+If you look at the pure
+luminance of a color,
+
+93
+00:06:37,210 --> 00:06:41,210
+the luminance of that color will be
+30% of its red component + 59% of
+
+94
+00:06:41,210 --> 00:06:45,600
+its green component + 10%
+of its blue component.
+
+95
+00:06:45,600 --> 00:06:49,820
+That means that green is six
+times as bright as blue, and
+
+96
+00:06:49,820 --> 00:06:54,330
+green is twice as bright as red and
+red three times as bright as blue.
+
+97
+00:06:54,330 --> 00:06:55,820
+And if you have yellow,
+
+98
+00:06:55,820 --> 00:07:00,570
+you can create yellow in the additive
+color system by red plus green.
+
+99
+00:07:00,570 --> 00:07:01,713
+Yellow is very bright.
+
+100
+00:07:01,713 --> 00:07:08,046
+It's 31% plus 59% gives
+you 90% brightness.
+
+101
+00:07:10,337 --> 00:07:14,820
+And you can figure out the luminance
+of these other colors based on that.
+
+102
+00:07:14,820 --> 00:07:19,590
+Also, it's important to acknowledge
+that a good number of people,
+
+103
+00:07:19,590 --> 00:07:23,030
+in particular, 10% of males,
+are color blind.
+
+104
+00:07:23,030 --> 00:07:25,450
+And if you're displaying
+information with color,
+
+105
+00:07:25,450 --> 00:07:28,680
+you may want to add additional
+ques to that information.
+
+106
+00:07:28,680 --> 00:07:34,600
+So that people that are color
+blind can also understand it,
+
+107
+00:07:34,600 --> 00:07:36,520
+and also to pay attention to contrast.
+
+108
+00:07:37,610 --> 00:07:40,940
+Because if you're displaying
+something only with color,
+
+109
+00:07:40,940 --> 00:07:44,530
+then people who are color blind aren't
+going to be able to tell the difference.
+
+110
+00:07:44,530 --> 00:07:48,740
+Just color contrast and so you may want to
+change the brightness of the color as well
+
+111
+00:07:48,740 --> 00:07:52,940
+and use this formula to make sure enabling
+colors have different brightnesses and
+
+112
+00:07:52,940 --> 00:07:54,470
+addition to different use.
+
+113
+00:07:56,040 --> 00:07:57,810
+And these colors, these red, green and
+
+114
+00:07:57,810 --> 00:08:02,630
+blue colors yet
+change into a different color space.
+
+115
+00:08:02,630 --> 00:08:06,740
+Space brightness, brightness shade.
+
+116
+00:08:06,740 --> 00:08:09,910
+And then, a brightness minus blue, and
+
+117
+00:08:09,910 --> 00:08:17,420
+a red minus green channel.
+
+118
+00:08:17,420 --> 00:08:22,359
+So you get a color space that goes
+from black to white, yellow to blue,
+
+119
+00:08:22,359 --> 00:08:23,629
+and red to green.
+
+120
+00:08:23,629 --> 00:08:27,750
+This is the black white channel,
+this is the yellow blue channel.
+
+121
+00:08:27,750 --> 00:08:29,150
+And this is the red green channel.
+
+122
+00:08:32,050 --> 00:08:34,900
+That's what actually gets into
+the brain after some processing
+
+123
+00:08:37,460 --> 00:08:38,310
+of the retinal image.
+
+124
+00:08:40,100 --> 00:08:44,484
+And so, you're cones and
+rods will start to get
+
+125
+00:08:44,484 --> 00:08:50,220
+exhausted [COUGH] if you stare at the plus
+sign in the middle of the screen here,
+
+126
+00:08:50,220 --> 00:08:56,570
+you'll start to see that the purple dot
+that's missing instead of missing will
+
+127
+00:08:56,570 --> 00:09:02,290
+start to turn green because it's turning
+into the complement of the purple color.
+
+128
+00:09:02,290 --> 00:09:06,270
+And once it starts, if you keep staring at
+the plus eventually that green dot will
+
+129
+00:09:06,270 --> 00:09:10,640
+eat up the rest of the dots and
+you're left with a solid gray screen.
+
+130
+00:09:12,270 --> 00:09:16,510
+And this is all due to, basically,
+some exhaustion of the rods and
+
+131
+00:09:16,510 --> 00:09:18,220
+cones in your perceptual system.
+
+132
+00:09:20,160 --> 00:09:23,630
+So the human retina perceives
+light using rods and cones.
+
+133
+00:09:23,630 --> 00:09:26,960
+Cones perceive color,
+rods perceive brightness.
+
+134
+00:09:26,960 --> 00:09:30,440
+We have more cones near our fovea,
+our center of vision, and
+
+135
+00:09:30,440 --> 00:09:32,650
+more rods in our peripheral vision.
+
+136
+00:09:32,650 --> 00:09:36,056
+Also, we tend to expect warmer
+colors to be in the forefront,
+
+137
+00:09:36,056 --> 00:09:38,421
+and cooler colors to be in the background.
+
+138
+00:09:39,921 --> 00:09:48,381
+[MUSIC]
+
+139
+00:09:50,296 --> 00:09:54,130
+[SOUND

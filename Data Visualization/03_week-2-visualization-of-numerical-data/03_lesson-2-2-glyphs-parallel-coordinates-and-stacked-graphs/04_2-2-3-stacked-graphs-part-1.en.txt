@@ -1,0 +1,68 @@
+[SOUND]
+So often we want to visualize
+multiple variables simultaneously. And so we generate stacked graphs
+that can display several variables changing along the same dimension. For a bar chart, we may want to look
+at more than just a single quantitative dependent variable measured across
+an independent variable dimension. One way of doing this is
+with a stacked bar chart. In this case we can have two or
+more dependent variables plotted. In this case, the blue bars are
+representing one dependent variable and the red bars are representing
+a second dependent variable. And so we're using q to represent
+different nominal value, basically the second dependent variable is different
+than the first dependent variable. And then the total amount of
+the contribution of both variables is represented by the height of
+the top of these stacked bars. And the relative proportion
+is being represented by the proportion of the bar being
+one color versus another color. And if we want to emphasize
+that relative proportion. We can have the bars stacked to 100% and just plot the percentage of
+the contribution of one variable versus the other variable as the difference
+in the colors of the bars. This kind of relative contribution is
+also represented in a pie chart but in a pie chart you're representing
+the contribution based on angle and a little bit by area than on position and
+length. Here in a pie chart the relative
+proportion of the blue category versus the orange category versus the
+green category versus the yellow category is being represented by the angle
+as the angle's sum to 360 degrees. It's also proportional to the area
+represented by each of these four regions. That indication can be degraded
+somewhat if you try to show a pie chart in three dimensions. And that's because in three
+dimensions we are still perceiving a three dimensional scene
+as a two dimensional image. And the visual cues we're using include
+foreshortening and perspective. And those cues can get in the way of our
+ability to perceive a region, say in the foreground, as being larger or smaller
+than a region in the background because of our expectation that perspective is going
+to make regions in the foreground larger. Or at least appear larger and
+regions in the background appear smaller, even if it's just a orthographic
+non-perspective projection. So, it's best not to use three
+dimensions for pie charts and, in fact, it's better just to use a stacked
+bar chart instead of a pie chart. In this case, each one of these bars
+can represent a separate pie chart because it's representing the separate
+relative contribution to the whole of multiple dependent variables, as they
+vary across some independent variable. Also, stacking order matters. I've got the same data plotted
+in the left and in the right. In the left,
+I've plotted the blue variable first. And then I've stacked the red
+variable on top of that. On the right side,
+I've plugged the red variable first and I've stacked the blue
+variable on top of that. On the right it's easy to see that
+the red variable isn't changing across the horizontal axis. On the left, you can still see that
+the red variable isn't changing, but you have to see that because
+the lengths aren't changing. Whereas on the right,
+the actual positions aren't changing. Which further verifies that position is
+a stronger indicator than the length of the actual data values in terms
+of mapping two geometric and spacial display elements. You can avoid that stacking order problem
+by using diverging stacked bar charts if you have the red variable creating
+bars growing upwards, and the blue variable creating
+bars growing downward. But that stops working when you
+have three or more variables. Another way to avoid having one variable
+dominate the other in stacking order is to stack them and then re-center
+the bar across the horizontal axis. So instead of growing up
+from the horizontal axis the bar is just centered
+at the horizontal axis. And this give us the same
+displacement on the top and the bottom of the bar chart,
+but it helps us to pay more attention to the areas of the elements
+instead of their actual position. It's much better if you have continuously
+changing horizontal and vertical axis variables to use stacked line graphs,
+then stacked bar charts. If we can connect their data values
+by lines instead of having them discrete bars, then it's easier
+to see when areas are changing versus areas are remaining
+constant as they move across even though they're displaced by
+the variance of other variables. [MUSIC]

@@ -1,0 +1,47 @@
+1
+00:00:00,025 --> 00:00:08,044
+>> [SOUND]
+>> So
+
+2
+00:00:08,044 --> 00:00:11,908
+in Module 4 we're going to
+look at visualization systems.
+
+3
+00:00:11,908 --> 00:00:16,718
+In Module 2 we learned how to plot data
+using coordinates stored in the data.
+
+4
+00:00:16,718 --> 00:00:19,150
+In Module 3 we learned how to plot data
+
+5
+00:00:19,150 --> 00:00:22,720
+using coordinates that we had
+to compute based on the data.
+
+6
+00:00:22,720 --> 00:00:27,328
+In Module 4 we're going to focus on
+systems that allow the user to decide how
+
+7
+00:00:27,328 --> 00:00:30,148
+they want to plot the data,
+what data to plot.
+
+8
+00:00:30,148 --> 00:00:35,010
+It's going to focus on the connection
+of the user to the data and
+
+9
+00:00:35,010 --> 00:00:40,911
+a visualization system that helps figure
+out the best way to plot that data.
+
+10
+00:00:40,911 --> 00:00:49,944
+[MUSIC]

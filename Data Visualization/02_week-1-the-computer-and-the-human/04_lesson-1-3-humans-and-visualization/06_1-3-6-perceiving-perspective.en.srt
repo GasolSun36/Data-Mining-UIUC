@@ -1,0 +1,565 @@
+1
+00:00:00,670 --> 00:00:04,580
+So when we use three dimensional computer
+graphics for data visualization.
+
+2
+00:00:04,580 --> 00:00:08,740
+We need to queue the viewer that they're
+looking at a three dimensional scene
+
+3
+00:00:08,740 --> 00:00:11,020
+even though they're seeing
+a two dimensional image.
+
+4
+00:00:11,020 --> 00:00:14,447
+That means we need to add three
+dimensional perceptional queues to
+
+5
+00:00:14,447 --> 00:00:18,791
+an image, but those perceptional queues
+can interfere with our perception if three
+
+6
+00:00:18,791 --> 00:00:20,463
+dimensions or two dimensions.
+
+7
+00:00:22,172 --> 00:00:26,980
+So we'll learn how we perceive a 3D
+world from the two dimensional image on
+
+8
+00:00:26,980 --> 00:00:31,484
+our retina and how that ability to
+perceive the 3D world can interfere
+
+9
+00:00:31,484 --> 00:00:35,089
+with the visual presentation
+of two dimensional data.
+
+10
+00:00:35,089 --> 00:00:40,880
+And what we can do to
+avoid that misperception.
+
+11
+00:00:40,880 --> 00:00:45,128
+So again, we'll look at the visual
+part of the model human processor.
+
+12
+00:00:45,128 --> 00:00:49,932
+Basically, our eye is going to be sensing
+data that's going to be processed by
+
+13
+00:00:49,932 --> 00:00:52,320
+this perceptual processor.
+
+14
+00:00:52,320 --> 00:00:56,390
+And as perceptual processor
+has been developed to
+
+15
+00:00:57,900 --> 00:01:01,780
+understand three dimensional scenes
+more that two dimensional scenes.
+
+16
+00:01:01,780 --> 00:01:03,546
+In particular, perspective.
+
+17
+00:01:03,546 --> 00:01:05,820
+Perspective is a broad word.
+
+18
+00:01:07,950 --> 00:01:10,087
+It includes things like foreshortening.
+
+19
+00:01:10,087 --> 00:01:14,776
+The fact that three dimensional objects
+are projected onto an image plane or
+
+20
+00:01:14,776 --> 00:01:16,715
+onto our retinal hemisphere.
+
+21
+00:01:16,715 --> 00:01:22,710
+And that projection creates
+foreshortening, so if I look at a unit
+
+22
+00:01:22,710 --> 00:01:26,990
+cube, when I look at a projection
+of the unit cube on an image plane.
+
+23
+00:01:26,990 --> 00:01:29,280
+Some of the edges
+are shorter than the others.
+
+24
+00:01:29,280 --> 00:01:33,500
+The edges in the depth direction
+are going to be shorter than the edges
+
+25
+00:01:33,500 --> 00:01:35,730
+in the transverse directions.
+
+26
+00:01:35,730 --> 00:01:37,310
+And so that's foreshortening,
+
+27
+00:01:37,310 --> 00:01:40,910
+the effect that this edge is shorter
+than this edge in the projection,
+
+28
+00:01:40,910 --> 00:01:43,520
+even though in the three-dimensional
+scene they're the same length.
+
+29
+00:01:45,230 --> 00:01:50,693
+And so lengths in a projection
+are not necessarily accurate compared
+
+30
+00:01:50,693 --> 00:01:55,778
+to the lengths in the real world,
+but perceptually we've grown
+
+31
+00:01:55,778 --> 00:02:00,505
+to understand that these lengths
+could be the same length.
+
+32
+00:02:00,505 --> 00:02:06,004
+And the differences are the result of
+the projection onto the image plane.
+
+33
+00:02:06,004 --> 00:02:08,927
+And then there's Linear Perspective, and
+
+34
+00:02:08,927 --> 00:02:13,351
+you can see that here we have
+a projector which is basically aligned
+
+35
+00:02:13,351 --> 00:02:17,380
+from the object to a focal point
+through an image plane here.
+
+36
+00:02:17,380 --> 00:02:24,207
+That's being used by this early
+artist in order to create
+
+37
+00:02:24,207 --> 00:02:29,337
+a perspective drawing of this object as a,
+
+38
+00:02:31,211 --> 00:02:36,150
+When we were first understanding
+how perspective worked.
+
+39
+00:02:36,150 --> 00:02:40,715
+Basically, linear perspective said
+that object that are further away
+
+40
+00:02:40,715 --> 00:02:43,462
+appears smaller and you can see that here.
+
+41
+00:02:43,462 --> 00:02:45,370
+And then we have size constancy.
+
+42
+00:02:45,370 --> 00:02:50,962
+We know that object like this musical
+instrument aren't going to change size.
+
+43
+00:02:50,962 --> 00:02:54,151
+And so
+if an object appears to be changing size,
+
+44
+00:02:54,151 --> 00:02:57,977
+it must be moving farther away from us or
+closer to us, and
+
+45
+00:02:57,977 --> 00:03:03,600
+that objects that appear smaller than
+other objects must be farther away.
+
+46
+00:03:03,600 --> 00:03:07,260
+That's a size constancy
+expectation we have, and
+
+47
+00:03:07,260 --> 00:03:10,570
+our perceptual system depends on that.
+
+48
+00:03:10,570 --> 00:03:12,490
+So it can also malfunction.
+
+49
+00:03:12,490 --> 00:03:15,690
+And so
+here I've got a very simple line drawing.
+
+50
+00:03:15,690 --> 00:03:22,230
+With two parallel lines, A and B,
+and then I've got two lines that
+
+51
+00:03:22,230 --> 00:03:27,370
+are receding in the distance, that are,
+kind of sloped against each other.
+
+52
+00:03:27,370 --> 00:03:32,458
+And these two lines can set up
+the appearance of, for example,
+
+53
+00:03:32,458 --> 00:03:36,970
+railroad tracks or
+some two lines that are converging to
+
+54
+00:03:36,970 --> 00:03:40,629
+a vanishing point in
+a perspective drawing.
+
+55
+00:03:40,629 --> 00:03:45,988
+And if that's the case, then line A,
+if this was a perspective rendering of
+
+56
+00:03:45,988 --> 00:03:51,629
+a three-dimensional scene, line A should
+be farther away from us than line B.
+
+57
+00:03:51,629 --> 00:03:54,160
+And if that's the case,
+line A should be much bigger.
+
+58
+00:03:54,160 --> 00:03:57,900
+And in fact, A looks bigger in
+this image because of that.
+
+59
+00:03:57,900 --> 00:04:01,200
+But actually line A and
+line B are the same size.
+
+60
+00:04:01,200 --> 00:04:05,705
+But, when we add these additional lines
+in here, when we add a perspective
+
+61
+00:04:05,705 --> 00:04:10,297
+context to these lines, line A looks
+bigger, because it's farther away.
+
+62
+00:04:12,837 --> 00:04:18,410
+Similarly, I could have two equal
+length vertical lines here.
+
+63
+00:04:18,410 --> 00:04:23,250
+And if I add a few other decorations,
+suddenly I've changed the length and
+
+64
+00:04:23,250 --> 00:04:25,420
+now this line looks shorter and
+
+65
+00:04:25,420 --> 00:04:29,500
+this line looks taller even though I
+know that they are the same length.
+
+66
+00:04:29,500 --> 00:04:34,949
+After adding these additional lines,
+I've decreased the size of this line and
+
+67
+00:04:34,949 --> 00:04:38,129
+increase the size of
+this line perceptually.
+
+68
+00:04:38,129 --> 00:04:43,927
+And the reason is if I follow
+these out further I'm thinking of
+
+69
+00:04:43,927 --> 00:04:49,629
+this line in perspective as being
+the front corner of a cube.
+
+70
+00:04:49,629 --> 00:04:54,380
+And this line is being the back corner of
+for example a room if this is the floor
+
+71
+00:04:54,380 --> 00:04:58,921
+and the ceiling and this is to the wall
+this is the back corner of the room.
+
+72
+00:04:58,921 --> 00:05:04,249
+And this is the closest corner of
+an external cube, if that's the case then
+
+73
+00:05:04,249 --> 00:05:09,577
+I would expect this line to be farther
+away because it's the back corner and
+
+74
+00:05:09,577 --> 00:05:14,210
+this line to be closer to me,
+because it's the front corner.
+
+75
+00:05:14,210 --> 00:05:18,180
+And in perspective, if I have two lines,
+but this line is closer to me, and
+
+76
+00:05:18,180 --> 00:05:21,800
+this line is farther away, even though
+these two lines are the same length,
+
+77
+00:05:21,800 --> 00:05:25,000
+this one looks bigger,
+because it's farther away.
+
+78
+00:05:25,000 --> 00:05:28,729
+Perspective can also confuse
+us just from foreshortening,
+
+79
+00:05:28,729 --> 00:05:30,712
+not from linear perspectives.
+
+80
+00:05:30,712 --> 00:05:33,032
+So, here I've got a parallelogram, and
+
+81
+00:05:33,032 --> 00:05:37,474
+anytime you have parallel lines that
+aren't meeting at ninety degree angles,
+
+82
+00:05:37,474 --> 00:05:40,700
+we expect them to be
+receding in other distance.
+
+83
+00:05:40,700 --> 00:05:44,769
+And so here,
+even though this is just a parallelogram,
+
+84
+00:05:44,769 --> 00:05:49,546
+you want it to be a quadrilateral
+with right angles or rectangle.
+
+85
+00:05:49,546 --> 00:05:54,050
+That just happens to be receding Into the
+distance and that it's being foreshortened
+
+86
+00:05:54,050 --> 00:05:57,750
+into a parallelogram because it's
+being projected on to our retina.
+
+87
+00:05:58,770 --> 00:06:02,830
+If that as the case, then if this
+is receding into the distance,
+
+88
+00:06:02,830 --> 00:06:07,250
+then the fact that B is closer to
+this point than it is to this point,
+
+89
+00:06:07,250 --> 00:06:10,620
+would make this line
+A shorter than line C.
+
+90
+00:06:10,620 --> 00:06:16,416
+And just looking at the figure it looks
+like line AB is shorter than line BC,
+
+91
+00:06:16,416 --> 00:06:22,588
+when in fact line AB and BC are the same
+length for this is an isosceles triangle.
+
+92
+00:06:25,421 --> 00:06:27,890
+This also works with texture.
+
+93
+00:06:27,890 --> 00:06:30,503
+Here I just have
+an arrangement of lipsoids,
+
+94
+00:06:30,503 --> 00:06:33,129
+a two dimensional arrangement of lipsoids.
+
+95
+00:06:33,129 --> 00:06:35,054
+We tend to perceive it as for
+
+96
+00:06:35,054 --> 00:06:39,421
+example the tops of oil barrels
+receding off in the distance.
+
+97
+00:06:39,421 --> 00:06:44,525
+Because I've smaller features and
+more features in the distance and
+
+98
+00:06:44,525 --> 00:06:49,717
+so I've got a higher frequency of
+smaller features in the distance and
+
+99
+00:06:49,717 --> 00:06:53,336
+they lower frequency of
+fewer larger features.
+
+100
+00:06:53,336 --> 00:06:55,161
+In the foreground, and
+
+101
+00:06:55,161 --> 00:07:00,920
+we tend to attribute that to a projection
+of linear perspective, as well.
+
+102
+00:07:02,370 --> 00:07:04,129
+And we also have certain
+lighting assumptions.
+
+103
+00:07:04,129 --> 00:07:06,880
+So we're used to the sun being over head.
+
+104
+00:07:06,880 --> 00:07:11,349
+And so we're used to objects,
+seeing the front sides of objects, and
+
+105
+00:07:11,349 --> 00:07:14,172
+those objects are illuminated from above.
+
+106
+00:07:14,172 --> 00:07:19,218
+And so we see this dot illuminated
+from above as a convex sphere,
+
+107
+00:07:19,218 --> 00:07:24,264
+and we see this dot illuminated
+from below with the illumination
+
+108
+00:07:24,264 --> 00:07:28,296
+on the bottom side as being
+a concave indentation.
+
+109
+00:07:28,296 --> 00:07:31,147
+Because we don't expect illumination
+to come from the bottom,
+
+110
+00:07:31,147 --> 00:07:33,740
+we expect illumination
+to come from the top.
+
+111
+00:07:33,740 --> 00:07:37,702
+And the only way for this to be
+illuminated from the top like this,
+
+112
+00:07:37,702 --> 00:07:42,046
+is if it was an indentation instead of
+a bulge, as it is on the left side.
+
+113
+00:07:42,046 --> 00:07:47,201
+So when we use three dimensional graphics
+for data visualization, our perception
+
+114
+00:07:47,201 --> 00:07:52,160
+of size is based on our perception of
+how far the object is away from us.
+
+115
+00:07:52,160 --> 00:07:56,310
+And that can sometimes mislead us to
+what the actual size of the object is.
+
+116
+00:07:57,570 --> 00:08:01,017
+So we want to avoid using
+three-dimensional computer graphics for
+
+117
+00:08:01,017 --> 00:08:05,254
+data visualization when we can, and only
+use it when it's absolutely necessary.
+
+118
+00:08:09,921 --> 00:08:18,086
+[MUSIC]

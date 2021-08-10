@@ -1,0 +1,563 @@
+1
+00:00:00,000 --> 00:00:03,559
+[MUSIC]
+
+2
+00:00:08,527 --> 00:00:12,201
+So for handling non-coordinate data,
+non-numerical data,
+
+3
+00:00:12,201 --> 00:00:15,807
+we're often more interested in
+the relationship between data
+
+4
+00:00:15,807 --> 00:00:18,740
+items than in the data items themselves.
+
+5
+00:00:18,740 --> 00:00:20,830
+And so we'll use a graph or
+
+6
+00:00:20,830 --> 00:00:25,060
+a network to represent
+the relationships between data items.
+
+7
+00:00:25,060 --> 00:00:30,520
+And so we'll talk here about different
+ways of specifying a graph, and
+
+8
+00:00:30,520 --> 00:00:34,520
+different attributes of graphs, and how
+graphs are represented computationally.
+
+9
+00:00:36,050 --> 00:00:40,470
+So a graph just consists of nodes and
+edges.
+
+10
+00:00:40,470 --> 00:00:46,530
+In this case, we have four nodes and
+we have five edges connecting these nodes.
+
+11
+00:00:46,530 --> 00:00:49,420
+And so
+the nodes will represent a data item and
+
+12
+00:00:49,420 --> 00:00:53,600
+the edge will represent
+a relationship between two data items.
+
+13
+00:00:53,600 --> 00:00:55,870
+If we add this particular edge,
+
+14
+00:00:55,870 --> 00:00:59,930
+then every data item is going to be
+connected to every other data item.
+
+15
+00:00:59,930 --> 00:01:04,190
+We would call that a complete graph,
+or a clique, of these four nodes.
+
+16
+00:01:05,410 --> 00:01:10,940
+Here on the left, I've got I've got
+a graph of four nodes connected by
+
+17
+00:01:10,940 --> 00:01:15,340
+five edges, and on the right I've got
+four nodes connected by five edges.
+
+18
+00:01:15,340 --> 00:01:18,330
+In fact, these two graphs are isomorphic.
+
+19
+00:01:18,330 --> 00:01:21,940
+They're the same graph,
+they're just laid out differently.
+
+20
+00:01:21,940 --> 00:01:25,959
+And on the right, I've got a planar graph,
+which means to nodes and
+
+21
+00:01:25,959 --> 00:01:29,570
+edges are laid out so
+that none of the edges cross each other.
+
+22
+00:01:29,570 --> 00:01:34,545
+And then I can speak of a face
+as being the region bounded
+
+23
+00:01:34,545 --> 00:01:39,641
+by a cycle of edges starting and
+ending at the same node.
+
+24
+00:01:39,641 --> 00:01:45,070
+And also, we would say that these
+are two different embeddings
+
+25
+00:01:45,070 --> 00:01:50,890
+of the same graph or
+at least these graphs are isomorphic.
+
+26
+00:01:50,890 --> 00:01:54,440
+If we think of this whole
+arrangement of eight nodes and
+
+27
+00:01:54,440 --> 00:01:56,520
+ten edges as a single graph,
+
+28
+00:01:56,520 --> 00:02:00,350
+then that would be one graph consisting
+of two connected components, but
+
+29
+00:02:00,350 --> 00:02:05,289
+the entire graph containing both of these
+sub graphs would be a disconnected graph.
+
+30
+00:02:08,250 --> 00:02:09,940
+We can also have directed graphs.
+
+31
+00:02:09,940 --> 00:02:13,750
+So in an ordinary graph,
+or an undirected graph,
+
+32
+00:02:13,750 --> 00:02:18,670
+just has edges, but does not really
+suggest the direction of these edges.
+
+33
+00:02:18,670 --> 00:02:23,530
+We can have a directed graph by using
+arrows to indicate a direction, so
+
+34
+00:02:23,530 --> 00:02:27,770
+that we would have a connection
+from this node to this node, but
+
+35
+00:02:27,770 --> 00:02:31,060
+not necessarily a connection from
+this node back to this node.
+
+36
+00:02:31,060 --> 00:02:35,580
+And you can think of a graph as having a
+cycle, a directed graph having a cycle, so
+
+37
+00:02:35,580 --> 00:02:40,040
+this undirected graph, this ordinary graph
+has a cycle because these three nodes.
+
+38
+00:02:40,040 --> 00:02:44,590
+I can start at this node and
+I can follow the cycle to get back.
+
+39
+00:02:44,590 --> 00:02:50,200
+You can have a cyclic directed graph,
+because I can follow a cycle here.
+
+40
+00:02:50,200 --> 00:02:53,760
+This graph is acyclic,
+because there is no cycle.
+
+41
+00:02:53,760 --> 00:02:55,830
+Once I get to this node
+I can go to this node.
+
+42
+00:02:55,830 --> 00:02:58,540
+Once I get to this node,
+I can't go any place further.
+
+43
+00:02:58,540 --> 00:03:01,190
+So there's no way to get
+back to any of these nodes
+
+44
+00:03:01,190 --> 00:03:04,390
+by following these edges in
+the directions indicated.
+
+45
+00:03:04,390 --> 00:03:06,740
+You can also have trees.
+
+46
+00:03:08,010 --> 00:03:10,740
+Any graph that's connected
+
+47
+00:03:10,740 --> 00:03:14,650
+that has one less edge than
+the number of nodes forms a tree.
+
+48
+00:03:14,650 --> 00:03:15,624
+It's minimally connected.
+
+49
+00:03:15,624 --> 00:03:20,191
+And you can think of having a parent node,
+but for an undirected graph,
+
+50
+00:03:20,191 --> 00:03:25,770
+any of these nodes could be the parent and
+you can think of multiple siblings.
+
+51
+00:03:25,770 --> 00:03:29,760
+Here's some graphs with
+many more edges and
+
+52
+00:03:29,760 --> 00:03:35,000
+you can see kind of the way they're
+laid out would imply a parent.
+
+53
+00:03:35,000 --> 00:03:38,920
+But I could lay these out
+in isomorphic methods,
+
+54
+00:03:38,920 --> 00:03:43,100
+equivalent methods, and another potent
+node might appear to be the parent.
+
+55
+00:03:44,350 --> 00:03:48,020
+When you have directed graphs,
+the tree forms a hierarchy and
+
+56
+00:03:48,020 --> 00:03:50,480
+then you can have a parent.
+
+57
+00:03:50,480 --> 00:03:56,880
+So in this case, the child nodes,
+these child nodes point to their parents.
+
+58
+00:03:56,880 --> 00:04:00,230
+And so I've plotted their parents
+higher than the child nodes.
+
+59
+00:04:00,230 --> 00:04:01,910
+And then there is a clear root node.
+
+60
+00:04:01,910 --> 00:04:07,220
+This one parent that's the parent
+of all of these nodes.
+
+61
+00:04:07,220 --> 00:04:09,330
+You can also have a hierarchy
+that's not a tree.
+
+62
+00:04:09,330 --> 00:04:11,740
+In this case we have
+a parent relationship,
+
+63
+00:04:11,740 --> 00:04:14,690
+but this child node has two parents.
+
+64
+00:04:14,690 --> 00:04:18,220
+And so
+you've got a definite hierarchy here, but
+
+65
+00:04:18,220 --> 00:04:23,550
+it's not a tree because a tree would have
+each node would have a single parent node.
+
+66
+00:04:25,100 --> 00:04:28,310
+There's also a relationship between
+
+67
+00:04:28,310 --> 00:04:32,910
+the number of edges each node has and
+the kind of graph you're looking at.
+
+68
+00:04:32,910 --> 00:04:36,250
+We talk about the degree of the node
+as being the number of edges
+
+69
+00:04:36,250 --> 00:04:38,250
+extending from a node.
+
+70
+00:04:38,250 --> 00:04:41,530
+Directed graphs would have a different
+in degree than an out degree.
+
+71
+00:04:41,530 --> 00:04:45,450
+The in degree would be the number
+of edges going into the node and
+
+72
+00:04:45,450 --> 00:04:47,920
+the out degree would be the number
+of edges leaving the node.
+
+73
+00:04:49,000 --> 00:04:53,770
+And then these, the number of
+nodes you have of each degree,
+
+74
+00:04:53,770 --> 00:04:57,270
+if it follows this kind of fall off,
+it's called a social network.
+
+75
+00:04:57,270 --> 00:05:01,927
+A social network, you can think
+of this as a friend's network or
+
+76
+00:05:01,927 --> 00:05:06,250
+many natural
+
+77
+00:05:06,250 --> 00:05:11,210
+data relationships follow this power law,
+this social network power law.
+
+78
+00:05:11,210 --> 00:05:15,470
+In this case, this is the number
+of interactions of yeast proteins.
+
+79
+00:05:15,470 --> 00:05:18,570
+Each one of these nodes
+is a yeast protein, and
+
+80
+00:05:18,570 --> 00:05:23,460
+the edges represent interaction between
+these proteins and, in this case,
+
+81
+00:05:23,460 --> 00:05:27,590
+you have many nodes that have a few
+interactions that are connected to,
+
+82
+00:05:27,590 --> 00:05:32,480
+you know, one or two,
+you have one or two edges.
+
+83
+00:05:32,480 --> 00:05:37,270
+And then you have many fewer nodes that
+have high degree, that have a lot of edges
+
+84
+00:05:37,270 --> 00:05:41,830
+that are connected to a lot of
+other nodes by a single edge.
+
+85
+00:05:41,830 --> 00:05:46,808
+And so in this case, the number of
+nodes that have a certain degree
+
+86
+00:05:46,808 --> 00:05:49,160
+follows a power-law.
+
+87
+00:05:49,160 --> 00:05:53,503
+If the y is the number of
+nodes with that degree,
+
+88
+00:05:53,503 --> 00:06:00,143
+is equal to the degree to some power
+with some constant multiplied to it.
+
+89
+00:06:00,143 --> 00:06:05,030
+And you see this fall
+off happen quite often.
+
+90
+00:06:05,030 --> 00:06:09,350
+These graphs tend not to be plainer,
+they tend to be difficult to embed.
+
+91
+00:06:09,350 --> 00:06:12,930
+They also tend to be the most popular
+graphs that we encounter in real life.
+
+92
+00:06:14,580 --> 00:06:19,720
+Finally, we're going to use an adjacency
+matrix to represent graphs.
+
+93
+00:06:19,720 --> 00:06:24,560
+And so in this case we have a graph
+that has four nodes, four data items.
+
+94
+00:06:24,560 --> 00:06:26,640
+One, two, three and four,
+
+95
+00:06:26,640 --> 00:06:31,850
+and then we're going to represent
+this graph using this matrix.
+
+96
+00:06:31,850 --> 00:06:38,190
+In this case, the Adjacency Matrix
+will have a one in row one,
+
+97
+00:06:38,190 --> 00:06:43,680
+column two, if there's an edge
+connecting node one to node two.
+
+98
+00:06:43,680 --> 00:06:47,370
+Likewise, it'll have a one in row two,
+column one,
+
+99
+00:06:47,370 --> 00:06:52,960
+because it connects node two to node
+one and so it will be symmetric.
+
+100
+00:06:52,960 --> 00:06:56,090
+Because this is a non-directed graph.
+
+101
+00:06:56,090 --> 00:07:01,240
+If it was a directed graph, then you
+would connect, if it was directed from
+
+102
+00:07:01,240 --> 00:07:07,040
+node one to node two by an edge
+leaving node one going to node two.
+
+103
+00:07:07,040 --> 00:07:10,820
+Then you would have a one
+in row one column two but
+
+104
+00:07:10,820 --> 00:07:12,880
+you would have a zero
+in row two column one.
+
+105
+00:07:12,880 --> 00:07:15,940
+So a directed graph
+would have asymmetric or
+
+106
+00:07:15,940 --> 00:07:20,771
+could have an asymmetric adjacency
+matrix but an ordinary graph,
+
+107
+00:07:20,771 --> 00:07:26,665
+a non-directed graph, would just
+have a symmetric adjacency matrix.
+
+108
+00:07:26,665 --> 00:07:28,775
+And these edges could also have weights,
+
+109
+00:07:28,775 --> 00:07:32,945
+in which case you might not just have
+zero or one, you might have a value here
+
+110
+00:07:32,945 --> 00:07:37,060
+to indicate how strong
+the connection is between nodes.
+
+111
+00:07:37,060 --> 00:07:41,810
+And the diagonal is usually zero, unless
+there's some relationship between a node
+
+112
+00:07:41,810 --> 00:07:44,490
+and itself, and
+you can represent that along the diagonal.
+
+113
+00:07:46,222 --> 00:07:50,860
+So it might be good to review graphs and
+the different kinds of graphs,
+
+114
+00:07:50,860 --> 00:07:54,006
+the different representations of graphs,
+and
+
+115
+00:07:54,006 --> 00:07:58,801
+the different attributes of graphs
+to familiarize yourself with them,
+
+116
+00:07:58,801 --> 00:08:02,668
+because we'll be using those for
+the rest of this module.
+
+117
+00:08:02,668 --> 00:08:10,892
+[MUSIC]

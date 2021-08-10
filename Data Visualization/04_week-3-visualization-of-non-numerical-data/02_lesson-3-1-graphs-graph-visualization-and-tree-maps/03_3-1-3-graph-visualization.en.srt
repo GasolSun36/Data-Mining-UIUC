@@ -1,0 +1,934 @@
+1
+00:00:08,386 --> 00:00:12,982
+So tut's method tells you how to lay out
+the nodes of a planar graph in a plane so
+
+2
+00:00:12,982 --> 00:00:14,900
+that the edges don't cross.
+
+3
+00:00:14,900 --> 00:00:18,230
+If you don't have a planar graph, if you
+have an arbitrary graph, you need to use
+
+4
+00:00:18,230 --> 00:00:24,080
+a more specific methods to lay out a graph
+so that it could be easily visualized.
+
+5
+00:00:24,080 --> 00:00:29,550
+So as we saw in the last set of slides
+tut's method for laying out a planar graph
+
+6
+00:00:29,550 --> 00:00:34,210
+places each node at a position that's
+the average of it's neighboring nodes.
+
+7
+00:00:34,210 --> 00:00:40,180
+And so each of the nodes is applying
+a force to the current nodes position and
+
+8
+00:00:40,180 --> 00:00:42,810
+so that's an example of
+a force directed layout.
+
+9
+00:00:42,810 --> 00:00:45,760
+Then there's quite a few
+different force directed layouts,
+
+10
+00:00:45,760 --> 00:00:50,700
+a popular one is called Gem and that's
+what was used to layout this example.
+
+11
+00:00:50,700 --> 00:00:54,540
+This is a interaction graph
+between yeast proteins,
+
+12
+00:00:54,540 --> 00:00:59,160
+there is about 1500 yeast proteins and
+about 2000 interactions and so the yeast
+
+13
+00:00:59,160 --> 00:01:05,350
+proteins are indicated by nodes and
+the interactions are indicated by edges.
+
+14
+00:01:06,620 --> 00:01:10,220
+So in the GEM algorithm for
+forced directed layout,
+
+15
+00:01:10,220 --> 00:01:13,340
+we're simulating the force
+of a spring system.
+
+16
+00:01:13,340 --> 00:01:17,810
+So each edge between two nodes
+corresponds to a spring, and
+
+17
+00:01:17,810 --> 00:01:22,370
+that spring has a rust length if the nodes
+are farther than that rest length and
+
+18
+00:01:22,370 --> 00:01:24,280
+they'll be attracted to each other.
+
+19
+00:01:24,280 --> 00:01:27,910
+If they're closer than that rest length
+then they'll be repelling each other.
+
+20
+00:01:27,910 --> 00:01:31,080
+And also, if you have high degree nodes,
+if you have a node with a lot of
+
+21
+00:01:31,080 --> 00:01:35,180
+neighbors, then Jim will make
+that rest length of the springs
+
+22
+00:01:35,180 --> 00:01:38,220
+larger to try to push away those
+neighbors since there are so
+
+23
+00:01:38,220 --> 00:01:42,050
+many of those neighbors sharing
+an edge with that high degree node.
+
+24
+00:01:43,460 --> 00:01:46,210
+There's also a repulsion
+
+25
+00:01:46,210 --> 00:01:50,480
+between nodes even if there are not
+connected by a spring so that
+
+26
+00:01:50,480 --> 00:01:55,230
+nodes don't end up on top of each other
+even if they're not connected by an edge.
+
+27
+00:01:55,230 --> 00:01:58,860
+And that repulsion force is basically
+equal to one over the distance
+
+28
+00:01:58,860 --> 00:02:01,770
+between the node, between any two nodes.
+
+29
+00:02:01,770 --> 00:02:06,240
+And then finally all the nodes experience
+a force of gravity towards the center
+
+30
+00:02:06,240 --> 00:02:09,460
+of the graft to keep things
+from wandering too far away.
+
+31
+00:02:09,460 --> 00:02:13,167
+And a small random perturbation
+force just to make sure
+
+32
+00:02:13,167 --> 00:02:15,594
+that nodes take unique positions.
+
+33
+00:02:17,550 --> 00:02:22,529
+As we talk about the layout of graphs,
+by placing nodes,
+
+34
+00:02:22,529 --> 00:02:27,130
+it's good to think of
+the centrality of nodes.
+
+35
+00:02:27,130 --> 00:02:30,290
+And centralities are ways of analyzing
+
+36
+00:02:30,290 --> 00:02:33,470
+you know where a node should
+be positioned in a layout.
+
+37
+00:02:33,470 --> 00:02:37,010
+Should it be more central or
+should it be on the periphery here?
+
+38
+00:02:37,010 --> 00:02:42,020
+So these nodes that are blue
+in color are central nodes.
+
+39
+00:02:42,020 --> 00:02:47,210
+These nodes that are red in
+color are non-central nodes.
+
+40
+00:02:47,210 --> 00:02:49,425
+There's many different centrality metrics.
+
+41
+00:02:49,425 --> 00:02:54,695
+Ways of measuring how central
+a node should be in a layout.
+
+42
+00:02:54,695 --> 00:02:59,115
+Node degree is a simple method where
+you just count the number of edges
+
+43
+00:02:59,115 --> 00:03:00,115
+that a node has.
+
+44
+00:03:00,115 --> 00:03:03,635
+And so nodes with high degree should
+be placed towards the center and
+
+45
+00:03:03,635 --> 00:03:07,330
+nodes with low degree might
+appear on the boundary.
+
+46
+00:03:08,740 --> 00:03:15,390
+Page rank is a kind of centrality measure
+which Google uses to find popular
+
+47
+00:03:15,390 --> 00:03:19,800
+webpages by basically counting the number
+of incoming links from other webpages.
+
+48
+00:03:19,800 --> 00:03:22,280
+Another is based on the isolation metric.
+
+49
+00:03:22,280 --> 00:03:24,540
+You can think of
+the distance between nodes.
+
+50
+00:03:24,540 --> 00:03:27,470
+For example this green node here
+
+51
+00:03:27,470 --> 00:03:32,240
+to this red node has three edges between
+that, so it's distance would be three.
+
+52
+00:03:32,240 --> 00:03:34,480
+It's the length of the shortest number or
+
+53
+00:03:34,480 --> 00:03:39,000
+edges to get from one node to
+another node is the distance.
+
+54
+00:03:39,000 --> 00:03:42,290
+The isolation matrix basically adds up
+
+55
+00:03:42,290 --> 00:03:46,220
+the distance from a given node to
+all the other nodes in the graph.
+
+56
+00:03:47,660 --> 00:03:51,320
+And if I add those up then
+I'll get a smaller result for
+
+57
+00:03:51,320 --> 00:03:53,030
+nodes towards the center of this graph.
+
+58
+00:03:53,030 --> 00:03:57,300
+And a larger result to nodes in
+the periphery of this graph,
+
+59
+00:03:57,300 --> 00:03:59,670
+in this particular layout.
+
+60
+00:03:59,670 --> 00:04:04,210
+And so you can think of closeness
+centrality as basically the inverse of
+
+61
+00:04:04,210 --> 00:04:05,960
+that isolation metric.
+
+62
+00:04:05,960 --> 00:04:10,401
+So that nodes with high closeness
+centrality would have low isolation
+
+63
+00:04:10,401 --> 00:04:11,010
+metric.
+
+64
+00:04:11,010 --> 00:04:14,556
+And you can also think of graph
+centrality, which is like the isolation
+
+65
+00:04:14,556 --> 00:04:18,470
+metric except I'm not taking the distance
+to all the nodes and adding them up.
+
+66
+00:04:18,470 --> 00:04:22,240
+I'm taking the distance between the node
+and the farthest node away from it, and
+
+67
+00:04:22,240 --> 00:04:25,820
+one over that gives me what's
+called the graph centrality.
+
+68
+00:04:25,820 --> 00:04:28,400
+And finally,
+there's between the centrality.
+
+69
+00:04:28,400 --> 00:04:33,410
+Between the centrality basically
+looks at every pair of nodes,
+
+70
+00:04:33,410 --> 00:04:37,530
+and finds the shortest path
+between that pair of nodes.
+
+71
+00:04:39,210 --> 00:04:42,470
+If I take the shortest paths between
+any node and any other node, all
+
+72
+00:04:42,470 --> 00:04:47,260
+of those shortest paths, how many of those
+shortest paths go through a given node?
+
+73
+00:04:47,260 --> 00:04:50,537
+That tells me the betweenness
+centrality of that node.
+
+74
+00:04:50,537 --> 00:04:55,610
+And so, if I take every shortest path
+between every node and every other node.
+
+75
+00:04:57,080 --> 00:05:01,354
+Those shortest paths will likely go
+through these central nodes more than they
+
+76
+00:05:01,354 --> 00:05:03,630
+will go through these peripheral nodes.
+
+77
+00:05:03,630 --> 00:05:08,469
+And so that's what we have plotted
+here is nodes plotted based
+
+78
+00:05:08,469 --> 00:05:11,910
+on their betweenness centrality.
+
+79
+00:05:11,910 --> 00:05:17,540
+How many of the shortest paths between any
+two nodes go through each of these nodes.
+
+80
+00:05:17,540 --> 00:05:21,320
+It's high for
+these nodes that are blue in color and
+
+81
+00:05:21,320 --> 00:05:23,210
+low for these nodes that are red in color.
+
+82
+00:05:24,230 --> 00:05:25,958
+And you can also compute that for
+
+83
+00:05:25,958 --> 00:05:28,845
+an edge, how many shortest
+paths go through an edge?
+
+84
+00:05:31,760 --> 00:05:34,404
+So, we can use use that
+between the centrality or
+
+85
+00:05:34,404 --> 00:05:37,960
+any of these centrality
+metrics to simplify a graph.
+
+86
+00:05:37,960 --> 00:05:42,630
+And so, for example, if I compute
+the between the centrality of edges
+
+87
+00:05:42,630 --> 00:05:45,570
+of my network of yeast proteins.
+
+88
+00:05:45,570 --> 00:05:48,200
+Edges that have low
+between the centrality,
+
+89
+00:05:48,200 --> 00:05:49,990
+have few shortest paths
+going through them.
+
+90
+00:05:49,990 --> 00:05:54,840
+And edges with high between the centrality
+have a lot of edges going through them.
+
+91
+00:05:54,840 --> 00:05:58,710
+And so a lot of shortest
+paths going through them.
+
+92
+00:05:58,710 --> 00:06:03,070
+And so if I remove edges that have
+few shortest paths going through them
+
+93
+00:06:03,070 --> 00:06:06,900
+you might think the impact would be less
+than if I have a lot of shortest paths
+
+94
+00:06:06,900 --> 00:06:08,780
+going through that edge.
+
+95
+00:06:08,780 --> 00:06:13,810
+So I've plotted the between the centrality
+of edges here, and I basically
+
+96
+00:06:13,810 --> 00:06:18,560
+removed the lowest between the centrality,
+the ones that are very dark blue and
+
+97
+00:06:18,560 --> 00:06:23,140
+left the highest between the centrality
+edges, the ones that are in red here.
+
+98
+00:06:23,140 --> 00:06:26,830
+And I've not removed any edge if
+it creates a disconnected graph.
+
+99
+00:06:26,830 --> 00:06:31,050
+So the result is a graph that
+
+100
+00:06:31,050 --> 00:06:35,590
+has as many edges as it has nodes,
+about 1500 edges and 1500 nodes.
+
+101
+00:06:35,590 --> 00:06:42,100
+So I guess something like a tree
+that's minimally connected,
+
+102
+00:06:42,100 --> 00:06:46,880
+but have retained the high
+between the centrality edges.
+
+103
+00:06:46,880 --> 00:06:50,440
+And removed the lowest
+between the centrality edges.
+
+104
+00:06:50,440 --> 00:06:53,290
+And so what's left is kind of
+the communications backbone,
+
+105
+00:06:53,290 --> 00:06:59,170
+the most often used edges when I'm finding
+the shortest path between any two nodes.
+
+106
+00:06:59,170 --> 00:07:00,750
+And that simplifies the layout.
+
+107
+00:07:00,750 --> 00:07:03,350
+Now I've got fewer edges
+in order to compute
+
+108
+00:07:03,350 --> 00:07:07,870
+spring distances when I use the same
+gem layout, force-directed layout for
+
+109
+00:07:07,870 --> 00:07:11,140
+this graph on the right than I'm using for
+this graph on the left.
+
+110
+00:07:11,140 --> 00:07:14,850
+The nodes spread out more
+because I've got fewer springs.
+
+111
+00:07:14,850 --> 00:07:19,210
+And the nodes are freer to
+move around to unique places.
+
+112
+00:07:19,210 --> 00:07:23,430
+And you can visually see the relationship
+between nodes better in this layout
+
+113
+00:07:23,430 --> 00:07:24,830
+than in this layout.
+
+114
+00:07:24,830 --> 00:07:26,310
+You're also looking at fewer edges,
+
+115
+00:07:26,310 --> 00:07:29,740
+so you could always add back
+in the edges as necessary,
+
+116
+00:07:29,740 --> 00:07:34,090
+to add back in those low between the
+centrality edges to see a more complete
+
+117
+00:07:34,090 --> 00:07:38,630
+view of this graph, but the nodes would
+still be positioned better than they are.
+
+118
+00:07:38,630 --> 00:07:43,380
+When you try to compute the layout
+using all of those edges.
+
+119
+00:07:45,420 --> 00:07:48,120
+So there's other techniques for
+laying out graphs.
+
+120
+00:07:49,370 --> 00:07:54,260
+Here's an example technique called edge
+bundles where we just put all of the nodes
+
+121
+00:07:54,260 --> 00:08:00,770
+in a ring and we make a circle, a radial
+layout of nodes and then we draw the edges
+
+122
+00:08:00,770 --> 00:08:05,570
+in the region inside this disk
+surrounded by this circle of nodes.
+
+123
+00:08:07,100 --> 00:08:10,110
+And we can start to group edges together
+
+124
+00:08:10,110 --> 00:08:13,630
+if we have some way of measuring
+the similarity of edges.
+
+125
+00:08:13,630 --> 00:08:18,091
+We can create basically wire bundles
+called edge bundles that simplify
+
+126
+00:08:18,091 --> 00:08:20,260
+the visualization of this graph.
+
+127
+00:08:20,260 --> 00:08:26,380
+In this case, these are emails that
+were part of the litigation for
+
+128
+00:08:26,380 --> 00:08:32,630
+a company called Enron between
+132 employees back in 2001.
+
+129
+00:08:32,630 --> 00:08:34,160
+And here's a couple different layouts.
+
+130
+00:08:34,160 --> 00:08:39,330
+This is a force directed layout
+of these node positions and
+
+131
+00:08:39,330 --> 00:08:42,930
+then instead of having the edges,
+just go straight line.
+
+132
+00:08:42,930 --> 00:08:47,040
+Connecting each node we've tried
+to bundle the edges together so
+
+133
+00:08:47,040 --> 00:08:52,430
+you can kind of see main communication
+pathways in these representations.
+
+134
+00:08:55,180 --> 00:08:58,900
+How do you find two edges to be similar or
+
+135
+00:08:58,900 --> 00:09:01,920
+not similar to each other so
+that you can bundle them?
+
+136
+00:09:01,920 --> 00:09:08,390
+Well this, for
+that task it's useful to form communities
+
+137
+00:09:08,390 --> 00:09:13,368
+to try to cluster nodes together
+in communities that are sharing
+
+138
+00:09:13,368 --> 00:09:18,620
+similar edge behaviors,
+similar edge connections.
+
+139
+00:09:19,650 --> 00:09:24,340
+And so in order to find communities we
+can remove edges in order of decreasing
+
+140
+00:09:24,340 --> 00:09:29,560
+centrality, or decreasing between
+the centrality, which is what we used.
+
+141
+00:09:29,560 --> 00:09:34,660
+So instead of removing the low
+centrality edges like we did for
+
+142
+00:09:34,660 --> 00:09:40,030
+node layout before,
+now we're removing high centrality edges.
+
+143
+00:09:40,030 --> 00:09:44,530
+So now we're moving the edges that are
+part of the main communication pathways.
+
+144
+00:09:44,530 --> 00:09:51,790
+What that does is that disconnects
+a graph and it isolates nodes.
+
+145
+00:09:51,790 --> 00:09:55,030
+It isolates nodes in clumps and
+
+146
+00:09:55,030 --> 00:09:58,730
+those clumps form clusters
+that form communities.
+
+147
+00:09:58,730 --> 00:10:03,730
+So you can think of a community
+of nodes communicating through
+
+148
+00:10:03,730 --> 00:10:07,920
+another community of node, across a high
+between the centrality edge, and so
+
+149
+00:10:07,920 --> 00:10:12,870
+by removing our edges from the highest
+between the centrality to the lowest
+
+150
+00:10:12,870 --> 00:10:18,960
+centrality edges, we're creating
+a hierarchy of these communities.
+
+151
+00:10:18,960 --> 00:10:24,169
+As we remove those edges, we can create
+nodes that represent where those edges
+
+152
+00:10:25,230 --> 00:10:30,120
+connected communities to and so we can use
+the resulting communities to figure out
+
+153
+00:10:30,120 --> 00:10:35,120
+the order in which to lay our vertices
+on the periphery on this circle.
+
+154
+00:10:36,358 --> 00:10:41,490
+And then by merging those clumps together
+we can place vertices in the interior
+
+155
+00:10:41,490 --> 00:10:44,010
+to denote higher level communities.
+
+156
+00:10:44,010 --> 00:10:47,550
+These are called community notes,
+they're not part of the original graph.
+
+157
+00:10:47,550 --> 00:10:50,439
+They're just used to
+represent communities,
+
+158
+00:10:50,439 --> 00:10:53,045
+to represent mergings of clumps of nodes.
+
+159
+00:10:55,250 --> 00:10:59,530
+And so here's some examples
+of Edge Bundle Communities.
+
+160
+00:10:59,530 --> 00:11:05,380
+In this case we took every football game
+between colleges in the United States.
+
+161
+00:11:05,380 --> 00:11:08,260
+University of Illinois is
+one of these colleges.
+
+162
+00:11:08,260 --> 00:11:14,390
+And by just taking, any time any
+college played another college,
+
+163
+00:11:14,390 --> 00:11:19,714
+we would connect that with an edge and
+by looking at the final graph, removing
+
+164
+00:11:19,714 --> 00:11:23,800
+the high between the centrality edges,
+they started to isolate communities and
+
+165
+00:11:23,800 --> 00:11:29,090
+we were able to figure out a layout that
+represented these low-level communities.
+
+166
+00:11:29,090 --> 00:11:32,830
+We basically rediscovered the conferences.
+
+167
+00:11:32,830 --> 00:11:38,190
+And so, just by looking at all
+the games played between, games of
+
+168
+00:11:38,190 --> 00:11:43,020
+football played between one university and
+another in the US we were able to discover
+
+169
+00:11:43,020 --> 00:11:48,660
+the conferences that organized
+the games between colleges in the US.
+
+170
+00:11:49,960 --> 00:11:54,680
+And then we can use that community
+structure to figure out an edge metric.
+
+171
+00:11:54,680 --> 00:11:58,690
+So, edges from one
+section of the community
+
+172
+00:11:58,690 --> 00:12:03,610
+to another section of a community can then
+be clumped together and form these edge
+
+173
+00:12:03,610 --> 00:12:07,920
+bundles by basically attracting
+them to these edge node positions.
+
+174
+00:12:09,900 --> 00:12:14,240
+So here's an example of the actual
+communities from Enron, and
+
+175
+00:12:14,240 --> 00:12:16,730
+here's the communities we discovered.
+
+176
+00:12:16,730 --> 00:12:21,190
+These don't lie in the same
+position as the rest of these.
+
+177
+00:12:21,190 --> 00:12:23,960
+For example here's where
+the president of Enron is and
+
+178
+00:12:23,960 --> 00:12:27,300
+he's listed here in the CEO section here.
+
+179
+00:12:27,300 --> 00:12:32,230
+But we found the same actual
+communities were discovered
+
+180
+00:12:32,230 --> 00:12:37,080
+by basically removing high between
+the centrology edges from the graph of
+
+181
+00:12:37,080 --> 00:12:41,489
+all emails from one employee to another
+ended up revealing these communities.
+
+182
+00:12:43,710 --> 00:12:47,180
+And as we'll see later it's useful
+to be able to filter out and
+
+183
+00:12:47,180 --> 00:12:52,190
+look at details interactively
+in these edge bundle examples or
+
+184
+00:12:52,190 --> 00:12:58,000
+in any large data set, so we can click for
+example on the CEO of Enron, Kenneth Lay.
+
+185
+00:12:58,000 --> 00:13:02,280
+And see all the email that was sent in
+this data set to all the other employees,
+
+186
+00:13:02,280 --> 00:13:04,240
+to all the other communities.
+
+187
+00:13:04,240 --> 00:13:06,090
+For example I can click on Illinois, and
+
+188
+00:13:06,090 --> 00:13:09,880
+I can see all the other Big 10
+conference games that it had, but
+
+189
+00:13:09,880 --> 00:13:14,229
+I can also see the games it had to
+other places outside of its conference.
+
+190
+00:13:15,900 --> 00:13:20,120
+So there's a variety of methods that
+we've just seen to visualize graphs.
+
+191
+00:13:20,120 --> 00:13:22,310
+Not necessarily planar graphs,
+but any graph.
+
+192
+00:13:22,310 --> 00:13:25,060
+Social networks and other graphs.
+
+193
+00:13:25,060 --> 00:13:31,433
+And they're based largely on analyses
+that are enabled by that centrality,
+
+194
+00:13:31,433 --> 00:13:36,050
+the definition of some kind
+of centrality of the nodes.
+
+195
+00:13:36,050 --> 00:13:46,050
+[MUSIC]

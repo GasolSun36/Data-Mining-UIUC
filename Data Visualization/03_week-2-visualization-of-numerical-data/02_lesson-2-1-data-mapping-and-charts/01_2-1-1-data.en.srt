@@ -1,0 +1,523 @@
+1
+00:00:00,350 --> 00:00:08,510
+[MUSIC]
+
+2
+00:00:08,510 --> 00:00:10,240
+So we understand how a computer works.
+
+3
+00:00:10,240 --> 00:00:11,740
+We understand how a human works.
+
+4
+00:00:11,740 --> 00:00:13,680
+Now we need to understand the data.
+
+5
+00:00:13,680 --> 00:00:15,490
+The different kinds of data and
+
+6
+00:00:15,490 --> 00:00:18,400
+how data works its way through
+a data visualization system.
+
+7
+00:00:20,170 --> 00:00:22,870
+And so there's a Data Visualization
+Framework that helps us
+
+8
+00:00:22,870 --> 00:00:27,110
+understand how data is processed for
+visualization.
+
+9
+00:00:27,110 --> 00:00:30,180
+First, data's available to us
+from a variety of sources, so
+
+10
+00:00:30,180 --> 00:00:32,750
+there's a Data Collection operation.
+
+11
+00:00:32,750 --> 00:00:36,360
+That basically combines the data from
+a bunch of different sources and
+
+12
+00:00:36,360 --> 00:00:40,770
+processes it into one package for
+visualization.
+
+13
+00:00:40,770 --> 00:00:44,600
+Then there is a Mapping Layer,
+this mapper that takes the data, and
+
+14
+00:00:44,600 --> 00:00:49,820
+the data's abstract and whatever
+computational representation it may be in,
+
+15
+00:00:49,820 --> 00:00:53,380
+and it converts it into some
+geometric representation,
+
+16
+00:00:53,380 --> 00:00:59,000
+something concrete, that then
+a Graphics Layer can take and display.
+
+17
+00:00:59,000 --> 00:01:01,967
+And that prepares it for
+visualization, for
+
+18
+00:01:01,967 --> 00:01:06,350
+communication across this visual
+channel for human perception.
+
+19
+00:01:09,220 --> 00:01:12,441
+So the Data Layer Is responsible for
+finding the data,
+
+20
+00:01:12,441 --> 00:01:15,180
+collecting the data
+from different sources.
+
+21
+00:01:15,180 --> 00:01:19,960
+Making sure those sources, which may
+have the data in different formats,
+
+22
+00:01:19,960 --> 00:01:23,710
+that the data can be combined
+into a uniform data store.
+
+23
+00:01:23,710 --> 00:01:29,820
+And making sure that the data is related
+between different sources properly.
+
+24
+00:01:29,820 --> 00:01:34,860
+And then there's some analysis and
+aggregation to run statistics on the data,
+
+25
+00:01:34,860 --> 00:01:37,800
+make sure the data is collected
+at the right frequency.
+
+26
+00:01:37,800 --> 00:01:44,500
+And then that data, once it's in a single
+package, is sent to the Mapping Layer,
+
+27
+00:01:44,500 --> 00:01:48,200
+which assigns the geometry to
+corresponding data channels, and
+
+28
+00:01:48,200 --> 00:01:53,950
+can also perform other rather
+sophisticated data processing operations,
+
+29
+00:01:53,950 --> 00:02:00,020
+things like contouring which take grid
+samples and convert them into outlines
+
+30
+00:02:00,020 --> 00:02:05,290
+of contours that can be useful for
+understanding what's going on in the data.
+
+31
+00:02:05,290 --> 00:02:07,680
+And finally, there's a Graphics Layer and
+
+32
+00:02:07,680 --> 00:02:12,330
+this converts the geometry into
+a displayable image as we saw last week.
+
+33
+00:02:12,330 --> 00:02:15,040
+It applies Decorations to the geometry.
+
+34
+00:02:15,040 --> 00:02:16,320
+It assigns color.
+
+35
+00:02:16,320 --> 00:02:17,840
+It shades the geometry.
+
+36
+00:02:17,840 --> 00:02:21,690
+It's also responsible for
+managing the interactions.
+
+37
+00:02:21,690 --> 00:02:24,000
+The user input during the visualization.
+
+38
+00:02:26,180 --> 00:02:31,760
+So that's the framework for
+data visualization.
+
+39
+00:02:31,760 --> 00:02:36,500
+As we look at the actual data involved and
+that mapping operation,
+
+40
+00:02:36,500 --> 00:02:41,180
+it's important to understand some
+fundamental features of data,
+
+41
+00:02:41,180 --> 00:02:43,070
+the types of data that are out there.
+
+42
+00:02:44,480 --> 00:02:48,140
+And so data can either be Discrete or
+Continuous.
+
+43
+00:02:48,140 --> 00:02:52,240
+Discrete data has Discrete values,
+there's no between values.
+
+44
+00:02:52,240 --> 00:02:58,110
+Whereas Continuous data has values between
+neighboring values that are possible.
+
+45
+00:02:58,110 --> 00:03:04,860
+And then there's comparable data so that
+the data can be compared to each other or
+
+46
+00:03:04,860 --> 00:03:09,070
+Unordered data where
+the values are not comparable.
+
+47
+00:03:09,070 --> 00:03:13,970
+So we look at all the possibilities of
+Discrete and Continuous data of Ordered
+
+48
+00:03:13,970 --> 00:03:17,490
+and Unordered, and you get the different
+kinds of data that you'll be dealing with.
+
+49
+00:03:17,490 --> 00:03:19,580
+For example, Ordinal data.
+
+50
+00:03:20,940 --> 00:03:25,870
+Ordinal data is data that's ordered,
+but discreet.
+
+51
+00:03:25,870 --> 00:03:27,850
+Things like shirt sizes.
+
+52
+00:03:27,850 --> 00:03:31,540
+You can say a medium shirt is going
+to be larger than a small shirt or
+
+53
+00:03:31,540 --> 00:03:34,430
+a large shirt is going to be
+smaller than a medium shirt.
+
+54
+00:03:34,430 --> 00:03:39,760
+But there may not be values of
+a shirt size between medium and large.
+
+55
+00:03:39,760 --> 00:03:44,890
+And these can be quantitative
+which are discrete and ordered.
+
+56
+00:03:44,890 --> 00:03:49,020
+For example the counting numbers one,
+two, three.
+
+57
+00:03:49,020 --> 00:03:50,930
+There's not one point five.
+
+58
+00:03:50,930 --> 00:03:54,518
+So there's no value between 1 and
+2 in our counting numbers.
+
+59
+00:03:54,518 --> 00:03:59,040
+So they're discrete, but yet
+2 is greater than 1 so they're ordered.
+
+60
+00:03:59,040 --> 00:04:04,150
+And so those are examples
+of discrete Ordered values.
+
+61
+00:04:04,150 --> 00:04:06,450
+You can have Continuous Ordered values,
+and
+
+62
+00:04:06,450 --> 00:04:11,490
+these are common real numbers,
+the real number line and so on.
+
+63
+00:04:11,490 --> 00:04:16,000
+and values that we'd use, for example,
+for altitude or temperature or
+
+64
+00:04:16,000 --> 00:04:19,570
+any continuous field of values.
+
+65
+00:04:21,020 --> 00:04:25,560
+You can also have Unordered data
+in discrete and continuous forms.
+
+66
+00:04:25,560 --> 00:04:30,090
+The discrete form of Unordered data
+can be Nominal or Categorical.
+
+67
+00:04:31,810 --> 00:04:34,890
+Things like shapes
+are examples of nominal data.
+
+68
+00:04:34,890 --> 00:04:36,360
+They're not ordered.
+
+69
+00:04:37,660 --> 00:04:39,270
+A square, circle and a triangle.
+
+70
+00:04:39,270 --> 00:04:42,190
+You wouldn't say that
+the square is greater than or
+
+71
+00:04:42,190 --> 00:04:47,590
+less than a circle,
+because there's no order between them.
+
+72
+00:04:47,590 --> 00:04:50,560
+You could have categories.
+
+73
+00:04:50,560 --> 00:04:53,950
+Different nationalities, or
+other other categories for
+
+74
+00:04:53,950 --> 00:04:57,770
+data that may not necessarily be
+comparable and those are discreet.
+
+75
+00:04:57,770 --> 00:05:01,400
+You can also have continuous
+values that are Unordered
+
+76
+00:05:01,400 --> 00:05:04,260
+often Cyclic values are like this so
+directions or
+
+77
+00:05:04,260 --> 00:05:08,410
+cues, you wouldn't say that north
+is any greater or less than east.
+
+78
+00:05:10,390 --> 00:05:14,860
+And you can having angle going from 0 to
+360 in degrees but after you get a 360
+
+79
+00:05:14,860 --> 00:05:21,850
+degrees, you go back to 0 degrees and so
+any one is not greater than any other.
+
+80
+00:05:21,850 --> 00:05:25,735
+And then hues you could have red,
+green, yellow, blue and
+
+81
+00:05:25,735 --> 00:05:30,086
+you may not say that red is any
+greater than green and so these values
+
+82
+00:05:30,086 --> 00:05:34,905
+are continuous there are colors between
+red and green, but you wouldn't
+
+83
+00:05:34,905 --> 00:05:40,060
+think of red as being greater than or
+less than green, so they're unordered.
+
+84
+00:05:42,840 --> 00:05:47,544
+And finally, when we're treating
+data as variables, in science,
+
+85
+00:05:47,544 --> 00:05:52,440
+you may recall Independent Variables and
+Dependent Variables.
+
+86
+00:05:52,440 --> 00:05:54,880
+And when Independent Variables change,
+
+87
+00:05:54,880 --> 00:05:58,070
+they can have an effect
+on Dependent Variables.
+
+88
+00:05:58,070 --> 00:06:03,970
+That same notion happens in the data
+we get from, for example, Databases.
+
+89
+00:06:03,970 --> 00:06:06,730
+And so you'll have Key Value pairs, and
+
+90
+00:06:06,730 --> 00:06:12,150
+Databases will store an index and
+then a value associated with that index.
+
+91
+00:06:12,150 --> 00:06:15,520
+And as the Key changes
+the resulting value will change.
+
+92
+00:06:15,520 --> 00:06:19,630
+So you have this Independent,
+Dependent relationship.
+
+93
+00:06:19,630 --> 00:06:25,240
+In Data Warehouses the Independent
+Variable is often a Dimension,
+
+94
+00:06:25,240 --> 00:06:28,170
+something that's changing
+that represents Dimension.
+
+95
+00:06:28,170 --> 00:06:32,180
+And then the Dependent Variable
+is a measure that's happening
+
+96
+00:06:32,180 --> 00:06:33,710
+as a result of that Dimension.
+
+97
+00:06:33,710 --> 00:06:36,270
+So a dimension might be time, and
+
+98
+00:06:36,270 --> 00:06:39,660
+then the measure might be
+the temperature at that time of the day.
+
+99
+00:06:39,660 --> 00:06:42,750
+And so as the time of the day changes,
+
+100
+00:06:42,750 --> 00:06:47,970
+which is an Independent Variable,
+you would have a Dependent Variable,
+
+101
+00:06:47,970 --> 00:06:51,310
+the Measure, being the temperature
+at that time of the day changing.
+
+102
+00:06:52,330 --> 00:06:57,240
+And you can store that in a Database
+as a bunch of times of the day and
+
+103
+00:06:57,240 --> 00:07:01,510
+then the temperature at that time of
+the day as a bunch of Key Value pairs.
+
+104
+00:07:01,510 --> 00:07:06,120
+And so the data is basically stored
+in these Independent, Dependent
+
+105
+00:07:06,120 --> 00:07:11,350
+relationships in a variety of names
+depending on the context of the data.
+
+106
+00:07:11,350 --> 00:07:15,950
+So the important thing to remember,
+the three fundamental kinds of data.
+
+107
+00:07:15,950 --> 00:07:21,900
+There's Nominal data, there's Ordered
+data, and there's Quantitative data.
+
+108
+00:07:21,900 --> 00:07:26,101
+And we'll be using those distinctions when
+we determine how that data ends up being
+
+109
+00:07:26,101 --> 00:07:28,090
+displayed in a visualization system.
+
+110
+00:07:30,720 --> 00:07:38,600
+[MUSIC]

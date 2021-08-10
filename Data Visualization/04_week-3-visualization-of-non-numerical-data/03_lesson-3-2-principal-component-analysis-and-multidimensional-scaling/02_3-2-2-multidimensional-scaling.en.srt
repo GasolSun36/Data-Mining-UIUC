@@ -1,0 +1,474 @@
+1
+00:00:00,076 --> 00:00:07,527
+[SOUND]
+So
+
+2
+00:00:07,527 --> 00:00:12,550
+a second method for dimensionality
+reduction is multidimensional scaling.
+
+3
+00:00:12,550 --> 00:00:16,110
+It focuses on the distance
+between related items,
+
+4
+00:00:16,110 --> 00:00:17,679
+as opposed to their actual positions.
+
+5
+00:00:18,760 --> 00:00:24,462
+So multidimensional scaling is
+a form of dimensionality reduction.
+
+6
+00:00:24,462 --> 00:00:28,269
+We previously looked at principle
+component analysis as a method for
+
+7
+00:00:28,269 --> 00:00:29,918
+dimensionality reduction.
+
+8
+00:00:29,918 --> 00:00:31,995
+We have high dimensional data, and
+
+9
+00:00:31,995 --> 00:00:34,911
+we want to display it on
+a low dimensional display.
+
+10
+00:00:34,911 --> 00:00:39,895
+On just using maybe two or three axes
+in order to be able to better visually
+
+11
+00:00:39,895 --> 00:00:43,910
+perceive the data,
+even if the data is high dimensional.
+
+12
+00:00:45,120 --> 00:00:49,651
+And so we've looked at this in
+terms of visualizing graphs.
+
+13
+00:00:49,651 --> 00:00:54,609
+Graphs encode relationships between data
+points where the length of the edge is
+
+14
+00:00:54,609 --> 00:00:55,640
+irrelevant.
+
+15
+00:00:55,640 --> 00:01:00,397
+But if we want to look at a graph
+where the length is relevant,
+
+16
+00:01:00,397 --> 00:01:05,821
+we might want to look at ways of
+plotting the nodes of a graph or data,
+
+17
+00:01:05,821 --> 00:01:11,357
+based on the relationship between
+data points, based on distance.
+
+18
+00:01:11,357 --> 00:01:15,002
+So that we can try to preserve
+the distance in, for example,
+
+19
+00:01:15,002 --> 00:01:19,878
+a low dimensional, a two dimensional
+visualization of high dimensional data.
+
+20
+00:01:19,878 --> 00:01:24,237
+We may want the distance between data
+points in two dimensions to somehow
+
+21
+00:01:24,237 --> 00:01:28,590
+indicate the distance between
+the data points in higher dimensions.
+
+22
+00:01:28,590 --> 00:01:30,741
+And so that sets up a metric MDS,
+
+23
+00:01:30,741 --> 00:01:36,166
+metric multidimensional scaling where
+you try to preserve the distance between
+
+24
+00:01:36,166 --> 00:01:41,528
+data points even though you're displaying
+them at a lower dimensional space.
+
+25
+00:01:41,528 --> 00:01:42,828
+So here's a nice example.
+
+26
+00:01:42,828 --> 00:01:46,780
+We're not doing dimensionality reduction
+because we'll go from a two dimensional
+
+27
+00:01:46,780 --> 00:01:48,401
+space to a two dimensional space.
+
+28
+00:01:48,401 --> 00:01:53,186
+But it illustrates how we would compute
+a multidimensional scaling to try to
+
+29
+00:01:53,186 --> 00:01:55,940
+preserve the distance between points.
+
+30
+00:01:55,940 --> 00:02:00,960
+So here's distances between
+cities in the US, for example.
+
+31
+00:02:00,960 --> 00:02:08,510
+So we've got Boston, NYC, DC, Miami,
+Chicago, Seattle, SF, LA, and Denver.
+
+32
+00:02:08,510 --> 00:02:11,655
+And so the distance between,
+for example, Chicago and
+
+33
+00:02:11,655 --> 00:02:16,920
+NYC would be 803 miles in this example.
+
+34
+00:02:16,920 --> 00:02:21,700
+So the lower triangle of this data
+is showing the distance between
+
+35
+00:02:21,700 --> 00:02:26,740
+the city on the left and the city in
+the row, and the city in the column.
+
+36
+00:02:26,740 --> 00:02:29,958
+And so there'd be 0 distance
+between a city and itself.
+
+37
+00:02:29,958 --> 00:02:31,535
+And this will be symmetric, so
+
+38
+00:02:31,535 --> 00:02:34,880
+I haven't bothered to fill in
+the upper triangle of this matrix.
+
+39
+00:02:36,993 --> 00:02:42,512
+So given those distances, dij,
+between data points i and j,
+
+40
+00:02:42,512 --> 00:02:49,410
+between city i and city j, can we
+recover the positions of those cities?
+
+41
+00:02:49,410 --> 00:02:52,110
+So I'm not taking
+the coordinates of those cities,
+
+42
+00:02:52,110 --> 00:02:55,150
+I'm just taking the distances
+between those cities.
+
+43
+00:02:55,150 --> 00:03:00,118
+Basically taking a graph where I'm
+specifying the length of the edges between
+
+44
+00:03:00,118 --> 00:03:00,878
+the nodes.
+
+45
+00:03:00,878 --> 00:03:04,968
+And then I want to find the positions
+of the nodes that satisfies
+
+46
+00:03:04,968 --> 00:03:06,380
+those edge lengths.
+
+47
+00:03:06,380 --> 00:03:10,180
+So we can do that by
+minimizing this function.
+
+48
+00:03:10,180 --> 00:03:16,430
+We basically take the distance
+between the two data points,
+
+49
+00:03:16,430 --> 00:03:21,080
+and then we want to subtract their actual
+distance, and we want to minimize that.
+
+50
+00:03:21,080 --> 00:03:25,050
+So if the distance between two data
+points equals the desired distance
+
+51
+00:03:25,050 --> 00:03:28,800
+between those two data points,
+then this should be close to zero.
+
+52
+00:03:28,800 --> 00:03:32,483
+And we square things here so
+that we keep everything positive so
+
+53
+00:03:32,483 --> 00:03:36,031
+that negative values aren't
+messing up our minimization.
+
+54
+00:03:36,031 --> 00:03:40,048
+So we can solve this with any number
+of non-linear optimization methods.
+
+55
+00:03:40,048 --> 00:03:44,985
+In the example I'm going to describe,
+I solved it just using
+
+56
+00:03:44,985 --> 00:03:50,170
+the Excel spreadsheet program
+with an optimizer plug-in.
+
+57
+00:03:50,170 --> 00:03:52,830
+So here's the results that I got,
+
+58
+00:03:52,830 --> 00:03:57,421
+I minimized that distance
+relationship between the actual
+
+59
+00:03:57,421 --> 00:04:02,484
+distance from my optimized variables and
+the desired distance.
+
+60
+00:04:02,484 --> 00:04:06,664
+And as you can see,
+things are obviously in the wrong place.
+
+61
+00:04:06,664 --> 00:04:10,246
+I've got the East Coast on the left and
+West Coast on the east, but
+
+62
+00:04:10,246 --> 00:04:12,410
+that should still preserve distance.
+
+63
+00:04:12,410 --> 00:04:14,200
+And there's a few other differences,
+
+64
+00:04:14,200 --> 00:04:19,420
+but basically I've got this
+general east to west trend.
+
+65
+00:04:19,420 --> 00:04:24,560
+Seattle is above SF and LA,
+Denver is here, Chicago is where it's at.
+
+66
+00:04:24,560 --> 00:04:27,300
+So I've preserved the distance of my
+
+67
+00:04:27,300 --> 00:04:31,398
+points even though I haven't preserved
+the exact geometry of the points.
+
+68
+00:04:31,398 --> 00:04:35,585
+And so this can be a useful layout method,
+especially for high dimensional data when
+
+69
+00:04:35,585 --> 00:04:40,065
+you're trying to preserve the distances
+between the points without necessarily
+
+70
+00:04:40,065 --> 00:04:44,655
+representing accurately their spatial
+configuration, their original coordinates.
+
+71
+00:04:44,655 --> 00:04:47,905
+So we've thrown away the original
+coordinates of these points.
+
+72
+00:04:47,905 --> 00:04:50,938
+And just using their
+distance relationship,
+
+73
+00:04:50,938 --> 00:04:55,848
+tried to preserve that in a reprojection,
+in this case in two dimensions.
+
+74
+00:04:55,848 --> 00:05:00,004
+So there's all sorts of ways you can
+use MDS, multidimensional scaling.
+
+75
+00:05:00,004 --> 00:05:04,277
+You can visualize affinities
+between data points,
+
+76
+00:05:04,277 --> 00:05:09,250
+areas of collaboration based
+on co-authorship of papers.
+
+77
+00:05:09,250 --> 00:05:13,320
+If you're visualizing papers or the number
+of any other attributes two data
+
+78
+00:05:13,320 --> 00:05:17,980
+points might have in common,
+anything you can describe as a distance.
+
+79
+00:05:17,980 --> 00:05:21,340
+It doesn't have to be coordinate distance,
+it can be other similarities.
+
+80
+00:05:21,340 --> 00:05:24,190
+It's used in human-computer
+interaction for
+
+81
+00:05:24,190 --> 00:05:28,060
+user interface design to
+basically lay out buttons.
+
+82
+00:05:28,060 --> 00:05:33,140
+If you have a dashboard with a lot of
+buttons, you can lay out the buttons by
+
+83
+00:05:33,140 --> 00:05:38,352
+organizing them based on how similar
+the buttons are to a given task.
+
+84
+00:05:38,352 --> 00:05:38,999
+And then,
+
+85
+00:05:38,999 --> 00:05:43,390
+let multidimensional scaling compute the
+coordinates of where the buttons should be
+
+86
+00:05:43,390 --> 00:05:48,050
+located so that buttons that are used
+together are close to each other.
+
+87
+00:05:48,050 --> 00:05:52,980
+And it's also used in marketing to
+create what are called perceptual maps
+
+88
+00:05:52,980 --> 00:05:57,420
+that are based on survey data of what
+people think of different products,
+
+89
+00:05:57,420 --> 00:06:01,140
+what attributes people assign
+to different products.
+
+90
+00:06:01,140 --> 00:06:05,609
+And then you can figure out what products
+are similar to other products and
+
+91
+00:06:05,609 --> 00:06:07,711
+create a map of products that way.
+
+92
+00:06:07,711 --> 00:06:11,660
+So, multidimensional scaling
+is enabled by optimization.
+
+93
+00:06:11,660 --> 00:06:14,708
+You don't have to write your
+own optimization program,
+
+94
+00:06:14,708 --> 00:06:17,511
+you can use pre-existing
+optimization packages.
+
+95
+00:06:17,511 --> 00:06:21,919
+You just need something that's going
+to minimize a function, and so
+
+96
+00:06:21,919 --> 00:06:26,868
+you need some form of non-linear
+minimization in an optimization package.
+
+97
+00:06:26,868 --> 00:06:31,214
+I found one that was enabled
+in Excel in order to do
+
+98
+00:06:31,214 --> 00:06:34,716
+the example I described in the slides.
+
+99
+00:06:34,716 --> 00:06:43,753
+[MUSIC]

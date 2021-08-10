@@ -1,0 +1,541 @@
+1
+00:00:00,262 --> 00:00:03,605
+[MUSIC]
+
+2
+00:00:09,247 --> 00:00:13,043
+So principal component analysis
+is based on linear algebra,
+
+3
+00:00:13,043 --> 00:00:16,480
+on eigenvectors and
+eigenvalues of matrices.
+
+4
+00:00:16,480 --> 00:00:20,440
+You don't necessarily have to understand
+those details in order to use
+
+5
+00:00:20,440 --> 00:00:22,630
+Principle component analysis.
+
+6
+00:00:22,630 --> 00:00:26,657
+If you have a package that will perform
+principle component analysis then it will
+
+7
+00:00:26,657 --> 00:00:30,270
+just convert the data from a high
+dimensional form into a low dimensional
+
+8
+00:00:30,270 --> 00:00:31,645
+form that you can display.
+
+9
+00:00:33,572 --> 00:00:39,280
+So as we lay out data, and look at ways of
+laying out data based on relationships.
+
+10
+00:00:39,280 --> 00:00:42,890
+It's useful to look at some other
+techniques for laying out data.
+
+11
+00:00:42,890 --> 00:00:45,190
+Even if the data does have variables, or
+
+12
+00:00:45,190 --> 00:00:48,360
+attributes, or
+coordinates associated with it.
+
+13
+00:00:48,360 --> 00:00:53,140
+So, one of these techniques is
+called principal component analysis.
+
+14
+00:00:53,140 --> 00:00:55,560
+If I have a data set, like this one,
+
+15
+00:00:55,560 --> 00:00:59,380
+each data value has an x coordinate and
+a y coordinate.
+
+16
+00:00:59,380 --> 00:01:03,790
+But you can really see the main
+variance of the data is happening along
+
+17
+00:01:03,790 --> 00:01:06,390
+this diagonal direction, and
+
+18
+00:01:06,390 --> 00:01:10,110
+the data isn't varying much
+perpendicularly to that direction.
+
+19
+00:01:10,110 --> 00:01:14,350
+So the x coordinate doesn't
+entirely capture the data, and
+
+20
+00:01:14,350 --> 00:01:18,670
+the y coordinate doesn't entirely
+capture the variance of the data.
+
+21
+00:01:18,670 --> 00:01:21,320
+the variance is actually happening
+in a different direction.
+
+22
+00:01:21,320 --> 00:01:24,500
+So we can look at the variance
+of the data as being
+
+23
+00:01:24,500 --> 00:01:28,070
+the actual dimension where things
+are changing along the data.
+
+24
+00:01:28,070 --> 00:01:32,370
+And it may not be exactly the x
+direction or the y direction.
+
+25
+00:01:32,370 --> 00:01:34,090
+It may be a combination of them.
+
+26
+00:01:35,250 --> 00:01:37,270
+And as we look at higher dimensional data,
+
+27
+00:01:37,270 --> 00:01:42,600
+we may find that the data is varying in
+some direction, that's a combination of X,
+
+28
+00:01:42,600 --> 00:01:46,460
+Y, Z,
+W...however many dimensions you have.
+
+29
+00:01:46,460 --> 00:01:51,040
+Principle component analysis helps us find
+these directions where the data is varying
+
+30
+00:01:51,040 --> 00:01:52,380
+a lot.
+
+31
+00:01:52,380 --> 00:01:59,790
+And also the directions that
+the data is varying a little bit.
+
+32
+00:01:59,790 --> 00:02:01,760
+And then we can reorient it so
+
+33
+00:02:01,760 --> 00:02:05,890
+that we can just display the dimensions
+where the data's varying a lot and
+
+34
+00:02:05,890 --> 00:02:09,510
+ignore the directions that
+the data is varying a little bit.
+
+35
+00:02:09,510 --> 00:02:13,000
+And then align those dimension
+with the displayed dimensions.
+
+36
+00:02:14,330 --> 00:02:19,050
+So in order to perform principle component
+analysis, we have to analyze the data.
+
+37
+00:02:19,050 --> 00:02:22,960
+First we have to take the data and
+then we have to subtract the mean.
+
+38
+00:02:22,960 --> 00:02:27,740
+So for each of these data items we're
+going to add them up, divide by the total
+
+39
+00:02:27,740 --> 00:02:32,970
+and that'll give us the, by the total
+number and then that'll give us the mean.
+
+40
+00:02:32,970 --> 00:02:34,500
+We subtract that from all the data.
+
+41
+00:02:34,500 --> 00:02:36,570
+That centers the data about the origin,
+
+42
+00:02:36,570 --> 00:02:40,140
+and then we're going to compute
+this covariance matrix.
+
+43
+00:02:40,140 --> 00:02:46,110
+So it's a big matrix,
+if our data elements are four dimensions,
+
+44
+00:02:46,110 --> 00:02:51,620
+X, Y, Z and W then the covariance
+matrix would be a four by four matrix.
+
+45
+00:02:51,620 --> 00:02:54,570
+It'll have this many dimensions
+by this many dimensions.
+
+46
+00:02:55,660 --> 00:02:59,700
+And it's just the data items,
+after you've subtracted their mean,
+
+47
+00:02:59,700 --> 00:03:03,690
+multiplied by the other coordinates
+of the data items and then averaged.
+
+48
+00:03:03,690 --> 00:03:08,160
+And that covariance matrix will yield
+a symmetric matrix because, for
+
+49
+00:03:08,160 --> 00:03:11,529
+example, yi times xi is going to
+be equal to xi time yi.
+
+50
+00:03:13,580 --> 00:03:20,070
+And so you can think of a matrix,
+a large matrix, as
+
+51
+00:03:20,070 --> 00:03:23,640
+something that transforms a sphere in high
+dimensions into some kind of ellipsoid.
+
+52
+00:03:23,640 --> 00:03:26,680
+It's going to stretch it
+out in a certain direction.
+
+53
+00:03:26,680 --> 00:03:30,100
+And when you square that matrix,
+multiply it times its transpose,
+
+54
+00:03:30,100 --> 00:03:34,960
+it's going to create a square symmetric
+matrix similar to that covariance matrix.
+
+55
+00:03:34,960 --> 00:03:39,210
+When we pull out the Eigenvectors and
+the Eigenvalues of that matrix,
+
+56
+00:03:39,210 --> 00:03:45,360
+these are directions that, when you
+multiply the matrix times that direction,
+
+57
+00:03:45,360 --> 00:03:48,450
+it's the same thing as just
+multiplying it by a scalar value.
+
+58
+00:03:48,450 --> 00:03:55,030
+So these are directions where if
+a matrix is stretching a sphere
+
+59
+00:03:55,030 --> 00:04:00,430
+into an ellipsoid, so the directions of
+the principle axis of that ellipsoid.
+
+60
+00:04:00,430 --> 00:04:04,140
+And so if you have a lot of variance,
+you'll pull out an eigenvector in this
+
+61
+00:04:04,140 --> 00:04:08,590
+direction that's stretching
+the sphere out into a long ellipsoid.
+
+62
+00:04:08,590 --> 00:04:11,480
+There may be two principal
+directions in which case,
+
+63
+00:04:11,480 --> 00:04:14,990
+that sphere gets stretched
+out into this cookie shape.
+
+64
+00:04:14,990 --> 00:04:19,000
+Principal component analysis finds
+those eigenvectors, the direction where
+
+65
+00:04:20,000 --> 00:04:25,440
+the data is varying the most and
+then, it ignores
+
+66
+00:04:25,440 --> 00:04:30,450
+the small eigenvectors, the directions
+where the data is varying the least and
+
+67
+00:04:30,450 --> 00:04:34,960
+that way we can display the two or
+three most varying
+
+68
+00:04:34,960 --> 00:04:40,100
+directions of data without displaying
+all of the dimensions of the data.
+
+69
+00:04:41,850 --> 00:04:43,010
+So here's an example.
+
+70
+00:04:43,010 --> 00:04:45,920
+I worked with a group of
+people a few years ago.
+
+71
+00:04:45,920 --> 00:04:50,080
+On a method for computing the geometry
+
+72
+00:04:50,080 --> 00:04:54,730
+of a scaffolding to support bone
+growth in damaged mandibles.
+
+73
+00:04:54,730 --> 00:04:56,550
+And so we needed some geometry for
+
+74
+00:04:56,550 --> 00:05:00,600
+a mandible in order to figure out
+healthy mandible, and a damaged
+
+75
+00:05:00,600 --> 00:05:04,710
+mandible to be able to do a subtraction
+operation to find this damaged piece.
+
+76
+00:05:04,710 --> 00:05:09,350
+So if we don't have an undamaged mandible,
+how could we find a mandible that
+
+77
+00:05:09,350 --> 00:05:12,840
+was the shape of the damaged
+mandible before the damage happened?
+
+78
+00:05:13,970 --> 00:05:18,690
+And the way we did this was we scanned
+in a bunch of these mandibles and
+
+79
+00:05:18,690 --> 00:05:24,010
+we specifically measured the shape
+of these five data points.
+
+80
+00:05:24,010 --> 00:05:29,130
+And so we had this big database
+of 40 some mandibles, and
+
+81
+00:05:29,130 --> 00:05:31,670
+each data point,
+each of those 40 data points,
+
+82
+00:05:31,670 --> 00:05:36,410
+was 15-dimensional because each of these
+three data points was three-dimensional.
+
+83
+00:05:36,410 --> 00:05:40,270
+So five three dimensional data
+points gave me 15 dimensions.
+
+84
+00:05:40,270 --> 00:05:45,550
+So I could describe the shape of
+a mandible as a 15 dimensional point.
+
+85
+00:05:45,550 --> 00:05:50,010
+We then perform principal component
+analysis to find three main variations.
+
+86
+00:05:50,010 --> 00:05:55,030
+Three of the directions in
+this 15 dimensional space
+
+87
+00:05:55,030 --> 00:05:57,720
+where these mandibles
+were changing the most.
+
+88
+00:05:57,720 --> 00:06:02,890
+And they were kind of this direction
+here that pulls the jaw down,
+
+89
+00:06:02,890 --> 00:06:06,440
+this direction that causes the jaw
+to kind of extrude in the front, and
+
+90
+00:06:06,440 --> 00:06:09,930
+then a direction that caused
+the jaw to move to the side.
+
+91
+00:06:11,090 --> 00:06:14,920
+And so based on that,
+we can plot all of our data points and
+
+92
+00:06:14,920 --> 00:06:19,130
+this is an example of the mandible, all
+the different data sets of our mandibles.
+
+93
+00:06:19,130 --> 00:06:23,650
+Plotted as a single,
+just overlaid on top of each other.
+
+94
+00:06:23,650 --> 00:06:28,860
+Each one of these corresponds to
+a position in this space of mandibles.
+
+95
+00:06:28,860 --> 00:06:35,560
+And the three dimensions here that
+I'm visualizing these mandibles in
+
+96
+00:06:35,560 --> 00:06:40,340
+corresponds to a direction, a variation
+
+97
+00:06:40,340 --> 00:06:44,950
+that I found from that principal component
+analysis, each of those three dimensions.
+
+98
+00:06:44,950 --> 00:06:49,490
+So each of these points corresponds to
+a point in a 15 dimensional space, but
+
+99
+00:06:49,490 --> 00:06:54,570
+I'm plotting them in a 3
+dimensional space according to
+
+100
+00:06:54,570 --> 00:06:57,490
+the direction of their highest variance,
+
+101
+00:06:57,490 --> 00:07:02,630
+as represented by the eigenvector
+of that covariance matrix.
+
+102
+00:07:02,630 --> 00:07:06,040
+And so that performs a form
+of dimensionality reduction,
+
+103
+00:07:06,040 --> 00:07:10,560
+where we can take high dimensional data
+and plotted in a low-dimensional space for
+
+104
+00:07:10,560 --> 00:07:15,820
+visualization by basically focusing on the
+dimensions where we're seeing variation
+
+105
+00:07:15,820 --> 00:07:20,080
+and ignoring the directions where we're
+not seeing variation in the data.
+
+106
+00:07:21,510 --> 00:07:26,230
+So in order to implement multidimensional
+scaling, you need to do an optimization.
+
+107
+00:07:26,230 --> 00:07:29,600
+You don't necessarily have to code
+up your own optimization to do that.
+
+108
+00:07:29,600 --> 00:07:35,670
+For example when I computed
+the multidimensional scaling of the cities
+
+109
+00:07:35,670 --> 00:07:40,990
+in my example, they were computed in Excel
+using an optimization package I enabled.
+
+110
+00:07:40,990 --> 00:07:45,020
+So you don't have to write
+an optimization algorithm from scratch.
+
+111
+00:07:45,020 --> 00:07:49,130
+You can just use an existing
+optimization program.
+
+112
+00:07:49,130 --> 00:07:59,130
+[MUSIC]

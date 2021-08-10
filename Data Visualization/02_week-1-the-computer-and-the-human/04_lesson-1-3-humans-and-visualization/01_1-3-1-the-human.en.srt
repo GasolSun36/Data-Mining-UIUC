@@ -1,0 +1,751 @@
+1
+00:00:00,750 --> 00:00:05,470
+So in data visualization, we're using
+a computer to display data to a human.
+
+2
+00:00:05,470 --> 00:00:09,360
+And now we need to focus on how
+the human perceives that data.
+
+3
+00:00:09,360 --> 00:00:13,970
+And so, I'd like to spend the next
+few videos talking about the human,
+
+4
+00:00:13,970 --> 00:00:17,210
+which is sometimes a foreign subject
+to many computer science students.
+
+5
+00:00:18,620 --> 00:00:23,341
+We can use what's called the model human
+processor to describe how a human works in
+
+6
+00:00:23,341 --> 00:00:25,129
+terms of how a computer works.
+
+7
+00:00:25,129 --> 00:00:26,628
+So here's a computer.
+
+8
+00:00:26,628 --> 00:00:32,050
+This might be a diagram of a computer
+that might be computer in a cellphone,
+
+9
+00:00:32,050 --> 00:00:33,089
+for example.
+
+10
+00:00:33,089 --> 00:00:37,172
+You're going to have a CPU,
+some central processing unit.
+
+11
+00:00:37,172 --> 00:00:38,250
+And there'll be memory.
+
+12
+00:00:38,250 --> 00:00:41,330
+You'll have Cache memory and then RAM.
+
+13
+00:00:41,330 --> 00:00:46,930
+The Cache is sort of a short term memory
+that makes the slower RAM run faster for
+
+14
+00:00:46,930 --> 00:00:49,670
+the CPU because the Cache is faster.
+
+15
+00:00:49,670 --> 00:00:52,860
+You might have an output processor
+that generates graphics or
+
+16
+00:00:52,860 --> 00:00:55,200
+causes the phone to vibrate or
+do other things.
+
+17
+00:00:55,200 --> 00:00:58,640
+And there might be an input processor,
+some media processor
+
+18
+00:00:58,640 --> 00:01:04,330
+that takes the video input from a camera,
+and the audio input from a microphone.
+
+19
+00:01:04,330 --> 00:01:09,180
+And so we can use the same design to
+sort of understand how a human works.
+
+20
+00:01:09,180 --> 00:01:11,740
+And this is called the model
+human processor, and
+
+21
+00:01:11,740 --> 00:01:15,820
+it was invented by
+Stuart Card back in 1981
+
+22
+00:01:15,820 --> 00:01:20,730
+as a way of describing how humans work
+to people that work in with computers.
+
+23
+00:01:22,090 --> 00:01:24,670
+And so with the model of human processor,
+we don't have a CPU,
+
+24
+00:01:24,670 --> 00:01:27,070
+we have our cognitive processor.
+
+25
+00:01:27,070 --> 00:01:32,560
+And we don't have a media processor
+accepting video input and audio input,
+
+26
+00:01:32,560 --> 00:01:38,170
+we have eyes and ears that generate
+media in a Visual Image Store and
+
+27
+00:01:38,170 --> 00:01:42,730
+an Auditory Image Store that is then
+processed by a perceptual processor before
+
+28
+00:01:42,730 --> 00:01:47,578
+they're processed by
+the Cognitive Processor, the brain.
+
+29
+00:01:47,578 --> 00:01:52,430
+And we don't have cache and RAM, we have
+a working memory, and a long term memory.
+
+30
+00:01:52,430 --> 00:01:56,630
+And we don't have a graphics processor and
+
+31
+00:01:56,630 --> 00:02:00,620
+something that will vibrate a phone,
+we have a motor process for the controls,
+
+32
+00:02:00,620 --> 00:02:05,860
+how our hands work and for example how
+our hands might draw a picture for us.
+
+33
+00:02:07,280 --> 00:02:12,130
+And in each case these,
+each of these processes, memories and
+
+34
+00:02:12,130 --> 00:02:17,080
+processors have certain decay and
+cycle times,
+
+35
+00:02:17,080 --> 00:02:22,890
+storage sizes that we can discuss in
+the same way that we discuss storage sizes
+
+36
+00:02:24,170 --> 00:02:28,010
+of random access memory or
+the processing time of a processor.
+
+37
+00:02:30,160 --> 00:02:33,910
+So first we might look at video
+processing, visual processing.
+
+38
+00:02:33,910 --> 00:02:39,610
+We have an eye, and
+the eye takes 230 milliseconds to access.
+
+39
+00:02:39,610 --> 00:02:44,170
+Meaning we need something from the eye,
+we get it about 230 milliseconds later.
+
+40
+00:02:44,170 --> 00:02:47,880
+And that can vary between up to 70 and
+to 700 milliseconds.
+
+41
+00:02:47,880 --> 00:02:51,213
+So we can get things as fast as 70
+milliseconds from the eye, right?
+
+42
+00:02:51,213 --> 00:02:55,565
+And then we have a Visual Image Store,
+and the size is about 17 and
+
+43
+00:02:55,565 --> 00:03:00,100
+we're going to talk not necessarily
+in terms of bits, bytes or words.
+
+44
+00:03:00,100 --> 00:03:03,587
+We're going to talk about letters or
+chunks.
+
+45
+00:03:03,587 --> 00:03:06,581
+And we can store about 17 things
+in our Visual Image Stores, and
+
+46
+00:03:06,581 --> 00:03:08,860
+that depends on what those things are.
+
+47
+00:03:08,860 --> 00:03:11,670
+And the Visual Image Store is very,
+very brief.
+
+48
+00:03:11,670 --> 00:03:14,390
+It decays in about 200 milliseconds.
+
+49
+00:03:14,390 --> 00:03:18,250
+And this 200 milliseconds is
+our persistence of the vision.
+
+50
+00:03:18,250 --> 00:03:20,960
+It's the fact that something
+can be flashed to our eye.
+
+51
+00:03:20,960 --> 00:03:24,940
+And our eye remembers what it sees for
+about two tenths of a second.
+
+52
+00:03:25,940 --> 00:03:29,310
+And that's enough time for
+the perceptual processor to catch it.
+
+53
+00:03:29,310 --> 00:03:32,587
+It's also enough time to do
+certain processes like reading.
+
+54
+00:03:32,587 --> 00:03:37,055
+And so when we read it may appear,
+when you read the text on the slide,
+
+55
+00:03:37,055 --> 00:03:41,530
+that your eye is moving forward
+in a very continuous fashion.
+
+56
+00:03:41,530 --> 00:03:43,610
+Because it's how we're
+processing the information.
+
+57
+00:03:43,610 --> 00:03:46,870
+And it may seem like we are processing
+every letter at a time, but
+
+58
+00:03:46,870 --> 00:03:48,390
+that's not what's happening.
+
+59
+00:03:48,390 --> 00:03:52,770
+What happens is we have this Saccades and
+our eyes jerking from one location to
+
+60
+00:03:52,770 --> 00:03:58,210
+another, and we do those very quickly, and
+the our eye fixates on a single portion.
+
+61
+00:03:58,210 --> 00:04:03,950
+And we look at that portion and
+the surrounding images on our retina.
+
+62
+00:04:03,950 --> 00:04:05,430
+And we don't perceive our Saccades.
+
+63
+00:04:05,430 --> 00:04:08,212
+Our eye is jerking left and
+right, and we don't see that.
+
+64
+00:04:08,212 --> 00:04:12,380
+Our perceptual system blanks that
+out from our conscience selves.
+
+65
+00:04:12,380 --> 00:04:15,980
+In terms of reading,
+we can read smaller fonts and
+
+66
+00:04:15,980 --> 00:04:18,270
+larger fonts about at the same rate.
+
+67
+00:04:18,270 --> 00:04:21,440
+Although larger fonts we
+probably feel are easier to read,
+
+68
+00:04:21,440 --> 00:04:22,920
+we read them at the same rate.
+
+69
+00:04:22,920 --> 00:04:28,010
+And we still tend to read printed
+pages faster than we read displays.
+
+70
+00:04:28,010 --> 00:04:31,600
+This text on the right shows that
+you're not processing every letter, but
+
+71
+00:04:31,600 --> 00:04:33,520
+you're processing letters in chunks, and
+
+72
+00:04:33,520 --> 00:04:37,303
+we can still read this even though it's
+doesn't itself itself really make sense.
+
+73
+00:04:39,910 --> 00:04:43,921
+There's also audio processing,
+and I haven't drawn the ear yet.
+
+74
+00:04:43,921 --> 00:04:48,950
+But you have an ear that sends
+signals to an Auditory Image Store.
+
+75
+00:04:48,950 --> 00:04:54,430
+And again, about five letters of
+information, five things of information.
+
+76
+00:04:54,430 --> 00:04:59,920
+And when you hear something, you have
+about a minute and a half to process it.
+
+77
+00:04:59,920 --> 00:05:04,160
+So if you're not paying attention to
+something, if somebody's talking to you
+
+78
+00:05:04,160 --> 00:05:07,280
+and you're not paying attention,
+and they say, what did I just say?
+
+79
+00:05:07,280 --> 00:05:11,430
+If they said it in the last one and a half
+seconds, then you have a pretty good
+
+80
+00:05:11,430 --> 00:05:14,460
+chance of being able to recover it,
+without even thinking about it.
+
+81
+00:05:15,930 --> 00:05:21,930
+And so the way that the ear works,
+there is an auditory
+
+82
+00:05:21,930 --> 00:05:26,720
+canal in your ear that focuses sounds
+that vibrates in eardrum, that basically
+
+83
+00:05:26,720 --> 00:05:32,230
+vibrates some mechanical structures that
+then works its way around the cochlea.
+
+84
+00:05:32,230 --> 00:05:37,160
+That's basically figuring out what
+frequency composes the sound and
+
+85
+00:05:37,160 --> 00:05:41,220
+stimulates the cilia that then
+sends signals to the rest of your
+
+86
+00:05:41,220 --> 00:05:43,060
+perceptual system.
+
+87
+00:05:43,060 --> 00:05:46,450
+And the sound, there's Pitch,
+Loudness, and Timbre.
+
+88
+00:05:46,450 --> 00:05:52,421
+Pitch is the frequency,
+where in the cochlea it gets sensed.
+
+89
+00:05:52,421 --> 00:05:55,381
+Loudness is the amplitude of the waveform.
+
+90
+00:05:55,381 --> 00:05:59,933
+And then timbre is the shape of the
+waveform, and that can differ based on for
+
+91
+00:05:59,933 --> 00:06:04,340
+example, different instruments
+produce different timbres of sound.
+
+92
+00:06:04,340 --> 00:06:06,760
+We can do stereo location of a source.
+
+93
+00:06:06,760 --> 00:06:11,060
+We have two ears, and we can do some
+stereo location of a source, but
+
+94
+00:06:11,060 --> 00:06:13,660
+in general it's not very accurate.
+
+95
+00:06:13,660 --> 00:06:18,144
+The more important thing is we have
+a cocktail party effect that means that
+
+96
+00:06:18,144 --> 00:06:20,893
+we can focus on a particular
+conversation and
+
+97
+00:06:20,893 --> 00:06:24,727
+mentally filter out some of
+the other noise that's going on and
+
+98
+00:06:24,727 --> 00:06:28,587
+humans still much better than
+computers ever have and able to.
+
+99
+00:06:28,587 --> 00:06:30,600
+And finally, Hand-Eye Coordination.
+
+100
+00:06:30,600 --> 00:06:33,350
+And this pathway's a little
+bit more involved.
+
+101
+00:06:33,350 --> 00:06:35,800
+We have an eye, a Visual Image Store,
+
+102
+00:06:35,800 --> 00:06:38,830
+that's helping us process
+the imagery from the eye.
+
+103
+00:06:38,830 --> 00:06:42,960
+Then a Perceptual Processor that's
+actually doing the processing on the data
+
+104
+00:06:42,960 --> 00:06:45,390
+in this Visual Image Store.
+
+105
+00:06:45,390 --> 00:06:48,440
+That gets sent to the brain that
+decides what to do with it.
+
+106
+00:06:48,440 --> 00:06:50,460
+And then the Motor Processor, the hand.
+
+107
+00:06:50,460 --> 00:06:55,530
+So we've got this Hand-Eye Coordination
+that goes through all these paths.
+
+108
+00:06:55,530 --> 00:06:59,740
+And you can start adding up the time,
+230 milliseconds for the eye.
+
+109
+00:06:59,740 --> 00:07:04,810
+Another 100 milliseconds for
+you to perceive what the eye is seeing.
+
+110
+00:07:04,810 --> 00:07:07,640
+Another 70 seconds for
+you to think about the eye.
+
+111
+00:07:07,640 --> 00:07:11,458
+Then another 70 seconds for your hand to
+respond to instructions from your brain.
+
+112
+00:07:11,458 --> 00:07:15,950
+And so you can use that to
+figure out how long it takes for
+
+113
+00:07:15,950 --> 00:07:19,850
+you to react, or how long it takes for
+you to move the mouse.
+
+114
+00:07:19,850 --> 00:07:23,282
+If I have the mouse in some location,
+and I want to move the mouse say to
+
+115
+00:07:23,282 --> 00:07:27,336
+this figure's head, I can figure out how
+long it's going to take me to do that.
+
+116
+00:07:27,336 --> 00:07:31,885
+And this is based on several
+properties of the human kinesthesis,
+
+117
+00:07:31,885 --> 00:07:34,740
+the fact that we know where our limbs are.
+
+118
+00:07:34,740 --> 00:07:37,870
+We know where our fingers
+bringing things to.
+
+119
+00:07:37,870 --> 00:07:40,690
+And also the fact that
+larger movements are faster.
+
+120
+00:07:40,690 --> 00:07:45,410
+I can move the mouse quickly across
+the screen and click as well.
+
+121
+00:07:45,410 --> 00:07:50,680
+I can move the mouse quickly across
+the screen, but I do it less accurately.
+
+122
+00:07:50,680 --> 00:07:55,120
+And so we tend to, when we're finding
+a target like if I want to find the center
+
+123
+00:07:55,120 --> 00:07:59,680
+of the zero and that 70 milliseconds,
+I move quickly towards the 0 but
+
+124
+00:07:59,680 --> 00:08:02,560
+then I have to do a series of finer and
+finer steps.
+
+125
+00:08:02,560 --> 00:08:07,210
+So we do large lunges followed
+by finer and finer refinements.
+
+126
+00:08:07,210 --> 00:08:12,020
+And so that gives us a logarithmic
+rate at which we find things.
+
+127
+00:08:12,020 --> 00:08:17,530
+And so, if I need to move things farther
+than the distance, D gets larger.
+
+128
+00:08:17,530 --> 00:08:22,010
+But if I need to get to a smaller object,
+then the size matters as well.
+
+129
+00:08:22,010 --> 00:08:26,129
+So I need to divide by the size,
+larger things.
+
+130
+00:08:26,129 --> 00:08:29,739
+If I need to point to a larger thing,
+it should take me less time, so
+
+131
+00:08:29,739 --> 00:08:31,520
+it's one over the size.
+
+132
+00:08:31,520 --> 00:08:38,230
+So the distance divided by the size gives
+me an indication I can point to the larger
+
+133
+00:08:38,230 --> 00:08:42,030
+things farther away as fast as I can
+point to smaller things closer to me.
+
+134
+00:08:43,510 --> 00:08:48,166
+And we take the logarithm because the
+number of steps I need is based on this
+
+135
+00:08:48,166 --> 00:08:52,088
+distance over size,
+I'm taking shorter and shorter steps.
+
+136
+00:08:52,088 --> 00:08:54,470
+So this is a log base 2.
+
+137
+00:08:54,470 --> 00:09:00,430
+And then we have 240 milliseconds it
+takes for each one of those lunges.
+
+138
+00:09:00,430 --> 00:09:05,860
+240 milliseconds is 70
+milliseconds to move your hand,
+
+139
+00:09:05,860 --> 00:09:09,920
+takes you 100 milliseconds to be able
+to see the result of your lunge.
+
+140
+00:09:09,920 --> 00:09:14,462
+And then another 70 milliseconds to decide
+how to correct it with your next lunge.
+
+141
+00:09:14,462 --> 00:09:19,298
+So 70 milliseconds to move the hand,
+100 milliseconds to see the result, and
+
+142
+00:09:19,298 --> 00:09:24,134
+then another 70 milliseconds to figure out
+what the next Instruction to your hand
+
+143
+00:09:24,134 --> 00:09:24,910
+ought to be.
+
+144
+00:09:24,910 --> 00:09:28,030
+That's 240 millisecond on average.
+
+145
+00:09:28,030 --> 00:09:31,349
+And then you need about 600 milliseconds,
+six-tenths of a step,
+
+146
+00:09:31,349 --> 00:09:34,004
+just to prepare yourself to
+be able to do this exercise.
+
+147
+00:09:34,004 --> 00:09:38,595
+So this is a rough approximation called
+Fitt's Law that tells you how quickly it
+
+148
+00:09:38,595 --> 00:09:41,677
+should take you to move
+the mouse to a certain region of
+
+149
+00:09:41,677 --> 00:09:44,710
+the screen based on where
+the mouse is to begin with.
+
+150
+00:09:46,010 --> 00:09:46,750
+So what did we learn?
+
+151
+00:09:46,750 --> 00:09:49,030
+We learned the model human processor,
+
+152
+00:09:49,030 --> 00:09:52,330
+which describes the human
+in terms of a computer.
+
+153
+00:09:52,330 --> 00:09:55,780
+Which might be more familiar to
+some computer science students.
+
+154
+00:09:55,780 --> 00:10:01,004
+And we can use that model to predict
+how a human will perceive data,
+
+155
+00:10:01,004 --> 00:10:02,505
+and react to data.
+
+156
+00:10:02,505 --> 00:10:13,129
+[MUSIC]
+
+157
+00:10:13,129 --> 00:10:16,602
+[SOUND]

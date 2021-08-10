@@ -1,0 +1,679 @@
+1
+00:00:00,000 --> 00:00:03,209
+So for most data visualization tasks,
+
+2
+00:00:03,209 --> 00:00:07,740
+we're just going to need two-dimensional computer graphics to plot and display the data.
+
+3
+00:00:07,740 --> 00:00:11,070
+In order to do that, we'll need to use different coordinate systems.
+
+4
+00:00:11,070 --> 00:00:16,179
+We use a different coordinate system to plot the data than we use to display the data.
+
+5
+00:00:16,179 --> 00:00:20,339
+We're going to use two-dimensional graphics a lot when we visualize data.
+
+6
+00:00:20,339 --> 00:00:23,129
+We're used to using two-dimensional graphics, for example,
+
+7
+00:00:23,129 --> 00:00:26,010
+for plotting functions and so we'll focus on
+
+8
+00:00:26,010 --> 00:00:31,530
+two-dimensional graphics now as we look at methods for using graphics for visualization.
+
+9
+00:00:31,530 --> 00:00:36,329
+What we're going to learn is the difference between vector graphics,
+
+10
+00:00:36,329 --> 00:00:40,409
+which are used to specify two-dimensional graphics and raster graphics,
+
+11
+00:00:40,409 --> 00:00:43,169
+which are used to display two-dimensional graphics.
+
+12
+00:00:43,169 --> 00:00:47,189
+And then we'll look at the coordinate system specifically that are used for each of them.
+
+13
+00:00:47,189 --> 00:00:52,935
+Vector graphics are the graphics that are used for drawing.
+
+14
+00:00:52,935 --> 00:00:56,250
+We're used to drawing; we take a pen and we'll put our pen down at
+
+15
+00:00:56,250 --> 00:00:59,670
+one point and then we'll move our pen across
+
+16
+00:00:59,670 --> 00:01:03,090
+the paper and then lift our pen up at another point and you get
+
+17
+00:01:03,090 --> 00:01:07,694
+a nice straight line between them - a nice continuous line.
+
+18
+00:01:07,694 --> 00:01:10,709
+In raster graphics, this is the graphics that are used,
+
+19
+00:01:10,709 --> 00:01:13,064
+for example, for our televisions and our phones;
+
+20
+00:01:13,064 --> 00:01:18,584
+they are a rectilinear array of pixels and these pixels are assigned colors.
+
+21
+00:01:18,584 --> 00:01:21,704
+And by assigning certain pixels certain colors,
+
+22
+00:01:21,704 --> 00:01:24,435
+you can represent those same shapes.
+
+23
+00:01:24,435 --> 00:01:27,450
+So you will draw a shape using vector graphics;
+
+24
+00:01:27,450 --> 00:01:29,670
+you will describe a point where you want to
+
+25
+00:01:29,670 --> 00:01:31,920
+start a line and a point where you want to stop
+
+26
+00:01:31,920 --> 00:01:33,504
+a line and you'll - you'll get
+
+27
+00:01:33,504 --> 00:01:37,079
+either a straight line or a smooth curved line between them.
+
+28
+00:01:37,079 --> 00:01:41,295
+And those will be converted to raster graphics for display,
+
+29
+00:01:41,295 --> 00:01:45,719
+which will consist of the pixels that get illuminated along
+
+30
+00:01:45,719 --> 00:01:51,790
+that path in order to display that path that you described with vector graphics.
+
+31
+00:01:51,790 --> 00:01:54,930
+So this process is called rasterization.
+
+32
+00:01:54,930 --> 00:01:57,909
+And so we'll specify a primitive - as
+
+33
+00:01:57,909 --> 00:02:01,632
+in a vector graphics format - we'll describe vertices,
+
+34
+00:02:01,632 --> 00:02:03,840
+points on the plane.
+
+35
+00:02:03,840 --> 00:02:08,460
+And then we will connect those points with strokes - in this case, with straight lines,
+
+36
+00:02:08,460 --> 00:02:15,245
+but they could be curved paths - and then those strokes can - can enclose a region.
+
+37
+00:02:15,245 --> 00:02:19,240
+And so we can fill that region - and we may assign a color for that region.
+
+38
+00:02:19,240 --> 00:02:22,050
+And for strokes who may assign a color and a width of
+
+39
+00:02:22,050 --> 00:02:24,610
+the stroke or have the stroke stylized,
+
+40
+00:02:24,610 --> 00:02:26,835
+say with dashed lines or so on.
+
+41
+00:02:26,835 --> 00:02:32,280
+The process of rasterization starts with these primitives defined by
+
+42
+00:02:32,280 --> 00:02:34,860
+these few data points and converts
+
+43
+00:02:34,860 --> 00:02:38,435
+them into an array of pixels so that they can be displayed.
+
+44
+00:02:38,435 --> 00:02:44,835
+And so this raster format representation of this triangle is as an array of pixels.
+
+45
+00:02:44,835 --> 00:02:49,305
+And the dashed lines represent the original primitive on the left,
+
+46
+00:02:49,305 --> 00:02:53,580
+superimposed over the array of pixels that are - that are representing it.
+
+47
+00:02:53,580 --> 00:02:56,099
+And in this case, we have pixels along the edges that are
+
+48
+00:02:56,099 --> 00:03:00,444
+colored blue and pixels in the filled-in region that are colored pink.
+
+49
+00:03:00,444 --> 00:03:03,689
+And you notice when we rasterize a shape,
+
+50
+00:03:03,689 --> 00:03:05,314
+we can get aliasing.
+
+51
+00:03:05,314 --> 00:03:08,414
+And that's the fact that this nice straight line
+
+52
+00:03:08,414 --> 00:03:12,104
+here in our - in our vector graphics representation,
+
+53
+00:03:12,104 --> 00:03:16,370
+appears as a staircased line.
+
+54
+00:03:16,370 --> 00:03:21,169
+You get the stairstep artifacts when you rasterize a smooth, straight line.
+
+55
+00:03:21,169 --> 00:03:25,455
+And because those stairsteps try to look like the original line,
+
+56
+00:03:25,455 --> 00:03:26,854
+but look a little bit different,
+
+57
+00:03:26,854 --> 00:03:28,469
+we call that an alias;
+
+58
+00:03:28,469 --> 00:03:30,646
+and that problem is called aliasing.
+
+59
+00:03:30,646 --> 00:03:33,780
+When we draw primitives in two dimensions - when we want
+
+60
+00:03:33,780 --> 00:03:36,930
+to draw shapes for two-dimensional graphics - for example,
+
+61
+00:03:36,930 --> 00:03:40,094
+for plotting functions - we're going to need a coordinate system
+
+62
+00:03:40,094 --> 00:03:43,469
+in which to draw those shapes so we know where to place the vertices,
+
+63
+00:03:43,469 --> 00:03:45,280
+for example, of a triangle.
+
+64
+00:03:45,280 --> 00:03:47,925
+And so we need to define a coordinate system.
+
+65
+00:03:47,925 --> 00:03:51,030
+And these coordinates I will call canvas coordinates;
+
+66
+00:03:51,030 --> 00:03:53,909
+they're the coordinates that we're going to draw things with.
+
+67
+00:03:53,909 --> 00:03:58,560
+In this case, the canvas coordinates have been defined to go from minus 1, minus 1
+
+68
+00:03:58,560 --> 00:04:03,055
+to 1, 1 and so they set up this square region of - of a plane.
+
+69
+00:04:03,055 --> 00:04:05,650
+The origin would be here in the middle.
+
+70
+00:04:05,650 --> 00:04:08,895
+You can define your canvas coordinates to be anything you like.
+
+71
+00:04:08,895 --> 00:04:11,699
+You want to define them to be something convenient so that you can
+
+72
+00:04:11,699 --> 00:04:15,354
+draw your shapes without a lot of trouble.
+
+73
+00:04:15,354 --> 00:04:21,050
+In this case, I've drawn a plot of a parabola - the parabola y equals x squared.
+
+74
+00:04:21,050 --> 00:04:26,355
+And so I've got a curved path starting at this point here going to this point here
+
+75
+00:04:26,355 --> 00:04:31,704
+and I've defined my canvas coordinate system to be something convenient for that plot.
+
+76
+00:04:31,704 --> 00:04:34,459
+In this case, I've started it going from minus one-eighth,
+
+77
+00:04:34,459 --> 00:04:38,790
+minus one-eighth to one-and-one eighth, one-and-one-eighth.
+
+78
+00:04:38,790 --> 00:04:40,919
+And that's so that as I move one-eighth,
+
+79
+00:04:40,919 --> 00:04:43,949
+one-eighth in, I'm at the point 0, 0
+
+80
+00:04:43,949 --> 00:04:50,060
+in my coordinate system and I can draw my plot going from 0, 0 to 1, 1 here.
+
+81
+00:04:50,060 --> 00:04:53,009
+And then I've got an additional eighth of a unit
+
+82
+00:04:53,009 --> 00:04:57,360
+surrounding the plot in order to do things - to add meta data,
+
+83
+00:04:57,360 --> 00:05:02,810
+like the title of the visualisation and draw the axes and label the axes.
+
+84
+00:05:02,810 --> 00:05:08,610
+So that's convenient, but as I'm resizing the display,
+
+85
+00:05:08,610 --> 00:05:10,620
+I may want the fonts to be larger or
+
+86
+00:05:10,620 --> 00:05:13,439
+smaller and I'll need a bigger margin surrounding the plot.
+
+87
+00:05:13,439 --> 00:05:17,504
+Or I may want the plot to be larger and the margin to be smaller.
+
+88
+00:05:17,504 --> 00:05:20,370
+So in - in two-dimensional computer graphics,
+
+89
+00:05:20,370 --> 00:05:23,115
+we can set up hierarchical coordinate systems.
+
+90
+00:05:23,115 --> 00:05:26,790
+And this just means you have a canvas in a canvas.
+
+91
+00:05:26,790 --> 00:05:30,029
+In this case, we have a yellow canvas that is the coordinate system for
+
+92
+00:05:30,029 --> 00:05:33,329
+the entire plot - the entire
+
+93
+00:05:33,329 --> 00:05:35,610
+visualization - and then we have
+
+94
+00:05:35,610 --> 00:05:40,425
+an inner canvas that is a coordinate system just for the plotted data;
+
+95
+00:05:40,425 --> 00:05:41,939
+in this case, the parabola.
+
+96
+00:05:41,939 --> 00:05:46,230
+And so I've set up the outer coordinate system to go from 0, 0 to 1,
+
+97
+00:05:46,230 --> 00:05:50,579
+1 in this region and then I've set up an inner coordinate system to go
+
+98
+00:05:50,579 --> 00:05:56,159
+from one-tenth to nine-tenths and one-tenth,
+
+99
+00:05:56,159 --> 00:05:58,050
+one-tenth to nine-tenths, nine-tenths
+
+100
+00:05:58,050 --> 00:06:03,509
+here and I've defined its coordinate system to go from 0, 0 to 1, 1.
+
+101
+00:06:03,509 --> 00:06:05,115
+So now I can plot inside
+
+102
+00:06:05,115 --> 00:06:09,720
+this coordinate system using coordinates that are convenient for plotting
+
+103
+00:06:09,720 --> 00:06:12,115
+this parabola and then I can plot in
+
+104
+00:06:12,115 --> 00:06:16,975
+this outer coordinate system using coordinates convenient for drawing the decorations,
+
+105
+00:06:16,975 --> 00:06:19,199
+the axes and the title.
+
+106
+00:06:19,199 --> 00:06:22,560
+And so we can define whatever coordinate system we want,
+
+107
+00:06:22,560 --> 00:06:27,975
+wherever we want, in order to make it more convenient to draw two-dimensional graphics.
+
+108
+00:06:27,975 --> 00:06:30,660
+There's also screen coordinates.
+
+109
+00:06:30,660 --> 00:06:33,899
+And these are the coordinates that are used for raster graphics,
+
+110
+00:06:33,899 --> 00:06:36,485
+for the display of the information.
+
+111
+00:06:36,485 --> 00:06:38,459
+And in this coordinate system,
+
+112
+00:06:38,459 --> 00:06:45,629
+we have a grid going from 0, 0 to whatever our screen resolution is.
+
+113
+00:06:45,629 --> 00:06:47,699
+In this case, since we're going from 0, 0,
+
+114
+00:06:47,699 --> 00:06:52,595
+we go to our horizontal resolution minus 1, vertical resolution minus 1.
+
+115
+00:06:52,595 --> 00:06:55,814
+If our screen resolution was 100, 100,
+
+116
+00:06:55,814 --> 00:06:59,374
+we would be going from 0, 0 to 99, 99.
+
+117
+00:06:59,374 --> 00:07:05,295
+And the pixels are located on these grid intersections.
+
+118
+00:07:05,295 --> 00:07:10,379
+And so you have a - a integer coordinate for each pixel location,
+
+119
+00:07:10,379 --> 00:07:16,254
+which is useful when you're actually displaying an image using these pixels;
+
+120
+00:07:16,254 --> 00:07:19,826
+you want to be able to locate each one of these pixels.
+
+121
+00:07:19,826 --> 00:07:24,134
+And so there is a canvas-to-screen transformation that happens.
+
+122
+00:07:24,134 --> 00:07:28,529
+So we're going to define our coordinate system going from some left
+
+123
+00:07:28,529 --> 00:07:32,339
+bottom point to some right top point
+
+124
+00:07:32,339 --> 00:07:36,269
+and and - and then we're going to plot using those coordinates.
+
+125
+00:07:36,269 --> 00:07:39,089
+And those coordinates are going to be converted to
+
+126
+00:07:39,089 --> 00:07:42,609
+the corresponding pixel locations on our display screen.
+
+127
+00:07:42,609 --> 00:07:45,209
+And those pixel locations are going to be defined
+
+128
+00:07:45,209 --> 00:07:48,120
+someplace on the display screen starting at x,
+
+129
+00:07:48,120 --> 00:07:52,555
+y and going to the point x plus the width
+
+130
+00:07:52,555 --> 00:07:57,660
+in pixels minus 1 and then y plus the height in pixels minus 1.
+
+131
+00:07:57,660 --> 00:08:02,610
+So this coordinate system happens automatically and you can define these coordinates to
+
+132
+00:08:02,610 --> 00:08:07,954
+be anything and you can define these coordinates to be any location on the screen.
+
+133
+00:08:07,954 --> 00:08:10,500
+And so your 2D graphics that you're plotting on
+
+134
+00:08:10,500 --> 00:08:13,470
+your canvas can be automatically resized and
+
+135
+00:08:13,470 --> 00:08:15,959
+repositioned anywhere on the screen just by
+
+136
+00:08:15,959 --> 00:08:19,906
+controlling this canvas-to-screen transformation.
+
+137
+00:08:19,906 --> 00:08:23,579
+You can also work directly in screen coordinates by setting up
+
+138
+00:08:23,579 --> 00:08:26,519
+a canvas-to-screen transformation that uses
+
+139
+00:08:26,519 --> 00:08:30,199
+canvas coordinates that match up with your screen coordinates.
+
+140
+00:08:30,199 --> 00:08:34,350
+In this case, you're just setting your left edge and your bottom edge to x and y
+
+141
+00:08:34,350 --> 00:08:36,899
+and you're right edge and your top edge to x and y
+
+142
+00:08:36,899 --> 00:08:40,365
+plus the width minus 1 and the height minus 1.
+
+143
+00:08:40,365 --> 00:08:44,602
+And in this case, you can specify the coordinates of your primitives in
+
+144
+00:08:44,602 --> 00:08:47,100
+vector graphics using the same coordinates
+
+145
+00:08:47,100 --> 00:08:50,820
+for the pixels that - that they will be translated to.
+
+146
+00:08:50,820 --> 00:08:54,870
+I don't recommend doing this because when you're working in screen coordinates,
+
+147
+00:08:54,870 --> 00:08:59,870
+you're not going to know what your output screen display device might be.
+
+148
+00:08:59,870 --> 00:09:00,990
+It could be a cell phone,
+
+149
+00:09:00,990 --> 00:09:03,840
+it could be a television, it could be a watch,
+
+150
+00:09:03,840 --> 00:09:07,725
+it could be a video wall - and all of those will have different resolutions
+
+151
+00:09:07,725 --> 00:09:12,120
+and you want to make sure that your two-dimensional graphics is properly displayed;
+
+152
+00:09:12,120 --> 00:09:16,830
+it's not too small or too large when it's displayed on different devices.
+
+153
+00:09:16,830 --> 00:09:22,379
+So it's better to work in some canvas coordinates that's convenient for you and let
+
+154
+00:09:22,379 --> 00:09:25,549
+the canvas-to-screen transformation worry
+
+155
+00:09:25,549 --> 00:09:28,950
+about converting it to the corresponding pixels.
+
+156
+00:09:28,950 --> 00:09:31,634
+So what have we learned?
+
+157
+00:09:31,634 --> 00:09:36,230
+We've learned that vector graphics is used to describe shapes and that
+
+158
+00:09:36,230 --> 00:09:42,139
+raster graphics are what we use to display those shapes using a table of pixels.
+
+159
+00:09:42,139 --> 00:09:47,345
+And that we can set up coordinates that - that are convenient for us to plot in a canvas
+
+160
+00:09:47,345 --> 00:09:49,879
+and those coordinates are different from
+
+161
+00:09:49,879 --> 00:09:52,909
+the raster coordinates that we use to display the canvas.
+
+162
+00:09:52,909 --> 00:09:55,684
+And we can set up canvases within a canvas,
+
+163
+00:09:55,684 --> 00:09:59,929
+which allows us to divide up the screen in ways that make it more convenient
+
+164
+00:09:59,929 --> 00:10:04,580
+for us to set up a two-dimensional visualization display.
+
+165
+00:10:04,580 --> 00:10:08,120
+So we learned that we describe shapes using vector graphics,
+
+166
+00:10:08,120 --> 00:10:11,564
+but we display shapes using raster graphics.
+
+167
+00:10:11,564 --> 00:10:15,019
+We can describe our shapes using the coordinate system of raster graphics,
+
+168
+00:10:15,019 --> 00:10:17,674
+the coordinate systems of the screens pixels,
+
+169
+00:10:17,674 --> 00:10:22,985
+or we can describe them using the canvas coordinates of our vector graphics,
+
+170
+00:10:22,985 --> 00:10:30,210
+or we - we can use whatever coordinate system is most convenient for us to plot the data.
