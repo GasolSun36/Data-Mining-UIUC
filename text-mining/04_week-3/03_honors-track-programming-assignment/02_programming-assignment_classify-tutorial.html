@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MeTA: ModErn Text Analysis : Classification</title>
+        <meta name="description" content="A Modern C++ Data Sciences Toolkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div id="header" class="span12">
+                    <h4><a class=brand href="/">MeTA: ModErn Text Analysis</a>
+    <small>A Modern C++ Data Sciences Toolkit</small>
+</h4>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="navigation" class="col-md-3" role="complementary">
+                    
+<nav>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="nav-header">Navigation</li>
+        
+        <li>
+        
+            <a href="/">Home</a>
+        </li>
+        <li><a href="https://github.com/meta-toolkit/meta/">Github</a></li>
+        <li><a href="https://forum.meta-toolkit.org/">Forum</a></li>
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Demos</li>
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="1">
+                    
+                        <a href="/search-demo.html">Search Engine and Rankers</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/nlp-demo.html">Natural Language Processing</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="3">
+                    
+                        <a href="/network-demo.html">Wikipedia Network Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/KDD2017.html">KDD 2017 metapy Tutorial</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="5">
+                    
+                        <a href="/SIGIR18.html">SIGIR 2018 Tutorial: Probabilistic Topic Models</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Tutorials</li>
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="0">
+                    
+                        <a href="/setup-guide.html">Setup Guide</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="1">
+                    
+                        <a href="/overview-tutorial.html">MeTA System Overview</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/profile-tutorial.html">Basic Text Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="3">
+                    
+                        <a href="/analyzers-filters-tutorial.html">Analyzers, Tokenizers, and Filters</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/search-tutorial.html">Search</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li class="active" data-order="5">
+                    
+                        <a href="/classify-tutorial.html">Classification</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="6">
+                    
+                        <a href="/online-learning.html">Online Learning</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="7">
+                    
+                        <a href="/pos-tagging-tutorial.html">Part of Speech Tagging</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="8">
+                    
+                        <a href="/parsing-tutorial.html">Parsing</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="9">
+                    
+                        <a href="/topic-models-tutorial.html">Topic Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="10">
+                    
+                        <a href="/language-models-tutorial.html">Language Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="12">
+                    
+                        <a href="/word-embeddings.html">Word Embeddings</a>
+                    </li>
+                
+            
+        
+        <li class="nav-header">Reference</li>
+        <li><a href="/doxygen/namespaces.html">Doxygen</a></li>
+    <!-- List additional links. It is recommended to add a divider
+        e.g. <li class=divider></li> first to break up the content. -->
+    </ul>
+</nav>
+
+                </div>
+
+                <div id="content" class="col-md-9" role="main">
+                    <div class=page-header>
+    <h2>Classification
+        
+    </h2>
+</div>
+
+<p>Beyond its search and information retrieval capabilities, MeTA also
+provides functionality for performing document classification on your
+corpora. We will start this tutorial by discussing how you can perform
+document classification experiments on your data <strong>without writing a single
+line of code</strong>, and then discuss more complicated examples later on.</p>
+
+<p>The first step in setting up your classification task is, of course,
+selecting your corpus. MeTA’s built-in <code>classify</code> program works with all of
+MeTA’s <a href="overview-tutorial.html#corpus-input-formats">corpus formats</a>, giving you a lot of freedom in how
+you decide to store your unprocessed data.</p>
+
+<p>MeTA uses a compressed format for its internal <code>forward_index</code>
+representation, but you can at any point in time dump the contents of your
+<code>forward_index</code> to a libsvm-formatted data file by using the provided
+<code>forward-to-libsvm</code> tool if you would like to feed the data to another tool
+not yet integrated with MeTA itself.</p>
+
+<h2 id="creating-a-forward-index-from-scratch">Creating a Forward Index From Scratch</h2>
+
+<p>To create a <code>forward_index</code> directly from your corpus input, your
+configuration file would look something like this:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">corpus</span> <span class="o">=</span> <span class="s">&quot;line.toml&quot;</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="s">&quot;20newsgroups&quot;</span>
+<span class="n">index</span> <span class="o">=</span> <span class="s">&quot;20news-idx&quot;</span>
+
+<span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ngram-word&quot;</span>
+<span class="n">ngram</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="s">&quot;default-chain&quot;</span></code></pre></div>
+
+<p>Here, we’ve specified the locations for an inverted and a forward index,
+and based on our analyzers configuration we can see that we’re using
+unigram words as our features. If you want to use more complex feature
+representations, please <a href="analyzers-filters.tutorial.html">refer to the analyzers, tokenizers, and filters
+tutorial</a> for more information.</p>
+
+<h2 id="creating-a-forward-index-from-libsvm-data">Creating a Forward Index from LIBSVM Data</h2>
+
+<p>In many cases, you may already have pre-processed corpora to perform
+classification tasks on, and MeTA gracefully handles this. The most common
+input for these classification tasks is the LIBSVM file format, and MeTA
+supports this format directly as an input corpus.</p>
+
+<p>To create a <code>forward_index</code> from data that is already in LIBSVM format,
+your configuration file would look something like this:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">corpus</span> <span class="o">=</span> <span class="s">&quot;libsvm.toml&quot;</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="s">&quot;rcv1&quot;</span>
+<span class="n">index</span> <span class="o">=</span> <span class="s">&quot;rcv1-idx&quot;</span>
+
+<span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;libsvm&quot;</span></code></pre></div>
+
+<p>The <code>forward_index</code> will recognize that this is a LIBSVM formatted corpus
+and will simply read the existing features from the corpus and convert them
+into MeTA’s internal compressed format. A corresponding <code>inverted_index</code>
+cannot be created through this method, and so you will not be able to use
+dual-index classifiers such as <code>knn</code> that require an <code>inverted_index</code>, but
+most of the regular classifiers that don’t require search features will
+work just fine (e.g., SGD and Naive Bayes).</p>
+
+<h2 id="selecting-a-classifier">Selecting a Classifier</h2>
+
+<p>To actually run the <code>classify</code> executable, you will need to decide on a
+classifier to use. You may see a list of these <a href="doxygen/classmeta_1_1classify_1_1classifier.html">in the API documentation
+for the <code>classifier</code>
+class</a> (they are listed
+as subclasses). The public static id member of each class is the
+identifier you would use in the configuration file.</p>
+
+<p>A recommended default configuration is given below, which learns a linear
+SVM via stochastic gradient descent and uses a one-vs-all reduction:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="n">classifier</span><span class="p">]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;one-vs-all&quot;</span>
+    <span class="p">[</span><span class="n">classifier</span><span class="p">.</span><span class="n">base</span><span class="p">]</span>
+    <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;sgd&quot;</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="s">&quot;hinge&quot;</span></code></pre></div>
+
+<p>Here is an example configuration that uses Naive Bayes:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="n">classifier</span><span class="p">]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;naive-bayes&quot;</span></code></pre></div>
+
+<p>Here is an example that uses <em>k</em>-nearest neighbor with <em>k</em> = 10 and Okapi BM25
+as the ranking function:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="n">classifier</span><span class="p">]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;knn&quot;</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="p">[</span><span class="n">classifier</span><span class="p">.</span><span class="n">ranker</span><span class="p">]</span>
+    <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;bm25&quot;</span></code></pre></div>
+
+<p>Running <code>./classify config.toml</code> from your build directory will now create
+a <code>forward_index</code> (if necessary) and run 5-fold cross validation on your
+data using the prescribed classifier. Here is some sample output:</p>
+
+<div>
+<code>
+<pre>
+            chinese   english   japanese
+          ------------------------------
+  chinese | <strong>0.802</strong>     0.011     0.187
+  english | 0.0069    <strong>0.807</strong>     0.186
+ japanese | 0.0052    0.0039    <strong>0.991</strong>
+
+------------------------------------------------
+<strong>Class</strong>       <strong>F1 Score</strong>    <strong>Precision</strong>   <strong>Recall</strong>
+------------------------------------------------
+chinese     0.864       0.802       0.936
+english     0.88        0.807       0.967
+japanese    0.968       0.991       0.945
+------------------------------------------------
+<strong>Total</strong>       <strong>0.904</strong>       <strong>0.867</strong>       <strong>0.949</strong>
+------------------------------------------------
+1005 predictions attempted, overall accuracy: 0.947
+</pre>
+</code>
+</div>
+
+<h2 id="online-learning">Online Learning</h2>
+<p>If your dataset cannot be loaded into memory in its entirety, you should
+look at <a href="online-learning.html">the online learning tutorial</a> for more
+information about how to handle this case.</p>
+
+<h2 id="manual-classification">Manual Classification</h2>
+
+<p>If you want to customize the classification process (such as providing
+your own test/training split, or changing the number of cross-validation
+folds), you should interact with the classifiers directly by writing some
+code. Refer to <code>classify.cpp</code> and <a href="doxygen/classmeta_1_1classify_1_1classifier.html">the API documentation for
+<code>classifier</code></a>.</p>
+
+<p>The next few sections will guide you through the high level structure of
+the classify APIs.</p>
+
+<h3 id="datasets-and-dataset-views">Datasets and Dataset Views</h3>
+
+<p>A <a href="doxygen/classmeta_1_1learn_1_1dataset.html"><code>dataset</code> object</a> represents a collection of <code>instance</code>s that
+have been loaded into memory. This may be the entirety of your corpus or
+just some small segment of it. Typically, you will instantiate <code>dataset</code>
+objects by passing in a <code>forward_index</code> object to retrieve documents from,
+but you can also create them manually from your own data as well.</p>
+
+<p>The most common concrete <code>dataset</code> type you’ll use for classification is
+<a href="doxygen/classmeta_1_1classify_1_1multiclass__dataset.html">the <code>multiclass_dataset</code></a>. This is a labeled dataset
+with categorical labels (each <code>instance</code> has an associated <code>class_label</code>,
+which is a string). If you wish to load the entirety of a <code>forward_index</code>
+into memory, you can use the single argument constructor like so:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">meta</span><span class="p">;</span>
+
+<span class="c1">// parse the configuration file</span>
+<span class="k">auto</span> <span class="n">config</span> <span class="o">=</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">parse_file</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+
+<span class="c1">// create or load a forward index</span>
+<span class="k">auto</span> <span class="n">f_idx</span> <span class="o">=</span> <span class="n">index</span><span class="o">::</span><span class="n">make_index</span><span class="o">&lt;</span><span class="n">index</span><span class="o">::</span><span class="n">forward_index</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">config</span><span class="p">);</span>
+
+<span class="c1">// load your index into a collection of instances for training/testing</span>
+<span class="n">classify</span><span class="o">::</span><span class="n">multiclass_dataset</span> <span class="n">dataset</span><span class="p">{</span><span class="n">f_idx</span><span class="p">};</span></code></pre></div>
+
+<p>Now that you have a dataset, you can now create <a href="doxygen/classmeta_1_1learn_1_1dataset__view.html"><code>dataset_view</code>
+objects</a> to represent read-only views of parts (or all of) a
+specific <code>dataset</code>. These view objects can then passed down to the
+classifiers for either training or testing. The most commonly used
+<code>dataset_view</code> object is the <code>multiclass_dataset</code>’s <a href="doxygen/classmeta_1_1classify_1_1multiclass__dataset__view.html">corresponding
+<code>multiclass_dataset_view</code></a>, which is typically
+created from a <code>multiclass_dataset</code> and a pair of iterators into that
+dataset indicating the extent that view represents.</p>
+
+<p>For example, if I wanted to have a training set consisting of the first
+half of my data, and a testing set consisting of the second half of my
+data, I can construct a training view and a testing view as follows:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// an mdv of the first half of the dataset, for training</span>
+<span class="n">classify</span><span class="o">::</span><span class="n">multiclass_dataset_view</span> <span class="n">train</span><span class="p">{</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dataset</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span>
+                                        <span class="n">dataset</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">dataset</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">};</span>
+
+<span class="c1">// an mdv for the second half of the dataset, for testing</span>
+<span class="n">classify</span><span class="o">::</span><span class="n">multiclass_dataset_view</span> <span class="n">test</span><span class="p">{</span><span class="n">dataset</span><span class="p">,</span>
+                                       <span class="n">dataset</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">dataset</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                                       <span class="n">dataset</span><span class="p">.</span><span class="n">end</span><span class="p">()};</span></code></pre></div>
+
+<p>Creating these views is important to allow for things like shuffling
+without disturbing the underlying data. I can now shuffle both training and
+test sets before I begin training and testing my classifier.</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">train</span><span class="p">.</span><span class="n">shuffle</span><span class="p">();</span>
+<span class="n">test</span><span class="p">.</span><span class="n">shuffle</span><span class="p">();</span></code></pre></div>
+
+<h3 id="training-and-testing-classifiers">Training and Testing Classifiers</h3>
+
+<p>Now, let’s train a classifier and get some statistics about its performance
+on the test set. Classifiers are typically created with a TOML configuration
+group (either read from a file or created programmatically) and a
+corresponding <code>dataset_view</code> that represents the training data to use.
+<strong>Construction of a classifier implies training it.</strong></p>
+
+<p>To train a Naive Bayes classifier, I could do the following:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">cls_cfg</span> <span class="o">=</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">make_table</span><span class="p">();</span>
+<span class="n">cls_cfg</span><span class="o">-&gt;</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;method&quot;</span><span class="p">,</span> <span class="s">&quot;naive-bayes&quot;</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">cls</span> <span class="o">=</span> <span class="n">classify</span><span class="o">::</span><span class="n">make_classifier</span><span class="p">(</span><span class="o">*</span><span class="n">cls_cfg</span><span class="p">,</span> <span class="n">train</span><span class="p">);</span></code></pre></div>
+
+<p>Finally, to test the classifier I can do the following:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">confusion_mtrx</span> <span class="o">=</span> <span class="n">cls</span><span class="o">-&gt;</span><span class="n">test</span><span class="p">(</span><span class="n">test</span><span class="p">);</span>
+<span class="n">confusion_mtrx</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>       <span class="c1">// prints the confusion matrix itself</span>
+<span class="n">confusion_mtrx</span><span class="p">.</span><span class="n">print_stats</span><span class="p">();</span> <span class="c1">// prints statistics from the matrix</span></code></pre></div>
+
+<p>If I wanted to instead do 10-fold cross validation on the dataset I
+initially loaded, I could do the following:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">confusion_mtrx</span> <span class="o">=</span> <span class="n">classify</span><span class="o">::</span><span class="n">cross_validate</span><span class="p">(</span><span class="o">*</span><span class="n">cls_cfg</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span></code></pre></div>
+
+<p>Once your model is trained, you may wish to save it for later use. All of
+our classifiers support being serialized to the disk. To do so, you can use
+the <code>save()</code> method like so:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// configure and train cls first, and then...</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">output</span><span class="p">{</span><span class="s">&quot;my-model.dat&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">};</span>
+<span class="n">cls</span><span class="o">-&gt;</span><span class="n">save</span><span class="p">(</span><span class="n">output</span><span class="p">);</span></code></pre></div>
+
+<p>To load a model from a file, simply use the <code>load_classifier()</code> method on a
+binary input stream:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// loading a model from a file</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">input</span><span class="p">{</span><span class="s">&quot;my-model.dat&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">};</span>
+<span class="k">auto</span> <span class="n">loaded_cls</span> <span class="o">=</span> <span class="n">classify</span><span class="o">::</span><span class="n">load_classifier</span><span class="p">(</span><span class="n">input</span><span class="p">);</span></code></pre></div>
+
+<h2 id="writing-your-own-classifiers">Writing Your Own Classifiers</h2>
+
+<p>The first step for writing your own classifier is to determine what <em>kind</em>
+of classifier you are writing. You should ask yourself the following
+questions:</p>
+
+<ol>
+  <li>Does your classifier predict categorical labels or binary labels?</li>
+  <li>Does your classifier support online learning or only batch learning?</li>
+</ol>
+
+<p>Based on the answers, you should pick one of the following base classes:</p>
+
+<ul>
+  <li><code>classifier</code> is the base class you should use for multiclass
+(categorical) classifiers that <em>do not</em> support online learning</li>
+  <li><code>online_classifier</code> is the base class you should use for multiclass
+  classifiers that <em>do</em> support online learning</li>
+  <li><code>binary_classifier</code> is the base class you should use for binary
+  classifiers that <em>do not</em> support online learning</li>
+  <li><code>online_binary_classifier</code> is the base class you should use for binary
+  classifiers that <em>do</em> support online learning</li>
+</ul>
+
+<p>For registration purposes (more on this later), your classifier should have
+a public static <code>id</code> member of type <code>util::string_view</code> that is unique.</p>
+
+<p>To facilitate saving and loading classifiers, your classifier should have a
+<code>save(std::ostream&amp;)</code> function that writes out your classifier’s model
+information in binary format to the stream parameter (we strongly recommend
+using something like <code>io::packed::write</code> for this). <strong>The very first line
+of this should write out the classifier’s id</strong> like so:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">io</span><span class="o">::</span><span class="n">packed</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span></code></pre></div>
+
+<p>This allows the toolkit to be able to load your classifier from a file
+directly, without having to manually specify the type at load time.</p>
+
+<p>You should also have a constructor from a <code>std::istream&amp;</code> to load your
+classifier from a file. <strong>The id will have already been read from the
+stream</strong>, so you should begin immediately reading the things you wrote
+<em>after</em> the first line of <code>save()</code>.</p>
+
+<h3 id="registering-classifiers">Registering Classifiers</h3>
+
+<p>Once your classifier is written, you should register it with the toolkit to
+enable creating it from a configuration file and loading it from disk. To
+do so, ensure that your classifier has a public static <code>id</code> member (of type
+<code>util::string_view</code>), and then register it somewhere in <code>main()</code> like this:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">using</span> <span class="k">namespace</span> <span class="n">meta</span><span class="p">;</span>
+
+<span class="c1">// if you have a multi-class classifier</span>
+<span class="n">classify</span><span class="o">::</span><span class="n">register_classifier</span><span class="o">&lt;</span><span class="n">my_classifier</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// if you have a multi-class classifier that requires an inverted_index</span>
+<span class="c1">// (this is not common; examples include knn and nearest centroid)</span>
+<span class="n">classify</span><span class="o">::</span><span class="n">register_multi_index_classifier</span><span class="o">&lt;</span><span class="n">my_classifier</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// if you have a binary classifier</span>
+<span class="n">classify</span><span class="o">::</span><span class="n">register_binary_classifier</span><span class="o">&lt;</span><span class="n">my_binary_classifier</span><span class="o">&gt;</span><span class="p">();</span></code></pre></div>
+
+<p>If you need to read parameters from the configuration group given for your
+classifier, you should specialize the <code>make_classifier()</code> function like so:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// if you have a multi-class classifier</span>
+<span class="k">namespace</span> <span class="n">meta</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">classify</span>
+<span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">classifier</span><span class="o">&gt;</span>
+    <span class="n">make_classifier</span><span class="o">&lt;</span><span class="n">my_classifier</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="k">const</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">table</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">,</span>
+        <span class="n">multiclass_dataset_view</span> <span class="n">training</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// if you have a multi-class classifier that requires an</span>
+<span class="c1">// inverted_index</span>
+<span class="k">namespace</span> <span class="n">meta</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">classify</span>
+<span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">classifier</span><span class="o">&gt;</span>
+    <span class="n">make_multi_index_classifier</span><span class="o">&lt;</span><span class="n">my_classifier</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="k">const</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">table</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">,</span>
+        <span class="n">multiclass_dataset_view</span> <span class="n">training</span><span class="p">,</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">index</span><span class="o">::</span><span class="n">inverted_index</span><span class="o">&gt;</span> <span class="n">inv_idx</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// if you have a binary classifier</span>
+<span class="k">namespace</span> <span class="n">meta</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">classify</span>
+<span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">classifier</span><span class="o">&gt;</span>
+    <span class="n">make_binary_classifier</span><span class="o">&lt;</span><span class="n">my_binary_classifier</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="k">const</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">table</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">,</span>
+        <span class="n">binary_dataset_view</span> <span class="n">training</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="footer" class="span12">
+                    <hr/>
+Documentation for <a href="https://github.com/meta-toolkit/meta">MeTA: ModErn Text Analysis</a>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" async
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</html>

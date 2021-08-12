@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MeTA: ModErn Text Analysis : MeTA System Overview</title>
+        <meta name="description" content="A Modern C++ Data Sciences Toolkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div id="header" class="span12">
+                    <h4><a class=brand href="/">MeTA: ModErn Text Analysis</a>
+    <small>A Modern C++ Data Sciences Toolkit</small>
+</h4>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="navigation" class="col-md-3" role="complementary">
+                    
+<nav>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="nav-header">Navigation</li>
+        
+        <li>
+        
+            <a href="/">Home</a>
+        </li>
+        <li><a href="https://github.com/meta-toolkit/meta/">Github</a></li>
+        <li><a href="https://forum.meta-toolkit.org/">Forum</a></li>
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Demos</li>
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="1">
+                    
+                        <a href="/search-demo.html">Search Engine and Rankers</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/nlp-demo.html">Natural Language Processing</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="3">
+                    
+                        <a href="/network-demo.html">Wikipedia Network Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/KDD2017.html">KDD 2017 metapy Tutorial</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="5">
+                    
+                        <a href="/SIGIR18.html">SIGIR 2018 Tutorial: Probabilistic Topic Models</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Tutorials</li>
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="0">
+                    
+                        <a href="/setup-guide.html">Setup Guide</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li class="active" data-order="1">
+                    
+                        <a href="/overview-tutorial.html">MeTA System Overview</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/profile-tutorial.html">Basic Text Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="3">
+                    
+                        <a href="/analyzers-filters-tutorial.html">Analyzers, Tokenizers, and Filters</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/search-tutorial.html">Search</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="5">
+                    
+                        <a href="/classify-tutorial.html">Classification</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="6">
+                    
+                        <a href="/online-learning.html">Online Learning</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="7">
+                    
+                        <a href="/pos-tagging-tutorial.html">Part of Speech Tagging</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="8">
+                    
+                        <a href="/parsing-tutorial.html">Parsing</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="9">
+                    
+                        <a href="/topic-models-tutorial.html">Topic Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="10">
+                    
+                        <a href="/language-models-tutorial.html">Language Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="12">
+                    
+                        <a href="/word-embeddings.html">Word Embeddings</a>
+                    </li>
+                
+            
+        
+        <li class="nav-header">Reference</li>
+        <li><a href="/doxygen/namespaces.html">Doxygen</a></li>
+    <!-- List additional links. It is recommended to add a divider
+        e.g. <li class=divider></li> first to break up the content. -->
+    </ul>
+</nav>
+
+                </div>
+
+                <div id="content" class="col-md-9" role="main">
+                    <div class=page-header>
+    <h2>MeTA System Overview
+        
+    </h2>
+</div>
+
+<p>Our task is to improve upon and complement the current body of open source
+machine learning and information retrieval software. The existing environment of
+this open source software tends to be quite fragmented.</p>
+
+<p>There is rarely a single location for a wide variety of algorithms; a good
+example of this is the <a href="http://www.csie.ntu.edu.tw/~cjlin/liblinear/">LIBLINEAR</a>
+software package for SVMs. While this is the most cited of the open source
+implementations of linear SVMs, it focuses solely on kernel-less methods. If
+presented with a nonlinear classification problem, one would be forced to find a
+different software package that supports kernels (such as the same authors’
+<a href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/">LIBSVM</a> package). This places an
+undue burden on the researchers—not only are they required to have a detailed
+understanding of the research problem at hand, but they are now forced to
+understand this fragmented nature of the open source software community, find
+the appropriate tools in this mishmash of implementations, and compile and
+configure the appropriate tool.</p>
+
+<p>Even when this is all done, there is the problem of data formatting—it is
+unlikely that the tools have standardized upon a single input format, so a
+certain amount of “data munging” is now required. This all detracts from the
+actual research task at hand, which has a marked impact on the speed of
+discovery.</p>
+
+<p><strong>We want to address these issues.</strong> In particular, we want to provide a
+unifying framework for text indexing and analysis methods, allowing researchers
+to quickly run controlled experiments. We want to modularize the feature
+generation, instance representation, data storage formats, and algorithm
+implementations; this will allow for researchers to make seamless transitions
+along any of these dimensions with minimal effort.</p>
+
+<h2 id="how-does-meta-store-data">How does MeTA store data?</h2>
+
+<p>All processed data is stored in a <code>disk_index</code>. Currently, we have two
+index types: <code>forward_index</code> and <code>inverted_index</code>. The former is keyed by
+document IDs, and the latter is keyed by term IDs.</p>
+
+<ul>
+  <li><code>forward_index</code> is used for applications such as topic modeling and
+most classification tasks</li>
+  <li><code>inverted_index</code> is used to create search engines, or do classification with
+<em>k</em>-nearest-neighbor</li>
+</ul>
+
+<p>Since each MeTA application takes an index as input, all processed data is
+interchangeable between all the components. This also gives a great advantage to
+classification: <strong>MeTA supports out-of-core classification by default!</strong> If
+your dataset is small enough (like most other toolkits assume), you can
+load an index into a <code>dataset</code> object to keep it all in memory without
+sacrificing any speed.</p>
+
+<p>Index usage is explained in much more detail in the <a href="/search-tutorial.html">Search
+Tutorial</a>, though it might make more sense
+to read the about <a href="/analyzers-filters-tutorial.html">Filters and
+Analyzers</a> first.</p>
+
+<p>The main toml configuration file has a few options related to indexing.</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">uninvert</span> <span class="o">=</span> <span class="n">false</span>          <span class="c1"># default</span>
+<span class="n">indexer-ram-budget</span> <span class="o">=</span> <span class="mi">1024</span> <span class="c1"># **estimated** total RAM budget for indexing in MB</span>
+                          <span class="c1"># always set this lower than your physical RAM!</span></code></pre></div>
+
+<p>The key <code>uninvert</code> (if set to true) will create a <code>forward_index</code> by uninverting
+an <code>inverted_index</code>. This is useful to set to true if you will be using both
+indexes. If you’ll only do classification or topic modeling, setting this to
+false will not create an inverted index unless one is explicitly used.</p>
+
+<p>The <code>indexer-ram-budget</code> is <em>approximately</em> how much total memory is
+allocated during the indexing process. If there are four threads and
+<code>indexer-ram-budget = 4096</code>, then each thread will store 1GB of processed
+data before it flushes it to disk. Note that this limit is currently
+heuristic-based and thus is not a hard limit (though the system does its
+best to adhere to it).</p>
+
+<h2 id="corpus-input-formats">Corpus input formats</h2>
+<p>In the main toml configuration file, there are two parameters to specify a
+corpus:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">dataset</span> <span class="o">=</span> <span class="s">&quot;dataset-name&quot;</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="s">&quot;name.toml&quot;</span></code></pre></div>
+
+<p>The <code>dataset</code> key names a folder under the path <code>prefix</code> where the corpus
+data resides. The key <code>corpus</code> is the path to the corpus configuration
+file, relative to the corpus path.  Usually, we simply name the corpus
+config file by the corpus input format type.  For example, if we are using
+a line corpus (described below), we would say <code>corpus = "line.toml"</code>. The
+file <code>line.toml</code> (or whatever it’s called) contains corpus-specific
+settings. Refer to the corpus-specific documentation below for what it
+should contain.</p>
+
+<p>There are currently four corpus input formats (and you can find examples of all
+of these in the data directory for your MeTA checkout once you have built
+the toolkit at least once).</p>
+
+<h3 id="line-corpus">Line Corpus</h3>
+<p>A <code>line_corpus</code> consists of one or two files:</p>
+
+<ul>
+  <li><code>line.toml</code>: the corpus configuration file</li>
+  <li><code>corpusname.dat</code>: each document appears on one line.</li>
+  <li><code>corpusname.dat.labels</code>: optional file that includes the class or label of
+the document on each line, again corresponding to the order in
+<code>corpusname.dat</code>. These are the labels that are used for the
+classification tasks.</li>
+</ul>
+
+<p>Below is an example of what <code>line.toml</code> might look like:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;line-corpus&quot;</span>
+<span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;utf-8&quot;</span> <span class="c1"># optional; this is the default</span>
+<span class="n">num-docs</span> <span class="o">=</span> <span class="mi">1000</span>    <span class="c1"># optional</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;path&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;string&quot;</span><span class="p">}]</span>    <span class="c1"># metadata explained later</span></code></pre></div>
+
+<h3 id="gzipped-line-corpus">GZipped Line Corpus</h3>
+<p>A <code>gz_corpus</code> is simlar to a <code>line_corpus</code>, but each of its files are
+compressed using gzip compression:</p>
+
+<ul>
+  <li><code>gz.toml</code>: the corpus configuration file</li>
+  <li><code>corpusname.dat.gz</code>: a compressed version of <code>corpusname.dat</code></li>
+  <li><code>corpusname.dat.labels.gz</code>: a compressed version of
+<code>corpusname.dat.labels</code></li>
+</ul>
+
+<p>Below is an example of what <code>gz.toml</code> might look like:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;gz-corpus&quot;</span>
+<span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;utf-8&quot;</span> <span class="c1"># optional; this is the default</span>
+<span class="n">num-docs</span> <span class="o">=</span> <span class="mi">1000</span>    <span class="c1"># required</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;path&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;string&quot;</span><span class="p">}]</span>    <span class="c1"># metadata explained later</span></code></pre></div>
+
+<h3 id="file-corpus">File Corpus</h3>
+<p>In a <code>file_corpus</code>, each document is its own file. Your corpus
+configuration file (typically <code>file.toml</code>) should specify a <code>list</code> key to
+point MeTA at a list of all of the documents in your corpus. This file,
+<code>list-full-corpus.txt</code> (where list is whatever you set the <code>list</code> key to in
+your configuration file; typically just the name of the corpus again)
+contains (on each line) a required label for each document followed by the
+path to the file on disk (separated by a tab or a space). If the documents
+don’t have specified class labels, just precede the line with <code>[none]</code> or
+similar.</p>
+
+<p>For example, your <code>file.toml</code> might look like:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;file-corpus&quot;</span>
+<span class="n">list</span> <span class="o">=</span> <span class="s">&quot;dataset&quot;</span>
+<span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;utf-8&quot;</span> <span class="c1"># optional; this is the default</span>
+<span class="n">num-docs</span> <span class="o">=</span> <span class="mi">1000</span>    <span class="c1"># optional</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;path&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;string&quot;</span><span class="p">}]</span>    <span class="c1"># metadata explained later</span></code></pre></div>
+
+<p>and the file <code>dataset-full-corpus.txt</code> might look like:</p>
+
+<pre><code>class-label	relative/path/to/document01.txt
+class-label2	relative/path/to/document02.txt
+class-label	relative/path/to/document03.txt
+class-label3	relative/path/to/document04.txt
+</code></pre>
+
+<h3 id="libsvm-corpus">LIBSVM Corpus</h3>
+<p>If only being used for classification, MeTA can also take libsvm-formatted
+input to create a <code>forward_index</code>. A <code>libsvm_corpus</code> contains the following
+files:</p>
+
+<ul>
+  <li><code>libsvm.toml</code>: the corpus configuration file</li>
+  <li><code>corpus.dat</code>: the LIBSVM-formatted data file</li>
+</ul>
+
+<p>The <code>libsvm.toml</code> file is very straightforward:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;libsvm-corpus&quot;</span></code></pre></div>
+
+<h2 id="metadata">Metadata</h2>
+
+<p>The file <code>metadata.dat</code> may optionally accompany a corpus. The <code>metadata</code>
+parameter in the corpus config file explains the schema of the file. Each line
+in <code>metadata.dat</code> corresponds to the ordered documents in the corpus, and values
+are tab-separated. Below is a simple <code>line.toml</code> corpus config file and
+<code>metadata.dat</code> file.</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="c1"># file: line.toml</span>
+<span class="n">type</span> <span class="o">=</span> <span class="s">&quot;line&quot;</span>
+<span class="n">num-docs</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="p">[{</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;path&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;published&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;uint&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;conference&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;string&quot;</span><span class="p">}]</span></code></pre></div>
+
+<p>Below are the contents of <code>metadata.dat</code>:</p>
+
+<pre><code>papers/acl-short.txt	2015	ACL
+papers/sigir-submission.txt	2016	SIGIR
+papers/sigir-accepted.txt	2015	SIGIR
+old-papers/nips.txt	2007	NIPS
+</code></pre>
+
+<p>Possible types are <code>int</code>, <code>uint</code>, <code>double</code>, and <code>string</code>. Note that the example
+<code>path</code> variable isn’t necessarily a path to an actual file (since this is a line
+corpus), but it may be useful to the user to remember where the original files
+came from.</p>
+
+<p>To access the metadata of an indexed document, simply call</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">doc_id</span> <span class="n">d_id</span> <span class="o">=</span> <span class="c1">// ...</span>
+<span class="k">auto</span> <span class="n">mdata</span> <span class="o">=</span> <span class="n">idx</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">(</span><span class="n">d_id</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">mdata</span><span class="p">.</span><span class="n">get</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;field-name&quot;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></code></pre></div>
+
+<p>If you have no metadata, simply do not specify a <code>metadata</code> key in your
+corpus configuration file.</p>
+
+<h2 id="datasets">Datasets</h2>
+
+<p>There are several public datasets that we’ve converted to the <code>line_corpus</code>
+format:</p>
+
+<ul>
+  <li><a href="https://meta-toolkit.org/data/20newsgroups.tar.gz">20newsgroups</a>, originally
+from <a href="http://qwone.com/~jason/20Newsgroups/">here</a>.</li>
+  <li><a href="https://meta-toolkit.org/data/imdb.tar.gz">IMDB Large Movie Review Dataset</a>,
+originally from <a href="http://ai.stanford.edu/~amaas/data/sentiment/">here</a>.</li>
+  <li>Any <a href="http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/">libsvm-formatted
+dataset</a> can be
+used to create a <code>forward_index</code>.</li>
+</ul>
+
+<h2 id="tokenizers-filters-and-analyzers">Tokenizers, Filters, and Analyzers</h2>
+
+<p>MeTA processes data with a system of tokenizers, filters and analyzers before it
+is indexed.</p>
+
+<p><strong>Tokenizers</strong> come first. They define how to split a document’s content into
+tokens. Some examples are:</p>
+
+<ul>
+  <li><code>icu_tokenizer</code>: converts documents into streams of tokens by following the
+unicode standards for sentence and word segmentation.</li>
+  <li><code>character_tokenizer</code>: converts documents into streams of single characters.</li>
+</ul>
+
+<p><strong>Filters</strong> come next, and can be chained together. They define ways that text
+can be modified or transformed. Here are some examples of filters:</p>
+
+<ul>
+  <li><code>length_filter</code>: this filter accepts tokens that are within a certain length
+and rejects those that are not.</li>
+  <li><code>icu_filter</code>: applies an <a href="http://userguide.icu-project.org/">ICU</a>
+transliteration to each token in the sequence.</li>
+  <li><code>list_filter</code>: this filter either accepts or rejects tokens based on a list.
+For example, you could use a stopword list and reject stopwords.</li>
+  <li><code>porter2_filter</code>: this filter transforms each token according to the
+<a href="http://snowball.tartarus.org/algorithms/english/stemmer.html">Porter2 English
+Stemmer</a> rules.</li>
+</ul>
+
+<p><strong>Analyzers</strong> operate on the output from the filter chain and produce token
+counts from documents. Here are some examples of analyzers:</p>
+
+<ul>
+  <li><code>ngram_word_analyzer</code>: collects and counts sequences of <em>n</em> words (tokens)
+that have been filtered by the filter chain</li>
+  <li><code>ngram_pos_analyzer</code>: same as <code>ngram_word_analyzer</code>, but operates on
+part-of-speech tags from MeTA’s CRF</li>
+  <li><code>tree_analyzer</code>: collects and counts occurrences of parse tree structural
+features, currently the only known implementation of work described in <a href="http://web.engr.illinois.edu/~massung1/files/icsc-2013.pdf">this
+paper</a>.</li>
+  <li><code>libsvm_analyzer</code>: converts a libsvm <code>line_corpus</code> into MeTA format.</li>
+</ul>
+
+<p>For a more detailed intro, see <a href="/analyzers-filters-tutorial.html">Filters and
+Analyzers</a>.</p>
+
+<h2 id="unit-tests">Unit tests</h2>
+
+<p>We’re using <a href="http://banditcpp.org/">Bandit</a>, which is configured to run all
+of MeTA’s tests. You may run</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">./unit-test --reporter<span class="o">=</span>spec</code></pre></div>
+
+<p>to execute the unit tests while displaying output from failed tests.</p>
+
+<p>The file <code>unit_test.cpp</code>, takes various tests as parameters. For example,</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">./unit-test --only<span class="o">=[</span>inverted-index<span class="o">]</span> --reporter<span class="o">=</span>spec</code></pre></div>
+
+<p>only runs tests with the string <code>[inverted-index]</code> in their description. The
+parameter <code>--reporter=spec</code> gives more detailed output on which unit tests are
+being run.</p>
+
+<p>Please note that you must have a valid configuration file (<code>config.toml</code>) in the
+project root with <code>prefix = ../data/</code>, since many unit tests create input based
+on paths stored there.</p>
+
+<h2 id="support">Support</h2>
+
+<p>You should use the <a href="https://forum.meta-toolkit.org">MeTA forum</a> for user
+support. If you have a bug or feature request, see below.</p>
+
+<h2 id="bugs">Bugs</h2>
+
+<p>On GitHub, create an issue and make sure to label it as a bug. Please be as
+detailed as possible (including information such as your operating system
+version, version of MeTA, configuration files, etc.). Including a code
+snippet would be very helpful if applicable.</p>
+
+<p>You many also add feature requests the same way, though of course the
+developers will have their own priority for which features are addressed first.</p>
+
+<h2 id="contribute">Contribute</h2>
+
+<p>Forks are certainly welcome. When you have something you’d like to add, submit
+a pull request and a developer will approve it after review.</p>
+
+<p>We’re also looking for more core developers. If you’re interested, don’t
+hesitate to contact us!</p>
+
+<h2 id="citing-meta">Citing MeTA</h2>
+
+<p>For now, please cite the homepage (<a href="https://meta-toolkit.org">https://meta-toolkit.org</a>) and note which
+revision you used. Once (hopefully) we have a paper, you would be able to cite
+that.</p>
+
+<h2 id="developers">Developers</h2>
+
+<p><a href="http://web.engr.illinois.edu/~massung1/"><strong>Sean Massung</strong></a> started writing MeTA
+in May 2012 as a tool to help with his senior thesis at UIUC. He is currently a
+computer science PhD student there (since 2013), working with <a href="http://www.cs.uiuc.edu/homes/czhai/">Professor
+ChengXiang Zhai</a>. His research interests
+include information retrieval, natural language processing, and education.
+Specifically, he is currently studying how non-native English speakers write in
+English. Can we determine their native language and offer grammatical error
+corrections?</p>
+
+<p><a href="https://chara.cs.illinois.edu/sites/cgeigle/"><strong>Chase Geigle</strong></a> is a computer
+scientist and educator at the University of Illinois at Urbana-Champaign, where
+he is currently pursuing his PhD (starting in 2013). His research interests
+include text mining and machine learning, particularly when applied to the
+domain of education. He is a member of the <a href="http://sifaka.cs.uiuc.edu/ir/">Text Information Management and
+Analysis (TIMAN) group</a> where he studies under
+the supervision of <a href="http://www.cs.uiuc.edu/~czhai/">Dr. ChengXiang Zhai</a>. He is
+a lead developer on the MeTA toolkit and a self-described C++ aficionado.</p>
+
+<h2 id="license">License</h2>
+
+<p>MeTA is dual-licensed under the <a href="http://opensource.org/licenses/MIT">MIT
+License</a> and the <a href="http://opensource.org/licenses/NCSA">University of
+Illinois/NCSA Open Source License</a>.
+These are free, permissive licenses, meaning it is allowed to be included
+in proprietary software.</p>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="footer" class="span12">
+                    <hr/>
+Documentation for <a href="https://github.com/meta-toolkit/meta">MeTA: ModErn Text Analysis</a>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" async
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</html>

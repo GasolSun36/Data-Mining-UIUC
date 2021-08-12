@@ -1,0 +1,388 @@
+1
+00:00:00,300 --> 00:00:03,898
+[MUSIC]
+
+2
+00:00:07,507 --> 00:00:12,454
+This lecture is a brief
+introduction to the course.
+
+3
+00:00:12,454 --> 00:00:15,833
+We'll then do cover
+the objectives of the course.
+
+4
+00:00:15,833 --> 00:00:19,754
+The prerequisites and the course format,
+the reference books and
+
+5
+00:00:19,754 --> 00:00:22,280
+how to complete the course.
+
+6
+00:00:22,280 --> 00:00:25,543
+The objectives of the course
+are the following.
+
+7
+00:00:25,543 --> 00:00:28,967
+First we would like to cover
+the basic concepts and
+
+8
+00:00:28,967 --> 00:00:31,990
+practical techniques in text data mining.
+
+9
+00:00:33,260 --> 00:00:40,139
+So this means we will not be able to cover
+some advance the techniques in detail but
+
+10
+00:00:40,139 --> 00:00:45,702
+rather we are going to choose
+the practical useful techniques and
+
+11
+00:00:45,702 --> 00:00:48,352
+then treat them in more depth.
+
+12
+00:00:48,352 --> 00:00:52,950
+We are going to also cover the basic
+concepts that are very useful for
+
+13
+00:00:52,950 --> 00:00:54,870
+many applications.
+
+14
+00:00:54,870 --> 00:01:02,802
+The second objective is to cover more
+general techniques for text data mining.
+
+15
+00:01:02,802 --> 00:01:07,046
+So we emphasise the coverage
+of general techniques
+
+16
+00:01:07,046 --> 00:01:11,989
+that can be applicable to any
+text in any natural language.
+
+17
+00:01:11,989 --> 00:01:17,402
+We also hope that these techniques
+to either automatically
+
+18
+00:01:17,402 --> 00:01:24,990
+work on problems without any human effort
+or only requiring minimum human effort.
+
+19
+00:01:26,500 --> 00:01:31,500
+So these criteria have helped us to choose
+
+20
+00:01:31,500 --> 00:01:36,830
+techniques that can be
+applied to many applications.
+
+21
+00:01:36,830 --> 00:01:41,620
+This is in contrast to some
+more detailed analysis of text
+
+22
+00:01:41,620 --> 00:01:46,360
+data particularly using natural
+language processing techniques.
+
+23
+00:01:46,360 --> 00:01:49,570
+Now, such techniques
+are also very important.
+
+24
+00:01:49,570 --> 00:01:54,940
+And they are indeed necessary for
+some of the protections
+
+25
+00:01:54,940 --> 00:02:00,770
+where we would like to go in depth to
+understand the text data in more detail.
+
+26
+00:02:01,920 --> 00:02:06,760
+Such detailed understanding
+techniques however are generally
+
+27
+00:02:06,760 --> 00:02:11,410
+not scalable and they tend to
+require a lot of human effort.
+
+28
+00:02:11,410 --> 00:02:15,275
+So they cannot be easy to
+applied into any domain.
+
+29
+00:02:15,275 --> 00:02:20,176
+So as you can imagine in practice it
+would be beneficial to combine both
+
+30
+00:02:20,176 --> 00:02:24,661
+kinds of techniques using
+the general techniques that we'll be
+
+31
+00:02:24,661 --> 00:02:27,167
+covering in this course as a basis.
+
+32
+00:02:27,167 --> 00:02:32,556
+And improve these techniques
+by using more human effort
+
+33
+00:02:32,556 --> 00:02:37,258
+whenever it's appropriate
+We also would like to
+
+34
+00:02:37,258 --> 00:02:42,549
+provide a hands on experience
+to you in Macro aspects.
+
+35
+00:02:42,549 --> 00:02:48,377
+First, you can look at some experience
+was using a text mining toolkit and
+
+36
+00:02:48,377 --> 00:02:51,580
+implementing text mining algorithms.
+
+37
+00:02:51,580 --> 00:02:57,160
+Second, you have the opportunity to
+experiment with some algorithms for
+
+38
+00:02:57,160 --> 00:03:01,570
+text reminding and
+physics to try them on some data sets and
+
+39
+00:03:01,570 --> 00:03:05,450
+to understand how to do experiments.
+
+40
+00:03:05,450 --> 00:03:08,610
+And finally you have
+opportunity to participate in
+
+41
+00:03:08,610 --> 00:03:13,030
+a competition of a text-based
+prediction task.
+
+42
+00:03:13,030 --> 00:03:16,930
+You are expected to know the basic concept
+of computer science for example data
+
+43
+00:03:16,930 --> 00:03:23,090
+structures and some other really
+basic concepts in computers science.
+
+44
+00:03:25,710 --> 00:03:28,570
+You are also expected to be
+familiar with programming and
+
+45
+00:03:28,570 --> 00:03:32,391
+comfortable with programming,
+particularly with C++.
+
+46
+00:03:32,391 --> 00:03:36,300
+This course however is
+not about programming,
+
+47
+00:03:36,300 --> 00:03:39,600
+so you are not expected
+to do a lot of coding.
+
+48
+00:03:39,600 --> 00:03:44,980
+but we're going to do give you a C++
+toolkit that's fairly sophisticated so
+
+49
+00:03:44,980 --> 00:03:48,240
+you have to be comfortable
+with handling such a toolkit.
+
+50
+00:03:49,460 --> 00:03:53,330
+And you may be asked to write
+a small amount of code.
+
+51
+00:03:56,890 --> 00:04:02,640
+It's also useful if you
+know some concepts and
+
+52
+00:04:02,640 --> 00:04:09,670
+techniques in probability and statistics,
+but it is not necessary, knowing
+
+53
+00:04:09,670 --> 00:04:14,260
+such analogy will help you understand
+some of the algorithm in more depth.
+
+54
+00:04:16,290 --> 00:04:21,540
+The format of the course is lectures plus
+
+55
+00:04:21,540 --> 00:04:27,270
+quizzes that will be given
+to you in a regular basis.
+
+56
+00:04:29,300 --> 00:04:31,960
+And there is also an optional
+programming assignment.
+
+57
+00:04:33,280 --> 00:04:40,922
+Now, we've made programming assignments
+optional not because it's not important,
+
+58
+00:04:40,922 --> 00:04:46,292
+but because we suspect that not
+all of you will have the need for
+
+59
+00:04:46,292 --> 00:04:51,262
+computing resources to do
+the programming assignment.
+
+60
+00:04:51,262 --> 00:04:52,083
+So naturally,
+
+61
+00:04:52,083 --> 00:04:56,420
+we would encourage all of you to try
+to do the programming assignment.
+
+62
+00:04:56,420 --> 00:05:00,308
+If possible as that would be a great
+way to learn about the knowledge
+
+63
+00:05:00,308 --> 00:05:04,600
+that would teach in this course.
+
+64
+00:05:05,910 --> 00:05:11,810
+The main reference book for this course
+is a recent book that Sean Massung and
+
+65
+00:05:11,810 --> 00:05:13,970
+I have co-authored.
+
+66
+00:05:13,970 --> 00:05:16,471
+The title is Text Data Management and
+
+67
+00:05:16,471 --> 00:05:21,884
+Analysis A practical introduction to
+information retrieval and text mining.
+
+68
+00:05:21,884 --> 00:05:26,627
+However this reference book is not
+required in the sense that if we follow
+
+69
+00:05:26,627 --> 00:05:29,194
+all the lecture videos closely then you
+
+70
+00:05:29,194 --> 00:05:33,707
+should have little problems because
+working on the quiz problems and
+
+71
+00:05:33,707 --> 00:05:36,993
+will program your assignment
+to pass the course.
+
+72
+00:05:36,993 --> 00:05:41,337
+However the book would be useful
+to give you a high level and
+
+73
+00:05:41,337 --> 00:05:48,370
+systematic description of all the topics
+covered in this course plus some others.
+
+74
+00:05:48,370 --> 00:05:52,500
+It would also help you understand
+some topics in more depth.
+
+75
+00:05:52,500 --> 00:05:58,020
+So if you problems with following some of
+the videos the book may be useful to you.
+
+76
+00:05:59,160 --> 00:06:02,575
+The book is also the reference book for
+another book.
+
+77
+00:06:02,575 --> 00:06:06,438
+If you are interested in buying the book,
+there's a link here.
+
+78
+00:06:06,438 --> 00:06:11,901
+And there should be substantial discount
+for the students of this course.
+
+79
+00:06:11,901 --> 00:06:17,184
+There are also quite a few other
+useful reference books and ratings.
+
+80
+00:06:17,184 --> 00:06:22,099
+And they are available though
+the link at the bottom of this slide.
+
+81
+00:06:22,099 --> 00:06:32,099
+[MUSIC]

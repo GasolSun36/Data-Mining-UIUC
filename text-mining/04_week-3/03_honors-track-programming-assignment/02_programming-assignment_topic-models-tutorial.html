@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MeTA: ModErn Text Analysis : Topic Models</title>
+        <meta name="description" content="A Modern C++ Data Sciences Toolkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div id="header" class="span12">
+                    <h4><a class=brand href="/">MeTA: ModErn Text Analysis</a>
+    <small>A Modern C++ Data Sciences Toolkit</small>
+</h4>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="navigation" class="col-md-3" role="complementary">
+                    
+<nav>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="nav-header">Navigation</li>
+        
+        <li>
+        
+            <a href="/">Home</a>
+        </li>
+        <li><a href="https://github.com/meta-toolkit/meta/">Github</a></li>
+        <li><a href="https://forum.meta-toolkit.org/">Forum</a></li>
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Demos</li>
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="1">
+                    
+                        <a href="/search-demo.html">Search Engine and Rankers</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/nlp-demo.html">Natural Language Processing</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="3">
+                    
+                        <a href="/network-demo.html">Wikipedia Network Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/KDD2017.html">KDD 2017 metapy Tutorial</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="5">
+                    
+                        <a href="/SIGIR18.html">SIGIR 2018 Tutorial: Probabilistic Topic Models</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Tutorials</li>
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="0">
+                    
+                        <a href="/setup-guide.html">Setup Guide</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="1">
+                    
+                        <a href="/overview-tutorial.html">MeTA System Overview</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/profile-tutorial.html">Basic Text Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="3">
+                    
+                        <a href="/analyzers-filters-tutorial.html">Analyzers, Tokenizers, and Filters</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/search-tutorial.html">Search</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="5">
+                    
+                        <a href="/classify-tutorial.html">Classification</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="6">
+                    
+                        <a href="/online-learning.html">Online Learning</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="7">
+                    
+                        <a href="/pos-tagging-tutorial.html">Part of Speech Tagging</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="8">
+                    
+                        <a href="/parsing-tutorial.html">Parsing</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li class="active" data-order="9">
+                    
+                        <a href="/topic-models-tutorial.html">Topic Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="10">
+                    
+                        <a href="/language-models-tutorial.html">Language Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="12">
+                    
+                        <a href="/word-embeddings.html">Word Embeddings</a>
+                    </li>
+                
+            
+        
+        <li class="nav-header">Reference</li>
+        <li><a href="/doxygen/namespaces.html">Doxygen</a></li>
+    <!-- List additional links. It is recommended to add a divider
+        e.g. <li class=divider></li> first to break up the content. -->
+    </ul>
+</nav>
+
+                </div>
+
+                <div id="content" class="col-md-9" role="main">
+                    <div class=page-header>
+    <h2>Topic Models
+        
+    </h2>
+</div>
+
+<p>Topic modeling has become an integral part of any text-analyst’s toolbox,
+and MeTA will allow you to explore generating topics for any of your
+corpora in a general way. It supports several different flavors of
+inference for the LDA topic model: see <a href="doxygen/classmeta_1_1topics_1_1lda__model.html">the API documentation for
+<code>lda_model</code> for a list</a>.
+At the time of writing, the following inference methods are present:</p>
+
+<ul>
+  <li><code>lda_cvb</code>, which uses collapsed variational bayes,</li>
+  <li><code>lda_gibbs</code>, which uses collapsed Gibbs sampling, and</li>
+  <li><code>parallel_lda_gibbs</code>, which uses an approximation of collapsed Gibbs
+ sampling, but does so exploiting multi-processor systems</li>
+</ul>
+
+<p>To run topic the topic modeling application bundled with MeTA, you need to
+configure the <code>lda_model</code> in your configuration file. Here is an example
+configuration:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="n">lda</span><span class="p">]</span>
+<span class="n">inference</span> <span class="o">=</span> <span class="s">&quot;cvb&quot;</span> <span class="c1"># or gibbs, or pargibbs</span>
+<span class="n">max-iters</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">model-prefix</span> <span class="o">=</span> <span class="s">&quot;lda-model&quot;</span></code></pre></div>
+
+<p>(For more information on the parameters, please see the documentation for
+the corresponding inference method you’ve chosen; for instance, <a href="doxygen/classmeta_1_1topics_1_1lda__cvb.html">collapsed
+variational bayes</a>, <a href="doxygen/classmeta_1_1topics_1_1lda__gibbs.html">Gibbs
+sampling</a>, or <a href="doxygen/classmeta_1_1topics_1_1parallel__lda__gibbs.html">approximate
+parallel Gibbs
+sampling</a>.)</p>
+
+<p>Running <code>./lda config.toml</code> will now run your chosen inference method for
+either the maximum number of specified iterations, or until the model
+determines it has converged (whichever one is sooner). Because the number
+of iterations can’t be known ahead of time, progress output is given on a
+per-iteration basis only, and each different inference model may print out
+inference-specific summary information after each iteration (for example,
+<script type="math/tex">P(\mathbf{w} \mid \mathbf{z})</script> for the Gibbs samplers or the maximum
+<script type="math/tex">\Delta \gamma</script> for collapsed variational bayes).</p>
+
+<h2 id="viewing-the-topics-found">Viewing the Topics Found</h2>
+
+<p>MeTA bundles an executable <code>./lda-topics</code> that can report the top words in
+each topic found during inference. To use it, you need to specify the
+configuration file used to do inference, the path to the model’s <code>.phi</code>
+file (which stores <script type="math/tex">P(w\mid z)</script> for each <script type="math/tex">(w, z)</script>), and the number of words
+per topic to output. Below is some sample output for a simple dataset where
+we found two topics and used the default filter chain for text analysis
+(which includes <code>porter2_filter</code>).</p>
+
+<pre><code>$ ./lda-topics config.toml lda-model.phi 15
+Topic 0:
+-----------------------
+smoke (3274): 0.391293
+smoker (3276): 0.0849028
+restaur (3006): 0.0825975
+ban (259): 0.0507666
+cigarett (584): 0.0261952
+non (2445): 0.0232204
+health (1726): 0.0188438
+seat (3134): 0.017816
+smell (3267): 0.0168126
+harm (1709): 0.0162674
+peopl (2649): 0.0154918
+complet (690): 0.0151501
+japan (2010): 0.0137623
+nonsmok (2448): 0.0128775
+tobacco (3638): 0.0120414
+
+Topic 1:
+-----------------------
+job (2019): 0.156795
+part (2607): 0.127387
+student (3443): 0.12414
+colleg (652): 0.0905726
+time (3629): 0.0708495
+money (2341): 0.064298
+work (4013): 0.0372687
+studi (3444): 0.0274538
+learn (2110): 0.0253973
+import (1857): 0.0167224
+earn (1076): 0.015446
+experi (1257): 0.0141118
+school (3119): 0.00852317
+parent (2602): 0.00835476
+societi (3296): 0.00793623
+</code></pre>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="footer" class="span12">
+                    <hr/>
+Documentation for <a href="https://github.com/meta-toolkit/meta">MeTA: ModErn Text Analysis</a>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" async
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</html>
