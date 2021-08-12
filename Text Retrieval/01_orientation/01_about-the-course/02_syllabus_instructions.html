@@ -1,0 +1,737 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Course Description
+ </h1>
+ <p>
+  Recent years have seen a dramatic growth of natural language text data, including web pages, news articles, scientific literature, emails, enterprise documents, and social media such as blog articles, forum posts, product reviews, and tweets. Text data are unique in that they are usually generated directly by humans rather than a computer system or sensors, and are thus especially valuable for discovering knowledge about people’s opinions and preferences, in addition to many other kinds of knowledge that we encode in text.
+ </p>
+ <p>
+  This course will cover search engine technologies, which play an important role in any data mining applications involving text data for two reasons. First, while the raw data may be large for any particular problem, it is often a relatively small subset of the data that are relevant, and a search engine is an essential tool for quickly discovering a small subset of relevant text data in a large text collection. Second, search engines are needed to help analysts interpret any patterns discovered in the data by allowing them to examine the relevant original text data to make sense of any discovered pattern. You will learn the basic concepts, principles, and the major techniques in text retrieval, which is the underlying science of search engines.
+ </p>
+ <h1 level="1">
+  Course Goals and Objectives
+ </h1>
+ <p>
+  By the end the course, you will be able to do the following:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Explain many basic concepts and multiple major algorithms in text retrieval and search engines.
+   </p>
+  </li>
+  <li>
+   <p>
+    Explain how search engines and recommender systems work and how to quantitatively evaluate a search engine.
+   </p>
+  </li>
+  <li>
+   <p>
+    Create a test collection, run text retrieval experiments, and experiment with ideas for improving a search engine (if you complete the programming assignment).
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+ <h1 level="1">
+  Course Outline
+ </h1>
+ <p>
+  The course consists of
+  <strong>
+   6 weekly modules
+  </strong>
+  . Please note: There are no required readings for this course. All readings listed below are optional and are primarily from the textbook
+ </p>
+ <p>
+  C. Zhai and S. Massung,
+  <em>
+   <a href="http://www.morganclaypoolpublishers.com/catalog_Orig/product_info.php?products_id=944">
+    Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+   </a>
+  </em>
+  , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+ </p>
+ <h3 level="3">
+  <strong>
+   Week 1
+  </strong>
+ </h3>
+ <p>
+  <strong>
+   Key Concepts:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Part of Speech tagging, syntactic analysis, semantic analysis, and ambiguity
+   </p>
+  </li>
+  <li>
+   <p>
+    “Bag of words” representation
+   </p>
+  </li>
+  <li>
+   <p>
+    Push, pull, querying, browsing
+   </p>
+  </li>
+  <li>
+   <p>
+    Probability ranking principle
+   </p>
+  </li>
+  <li>
+   <p>
+    Relevance
+   </p>
+  </li>
+  <li>
+   <p>
+    Vector space model
+   </p>
+  </li>
+  <li>
+   <p>
+    Dot product
+   </p>
+  </li>
+  <li>
+   <p>
+    Bit vector representation
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   Recommended Readings:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    N. J. Belkin and W. B. Croft. 1992.
+    <em>
+     Information filtering and information retrieval: Two sides of the same coin?
+    </em>
+    Commun. ACM 35, 12 (Dec. 1992), 29-38.
+   </p>
+  </li>
+  <li>
+   <p>
+    C. Zhai and S. Massung,
+    <em>
+     Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+    </em>
+    , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+    <strong>
+     Chapters 1 - 6
+    </strong>
+    .
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Week 2
+  </strong>
+ </h3>
+ <p>
+  <strong>
+   Key Concepts:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Term frequency (TF)
+   </p>
+  </li>
+  <li>
+   <p>
+    Document frequency (DF) and inverse document frequency (IDF)
+   </p>
+  </li>
+  <li>
+   <p>
+    TF transformation
+   </p>
+  </li>
+  <li>
+   <p>
+    Pivoted length normalization
+   </p>
+  </li>
+  <li>
+   <p>
+    BM25
+   </p>
+  </li>
+  <li>
+   <p>
+    Inverted index and postings
+   </p>
+  </li>
+  <li>
+   <p>
+    Binary coding, unary coding, gamma-coding, and d-gap
+   </p>
+  </li>
+  <li>
+   <p>
+    Zipf’s law
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   Recommended Readings:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    C. Zhai and S. Massung,
+    <em>
+     Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+    </em>
+    , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+    <strong>
+     Chapter 6 - Section 6.3, and Chapter 8
+    </strong>
+    .
+   </p>
+  </li>
+  <li>
+   <p>
+    Ian H. Witten, Alistair Moffat, and Timothy C. Bell.
+    <em>
+     Managing Gigabytes: Compressing and Indexing Documents and Images
+    </em>
+    , Second Edition. Morgan Kaufmann, 1999.
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Week 3
+  </strong>
+ </h3>
+ <p>
+  <strong>
+   Key Concepts:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Cranfield evaluation methodology
+   </p>
+  </li>
+  <li>
+   <p>
+    Precision and recall
+   </p>
+  </li>
+  <li>
+   <p>
+    Average precision, mean average precision (MAP), and geometric mean average precision (gMAP)
+   </p>
+  </li>
+  <li>
+   <p>
+    Reciprocal rank and mean reciprocal rank
+   </p>
+  </li>
+  <li>
+   <p>
+    F-measure
+   </p>
+  </li>
+  <li>
+   <p>
+    Normalized Discounted Cumulative Gain (nDCG)
+   </p>
+  </li>
+  <li>
+   <p>
+    Statistical significance test
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   Recommended Readings:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Mark Sanderson.
+    <em>
+     Test collection based evaluation of information retrieval systems.
+    </em>
+    Foundations and Trends in Information Retrieval 4, 4 (2010), 247-375.
+   </p>
+  </li>
+  <li>
+   <p>
+    C. Zhai and S. Massung,
+    <em>
+     Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+    </em>
+    , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+    <strong>
+     Chapter 9
+    </strong>
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Week 4
+  </strong>
+ </h3>
+ <p>
+  <strong>
+   Key Concepts:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    p(R=1|q,d), query likelihood, and p(q|d)
+   </p>
+  </li>
+  <li>
+   <p>
+    Statistical and unigram language models
+   </p>
+  </li>
+  <li>
+   <p>
+    Maximum likelihood estimate
+   </p>
+  </li>
+  <li>
+   <p>
+    Background, collection, and document language models
+   </p>
+  </li>
+  <li>
+   <p>
+    Smoothing of unigram language models
+   </p>
+  </li>
+  <li>
+   <p>
+    Relation between query likelihood and TF-IDF weighting
+   </p>
+  </li>
+  <li>
+   <p>
+    Linear interpolation (i.e., Jelinek-Mercer) smoothing
+   </p>
+  </li>
+  <li>
+   <p>
+    Dirichlet Prior smoothing
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   Recommended Readings:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    C. Zhai and S. Massung,
+    <em>
+     Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+    </em>
+    , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+    <strong>
+     Chapter 6 - Section 6.4
+    </strong>
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Week 5
+  </strong>
+ </h3>
+ <p>
+  <strong>
+   Key Concepts:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Relevance feedback
+   </p>
+  </li>
+  <li>
+   <p>
+    Pseudo-relevance feedback
+   </p>
+  </li>
+  <li>
+   <p>
+    Implicit feedback
+   </p>
+  </li>
+  <li>
+   <p>
+    Rocchio feedback
+   </p>
+  </li>
+  <li>
+   <p>
+    Kullback-Leiber divergence (KL-divergence) retrieval function
+   </p>
+  </li>
+  <li>
+   <p>
+    Mixture language model
+   </p>
+  </li>
+  <li>
+   <p>
+    Scalability and efficiency
+   </p>
+  </li>
+  <li>
+   <p>
+    Spams
+   </p>
+  </li>
+  <li>
+   <p>
+    Crawler, focused crawling, and incremental crawling
+   </p>
+  </li>
+  <li>
+   <p>
+    Google File System (GFS)
+   </p>
+  </li>
+  <li>
+   <p>
+    MapReduce
+   </p>
+  </li>
+  <li>
+   <p>
+    Link analysis and anchor text
+   </p>
+  </li>
+  <li>
+   <p>
+    PageRank and HITS
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   Recommended Readings:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    C. Zhai and S. Massung,
+    <em>
+     Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+    </em>
+    , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+    <strong>
+     Chapters 7 &amp; 10
+    </strong>
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Week 6
+  </strong>
+ </h3>
+ <p>
+  <strong>
+   Key Concepts:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Learning to rank, features, and logistic regression
+   </p>
+  </li>
+  <li>
+   <p>
+    Content-based filtering
+   </p>
+  </li>
+  <li>
+   <p>
+    Collaborative filtering
+   </p>
+  </li>
+  <li>
+   <p>
+    Beta-Gamma threshold learning
+   </p>
+  </li>
+  <li>
+   <p>
+    Linear utility
+   </p>
+  </li>
+  <li>
+   <p>
+    User profile
+   </p>
+  </li>
+  <li>
+   <p>
+    Exploration-exploitation tradeoff
+   </p>
+  </li>
+  <li>
+   <p>
+    Memory-based collaborative filtering
+   </p>
+  </li>
+  <li>
+   <p>
+    Cold start
+   </p>
+  </li>
+ </ul>
+ <p>
+  <strong>
+   Recommended Readings:
+  </strong>
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    C. Zhai and S. Massung,
+    <em>
+     Text Data Management and Analysis: A Practical Introduction to Information Retrieval and Text Mining
+    </em>
+    , ACM Book Series, Morgan &amp; Claypool Publishers, 2016.
+    <strong>
+     Chapters 10 - Section 10.4, Chapter 11
+    </strong>
+    .
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+ <h1 level="1">
+  Elements of This Course
+ </h1>
+ <p>
+  The course is comprised of the following elements:
+ </p>
+ <p>
+  <strong>
+   Lecture videos
+  </strong>
+  . Each week your instructor will teach you the concepts you need to know through a collection of short video lectures. You may either stream these videos for playback within the browser by clicking on their titles, or you can download each video for later offline playback by clicking the download icon.
+ </p>
+ <p>
+  The videos in each week is usually total 1.5 to 2 hours, but you generally need to spend at least the same amount of time digesting the content in the video. The actual amount of time needed to digest the content would naturally vary according to your background.
+ </p>
+ <p>
+  <strong>
+   Quizzes
+  </strong>
+  . Each week will include one for-credit quiz. Your cumulative score will be used when calculating your final score in the class. There is no time limit on how long you take to complete each quiz, and you will be allowed 3 attempts at the quiz every 8 hours. The deadline for all quizzes is the last day of the course.
+ </p>
+ <p>
+  The quiz in each week should take less than 1 hour to finish, assuming you have mastered the materials to be tested in the quiz, and you should make sure that you have mastered the materials before you attempt to work on the quizzes. You should use the practices to help you understand and master the materials.
+ </p>
+ <p>
+  <strong>
+   Programming assignments
+  </strong>
+  . The programming assignments for this course are optional, but they provide an opportunity for you to practice your programming skills and apply what you've learned in the course.
+ </p>
+ <p>
+  The programming assignment is optional and you can budget about 2 hours each week to work on it if you plan to finish it; you may need to budget more time for this if you are not familiar with C++ programming.
+ </p>
+ <h1 level="1">
+  Information about Lectures
+ </h1>
+ <p>
+  The lectures in this course contain the most important information you need to know. You can access these lectures in each week's lesson section. The following resources accompany each video:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    The play button will open the video up in your browser window and stream the lecture to you. The duration of the video (in hours-minutes-seconds format) is also listed. Some lectures may include in-video questions described above. Within the player that appears, you can click the CC button to activate closed captions. English captions are available for all videos.
+   </p>
+  </li>
+ </ul>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    All video lectures have a discussion forum dedicated to them. This is a great place to discuss any questions you have about the content of the video or to share your ideas and responses to the video.
+   </p>
+  </li>
+ </ul>
+ <h1 level="1">
+  Discussion Forums
+ </h1>
+ <p>
+  The discussion forums are a key element of this course. Be sure to read more
+  <a href="https://www.coursera.org/learn/text-retrieval/supplement/It2Sa/about-the-discussion-forums">
+   about the discussion forums
+  </a>
+  and how you can make the most of them in this class.
+ </p>
+ <h1 level="1">
+  How to Pass the Course
+ </h1>
+ <p>
+  I am continually looking to improve this course and may encounter some issues requiring us to make changes sooner rather than later. As such, this syllabus is subject to change. I appreciate your input and ask that you have patience as we make adjustments to this course. I also recognize that this is no ordinary course. You may have different perspectives and different goals for this course than some of your peers, or that I could have anticipated. Therefore, I want to empower you to customize this course to meet your needs.
+ </p>
+ <p>
+  To qualify for a Course Certificate, simply start verifying your coursework at the beginning of the course, get an
+  <strong>
+   7
+  </strong>
+  <strong>
+   0% or higher
+  </strong>
+  on all quizzes and assignments combined, and pay the fee. Coursera
+  <a href="https://learner.coursera.help/hc/en-us/articles/209819033-Apply-for-Financial-Aid">
+   Financial Aid
+  </a>
+  is available to offset the registration cost for learners with demonstrated economic needs. If you have questions about Course Certificates,
+  <a href="https://learner.coursera.help/hc/en-us/sections/201895943-Course-Certificates">
+   please see the help topics here
+  </a>
+  .
+ </p>
+ <p>
+  Also note that this course is in the
+  <a href="https://www.coursera.org/specialization/datamining/20">
+   Data Mining Specialization
+  </a>
+  offered by the University of Illinois at Urbana-Champaign. By earning a Course Certificate in this course, you are on your way toward earning a
+  <a href="https://www.coursera.org/specializations/datamining">
+   Specialization Certificate in Data Mining
+  </a>
+  . You may also choose to pre-pay for the entire Specialization, at a discount. See more information about
+  <a href="https://learner.coursera.help/hc/en-us/articles/208280146-Pay-for-a-course-or-Specialization">
+   specialization payments
+  </a>
+  here.
+ </p>
+ <p>
+  <strong>
+   If you choose not to pay the fee
+  </strong>
+  , you can still audit the course. You will still be able to view all videos, submit practice quizzes, and view required assessments. Auditing does not include the option to submit required assessments. As such, you will not be able to earn a grade or a Course Certificate.
+ </p>
+ <h2 level="2">
+  Getting and Giving Help
+ </h2>
+ <p>
+  You can get/give help via the following means:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://courserahelp.zendesk.com/hc/en-us/">
+      Learner Help Center
+     </a>
+    </strong>
+    to find information regarding specific technical problems. For example, technical problems would include error messages, difficulty submitting assignments, or problems with video playback. If you cannot find an answer in the documentation, you can also report your problem to the Coursera staff by clicking on the
+    <strong>
+     Contact Us!
+    </strong>
+    link available on each topic's page within the Learner Help Center.
+   </p>
+  </li>
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://www.coursera.org/learn/text-retrieval/forum/VNWXSgylEeaZrBJIefqa4w/discussions?sort=lastActivityAtDesc&amp;page=1">
+      C
+     </a>
+    </strong>
+    <strong>
+     <a href="https://www.coursera.org/learn/text-retrieval/forum/VNWXSgylEeaZrBJIefqa4w/discussions?sort=lastActivityAtDesc&amp;page=1">
+      ontent Issues
+     </a>
+    </strong>
+    forum to report errors in lecture video content, assignment questions and answers, assignment grading, text and links on course pages, or the content of other course materials. University of Illinois staff and Community Mentors will monitor this forum and respond to issues.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Note: Due to the large number of learners enrolled in this course, I am not able to answer emails sent directly to my account. Rather, all questions should be reported as described above.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

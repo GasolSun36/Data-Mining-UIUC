@@ -1,0 +1,34 @@
+[SOUND]
+Hello, welcome to the course in Text and
+Retrieval and Search Engines. I'm ChengXiang Zhia. I have a nickname Cheng. I'm a Professor of the Department of
+Computer Science at the University of Illinois at Urbana-Champaign. This first lecture is basically
+an introduction to the course, a brief introduction to what
+we will cover in the course. We're going to first talk about the data
+mining specialization seeing this course is part of that specialization. And then we will cover motivation
+objectives of the course, this will be followed by prerequisites and
+course format and reference books. And then finally,
+we will talk about the course schedule, which has a number of topics to be
+covered in the rest of this course. So the data mining specialization
+offered by the University of Illinois at Urbana-Champaign is really to address
+the need for their mining techniques to handle a lot of big data,
+to turn the big data into knowledge. There are five lecture-based courses, as you see on the slide,
+plus one capstone project in the end. I'm teaching two of them,
+which is this course, Text Retrieval and Search Engines, and this one. The two courses that I cover
+here are all about text data. In contrast,
+the other courses are covering more general techniques that can be
+applied to all kinds of data. So pattern discovery,
+taught by Professor Jiawei Han, and cluster analysis, again taught by him,
+about the general data mining techniques to handle structured and
+unstructured text data. And data visualization covered by
+Professor John Hart, is about the general visualization techniques, again,
+applicable to all kinds of data. So the motivation for
+this course, in fact, also for the other courses that I'm teaching,
+is that we have a lot of text data and the data is everywhere,
+is growing rapidly. So you must have been
+experiencing this growth. Just think about how much text data
+you're dealing with every day, I list some date types here. For example, on the Internet we see
+a lot of web pages, news articles, etc., and then we have blog articles, emails, scientific literature, and tweets. As we are speaking, maybe a lot
+of tweets are being written, and a lot of emails are being sent. So, the amount of text data is beyond
+our capacity to understand, then. Also, the amount of data makes it
+possible to actually analyze the data to discover interesting knowledge. And that's what we meant by
+harnessing big text data. [MUSIC]

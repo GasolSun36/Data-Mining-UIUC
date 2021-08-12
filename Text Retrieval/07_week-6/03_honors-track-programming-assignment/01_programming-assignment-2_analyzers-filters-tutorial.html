@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MeTA: ModErn Text Analysis : Analyzers, Tokenizers, and Filters</title>
+        <meta name="description" content="A Modern C++ Data Sciences Toolkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div id="header" class="span12">
+                    <h4><a class=brand href="/">MeTA: ModErn Text Analysis</a>
+    <small>A Modern C++ Data Sciences Toolkit</small>
+</h4>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="navigation" class="col-md-3" role="complementary">
+                    
+<nav>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="nav-header">Navigation</li>
+        
+        <li>
+        
+            <a href="/">Home</a>
+        </li>
+        <li><a href="https://github.com/meta-toolkit/meta/">Github</a></li>
+        <li><a href="https://forum.meta-toolkit.org/">Forum</a></li>
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Demos</li>
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="1">
+                    
+                        <a href="/search-demo.html">Search Engine and Rankers</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/nlp-demo.html">Natural Language Processing</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="3">
+                    
+                        <a href="/network-demo.html">Wikipedia Network Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/KDD2017.html">KDD 2017 metapy Tutorial</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="5">
+                    
+                        <a href="/SIGIR18.html">SIGIR 2018 Tutorial: Probabilistic Topic Models</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+            
+        
+            
+            
+
+            
+                
+                    <li class="nav-header">Tutorials</li>
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="0">
+                    
+                        <a href="/setup-guide.html">Setup Guide</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="1">
+                    
+                        <a href="/overview-tutorial.html">MeTA System Overview</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="2">
+                    
+                        <a href="/profile-tutorial.html">Basic Text Analysis</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li class="active" data-order="3">
+                    
+                        <a href="/analyzers-filters-tutorial.html">Analyzers, Tokenizers, and Filters</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="4">
+                    
+                        <a href="/search-tutorial.html">Search</a>
+                    </li>
+                
+            
+                
+                
+            
+                
+                
+                    
+                        <li data-order="5">
+                    
+                        <a href="/classify-tutorial.html">Classification</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="6">
+                    
+                        <a href="/online-learning.html">Online Learning</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="7">
+                    
+                        <a href="/pos-tagging-tutorial.html">Part of Speech Tagging</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="8">
+                    
+                        <a href="/parsing-tutorial.html">Parsing</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="9">
+                    
+                        <a href="/topic-models-tutorial.html">Topic Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="10">
+                    
+                        <a href="/language-models-tutorial.html">Language Models</a>
+                    </li>
+                
+            
+                
+                
+                    
+                        <li data-order="12">
+                    
+                        <a href="/word-embeddings.html">Word Embeddings</a>
+                    </li>
+                
+            
+        
+        <li class="nav-header">Reference</li>
+        <li><a href="/doxygen/namespaces.html">Doxygen</a></li>
+    <!-- List additional links. It is recommended to add a divider
+        e.g. <li class=divider></li> first to break up the content. -->
+    </ul>
+</nav>
+
+                </div>
+
+                <div id="content" class="col-md-9" role="main">
+                    <div class=page-header>
+    <h2>Analyzers, Tokenizers, and Filters
+        
+    </h2>
+</div>
+
+<p>The first step in creating an index over any sort of text data is the
+“tokenization” process. At a high level, this simply means converting your
+individual text documents into sparse vectors of counts of terms—these
+sparse vectors are then typically consumed by an indexer to output an
+<code>inverted_index</code> over your corpus.</p>
+
+<p>MeTA structures this text analysis process into several layers in order to
+give you as much power and control over the way your text is analyzed as
+possible. The important components are</p>
+
+<ul>
+  <li><code>analyzer</code>s, which take <code>document</code>s from the <code>corpus</code> and convert their
+content into sparse vectors of counts;</li>
+  <li><code>tokenizer</code>s, which take a <code>document</code>’s content and split it into a
+stream of tokens; and</li>
+  <li><code>filter</code>s, which take a stream of tokens, perform operations on them
+(like stemming, filtering, and other mutations), and also produce a
+stream of tokens.</li>
+</ul>
+
+<p>An <code>analyzer</code>, in most cases, will take a “filter chain” that is used to
+generate the final tokens for its tokenization process: the filter chains
+are always defined as a specific <code>tokenizer</code> class followed by a sequence
+of 0 or more <code>filter</code> classes, each of which reads from the previous
+class’s output. For example, here is a simple filter chain that lowercases
+all tokens and only keeps tokens with a certain length:</p>
+
+<pre><code>icu_tokenizer -&gt; lowercase_filter -&gt; length_filter
+</code></pre>
+
+<h2 id="using-the-default-filter-chain">Using the Default Filter Chain</h2>
+
+<p>MeTA defines a “sane default” filter chain that you are encouraged to use
+for general text analysis in the absence of any specific requirements. To
+use it, you should specify the following in your configuration file:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ngram-word&quot;</span>
+<span class="n">ngram</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="s">&quot;default-unigram-chain&quot;</span></code></pre></div>
+
+<p>This configures your text analysis process to consider unigrams of words
+generated by running each of your documents through the default filter
+chain. This filter chain should work well for most languages, as all of
+its operations (including but not limited to tokenization and sentence
+boundary detection) are defined in terms of the Unicode standard wherever
+possible.</p>
+
+<p>To consider both unigrams and bigrams, your configuration file should look
+like the following:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ngram-word&quot;</span>
+<span class="n">ngram</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="s">&quot;default-unigram-chain&quot;</span>
+
+<span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ngram-word&quot;</span>
+<span class="n">ngram</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="s">&quot;default-chain&quot;</span></code></pre></div>
+
+<p>Each <code>[[analyzers]]</code> block defines a single analyzer and its corresponding
+filter chain: you can use as many as you would like—the tokens generated
+by each analyzer you specified will be counted and placed in a single
+sparse vector of counts. This is useful for combining multiple different
+kinds of features together into your document representation. For example,
+the following configuration would combine unigram words, bigram
+part-of-speech tags, tree skeleton features, and subtree features.</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ngram-word&quot;</span>
+<span class="n">ngram</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="s">&quot;default-unigram-chain&quot;</span>
+
+<span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ngram-pos&quot;</span>
+<span class="n">ngram</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="p">[{</span><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;icu-tokenizer&quot;</span><span class="p">},</span> <span class="p">{</span><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;ptb-normalizer&quot;</span><span class="p">}]</span>
+<span class="n">crf-prefix</span> <span class="o">=</span> <span class="s">&quot;path/to/crf/model&quot;</span>
+
+<span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;tree&quot;</span>
+<span class="n">filter</span> <span class="o">=</span> <span class="p">[{</span><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;icu-tokenizer&quot;</span><span class="p">},</span> <span class="p">{</span><span class="n">type</span> <span class="o">=</span> <span class="s">&quot;ptb-normalizer&quot;</span><span class="p">}]</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;skel&quot;</span><span class="p">,</span> <span class="s">&quot;subtree&quot;</span><span class="p">]</span>
+<span class="n">tagger</span> <span class="o">=</span> <span class="s">&quot;path/to/greedy-tagger/model&quot;</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="s">&quot;path/to/sr-parser/model&quot;</span></code></pre></div>
+
+<p>The path to the models in the <code>tree</code> and <code>ngram-pos</code> analyzers is wherever you
+put the files downloaded from the <a href="https://github.com/meta-toolkit/meta/releases">current
+release</a>.</p>
+
+<h2 id="getting-creative-specifying-your-own-filter-chain">Getting Creative: Specifying Your Own Filter Chain</h2>
+
+<p>If your application requires specific text analysis operations, you can
+specify directly what your filter chain should look like by modifying your
+configuration file. Instead of <code>filter</code> being a string parameter as above,
+we will change <code>filter</code> to look very much like the <code>[[analyzers]]</code> blocks:
+each <code>analyzer</code> will have a series of <code>[[analyzers.filter]]</code> blocks, each
+of which defines a step in the filter chain. <strong>All filter chains must start
+with a tokenizer.</strong> Here is an example filter chain for unigram words like
+the one at the beginning of this tutorial:</p>
+
+<div class="highlight"><pre><code class="language-toml" data-lang="toml"><span class="p">[[</span><span class="n">analyzers</span><span class="p">]]</span>
+<span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ngram-word&quot;</span>
+<span class="n">ngram</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="p">[[</span><span class="n">analyzers</span><span class="p">.</span><span class="n">filter</span><span class="p">]]</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;icu-tokenizer&quot;</span>
+
+    <span class="p">[[</span><span class="n">analyzers</span><span class="p">.</span><span class="n">filter</span><span class="p">]]</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;lowercase&quot;</span>
+
+    <span class="p">[[</span><span class="n">analyzers</span><span class="p">.</span><span class="n">filter</span><span class="p">]]</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;length&quot;</span>
+    <span class="n">min</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="mi">35</span></code></pre></div>
+
+<p>MeTA provides many different classes to support building filter chains.
+Please look at the API documentation for more information. In particular,
+the <a href="doxygen/namespacemeta_1_1analyzers_1_1tokenizers.html"><code>analyzers::tokenizers</code>
+namespace</a> and the
+<a href="doxygen/namespacemeta_1_1analyzers_1_1filters.html"><code>analyzers::filters</code>
+namespace</a>
+should give you a good idea of the capabilities—the static public
+attribute <code>id</code> for a given class is the string you need to use for the
+“type” in the configuration file.</p>
+
+<h2 id="extending-meta-with-your-own-filters">Extending MeTA With Your Own Filters</h2>
+
+<p>In certain situations, you may want to do more complex text analysis by
+defining your own components to plug into the filter chain. To do this,
+you should first determine what kind of component you want to add.</p>
+
+<ul>
+  <li>Add an <code>analyzer</code> if you want to define an entirely new kind of token
+(e.g., tree features).</li>
+  <li>Add a <code>tokenizer</code> if you want to change the way that tokens are
+generated directly using the document’s plain-text content.</li>
+  <li>Add a <code>filter</code> if you want to mutate, remove, or inject tokens into an
+existing stream of tokens.</li>
+</ul>
+
+<h3 id="adding-an-analyzer">Adding an Analyzer</h3>
+
+<p>To define your own analyzer is to specify your own mechanism for document
+tokenization entirely. This is typically done in cases where analyzing the
+text of a document directly is not sufficient (or not meaningful). A good
+example of the need for a new analyzer is the existing <code>tree_analyzer</code>,
+which tokenizes documents based on counts of parse tree features.</p>
+
+<p>Adding your own analyzer is relatively straightforward: you should subclass
+from <code>analyzer</code> to start. There is one slight caveat, however: <code>analyzer</code>s
+are required to be clonable by the internal implementation. This is easily
+solved by adapting your subclassing specification from</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">my_analyzer</span> <span class="o">:</span> <span class="k">public</span> <span class="n">meta</span><span class="o">::</span><span class="n">analyzers</span><span class="o">::</span><span class="n">analyzer</span>
+<span class="p">{</span>
+    <span class="cm">/* things */</span>
+<span class="p">};</span></code></pre></div>
+
+<p>to</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">my_analyzer</span> <span class="o">:</span> <span class="k">public</span> <span class="n">meta</span><span class="o">::</span><span class="n">util</span><span class="o">::</span><span class="n">clonable</span><span class="o">&lt;</span><span class="n">meta</span><span class="o">::</span><span class="n">analyzers</span><span class="o">::</span><span class="n">analyzer</span><span class="p">,</span>
+                                                <span class="n">my_analyzer</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="cm">/* things */</span>
+<span class="p">};</span></code></pre></div>
+
+<p>and providing a valid copy constructor. The polymorphic cloning facility
+is taken care of by the base <code>analyzer</code> combined with the <code>util::clonable</code>
+mixin.</p>
+
+<p>Most of the work will take place in the
+<code>tokenize(const corpus::document&amp;, featurizer&amp;)</code> function, which is
+responsible for taking the content of the document and inserting feature
+identifiers and their values into the <code>featurizer</code> given. Feature
+identifiers are unique strings, and you should interact with the
+<code>featurizer</code> instance by using its <code>operator()</code> (see <a href="doxygen/html/classmeta_1_1analyzers_1_1featurizer.html">the Doxygen for
+<code>featurizer</code></a>).</p>
+
+<p>Your <code>analyzer</code> object will be a <strong>thread-local instance</strong> during indexing,
+so be aware that member variables are <em>not</em> shared across threads, and that
+access to any static member variables should be properly synchronized. We
+<em>strongly encourage</em> state-less analyzers (that is, analyzers that are
+capable of operating on a single document at a time without keeping context
+information).</p>
+
+<p>To be able to use your analyzer by specifying it in a configuration file,
+it must be registered with the toolkit. You can do this by calling the
+following function in <code>main()</code> somewhere before you create your index:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">meta</span><span class="o">::</span><span class="n">analyzers</span><span class="o">::</span><span class="n">register_analyzer</span><span class="o">&lt;</span><span class="n">my_analyzer</span><span class="o">&gt;</span><span class="p">();</span></code></pre></div>
+
+<p>The class <code>my_analyzer</code> should also have a static <code>util::string_view</code>
+member <code>id</code> that specifies the string that should be used to identify that
+analyzer to the factory—this id must be unique.</p>
+
+<p>If you require special construction behavior (beyond default
+construction), you should specialize the <code>make_analyzer()</code> function for
+your specific analyzer class to extract additional information from the
+configuration file: that specialization would look something like this:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">namespace</span> <span class="n">meta</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">analyzers</span>
+<span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">analyzer</span><span class="o">&gt;</span>
+<span class="n">make_analyzer</span><span class="o">&lt;</span><span class="n">my_analyzer</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">table</span><span class="o">&amp;</span> <span class="n">global</span><span class="p">,</span>
+                           <span class="k">const</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">table</span><span class="o">&amp;</span> <span class="n">local</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The first parameter to <code>make_analyzer()</code> is the configuration group for the
+<em>entire</em> configuration file, and the second parameter is the local
+configuration group for your analyzer block. Generally, you will only use
+the local configuration group unless you need to read some global paths
+from the main configuration file.</p>
+
+<h3 id="adding-a-tokenizer">Adding a Tokenizer</h3>
+
+<p>To define your own tokenizer is to specify a new mechanism for initially
+separating the textual content of a document into a series of discrete
+“tokens”. These tokens may be modified later via filters (they may be
+split, removed, or otherwise modified), but a tokenizer’s job is to do
+this initial separation work. Creating a new tokenizer should be a
+relatively rare occurrence, as the existing <code>icu_tokenizer</code> should perform
+well for most languages due to its adherence to the Unicode standard (and
+its related annexes).</p>
+
+<p>Adding your own tokenizer is very similar to adding an analyzer: you need
+to subclass <code>token_stream</code> now, and the same clonable caveat remains, so
+your declaration should look something like this:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">my_tokenizer</span> <span class="o">:</span> <span class="k">public</span> <span class="n">meta</span><span class="o">::</span><span class="n">util</span><span class="o">::</span><span class="n">clonable</span><span class="o">&lt;</span><span class="n">token_stream</span><span class="p">,</span> <span class="n">my_tokenizer</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="cm">/* things */</span>
+<span class="p">};</span></code></pre></div>
+
+<p>Remember to provide a valid copy constructor!</p>
+
+<p>Your tokenizer class should implement the virtual methods of <a href="doxygen/classmeta_1_1analyzers_1_1token__stream.html">the
+<code>token_stream</code>
+class</a>.</p>
+
+<ul>
+  <li><code>next()</code> obtains the next token in the sequence</li>
+  <li><code>set_content()</code> changes the underlying content being tokenized</li>
+  <li><code>operator bool()</code> determines if there are more tokens left in your
+token stream</li>
+</ul>
+
+<p>To be able to use your tokenizer by specifying it in a configuration file,
+it must be registered with the factory. You can do this by calling the
+following function in <code>main()</code> somewhere before you create your index:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">meta</span><span class="o">::</span><span class="n">analyzers</span><span class="o">::</span><span class="n">register_tokenizer</span><span class="o">&lt;</span><span class="n">my_tokenizer</span><span class="o">&gt;</span><span class="p">();</span></code></pre></div>
+
+<p>The class <code>my_tokenizer</code> should also have a static member <code>id</code> that
+specifies the string to be used to identify that tokenizer to the
+factory—this id must be unique.</p>
+
+<p>If you require special construction behavior (beyond default
+construction), you may specialize the <code>make_tokenizer()</code> function for your
+specific tokenizer class to extract additional information from the
+configuration file: that specialization would look something like this:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">namespace</span> <span class="n">meta</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">analyzers</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">tokenizers</span>
+<span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">token_stream</span><span class="o">&gt;</span>
+    <span class="n">make_tokenizer</span><span class="o">&lt;</span><span class="n">my_tokenizer</span><span class="o">&gt;</span><span class="p">(</span><span class="k">const</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">table</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The configuration group passed to this function is the configuration block
+for your tokenizer.</p>
+
+<h3 id="adding-a-filter">Adding a Filter</h3>
+
+<p>To add a filter is to specify a new mechanism for transforming existing
+token streams after they have been created from a document. This should be
+the most common occurrence, as it’s also the most general and encompasses
+things like lexical analysis, filtering, stop word removal, stemming, and
+so on.</p>
+
+<p>Creating a new filter is nearly identical to creating a new tokenizer
+class: you will subclass <code>token_stream</code> (using the <code>util::clonable</code> mixin)
+and implement the virtual functions of <code>token_stream</code>. The major
+difference is that a filter class’s constructor takes as its first
+parameter the <code>token_stream</code> to read from (this is passed as a
+<code>std::unique_ptr&lt;token_stream&gt;</code> to signify that your filter class should
+take ownership of that source).</p>
+
+<p>Registration of a new filter class is done as follows:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">meta</span><span class="o">::</span><span class="n">analyzers</span><span class="o">::</span><span class="n">filters</span><span class="o">::</span><span class="n">register_filter</span><span class="o">&lt;</span><span class="n">my_filter</span><span class="o">&gt;</span><span class="p">();</span></code></pre></div>
+
+<p>And the following is the specialization of the <code>make_tokenizer()</code> function
+that would be required if you need special construction behavior:</p>
+
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">namespace</span> <span class="n">meta</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">analyzers</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">filters</span>
+<span class="p">{</span>
+<span class="k">template</span> <span class="o">&lt;&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">token_stream</span><span class="o">&gt;</span>
+    <span class="n">make_fitler</span><span class="o">&lt;</span><span class="n">my_filter</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">token_stream</span><span class="o">&gt;</span> <span class="n">source</span><span class="p">,</span>
+                           <span class="k">const</span> <span class="n">cpptoml</span><span class="o">::</span><span class="n">table</span><span class="o">&amp;</span> <span class="n">config</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="footer" class="span12">
+                    <hr/>
+Documentation for <a href="https://github.com/meta-toolkit/meta">MeTA: ModErn Text Analysis</a>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" async
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</html>

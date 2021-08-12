@@ -1,0 +1,217 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h2 level="2">
+  Programming Assignment 2: Search Engine Competition
+ </h2>
+ <p>
+  This assignment is a search engine competition where you will freely experiment with different retrieval methods to improve your score. You will be asked to submit your final performance to us, and if you are doing well enough, scores will be granted. Throughout the competition, if you want to know more about a certain class or function, you can use the search toolbar in
+  <a href="https://meta-toolkit.github.io/meta/doxygen/namespaces.html">
+   MeTA's documentation
+  </a>
+  , which provides a brief explanation of the different modules. You might also find some of
+  <a href="https://meta-toolkit.org/setup-guide.html">
+   MeTA's tutorials
+  </a>
+  useful when experimenting with the analyzer and writing new functions. If you have questions about the programming assignment, use the
+  <a href="https://www.coursera.org/learn/text-retrieval/group/pvMMvRhSEeaIJBLsrsqR1Q/discussions/">
+   Programming Assignments Forum
+  </a>
+  . This is a great place to ask questions and also help your fellow classmates.
+ </p>
+ <h2 level="2">
+  Downloading the Assignment
+ </h2>
+ <p>
+  Before downloading this assignment, make sure you have installed MeTA and run the Setup.sh script as detailed in
+  <a href="https://www.coursera.org/learn/text-retrieval/programming/i6RmK/programming-assignment-1">
+   Programming Assignment 1
+  </a>
+  .
+ </p>
+ <p>
+  1. Download Assignment_2.tar.gz and extract it into the parent directory of meta. If meta is in ~/Desktop/, then you should extract the assignment in ~/Desktop/
+ </p>
+ <p>
+  2. In the terminal, change the directory to Assignment_2 and run the bash script setup.sh. This can be done using the following two commands:
+ </p>
+ <pre language="sh">cd Assignment_2/
+./setups.sh</pre>
+ <p>
+  which will move necessary data into correct locations.
+ </p>
+ <p>
+  3. Recompile MeTA:
+ </p>
+ <pre language="sh">cd Assignment_2//build/cmake .. -DCMAKE_BUILD_TYPE=Release; make -j8</pre>
+ <p>
+ </p>
+ <asset assettype="generic" extension="gz" id="2k_nuBoPEeaEhA5mDe1Caw" name="Assignment_2.tar">
+ </asset>
+ <h2 level="2">
+  Competition
+ </h2>
+ <p>
+  The competition involves optimizing your own search engine to search the MOOC's dataset. We have provided you with 100 training queries accompanied by relevance judgments to quantify the effectiveness of your search engine. After optimizing your search engine based on the training queries, it will be evaluated by the automated grader based on another set of 538 testing queries. If your search engine is robust enough, you should expect the MAP value you get on the training queries to be close to the MAP on the testing queries. You can have a look at the training and testing queries in meta/data/moocs/moocs-queries.txt, but do not modify the file.
+ </p>
+ <p>
+  We have created a program for this competition called competition.cpp located in meta/src/index/tools/. Open competition.cpp, read the code within the main function along with the comments, and try to understand what is being performed. You should focus on the two while loops within main. The first loop passes over the 100 training queries and prints the precision at 10 documents and the MAP. The second while loop passes over the 538 testing queries and writes the IDs of the top 50 documents corresponding to each query to the output file output.txt, which is located in Assignment_2/build/Assignment2/.
+ </p>
+ <p>
+  You are free to try to implement any concept that you feel can lead to better retrieval in the MOOC's dataset, even if it was not discussed in class. We provide some pointers below that will help you in achieving higher retrieval performance. The main techniques are programming-based and require writing new functions, but we also provide pointers to some techniques that do not require programming. You are highly encouraged to experiment with the programming-based techniques first.
+ </p>
+ <h2 level="2">
+  Programming-Based
+ </h2>
+ <p>
+  Implement pseudo feedback through Rocchio's method. One simple way to do this is to write a new function in competition.cpp that implements Rocchio feedback. The function should take a query and a set of positive feedback documents as arguments and return a modified query. Call the Rocchio function for each query and its top 10 initially retrieved documents. Then, call the scoring function again on the modified query that was output by Rocchio. This can be done as follows:
+ </p>
+ <p>
+  Replace:
+ </p>
+ <pre language="r">auto ranking = ranker-&gt;score(*idx, query, 50);</pre>
+ <p>
+  with:
+ </p>
+ <pre language="r">auto ranking = ranker-&gt;score(*idx, query, 10);
+auto new_query = Rocchio(query, ranking); // You should implement this function
+ranking = ranker-&gt;score(*idx, new_query, 50);
+</pre>
+ <p>
+  You should perform pseudo feedback on both the training and testing queries, which means that you should replace "auto ranking = ranker-&gt;score(*idx, query, 50);" in the two while loops. Also, note that this is only a suggestion. You can implement the feedback in other ways and using a different number of positive feedback documents.
+ </p>
+ <p>
+  Write a tuning function, similar to the one you saw in Programming Assignment 1, to optimize your ranking function over a suitable set of parameters.
+ </p>
+ <p>
+  Write a new scoring function, similar to the PL2 that you implemented in Assignment 1, that returns a weighted combination of the scores of different retrieval formulas. For example, you can implement something like:
+ </p>
+ <p hasmath="true">
+  $$Score(Q,D)=\alpha BM25(Q,D)+(1−\alpha)DirichletPrior(Q,D)$$ where $$0 &lt; \alpha &lt; 1$$
+ </p>
+ <p>
+  We have already provided you with a scaffold where you can implement your new function. At the top of competition.cpp you can find a commented class called new_ranker along with some functions. Uncomment the code and modify score_one to return the weighted combination you choose. The code assumes that the ranking function has two parameters named "param1" and "param2" and that the ranker can be called from config.toml using the name "newranker.". If your ranking function requires a different number of parameters, you should modify the code accordingly. Also, feel free to change the names of the variables and parameters; the provided code is there just to guide you through writing your new function. After implementing the function, uncomment the first line in main:
+ </p>
+ <pre>index::register_ranker&lt;new_ranker&gt;();</pre>
+ <p>
+  Don't forget to point config.toml to your new ranker. For more information on how to implement your new function, see the last section in
+  <a href="https://meta-toolkit.org/search-tutorial.html">
+   MeTA's Search Tutorial
+  </a>
+  and inspect the code of ranking-experiment.cpp from Assignment 1.
+ </p>
+ <p>
+  If you want to further improve your ranking functions, you might want to have a look at
+  <a href="http://sifaka.cs.uiuc.edu/czhai/pub/tois-diag.pdf">
+   section 6 of this paper
+  </a>
+  , which introduces several empirically-driven enhancements to some of the well-known retrieval functions.
+ </p>
+ <p>
+  Write a function that expands queries with synonyms. Given a query, your function will use a thesaurus to augment the query words with their synonyms. It is a good idea to give the original query words more weight since the synonyms might cause a topic drift in some cases. One crude way to do this is to duplicate the original query words several times and have each synonym appear only once in the modified query. In competition.cpp, you should replace:
+ </p>
+ <pre>query.content(content);</pre>
+ <p>
+  with:
+ </p>
+ <pre>query.content(content);
+query = expand_query(query); // You should write this function
+</pre>
+ <p>
+  Make sure to expand the queries in both while loops.
+ </p>
+ <h2 level="2">
+  Non-Programming Based
+ </h2>
+ <p>
+  Try different ranking functions and different parameters (ideally, you should tune the parameters). MeTA has several built-in rankers other than BM25. For example, you can use the Jelinek-Mercer smoothing ranking function by setting the ranker in config.toml to jelinek-mercer and tuning its parameter lambda. You can check the different built-in rankers in meta/src/index/ranker/. When you open the cpp file of the ranker, you should find a constant string called id whose value you can use in config.toml, in addition to the parameters of the ranking function which are defined in the constructor (see okapi_bm25.cpp and jelinek_mercer.cpp to gain more insight).
+ </p>
+ <p>
+  Index the MOOCs dataset again while experimenting with different tokenization parameters under the analyzers tag in config.toml. You can try different combinations of text filters and select the one that gives the best performance on the training queries. See
+  <a href="https://meta-toolkit.org/analyzers-filters-tutorial.html">
+   MeTA's Analyzers and Filters Tutorial
+  </a>
+  for instructions on how to modify the default filtering behavior.
+ </p>
+ <p>
+  Modify MeTA's default stopwords list, which is located in meta/data/lemur-stopwords.txt. You can extend or shrink the list and check if you can achieve higher performance. After modifying the list, make sure to index the dataset again.
+ </p>
+ <p>
+  After you perform the optimizations, compile MeTA again and run the competition program. You can do so by executing:
+ </p>
+ <pre language="sh">cd Assignment_2/build
+cmake .. -DCMAKE_BUILD_TYPE=Release; make -j8
+./competition ../config.toml
+</pre>
+ <p>
+  The results of the training queries, the precision at 10 documents, and the MAP will be printed. When you are satisfied with your results, run the grader script:
+ </p>
+ <pre language="sh">python grader.py</pre>
+ <p>
+  which will generate a file called submit.txt
+ </p>
+ <p>
+  Submit this file under the assignment's
+  <em>
+   M
+  </em>
+  <em>
+   y Submission
+  </em>
+  tab. Click +
+  <em>
+   Create submission
+  </em>
+  , and upload your file.
+ </p>
+ <p>
+  Note: Always check the feedback from the automated grader on the submissions page after you submit your output. If the nickname you chose is already in use, the grader will ask you to submit your output again using a different nickname.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
