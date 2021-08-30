@@ -1,0 +1,489 @@
+1
+00:00:00,050 --> 00:00:05,777
+[SOUND] Now, we come down to compare
+
+2
+00:00:05,777 --> 00:00:11,312
+these null invariant measures.
+
+3
+00:00:11,312 --> 00:00:12,821
+So, which one is better?
+
+4
+00:00:12,821 --> 00:00:18,092
+We know, we can sense not all those
+null-invariant measures are created
+
+5
+00:00:18,092 --> 00:00:22,519
+equal so, we want to see which
+one's better in all the cases.
+
+6
+00:00:22,519 --> 00:00:26,533
+Let's examine the two
+variable contingency table of
+
+7
+00:00:26,533 --> 00:00:30,580
+the transactions containing milk and
+coffee.
+
+8
+00:00:30,580 --> 00:00:33,340
+Let's look at the case in this data set.
+
+9
+00:00:33,340 --> 00:00:37,630
+So the first, you look at D1 and
+D2, D1 and D2,
+
+10
+00:00:37,630 --> 00:00:44,460
+you probably can see the difference is
+only on the number of null transactions.
+
+11
+00:00:44,460 --> 00:00:47,780
+But you also can see very likely, milk and
+
+12
+00:00:47,780 --> 00:00:51,750
+coffee should get together,
+they should be positive.
+
+13
+00:00:51,750 --> 00:00:55,255
+In that sense,
+you can see all of those five,
+
+14
+00:00:55,255 --> 00:00:59,190
+null-invariant measures,
+they give equal value.
+
+15
+00:00:59,190 --> 00:01:04,179
+In this sense, no matter how many
+transactions on the null part.
+
+16
+00:01:04,179 --> 00:01:06,977
+Okay, they do not change their value.
+
+17
+00:01:06,977 --> 00:01:09,961
+And also they are very close to one,
+in the sense,
+
+18
+00:01:09,961 --> 00:01:13,140
+these are possibly getting together.
+
+19
+00:01:13,140 --> 00:01:18,030
+When you look at D3,
+D3 means mc getting together is quite
+
+20
+00:01:18,030 --> 00:01:22,750
+rare because they get along more frequent.
+
+21
+00:01:22,750 --> 00:01:26,735
+In that sense,
+all their values are very close to zero.
+
+22
+00:01:26,735 --> 00:01:31,273
+Then you look at the D4,
+D4 says mc getting together or mc alone,
+
+23
+00:01:31,273 --> 00:01:35,909
+they are all like 1,000 and
+1,000 and 1,000 cases.
+
+24
+00:01:35,909 --> 00:01:38,621
+No matter how many null transactions,
+
+25
+00:01:38,621 --> 00:01:43,315
+they actually got things right
+in the middle this 0.5, 0.5.
+
+26
+00:01:43,315 --> 00:01:47,527
+Only Jaccard's 0.33,
+actually just in Jaccard,
+
+27
+00:01:47,527 --> 00:01:51,800
+this one means its balance
+is right in the middle.
+
+28
+00:01:51,800 --> 00:01:56,010
+Then we look at cases,
+it could be D5 and D6.
+
+29
+00:01:57,300 --> 00:02:03,039
+D5, if you see this is 1,110 solved cases.
+
+30
+00:02:03,039 --> 00:02:07,491
+So what you probably can see,
+is from coffee point of view,
+
+31
+00:02:07,491 --> 00:02:12,301
+like a coffee guy may say,
+mc are likely getting together,
+
+32
+00:02:12,301 --> 00:02:17,307
+because they get along as 100
+cases buying coffee but not milk.
+
+33
+00:02:17,307 --> 00:02:20,871
+1000 cases we're buying both coffee and
+milk.
+
+34
+00:02:20,871 --> 00:02:26,419
+But for milk guy, they probably say,
+they are very unlikely getting together,
+
+35
+00:02:26,419 --> 00:02:30,960
+because I got 10,000 cases buying milk but
+not coffee.
+
+36
+00:02:30,960 --> 00:02:34,040
+But only 1000 case buying milk and coffee.
+
+37
+00:02:34,040 --> 00:02:37,340
+So, in that case you look
+at different measures.
+
+38
+00:02:37,340 --> 00:02:39,980
+It's interesting to see,
+All Confidence and
+
+39
+00:02:39,980 --> 00:02:45,240
+Jaccard they also say it's closer to zero,
+unlikely getting together.
+
+40
+00:02:45,240 --> 00:02:50,160
+But Max Confidence says it's close to one,
+they are very likely getting together.
+
+41
+00:02:50,160 --> 00:02:53,240
+Then we look at a Kulczynski said,
+I'm right in the middle,
+
+42
+00:02:53,240 --> 00:02:57,080
+because the tug of the war
+on each side is ten to one.
+
+43
+00:02:57,080 --> 00:03:02,680
+Then Cosine said, I'm a little
+prone to unlikely getting together.
+
+44
+00:03:02,680 --> 00:03:04,710
+Now, we change this one even more.
+
+45
+00:03:04,710 --> 00:03:10,105
+This is 1,000 to ten, or 1,000 to 100,000.
+
+46
+00:03:10,105 --> 00:03:13,676
+The coffee guys said they are very,
+very likely getting together.
+
+47
+00:03:13,676 --> 00:03:19,010
+But the milk guy said,
+they are very unlikely getting together.
+
+48
+00:03:19,010 --> 00:03:23,585
+Now in this case,
+you probably can see All Confidence and
+
+49
+00:03:23,585 --> 00:03:29,440
+Jaccard drop down to 0.01, and
+even cosine dropped down to 0.1.
+
+50
+00:03:29,440 --> 00:03:34,350
+But if Max Confidence says, I am very
+confident they are very close to one,
+
+51
+00:03:34,350 --> 00:03:36,504
+because they are very
+likely getting together.
+
+52
+00:03:36,504 --> 00:03:41,868
+But in Kulcyzynski said, I'm still in
+the neutral because this is 100 to one,
+
+53
+00:03:41,868 --> 00:03:45,460
+the other is one to 100,
+they have the equal ratio.
+
+54
+00:03:45,460 --> 00:03:47,360
+So, which one do you like?
+
+55
+00:03:47,360 --> 00:03:51,020
+So, probably we can see D4 to D6.
+
+56
+00:03:51,020 --> 00:03:56,920
+The real case is, that differentiate
+that five null-invariant measures.
+
+57
+00:03:56,920 --> 00:04:00,190
+But we probably can see,
+Kulcyzynski measure
+
+58
+00:04:00,190 --> 00:04:05,170
+holds firm when in these
+very imbalanced cases.
+
+59
+00:04:05,170 --> 00:04:10,772
+But the ratio is balanced on both sides,
+and it holds firm at 0.5.
+
+60
+00:04:10,772 --> 00:04:12,763
+That looks interesting.
+
+61
+00:04:12,763 --> 00:04:18,349
+But on the other hand, we also know
+those cases, some are very imbalanced,
+
+62
+00:04:18,349 --> 00:04:23,255
+we may want to introduce another
+measure called imbalance ratio.
+
+63
+00:04:23,255 --> 00:04:26,965
+The imbalanced ratio is
+introduced in the sense,
+
+64
+00:04:26,965 --> 00:04:30,673
+the support of item set A and
+support of item set B,
+
+65
+00:04:30,673 --> 00:04:36,520
+their differences play important role
+in this imbalance ratio computation.
+
+66
+00:04:36,520 --> 00:04:41,001
+Then you proceed for
+the same cases in the last three,
+
+67
+00:04:41,001 --> 00:04:44,992
+the Kulcyzynski vector holds firms at 0.5.
+
+68
+00:04:44,992 --> 00:04:49,920
+But the imbalance ratio, okay,
+D sub four cases is zero,
+
+69
+00:04:49,920 --> 00:04:53,047
+because they are already balanced.
+
+70
+00:04:53,047 --> 00:04:58,960
+And D sub five cases become 0.89,
+they are rather imbalanced.
+
+71
+00:04:58,960 --> 00:05:04,070
+And D sub six cases,
+it is very imbalanced.
+
+72
+00:05:04,070 --> 00:05:09,930
+So imbalance ratio, really can show
+you how balanced the two sides are.
+
+73
+00:05:09,930 --> 00:05:15,750
+So we feel Kulcyzynski plus imbalance
+ratio, these two things getting together
+
+74
+00:05:15,750 --> 00:05:21,583
+will present a clear picture for
+all the three data sets, D4 through D6.
+
+75
+00:05:22,610 --> 00:05:27,590
+Because D4 is neutral and
+balanced, D5 is neutral but
+
+76
+00:05:27,590 --> 00:05:31,820
+imbalanced, and D6 is neutral but
+very imbalanced.
+
+77
+00:05:33,270 --> 00:05:38,580
+Finally, we're going to show you some
+real data sets like a DBLP data sets,
+
+78
+00:05:38,580 --> 00:05:42,180
+we want to look at
+co-author relationships.
+
+79
+00:05:42,180 --> 00:05:43,660
+So, let's look at this table.
+
+80
+00:05:43,660 --> 00:05:47,430
+This table we got around year 2007.
+
+81
+00:05:47,430 --> 00:05:52,710
+We study the recent database conferences,
+we look at those authors,
+
+82
+00:05:52,710 --> 00:05:57,860
+they publish papers and they co-author
+papers in database conferences.
+
+83
+00:05:57,860 --> 00:06:00,760
+But you can probably see,
+the interesting thing is, for
+
+84
+00:06:00,760 --> 00:06:05,290
+example you look at Hans-Peter Kreigel and
+Martin Pfeifle.
+
+85
+00:06:05,290 --> 00:06:10,553
+Martin Pfeifle got 18 papers, but all of
+them are with with Hans-Peter Kriegel.
+
+86
+00:06:10,553 --> 00:06:16,660
+The Hans-Peter Krieger got 146 papers,
+18 was with Martin Pfeifle.
+
+87
+00:06:16,660 --> 00:06:21,520
+Well, okay, you can see in that cases
+Kulcyzynski shows pretty strong value that
+
+88
+00:06:21,520 --> 00:06:28,120
+simply says, these two authors
+are closely tied together in some way.
+
+89
+00:06:28,120 --> 00:06:30,235
+But they are imbalanced as well.
+
+90
+00:06:30,235 --> 00:06:32,664
+We can see the case of imbalanced ratio,
+
+91
+00:06:32,664 --> 00:06:36,410
+you can either calculate
+the imbalance ratio is really high.
+
+92
+00:06:36,410 --> 00:06:41,492
+So in that case,
+you probably can easily judge Hans-Peter,
+
+93
+00:06:41,492 --> 00:06:45,807
+Kriegel likely to be
+the adviser of Martin Pfeifle.
+
+94
+00:06:45,807 --> 00:06:48,917
+So using Kulcyzynski and imbalance ratio,
+
+95
+00:06:48,917 --> 00:06:54,930
+we can easily see advisor-advisee
+relationships, and close collaborators.
+
+96
+00:06:54,930 --> 00:06:59,310
+In one research paper on
+finding advisor-advisees,
+
+97
+00:06:59,310 --> 00:07:04,730
+we are really using those measures to
+find them with reasonably high accuracy.
+
+98
+00:07:05,920 --> 00:07:09,030
+So finally,
+we will show you a bunch of papers.
+
+99
+00:07:09,030 --> 00:07:14,520
+These are the papers quite representative
+on how to judge the correlation
+
+100
+00:07:14,520 --> 00:07:20,631
+relationship, the different measures,
+including their interest in measure,
+
+101
+00:07:20,631 --> 00:07:26,050
+the non-variant ones and the measure
+we discussed on the Kulcyzynski.
+
+102
+00:07:26,050 --> 00:07:27,781
+Thank you.
+
+103
+00:07:27,781 --> 00:07:37,781
+[MUSIC]

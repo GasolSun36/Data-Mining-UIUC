@@ -1,0 +1,419 @@
+1
+00:00:05,160 --> 00:00:10,468
+Now, we are going to introduce another set of important concepts,
+
+2
+00:00:10,468 --> 00:00:13,285
+closed patterns and max-patterns.
+
+3
+00:00:13,285 --> 00:00:18,173
+Actually, in association rule mining or frequent pattern mining,
+
+4
+00:00:18,173 --> 00:00:20,285
+there is one challenge is,
+
+5
+00:00:20,285 --> 00:00:24,174
+in many cases, we may generate too many frequent patterns.
+
+6
+00:00:24,174 --> 00:00:30,010
+Usually, a long pattern will contain a combinatorial number of sub-patterns.
+
+7
+00:00:30,010 --> 00:00:32,465
+Just give you one simple example.
+
+8
+00:00:32,465 --> 00:00:35,110
+Suppose we get a transaction database.
+
+9
+00:00:35,110 --> 00:00:37,960
+It contains only two transactions.
+
+10
+00:00:37,960 --> 00:00:40,105
+T_sub_1 and T_sub_2.
+
+11
+00:00:40,105 --> 00:00:47,320
+For T_sub_1, it contains only 50 items, a_sub_1 to a_sub_50.
+
+12
+00:00:47,320 --> 00:00:51,310
+For transaction t_2, it contains 100 itemsets,
+
+13
+00:00:51,310 --> 00:00:55,925
+a_sub_1 up to a_sub_100.
+
+14
+00:00:55,925 --> 00:00:58,790
+Suppose we set the minimum support,
+
+15
+00:00:58,790 --> 00:01:01,785
+the absolute minimum support is only one.
+
+16
+00:01:01,785 --> 00:01:03,380
+That means everything is frequent.
+
+17
+00:01:03,380 --> 00:01:09,490
+Then, how many frequent items it contains? Let's have a try.
+
+18
+00:01:09,490 --> 00:01:12,825
+So, for frequent 1-itemsets,
+
+19
+00:01:12,825 --> 00:01:17,569
+we have a_1 occurs twice, a_2 occurs twice,
+
+20
+00:01:17,569 --> 00:01:19,370
+up to a_50 occurs twice,
+
+21
+00:01:19,370 --> 00:01:26,125
+then a_51 occurs only once up to a_100 occurs only once.
+
+22
+00:01:26,125 --> 00:01:28,015
+Then what about 2-itemsets?
+
+23
+00:01:28,015 --> 00:01:34,669
+Actually, 2-itemsets is all the possible combinations of a_1 to a_2,
+
+24
+00:01:34,669 --> 00:01:40,880
+a_1 to a_3, up to a_99 to a_100.
+
+25
+00:01:40,880 --> 00:01:45,120
+You probably can see some are support two,
+
+26
+00:01:45,120 --> 00:01:47,765
+some support is only one.
+
+27
+00:01:47,765 --> 00:01:53,205
+OK. Then we can go on and on up to 99-itemsets,
+
+28
+00:01:53,205 --> 00:01:58,200
+we again get a_1 to a_sub_99,
+
+29
+00:01:58,200 --> 00:01:59,625
+the support is one.
+
+30
+00:01:59,625 --> 00:02:00,960
+We can chop one by one,
+
+31
+00:02:00,960 --> 00:02:02,460
+so finally you get a_2,
+
+32
+00:02:02,460 --> 00:02:07,255
+a_3 to a_sub_100, support is one.
+
+33
+00:02:07,255 --> 00:02:09,900
+Finally, we're get a 100-itemset,
+
+34
+00:02:09,900 --> 00:02:11,965
+where support is only one.
+
+35
+00:02:11,965 --> 00:02:14,655
+If we add all these together,
+
+36
+00:02:14,655 --> 00:02:18,089
+that means 100 choose 1, 100 choose 2,
+
+37
+00:02:18,089 --> 00:02:20,200
+up to 100 choose 100,
+
+38
+00:02:20,200 --> 00:02:21,980
+we would get a huge number,
+
+39
+00:02:21,980 --> 00:02:27,300
+2^100 -1, that many sub-patterns.
+
+40
+00:02:27,300 --> 00:02:29,602
+This is a huge set.
+
+41
+00:02:29,602 --> 00:02:35,740
+For any computer, it's too huge to compute or store.
+
+42
+00:02:35,740 --> 00:02:40,234
+Then, how can we handle such a challenge?
+
+43
+00:02:40,234 --> 00:02:46,029
+One interesting proposal is introduced a concept of close patterns.
+
+44
+00:02:46,029 --> 00:02:47,959
+What is close pattern?
+
+45
+00:02:47,959 --> 00:02:52,405
+We say X is closed if X is frequent,
+
+46
+00:02:52,405 --> 00:02:58,920
+and there exists no super-pattern Y with the same support as X.
+
+47
+00:02:58,920 --> 00:03:01,560
+Just give you a simpler example.
+
+48
+00:03:01,560 --> 00:03:03,610
+We look at the same transaction database,
+
+49
+00:03:03,610 --> 00:03:05,285
+like T_1 and T_2.
+
+50
+00:03:05,285 --> 00:03:07,810
+We still say minimum support is one.
+
+51
+00:03:07,810 --> 00:03:11,829
+So how many close pattern does this transaction contain?
+
+52
+00:03:11,829 --> 00:03:15,220
+So instead of 2^100 - 1,
+
+53
+00:03:15,220 --> 00:03:18,135
+we actually find only two,
+
+54
+00:03:18,135 --> 00:03:22,079
+a_1 to a_50, support is two;
+
+55
+00:03:22,079 --> 00:03:24,985
+a_1 to a_100, support is one.
+
+56
+00:03:24,985 --> 00:03:29,210
+You may say, wait, you may lose something. Let's look at it.
+
+57
+00:03:29,210 --> 00:03:32,180
+Do you know a_1 to a_49?
+
+58
+00:03:32,180 --> 00:03:33,571
+Actually, it's contained here;
+
+59
+00:03:33,571 --> 00:03:35,419
+it must be support of two.
+
+60
+00:03:35,419 --> 00:03:39,140
+Do you know a_1 to a_51?
+
+61
+00:03:39,140 --> 00:03:41,645
+It contains here, support must be one.
+
+62
+00:03:41,645 --> 00:03:45,100
+So you can see you do not lose anything because you
+
+63
+00:03:45,100 --> 00:03:50,645
+got the concrete patterns which are the maximum close to one.
+
+64
+00:03:50,645 --> 00:03:56,220
+In the meantime, you do not lose the support information for any sub-patterns.
+
+65
+00:03:56,220 --> 00:03:57,530
+So to that extent,
+
+66
+00:03:57,530 --> 00:04:02,590
+we can say closed pattern is a lossless compression of frequent patterns.
+
+67
+00:04:02,590 --> 00:04:07,910
+It does reduce the number of patents but does not lose the support information.
+
+68
+00:04:07,910 --> 00:04:13,180
+For example, you will still be able to say a_sub_2 to a_sub_40,
+
+69
+00:04:13,180 --> 00:04:14,515
+the support is two.
+
+70
+00:04:14,515 --> 00:04:19,145
+a_5, a_51, this itemset support is one.
+
+71
+00:04:19,145 --> 00:04:25,379
+Then, let's look at another possible compression called max-patterns.
+
+72
+00:04:25,379 --> 00:04:32,710
+Max-pattern, the definition is very similar except it does not care the support anymore.
+
+73
+00:04:32,710 --> 00:04:38,195
+That means X is a max-pattern if X is frequent
+
+74
+00:04:38,195 --> 00:04:46,390
+and there exists no frequent super-pattern Y which is a super-pattern of X,
+
+75
+00:04:46,390 --> 00:04:49,425
+and we don't care support anymore.
+
+76
+00:04:49,425 --> 00:04:53,140
+So the difference from the closed pattern is we do not care
+
+77
+00:04:53,140 --> 00:04:57,295
+the real support of sub-patterns of a max-pattern.
+
+78
+00:04:57,295 --> 00:05:01,560
+Let's look at the transaction database like this.
+
+79
+00:05:01,560 --> 00:05:04,410
+OK. We still say minimum support is one,
+
+80
+00:05:04,410 --> 00:05:10,235
+then how many max-patterns does this transaction database contain?
+
+81
+00:05:10,235 --> 00:05:12,600
+So we will find only one.
+
+82
+00:05:12,600 --> 00:05:16,740
+The reason is, even a_sub_1 to a_sub_50,
+
+83
+00:05:16,740 --> 00:05:19,495
+the support is two, but remember,
+
+84
+00:05:19,495 --> 00:05:21,460
+we do not care support anymore;
+
+85
+00:05:21,460 --> 00:05:23,670
+for this a_1 to a_sub_50,
+
+86
+00:05:23,670 --> 00:05:27,025
+it does exist, a super-pattern like this,
+
+87
+00:05:27,025 --> 00:05:29,375
+OK, which is also frequent.
+
+88
+00:05:29,375 --> 00:05:32,694
+To that extent, this is a further compression,
+
+89
+00:05:32,694 --> 00:05:34,410
+so you only get a one pattern,
+
+90
+00:05:34,410 --> 00:05:43,940
+but it is a lossy compression because we only know a_sub_1 to a_sub_40 is frequent,
+
+91
+00:05:43,940 --> 00:05:51,194
+but we will not know the real support of a_sub_1 to a_sub_40 and many more.
+
+92
+00:05:51,194 --> 00:05:58,105
+So, you do lose a support information of many frequent itemsets.
+
+93
+00:05:58,105 --> 00:06:01,290
+OK. To that extent, in many applications,
+
+94
+00:06:01,290 --> 00:06:06,585
+mining closed patterns is more desirable than mining max-patterns.
+
+95
+00:06:06,585 --> 00:06:11,140
+We're going to see this in our future discussions.
+
+96
+00:06:11,140 --> 00:06:12,780
+So for this lecture,
+
+97
+00:06:12,780 --> 00:06:17,180
+we mainly give you four recommended readings.
+
+98
+00:06:17,180 --> 00:06:18,600
+The first one, actually,
+
+99
+00:06:18,600 --> 00:06:19,980
+is the first time introduced,
+
+100
+00:06:19,980 --> 00:06:23,880
+frequent patterns and association rules.
+
+101
+00:06:23,880 --> 00:06:28,950
+The second one is the first time introduced, max-patterns.
+
+102
+00:06:28,950 --> 00:06:34,514
+The third one is the first time introduced, the closed patterns.
+
+103
+00:06:34,514 --> 00:06:37,470
+And the fourth one actually is an overview,
+
+104
+00:06:37,470 --> 00:06:41,055
+give you overall, you know, this field,
+
+105
+00:06:41,055 --> 00:06:49,360
+how the frequent pattern mining came and how it evolves up to this stage. Thank you.

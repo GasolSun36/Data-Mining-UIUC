@@ -1,0 +1,362 @@
+1
+00:00:00,230 --> 00:00:06,784
+[SOUND]
+In this session,
+
+2
+00:00:06,784 --> 00:00:10,914
+I'm going to introduce you another
+interesting applications of
+
+3
+00:00:10,914 --> 00:00:15,129
+Pattern Discovery called
+Pattern Discovery for Image Analysis.
+
+4
+00:00:16,820 --> 00:00:18,780
+We know image analysis or
+
+5
+00:00:18,780 --> 00:00:24,070
+computer vision, there have been lots
+of technology developed in this field.
+
+6
+00:00:25,520 --> 00:00:31,440
+Then for, there's one
+interesting recent line of work
+
+7
+00:00:31,440 --> 00:00:36,460
+is using visual pattern
+discovery to do image analysis.
+
+8
+00:00:36,460 --> 00:00:38,770
+We can take this picture as a example.
+
+9
+00:00:39,970 --> 00:00:45,140
+For this image, we may find
+there are many interest points.
+
+10
+00:00:45,140 --> 00:00:48,670
+These interest points we
+call visual primitives.
+
+11
+00:00:48,670 --> 00:00:54,902
+Every visual primitives can be described
+by a set of visual features or
+
+12
+00:00:54,902 --> 00:00:59,346
+you can think is a high
+dimension feature vector.
+
+13
+00:00:59,346 --> 00:01:03,810
+And then, each image is
+a collection of visual primitives.
+
+14
+00:01:03,810 --> 00:01:09,420
+Then, we will study how to turn those
+visual primitives into patterns and
+
+15
+00:01:09,420 --> 00:01:15,070
+how to do pattern minning
+on large number of images.
+
+16
+00:01:15,070 --> 00:01:20,600
+So that means we want to study
+visual pattern discovery problem.
+
+17
+00:01:20,600 --> 00:01:25,640
+For visual pattern discovery,
+we can think about it from this images.
+
+18
+00:01:25,640 --> 00:01:27,733
+We can use feature extraction.
+
+19
+00:01:27,733 --> 00:01:34,207
+We can extract lots of high dimension
+features, they form visual primitives.
+
+20
+00:01:34,207 --> 00:01:38,094
+Those visual primitives can be clustered,
+
+21
+00:01:38,094 --> 00:01:43,800
+based on their space they may
+cluster into visual items, okay?
+
+22
+00:01:43,800 --> 00:01:49,930
+Those visual items, if they are similar,
+then they belong to the same item.
+
+23
+00:01:49,930 --> 00:01:55,450
+You can map them into different item ID,
+for example.
+
+24
+00:01:55,450 --> 00:01:58,770
+You can map this feature into W, and
+
+25
+00:01:58,770 --> 00:02:02,558
+maybe another picture I have of similar
+one, they actually also called W, okay?
+
+26
+00:02:02,558 --> 00:02:09,010
+Then each visual primitive, they can have,
+based on that k-nearest-neighbor,
+
+27
+00:02:09,010 --> 00:02:15,650
+they can form small clusters, and those
+we usually called them a transaction.
+
+28
+00:02:15,650 --> 00:02:20,629
+For example,
+you may find these three visual primitives
+
+29
+00:02:20,629 --> 00:02:24,992
+can form a transaction
+like CBA as a transaction.
+
+30
+00:02:24,992 --> 00:02:32,457
+Then an image may have many transactions,
+okay, in every image.
+
+31
+00:02:32,457 --> 00:02:38,049
+Then if there are many, many images,
+you may, based on their transactions,
+
+32
+00:02:38,049 --> 00:02:44,000
+you do the frequent pattern mining, you
+will be able to find some visual patterns.
+
+33
+00:02:44,000 --> 00:02:48,580
+For example, in these pictures,
+you may find a BA and CA,
+
+34
+00:02:48,580 --> 00:02:53,549
+actually are quite frequent
+together in those transactions.
+
+35
+00:02:53,549 --> 00:02:58,798
+So you can say, B and CA or
+CBA are frequent patterns,
+
+36
+00:02:58,798 --> 00:03:03,830
+are the frequent visual
+patterns in those images.
+
+37
+00:03:05,580 --> 00:03:10,910
+So the simple example could be this,
+suppose we have four pictures.
+
+38
+00:03:10,910 --> 00:03:18,200
+Each picture you may find note, certain
+primitives, visual primitives from items.
+
+39
+00:03:18,200 --> 00:03:21,259
+Those items based on
+the k-nearest-neighbor,
+
+40
+00:03:21,259 --> 00:03:23,320
+they form transactions.
+
+41
+00:03:23,320 --> 00:03:27,980
+Then for this car,
+you may find the two transactions here,
+
+42
+00:03:27,980 --> 00:03:31,630
+G12 and G13, okay?
+
+43
+00:03:31,630 --> 00:03:36,740
+Then they contain a set of items,
+
+44
+00:03:36,740 --> 00:03:41,250
+EDABC, could be the transactions
+containing those items.
+
+45
+00:03:41,250 --> 00:03:45,877
+Each item actually is a set of visual
+primitives from the items, okay?
+
+46
+00:03:47,470 --> 00:03:53,350
+But if you do frequent pattern mining,
+you may find among those images,
+
+47
+00:03:53,350 --> 00:03:58,110
+you can get an AB as frequent item set and
+
+48
+00:03:58,110 --> 00:04:02,950
+actually these AB wrapped in something
+related to the wheels of the car.
+
+49
+00:04:02,950 --> 00:04:07,820
+So that's a reason those frequent
+pattern mining can help identify
+
+50
+00:04:07,820 --> 00:04:11,149
+certain unique features
+in different images.
+
+51
+00:04:12,340 --> 00:04:15,890
+So then the interesting thing could be,
+
+52
+00:04:15,890 --> 00:04:21,590
+because images are spatial data,
+then spatial configuration does matter.
+
+53
+00:04:22,660 --> 00:04:26,923
+Then because sometimes those
+transactions spatially very close,
+
+54
+00:04:26,923 --> 00:04:29,130
+they may overlap each other.
+
+55
+00:04:29,130 --> 00:04:31,480
+Then they may have over counting problem.
+
+56
+00:04:31,480 --> 00:04:36,783
+For example, this AB actually in this
+image, there is only one such AB pattern.
+
+57
+00:04:36,783 --> 00:04:41,350
+But since based on your feature
+image there, clustered together,
+
+58
+00:04:41,350 --> 00:04:46,729
+you get two transactions, you actually
+count AB twice in this picture, okay?
+
+59
+00:04:46,729 --> 00:04:49,480
+So, there's a over counting problem.
+
+60
+00:04:49,480 --> 00:04:55,622
+Another problem encountered in this visual
+pattern discovery is uncertainty problem.
+
+61
+00:04:55,622 --> 00:05:00,020
+Because you may have some,
+like those wheels
+
+62
+00:05:00,020 --> 00:05:04,417
+can be partially occluded
+by other objects or
+
+63
+00:05:04,417 --> 00:05:09,987
+mixed with other objects,
+we have lots of noise, okay?
+
+64
+00:05:09,987 --> 00:05:12,070
+Some feature you may
+not be able to detect.
+
+65
+00:05:13,100 --> 00:05:18,300
+Another is visual synonym and
+polysemy problem that essentially is
+
+66
+00:05:18,300 --> 00:05:23,681
+sometimes the same feature actually
+may erupt in different objects or
+
+67
+00:05:23,681 --> 00:05:29,349
+one object can be represented by
+different kinds of feature sets, okay?
+
+68
+00:05:30,720 --> 00:05:34,730
+So we need to revise our
+
+69
+00:05:34,730 --> 00:05:39,635
+frequent pattern discovery algorithm
+to handle these over counting problem,
+
+70
+00:05:39,635 --> 00:05:44,090
+uncertainty problems, synonym and
+the polysemy problems.
+
+71
+00:05:44,090 --> 00:05:49,495
+Actually, there are interesting studies in
+computer vision community, they developed
+
+72
+00:05:49,495 --> 00:05:54,273
+some interesting visual pattern discovery
+methods for images and video data.
+
+73
+00:05:54,273 --> 00:05:58,231
+So if you are interest in this,
+
+74
+00:05:58,231 --> 00:06:03,713
+I would recommend you study those research
+
+75
+00:06:03,713 --> 00:06:10,122
+papers to gain your
+knowledge to certain depths.
+
+76
+00:06:10,122 --> 00:06:15,859
+[MUSIC]

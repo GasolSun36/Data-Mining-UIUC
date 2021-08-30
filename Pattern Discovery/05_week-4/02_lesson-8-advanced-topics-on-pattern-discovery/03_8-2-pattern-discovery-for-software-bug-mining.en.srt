@@ -1,0 +1,752 @@
+1
+00:00:00,000 --> 00:00:06,603
+[SOUND] Now we examine
+another interesting line
+
+2
+00:00:06,603 --> 00:00:12,028
+of pattern discovery applications.
+
+3
+00:00:12,028 --> 00:00:15,550
+There's pattern discovery for
+software bug mining.
+
+4
+00:00:16,870 --> 00:00:18,990
+We use software all the time.
+
+5
+00:00:18,990 --> 00:00:21,530
+But we also know software
+may contain bugs.
+
+6
+00:00:22,680 --> 00:00:26,327
+But software usually could be quite big,
+quite long, and
+
+7
+00:00:26,327 --> 00:00:29,836
+its running data could be even larger and
+more complex.
+
+8
+00:00:29,836 --> 00:00:33,844
+So automatic debugging,
+finding software bugs,
+
+9
+00:00:33,844 --> 00:00:37,573
+it's a very challenging
+issue because often,
+
+10
+00:00:37,573 --> 00:00:43,130
+there's no clear specification or
+property we can rely on.
+
+11
+00:00:43,130 --> 00:00:48,829
+We have to invest substantial human
+effort first to analyze data,
+
+12
+00:00:48,829 --> 00:00:52,710
+analyze the source code, and analyze bugs.
+
+13
+00:00:52,710 --> 00:00:57,880
+So, if we can have certain
+automated tool to do software
+
+14
+00:00:57,880 --> 00:01:04,930
+reliability analysis to find bugs,
+it will save a lot of people's effort.
+
+15
+00:01:04,930 --> 00:01:10,518
+So for bug detection, there is one
+category called static bug detection,
+
+16
+00:01:10,518 --> 00:01:15,310
+that means you check the source code and
+try to find bugs.
+
+17
+00:01:15,310 --> 00:01:17,690
+Another code dynamic bug detection or
+
+18
+00:01:17,690 --> 00:01:23,240
+testing is you run the code,
+you try to detect where could be the bugs.
+
+19
+00:01:23,240 --> 00:01:26,280
+The debugging usually is
+you give me symptoms or
+
+20
+00:01:26,280 --> 00:01:30,600
+failures, I try to pinpoint
+the bug locations in the code.
+
+21
+00:01:32,810 --> 00:01:36,390
+If we can do good pattern mining because
+
+22
+00:01:36,390 --> 00:01:41,300
+the code are running sequences that
+may contain some hidden patterns.
+
+23
+00:01:41,300 --> 00:01:44,000
+If we can do pattern mining,
+
+24
+00:01:44,000 --> 00:01:49,135
+we will be able to find some common
+patterns and some anomalies.
+
+25
+00:01:49,135 --> 00:01:55,045
+Usually the common patterns likely
+are specifications or properties,
+
+26
+00:01:55,045 --> 00:02:00,825
+but the violations are anomalies comparing
+to the common patterns, likely bugs.
+
+27
+00:02:01,875 --> 00:02:05,245
+So if we can do pattern mining,
+
+28
+00:02:05,245 --> 00:02:10,070
+we mine the patterns, it may narrow
+down the scope of inspection.
+
+29
+00:02:10,070 --> 00:02:14,270
+For example, usually the code locations or
+
+30
+00:02:14,270 --> 00:02:17,330
+predicates that happen
+more in the failing runs.
+
+31
+00:02:17,330 --> 00:02:23,640
+That means every time it fails, it likely
+sees somewhere you can see it happens more
+
+32
+00:02:23,640 --> 00:02:28,950
+for certain predicates or happens more for
+code locations, this kind of patterns.
+
+33
+00:02:28,950 --> 00:02:31,950
+But it happens less in the passing runs.
+
+34
+00:02:31,950 --> 00:02:36,620
+And likely, those code locations or
+predicates are suspicious bug locations.
+
+35
+00:02:36,620 --> 00:02:40,370
+That may narrow down the scope for
+the bug inspection.
+
+36
+00:02:41,710 --> 00:02:48,800
+So the typical software bug detection
+methods contain their mining one,
+
+37
+00:02:48,800 --> 00:02:55,700
+could be mining rules from source code,
+or may find deviant behavior.
+
+38
+00:02:55,700 --> 00:02:59,615
+Those are bugs by a statistic analysis,
+you may find some source coded
+
+39
+00:02:59,615 --> 00:03:05,610
+substantially deviate from the others,
+or you may mine some programming rules.
+
+40
+00:03:05,610 --> 00:03:09,580
+For example,
+you first do a variable value assignment,
+
+41
+00:03:09,580 --> 00:03:11,930
+then you do the condition testing.
+
+42
+00:03:11,930 --> 00:03:14,600
+So if you use frequent itemset mining,
+
+43
+00:03:14,600 --> 00:03:20,300
+you may be able to identify those
+typical program practice or rules.
+
+44
+00:03:20,300 --> 00:03:24,430
+Or you also can mine function
+precedence protocols.
+
+45
+00:03:24,430 --> 00:03:30,620
+Simply says, if you find some functions
+always precede some other functions,
+
+46
+00:03:30,620 --> 00:03:36,560
+so you can use frequent subsequence
+mining to find such patterns.
+
+47
+00:03:36,560 --> 00:03:40,910
+And also, you may reveal
+neglected conditions you base
+
+48
+00:03:40,910 --> 00:03:45,650
+on the different condition whether
+it would be tested or never touched.
+
+49
+00:03:45,650 --> 00:03:47,100
+You use frequent itemset or
+
+50
+00:03:47,100 --> 00:03:50,570
+subgraph mining,
+you'll be able to find such patterns.
+
+51
+00:03:52,210 --> 00:03:56,760
+Another interesting practice is
+mining rules from revision histories.
+
+52
+00:03:56,760 --> 00:04:01,540
+You'll look at sequence of
+the program coded revisions.
+
+53
+00:04:01,540 --> 00:04:04,590
+You'll use frequent itemset pack mining.
+
+54
+00:04:04,590 --> 00:04:08,940
+You may find certain general practice or
+certain anomalies.
+
+55
+00:04:08,940 --> 00:04:14,210
+Actually we are going to
+focus on one interesting bug.
+
+56
+00:04:15,220 --> 00:04:19,290
+We study, try to find copy and paste bugs.
+
+57
+00:04:19,290 --> 00:04:23,854
+So we try to mine copy-paste
+patterns from the source code,
+
+58
+00:04:23,854 --> 00:04:26,997
+then we try to find the copy-paste bugs.
+
+59
+00:04:26,997 --> 00:04:32,649
+This one actually was one interesting
+piece of work published in 2004,
+
+60
+00:04:32,649 --> 00:04:35,580
+called CP-Miner by YY Zhou's group.
+
+61
+00:04:35,580 --> 00:04:39,210
+And we are going to just show this,
+this interesting
+
+62
+00:04:39,210 --> 00:04:42,915
+idea how to extend pattern mining
+to find copy and paste bugs.
+
+63
+00:04:45,110 --> 00:04:48,108
+So copy and paste bugs is very common.
+
+64
+00:04:48,108 --> 00:04:53,417
+For example,
+some statistics show they are 12%
+
+65
+00:04:53,417 --> 00:04:59,589
+of the code in Linux file system
+are copy and paste code, and
+
+66
+00:04:59,589 --> 00:05:06,690
+19% of the code in X Window system,
+also copy and paste.
+
+67
+00:05:06,690 --> 00:05:10,470
+But a copy and paste may introduce errors.
+
+68
+00:05:10,470 --> 00:05:15,477
+For example, the typical one
+called forget-to-change bugs,
+
+69
+00:05:15,477 --> 00:05:18,946
+that means something like this code, okay.
+
+70
+00:05:18,946 --> 00:05:23,698
+If you see the first part,
+the upper part, the for loop, okay,
+
+71
+00:05:23,698 --> 00:05:28,802
+this part and the down part,
+another for loop, these two actually,
+
+72
+00:05:28,802 --> 00:05:35,150
+if you see many other things are just
+the same, but there are something changed.
+
+73
+00:05:35,150 --> 00:05:38,010
+So you likely, this part,
+
+74
+00:05:38,010 --> 00:05:43,890
+the second part, was copy and paste from
+the first part, and then do some changes.
+
+75
+00:05:43,890 --> 00:05:46,860
+But the problem is when
+you do global change,
+
+76
+00:05:46,860 --> 00:05:51,820
+sometimes the programmer may forget
+to change something like here, okay.
+
+77
+00:05:51,820 --> 00:05:58,370
+It means all the total in the front has
+changed to taken, but the last total and
+
+78
+00:05:58,370 --> 00:06:04,560
+the second occurrence in this
+statement forget to change to taken.
+
+79
+00:06:04,560 --> 00:06:09,360
+So this is a very common practice because
+the carelessness of some programmer.
+
+80
+00:06:10,380 --> 00:06:13,130
+But how can we find this kind of bug,
+
+81
+00:06:13,130 --> 00:06:18,157
+actually this bug has really
+happened in Linux 2.6.6?
+
+82
+00:06:18,157 --> 00:06:23,689
+Okay, then we will see how to
+automatically find such bugs.
+
+83
+00:06:24,820 --> 00:06:26,360
+The general sequence,
+
+84
+00:06:26,360 --> 00:06:30,210
+the general way to solve this
+problem we will be detail later.
+
+85
+00:06:30,210 --> 00:06:33,730
+As we may build a sequence
+database from the source code,
+
+86
+00:06:33,730 --> 00:06:36,560
+mining such sequential patterns.
+
+87
+00:06:36,560 --> 00:06:42,658
+Then when we find some mismatched ID
+names, then the bugs as well, okay.
+
+88
+00:06:43,820 --> 00:06:50,120
+This one was done by YY Zhou's
+group that time she was at USC,
+
+89
+00:06:50,120 --> 00:06:54,970
+so it's very interesting
+study using pattern mining.
+
+90
+00:06:56,260 --> 00:07:00,770
+So we first see how to build
+sequence database from source code.
+
+91
+00:07:02,130 --> 00:07:04,480
+So the general philosophy is for
+
+92
+00:07:04,480 --> 00:07:08,790
+each statement,
+we may match the statement into a number.
+
+93
+00:07:08,790 --> 00:07:13,500
+But how we can match the number,
+for example, this two are 16,
+
+94
+00:07:13,500 --> 00:07:20,180
+the other two are also 16,
+how we can find such similar sequences.
+
+95
+00:07:20,180 --> 00:07:24,434
+So the methodology is we
+tokenize each component,
+
+96
+00:07:24,434 --> 00:07:29,910
+like just give you an example,
+like old is assigned to 3.
+
+97
+00:07:29,910 --> 00:07:32,500
+And the variable new
+is also assigned to 3.
+
+98
+00:07:32,500 --> 00:07:35,260
+How we can?
+
+99
+00:07:35,260 --> 00:07:38,800
+We based it for
+different operators, constants,
+
+100
+00:07:38,800 --> 00:07:42,270
+or key words,
+remain mapping to different tokens.
+
+101
+00:07:42,270 --> 00:07:46,490
+But for same type of IDs,
+we map to the same token.
+
+102
+00:07:46,490 --> 00:07:52,840
+For example, old and new are both same
+type of ID, these are both old new.
+
+103
+00:07:52,840 --> 00:07:59,750
+We do not care they are different IDs,
+we just map them into the same token 5.
+
+104
+00:07:59,750 --> 00:08:04,710
+But it's assigned to, these two map to 61.
+
+105
+00:08:04,710 --> 00:08:13,078
+Then the value like 3 we map
+into another token like 20.
+
+106
+00:08:13,078 --> 00:08:20,375
+Then these two statements, if we take the
+same sequence, we give them a hash value.
+
+107
+00:08:20,375 --> 00:08:25,035
+These two statements should have
+the same hash value, simply say,
+
+108
+00:08:25,035 --> 00:08:27,580
+these are very similar statements.
+
+109
+00:08:28,850 --> 00:08:34,760
+So if we do this,
+either you'll see this total[i].adr and
+
+110
+00:08:34,760 --> 00:08:38,830
+the other one is total[i].bytes,
+
+111
+00:08:38,830 --> 00:08:44,020
+they essentially map to the same thing,
+they got the same sequence.
+
+112
+00:08:45,460 --> 00:08:50,490
+So, then a program is mapped to
+
+113
+00:08:50,490 --> 00:08:54,700
+a long sequence, we can further
+cut the long sequence by blocks.
+
+114
+00:08:54,700 --> 00:08:59,620
+For example, we can find at least,
+fragments of the program
+
+115
+00:08:59,620 --> 00:09:04,444
+is matched to a sequence
+in the same block,
+
+116
+00:09:04,444 --> 00:09:08,450
+you probably can see this is
+the map into sequence database.
+
+117
+00:09:08,450 --> 00:09:13,900
+Then we can do sequential pattern
+mining to detect forget-to-change bugs.
+
+118
+00:09:13,900 --> 00:09:16,220
+How to do sequential pattern mining?
+
+119
+00:09:16,220 --> 00:09:19,020
+Remember the previous
+sequential pattern mining
+
+120
+00:09:19,020 --> 00:09:22,360
+allow arbitrary number
+of gaps in the middle.
+
+121
+00:09:22,360 --> 00:09:26,731
+This is derived from
+the customer shopping sequences.
+
+122
+00:09:26,731 --> 00:09:31,998
+But, for programming, for
+finding a sequence in the copy and
+
+123
+00:09:31,998 --> 00:09:37,569
+paste bugs, you want to have exactly
+one because you allow people
+
+124
+00:09:37,569 --> 00:09:42,736
+to insert some programming
+statements right in the middle,
+
+125
+00:09:42,736 --> 00:09:46,410
+you count these as same kind of sequences.
+
+126
+00:09:46,410 --> 00:09:51,970
+But you don't want them to insert
+too many statements in the middle,
+
+127
+00:09:51,970 --> 00:09:55,090
+because they likely they could
+be complete different things.
+
+128
+00:09:55,090 --> 00:09:58,040
+So we can constrain the maximum gap,
+
+129
+00:09:58,040 --> 00:10:01,260
+like the small number of
+statements in the middle.
+
+130
+00:10:01,260 --> 00:10:05,350
+Then we will still say these two sequence
+
+131
+00:10:05,350 --> 00:10:08,847
+of the code are the same
+sequential pattern, okay.
+
+132
+00:10:10,160 --> 00:10:15,845
+Then we can compose larger copy and
+
+133
+00:10:15,845 --> 00:10:20,350
+paste segments because they
+have many things in common.
+
+134
+00:10:20,350 --> 00:10:25,340
+We can combine the neighbor copy and
+paste segments repeatedly.
+
+135
+00:10:25,340 --> 00:10:29,030
+Then we may try to find conflicts.
+
+136
+00:10:30,230 --> 00:10:33,500
+Essentially, we try to identify
+those names that cannot be mapped to
+
+137
+00:10:33,500 --> 00:10:35,290
+the corresponding ones.
+
+138
+00:10:35,290 --> 00:10:40,520
+For example, if you see here,
+you may see the concrete identifier,
+
+139
+00:10:40,520 --> 00:10:44,340
+F mapped to F1, this F also mapped to F1.
+
+140
+00:10:44,340 --> 00:10:49,900
+But the other F is mapped to F2,
+so there's a conflict.
+
+141
+00:10:49,900 --> 00:10:52,490
+So we try to calculate the ratio.
+
+142
+00:10:52,490 --> 00:10:57,760
+Suppose if we find a 1 out
+of 4 total is unchanged, so
+
+143
+00:10:57,760 --> 00:11:01,340
+the unchanged ratio is only 0.25.
+
+144
+00:11:01,340 --> 00:11:04,880
+If you set an unchanged ratio,
+
+145
+00:11:04,880 --> 00:11:09,030
+if it's greater than 0,
+it means something did change.
+
+146
+00:11:09,030 --> 00:11:14,770
+But unchanged ratio is less
+than specified threshold,
+
+147
+00:11:14,770 --> 00:11:19,050
+then we can say this likely could
+be a copy and paste bug, okay.
+
+148
+00:11:19,050 --> 00:11:23,570
+So this one actually was
+done by YY Zhou's group.
+
+149
+00:11:23,570 --> 00:11:26,520
+They work at CP-Miner.
+
+150
+00:11:26,520 --> 00:11:30,441
+They mined the common source code,
+
+151
+00:11:30,441 --> 00:11:34,238
+like Linux, Apache, Postgres.
+
+152
+00:11:34,238 --> 00:11:38,047
+So they actually got to find many copy and
+
+153
+00:11:38,047 --> 00:11:42,710
+paste bugs out of millions
+of lines of code.
+
+154
+00:11:42,710 --> 00:11:47,680
+And you probably can see this sequential
+pattern mining is very efficient.
+
+155
+00:11:47,680 --> 00:11:50,192
+That means that within a short time,
+
+156
+00:11:50,192 --> 00:11:55,799
+you can browse through millions lines of
+code, finding such copy and paste bugs.
+
+157
+00:11:55,799 --> 00:12:01,580
+And based on their human identification,
+these are the real bugs.
+
+158
+00:12:01,580 --> 00:12:05,368
+So it's very interesting
+to see this pattern
+
+159
+00:12:05,368 --> 00:12:08,762
+mining can help finding software bugs.
+
+160
+00:12:08,762 --> 00:12:18,762
+[MUSIC]

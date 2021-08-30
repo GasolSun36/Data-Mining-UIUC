@@ -1,0 +1,201 @@
+1
+00:00:00,033 --> 00:00:05,721
+[MUSIC]
+
+2
+00:00:05,721 --> 00:00:12,270
+Now we study another interesting issue
+called Mining Closed Sequential Patterns.
+
+3
+00:00:12,270 --> 00:00:18,350
+The algorithm mining this
+is called CloSpan, so
+
+4
+00:00:18,350 --> 00:00:24,370
+what is closed sequential patterns,
+similar to closed frequent item sets?
+
+5
+00:00:24,370 --> 00:00:29,820
+The closed sequential pattern s means,
+if there exists no superpattern
+
+6
+00:00:29,820 --> 00:00:35,750
+s prime and this s prime and
+s have the same support.
+
+7
+00:00:35,750 --> 00:00:39,980
+Then s is a closed sequential pattern,
+in another word,
+
+8
+00:00:39,980 --> 00:00:45,610
+closed pattern means for the same support,
+you will find the longest one.
+
+9
+00:00:45,610 --> 00:00:51,050
+That's the closed pattern, the other
+ones probably does not really matter,
+
+10
+00:00:51,050 --> 00:00:53,619
+okay, for example,
+let's look at this example.
+
+11
+00:00:54,680 --> 00:00:59,180
+Supposed we find three sequences,
+abc with support 20,
+
+12
+00:00:59,180 --> 00:01:03,950
+abcd with support 20 and
+the abcde with support of 15.
+
+13
+00:01:03,950 --> 00:01:09,970
+Which ones are closed,
+abcd is closed in the sense
+
+14
+00:01:09,970 --> 00:01:13,200
+for support 20, abcd is a longest one.
+
+15
+00:01:14,610 --> 00:01:19,460
+Then abcde is also closed
+because the support at 15,
+
+16
+00:01:19,460 --> 00:01:25,550
+there is no longer 1 and
+15 which is a super sequence of abcde.
+
+17
+00:01:27,545 --> 00:01:31,185
+So there are two ways to mine
+closed sequential patterns,
+
+18
+00:01:31,185 --> 00:01:34,235
+one way is you first mine
+all the sequential patterns.
+
+19
+00:01:34,235 --> 00:01:37,035
+Then you find which one is
+closed to like this abc,
+
+20
+00:01:37,035 --> 00:01:42,315
+you can knock it down, then you'll get
+set of closed sequential patterns.
+
+21
+00:01:42,315 --> 00:01:45,180
+But this is not a very efficient,
+
+22
+00:01:45,180 --> 00:01:49,040
+what we want is directly mine
+closed sequential patterns.
+
+23
+00:01:49,040 --> 00:01:54,150
+This will reduce a number of redundant
+patterns to be generated in the middle.
+
+24
+00:01:55,150 --> 00:02:00,000
+But it will attain the same expressive
+power because it's last it's compression,
+
+25
+00:02:01,600 --> 00:02:06,120
+so there's a one interesting
+property like this.
+
+26
+00:02:06,120 --> 00:02:09,580
+If s is the superset of s1,
+
+27
+00:02:11,360 --> 00:02:16,560
+s is closed if and only if two
+projected database have the same size.
+
+28
+00:02:16,560 --> 00:02:22,470
+Let's look at this, for example, for
+this sequence database, if you find
+
+29
+00:02:22,470 --> 00:02:28,570
+f the project database and
+another sequence is af.
+
+30
+00:02:28,570 --> 00:02:34,700
+This is the project database, if these
+project database have exactly same size,
+
+31
+00:02:34,700 --> 00:02:39,270
+then this actually means af is closed.
+
+32
+00:02:39,270 --> 00:02:44,350
+Essentially, you only need to mine one,
+that means you can merge them,
+
+33
+00:02:44,350 --> 00:02:49,070
+so you will be able to
+develop two kinds of pruning.
+
+34
+00:02:49,070 --> 00:02:53,800
+One called backward subpattern pruning,
+this is a subpattern,
+
+35
+00:02:53,800 --> 00:02:58,930
+you can prune it, another is backward
+superpattern pruning, so you probably see.
+
+36
+00:02:59,950 --> 00:03:03,980
+That you can use superpattern to
+chop up the subpattern you will get
+
+37
+00:03:03,980 --> 00:03:05,840
+into this, okay?
+
+38
+00:03:05,840 --> 00:03:12,270
+So with this spirit we can develop
+an efficient algorithm called CloSpan.
+
+39
+00:03:12,270 --> 00:03:15,334
+It greatly enhance
+the processing efficiency,
+
+40
+00:03:15,334 --> 00:03:17,964
+I'm not going to discuss very detailed.
+
+41
+00:03:17,964 --> 00:03:25,147
+But details you can read this paper, it
+gives you all the detail on the CloSpan.
+
+42
+00:03:25,147 --> 00:03:35,147
+[MUSIC]

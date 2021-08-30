@@ -1,0 +1,209 @@
+1
+00:00:00,012 --> 00:00:03,991
+[SOUND].
+
+2
+00:00:05,814 --> 00:00:10,747
+Now I am going to introduce you
+another algorithm called SPADE,
+
+3
+00:00:10,747 --> 00:00:15,970
+which is sequential pattern mining
+based on vertical data format.
+
+4
+00:00:17,180 --> 00:00:21,970
+You probably still remember the vertical
+data format based frequent pattern mining
+
+5
+00:00:21,970 --> 00:00:23,450
+algorithm called ECLAD.
+
+6
+00:00:24,620 --> 00:00:28,070
+Here for the same set of authors,
+
+7
+00:00:28,070 --> 00:00:32,940
+they actually develop an interesting
+algorithm for sequential pattern mining.
+
+8
+00:00:32,940 --> 00:00:33,600
+Okay.
+
+9
+00:00:33,600 --> 00:00:36,510
+The idea is pretty simple.
+
+10
+00:00:36,510 --> 00:00:41,140
+If you take the Sequence,
+you do a little detailed study,
+
+11
+00:00:41,140 --> 00:00:45,230
+you get a Sequence ID,
+Element ID, and set of Items.
+
+12
+00:00:45,230 --> 00:00:52,005
+So, what you can see is, for
+the first Sequence ID, 1.
+
+13
+00:00:52,005 --> 00:00:54,675
+Element ID 1, you find item a.
+
+14
+00:00:54,675 --> 00:00:57,460
+Element ID 2, you find a,
+b, c so on, okay.
+
+15
+00:00:58,810 --> 00:01:02,700
+Then we can transform this
+into vertical format.
+
+16
+00:01:02,700 --> 00:01:07,600
+That means we just look at the,
+where a occurs and where the b occurs.
+
+17
+00:01:07,600 --> 00:01:14,740
+So the a occurs, you probably can see,
+it happens in Sequence 1, ElementID 1.
+
+18
+00:01:14,740 --> 00:01:19,360
+In Sequence 1, Element 2, and
+also Sequence 1, Element 3.
+
+19
+00:01:19,360 --> 00:01:21,900
+So you get this one the same.
+
+20
+00:01:21,900 --> 00:01:26,260
+You can get Sequence ID 2, 3, 4.
+
+21
+00:01:26,260 --> 00:01:32,420
+Similarly for b, you can find where
+the b comes, is Sequence 1, Element 2.
+
+22
+00:01:32,420 --> 00:01:33,499
+So you get 1, 2.
+
+23
+00:01:34,710 --> 00:01:41,930
+Then how we can combine them into frequent
+sequences, like a then b, or b then a.
+
+24
+00:01:41,930 --> 00:01:48,160
+If you say a then b, you,
+you will be requiring a is in front of b,
+
+25
+00:01:48,160 --> 00:01:52,480
+or a's Element ID is in
+front b's Element ID.
+
+26
+00:01:52,480 --> 00:01:57,330
+That means for
+the same Sequence ID 1, if EID 1 is
+
+27
+00:01:57,330 --> 00:02:03,600
+smaller than EID 2 of b,
+then you get 1 Sequence E ab.
+
+28
+00:02:03,600 --> 00:02:08,475
+Similarly, for b then a,
+what you get is these
+
+29
+00:02:08,475 --> 00:02:14,100
+Element ID of b should be
+smaller than Element ID of a.
+
+30
+00:02:15,860 --> 00:02:20,334
+For the same reason you can get
+all of them for the lines 2, okay.
+
+31
+00:02:20,334 --> 00:02:23,953
+So for lines 3 what you need is,
+
+32
+00:02:23,953 --> 00:02:28,010
+you just get lines 2 frequent 1s.
+
+33
+00:02:28,010 --> 00:02:29,150
+Then you do drawing.
+
+34
+00:02:29,150 --> 00:02:30,114
+How do you do drawing?
+
+35
+00:02:30,114 --> 00:02:36,970
+You probably can see these
+Element ID Sequence ID should be the same.
+
+36
+00:02:36,970 --> 00:02:40,920
+The Element ID, this b shared with this b,
+they are both 2.
+
+37
+00:02:40,920 --> 00:02:45,090
+So you can join them together,
+you get 1, 2, 3 here.
+
+38
+00:02:45,090 --> 00:02:50,438
+And you join the other together,
+you can get a 1, 3, 4 because it,
+
+39
+00:02:50,438 --> 00:02:56,510
+Element 2, you get a,
+you get a b, you can get a again.
+
+40
+00:02:56,510 --> 00:03:01,730
+So, the two lines and
+you actually can find all of them, okay.
+
+41
+00:03:01,730 --> 00:03:07,100
+So that's a reason you can
+use Apriori based principle
+
+42
+00:03:07,100 --> 00:03:10,560
+to find all the frequent subsequences.
+
+43
+00:03:10,560 --> 00:03:15,331
+This algorithm was developed
+by Zaki in 2001 called SPADE.
+
+44
+00:03:15,331 --> 00:03:20,766
+It's Sequential Pattern Discovery
+using Equivalent Class.
+
+45
+00:03:20,766 --> 00:03:30,766
+[MUSIC]

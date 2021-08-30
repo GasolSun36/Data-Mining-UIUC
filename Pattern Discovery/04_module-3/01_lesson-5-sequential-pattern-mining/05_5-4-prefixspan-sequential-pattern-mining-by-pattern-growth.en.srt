@@ -1,0 +1,320 @@
+1
+00:00:00,012 --> 00:00:03,812
+[SOUND].
+
+2
+00:00:06,134 --> 00:00:11,910
+We have introduced [INAUDIBLE] based,
+sequential pattern mining algorithm, GSP.
+
+3
+00:00:11,910 --> 00:00:19,490
+We have introduced vertical format based
+sequential pattern mining [INAUDIBLE].
+
+4
+00:00:19,490 --> 00:00:25,160
+Now we come down to see pattern-growth
+space algorithm, called PrefixSpan.
+
+5
+00:00:26,540 --> 00:00:31,264
+PrefixSpan is a slow spaced
+mining algorithm, okay?
+
+6
+00:00:31,264 --> 00:00:35,492
+To examine the sequential
+pattern in more detail,
+
+7
+00:00:35,492 --> 00:00:41,410
+we need to introduce the concept
+of prefix and a suffix.
+
+8
+00:00:41,410 --> 00:00:44,570
+The prefix means anything in the front,
+
+9
+00:00:44,570 --> 00:00:49,840
+if it's frequent you want to capture them,
+as a frequent prefix.
+
+10
+00:00:49,840 --> 00:00:52,740
+Like a, a, a, ab.
+
+11
+00:00:52,740 --> 00:00:56,060
+Then their projection becomes a suffix.
+
+12
+00:00:56,060 --> 00:00:58,850
+Remember if you get a a, a,
+
+13
+00:00:58,850 --> 00:01:04,870
+what you see is you got a position
+holder for the next one is b.
+
+14
+00:01:04,870 --> 00:01:09,140
+So that's why we use underscore
+as a position holder.
+
+15
+00:01:09,140 --> 00:01:11,815
+Okay.
+The similar thing, you get an ab,
+
+16
+00:01:11,815 --> 00:01:14,173
+the position holder will shift to c.
+
+17
+00:01:14,173 --> 00:01:17,558
+So that means, given a sequence,
+
+18
+00:01:17,558 --> 00:01:22,693
+you will find a set of prefixes and
+a set of suffixes,
+
+19
+00:01:22,693 --> 00:01:27,622
+or you can say prefix-based projection,
+okay.
+
+20
+00:01:27,622 --> 00:01:29,584
+Then for this prediction,
+
+21
+00:01:29,584 --> 00:01:34,600
+what we will find is first find
+length-1 sequential pattern.
+
+22
+00:01:34,600 --> 00:01:37,610
+If they are frequent,
+we call them length-1 sequential pattern.
+
+23
+00:01:38,690 --> 00:01:40,580
+Then we can do divide and conquer,
+
+24
+00:01:40,580 --> 00:01:44,680
+that means we divide the search space
+to mine each projected database.
+
+25
+00:01:44,680 --> 00:01:48,990
+We have a projected database, b projected
+database, c projected database,
+
+26
+00:01:48,990 --> 00:01:51,620
+up to f projected database.
+
+27
+00:01:51,620 --> 00:01:55,425
+This mining method, methodology,
+called PrefixSpan, or
+
+28
+00:01:55,425 --> 00:01:58,140
+prefix-projected sequential
+pattern mining.
+
+29
+00:01:59,640 --> 00:02:01,940
+So let's examine a little detail.
+
+30
+00:02:01,940 --> 00:02:08,040
+For this sequence database, if we find
+length-1's sequential pattern like this,
+
+31
+00:02:08,040 --> 00:02:12,190
+then we can actually get length-2
+
+32
+00:02:12,190 --> 00:02:15,028
+sequential pattern by first
+doing projective database.
+
+33
+00:02:15,028 --> 00:02:18,210
+Then find length-2 sequential patterns.
+
+34
+00:02:18,210 --> 00:02:21,920
+That means, if they are frequently
+in this projected database,
+
+35
+00:02:21,920 --> 00:02:25,280
+they will form length-2
+sequential pattern.
+
+36
+00:02:25,280 --> 00:02:29,970
+And then we can do length-2
+sequential pattern-based projection
+
+37
+00:02:29,970 --> 00:02:33,710
+from aa project database,
+af project database.
+
+38
+00:02:33,710 --> 00:02:36,260
+Okay?
+And we can keep this one ongoing.
+
+39
+00:02:36,260 --> 00:02:36,860
+Okay?
+
+40
+00:02:36,860 --> 00:02:40,270
+The major strengths, or advantages.
+
+41
+00:02:40,270 --> 00:02:43,660
+There's no candidate
+subsequence to be generated.
+
+42
+00:02:43,660 --> 00:02:45,700
+And the projected
+database keeps shrinking.
+
+43
+00:02:46,860 --> 00:02:49,630
+So, let's look at some
+implementation tricks.
+
+44
+00:02:50,940 --> 00:02:52,900
+So if you do the projection,
+
+45
+00:02:52,900 --> 00:02:58,150
+like you really taking the sequence
+to do [INAUDIBLE] a, [INAUDIBLE] ab.
+
+46
+00:02:58,150 --> 00:03:02,440
+You will get largely
+redundant subsequences, or
+
+47
+00:03:02,440 --> 00:03:07,400
+you see postfix but they are largely
+redundant with the original string.
+
+48
+00:03:07,400 --> 00:03:11,060
+However, we do not need to do
+the real physical prediction.
+
+49
+00:03:11,060 --> 00:03:14,180
+What do we need is we
+call pseudo-projection.
+
+50
+00:03:14,180 --> 00:03:17,730
+That means you just say,
+what is a's predictability base?
+
+51
+00:03:17,730 --> 00:03:21,890
+It's the same sequence, but
+the position is number two.
+
+52
+00:03:21,890 --> 00:03:26,150
+What is ab's project database
+is the same sequence as s, but
+
+53
+00:03:26,150 --> 00:03:28,530
+the position is number four.
+
+54
+00:03:28,530 --> 00:03:32,100
+So if you register the next
+position to be scanned,
+
+55
+00:03:32,100 --> 00:03:37,240
+it will essentially register
+the projected sequence, or suffix.
+
+56
+00:03:37,240 --> 00:03:37,850
+Okay?
+
+57
+00:03:37,850 --> 00:03:41,270
+So if the database can
+be held in main memory,
+
+58
+00:03:41,270 --> 00:03:44,450
+this pseudo-projecting is very effective.
+
+59
+00:03:44,450 --> 00:03:48,200
+Because there's no physical copying or
+suffix.
+
+60
+00:03:48,200 --> 00:03:50,640
+You only need pointer to the sequence.
+
+61
+00:03:50,640 --> 00:03:52,090
+You just get offset.
+
+62
+00:03:52,090 --> 00:03:52,780
+You get suffix.
+
+63
+00:03:54,050 --> 00:03:57,840
+But if it does not fit in the memory,
+you use pointer.
+
+64
+00:03:57,840 --> 00:04:01,150
+You may involve lots of disk accesses.
+
+65
+00:04:01,150 --> 00:04:06,030
+So you may really want to do physical
+projection because once you projected it
+
+66
+00:04:06,030 --> 00:04:09,720
+quickly this set can be
+fit in the main memory.
+
+67
+00:04:10,960 --> 00:04:15,181
+That means we can integrate physical and
+pseudo-projection any time
+
+68
+00:04:15,181 --> 00:04:19,556
+when the data fits in the main memory,
+you can use pseudo-projection.
+
+69
+00:04:19,556 --> 00:04:29,556
+[MUSIC]

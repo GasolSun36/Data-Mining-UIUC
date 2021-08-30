@@ -1,0 +1,748 @@
+1
+00:00:02,030 --> 00:00:07,050
+Now we introduce an interesting
+phrase mining method
+
+2
+00:00:07,050 --> 00:00:11,900
+called ToPMine which mines quality
+phrases without training data.
+
+3
+00:00:14,140 --> 00:00:18,730
+This method actually belongs to
+strategy three as we discussed.
+
+4
+00:00:18,730 --> 00:00:23,030
+We first do phrase mining,
+then do topic modeling.
+
+5
+00:00:23,030 --> 00:00:24,596
+Why we want to do that way?
+
+6
+00:00:24,596 --> 00:00:31,270
+We can see if we use Strategy 2,
+we first do
+
+7
+00:00:31,270 --> 00:00:37,340
+topic modelling, then try to do phrase
+modeling, we may encounter some problems.
+
+8
+00:00:37,340 --> 00:00:40,230
+For example, let's look at this example.
+
+9
+00:00:40,230 --> 00:00:46,290
+Suppose we first do topic
+modeling in this one.
+
+10
+00:00:46,290 --> 00:00:51,540
+But remember, the topic modeling you will
+regenerate a larger number of topics.
+
+11
+00:00:51,540 --> 00:00:57,250
+Suppose knowledge discovery,
+you see knowledge is in the red topic and
+
+12
+00:00:57,250 --> 00:01:00,820
+discovery is in the blue topic.
+
+13
+00:01:00,820 --> 00:01:01,550
+Okay.
+
+14
+00:01:01,550 --> 00:01:07,520
+The same thing as support vector machine,
+you may get a support as in one topic
+
+15
+00:01:07,520 --> 00:01:13,470
+vector is another and the machine is
+in the topic the same as support.
+
+16
+00:01:14,690 --> 00:01:20,070
+If that's the case, we'll never be able
+to generate knowledge discovery also for
+
+17
+00:01:20,070 --> 00:01:25,610
+a vector machine is quality phrases
+because they belong to different topics.
+
+18
+00:01:28,310 --> 00:01:30,420
+How can we fix this problem?
+
+19
+00:01:30,420 --> 00:01:36,600
+If we switch order between phrase
+mining and topic modeling That means
+
+20
+00:01:36,600 --> 00:01:41,990
+we first two phrase mining if we can find
+knowledge, discovery is a quality phrase.
+
+21
+00:01:41,990 --> 00:01:45,490
+A least a squares is
+another quality phrase and
+
+22
+00:01:45,490 --> 00:01:49,160
+support vector machines
+assert quality phrase.
+
+23
+00:01:49,160 --> 00:01:54,500
+Then, we will be able to generate
+the very high quality topic models for
+
+24
+00:01:54,500 --> 00:01:57,060
+example knowledge discovery is one topic,
+
+25
+00:01:57,060 --> 00:02:01,880
+least a squares is another topic Support
+vector machine is another topic.
+
+26
+00:02:03,500 --> 00:02:04,800
+Can we do that?
+
+27
+00:02:04,800 --> 00:02:10,920
+Okay, so the trick is we
+can first do phrase mining.
+
+28
+00:02:10,920 --> 00:02:13,470
+Then we do document segmentation.
+
+29
+00:02:13,470 --> 00:02:15,070
+Then we do phrase ranking.
+
+30
+00:02:16,090 --> 00:02:20,650
+After that,
+we take those phrase as constraints.
+
+31
+00:02:20,650 --> 00:02:25,440
+Then we do topic modeling inference
+then we will be able to get
+
+32
+00:02:25,440 --> 00:02:30,410
+those high quality phrases and
+high quality topic models.
+
+33
+00:02:30,410 --> 00:02:34,700
+Let's look at this method top mine method.
+
+34
+00:02:34,700 --> 00:02:40,600
+The method was developed
+by Ahmed El-Kishky's and
+
+35
+00:02:40,600 --> 00:02:45,300
+his team, In publishing VLDB 2015.
+
+36
+00:02:45,300 --> 00:02:50,040
+At first do phrase mining then
+do phrase-based topic modelling.
+
+37
+00:02:50,040 --> 00:02:56,420
+The phrase mining is first mine
+frequent contiguous patterns
+
+38
+00:02:56,420 --> 00:03:01,750
+that only can extract these
+candidate phrases and their counts.
+
+39
+00:03:01,750 --> 00:03:06,570
+This method is very much like a typical
+frequent pattern mining methods.
+
+40
+00:03:08,070 --> 00:03:12,250
+Then we can agglomerative merging
+
+41
+00:03:12,250 --> 00:03:16,580
+those adjacent unigrams guided
+by a significance score.
+
+42
+00:03:16,580 --> 00:03:18,670
+We are going to ensure you see all later,
+okay?
+
+43
+00:03:20,220 --> 00:03:24,810
+Then we can do documents segmentation.
+
+44
+00:03:24,810 --> 00:03:31,610
+That means we will work out to the base
+of raw frequency based going back
+
+45
+00:03:31,610 --> 00:03:37,900
+to the document to see which one we count
+which we get rectified true frequency.
+
+46
+00:03:37,900 --> 00:03:40,440
+For example,
+just give you a simple example,
+
+47
+00:03:40,440 --> 00:03:44,590
+suppose we have support
+vector machine as a phrase.
+
+48
+00:03:44,590 --> 00:03:47,700
+It occurs 90 times.
+
+49
+00:03:47,700 --> 00:03:53,060
+Then vector machine,
+as a phrase it occurs 95 times.
+
+50
+00:03:53,060 --> 00:03:57,070
+Support vector occurs even 100 times.
+
+51
+00:03:57,070 --> 00:04:00,600
+However you go back to the documents
+
+52
+00:04:00,600 --> 00:04:04,040
+you will find if you count support
+vector machines it's a phrase.
+
+53
+00:04:04,040 --> 00:04:09,580
+You will not recount vector
+machine as independent phrase or
+
+54
+00:04:09,580 --> 00:04:11,930
+support vectors, independent phrase.
+
+55
+00:04:11,930 --> 00:04:15,700
+Actually you'll decrease
+their count substantially.
+
+56
+00:04:17,140 --> 00:04:20,810
+That the count is we call
+the rectified frequency.
+
+57
+00:04:20,810 --> 00:04:25,840
+Analysis can be based on rectified
+frequency instead of raw frequency.
+
+58
+00:04:28,000 --> 00:04:33,220
+Now we can rank those phrases
+based on popularity, concordance,
+
+59
+00:04:33,220 --> 00:04:38,550
+informativeness and the completeness
+as we just discussed in KERT.
+
+60
+00:04:40,350 --> 00:04:43,550
+After this we can do phrase
+space topic modelling.
+
+61
+00:04:43,550 --> 00:04:48,260
+That means we can,
+taking those mined bag of phrases.
+
+62
+00:04:48,260 --> 00:04:52,710
+We pass them PhraseLDA which
+is the extension of LDA.
+
+63
+00:04:53,940 --> 00:04:58,380
+This method will constrains
+all the words in a phrase.
+
+64
+00:04:58,380 --> 00:05:01,420
+So, each sharing the same latent topic.
+
+65
+00:05:01,420 --> 00:05:07,240
+In that way, we'll be able to
+divide better quality topic models.
+
+66
+00:05:08,760 --> 00:05:13,600
+This matter essentially doing
+collocation mining, then is,
+
+67
+00:05:13,600 --> 00:05:19,760
+we were to find a sequence of the words
+that occur more frequently than expected,
+
+68
+00:05:19,760 --> 00:05:22,790
+then we would say they likely
+should be a phrase, okay?
+
+69
+00:05:24,030 --> 00:05:28,020
+For example,
+if you see "strong tea", okay?
+
+70
+00:05:28,020 --> 00:05:32,160
+You see it happens frequently together.
+
+71
+00:05:32,160 --> 00:05:36,630
+Then you look at a strong, how many times
+happens tea, how many times it happens.
+
+72
+00:05:36,630 --> 00:05:43,120
+Then you see strong tea happen together
+more frequently than expected frequency.
+
+73
+00:05:43,120 --> 00:05:45,240
+That means strong tea should be a phrase.
+
+74
+00:05:46,460 --> 00:05:48,940
+How can we measure such things?
+
+75
+00:05:48,940 --> 00:05:52,940
+We can measure this based
+on different measures.
+
+76
+00:05:52,940 --> 00:06:00,370
+For example, the mutual information, okay.
+
+77
+00:06:00,370 --> 00:06:04,120
+And this essentially is
+paralyzed mutual information.
+
+78
+00:06:04,120 --> 00:06:07,568
+And we can do t-test, can do z-test,
+
+79
+00:06:07,568 --> 00:06:12,272
+can do chi-squared test,
+can do likelihood ratio,
+
+80
+00:06:12,272 --> 00:06:17,497
+actually using all the different
+measures we can confirm,
+
+81
+00:06:17,497 --> 00:06:21,800
+the phrase would generate
+a truly good phrases.
+
+82
+00:06:21,800 --> 00:06:24,652
+Usually use any of the good measures,
+little work.
+
+83
+00:06:24,652 --> 00:06:28,690
+That means many of these
+measure can be used to
+
+84
+00:06:28,690 --> 00:06:31,320
+guide the agglomerative
+phrase segmentation.
+
+85
+00:06:33,850 --> 00:06:35,210
+Let's look at the example.
+
+86
+00:06:36,330 --> 00:06:42,270
+Suppose we have a bunch of documents,
+one says Markov
+
+87
+00:06:42,270 --> 00:06:46,160
+blanket feature selection for support
+vector machines and all the others.
+
+88
+00:06:47,510 --> 00:06:54,040
+How can we know without training to see
+feature selection should be a phrase,
+
+89
+00:06:54,040 --> 00:06:58,530
+support vector machine should be a phrase,
+Markov blanket should be a phrase.
+
+90
+00:06:59,780 --> 00:07:06,898
+Actually the trick is very simple,
+if we think about the normal distribution,
+
+91
+00:07:06,898 --> 00:07:12,210
+the Gaussian distribution,
+by basic statistics we know,
+
+92
+00:07:12,210 --> 00:07:19,454
+if you've got a Gaussian distribution,
+you get a one standard deviation away.
+
+93
+00:07:19,454 --> 00:07:27,781
+Actually it's about the chance
+to get this is one minus 68.2%.
+
+94
+00:07:27,781 --> 00:07:30,930
+But, you get three
+standard deviations away.
+
+95
+00:07:30,930 --> 00:07:33,280
+The chance is very, very small.
+
+96
+00:07:33,280 --> 00:07:39,900
+It simply says you only got 0.3% of chance
+to have three standard deviation away.
+
+97
+00:07:39,900 --> 00:07:41,820
+And then how do you explain it?
+
+98
+00:07:41,820 --> 00:07:43,518
+Likely they should get together,
+
+99
+00:07:43,518 --> 00:07:48,160
+as an exception, but
+not as a random distribution.
+
+100
+00:07:48,160 --> 00:07:48,900
+They should be a phrase.
+
+101
+00:07:48,900 --> 00:07:49,400
+Okay.
+
+102
+00:07:50,660 --> 00:07:54,420
+We can use some significant score like
+
+103
+00:07:54,420 --> 00:07:57,880
+a church developing in
+1991 right on this former.
+
+104
+00:07:57,880 --> 00:08:02,330
+This is very much in the same
+spirit as the Z score.
+
+105
+00:08:02,330 --> 00:08:04,070
+You know how many standard
+of deviation away.
+
+106
+00:08:05,160 --> 00:08:09,720
+Suppose in these documents we found
+a support vector getting together
+
+107
+00:08:09,720 --> 00:08:12,340
+is about 12 standard iterations away,
+okay?
+
+108
+00:08:13,570 --> 00:08:18,280
+That means that the support vector
+coming together so tight, so
+
+109
+00:08:18,280 --> 00:08:20,590
+unusual they should be a phrase.
+
+110
+00:08:20,590 --> 00:08:24,900
+Even you merge support vector as a phrase,
+then you still
+
+111
+00:08:24,900 --> 00:08:29,420
+calculate this machine you find there
+are still eight standard deviation away.
+
+112
+00:08:29,420 --> 00:08:33,720
+Simply says Support Vector Machine
+getting together should be a phrase.
+
+113
+00:08:35,120 --> 00:08:39,100
+The interesting case could
+be you see feature selection
+
+114
+00:08:39,100 --> 00:08:42,620
+some people see selection for
+which when should be a good phrase.
+
+115
+00:08:43,720 --> 00:08:47,960
+Actually if you check
+the whole document you'll see
+
+116
+00:08:47,960 --> 00:08:51,380
+features selection likely
+should be a good phrase.
+
+117
+00:08:51,380 --> 00:08:54,850
+Because they're getting
+together is more than expected.
+
+118
+00:08:54,850 --> 00:09:00,090
+Okay, then you team up with
+feature selection as a phrase.
+
+119
+00:09:00,090 --> 00:09:05,230
+In that case it's selection for
+would not be a candidate in this case.
+
+120
+00:09:05,230 --> 00:09:10,970
+If we do phraser sequestration,
+features selection will have a count.
+
+121
+00:09:10,970 --> 00:09:15,170
+Selection for, in this particular
+sentence, will now contribute
+
+122
+00:09:15,170 --> 00:09:18,640
+to a count to selection for, because
+feature selection is already there.
+
+123
+00:09:19,910 --> 00:09:25,130
+Okay so if we do the good
+ratification of the phrase frequency,
+
+124
+00:09:25,130 --> 00:09:27,630
+we'll be able to make
+a very good judgement.
+
+125
+00:09:29,390 --> 00:09:33,700
+So we did some good
+experiments you probably see.
+
+126
+00:09:33,700 --> 00:09:38,502
+If we use DBLP which is
+compromise research publication
+
+127
+00:09:38,502 --> 00:09:40,859
+bibliographic data base.
+
+128
+00:09:44,120 --> 00:09:50,200
+We actually can see the unigram
+generated and the n-gram generated
+
+129
+00:09:50,200 --> 00:09:55,230
+has already better quality
+than purely topic modelling.
+
+130
+00:09:56,680 --> 00:10:00,985
+However you see this n-gram
+generated very informative.
+
+131
+00:10:00,985 --> 00:10:05,271
+For example, almost anybody working
+on natural language processing,
+
+132
+00:10:05,271 --> 00:10:08,995
+you probably can see natural language,
+speech recognition,
+
+133
+00:10:08,995 --> 00:10:13,367
+language model, natural language
+processing, machine translation.
+
+134
+00:10:13,367 --> 00:10:17,714
+All these become very,
+very good top rank of phrases for
+
+135
+00:10:17,714 --> 00:10:20,224
+natural language processing.
+
+136
+00:10:20,224 --> 00:10:28,127
+That implies this phrase mining not only
+helps in generating quality phrases but
+
+137
+00:10:28,127 --> 00:10:32,670
+also generally better
+quality topic models.
+
+138
+00:10:34,360 --> 00:10:37,640
+That means ToPMine is efficient and
+
+139
+00:10:37,640 --> 00:10:42,596
+generates high-quality topics and
+phrases without any training data.
+
+140
+00:10:42,596 --> 00:10:48,880
+Similar experiments on Yelp.
+
+141
+00:10:48,880 --> 00:10:52,750
+Yelp actually is a social media data sets.
+
+142
+00:10:52,750 --> 00:10:58,850
+For Yelp reviews, people writing
+something not a quite formerly but still
+
+143
+00:10:58,850 --> 00:11:04,080
+we probably can see the phrase generated
+are actually pretty high quality.
+
+144
+00:11:04,080 --> 00:11:08,670
+And for example if you look
+at this the Mexican food,
+
+145
+00:11:08,670 --> 00:11:14,320
+the chips and salsa, hot dog, rice and
+beans you will see these are the very
+
+146
+00:11:14,320 --> 00:11:20,340
+typical Mexican food you can generate
+using this and phrase mining.
+
+147
+00:11:21,660 --> 00:11:24,730
+First, do phrase mining,
+then do topic mining.
+
+148
+00:11:24,730 --> 00:11:28,860
+One thing we should note is, for
+example, food was good generate here.
+
+149
+00:11:30,340 --> 00:11:33,150
+Food was good actually is a sentence.
+
+150
+00:11:33,150 --> 00:11:35,980
+It's a short sentence, it's not a phrase.
+
+151
+00:11:37,250 --> 00:11:39,480
+If we add a little more, for
+
+152
+00:11:39,480 --> 00:11:44,905
+example, part-of-speech tagging,
+we'll be able to rectify it.
+
+153
+00:11:44,905 --> 00:11:49,030
+Carried out this food was good as
+a short sentence, it's not a phrase.
+
+154
+00:11:49,030 --> 00:11:52,062
+The remaining ones are pretty good.
+
+155
+00:11:52,062 --> 00:11:56,959
+So, that implies top mine, and
+it can't further integrate
+
+156
+00:11:56,959 --> 00:12:01,760
+it with some natural language
+processing features.
+
+157
+00:12:01,760 --> 00:12:05,996
+And we will be able to generate
+pretty high quality phrases for
+
+158
+00:12:05,996 --> 00:12:07,794
+the subsequent process.

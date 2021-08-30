@@ -1,0 +1,381 @@
+1
+00:00:00,012 --> 00:00:08,110
+[SOUND]
+Hi,
+
+2
+00:00:08,110 --> 00:00:13,220
+let's introduce the very
+famous Apriori Algorithm.
+
+3
+00:00:15,240 --> 00:00:19,260
+This algorithm is the first
+candidate generation and
+
+4
+00:00:19,260 --> 00:00:21,490
+test approach for frequent pattern mining.
+
+5
+00:00:22,800 --> 00:00:26,864
+It is a level-wise candidate
+generation test approach.
+
+6
+00:00:26,864 --> 00:00:31,517
+Initially, the first time you just
+scan the database once to get
+
+7
+00:00:31,517 --> 00:00:34,190
+frequent 1-itemset.
+
+8
+00:00:34,190 --> 00:00:37,881
+Then taking this frequent 1-itemsets,
+
+9
+00:00:37,881 --> 00:00:42,730
+you are going to generate
+lens two candidate itemsets.
+
+10
+00:00:42,730 --> 00:00:47,462
+In the case iteration,
+you're going to take a length-k frequent
+
+11
+00:00:47,462 --> 00:00:51,890
+itemsets to generate landscape
+plus one candidate itemset.
+
+12
+00:00:51,890 --> 00:00:57,500
+Then you go against the database to
+test these candidates generated,
+
+13
+00:00:57,500 --> 00:01:03,030
+and to find the real
+frequent k+1 itemsets.
+
+14
+00:01:03,030 --> 00:01:07,402
+Every iteration you set k to k+1,
+so you can go and
+
+15
+00:01:07,402 --> 00:01:11,775
+tier the no frequent itemsets
+will be generate, or
+
+16
+00:01:11,775 --> 00:01:15,350
+no candidate itemsets can be generated.
+
+17
+00:01:16,870 --> 00:01:19,000
+Then after you exit from loop,
+
+18
+00:01:19,000 --> 00:01:24,380
+you just return all the frequent
+itemsets derived, that's the algorithm.
+
+19
+00:01:26,040 --> 00:01:28,370
+Let's look at the pseudo-code.
+
+20
+00:01:28,370 --> 00:01:32,540
+We set C sub k to be
+candidate itemset of size k,
+
+21
+00:01:32,540 --> 00:01:36,550
+F sub k to be frequent itemset of size k.
+
+22
+00:01:38,200 --> 00:01:43,140
+Initially, we just get
+a frequent 1-itemsets.
+
+23
+00:01:43,140 --> 00:01:46,000
+Then we get into the loop.
+
+24
+00:01:46,000 --> 00:01:52,090
+Suppose the frequent k itemset
+is not empty, then we get in.
+
+25
+00:01:52,090 --> 00:01:58,940
+We use ks frequent itemset to
+generate k+1's candidate itemsets.
+
+26
+00:02:00,240 --> 00:02:05,210
+Then we go against the database
+using the minimum support
+
+27
+00:02:05,210 --> 00:02:10,500
+to see which k+1 candidate itemset or
+frequent.
+
+28
+00:02:11,500 --> 00:02:16,550
+We derive the frequent k+1 itemsets.
+
+29
+00:02:16,550 --> 00:02:22,340
+Then we reset k to k+1, and
+here we get out of this loop.
+
+30
+00:02:22,340 --> 00:02:28,100
+We just return all the frequent k
+itemsets for all the ks derived.
+
+31
+00:02:29,610 --> 00:02:31,050
+Let's look at the concrete example.
+
+32
+00:02:32,330 --> 00:02:34,090
+You look at this transaction database.
+
+33
+00:02:34,090 --> 00:02:36,119
+It contains only four transactions.
+
+34
+00:02:37,300 --> 00:02:42,875
+The first scan, you just try to find
+their support for every single itemset.
+
+35
+00:02:44,200 --> 00:02:48,890
+Then we find d, the support is only one,
+so it's not a frequent.
+
+36
+00:02:48,890 --> 00:02:55,807
+So then we just remove it, we get
+a frequent 1-itemsets and their support.
+
+37
+00:02:55,807 --> 00:03:02,117
+Then we use this to derive
+the candidate 2-itemsets, C sub 2.
+
+38
+00:03:02,117 --> 00:03:06,160
+Then we scan the database again,
+we find the real support count.
+
+39
+00:03:06,160 --> 00:03:10,300
+Then we find these two blue
+marker lines are infrequent,
+
+40
+00:03:10,300 --> 00:03:13,450
+we derive frequent 2-itemsets.
+
+41
+00:03:13,450 --> 00:03:19,970
+Then using frequent 2-itemsets, we derive
+the frequent three candidate itemsets.
+
+42
+00:03:19,970 --> 00:03:23,270
+Remember, this one you
+probably can't see a big cut.
+
+43
+00:03:23,270 --> 00:03:23,947
+Why?
+
+44
+00:03:23,947 --> 00:03:27,692
+Because you probably see A,
+C, B, C are frequent,
+
+45
+00:03:27,692 --> 00:03:31,793
+you may think maybe A, B,
+C could be candidate itemset.
+
+46
+00:03:31,793 --> 00:03:37,911
+But A, B is not frequent here,
+so A, B, C will not be derived.
+
+47
+00:03:37,911 --> 00:03:41,168
+So we only derive B, C, E.
+
+48
+00:03:41,168 --> 00:03:46,410
+With another scan, we find it's support
+is two, so it's frequent as well.
+
+49
+00:03:46,410 --> 00:03:52,160
+Then we find all the frequent one,
+two, three itemsets.
+
+50
+00:03:52,160 --> 00:03:57,775
+The concrete implementation actually
+involve self-joining and the pruning.
+
+51
+00:03:57,775 --> 00:04:01,130
+Self-joining goes like this.
+
+52
+00:04:01,130 --> 00:04:05,070
+We get abc, abd,
+the first two are the same.
+
+53
+00:04:05,070 --> 00:04:06,850
+The third one is different, so
+
+54
+00:04:06,850 --> 00:04:11,100
+we generate this self-join,
+generate this candidate set.
+
+55
+00:04:12,290 --> 00:04:17,330
+A similar thing we get acd, ace,
+the first two are just the same.
+
+56
+00:04:17,330 --> 00:04:21,599
+The third one we get them together,
+we get this candidate sets.
+
+57
+00:04:22,600 --> 00:04:26,550
+But we may need a pruning process.
+
+58
+00:04:26,550 --> 00:04:28,490
+The pruning is pretty simple.
+
+59
+00:04:28,490 --> 00:04:32,830
+Before you count against a database,
+you proceed for
+
+60
+00:04:32,830 --> 00:04:37,130
+abcd, this bcd is there.
+
+61
+00:04:37,130 --> 00:04:39,870
+So this is a candidate one.
+
+62
+00:04:39,870 --> 00:04:45,480
+But for acde,
+cde is not in the frequent three itemset.
+
+63
+00:04:45,480 --> 00:04:49,789
+So acd can not be the candidate,
+so it's pruned.
+
+64
+00:04:49,789 --> 00:04:54,410
+So that's the simple way,
+you bring in the self-joining and
+
+65
+00:04:54,410 --> 00:04:56,080
+pruning, we can solve this problem.
+
+66
+00:04:56,080 --> 00:04:59,730
+You'll find out we get only
+one candidate sets, abcd.
+
+67
+00:05:01,770 --> 00:05:08,310
+Let's look at the SQL implementation of
+this candidate set generation and test.
+
+68
+00:05:08,310 --> 00:05:12,080
+So we proceed the candidate
+generation essentially this.
+
+69
+00:05:12,080 --> 00:05:13,886
+You proceed the self-joining.
+
+70
+00:05:13,886 --> 00:05:15,317
+How to do self-joining?
+
+71
+00:05:15,317 --> 00:05:19,420
+You'll see the first k-2.
+
+72
+00:05:19,420 --> 00:05:21,007
+They are all identical.
+
+73
+00:05:21,007 --> 00:05:24,684
+Then the last one, k-1 item.
+
+74
+00:05:24,684 --> 00:05:27,520
+One is smaller than the other.
+
+75
+00:05:27,520 --> 00:05:30,520
+We get one candidate set.
+
+76
+00:05:30,520 --> 00:05:33,960
+Then for this candidate set,
+we still need the pruning.
+
+77
+00:05:33,960 --> 00:05:38,040
+The pruning essentially is
+a check whether these subsets,
+
+78
+00:05:38,040 --> 00:05:42,220
+the k-1 subset containing this one.
+
+79
+00:05:42,220 --> 00:05:47,109
+If s is not in F k-1,
+then we just delete this
+
+80
+00:05:47,109 --> 00:05:51,830
+candidate from the candidate set C sub k.
+
+81
+00:05:51,830 --> 00:05:53,699
+So this is a candidate generation.
+
+82
+00:05:53,699 --> 00:05:58,340
+The key step of SQL
+implementation of Apriori.
+
+83
+00:05:58,340 --> 00:06:08,340
+[MUSIC]

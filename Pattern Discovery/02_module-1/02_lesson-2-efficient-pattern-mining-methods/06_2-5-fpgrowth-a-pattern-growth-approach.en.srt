@@ -1,0 +1,509 @@
+1
+00:00:00,000 --> 00:00:02,738
+[SOUND]
+
+2
+00:00:07,638 --> 00:00:10,502
+Hi, I'm going to introduce you another
+
+3
+00:00:10,502 --> 00:00:15,650
+interesting pattern mining approach
+called pattern growth approach.
+
+4
+00:00:17,440 --> 00:00:22,890
+This approach is represented by
+interesting algorithm called FPGrowth.
+
+5
+00:00:24,480 --> 00:00:28,060
+Let's look at how this algorithm works.
+
+6
+00:00:28,060 --> 00:00:34,190
+The general idea is first we find
+the frequent single items and
+
+7
+00:00:34,190 --> 00:00:38,400
+then we partition the database
+based on each such item.
+
+8
+00:00:38,400 --> 00:00:44,270
+Then we recursively grow frequent patterns
+by doing the above iteratively or
+
+9
+00:00:44,270 --> 00:00:50,010
+recursively for each partitioned database,
+also called conditional database.
+
+10
+00:00:51,400 --> 00:00:57,530
+To facilitate efficient processing, we
+use a new data structure called FP-tree.
+
+11
+00:00:57,530 --> 00:01:00,480
+The whole mining can be
+summarized as follows.
+
+12
+00:01:00,480 --> 00:01:05,666
+We recursively construct and
+a mine conditional FP-trees.
+
+13
+00:01:05,666 --> 00:01:08,730
+Until the result FP-tree is empty or
+
+14
+00:01:08,730 --> 00:01:13,290
+until it contains only one path,
+the single path will generate
+
+15
+00:01:13,290 --> 00:01:18,550
+all the combinations of its sub-paths
+each of which is a frequent pattern.
+
+16
+00:01:18,550 --> 00:01:21,770
+Let's look at a simple example.
+
+17
+00:01:21,770 --> 00:01:26,400
+For this transaction database,
+it has only five transactions.
+
+18
+00:01:26,400 --> 00:01:28,960
+Each contains a set of items.
+
+19
+00:01:28,960 --> 00:01:31,670
+So we can scan the database once.
+
+20
+00:01:31,670 --> 00:01:35,430
+Find the single of item frequent
+pattern like the following.
+
+21
+00:01:35,430 --> 00:01:38,045
+Suppose minimum support is three.
+
+22
+00:01:38,045 --> 00:01:43,000
+We will be able to find
+the following frequent single item.
+
+23
+00:01:43,000 --> 00:01:46,860
+Then we can sort the frequent
+items based on it's
+
+24
+00:01:46,860 --> 00:01:50,890
+support frequency in
+descending order like this.
+
+25
+00:01:50,890 --> 00:01:56,180
+Base on this, we can construct a tree by
+first construct the header, following this
+
+26
+00:01:56,180 --> 00:02:01,610
+order, then scan the database,
+we can construct this tree as follows.
+
+27
+00:02:01,610 --> 00:02:07,082
+For example, okay, if you look at
+the first transaction, it's f, c,
+
+28
+00:02:07,082 --> 00:02:12,319
+a, m, p, so we construct it f, c,
+a, m, p with only support as 1.
+
+29
+00:02:12,319 --> 00:02:17,530
+Then we get f, c, a, b, m,
+we constructed this f, c, a, b, m.
+
+30
+00:02:17,530 --> 00:02:21,301
+And this power support becomes 2,
+this maintains to be 1.
+
+31
+00:02:21,301 --> 00:02:26,720
+You can go one by one working
+on the following tree.
+
+32
+00:02:26,720 --> 00:02:33,690
+Then to mine this tree, we can use the
+divide and conquer and do it recursively.
+
+33
+00:02:34,700 --> 00:02:41,100
+We can do it like this, okay, for each
+tree we can construct this pattern base.
+
+34
+00:02:41,100 --> 00:02:45,750
+We call it p's conditional pattern base,
+m's conditional pattern base.
+
+35
+00:02:45,750 --> 00:02:49,170
+Let's look at how p's conditional
+pattern base is constructed.
+
+36
+00:02:50,360 --> 00:02:54,460
+So if you can see,
+p is the leaf of the node.
+
+37
+00:02:54,460 --> 00:02:55,860
+You only look up.
+
+38
+00:02:55,860 --> 00:02:59,830
+You get f, c, a, m that supports 2 because
+
+39
+00:03:01,200 --> 00:03:04,910
+p occurs together with
+this branch only twice.
+
+40
+00:03:04,910 --> 00:03:07,530
+That's why you get f, c, a, m 2.
+
+41
+00:03:07,530 --> 00:03:11,570
+Then for the same reason,
+you look at the other p,
+
+42
+00:03:11,570 --> 00:03:17,660
+it's cb happens only once together with p,
+that's why we get cb1, okay.
+
+43
+00:03:17,660 --> 00:03:22,390
+Then if you want to look at
+m's conditional database,
+
+44
+00:03:22,390 --> 00:03:27,650
+the philosophy you were thinking
+the patterns having m but not having
+
+45
+00:03:27,650 --> 00:03:33,040
+p because of p already being taken care
+of by the p's conditional pattern base.
+
+46
+00:03:33,040 --> 00:03:38,390
+So you look at m's conditional database,
+actually you also look up and
+
+47
+00:03:38,390 --> 00:03:44,911
+you get f, c, a, so for this branch they
+occur twice, that's why you get f, c, a 2.
+
+48
+00:03:44,911 --> 00:03:50,286
+For the same reason, you look at
+this m and you get an f, c, a, b 1.
+
+49
+00:03:50,286 --> 00:03:52,143
+So you get f, c, a, b 1.
+
+50
+00:03:52,143 --> 00:03:54,470
+You can do this on and on.
+
+51
+00:03:54,470 --> 00:03:58,250
+And with this, you can get
+
+52
+00:03:58,250 --> 00:04:02,135
+into transform the prefix paths
+of p to get the following.
+
+53
+00:04:03,680 --> 00:04:08,420
+Then, the remaining task which is,
+mind this, conditional pattern base.
+
+54
+00:04:08,420 --> 00:04:14,050
+For this conditional pattern base,
+we mine single item patterns,
+
+55
+00:04:14,050 --> 00:04:17,900
+we construct the FP-tree and
+mine it recursively.
+
+56
+00:04:17,900 --> 00:04:23,810
+For example, for p's conditional
+pattern base, you will get only c: 3,
+
+57
+00:04:23,810 --> 00:04:29,140
+the reason is f, a, m,
+and b they never occur
+
+58
+00:04:29,140 --> 00:04:34,180
+more than three times, so they are out,
+they are not frequent so you only get 3.
+
+59
+00:04:34,180 --> 00:04:39,605
+But for m-conditional pattern-base,
+you per can see f, c, a really
+
+60
+00:04:39,605 --> 00:04:45,587
+occurs three times, the b only occurred
+once, then you'll get a f, c, a 3.
+
+61
+00:04:45,587 --> 00:04:49,840
+And b-conditional pattern-base gives
+you where you can see none of them,
+
+62
+00:04:49,840 --> 00:04:53,430
+actually pass the support threshold of 3,
+so it's empty.
+
+63
+00:04:53,430 --> 00:04:59,022
+So let's just look at of course,
+you'll get a and
+
+64
+00:04:59,022 --> 00:05:03,970
+c's pattern-base like f: 3 and fc:3.
+
+65
+00:05:03,970 --> 00:05:08,500
+Actually for the single branch, you can
+dump all the possible combinations there,
+
+66
+00:05:08,500 --> 00:05:09,670
+support our tree.
+
+67
+00:05:09,670 --> 00:05:15,596
+But we just look in the recursive way
+how we can mine this pattern-base.
+
+68
+00:05:15,596 --> 00:05:20,410
+For this pattern-base,
+you probably can see, you can say for
+
+69
+00:05:20,410 --> 00:05:23,748
+a's conditional pattern-base
+you'll get this.
+
+70
+00:05:23,748 --> 00:05:29,730
+You'll get fc: 3, and for c you get f: 3,
+you can see that's the same thing.
+
+71
+00:05:29,730 --> 00:05:34,595
+Then for this particular am
+conditional FP-tree you might,
+
+72
+00:05:34,595 --> 00:05:39,172
+you just take a c,
+you say c's that means a, m, c or c, a,
+
+73
+00:05:39,172 --> 00:05:44,440
+m their conditional pattern-base
+is only f: 3, you get this.
+
+74
+00:05:44,440 --> 00:05:50,260
+Then you can dump all
+the patterns like this.
+
+75
+00:05:50,260 --> 00:05:53,910
+For single branch essentially that's
+the same thing, you will dump
+
+76
+00:05:53,910 --> 00:05:58,280
+all the patterns, like all the possible
+combinations, they are all three, okay.
+
+77
+00:05:58,280 --> 00:06:03,920
+You can see if you get
+a single prefix-path,
+
+78
+00:06:03,920 --> 00:06:10,930
+you actually can partition this into two
+parts like this path you can mine it,
+
+79
+00:06:10,930 --> 00:06:15,910
+and this path you can mine it and then you
+can just concatenate the path and results.
+
+80
+00:06:15,910 --> 00:06:19,280
+What about if tree cannot
+fit in the main memory?
+
+81
+00:06:19,280 --> 00:06:22,730
+If you cannot fit in the memory,
+we can use database projection.
+
+82
+00:06:22,730 --> 00:06:26,020
+That means, we project the database
+based on the patterns,
+
+83
+00:06:26,020 --> 00:06:29,040
+based on single items set, okay.
+
+84
+00:06:29,040 --> 00:06:33,490
+So, then we can construct and mine
+this tree for each projected database.
+
+85
+00:06:33,490 --> 00:06:35,690
+So we can have parallel projection or
+
+86
+00:06:35,690 --> 00:06:38,740
+partition projection,
+two different methods.
+
+87
+00:06:38,740 --> 00:06:42,356
+The parallel projection means for
+this one,
+
+88
+00:06:42,356 --> 00:06:47,490
+you will get f4 predict database and
+f3 predict database.
+
+89
+00:06:47,490 --> 00:06:48,540
+For example, for
+
+90
+00:06:48,540 --> 00:06:53,381
+this first stream you will see gh
+suppose is non frequent to only f.
+
+91
+00:06:54,390 --> 00:06:55,780
+F's a frequent.
+
+92
+00:06:55,780 --> 00:06:59,290
+You will get an f4 predict database,
+you'll get an f2, f3.
+
+93
+00:06:59,290 --> 00:07:03,690
+Okay, then, f3's predicted base,
+you get f2.
+
+94
+00:07:03,690 --> 00:07:04,580
+That's one,
+
+95
+00:07:04,580 --> 00:07:09,650
+and every one of these projected
+databases is independent of the others.
+
+96
+00:07:09,650 --> 00:07:11,540
+So, you can mine them in parallel.
+
+97
+00:07:11,540 --> 00:07:14,542
+But then,
+you also can have partition projection.
+
+98
+00:07:14,542 --> 00:07:18,490
+Partition projection the general
+philosophy is for each string.
+
+99
+00:07:18,490 --> 00:07:20,600
+You only put into one place.
+
+100
+00:07:20,600 --> 00:07:25,391
+For example, this one country is
+therefore you only put f2, f3,
+
+101
+00:07:25,391 --> 00:07:29,720
+but you don't put this f2
+to f3 projected database.
+
+102
+00:07:29,720 --> 00:07:34,105
+When you're finished mine this f4,
+when you do this projection then you
+
+103
+00:07:34,105 --> 00:07:38,010
+think this one migrates to f3,
+you put this one into f3, okay.
+
+104
+00:07:39,330 --> 00:07:42,936
+So that's just a different choices for
+
+105
+00:07:42,936 --> 00:07:47,418
+different partition of
+parallel projections,
+
+106
+00:07:47,418 --> 00:07:52,570
+it's just a different way of implemented,
+thank you.
+
+107
+00:07:52,570 --> 00:08:02,570
+[MUSIC]

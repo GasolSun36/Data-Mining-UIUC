@@ -1,0 +1,367 @@
+1
+00:00:04,880 --> 00:00:12,360
+Let's first introduce some basic concepts: frequent patterns and association rules.
+
+2
+00:00:12,360 --> 00:00:16,965
+We first look at this simple transaction example.
+
+3
+00:00:16,965 --> 00:00:19,025
+There are five transactions,
+
+4
+00:00:19,025 --> 00:00:22,450
+10 to 50 are the transaction IDs,
+
+5
+00:00:22,450 --> 00:00:26,700
+and these are the sets of items they bought.
+
+6
+00:00:26,700 --> 00:00:29,680
+For example, transaction ID 10 contains beer,
+
+7
+00:00:29,680 --> 00:00:35,785
+nuts and diaper, which form an itemset because it is a set of items.
+
+8
+00:00:35,785 --> 00:00:37,940
+And, for this particular line,
+
+9
+00:00:37,940 --> 00:00:42,165
+it is 3-itemset because it contains three items.
+
+10
+00:00:42,165 --> 00:00:44,804
+And for each itemset,
+
+11
+00:00:44,804 --> 00:00:49,105
+you may have a concept of support.
+
+12
+00:00:49,105 --> 00:00:53,320
+Support means, in this transaction dataset,
+
+13
+00:00:53,320 --> 00:00:56,520
+how many times beer happens.
+
+14
+00:00:56,520 --> 00:00:58,674
+In this particular case,
+
+15
+00:00:58,674 --> 00:01:03,389
+there are three occurrences of beers in this transaction data,
+
+16
+00:01:03,389 --> 00:01:06,889
+so this support count of beer is three.
+
+17
+00:01:06,889 --> 00:01:09,809
+But you also can use relative support;
+
+18
+00:01:09,809 --> 00:01:13,110
+that means the fraction of the transactions.
+
+19
+00:01:13,110 --> 00:01:16,920
+For example, there are a total of five transactions,
+
+20
+00:01:16,920 --> 00:01:19,230
+three of them contains beers,
+
+21
+00:01:19,230 --> 00:01:24,850
+so the relative support is 3/5 or you can say 60 percent.
+
+22
+00:01:24,850 --> 00:01:32,070
+So, we may see whether an itemset X is frequent or not if X,
+
+23
+00:01:32,070 --> 00:01:33,915
+the support of X,
+
+24
+00:01:33,915 --> 00:01:36,749
+pass a minimum support threshold.
+
+25
+00:01:36,749 --> 00:01:41,160
+For example, if we set the minimum support threshold is 50 percent,
+
+26
+00:01:41,160 --> 00:01:46,539
+then we can see the frequent 1-itemset in this datasets,
+
+27
+00:01:46,539 --> 00:01:48,185
+you will find they're four.
+
+28
+00:01:48,185 --> 00:01:52,396
+Like beer, you can see they're three cases,
+
+29
+00:01:52,396 --> 00:01:54,734
+this absolute support is three,
+
+30
+00:01:54,734 --> 00:01:58,545
+the relative support is 3/5, is 60 percent.
+
+31
+00:01:58,545 --> 00:02:01,875
+OK. But for frequent 2-itemsets,
+
+32
+00:02:01,875 --> 00:02:03,204
+you may check it.
+
+33
+00:02:03,204 --> 00:02:04,988
+There's only one.
+
+34
+00:02:04,988 --> 00:02:07,775
+OK. Because it's a beer and diaper,
+
+35
+00:02:07,775 --> 00:02:11,804
+they happen together 3/5,
+
+36
+00:02:11,804 --> 00:02:13,650
+that's why we get this.
+
+37
+00:02:13,650 --> 00:02:16,995
+But none of the other, you know,
+
+38
+00:02:16,995 --> 00:02:21,304
+itemsets they pass this 50 percent threshold,
+
+39
+00:02:21,304 --> 00:02:23,235
+so there's only one.
+
+40
+00:02:23,235 --> 00:02:26,010
+And from the frequent itemsets,
+
+41
+00:02:26,010 --> 00:02:29,676
+we can introduce an interesting rule,
+
+42
+00:02:29,676 --> 00:02:33,345
+association rule that implies,
+
+43
+00:02:33,345 --> 00:02:40,220
+for example, X implies Y simply says if people are buying X,
+
+44
+00:02:40,220 --> 00:02:47,210
+what is the support and confidence people will buy the itemset Y?
+
+45
+00:02:47,210 --> 00:02:49,940
+OK, then S is the support,
+
+46
+00:02:49,940 --> 00:02:56,795
+which is a probability X and Y contained together in this rule set.
+
+47
+00:02:56,795 --> 00:03:00,029
+OK. Then c is a confidence,
+
+48
+00:03:00,029 --> 00:03:01,605
+which is conditional probability.
+
+49
+00:03:01,605 --> 00:03:05,645
+That means if the transaction contains X,
+
+50
+00:03:05,645 --> 00:03:10,349
+what is the probability it also contains Y?
+
+51
+00:03:10,349 --> 00:03:13,145
+So, for this probabilistic computation,
+
+52
+00:03:13,145 --> 00:03:17,740
+you can use support X union Y divided by support X.
+
+53
+00:03:17,740 --> 00:03:20,314
+That means take the whole rule support,
+
+54
+00:03:20,314 --> 00:03:22,805
+divide by the left-hand side.
+
+55
+00:03:22,805 --> 00:03:27,700
+You may see this notion X union Y.
+
+56
+00:03:27,700 --> 00:03:29,390
+This is a set union.
+
+57
+00:03:29,390 --> 00:03:31,715
+But if you look at the Venn diagram,
+
+58
+00:03:31,715 --> 00:03:39,002
+actually transactions containing X could be this part; transaction containing diaper,
+
+59
+00:03:39,002 --> 00:03:41,676
+like beer, is this part of diaper, is this part;
+
+60
+00:03:41,676 --> 00:03:45,260
+containing both actually is their intersection,
+
+61
+00:03:45,260 --> 00:03:50,395
+OK, the intersection of the events.
+
+62
+00:03:50,395 --> 00:03:53,610
+OK. But from the itemset point of view,
+
+63
+00:03:53,610 --> 00:03:57,560
+X is the transactions containing both X and Y,
+
+64
+00:03:57,560 --> 00:03:58,970
+both beer and diaper.
+
+65
+00:03:58,970 --> 00:04:00,950
+You will say this one were count,
+
+66
+00:04:00,950 --> 00:04:07,280
+that's why we use not X intersects Y but X union Y. OK.
+
+67
+00:04:07,280 --> 00:04:10,385
+If you think X is beer, Y is diaper,
+
+68
+00:04:10,385 --> 00:04:13,682
+X intersects Y will be empty,
+
+69
+00:04:13,682 --> 00:04:17,154
+X union Y means it contains both.
+
+70
+00:04:17,154 --> 00:04:21,830
+Then, for association rule mining is actually try to
+
+71
+00:04:21,830 --> 00:04:27,464
+find all such rules which pass a minimum support and a confidence threshold.
+
+72
+00:04:27,464 --> 00:04:32,045
+We already know if we set minimum support is 0.5,
+
+73
+00:04:32,045 --> 00:04:35,915
+we're find these are the frequent 1-itemsets,
+
+74
+00:04:35,915 --> 00:04:38,405
+these are the frequent 2-itemsets.
+
+75
+00:04:38,405 --> 00:04:43,700
+From here, if we set minimum confidence is 50 percent,
+
+76
+00:04:43,700 --> 00:04:48,255
+we're going to derive two association rules.
+
+77
+00:04:48,255 --> 00:04:50,140
+Because these two rules,
+
+78
+00:04:50,140 --> 00:04:52,000
+if you use this computation,
+
+79
+00:04:52,000 --> 00:04:56,810
+beer and diaper getting together is three,
+
+80
+00:04:56,810 --> 00:05:02,815
+in here, then it's 60 percent because 3/5.
+
+81
+00:05:02,815 --> 00:05:05,989
+Then, if every time beer occurs,
+
+82
+00:05:05,989 --> 00:05:07,820
+you can see diaper also occur.
+
+83
+00:05:07,820 --> 00:05:10,595
+That's why the confidence is 100 percent.
+
+84
+00:05:10,595 --> 00:05:13,534
+But for diaper implies beer,
+
+85
+00:05:13,534 --> 00:05:17,000
+you can see the diaper support is four,
+
+86
+00:05:17,000 --> 00:05:19,079
+beer support is three,
+
+87
+00:05:19,079 --> 00:05:23,375
+so that means there's only 75 percent of
+
+88
+00:05:23,375 --> 00:05:30,320
+probability the customer buying a diaper likely will buy beer.
+
+89
+00:05:30,320 --> 00:05:32,969
+Are there more rules in this one?
+
+90
+00:05:32,969 --> 00:05:34,920
+Actually if you check this,
+
+91
+00:05:34,920 --> 00:05:37,109
+because this is only frequent 2-itemset,
+
+92
+00:05:37,109 --> 00:05:45,960
+these two are the only associated rules that can be generated from this transaction data.

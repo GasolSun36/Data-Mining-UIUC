@@ -1,0 +1,454 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Pattern Discovery in Data Mining Syllabus
+ </h1>
+ <h2 level="2">
+  Course Description
+ </h2>
+ <p>
+  In this course, you will get to know one important subfield in data mining: pattern discovery.  You will learn why pattern discovery is important, what the major tricks are for efficient pattern mining, and how to apply pattern discovery in some interesting applications.  This course provides you the opportunity to learn concepts, principles, and skills to practice and engage in scalable pattern discovery methods on massive data; discuss pattern evaluation measures; study methods for mining diverse kinds of frequent patterns, sequential patterns, and sub-graph patterns; and explore their applications.
+ </p>
+ <h2 level="2">
+  Course Goals and Objectives
+ </h2>
+ <p>
+  By the end of this course, you will be able to:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Recall important pattern discovery concepts, methods, and applications, in particular the basic concepts of pattern discovery, such as frequent pattern, closed pattern, max-pattern, and association rules.
+   </p>
+  </li>
+  <li>
+   <p>
+    Identify efficient pattern mining methods, such as Apriori, ECLAT, and FPgrowth.
+   </p>
+  </li>
+  <li>
+   <p>
+    Compare pattern evaluation issues, especially several popularly used measures, such as lift, chi-square, cosine, Jaccard, and Kulczynski, and their comparative strengths.
+   </p>
+  </li>
+  <li>
+   <p>
+    Compare mining diverse patterns, including methods for mining multi-level, multi-dimensional patterns, qualitative patterns, negative correlations, and compressed and redundancy-aware top-k patterns.
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn well-known sequential pattern mining methods, including methods for mining sequential patterns, such as GSP, SPADE, PrefixSpan, and CloSpan.
+   </p>
+  </li>
+  <li>
+   <p>
+    Enjoy various pattern mining applications, such as mining spatiotemporal and trajectory patterns and mining quality phrases.
+   </p>
+  </li>
+  <li>
+   <p>
+    Explore further topics on pattern analysis, such as pattern mining in data streams, software bug mining, pattern discovery for image analysis, and privacy-preserving data mining.
+   </p>
+  </li>
+ </ul>
+ <p>
+  If you have additional time and would like to go deeper on certain advanced pattern discovery topics, you may like to delve into some optional, supplementary materials associated with this course, such as:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Constraint-based pattern mining, including methods for pushing different kinds of constraints, such as data and pattern-based constraints, anti-monotone, monotone, succinct, convertible, and multiple constraints.
+   </p>
+  </li>
+  <li>
+   <p>
+    Mining long (colossal) patterns.
+   </p>
+  </li>
+  <li>
+   <p>
+    Graph pattern mining, including methods for subgraph pattern mining, such as gSpan, CloseGraph, graph indexing methods, mining top-k large structural patterns in a single large network, and graph mining applications, such as graph indexing and similarity search in graph databases.
+   </p>
+  </li>
+  <li>
+   <p>
+    Pattern-based classifications, including CBA, CMAR, PatClass, DDPMine, and DPClass.
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Textbook and Readings
+ </h2>
+ <p>
+  Although the lectures are designed to be self-contained, we recommend (but do not require) that you refer to the following book:
+ </p>
+ <p>
+  Han, Kamber, and Pei.
+  <em>
+   Data Mining: Concepts and Techniques
+  </em>
+  , Morgan Kaufmann, 3rd ed., 2011.
+ </p>
+ <p>
+  You can download a
+  <a href="https://d396qusza40orc.cloudfront.net/patterndiscovery/Han_Data%20Mining%203e_Chapters%201%2C6%2C7.pdf">
+   PDF version of Chapters 1, 6, and 7
+  </a>
+  from
+  <em>
+   Data Mining: Concepts and Techniques,
+  </em>
+  3rd ed.for free.
+ </p>
+ <p>
+  If you would like to purchase the entire textbook, the publisher has an exclusive offer just for Coursera students. You can save 30% on either the print or eBook version of
+  <em>
+   Data mining: Concepts and techniques
+  </em>
+  (3rd ed.) and receive free shipping on all orders. Here is how it works:
+ </p>
+ <ol bullettype="numbers">
+  <li>
+   <p>
+    <a href="http://store.elsevier.com/product.jsp?isbn=9780123814791">
+     Add the book to your cart.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Enter code
+    <strong>
+     COMP315
+    </strong>
+    and click
+    <strong>
+     Apply
+    </strong>
+    .
+   </p>
+  </li>
+  <li>
+   <p>
+    The discount will be applied to the list price and cannot be combined with other promotions.
+   </p>
+  </li>
+ </ol>
+ <p>
+  Additional, optional materials may have been released or will be released shortly, and you can study them based on your own interest and proceed according to your own pace.
+ </p>
+ <h2 level="2">
+  Course Outline
+ </h2>
+ <p>
+  The course consists of
+  <strong>
+   4 weekly modules, with each week consisting of 2 lessons
+  </strong>
+  .
+ </p>
+ <p>
+  Please note: There are no required readings for this course. All readings listed below are optional.
+ </p>
+ <table columns="3" rows="5">
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Module
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Key Concepts
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Suggested Readings from
+      <em>
+       Data Mining: Concepts and Techniques
+      </em>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Week 1
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Pattern Discovery: Basic Concepts                                         •	Efficient Pattern Mining Methods
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Chapter 6: Mining Frequent Patterns, Associations, and Correlations: Basic Concepts and Methods (Sections 6.1-6.2)
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Week 2
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Pattern Evaluation •	Mining Diverse Patterns
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Chapter 6: Mining Frequent Patterns, Associations, and Correlations: Basic Concepts and Methods (Section 6.3) •	Chapter 7: Advanced Pattern Mining (Sections 7.1-7.5)
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Week 3
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Sequential Pattern Mining •	Pattern Mining Application: Spatial and Trajectory Pattern Mining
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Chapter 13: Data Mining Trends and Research Frontiers (Sections 13.1-13.2) •	Some recent research papers listed in the lecture videos/slides
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Week 4
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Pattern Mining Applications: Mining Quality Phrase from Text Data •	Advanced Topics on Pattern Discovery
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Some recent research papers listed in the lecture videos/slides
+    </p>
+   </td>
+  </tr>
+ </table>
+ <h2 level="2">
+  Elements of This Course
+ </h2>
+ <p>
+  The course is comprised of the following elements:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     Lecture videos
+    </strong>
+    :  Each week your instructor will teach you the concepts you need to know through a collection of short video lectures. You may either stream these videos for playback within the browser by clicking on their titles, or you can download each video for later offline playback by clicking the download icon.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>
+     In-lecture questions:
+    </strong>
+    Some lectures have questions associated with them to help verify your understanding of the topics. These questions will automatically appear while watching the video if you stream the video through your browser. The questions are available as a separate downloadable text file for those who prefer to download the videos. These questions do not contribute toward your final score in the class.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>
+     Quizzes
+    </strong>
+    :  Each lesson will include one graded quiz. Your cumulative score will be used when calculating your final score in the class. There is no time limit on how long you take to complete each quiz.  The deadline for all quizzes is the last day of the course.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>
+     Programming assignments
+    </strong>
+    : There are two programming assignments for this class. The first programming assignment is about understand and implementation of the most well-known frequent pattern mining algorithm: Apriori, based on some real-lie dataset; and the second programming assignment is about understanding and implementation of some simple method for contiguous sequence pattern mining and phrase mining, based on some real-life dataset. The first programming assignment is required for the Course Certificate. The second programming assignment is optional.
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Information about Lectures
+ </h2>
+ <p>
+  The lectures in this course contain the most important information you need to know. You can access these lectures in each week's lesson section. The following resources accompany each video:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    The play button will open the video up in your browser window and stream the lecture to you. The duration of the video (in hours-minutes-seconds format) is also listed. Some lectures may include in-video questions described above. Within the player that appears, you can click the CC button to activate closed captions. English captions are available for all videos.
+   </p>
+  </li>
+  <li>
+   <p>
+    All video lectures have a discussion forum dedicated to them.  This is a great place to discuss any questions you have about the content of the video or to share your ideas and responses to the video.
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Discussion Forums
+ </h2>
+ <p>
+  The discussion forums are a key element of this course. Be sure to read more
+  <a href="https://www.coursera.org/learn/data-patterns/supplement/YROa9/about-the-discussion-forums">
+   about the discussion forums
+  </a>
+  and how you can make the most of them in this class.
+ </p>
+ <h2 level="2">
+  How to Pass This Course
+ </h2>
+ <p>
+  I am continually looking to improve this course and may encounter some issues requiring us to make changes sooner rather than later.  As such, this syllabus is subject to change.  I appreciate your input and ask that you have patience as we make adjustments to this course.
+ </p>
+ <p>
+  To qualify for a Course Certificate, simply start verifying your coursework at the beginning of the course, get a
+  <strong>
+   75% or higher on all graded lesson quizzes
+  </strong>
+  , and
+  <strong>
+   70% or higher on the
+   <u>
+    required
+   </u>
+   programming assignment
+  </strong>
+  , and pay the fee. Coursera
+  <a href="https://learner.coursera.help/hc/en-us/articles/209819033-Apply-for-Financial-Aid">
+   Financial Aid
+  </a>
+  is available to offset the registration cost for learners with demonstrated economic needs. If you have questions about Course Certificates,
+  <a href="https://learner.coursera.help/hc/en-us/sections/201895943-Course-Certificates">
+   please see the help topics here
+  </a>
+  .
+ </p>
+ <p>
+  Also note that this course is in the
+  <a href="https://www.coursera.org/specialization/datamining/20">
+   Data Mining Specialization
+  </a>
+  offered by the University of Illinois at Urbana-Champaign. By earning a Course Certificate in this course, you are on your way toward earning a
+  <a href="https://www.coursera.org/specializations/datamining">
+   Specialization Certificate in Data Mining
+  </a>
+  . You may also choose to pre-pay for the entire Specialization, at a discount. See more information about
+  <a href="https://learner.coursera.help/hc/en-us/articles/209819073-Payment-policies">
+   Specialization payments
+  </a>
+  here.
+ </p>
+ <p>
+  If you choose not to pay the fee, you can still audit the course. You will still be able to view all videos, submit practice quizzes, and view required assessments.  Auditing does not include the option to submit required assessments.  As such, you will not be able to earn a grade or a Course Certificate.
+ </p>
+ <h2 level="2">
+  Getting and Giving Help
+ </h2>
+ <p>
+  You can get/give help via the following means:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Use the
+    <a href="https://courserahelp.zendesk.com/hc/en-us/">
+     Learner Help Center
+    </a>
+    to find information regarding specific technical problems. For example, technical problems would include error messages, difficulty submitting assignments, or problems with video playback. If you cannot find an answer in the documentation, you can also report your problem to the Coursera staff by clicking on the
+    <strong>
+     Contact Us
+    </strong>
+    ! link available on each topic's page within the Learner Help Center.
+   </p>
+  </li>
+  <li>
+   <p>
+    Use the
+    <a href="https://www.coursera.org/learn/data-patterns/discussions/forums/riWTSGpDEeao2hIYaPJ5Xw">
+     Content Issues
+    </a>
+    forum to report errors in lecture video content, assignment questions and answers, assignment grading, text and links on course pages, or the content of other course materials. University of Illinois staff and Community Mentors will monitor this forum and respond to issues.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Note: Due to the large number of learners enrolled in this course, I am not able to answer emails sent directly to my account. Rather, all questions should be reported as described above.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

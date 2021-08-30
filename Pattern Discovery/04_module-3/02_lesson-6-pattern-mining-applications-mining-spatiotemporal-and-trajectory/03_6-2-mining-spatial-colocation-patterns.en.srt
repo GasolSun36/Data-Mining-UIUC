@@ -1,0 +1,505 @@
+1
+00:00:01,730 --> 00:00:06,240
+We will discuss
+Mining Spatial Colocation Patterns.
+
+2
+00:00:06,240 --> 00:00:08,950
+What is spatial colocation pattern?
+
+3
+00:00:08,950 --> 00:00:12,630
+Usually, a group of
+spatial features of events
+
+4
+00:00:12,630 --> 00:00:16,070
+can be frequently colocated
+in the same region.
+
+5
+00:00:17,120 --> 00:00:21,800
+For example,
+West Nile Virus may often occur in
+
+6
+00:00:21,800 --> 00:00:27,210
+the regions with poor mosquito control and
+the presence of birds.
+
+7
+00:00:27,210 --> 00:00:29,155
+So if we can find such patterns,
+
+8
+00:00:29,155 --> 00:00:33,509
+we may have better way to
+control the spread of the virus.
+
+9
+00:00:34,530 --> 00:00:37,910
+Let's look at the example on the right.
+
+10
+00:00:37,910 --> 00:00:42,340
+So we have A, B, C,
+D as four types of objects.
+
+11
+00:00:42,340 --> 00:00:47,970
+You can think A could be West Nile Virus,
+spread in region.
+
+12
+00:00:47,970 --> 00:00:50,640
+B could be some mosquito region.
+
+13
+00:00:50,640 --> 00:00:56,360
+Or C could be in some cities, D could
+be the presence of birds, something.
+
+14
+00:00:58,230 --> 00:01:02,080
+Then we use the address,
+means they are colocated.
+
+15
+00:01:02,080 --> 00:01:08,560
+For example, 3, 6, 17 are co-located,
+we used edge to link them together.
+
+16
+00:01:08,560 --> 00:01:12,380
+And a 4, 7, 10,
+16 are co-located together.
+
+17
+00:01:12,380 --> 00:01:16,250
+We use the edge, linking them together.
+
+18
+00:01:17,730 --> 00:01:24,920
+Okay, like 2, 9 could be collocated,
+but on the other hand a 2,
+
+19
+00:01:24,920 --> 00:01:29,580
+14, 18, 11, and 15,
+these are collocated regions, okay?
+
+20
+00:01:29,580 --> 00:01:33,080
+Then we may be able to find rowset.
+
+21
+00:01:33,080 --> 00:01:35,750
+The rule set is this, okay?
+
+22
+00:01:35,750 --> 00:01:38,960
+If we want to find A, B,
+C, D, how many things are,
+
+23
+00:01:38,960 --> 00:01:45,530
+how many objects are colocated
+together as A, B, C, D for types.
+
+24
+00:01:45,530 --> 00:01:50,230
+When I be able to find four,
+seven, 10, 16 are colocated.
+
+25
+00:01:52,580 --> 00:01:58,130
+And 2, 11, 14, 15 are co-located or
+8, 11, 14, 15 are co-located.
+
+26
+00:01:58,130 --> 00:02:03,420
+That means A, B, C, D we may find two,
+
+27
+00:02:04,600 --> 00:02:07,740
+actually three instances
+they are co-located.
+
+28
+00:02:07,740 --> 00:02:08,850
+That's they are all set.
+
+29
+00:02:09,890 --> 00:02:12,400
+On the other hand, A,
+B may be a little more.
+
+30
+00:02:12,400 --> 00:02:16,398
+For example, 5,13 is co-located, 7,
+
+31
+00:02:16,398 --> 00:02:21,020
+10 is co-located, so
+we may find more instances.
+
+32
+00:02:22,420 --> 00:02:26,320
+Then we may get a colocation
+rule like this.
+
+33
+00:02:26,320 --> 00:02:32,790
+If pattern A is colocating,
+whether pattern B may also colocating.
+
+34
+00:02:32,790 --> 00:02:38,440
+We may find this conditional
+probability of the colocation patterns.
+
+35
+00:02:38,440 --> 00:02:45,560
+That means if we want to find AB may
+imply CD, that means if AB are colocated,
+
+36
+00:02:45,560 --> 00:02:51,180
+likely CD will be colocated
+with certain probability.
+
+37
+00:02:51,180 --> 00:02:57,830
+Then, we need to compute the pattern A,
+at what condition,
+
+38
+00:02:57,830 --> 00:03:04,270
+in how many cases, when A is there,
+and AB is also there.
+
+39
+00:03:04,270 --> 00:03:11,920
+That means Actually AB,
+the cases is usually is the case.
+
+40
+00:03:11,920 --> 00:03:17,280
+You can find A and
+in the row AB set, rowset.
+
+41
+00:03:18,840 --> 00:03:23,940
+Okay, essentially what we need to
+calculate is A, B, C, D is a rowset.
+
+42
+00:03:23,940 --> 00:03:28,540
+You are probably going to see there
+are three such cases A, B, C, D together.
+
+43
+00:03:28,540 --> 00:03:32,940
+But there are four cases A,B together.
+
+44
+00:03:32,940 --> 00:03:39,140
+So the condition, if you find the A,
+B then you find the C, D, colocated.
+
+45
+00:03:39,140 --> 00:03:44,330
+The condition equals 3 over 4 is 75%.
+
+46
+00:03:44,330 --> 00:03:48,980
+The conditional probability for
+this rule is 75%.
+
+47
+00:03:48,980 --> 00:03:53,930
+Then the interesting thing is,
+
+48
+00:03:53,930 --> 00:04:00,510
+can we find such colocation patterns and
+rules automatically and efficiently?
+
+49
+00:04:00,510 --> 00:04:01,530
+Okay.
+
+50
+00:04:01,530 --> 00:04:06,719
+So let's see how we can derive
+an efficient algorithm to find them.
+
+51
+00:04:08,420 --> 00:04:11,330
+To find efficient algorithms,
+
+52
+00:04:11,330 --> 00:04:16,500
+we first introduce another concept
+called participation ratio.
+
+53
+00:04:16,500 --> 00:04:23,520
+That means that the feature f is
+participating in this pattern c.
+
+54
+00:04:23,520 --> 00:04:25,450
+What's the probability?
+
+55
+00:04:25,450 --> 00:04:26,320
+Okay.
+
+56
+00:04:26,320 --> 00:04:31,880
+So for example A participating in A,
+B, C, D, you're broken in C.
+
+57
+00:04:31,880 --> 00:04:32,550
+A is the red one.
+
+58
+00:04:33,840 --> 00:04:37,260
+We have one, two, three, four, five.
+
+59
+00:04:37,260 --> 00:04:39,260
+Five cases you'll find A.
+
+60
+00:04:40,455 --> 00:04:45,090
+But every time we find A We can find a,
+b, c, d.
+
+61
+00:04:46,090 --> 00:04:50,300
+There are only two such cases like 7 and
+14.
+
+62
+00:04:50,300 --> 00:04:56,280
+That's why we get a 2 over 5
+is the participation ratio.
+
+63
+00:04:56,280 --> 00:05:02,710
+Similarly, if you want to
+find D participating in A,
+
+64
+00:05:02,710 --> 00:05:07,190
+B, C, D, d It actually is the blue circle.
+
+65
+00:05:07,190 --> 00:05:10,710
+You can see there are only
+two blue circles, but
+
+66
+00:05:10,710 --> 00:05:16,900
+both of them are completely partitioned,
+participating in this ABCD pattern.
+
+67
+00:05:16,900 --> 00:05:21,230
+This simply says you get cases
+two over two is 100 percent.
+
+68
+00:05:23,600 --> 00:05:28,400
+Then we may derive a interesting property
+
+69
+00:05:28,400 --> 00:05:33,560
+called monotonicity property
+of participation ratio, okay?
+
+70
+00:05:33,560 --> 00:05:41,140
+That means suppose we have c and
+c prime as two core location patterns.
+
+71
+00:05:41,140 --> 00:05:43,750
+But c prime is a subset of c.
+
+72
+00:05:45,440 --> 00:05:49,700
+Then for every feature f, if feature
+
+73
+00:05:49,700 --> 00:05:54,990
+is participating in C prime, okay?
+
+74
+00:05:54,990 --> 00:06:01,420
+Then the probability will be higher
+than participating in a superset.
+
+75
+00:06:01,420 --> 00:06:05,885
+This is quite easily,
+can be an either and or
+
+76
+00:06:05,885 --> 00:06:12,830
+[INAUDIBLE] because you can think about
+this, if A participating in A, B then
+
+77
+00:06:14,290 --> 00:06:20,950
+the chance is higher than
+A participating into, in A, B, C, D.
+
+78
+00:06:20,950 --> 00:06:23,860
+Because every time when A, B occurs.
+
+79
+00:06:23,860 --> 00:06:26,160
+ABCD also will be.
+
+80
+00:06:26,160 --> 00:06:29,190
+When A, B, C D occurs,
+a, b will also be there.
+
+81
+00:06:29,190 --> 00:06:36,060
+That's why when f participating in c for
+sure the probability or
+
+82
+00:06:36,060 --> 00:06:41,609
+the participation ratio will be
+higher then participating supersect.
+
+83
+00:06:43,270 --> 00:06:50,210
+So based on the monotonicity,
+we can work out an Apriori-like algorithm
+
+84
+00:06:51,220 --> 00:06:55,270
+to efficient mine colocation patterns.
+
+85
+00:06:56,540 --> 00:06:57,989
+Let's give such an example.
+
+86
+00:06:59,030 --> 00:07:05,760
+Suppose minimum feature
+support is riveting a sigma,
+
+87
+00:07:05,760 --> 00:07:09,900
+and a minimum participation
+ratio is rewritten as roe.
+
+88
+00:07:10,980 --> 00:07:16,100
+Then we start from a set
+of single feature patterns.
+
+89
+00:07:16,100 --> 00:07:21,410
+If they are frequent, that means if
+their support is no less than sigma.
+
+90
+00:07:21,410 --> 00:07:22,120
+Okay.
+
+91
+00:07:22,120 --> 00:07:28,795
+Then, we can keep using upper array
+like a principle to find their pairs.
+
+92
+00:07:28,795 --> 00:07:33,080
+That mean from the single feature pattern
+try to find two feature patterns,
+
+93
+00:07:33,080 --> 00:07:36,730
+three feature patterns grow up to size k.
+
+94
+00:07:36,730 --> 00:07:41,480
+Anytime we can stop if
+the pattern is frequent to anyone
+
+95
+00:07:41,480 --> 00:07:45,820
+Because once it's not frequent,
+it's super patterned will not be frequent.
+
+96
+00:07:45,820 --> 00:07:49,150
+This is simply based on
+the Apriori principle.
+
+97
+00:07:50,210 --> 00:07:57,500
+Then based on these participation in
+ratio monotonicy we will be able to find
+
+98
+00:07:57,500 --> 00:08:03,890
+all the super patterns of a single
+feature or the multiple features.
+
+99
+00:08:03,890 --> 00:08:07,450
+Suppose we got a feature Is p,
+
+100
+00:08:07,450 --> 00:08:13,390
+we want to find it's super feature,
+okay nor super-pattern.
+
+101
+00:08:13,390 --> 00:08:16,070
+And we know we can get a little
+
+102
+00:08:16,070 --> 00:08:20,430
+bigger super-pattern to see
+whether it's greater in row.
+
+103
+00:08:20,430 --> 00:08:27,420
+Anytime if it's not greater in row,
+it's super-pattern would not need to be
+
+104
+00:08:27,420 --> 00:08:33,450
+examined because they cannot
+be bigger than row anymore.
+
+105
+00:08:33,450 --> 00:08:40,530
+So based on these Apriori principle, we
+can easily work out efficient algorithms.
+
+106
+00:08:40,530 --> 00:08:42,170
+So that's the trick or
+
+107
+00:08:42,170 --> 00:08:47,178
+that's the interestingness if we
+can find a monotonicity pattern,
+
+108
+00:08:47,178 --> 00:08:52,981
+we will be able to work out, Apriori-like
+efficient processing algorithms.

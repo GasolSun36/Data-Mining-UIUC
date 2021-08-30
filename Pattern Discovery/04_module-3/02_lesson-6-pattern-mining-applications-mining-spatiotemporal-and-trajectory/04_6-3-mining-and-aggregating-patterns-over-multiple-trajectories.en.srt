@@ -1,0 +1,554 @@
+1
+00:00:01,580 --> 00:00:05,440
+In this unit,
+we're going to study Mining and
+
+2
+00:00:05,440 --> 00:00:09,280
+Aggregating Patterns over
+Multiple Trajectories.
+
+3
+00:00:11,070 --> 00:00:12,770
+When we study spatial and
+
+4
+00:00:12,770 --> 00:00:17,030
+temporal patterns, an important
+pattern is trajectory pattern.
+
+5
+00:00:17,030 --> 00:00:22,503
+That means you look at the points,
+the objects,
+
+6
+00:00:22,503 --> 00:00:29,000
+the moving along the spatial map,
+along with time.
+
+7
+00:00:29,000 --> 00:00:31,110
+So we call these the trajectories.
+
+8
+00:00:31,110 --> 00:00:33,570
+What we want to find
+are trajectory patterns.
+
+9
+00:00:34,950 --> 00:00:38,830
+One interesting trajectory
+pattern mining method
+
+10
+00:00:38,830 --> 00:00:41,738
+called partition-based
+trajectory pattern mining.
+
+11
+00:00:41,738 --> 00:00:46,950
+They are mining T-patterns,
+T means trajectory.
+
+12
+00:00:46,950 --> 00:00:51,570
+This is a work done by a group
+of Italian researchers.
+
+13
+00:00:51,570 --> 00:00:55,910
+They published in KDD 2007 called
+Trajectory Pattern Mining.
+
+14
+00:00:57,430 --> 00:01:02,182
+Their mining method essentially
+is a really good study like busy
+
+15
+00:01:02,182 --> 00:01:03,770
+traffic in the city.
+
+16
+00:01:04,910 --> 00:01:09,180
+You can think a city
+can't be partitioned into
+
+17
+00:01:09,180 --> 00:01:13,580
+equal width grids to obtain
+regions of interest.
+
+18
+00:01:13,580 --> 00:01:18,010
+For example,
+one grid may represent the museum,
+
+19
+00:01:18,010 --> 00:01:22,121
+the other grid may represent
+the railway or campus.
+
+20
+00:01:23,140 --> 00:01:28,340
+Then when you study the busy traffic,
+they go along the route.
+
+21
+00:01:28,340 --> 00:01:34,670
+You will be able to find either
+what hours or how much time
+
+22
+00:01:34,670 --> 00:01:40,250
+you will find a very busy traffic and how
+long it may take to reach the other side.
+
+23
+00:01:41,980 --> 00:01:47,050
+So, what we can do is we
+can transform each input's
+
+24
+00:01:47,050 --> 00:01:52,490
+trajectory into a time
+annotated symbolic sequence.
+
+25
+00:01:52,490 --> 00:01:57,300
+For example, you may transform one
+location is a railway station.
+
+26
+00:01:57,300 --> 00:01:59,510
+Another location is Castle Square.
+
+27
+00:01:59,510 --> 00:02:01,950
+The third location could be museum.
+
+28
+00:02:01,950 --> 00:02:07,720
+And based on a time, you may say from
+the railway station, it takes about 15
+
+29
+00:02:07,720 --> 00:02:12,810
+minutes to reach Castle Square and takes
+2 hours and 15 minutes to reach museum.
+
+30
+00:02:14,610 --> 00:02:19,479
+And we can use a constraint-based
+sequential pattern mining because
+
+31
+00:02:19,479 --> 00:02:22,790
+each grid is matched
+into a symbolic sequence.
+
+32
+00:02:22,790 --> 00:02:27,225
+So the finer you can use
+the symbolic sequence to represent
+
+33
+00:02:27,225 --> 00:02:32,204
+the whole trajectory and
+try to find trajectory pattern is trying
+
+34
+00:02:32,204 --> 00:02:36,890
+to use constraint-based
+sequential pattern mining.
+
+35
+00:02:36,890 --> 00:02:41,332
+The constraints can be
+the range of time delay.
+
+36
+00:02:41,332 --> 00:02:45,868
+Then, the constraint-based
+sequential pattern mining
+
+37
+00:02:45,868 --> 00:02:50,861
+results can be mapped onto the map
+to show how much time it may take
+
+38
+00:02:50,861 --> 00:02:54,582
+from one location going
+to the other location.
+
+39
+00:02:54,582 --> 00:02:59,985
+That kind of matching T-pattern
+will be something like (x0,
+
+40
+00:02:59,985 --> 00:03:05,799
+y0) after alpha time delay,
+you will reach (x1, y1) points.
+
+41
+00:03:05,799 --> 00:03:14,250
+This will get into explicit
+representation of the pattern.
+
+42
+00:03:14,250 --> 00:03:23,400
+Then another interesting group of studies
+are detecting moving object clusters.
+
+43
+00:03:23,400 --> 00:03:25,870
+That means, you may think trucks.
+
+44
+00:03:25,870 --> 00:03:27,800
+You may think animals.
+
+45
+00:03:27,800 --> 00:03:29,920
+They are moving together,
+
+46
+00:03:29,920 --> 00:03:35,440
+you may want to find their moving
+object clusters in this sense.
+
+47
+00:03:35,440 --> 00:03:38,400
+The first one, definition is flock.
+
+48
+00:03:39,630 --> 00:03:40,772
+Both flock and
+
+49
+00:03:40,772 --> 00:03:46,300
+a convoy require k consecutive time
+stamp in order to find patterns.
+
+50
+00:03:47,346 --> 00:03:52,820
+The flock essentially is they require
+at least m entities are within
+
+51
+00:03:52,820 --> 00:03:59,130
+the circular region of radius r, and they
+are moving together in the same direction.
+
+52
+00:03:59,130 --> 00:04:03,380
+Then we call these the flock pattern.
+
+53
+00:04:03,380 --> 00:04:08,450
+But a flock pattern is a little too
+rigid in the sense they require
+
+54
+00:04:08,450 --> 00:04:14,490
+at least m entities moving in
+k consecutive time stamps.
+
+55
+00:04:14,490 --> 00:04:19,631
+And it's within their movement are within
+the circular region of radius r,
+
+56
+00:04:19,631 --> 00:04:21,730
+they are relative distances.
+
+57
+00:04:23,430 --> 00:04:28,060
+And sometimes this radius r is too rigid.
+
+58
+00:04:28,060 --> 00:04:33,050
+The convoy definition is using
+density-based clustering.
+
+59
+00:04:33,050 --> 00:04:36,520
+They don't have to be within radius r.
+
+60
+00:04:36,520 --> 00:04:40,080
+They can be tighter, or
+they can be a little looser.
+
+61
+00:04:40,080 --> 00:04:44,100
+As long as they form
+a density-based clustering,
+
+62
+00:04:44,100 --> 00:04:50,040
+you'll be able to find those m entities,
+and in the k consecutive
+
+63
+00:04:50,040 --> 00:04:55,480
+time stamps, they move together,
+you can think they are convoy patterns.
+
+64
+00:04:55,480 --> 00:05:00,788
+However, such movement
+constraints are still very rigid
+
+65
+00:05:00,788 --> 00:05:05,670
+in the sense both require
+k consecutive time stamps.
+
+66
+00:05:06,900 --> 00:05:12,090
+We may think like animal
+movements as certain time stamp,
+
+67
+00:05:12,090 --> 00:05:15,960
+the animal may not be so
+closely clustered together.
+
+68
+00:05:15,960 --> 00:05:21,740
+They may spread around to graze or
+to do other things.
+
+69
+00:05:21,740 --> 00:05:26,940
+In that sense, we may relax
+this k consecutive time stamps
+
+70
+00:05:26,940 --> 00:05:33,180
+to allow at certain time stamps,
+they probably are quite far apart.
+
+71
+00:05:33,180 --> 00:05:35,010
+But on the other time stamps,
+
+72
+00:05:35,010 --> 00:05:38,509
+you will be able to find they
+are very closely moving together.
+
+73
+00:05:39,860 --> 00:05:44,020
+In that sense,
+we define such pattern as swarm.
+
+74
+00:05:44,020 --> 00:05:47,432
+Swarm means the moving objects may
+not need to be close together,
+
+75
+00:05:47,432 --> 00:05:49,840
+all the consecutive time stamps.
+
+76
+00:05:51,170 --> 00:05:57,310
+Of course, to find such movement pattern,
+it will be more
+
+77
+00:05:57,310 --> 00:06:02,930
+costly than finding flocks and convoys
+because the pattern is more relaxed.
+
+78
+00:06:04,130 --> 00:06:08,460
+Some efficient algorithm has been
+developed to mine such pattern.
+
+79
+00:06:08,460 --> 00:06:14,270
+The paper was published in VLDB 2010.
+
+80
+00:06:14,270 --> 00:06:21,480
+Now we look at another trajectory pattern
+is during clustering try to find them.
+
+81
+00:06:21,480 --> 00:06:24,810
+We call trajectory clustering.
+
+82
+00:06:24,810 --> 00:06:27,990
+This could be useful in, for example,
+
+83
+00:06:27,990 --> 00:06:32,620
+try to find land,
+try to forecast a hurricane landfall.
+
+84
+00:06:33,780 --> 00:06:36,930
+If you overlay many years
+of hurricane together,
+
+85
+00:06:36,930 --> 00:06:41,600
+you may find they may
+form very close clusters.
+
+86
+00:06:41,600 --> 00:06:47,662
+However, if you try to take the whole
+hurricane paths as inseparable,
+
+87
+00:06:47,662 --> 00:06:52,611
+you will not be able to find
+such patterns, just because at
+
+88
+00:06:52,611 --> 00:06:58,083
+certain points of time,
+these hurricanes may already nicely.
+
+89
+00:06:58,083 --> 00:07:03,253
+But at other time,
+they may become more spreading
+
+90
+00:07:03,253 --> 00:07:09,420
+because they were influenced
+by different flow of the air.
+
+91
+00:07:11,090 --> 00:07:14,130
+So try to find such patterns.
+
+92
+00:07:14,130 --> 00:07:18,710
+We will propose a partitioning and
+a grouping approach.
+
+93
+00:07:18,710 --> 00:07:23,540
+Partitioning means you will first
+chop these trajectories, for
+
+94
+00:07:23,540 --> 00:07:29,850
+each trajectory, you will chop them
+into a sequence of segments, okay?
+
+95
+00:07:29,850 --> 00:07:36,553
+Then after chopping these into sequence
+of segments, you will be able to find for
+
+96
+00:07:36,553 --> 00:07:41,600
+certain fragments,
+they are moving in the same direction.
+
+97
+00:07:41,600 --> 00:07:43,260
+They may form nice patterns.
+
+98
+00:07:43,260 --> 00:07:46,930
+You can group them together
+as trajectory clusters.
+
+99
+00:07:48,620 --> 00:07:53,182
+Then how we can nicely find such patterns?
+
+100
+00:07:53,182 --> 00:08:01,841
+For partitioning, you can use minimum
+description lens principle called MDL.
+
+101
+00:08:01,841 --> 00:08:06,068
+The MDL, the general philosophy is,
+
+102
+00:08:06,068 --> 00:08:10,955
+you try to use minimum number of points,
+but
+
+103
+00:08:10,955 --> 00:08:16,840
+maximally reflect the real
+trajectory paths.
+
+104
+00:08:16,840 --> 00:08:22,560
+That means instead of thinking you
+use many, many small fragments,
+
+105
+00:08:22,560 --> 00:08:27,020
+which are too costly,
+you try to use less of them.
+
+106
+00:08:27,020 --> 00:08:32,550
+But you don't want to use too few,
+because you will distort the picture.
+
+107
+00:08:32,550 --> 00:08:37,820
+You will try to maximally approximate
+the real trajectory pass.
+
+108
+00:08:38,960 --> 00:08:44,820
+In that sense you may say I use
+minimum description length principle
+
+109
+00:08:44,820 --> 00:08:50,300
+when the trajectory started
+turning in the sharper angle,
+
+110
+00:08:50,300 --> 00:08:55,390
+I would try to say these
+should be separate points.
+
+111
+00:08:55,390 --> 00:08:59,060
+Then you may find smaller
+number of fragments, but
+
+112
+00:08:59,060 --> 00:09:04,300
+maximum preserve the shape
+of the trajectory.
+
+113
+00:09:04,300 --> 00:09:09,499
+So this is interesting algorithm
+published in SIGMOD 2007 called
+
+114
+00:09:09,499 --> 00:09:14,354
+Trajectory Clustering:
+A Partition-and-Group Framework.
+
+115
+00:09:14,354 --> 00:09:25,070
+[MUSIC]
+
+116
+00:09:25,070 --> 00:09:30,859
+[SOUND]

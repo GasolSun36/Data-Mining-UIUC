@@ -1,0 +1,300 @@
+1
+00:00:00,000 --> 00:00:06,992
+[SOUND]
+We
+
+2
+00:00:06,992 --> 00:00:11,273
+first discuss how to mine
+Multi-level Association Rules.
+
+3
+00:00:11,273 --> 00:00:17,540
+Multi-level Association rules come
+down to a very natural setting.
+
+4
+00:00:17,540 --> 00:00:21,080
+For example, to your boss if you say,
+now I find milk and
+
+5
+00:00:21,080 --> 00:00:26,220
+bread sold together, probably
+everybody thinks this is common sense.
+
+6
+00:00:26,220 --> 00:00:31,300
+But if you find 2% milk
+with a brand Dairyland sold
+
+7
+00:00:31,300 --> 00:00:35,340
+together with Wonder Wheat Bread, probably
+it becomes something more interesting.
+
+8
+00:00:35,340 --> 00:00:41,030
+But if you see this Dairyland 2% milk
+actually sitting in the hierarchy, the top
+
+9
+00:00:41,030 --> 00:00:46,690
+level could be milk, then go down to 2%
+milk then go down to Dairyland 2% milk.
+
+10
+00:00:46,690 --> 00:00:52,810
+So, it is interesting to mine
+Multi-level Association Rule patterns.
+
+11
+00:00:52,810 --> 00:00:57,237
+Then the interesting thing becomes
+how to set a min-support threshold?
+
+12
+00:00:58,330 --> 00:01:03,479
+While we set up uniform min-support
+threshold across all the levels.
+
+13
+00:01:04,540 --> 00:01:09,610
+But there's one problem,
+if you set it very high
+
+14
+00:01:09,610 --> 00:01:15,350
+because they naturally have lower support,
+the low-level patterns will not show up.
+
+15
+00:01:15,350 --> 00:01:19,300
+But if you set it very low
+the high level you get too many
+
+16
+00:01:19,300 --> 00:01:22,210
+interesting patterns because
+everything may show up.
+
+17
+00:01:22,210 --> 00:01:27,300
+So a reasonable way is set
+Level-reduced min-support.
+
+18
+00:01:27,300 --> 00:01:33,040
+That means items at higher level use
+higher level min-support like 5%,
+
+19
+00:01:33,040 --> 00:01:38,950
+where you go down to the lower level, you
+may adopt lower level min-support like 1%.
+
+20
+00:01:38,950 --> 00:01:42,650
+To that extent,
+the skim milk will show up.
+
+21
+00:01:42,650 --> 00:01:47,080
+But at high levels, some you know peanuts
+or some other things may not show up
+
+22
+00:01:47,080 --> 00:01:50,430
+if they are not interesting,
+they are not frequent at all.
+
+23
+00:01:50,430 --> 00:01:55,370
+So then the problem is if we
+set a multi-level minimum
+
+24
+00:01:55,370 --> 00:02:00,510
+support thresholds associated with
+different levels then how can we
+
+25
+00:02:00,510 --> 00:02:06,030
+use one scan in one shot we
+mine all the different levels?
+
+26
+00:02:06,030 --> 00:02:09,680
+The interesting thing could be we
+can use shared multi-level mining.
+
+27
+00:02:09,680 --> 00:02:16,370
+We can use the lowest min-support to let
+the high level pass down to the low level.
+
+28
+00:02:16,370 --> 00:02:20,470
+But in the meantime when we analyze
+rules and analyze patterns,
+
+29
+00:02:20,470 --> 00:02:25,140
+we can fill out the higher level rules
+using higher level support threshold.
+
+30
+00:02:25,140 --> 00:02:30,590
+So another problem for mining Multi-level
+Association Rules is redundancy.
+
+31
+00:02:30,590 --> 00:02:34,386
+Because the rules may have
+some hidden relationships.
+
+32
+00:02:34,386 --> 00:02:42,120
+For example, suppose 2% milk sold is
+about 1/4 of total milk sold in gallons.
+
+33
+00:02:42,120 --> 00:02:48,150
+Then if you see these two rules,
+one and two, the Rule (1) says,
+
+34
+00:02:48,150 --> 00:02:53,820
+milk implies wheat bread which is
+supports is 8% and the confidence, 70%.
+
+35
+00:02:53,820 --> 00:02:59,440
+The Rule (2), if you drop down
+a little down to from milk to 2% milk.
+
+36
+00:02:59,440 --> 00:03:03,964
+In the meantime the support also
+dropped down correspondingly, for
+
+37
+00:03:03,964 --> 00:03:08,560
+example from 8% to 2%,
+Un that case, people can see.
+
+38
+00:03:08,560 --> 00:03:13,640
+Rule (2) is a redundant because we
+can derive such things from Rule (1).
+
+39
+00:03:13,640 --> 00:03:18,500
+That means,
+if the rule can be derived from the higher
+
+40
+00:03:18,500 --> 00:03:22,710
+level rules that lower level rules
+are redundant, we shall remove them.
+
+41
+00:03:22,710 --> 00:03:27,160
+Another interesting thing is
+different kinds of items.
+
+42
+00:03:27,160 --> 00:03:30,140
+Inherently, many different
+support thresholds.
+
+43
+00:03:30,140 --> 00:03:34,430
+For example, you go to Walmart,
+you may see diamond, watch, or
+
+44
+00:03:34,430 --> 00:03:39,580
+some expensive things that more valuable
+but they sold maybe less frequent.
+
+45
+00:03:39,580 --> 00:03:42,820
+But milk and
+bread probably sold very frequent.
+
+46
+00:03:42,820 --> 00:03:45,070
+So, if we set min-support for
+
+47
+00:03:45,070 --> 00:03:49,488
+all kinds of items using the same
+minimum support threshold.
+
+48
+00:03:49,488 --> 00:03:53,570
+Then the valuable items may
+be easily feared out, so,
+
+49
+00:03:53,570 --> 00:03:58,980
+to that extent it is necessary to have
+customized minimum support settings for
+
+50
+00:03:58,980 --> 00:04:00,450
+different kinds of items.
+
+51
+00:04:01,795 --> 00:04:05,336
+Instead of taking each item try
+to decide ib minimum support,
+
+52
+00:04:05,336 --> 00:04:08,935
+we can use group-based,
+individualized, min-support.
+
+53
+00:04:08,935 --> 00:04:11,375
+For example, we can group,
+diamond, watch, or
+
+54
+00:04:11,375 --> 00:04:14,925
+some expensive things
+set a lower min-support.
+
+55
+00:04:14,925 --> 00:04:17,985
+Take a milk and bread,
+those frequent things, and
+
+56
+00:04:17,985 --> 00:04:21,210
+set up higher min-support threshold.
+
+57
+00:04:21,210 --> 00:04:25,820
+Then the question becomes how to
+mine such patterns efficiently.
+
+58
+00:04:25,820 --> 00:04:31,350
+Actually, if we take our previous study,
+the scalable pattern mining methods,
+
+59
+00:04:31,350 --> 00:04:35,390
+we can easily extend them by adding
+different minimum support threshold.
+
+60
+00:04:35,390 --> 00:04:39,788
+I would not discuss the detail, but
+I think it could be a good exercise.
+
+61
+00:04:39,788 --> 00:04:49,788
+[MUSIC]

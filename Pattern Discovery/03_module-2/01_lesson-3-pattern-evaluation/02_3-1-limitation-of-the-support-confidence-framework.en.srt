@@ -1,0 +1,215 @@
+1
+00:00:00,012 --> 00:00:03,781
+[SOUND]
+
+2
+00:00:06,817 --> 00:00:09,284
+The first thing we want to discuss is,
+
+3
+00:00:09,284 --> 00:00:12,840
+The Limitation of
+the Support Confidence Framework.
+
+4
+00:00:14,170 --> 00:00:18,940
+As we know, pattern mining may
+generate a large number of rules but
+
+5
+00:00:18,940 --> 00:00:23,190
+not all of the patterns and
+rules generated are interesting.
+
+6
+00:00:24,310 --> 00:00:29,997
+In general we can classify the interesting
+measures into two classes,
+
+7
+00:00:29,997 --> 00:00:32,565
+objective versus subjective.
+
+8
+00:00:32,565 --> 00:00:37,171
+For objective measure like support,
+confidence,
+
+9
+00:00:37,171 --> 00:00:41,883
+correlation are defined
+by mathematical formulas,
+
+10
+00:00:41,883 --> 00:00:45,136
+not change from person to to person.
+
+11
+00:00:45,136 --> 00:00:48,845
+But the subjective measure may
+change from person to person,
+
+12
+00:00:48,845 --> 00:00:53,190
+because one man's trash could
+be another man's treasure.
+
+13
+00:00:53,190 --> 00:00:58,400
+So the first thing, is we may want
+a user to say, what do you like to see?
+
+14
+00:00:58,400 --> 00:01:00,127
+So it's query based.
+
+15
+00:01:00,127 --> 00:01:04,287
+Another thing is we may base
+on user's knowledge base,
+
+16
+00:01:04,287 --> 00:01:08,278
+try to mine something unexpected,
+fresh or recent.
+
+17
+00:01:08,278 --> 00:01:12,878
+Or we can map patterns and
+rules into two-dimensional space,
+
+18
+00:01:12,878 --> 00:01:17,150
+let user to interactively
+pick some interesting things.
+
+19
+00:01:18,320 --> 00:01:22,060
+So we know we have support and
+
+20
+00:01:22,060 --> 00:01:26,770
+confidence as two interestingness
+measures in association rules.
+
+21
+00:01:26,770 --> 00:01:32,290
+So we may be careful about this,
+because not all the strong
+
+22
+00:01:32,290 --> 00:01:35,440
+support and
+confidence rules are interesting.
+
+23
+00:01:36,650 --> 00:01:41,510
+For example, take the following table,
+a 2-way contingency table,
+
+24
+00:01:41,510 --> 00:01:46,010
+to look at this to see how to
+interpret things we found.
+
+25
+00:01:46,010 --> 00:01:53,120
+For example, in this table, 400 out
+of 1000 students play basketball and
+
+26
+00:01:53,120 --> 00:01:58,640
+eating cereal, but 200 students, they play
+basketball but they may not eat cereal.
+
+27
+00:02:00,070 --> 00:02:03,880
+In this one,
+you may derive association rule like this.
+
+28
+00:02:03,880 --> 00:02:07,490
+Playing basketball implies eating cereal.
+
+29
+00:02:07,490 --> 00:02:12,564
+You probably will get a 40% support
+because it's 400 over 1,000.
+
+30
+00:02:12,564 --> 00:02:17,890
+You will get two thirds of the confidence
+because you get 400 over 600.
+
+31
+00:02:17,890 --> 00:02:22,050
+So this is pretty high support and
+confidence.
+
+32
+00:02:22,050 --> 00:02:24,520
+Is this really interesting?
+
+33
+00:02:24,520 --> 00:02:27,213
+Let me try another rule regenerated.
+
+34
+00:02:27,213 --> 00:02:33,587
+Actually you will see, if we say not
+playing basketball, eating cereal.
+
+35
+00:02:33,587 --> 00:02:40,519
+You will see not playing basketball is
+35%, with the confidence even higher,
+
+36
+00:02:40,519 --> 00:02:46,260
+because they have 350 eating
+cereal out of 400 people.
+
+37
+00:02:46,260 --> 00:02:48,150
+So this one is even higher.
+
+38
+00:02:48,150 --> 00:02:52,930
+So, if you recommend these two
+rules to the cereal company,
+
+39
+00:02:52,930 --> 00:02:54,440
+they will get confused.
+
+40
+00:02:54,440 --> 00:02:59,050
+They'll say, the first rule say that
+I better give some free basketball
+
+41
+00:02:59,050 --> 00:03:02,990
+because if they play basketball,
+eating cereal.
+
+42
+00:03:02,990 --> 00:03:05,790
+The second rule say I better
+take their basketball away,
+
+43
+00:03:05,790 --> 00:03:10,060
+because if they do not play basketball
+they actually eat cereal even more.
+
+44
+00:03:10,060 --> 00:03:11,370
+Which one is right?
+
+45
+00:03:11,370 --> 00:03:13,976
+Let's examine it.
+
+46
+00:03:13,976 --> 00:03:23,976
+[MUSIC]

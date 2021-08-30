@@ -1,0 +1,1006 @@
+1
+00:00:00,000 --> 00:00:05,023
+[SOUND] In this session, we're going
+
+2
+00:00:05,023 --> 00:00:10,216
+to discuss another important issue.
+
+3
+00:00:10,216 --> 00:00:12,528
+&nbsp;Pattern Mining and Society.
+
+4
+00:00:12,528 --> 00:00:18,188
+Especially, we will be focusing on
+the privacy issue in Data Mining.
+
+5
+00:00:18,188 --> 00:00:22,478
+We know, we are living in a data rich or
+big data society.
+
+6
+00:00:22,478 --> 00:00:28,148
+This of course create, you know, create
+opportunity for a successful data mining.
+
+7
+00:00:28,148 --> 00:00:32,921
+But on the other hand,
+people do have concerns whether
+
+8
+00:00:32,921 --> 00:00:38,227
+pattern mining may violate
+people's privacy or security.
+
+9
+00:00:38,227 --> 00:00:39,219
+Okay.
+
+10
+00:00:39,219 --> 00:00:44,207
+Actually, data mining may
+naturally have potential
+
+11
+00:00:44,207 --> 00:00:48,393
+adverse side effect is
+compromise the privacy.
+
+12
+00:00:48,393 --> 00:00:54,818
+The privacy and accuracy are typically
+contradictory in nature.
+
+13
+00:00:54,818 --> 00:00:59,510
+That means, if you want your
+pattern mining very accurate.
+
+14
+00:00:59,510 --> 00:01:03,750
+In many cases,
+the privacy may be compromised.
+
+15
+00:01:03,750 --> 00:01:08,289
+But if you want to protect your
+privacy in a very tight manner,
+
+16
+00:01:08,289 --> 00:01:12,148
+then the accuracy of
+the pattern mining may suffer.
+
+17
+00:01:12,148 --> 00:01:12,814
+Okay.
+So
+
+18
+00:01:12,814 --> 00:01:18,234
+the problem is we need a new technology
+to privacy preserving data mining.
+
+19
+00:01:18,234 --> 00:01:22,343
+We ensure the data mining
+will achieve good results.
+
+20
+00:01:22,343 --> 00:01:27,060
+But in the mean time,
+we're going to protect people's privacy.
+
+21
+00:01:27,060 --> 00:01:30,975
+There are lots of research
+working on this issue.
+
+22
+00:01:30,975 --> 00:01:34,360
+We call privacy preserving data mining.
+
+23
+00:01:34,360 --> 00:01:34,940
+Okay.
+
+24
+00:01:34,940 --> 00:01:39,725
+The study generally focused on
+three categories on privacy.
+
+25
+00:01:39,725 --> 00:01:44,198
+One, we call input privacy or
+you can think about data privacy.
+
+26
+00:01:44,198 --> 00:01:46,895
+Essentially, how do we hide data?
+
+27
+00:01:46,895 --> 00:01:52,020
+We can distort data,
+we can hide data to prevent data miners
+
+28
+00:01:52,020 --> 00:01:57,773
+from reliable extracting confidential or
+private information.
+
+29
+00:01:57,773 --> 00:02:01,858
+Another category of privacy
+is output privacy or we say,
+
+30
+00:02:01,858 --> 00:02:05,442
+knowledge privacy,
+knowledge hiding problem.
+
+31
+00:02:05,442 --> 00:02:11,377
+That means, where the input data may
+be okay, but once we find patterns,
+
+32
+00:02:11,377 --> 00:02:15,515
+certain pattern or
+knowledge could be sensitive.
+
+33
+00:02:15,515 --> 00:02:17,948
+You may not want to disclose it.
+
+34
+00:02:17,948 --> 00:02:20,171
+So how we can guarantee?
+
+35
+00:02:20,171 --> 00:02:24,765
+We do the mining,
+we can ensure the output privacy.
+
+36
+00:02:24,765 --> 00:02:27,581
+Okay.
+This is another interesting issue.
+
+37
+00:02:27,581 --> 00:02:31,224
+The third issue people
+studied called owner privacy.
+
+38
+00:02:31,224 --> 00:02:36,350
+That means the people,
+any party may host certain data.
+
+39
+00:02:36,350 --> 00:02:41,434
+For example, different hospitals may hold
+different kinds of patient information.
+
+40
+00:02:41,434 --> 00:02:46,399
+You may want to study, for example,
+AIDS or heart problems or lung cancer or
+
+41
+00:02:46,399 --> 00:02:47,573
+those problems.
+
+42
+00:02:47,573 --> 00:02:48,398
+Okay.
+
+43
+00:02:48,398 --> 00:02:52,839
+But you may not want to see
+where the data come from.
+
+44
+00:02:52,839 --> 00:02:57,213
+That means, you actually want
+to hide the data owners or
+
+45
+00:02:57,213 --> 00:03:03,749
+the hospitals hide the source of the data,
+then you can do more, you know, study.
+
+46
+00:03:03,749 --> 00:03:07,013
+This we call owner privacy problem.
+
+47
+00:03:07,013 --> 00:03:11,813
+So, in this short session,
+we are going to focus on how to
+
+48
+00:03:11,813 --> 00:03:16,925
+ensure input privacy or
+you can say, data privacy problem.
+
+49
+00:03:16,925 --> 00:03:17,714
+Okay.
+
+50
+00:03:17,714 --> 00:03:23,708
+Of course, one simple approach could
+be you trust service provider.
+
+51
+00:03:23,708 --> 00:03:29,588
+They are going to anonymize their data
+especially the use of private information.
+
+52
+00:03:29,588 --> 00:03:32,924
+They're going to anonymize them and
+
+53
+00:03:32,924 --> 00:03:38,421
+they are going to ship those
+anonymized data to data miners.
+
+54
+00:03:38,421 --> 00:03:41,911
+This model we call
+business-to-business environment or
+
+55
+00:03:41,911 --> 00:03:44,920
+service provider-to-data
+miner environment.
+
+56
+00:03:44,920 --> 00:03:47,593
+That means you have to trust both parties.
+
+57
+00:03:47,593 --> 00:03:50,510
+But the problems,
+do you really trust them?
+
+58
+00:03:50,510 --> 00:03:52,619
+And most people may say, no.
+
+59
+00:03:52,619 --> 00:03:55,414
+Okay.
+So that's the one, of course,
+
+60
+00:03:55,414 --> 00:04:01,573
+this could be quite popular in, in
+the regular practice, but you want more.
+
+61
+00:04:01,573 --> 00:04:02,531
+Okay.
+
+62
+00:04:02,531 --> 00:04:08,853
+So the second approach we call data
+anonymization or perturbation.
+
+63
+00:04:08,853 --> 00:04:15,717
+That means, we ensure data privacy and
+owners cited data source site.
+
+64
+00:04:15,717 --> 00:04:20,759
+Usually, this anonymization even you
+may not trust the service providers.
+
+65
+00:04:20,759 --> 00:04:24,203
+You actually,
+will try to ask a third party vendor
+
+66
+00:04:24,203 --> 00:04:28,221
+to anonymize the data before
+they can release to anybody.
+
+67
+00:04:28,221 --> 00:04:32,134
+Okay.
+This one we call business-to-customer
+
+68
+00:04:32,134 --> 00:04:33,428
+environment.
+
+69
+00:04:33,428 --> 00:04:37,625
+And the typical method develop,
+like a data perturbation,
+
+70
+00:04:37,625 --> 00:04:40,082
+data transformation, data hiding.
+
+71
+00:04:40,082 --> 00:04:45,726
+That means, we know that hides some
+sensitive value or sensitive attributes.
+
+72
+00:04:45,726 --> 00:04:52,114
+Let's look at this table, this is a,
+suppose we have a hospital,
+
+73
+00:04:52,114 --> 00:04:58,076
+it contains certain problem of,
+like the data is patient ID,
+
+74
+00:04:58,076 --> 00:05:02,770
+you get zip code, you get age,
+you get the disease.
+
+75
+00:05:02,770 --> 00:05:06,947
+People may not be comfortable
+on this kind of data,
+
+76
+00:05:06,947 --> 00:05:11,997
+because even you anonymize patient name,
+but you may got to,
+
+77
+00:05:11,997 --> 00:05:16,580
+some people may know the patient's age,
+and zip code.
+
+78
+00:05:16,580 --> 00:05:20,400
+They can easily say, oh,
+this person got a heart problem.
+
+79
+00:05:20,400 --> 00:05:21,150
+Okay.
+
+80
+00:05:21,150 --> 00:05:27,666
+So then the message could be, what about
+we, we make it a little more generalized.
+
+81
+00:05:27,666 --> 00:05:32,449
+We hide the last two digit,
+digits of zip code,
+
+82
+00:05:32,449 --> 00:05:36,526
+then we hide the last digit of their age.
+
+83
+00:05:36,526 --> 00:05:41,268
+That means you only know is add a zero,
+one, eight, something,
+
+84
+00:05:41,268 --> 00:05:44,905
+zip code, and in the 40s,
+got a heart problem.
+
+85
+00:05:44,905 --> 00:05:49,570
+But then you see for the same,
+you know zip code and
+
+86
+00:05:49,570 --> 00:05:53,951
+same 40s, there are lots of other disease.
+
+87
+00:05:53,951 --> 00:05:58,881
+So you will have no way to tell this
+person whether they got a heart problem,
+
+88
+00:05:58,881 --> 00:06:01,009
+cancer, flu or anything else.
+
+89
+00:06:01,009 --> 00:06:04,817
+So in that sense,
+you may feel more comfortable.
+
+90
+00:06:04,817 --> 00:06:08,941
+If you got three records, you may
+still not feel very comfortable, but
+
+91
+00:06:08,941 --> 00:06:10,533
+what about you get 100?
+
+92
+00:06:10,533 --> 00:06:12,729
+You probably say that's okay.
+
+93
+00:06:12,729 --> 00:06:17,083
+So this actually records
+k-anonymity problem.
+
+94
+00:06:17,083 --> 00:06:22,832
+That means every equivalent class,
+that means they have the same zip code and
+
+95
+00:06:22,832 --> 00:06:25,580
+h, they at least have case records.
+
+96
+00:06:25,580 --> 00:06:30,951
+If this k is really large, you'll
+feel probably much more comfortable.
+
+97
+00:06:30,951 --> 00:06:35,514
+Because within this 100 different disease,
+nobody can guess what you have.
+
+98
+00:06:35,514 --> 00:06:36,219
+Okay.
+
+99
+00:06:36,219 --> 00:06:39,870
+So, but this may not still be sufficient.
+
+100
+00:06:39,870 --> 00:06:43,993
+For example,
+what about all these age, the,
+
+101
+00:06:43,993 --> 00:06:49,407
+the zip code and in the thirties,
+everybody got a diabetes.
+
+102
+00:06:49,407 --> 00:06:55,010
+Then, you know, then you agree to use it,
+then you can see you do get diabetes.
+
+103
+00:06:55,010 --> 00:06:55,745
+Okay.
+
+104
+00:06:55,745 --> 00:07:00,925
+So that means,
+this record even this k is not sufficient,
+
+105
+00:07:00,925 --> 00:07:06,106
+you want ensure this disease
+is sensitive attribute got at
+
+106
+00:07:06,106 --> 00:07:11,200
+least the same values, so
+we call this l diversity.
+
+107
+00:07:11,200 --> 00:07:14,544
+But even this l diversity,
+what about the majority of
+
+108
+00:07:14,544 --> 00:07:18,797
+people who have diabetes you still
+feel not the, not comfortable.
+
+109
+00:07:18,797 --> 00:07:21,039
+Okay.
+So there are other studies,
+
+110
+00:07:21,039 --> 00:07:25,782
+further studies for example t-closeness,
+differentially privacy.
+
+111
+00:07:25,782 --> 00:07:30,426
+So there are lots of research
+I'm doing to see how to
+
+112
+00:07:30,426 --> 00:07:34,856
+insure people have no way
+to guess what you have.
+
+113
+00:07:34,856 --> 00:07:40,934
+Of course even for error diversity,
+if the majority supposed is HIV negative,
+
+114
+00:07:40,934 --> 00:07:45,385
+probably this, this majority
+will not really have concern,
+
+115
+00:07:45,385 --> 00:07:49,173
+because, you know,
+HIV negative is not a concern.
+
+116
+00:07:49,173 --> 00:07:53,046
+Okay.
+So that's the thing the approach can see
+
+117
+00:07:53,046 --> 00:07:58,554
+there are, there are many issues to
+study to ensure privacy in this way.
+
+118
+00:07:58,554 --> 00:07:59,344
+Okay.
+
+119
+00:07:59,344 --> 00:08:04,972
+So, I'll not get into detail, but
+there are many good research papers I list
+
+120
+00:08:04,972 --> 00:08:10,360
+at the end some typical papers,
+you may like to go deeper by reading them.
+
+121
+00:08:10,360 --> 00:08:15,967
+Now, I'm going to discuss a little
+data perturbation methods for
+
+122
+00:08:15,967 --> 00:08:19,484
+Privacy-Preserving Pattern Mining.
+
+123
+00:08:19,484 --> 00:08:24,424
+Data peturb, perturbation usually
+people use statistic approach.
+
+124
+00:08:24,424 --> 00:08:29,781
+That means using some randomization
+algorithms to distort the data.
+
+125
+00:08:29,781 --> 00:08:34,235
+One way you can do is we call
+independent attribute perturbation.
+
+126
+00:08:34,235 --> 00:08:36,605
+That means, you take each attribute.
+
+127
+00:08:36,605 --> 00:08:40,888
+You perturb the, the values
+independent of the other attributes.
+
+128
+00:08:40,888 --> 00:08:41,445
+Okay.
+
+129
+00:08:41,445 --> 00:08:44,148
+You don't have to think about
+their other attributes existing.
+
+130
+00:08:44,148 --> 00:08:48,309
+Like you perturb the zip code or
+you perturbed the h.
+
+131
+00:08:48,309 --> 00:08:49,995
+So, it doesn't matter.
+
+132
+00:08:49,995 --> 00:08:52,140
+Okay.
+But for pattern mining,
+
+133
+00:08:52,140 --> 00:08:54,380
+you will find the correlations.
+
+134
+00:08:54,380 --> 00:08:59,567
+So sometimes, you may like to see
+dependent attribute perturbation, because,
+
+135
+00:08:59,567 --> 00:09:04,770
+because the purer independent you do
+perturb these correlation may be lost.
+
+136
+00:09:04,770 --> 00:09:09,317
+That means, if you want to take care
+of the correlation across attributes,
+
+137
+00:09:09,317 --> 00:09:14,024
+your may concern to develop some
+dependent attribute perturbation method.
+
+138
+00:09:14,024 --> 00:09:15,105
+Okay.
+
+139
+00:09:15,105 --> 00:09:19,841
+And for this data perturbation,
+there are some interesting studies.
+
+140
+00:09:19,841 --> 00:09:22,186
+One method called MASK.
+
+141
+00:09:22,186 --> 00:09:26,811
+The, that method was if you
+think your shopping transaction
+
+142
+00:09:26,811 --> 00:09:28,503
+contain lots of items.
+
+143
+00:09:28,503 --> 00:09:29,043
+Okay.
+
+144
+00:09:29,043 --> 00:09:31,796
+Usually, one transaction may only,
+
+145
+00:09:31,796 --> 00:09:36,880
+that means one shopping basket may
+only contain ten or fifteen items.
+
+146
+00:09:36,880 --> 00:09:40,283
+But if you go to Walmart,
+there are so many items,
+
+147
+00:09:40,283 --> 00:09:43,780
+you can think all these
+items is a very long vector.
+
+148
+00:09:43,780 --> 00:09:44,340
+Okay.
+
+149
+00:09:44,340 --> 00:09:49,287
+In your own shopping basket, only small
+number of these factor turns to one.
+
+150
+00:09:49,287 --> 00:09:50,123
+Okay.
+
+151
+00:09:50,123 --> 00:09:53,106
+But you want to hide what exactly you,
+you, you are buying.
+
+152
+00:09:53,106 --> 00:09:55,178
+Okay.
+So, in that sense,
+
+153
+00:09:55,178 --> 00:09:58,817
+you may turn the other
+items from zero to one and
+
+154
+00:09:58,817 --> 00:10:04,716
+some of your one items will turn from
+one to zero with certain probability.
+
+155
+00:10:04,716 --> 00:10:06,045
+Okay.
+With this,
+
+156
+00:10:06,045 --> 00:10:11,928
+if you're carefully tuning this p,
+you may achieve both good average privacy,
+
+157
+00:10:11,928 --> 00:10:16,185
+because you insert a lot of randomly,
+particular items.
+
+158
+00:10:16,185 --> 00:10:19,053
+They were will not figure
+out what you bought, but
+
+159
+00:10:19,053 --> 00:10:21,112
+you still will get a good accuracy.
+
+160
+00:10:21,112 --> 00:10:26,312
+The reason is in general those pattern,
+once you randomize a lot of different
+
+161
+00:10:26,312 --> 00:10:31,674
+items they, with this randomization and
+likely, they will become frequent.
+
+162
+00:10:31,674 --> 00:10:32,403
+Okay.
+
+163
+00:10:32,403 --> 00:10:37,143
+So the pattern may real
+frequent pattern mix you up.
+
+164
+00:10:37,143 --> 00:10:43,390
+But this method actually may turn, because
+of the majority of things are zeros.
+
+165
+00:10:43,390 --> 00:10:47,604
+You may turn many things into
+one with certain probability, so
+
+166
+00:10:47,604 --> 00:10:52,694
+that may increase your number of items
+in each transaction quite a lot,
+
+167
+00:10:52,694 --> 00:10:54,860
+make your database really big.
+
+168
+00:10:54,860 --> 00:10:57,621
+Okay.
+Either you can find patterns it could be
+
+169
+00:10:57,621 --> 00:10:58,938
+substantially slow.
+
+170
+00:10:58,938 --> 00:11:02,342
+There are stu,
+studies now how to, you know,
+
+171
+00:11:02,342 --> 00:11:06,200
+ensure both, you know,
+efficiency and accuracy.
+
+172
+00:11:06,200 --> 00:11:07,190
+Okay.
+
+173
+00:11:07,190 --> 00:11:11,430
+Another method studied called cut and
+paste operator.
+
+174
+00:11:11,430 --> 00:11:15,468
+This essentially is using
+uniform randomization.
+
+175
+00:11:15,468 --> 00:11:18,363
+The method is you get a real transaction,
+
+176
+00:11:18,363 --> 00:11:22,096
+you don't increase items
+in this real transaction.
+
+177
+00:11:22,096 --> 00:11:26,856
+But you take the existing item,
+you have a probability to
+
+178
+00:11:26,856 --> 00:11:31,330
+randomly replace some existing
+item with a new item.
+
+179
+00:11:31,330 --> 00:11:32,200
+Okay.
+
+180
+00:11:32,200 --> 00:11:34,960
+Not presenting your original transaction.
+
+181
+00:11:34,960 --> 00:11:40,246
+So as long as you do not make your
+probability too big to replace them,
+
+182
+00:11:40,246 --> 00:11:43,176
+you still get a good patterns show up.
+
+183
+00:11:43,176 --> 00:11:49,429
+So but sometimes, if you replace too much,
+you go quite worst case.
+
+184
+00:11:49,429 --> 00:11:52,841
+You know, on the accuracy or
+you will pay is too little,
+
+185
+00:11:52,841 --> 00:11:54,808
+you may get worst case privacy.
+
+186
+00:11:54,808 --> 00:11:57,968
+So their masters studied
+how to balance both.
+
+187
+00:11:57,968 --> 00:12:00,733
+How to select items in an organized way.
+
+188
+00:12:00,733 --> 00:12:01,643
+Okay.
+
+189
+00:12:01,643 --> 00:12:06,500
+To improve the worst case privacy,
+but still keep good accuracy.
+
+190
+00:12:06,500 --> 00:12:10,084
+Actually, the experiments show,
+if you want to mine, you know,
+
+191
+00:12:10,084 --> 00:12:13,290
+short transactions,
+short patterns, short itemsets.
+
+192
+00:12:13,290 --> 00:12:13,983
+Okay.
+
+193
+00:12:13,983 --> 00:12:18,933
+So these cut and
+paste randomize the database you mine it.
+
+194
+00:12:18,933 --> 00:12:24,147
+You may correctly identifies
+80 to 90% short patterns,
+
+195
+00:12:24,147 --> 00:12:27,163
+like lens, less or equal to three.
+
+196
+00:12:27,163 --> 00:12:32,166
+But if you want to mine long patterns,
+because such perturbation,
+
+197
+00:12:32,166 --> 00:12:35,340
+a lot of the long pattern
+may be destroyed.
+
+198
+00:12:35,340 --> 00:12:36,410
+Okay.
+
+199
+00:12:36,410 --> 00:12:41,943
+So how to effectively mine such long
+patterns, still remain good privacy.
+
+200
+00:12:41,943 --> 00:12:43,637
+Its an open problem.
+
+201
+00:12:43,637 --> 00:12:45,131
+Okay.
+
+202
+00:12:45,131 --> 00:12:49,510
+So privacy preserving data mining is
+still a very active research field.
+
+203
+00:12:49,510 --> 00:12:52,682
+There are lots of research
+papers published.
+
+204
+00:12:52,682 --> 00:12:57,509
+For example, R Agrawal,
+they got the first paper published
+
+205
+00:12:57,509 --> 00:13:01,305
+in year 2000 in Sigmod and
+there are books.
+
+206
+00:13:01,305 --> 00:13:05,128
+And they, I,
+also intentionally put a privacy,
+
+207
+00:13:05,128 --> 00:13:10,500
+differential privacy like t-closeness,
+l-diversity,
+
+208
+00:13:10,500 --> 00:13:16,070
+those papers here, because I did not
+really lecture this to any detail.
+
+209
+00:13:16,070 --> 00:13:16,730
+Okay.
+
+210
+00:13:16,730 --> 00:13:20,950
+So interested reader,
+you may like to read those if you want,
+
+211
+00:13:20,950 --> 00:13:23,303
+you are interested in, you know,
+
+212
+00:13:23,303 --> 00:13:28,441
+further push forward the frontier of
+privacy preserving and data mining.
+
+213
+00:13:28,441 --> 00:13:29,335
+Thank you.
+
+214
+00:13:29,335 --> 00:13:39,335
+[MUSIC]

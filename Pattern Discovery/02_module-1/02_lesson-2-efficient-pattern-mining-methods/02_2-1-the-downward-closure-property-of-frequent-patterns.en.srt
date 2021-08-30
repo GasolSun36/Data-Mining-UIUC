@@ -1,0 +1,219 @@
+1
+00:00:00,008 --> 00:00:03,862
+[SOUND]
+
+2
+00:00:07,490 --> 00:00:10,028
+We are going to introduce a very important
+
+3
+00:00:10,028 --> 00:00:12,058
+property of frequent patterns,
+
+4
+00:00:12,058 --> 00:00:16,349
+which is called the Downward Closure
+Property of Frequent Patterns.
+
+5
+00:00:17,520 --> 00:00:20,826
+Let's look at this simple
+transaction database TDB 1,
+
+6
+00:00:20,826 --> 00:00:26,330
+it contains only two transactions,
+T sub 1 and T sub 2.
+
+7
+00:00:26,330 --> 00:00:31,112
+Suppose we get frequent
+itemsets a1 to a50,
+
+8
+00:00:31,112 --> 00:00:37,564
+then we actually can clearly see
+all its subsets like a1, a2,
+
+9
+00:00:37,564 --> 00:00:42,720
+or a1, a2 as a item set,
+they're all frequent.
+
+10
+00:00:44,000 --> 00:00:48,323
+Then you may wonder,
+there must be some interesting hidden
+
+11
+00:00:48,323 --> 00:00:52,228
+relationships among
+different frequent itemsets.
+
+12
+00:00:52,228 --> 00:00:57,390
+Actually there is a one called
+downward closure property
+
+13
+00:00:57,390 --> 00:01:01,400
+of frequent patterns which is
+also called the Apriori property.
+
+14
+00:01:02,650 --> 00:01:05,810
+Okay, now let's look at this.
+
+15
+00:01:05,810 --> 00:01:11,060
+Suppose we know {beer, diaper,
+nuts}, this itemset is frequent.
+
+16
+00:01:11,060 --> 00:01:15,540
+Obviously, beer and
+diapers should be frequent as well,
+
+17
+00:01:15,540 --> 00:01:20,200
+because any transaction which
+contains beer, diaper, and
+
+18
+00:01:20,200 --> 00:01:24,390
+nuts must also contain beer and
+diaper as a itemset.
+
+19
+00:01:24,390 --> 00:01:29,252
+That's why the beer,
+diaper as an itemset should be at least as
+
+20
+00:01:29,252 --> 00:01:32,990
+frequent as beer, diaper, and nuts.
+
+21
+00:01:32,990 --> 00:01:36,240
+So we can easily derive this property so
+
+22
+00:01:36,240 --> 00:01:40,868
+that any subset of a frequent
+itemset must be frequent,
+
+23
+00:01:40,868 --> 00:01:44,917
+if we keep the minimum
+support ratio as the same.
+
+24
+00:01:44,917 --> 00:01:50,980
+So in that context, we can derive
+a efficient mining methodology.
+
+25
+00:01:50,980 --> 00:01:56,380
+The general philosophy is,
+if you find an itemset S,
+
+26
+00:01:56,380 --> 00:02:00,320
+any of its subset is infrequent.
+
+27
+00:02:00,320 --> 00:02:05,850
+Then, there's no chance for S to become
+frequent because based on this Apriori
+
+28
+00:02:05,850 --> 00:02:11,169
+property, then we do not even
+have to consider to mine S.
+
+29
+00:02:12,740 --> 00:02:16,480
+This actually turns out to be
+a sharp knife for pruning.
+
+30
+00:02:17,970 --> 00:02:22,583
+So, this Apriori Pruning, based on this,
+
+31
+00:02:22,583 --> 00:02:29,080
+it generates quite a lot of
+Scalable Pattern Mining Methods.
+
+32
+00:02:29,080 --> 00:02:34,537
+So the first Apriori Pruning
+principle was discovered
+
+33
+00:02:34,537 --> 00:02:39,408
+by Rakesh Agrawal and
+Srikant in VLDB 1994.
+
+34
+00:02:39,408 --> 00:02:46,728
+[INAUDIBLE] Mannila in KDD'94 workshop
+also generates a similar methodology.
+
+35
+00:02:46,728 --> 00:02:50,871
+The methodology generally
+says if there's any subset,
+
+36
+00:02:50,871 --> 00:02:53,372
+any itemset which is infrequent,
+
+37
+00:02:53,372 --> 00:02:59,340
+then its superset should not even being
+considered and not even being generated.
+
+38
+00:03:00,710 --> 00:03:07,810
+Based on this, there are three major
+approaches develop in subsequent studies.
+
+39
+00:03:07,810 --> 00:03:14,870
+One essentially is Apriori,
+the first representative work was
+
+40
+00:03:14,870 --> 00:03:20,820
+published in VLDB 1994 called
+level-wise join-based approach.
+
+41
+00:03:20,820 --> 00:03:25,572
+Another method was developed by Zaki and
+[INAUDIBLE] and
+
+42
+00:03:25,572 --> 00:03:30,850
+what they got called Eclat is
+based on vertical data format.
+
+43
+00:03:32,010 --> 00:03:35,440
+Then the cert approach is
+essentially pattern based.
+
+44
+00:03:36,660 --> 00:03:40,800
+It's frequent pattern projection
+growth is pattern growth approach.
+
+45
+00:03:40,800 --> 00:03:47,242
+Called api growth,
+developed by us in year 2000.
+
+46
+00:03:47,242 --> 00:03:57,242
+[MUSIC]

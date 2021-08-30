@@ -1,0 +1,1206 @@
+1
+00:00:00,000 --> 00:00:08,670
+[SOUND]
+So,
+
+2
+00:00:08,670 --> 00:00:13,204
+let's first discuss frequent
+pattern mining in Data Streams.
+
+3
+00:00:14,575 --> 00:00:19,505
+We know in current big data era,
+besides we get
+
+4
+00:00:19,505 --> 00:00:24,904
+a huge amount of data stored in database
+systems, in file system, on the web,
+
+5
+00:00:24,904 --> 00:00:30,365
+but also we have internet of things or
+internet of sensors.
+
+6
+00:00:30,365 --> 00:00:35,300
+So, in those kind of scenarios,
+there are lots of stream data.
+
+7
+00:00:35,300 --> 00:00:42,500
+The stream data, the feature usually
+is the come in and go continuously.
+
+8
+00:00:42,500 --> 00:00:47,450
+They are ordered in the sequence but
+they are changing dynamically.
+
+9
+00:00:47,450 --> 00:00:50,710
+They come and go very fast but
+in very huge volume.
+
+10
+00:00:51,910 --> 00:00:56,950
+This is very different from traditional
+finite persistent data sets
+
+11
+00:00:56,950 --> 00:01:00,760
+stored in the file systems, in database
+management system or on the web.
+
+12
+00:01:02,650 --> 00:01:07,920
+So, now let's look at the major
+characteristics of data streams.
+
+13
+00:01:07,920 --> 00:01:13,750
+First, data streams are usually repeated
+huge volumes of continuous data.
+
+14
+00:01:13,750 --> 00:01:18,860
+They could be potentially
+infinite like the online sensors,
+
+15
+00:01:18,860 --> 00:01:21,450
+they have no ending at this part.
+
+16
+00:01:23,100 --> 00:01:28,020
+So they are fast changing,
+they may also require
+
+17
+00:01:28,020 --> 00:01:32,930
+faster rear time response like
+anomalies or emergencies.
+
+18
+00:01:32,930 --> 00:01:39,210
+And then for data stream usually
+captured nicely of our data
+
+19
+00:01:39,210 --> 00:01:45,700
+processing needs of today because even in
+data systems, the data could be so huge.
+
+20
+00:01:45,700 --> 00:01:50,168
+You may only want to scan them in
+a sequential manner live data streams or
+
+21
+00:01:50,168 --> 00:01:54,198
+you don't want to keep on repeating,
+getting them back again.
+
+22
+00:01:54,198 --> 00:01:54,882
+Okay, so
+
+23
+00:01:54,882 --> 00:02:00,620
+to that extent that even in the large
+data stored you may also process them.
+
+24
+00:02:00,620 --> 00:02:02,250
+In the data stream manner,
+
+25
+00:02:02,250 --> 00:02:05,980
+not to say you really have to
+enter large amount of sensor data.
+
+26
+00:02:07,600 --> 00:02:14,760
+So, in general, we say for processing
+data streams, random access is expensive.
+
+27
+00:02:14,760 --> 00:02:19,190
+Because of the data come and go,
+you don't want to fetch back, or
+
+28
+00:02:19,190 --> 00:02:21,870
+you can not fast forward as well.
+
+29
+00:02:21,870 --> 00:02:26,250
+So we usually call these algorithms
+developing data streams,
+
+30
+00:02:26,250 --> 00:02:28,060
+called single scan algorithm.
+
+31
+00:02:28,060 --> 00:02:31,070
+That means for any particular data set,
+
+32
+00:02:31,070 --> 00:02:33,930
+particular page,
+you can only have one look.
+
+33
+00:02:35,240 --> 00:02:40,720
+So another interesting thing is
+the data stream in many cases
+
+34
+00:02:40,720 --> 00:02:45,440
+you may like store some kind of sketch or
+store a summary of the data seen so far.
+
+35
+00:02:45,440 --> 00:02:50,102
+Instead of storing the detailed data
+because you don't have such volume or
+
+36
+00:02:50,102 --> 00:02:51,662
+such processing power.
+
+37
+00:02:51,662 --> 00:02:56,940
+Then another important
+challenge is most data streams
+
+38
+00:02:56,940 --> 00:03:04,330
+actually are coming at the very low
+level like the particular sensors.
+
+39
+00:03:04,330 --> 00:03:08,010
+And they also come in
+the multi-dimensional feature, for
+
+40
+00:03:08,010 --> 00:03:11,010
+example, even for the data they may come.
+
+41
+00:03:11,010 --> 00:03:14,900
+Some part would be the temperature,
+some part it could be video,
+
+42
+00:03:14,900 --> 00:03:18,318
+some part it could be audio,
+some could be the text data.
+
+43
+00:03:18,318 --> 00:03:21,450
+It's multi-dimensional in nature but for
+
+44
+00:03:21,450 --> 00:03:26,189
+the information processing needs,
+usually you want summarize or
+
+45
+00:03:26,189 --> 00:03:31,870
+process the data and pattern in a
+multi-level and in multi-dimensional way.
+
+46
+00:03:33,230 --> 00:03:38,980
+So we can see there lots of research
+challenges data stream processing.
+
+47
+00:03:38,980 --> 00:03:42,960
+If we look at the Architecture of data
+
+48
+00:03:42,960 --> 00:03:48,450
+stream processing system usually we called
+this as Stream Data Management System.
+
+49
+00:03:48,450 --> 00:03:52,320
+What we have is we have
+a stream query processor.
+
+50
+00:03:52,320 --> 00:03:56,340
+You'll have multiple data stream
+streaming into this processor
+
+51
+00:03:56,340 --> 00:03:58,560
+at the same time in a continuous way.
+
+52
+00:03:58,560 --> 00:04:01,780
+But even for User/Application programs
+
+53
+00:04:01,780 --> 00:04:06,950
+they usually post Continuous Query
+rather than ad hop words.
+
+54
+00:04:06,950 --> 00:04:08,590
+It's like a [INAUDIBLE].
+
+55
+00:04:08,590 --> 00:04:10,270
+They won't see anything abnormal.
+
+56
+00:04:10,270 --> 00:04:13,670
+They want to summarize the data
+in a multi-dimensional space.
+
+57
+00:04:14,910 --> 00:04:20,180
+Then for this Stream Query Processor
+usually you have some scratch
+
+58
+00:04:20,180 --> 00:04:25,350
+space that could be a big main memory,
+or even plus some disks.
+
+59
+00:04:25,350 --> 00:04:31,009
+These markable streams coming down here,
+where be summarized the processed,
+
+60
+00:04:31,009 --> 00:04:34,450
+especially answer your continuous query.
+
+61
+00:04:34,450 --> 00:04:40,060
+The results will be streaming back
+to the user's application programs.
+
+62
+00:04:40,060 --> 00:04:43,780
+So this is a typical way
+to process streaming data
+
+63
+00:04:43,780 --> 00:04:46,230
+online in the real time, okay.
+
+64
+00:04:46,230 --> 00:04:50,540
+The problem becomes for
+frequent pattern mining.
+
+65
+00:04:50,540 --> 00:04:54,580
+How can we find the frequent
+patterns in these data streams?
+
+66
+00:04:54,580 --> 00:04:56,490
+Actually, it's pretty challenging.
+
+67
+00:04:56,490 --> 00:04:59,950
+When we look at the major
+differences between
+
+68
+00:04:59,950 --> 00:05:02,720
+stream mining versus stream querying.
+
+69
+00:05:04,030 --> 00:05:06,770
+The first thing is stream mining and
+
+70
+00:05:06,770 --> 00:05:10,960
+steam querying,
+they share many common difficulties.
+
+71
+00:05:10,960 --> 00:05:15,140
+For example, you can only do single-scan,
+you need a fast response,
+
+72
+00:05:15,140 --> 00:05:17,960
+you have to handle dynamic, noisy data.
+
+73
+00:05:17,960 --> 00:05:21,780
+But for stream mining, usually you
+want to see the global picture,
+
+74
+00:05:21,780 --> 00:05:24,740
+you want to see patterns,
+you want to find the clusters.
+
+75
+00:05:24,740 --> 00:05:29,370
+It also requires less precision
+than the stream querying
+
+76
+00:05:29,370 --> 00:05:33,460
+because stream querying one the ping
+pong to a particular point.
+
+77
+00:05:33,460 --> 00:05:38,100
+You may need to perform join,
+grouping, sorting which actually in
+
+78
+00:05:38,100 --> 00:05:43,410
+streams join and sorting those
+algorithm is actually pretty difficult.
+
+79
+00:05:43,410 --> 00:05:48,160
+Because you cannot see the pass data,
+you cannot
+
+80
+00:05:48,160 --> 00:05:54,260
+predicted the future of incoming data
+as well but patterns are hidden.
+
+81
+00:05:54,260 --> 00:05:58,560
+They are more general than querying,
+so their processing is different.
+
+82
+00:05:58,560 --> 00:06:02,800
+Actually, for stream data mining,
+there are lots of research and
+
+83
+00:06:02,800 --> 00:06:04,640
+development activities already.
+
+84
+00:06:06,430 --> 00:06:10,130
+One branch actually studied
+pattern mining in data streams.
+
+85
+00:06:10,130 --> 00:06:17,360
+Another is doing the multi-dimensional
+on-line summary of data streams and
+
+86
+00:06:17,360 --> 00:06:21,715
+also data stream can be
+clustered dynamically.
+
+87
+00:06:21,715 --> 00:06:26,635
+Can do dynamic classification,
+can find outliers and anomalies.
+
+88
+00:06:26,635 --> 00:06:31,295
+So there are lots of research in
+data mining, all these frontiers.
+
+89
+00:06:31,295 --> 00:06:34,605
+So what we are studying in this lecture,
+
+90
+00:06:34,605 --> 00:06:38,079
+we will only touch pattern
+mining in data streams.
+
+91
+00:06:39,600 --> 00:06:45,670
+So one important thing is for
+mining frequent patterns.
+
+92
+00:06:45,670 --> 00:06:52,070
+In stream data it is unrealistic to try
+to find a precise frequent patterns.
+
+93
+00:06:52,070 --> 00:06:57,220
+Simply says the past precising
+may already been gone,
+
+94
+00:06:57,220 --> 00:06:59,420
+it's pretty hard to capture them.
+
+95
+00:06:59,420 --> 00:07:02,050
+The future one may not be coming yet.
+
+96
+00:07:02,050 --> 00:07:05,480
+So it's pretty hard to predict them and
+
+97
+00:07:05,480 --> 00:07:10,230
+even further why you can hold
+just because they are so
+
+98
+00:07:10,230 --> 00:07:15,520
+big you cannot store them even in
+a compressed form like FPtree.
+
+99
+00:07:15,520 --> 00:07:21,079
+So what we expect is trying
+to find approximate answers
+
+100
+00:07:22,090 --> 00:07:28,300
+but in many cases, approximizer may be
+sufficient for our analysis purpose.
+
+101
+00:07:28,300 --> 00:07:35,230
+For example, you may find a router could
+be interested in finding the flows.
+
+102
+00:07:35,230 --> 00:07:40,180
+Those flow in the network you
+may find whose frequency is at
+
+103
+00:07:40,180 --> 00:07:44,280
+least 1% of the entire
+traffic stream seen so far.
+
+104
+00:07:44,280 --> 00:07:47,660
+If you identify those patterns,
+
+105
+00:07:47,660 --> 00:07:52,930
+those frequent occurring flows
+you could be pretty happy.
+
+106
+00:07:52,930 --> 00:07:56,920
+On the other hand you may say for
+
+107
+00:07:56,920 --> 00:08:02,330
+this sigma if you give me the count
+is probably a little less like
+
+108
+00:08:02,330 --> 00:08:07,352
+over 1/10 or
+you would say the error rate is 0.1%.
+
+109
+00:08:07,352 --> 00:08:12,200
+You probably feel is very comfortable,
+you think you're doing good thing already.
+
+110
+00:08:13,230 --> 00:08:17,250
+In that case, we may develop
+some very efficient algorithm
+
+111
+00:08:17,250 --> 00:08:21,620
+to mine such patterns with
+good approximation like this.
+
+112
+00:08:23,440 --> 00:08:28,480
+Then in this lecture I'm going to only
+introduce one algorithm around this
+
+113
+00:08:28,480 --> 00:08:33,070
+which is called Lossy Counting Algorithm
+developed by Manku and
+
+114
+00:08:33,070 --> 00:08:36,315
+Motwani in 2002.
+
+115
+00:08:36,315 --> 00:08:40,175
+The major idea is not
+to keep all the items
+
+116
+00:08:40,175 --> 00:08:44,845
+especially not to keep the items
+with very low support count.
+
+117
+00:08:44,845 --> 00:08:47,920
+That means if they are very low they
+
+118
+00:08:47,920 --> 00:08:53,030
+unlikely will reach the frequency
+[INAUDIBLE] you do not even keep them.
+
+119
+00:08:53,030 --> 00:08:57,640
+Okay, the advantage is you can
+guarantee some error bound.
+
+120
+00:08:57,640 --> 00:09:03,620
+That means I [INAUDIBLE] find all
+the frequent items but of course you need
+
+121
+00:09:03,620 --> 00:09:07,640
+still to keep really large set of traces,
+your buffer size should be really big.
+
+122
+00:09:09,140 --> 00:09:17,230
+Let's look at Lossy Counting Algorithm but
+we only introduce frequency single items.
+
+123
+00:09:17,230 --> 00:09:22,400
+They did study multiple item sets for
+the simple explanation of the idea
+
+124
+00:09:22,400 --> 00:09:27,600
+refers to the frequent
+single item counting, okay.
+
+125
+00:09:27,600 --> 00:09:32,670
+Suppose you get a very,
+very huge data stream,
+
+126
+00:09:32,670 --> 00:09:36,940
+you may divide this stream into buckets.
+
+127
+00:09:36,940 --> 00:09:41,000
+But the bucket size
+could be one over epsom,
+
+128
+00:09:41,000 --> 00:09:45,650
+because if your epsom is 0.1% error bound.
+
+129
+00:09:45,650 --> 00:09:52,425
+Then the bucket size could be 1 over
+epsilon means, 1 over 0.1% is 1,000,
+
+130
+00:09:52,425 --> 00:09:58,837
+means each bucket should have 1,000 items,
+okay.
+
+131
+00:09:58,837 --> 00:10:03,870
+Then this one item we
+assume that the main memory
+
+132
+00:10:03,870 --> 00:10:07,860
+is size is big enough,
+you can easily hold this one bucket.
+
+133
+00:10:09,630 --> 00:10:14,790
+Then at the very beginning,
+when the first bucket comes,
+
+134
+00:10:14,790 --> 00:10:21,220
+the main memory, at the very beginning
+you can assume for this part is empty.
+
+135
+00:10:21,220 --> 00:10:28,450
+This summary is empty but then you get
+the first bucket you get 1,000 items.
+
+136
+00:10:29,560 --> 00:10:35,650
+Then you start counting them for
+example, there are four red ones,
+
+137
+00:10:35,650 --> 00:10:42,180
+there are two yellow ones, one green one,
+one blue one, black and so on.
+
+138
+00:10:43,480 --> 00:10:46,580
+So at the end of this bucket boundary
+
+139
+00:10:48,980 --> 00:10:54,370
+we will decrease all the counters by 1,
+you probably can't see.
+
+140
+00:10:54,370 --> 00:10:59,120
+There are many if they only appear
+once like the green one, a blue one,
+
+141
+00:10:59,120 --> 00:11:00,240
+the black one.
+
+142
+00:11:00,240 --> 00:11:05,040
+They all gone, because it decrease
+a counter by one, a counter is zero,
+
+143
+00:11:05,040 --> 00:11:06,670
+they all gone.
+
+144
+00:11:06,670 --> 00:11:12,370
+Even for red ones you get four,
+now the counter becomes three.
+
+145
+00:11:12,370 --> 00:11:18,570
+You get two yellow ones,
+the counter actually is only one.
+
+146
+00:11:18,570 --> 00:11:22,760
+So that means you your counter
+actually get a less than the real one.
+
+147
+00:11:24,380 --> 00:11:29,210
+When the next bucket of the stream coming,
+you'll probably empty
+
+148
+00:11:29,210 --> 00:11:33,440
+a lot of space because the counter
+was not existing there too.
+
+149
+00:11:33,440 --> 00:11:35,670
+There are too few items in this color.
+
+150
+00:11:37,010 --> 00:11:43,260
+Then, you may get additional red ones and
+yellow ones or even black ones.
+
+151
+00:11:43,260 --> 00:11:50,680
+So you can see at the end of this bucket,
+then you will do the same.
+
+152
+00:11:50,680 --> 00:11:53,170
+You decrease all the counters by one.
+
+153
+00:11:53,170 --> 00:11:56,720
+So those, not frequent,
+they are gone again.
+
+154
+00:11:56,720 --> 00:12:00,960
+So the yellow why you can see,
+originally you got a one.
+
+155
+00:12:00,960 --> 00:12:03,630
+You get one more but
+you decrease by one and so you keep one.
+
+156
+00:12:03,630 --> 00:12:04,670
+The black one is one,
+
+157
+00:12:04,670 --> 00:12:08,470
+the red one you get a little more
+because the red one is so frequent.
+
+158
+00:12:08,470 --> 00:12:14,410
+After you know you’re thinking bucket by
+bucket you get many, many buckets you
+
+159
+00:12:14,410 --> 00:12:19,670
+still keep this counter 1,000 counters.
+
+160
+00:12:19,670 --> 00:12:23,570
+Because you get 1,000 buckets
+at most you have 1,000 counters
+
+161
+00:12:23,570 --> 00:12:26,810
+you only get a number so
+the space is actually quite limited.
+
+162
+00:12:28,540 --> 00:12:34,100
+Then finally we want to
+output the frequent patterns.
+
+163
+00:12:34,100 --> 00:12:38,390
+The interesting thing is whether
+we will be able to output
+
+164
+00:12:38,390 --> 00:12:43,250
+all the frequent patterns if they
+are frequent in these data streams, but
+
+165
+00:12:43,250 --> 00:12:45,250
+maybe we have some reduced count.
+
+166
+00:12:46,600 --> 00:12:51,730
+So, actually,
+suppose the support threshold is sigma,
+
+167
+00:12:51,730 --> 00:12:56,370
+the error threshold is epsilon,
+and the stream length is N so far.
+
+168
+00:12:57,880 --> 00:13:03,100
+Then, the output are those items
+with frequency counts exceeding
+
+169
+00:13:03,100 --> 00:13:06,280
+sigma- epsilon times N.
+
+170
+00:13:06,280 --> 00:13:11,980
+Simply says if for
+any item you find it is conquered,
+
+171
+00:13:11,980 --> 00:13:16,490
+was this number or
+bigger your output is a frequent item.
+
+172
+00:13:18,320 --> 00:13:24,110
+So the key is because
+end of each bucket we
+
+173
+00:13:24,110 --> 00:13:30,710
+decreased the counter by 1, so
+we were undercount something.
+
+174
+00:13:30,710 --> 00:13:33,650
+So the question becomes,
+how much do we undercount?
+
+175
+00:13:35,310 --> 00:13:41,187
+So if the stream length seen so
+far as N, the bucket size is 1/epsilon.
+
+176
+00:13:41,187 --> 00:13:47,300
+We can easily determine
+the frequency count error
+
+177
+00:13:47,300 --> 00:13:50,500
+should be no more than number of buckets,
+why?
+
+178
+00:13:50,500 --> 00:13:54,900
+Because for each item for
+
+179
+00:13:54,900 --> 00:13:58,360
+every bucket you decrease
+the count by what?
+
+180
+00:13:59,490 --> 00:14:04,060
+If some item come, even later,
+at the very beginning they did not come,
+
+181
+00:14:04,060 --> 00:14:06,170
+you did not decrease them.
+
+182
+00:14:06,170 --> 00:14:11,420
+So to that extent you'd decrease
+less than number of buckets,
+
+183
+00:14:11,420 --> 00:14:16,630
+so if they come even at the very
+beginning, the first bucket is they are on
+
+184
+00:14:16,630 --> 00:14:21,670
+the way to create the count
+by number of buckets.
+
+185
+00:14:21,670 --> 00:14:24,940
+What is the number of buckets you see?
+
+186
+00:14:24,940 --> 00:14:28,580
+Because you have seen N elements and
+
+187
+00:14:28,580 --> 00:14:32,980
+the bucket size is one over it's epsilon.
+
+188
+00:14:32,980 --> 00:14:41,428
+So N atom is over bucket size is number of
+buckets which is N over 1 over epsilon.
+
+189
+00:14:41,428 --> 00:14:45,234
+So you get epsilon times N,
+that means that
+
+190
+00:14:45,234 --> 00:14:50,016
+the frequency count error
+at most is epsilon times N.
+
+191
+00:14:50,016 --> 00:14:55,630
+We know epsilon is pretty small, so
+the error count error is not that big.
+
+192
+00:14:56,740 --> 00:15:00,630
+Then we look at the counting.
+
+193
+00:15:00,630 --> 00:15:07,870
+They have some interesting property
+we call approximation guarantee.
+
+194
+00:15:07,870 --> 00:15:11,510
+The first thing is there's
+no false negatives.
+
+195
+00:15:11,510 --> 00:15:16,150
+Simply says if the item is frequent,
+
+196
+00:15:16,150 --> 00:15:19,830
+it will be captured an output, why?
+
+197
+00:15:19,830 --> 00:15:25,110
+If we can see,
+is if your item is frequent,
+
+198
+00:15:25,110 --> 00:15:31,590
+that means your total support threshold
+should be sigma times N or more.
+
+199
+00:15:32,920 --> 00:15:40,550
+Then, because we output a frequent
+item exceeding sigma-epsilon times N,
+
+200
+00:15:40,550 --> 00:15:45,750
+we know we already undercount
+this part at most.
+
+201
+00:15:45,750 --> 00:15:51,870
+That means actually since you output
+all these you will output every item
+
+202
+00:15:51,870 --> 00:15:58,060
+whose support count is no less than sigma
+times N so there's no false negatives.
+
+203
+00:15:59,510 --> 00:16:03,840
+But there could be false positives
+where the false positive comes
+
+204
+00:16:03,840 --> 00:16:08,940
+just because probably in
+sometimes they come later
+
+205
+00:16:08,940 --> 00:16:12,590
+like you may have one
+color okay suppose orange.
+
+206
+00:16:12,590 --> 00:16:14,515
+They come at a very late stage.
+
+207
+00:16:14,515 --> 00:16:18,888
+Okay so they actually
+the previous increment by one
+
+208
+00:16:18,888 --> 00:16:21,435
+actually it did not tax them.
+
+209
+00:16:21,435 --> 00:16:27,651
+So now they really have this support,
+
+210
+00:16:27,651 --> 00:16:32,330
+sigma minus epsilon time N.
+
+211
+00:16:32,330 --> 00:16:36,660
+You actually offer this,
+say this one could be a frequent item.
+
+212
+00:16:36,660 --> 00:16:39,000
+Yep, okay but this orange one.
+
+213
+00:16:40,060 --> 00:16:44,760
+Actually, you, the real support is this.
+
+214
+00:16:44,760 --> 00:16:49,690
+They do not suffer the decrement or
+only suffer one.
+
+215
+00:16:49,690 --> 00:16:52,850
+So then your support count, this one,
+
+216
+00:16:52,850 --> 00:16:55,850
+actually in principle is
+not frequent in rear.
+
+217
+00:16:55,850 --> 00:17:01,400
+But you think they are frequently
+just output as a frequent item.
+
+218
+00:17:01,400 --> 00:17:05,965
+So the false positive have this
+two frequency a list of this so
+
+219
+00:17:05,965 --> 00:17:10,635
+that means the orange wire have
+the two frequency of this one.
+
+220
+00:17:10,635 --> 00:17:16,640
+You still count them as a frequent item so
+you do have some false positive.
+
+221
+00:17:16,640 --> 00:17:21,850
+But a frequency count underestimated
+by at most epsilon times N,
+
+222
+00:17:21,850 --> 00:17:23,670
+because we already have this.
+
+223
+00:17:23,670 --> 00:17:26,390
+So, you have some nice guarantee for,
+
+224
+00:17:27,680 --> 00:17:32,420
+finally you have just this
+bucket size as your main memory.
+
+225
+00:17:32,420 --> 00:17:37,580
+You actually can return
+all the frequent items and
+
+226
+00:17:37,580 --> 00:17:39,610
+it may contain some false positives.
+
+227
+00:17:39,610 --> 00:17:44,680
+It may have some underestimate
+of your frequency count.
+
+228
+00:17:44,680 --> 00:17:46,490
+But still it is a nice,
+
+229
+00:17:46,490 --> 00:17:50,999
+elegant algorithm with very limited
+resource you can handle data streams.
+
+230
+00:17:53,130 --> 00:17:58,910
+Of course, after this there
+are lots of studies by improving,
+
+231
+00:17:58,910 --> 00:18:02,170
+for example,
+improving lossy counting algorithm.
+
+232
+00:18:02,170 --> 00:18:07,190
+One interesting study
+is by Metwally in 2005,
+
+233
+00:18:07,190 --> 00:18:13,210
+they do space-saving computation
+of frequent and top-k elements.
+
+234
+00:18:13,210 --> 00:18:17,430
+The general philosophy is,
+they may tried to use
+
+235
+00:18:17,430 --> 00:18:21,810
+more memory space if you
+really have bigger memory.
+
+236
+00:18:21,810 --> 00:18:26,820
+You don't have to restricted down to one
+over epsilon as your bucket size but
+
+237
+00:18:26,820 --> 00:18:30,280
+that we are not going to
+discuss this in more detail.
+
+238
+00:18:30,280 --> 00:18:33,170
+Another interesting thing is
+
+239
+00:18:33,170 --> 00:18:37,650
+in this lecture we only discuss
+frequent one item sets.
+
+240
+00:18:37,650 --> 00:18:39,200
+That means frequent item.
+
+241
+00:18:39,200 --> 00:18:41,247
+We discuss how to mine
+the approximate one.
+
+242
+00:18:41,247 --> 00:18:44,937
+Actually in Manku and Motwani paper,
+
+243
+00:18:44,937 --> 00:18:49,350
+they also discussed frequent k-itemsets.
+
+244
+00:18:49,350 --> 00:18:53,850
+How to maintain counter,
+how to do Lossy counting.
+
+245
+00:18:53,850 --> 00:18:57,760
+But due to limited time we will
+not introduce this algorithm.
+
+246
+00:18:57,760 --> 00:19:02,046
+You may like to read
+the paper by yourself.
+
+247
+00:19:02,046 --> 00:19:06,620
+Then there are also some
+subsequent studies on
+
+248
+00:19:06,620 --> 00:19:09,530
+how to mine sequential
+patterns in data streams.
+
+249
+00:19:09,530 --> 00:19:11,790
+It is a pretty challenging task as well.
+
+250
+00:19:13,170 --> 00:19:16,000
+So I'm going to only
+introduce you two papers,
+
+251
+00:19:16,000 --> 00:19:20,760
+one is Manku and Motwani's paper,
+another is Metwally's paper.
+
+252
+00:19:20,760 --> 00:19:25,806
+You may want to see how to my streams
+
+253
+00:19:28,090 --> 00:19:31,120
+streams in a very interesting way.
+
+254
+00:19:32,390 --> 00:19:33,283
+Thank you.
+
+255
+00:19:33,283 --> 00:19:43,283
+[MUSIC]

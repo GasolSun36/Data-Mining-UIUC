@@ -1,0 +1,307 @@
+1
+00:00:04,750 --> 00:00:10,669
+We already seen Lift and a chi-square may not be very good measures,
+
+2
+00:00:10,669 --> 00:00:16,160
+examining the transaction data that contain lots of null transactions.
+
+3
+00:00:16,160 --> 00:00:18,679
+So, what we may like to see is,
+
+4
+00:00:18,679 --> 00:00:20,405
+what are good measures?
+
+5
+00:00:20,405 --> 00:00:26,420
+They do not influence much by number of null transactions.
+
+6
+00:00:26,420 --> 00:00:29,410
+Let's look at those different measures.
+
+7
+00:00:29,410 --> 00:00:33,380
+Some measure, they have the property called null-invariance,
+
+8
+00:00:33,380 --> 00:00:39,810
+that means their values may not change with a number of null transactions.
+
+9
+00:00:39,810 --> 00:00:43,510
+Let's see what measures are null-invariant,
+
+10
+00:00:43,510 --> 00:00:46,228
+what measures are not null-invariant.
+
+11
+00:00:46,228 --> 00:00:48,320
+We already know chi-square and a Lift,
+
+12
+00:00:48,320 --> 00:00:50,969
+they are not null-invariant.
+
+13
+00:00:50,969 --> 00:00:54,055
+Their value change with number on null transactions.
+
+14
+00:00:54,055 --> 00:00:58,555
+But, people have found that the folding five measures,
+
+15
+00:00:58,555 --> 00:00:59,770
+if you check their formula,
+
+16
+00:00:59,770 --> 00:01:05,849
+their definition, they are actually null-invariant measures.
+
+17
+00:01:05,849 --> 00:01:11,405
+So, you probably know Jaccard coefficient and cosine measure quite well.
+
+18
+00:01:11,405 --> 00:01:15,659
+These two measures are popularly used, they're null-invariant.
+
+19
+00:01:15,659 --> 00:01:19,144
+But all confidence which actually take
+
+20
+00:01:19,144 --> 00:01:23,959
+the smaller value among A and B as the denominator,
+
+21
+00:01:23,959 --> 00:01:29,135
+the numerator is just the transaction support of the rule.
+
+22
+00:01:29,135 --> 00:01:34,980
+So, the max confidence is try to find the maximum one of them.
+
+23
+00:01:34,980 --> 00:01:41,379
+These two actually proposed in the study of measuring association rules.
+
+24
+00:01:41,379 --> 00:01:47,299
+Kulczynski measure was proposed around 2007 by us, by our group.
+
+25
+00:01:47,299 --> 00:01:51,769
+We originally called these as balanced measure, but later,
+
+26
+00:01:51,769 --> 00:01:55,984
+the reviewer actually point out that this measure was actually proposed
+
+27
+00:01:55,984 --> 00:02:01,245
+by a Polish mathematician called Kulczynski in 1927.
+
+28
+00:02:01,245 --> 00:02:05,269
+So, we changed the name of this measure to Kulczynski measure.
+
+29
+00:02:05,269 --> 00:02:07,760
+Let's first look at null-invariance,
+
+30
+00:02:07,760 --> 00:02:10,300
+why they are very important.
+
+31
+00:02:10,300 --> 00:02:13,814
+That means why in analysis massive transaction data,
+
+32
+00:02:13,814 --> 00:02:16,759
+the null-invariance is so critical,
+
+33
+00:02:16,759 --> 00:02:20,479
+because in many many transactions,
+
+34
+00:02:20,479 --> 00:02:23,705
+the transaction set contain particular sets of item.
+
+35
+00:02:23,705 --> 00:02:28,289
+The chance actually is very rare like a warm up transactions.
+
+36
+00:02:28,289 --> 00:02:31,335
+They may contain neither milk nor coffee.
+
+37
+00:02:31,335 --> 00:02:37,905
+We will try to analyze milk and coffee using the following contingency table.
+
+38
+00:02:37,905 --> 00:02:44,069
+So, this m_c means the number of transactions that contain both milk and coffee.
+
+39
+00:02:44,069 --> 00:02:50,990
+This not m nor c means the number of transactions that contain neither milk nor coffee.
+
+40
+00:02:50,990 --> 00:02:55,905
+So, this not m nor c is the number of no transactions.
+
+41
+00:02:55,905 --> 00:02:58,975
+Then, we see Lift and chi-square,
+
+42
+00:02:58,975 --> 00:03:00,789
+they are not null-invariant.
+
+43
+00:03:00,789 --> 00:03:03,590
+So they are not good at evaluating data that
+
+44
+00:03:03,590 --> 00:03:08,085
+contain too many or too few null transactions.
+
+45
+00:03:08,085 --> 00:03:09,884
+For example, we just look at this,
+
+46
+00:03:09,884 --> 00:03:11,849
+for this dataset D1,
+
+47
+00:03:11,849 --> 00:03:15,949
+m_c means number of transactions that contain both milk and coffee;
+
+48
+00:03:15,949 --> 00:03:21,319
+not m_c means the number of transactions contain no milk but coffee;
+
+49
+00:03:21,319 --> 00:03:26,659
+m no c means that number of transactions that contains milk but not coffee;
+
+50
+00:03:26,659 --> 00:03:30,314
+not m nor c means the number of null transactions,
+
+51
+00:03:30,314 --> 00:03:32,895
+they contain neither me nor coffee.
+
+52
+00:03:32,895 --> 00:03:36,655
+So, you'll probably go to like a Walmart,
+
+53
+00:03:36,655 --> 00:03:38,360
+it's kind of shopping market,
+
+54
+00:03:38,360 --> 00:03:41,449
+you probably see there could be the cases you get
+
+55
+00:03:41,449 --> 00:03:44,835
+10,000 transactions that contain milk and a coffee,
+
+56
+00:03:44,835 --> 00:03:48,754
+but 1,000 contain not milk but coffee,
+
+57
+00:03:48,754 --> 00:03:51,349
+1,000 contain milk but not coffee.
+
+58
+00:03:51,349 --> 00:03:56,465
+In that case, you probably say actually likely if people buy milk,
+
+59
+00:03:56,465 --> 00:04:00,365
+they would buy coffee as well because there are 10,000 such cases.
+
+60
+00:04:00,365 --> 00:04:03,610
+Buy only one of them, there's only 1,000.
+
+61
+00:04:03,610 --> 00:04:07,365
+But, if you have a lot of a null transactions,
+
+62
+00:04:07,365 --> 00:04:09,620
+this value could be quite positive.
+
+63
+00:04:09,620 --> 00:04:12,509
+If you have very few null transactions,
+
+64
+00:04:12,509 --> 00:04:15,104
+it turn out they are independent.
+
+65
+00:04:15,104 --> 00:04:17,600
+You probably look at the value they are not independent.
+
+66
+00:04:17,600 --> 00:04:21,189
+On the other hand, if you see there's only 100 cases,
+
+67
+00:04:21,189 --> 00:04:23,060
+you're got a milk and coffee together.
+
+68
+00:04:23,060 --> 00:04:24,199
+There are many more cases,
+
+69
+00:04:24,199 --> 00:04:25,505
+they buy it alone.
+
+70
+00:04:25,505 --> 00:04:28,324
+But once you have many null transactions,
+
+71
+00:04:28,324 --> 00:04:30,810
+it turns out to be very positive.
+
+72
+00:04:30,810 --> 00:04:32,305
+The number is quite big.
+
+73
+00:04:32,305 --> 00:04:35,600
+So, no matter you get a very many null transactions,
+
+74
+00:04:35,600 --> 00:04:37,592
+so very few null transactions,
+
+75
+00:04:37,592 --> 00:04:39,509
+something may go wrong.
+
+76
+00:04:39,509 --> 00:04:46,185
+So, we do need to analyze such data using some null-invariance measures.
+
+77
+00:04:46,185 --> 00:04:49,220
+We'll examine this in more detail.

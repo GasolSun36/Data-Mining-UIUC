@@ -1,0 +1,139 @@
+1
+00:00:04,799 --> 00:00:08,650
+Now we come down to another interesting issue,
+
+2
+00:00:08,650 --> 00:00:11,994
+it's mining multi-dimensional association rules.
+
+3
+00:00:11,994 --> 00:00:14,769
+Sometimes the items or the things
+
+4
+00:00:14,769 --> 00:00:17,650
+we want to mine are actually sitting on the multi-dimensions.
+
+5
+00:00:17,650 --> 00:00:21,010
+The single dimension rule we studied,
+
+6
+00:00:21,010 --> 00:00:23,184
+for example, X buys milk,
+
+7
+00:00:23,184 --> 00:00:24,969
+then X buys bread.
+
+8
+00:00:24,969 --> 00:00:29,414
+Milk and bread, both are from the same kind of dimension
+
+9
+00:00:29,414 --> 00:00:33,919
+called product but sometimes we may get a multi-dimensional association rules.
+
+10
+00:00:33,919 --> 00:00:37,820
+For example, for this inter-dimensional association rule,
+
+11
+00:00:37,820 --> 00:00:43,884
+like if X age is 18 to 25 and
+
+12
+00:00:43,884 --> 00:00:50,570
+if X occupation is a student then likely X going to buy a Coke.
+
+13
+00:00:50,570 --> 00:00:54,024
+That was actually H, occupation,
+
+14
+00:00:54,024 --> 00:00:57,819
+and items to buy are three different dimensions.
+
+15
+00:00:57,819 --> 00:01:01,375
+That kind of rule we call inter-dimensional association rule.
+
+16
+00:01:01,375 --> 00:01:06,594
+Then even we look at this sometimes we see the Hybrid cases,
+
+17
+00:01:06,594 --> 00:01:10,069
+like if X age is 18 to 25,
+
+18
+00:01:10,069 --> 00:01:15,004
+if X buys popcorn likely X is going to buy coke.
+
+19
+00:01:15,004 --> 00:01:17,609
+That kind of rule you have H as
+
+20
+00:01:17,609 --> 00:01:22,280
+one dimension but these two buys are seeing the same damages.
+
+21
+00:01:22,280 --> 00:01:26,305
+Okay. So if you see this kind of cases,
+
+22
+00:01:26,305 --> 00:01:32,769
+they likely these three different cases may slightly need different kind of algorithms.
+
+23
+00:01:32,769 --> 00:01:37,900
+Another thing is that attributes can be categorical, can be numerical.
+
+24
+00:01:37,900 --> 00:01:42,724
+For example, the categorical case could be product like
+
+25
+00:01:42,724 --> 00:01:49,084
+beer and diapers and you may have a profession like a student or a professor.
+
+26
+00:01:49,084 --> 00:01:51,954
+So, for these categorical attributes
+
+27
+00:01:51,954 --> 00:01:53,363
+we can for multi-dimensional, inter-dimensional association rules,
+
+28
+00:01:53,363 --> 00:01:58,769
+we can construct a data cube to mine
+
+29
+00:01:58,769 --> 00:02:04,980
+such things or just use data cube structure to mine such association efficiently.
+
+30
+00:02:04,980 --> 00:02:07,314
+Then, another case could be
+
+31
+00:02:07,314 --> 00:02:12,203
+quantitive attributes or we can say those attributes are numerically.
+
+32
+00:02:12,203 --> 00:02:16,570
+For example, H [inaudible] or some other things.
+
+33
+00:02:16,570 --> 00:02:23,534
+For this case it's quite often we may use this criterization method, clustering method,
+
+34
+00:02:23,534 --> 00:02:27,175
+some kind of gradient approaches we are going to discuss this part
+
+35
+00:02:27,175 --> 00:02:32,129
+in the quantitative association rule of mining. Thank you.

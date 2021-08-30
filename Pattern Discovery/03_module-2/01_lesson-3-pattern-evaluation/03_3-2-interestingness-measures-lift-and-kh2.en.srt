@@ -1,0 +1,307 @@
+1
+00:00:05,070 --> 00:00:08,845
+We have learned support and confidence.
+
+2
+00:00:08,845 --> 00:00:14,680
+These two measures are not sufficient to describe association.
+
+3
+00:00:14,680 --> 00:00:17,305
+So the problem becomes what
+
+4
+00:00:17,305 --> 00:00:23,959
+additional interesting measures are good enough to describe their relationships?
+
+5
+00:00:23,959 --> 00:00:28,825
+So that's the reason we want to examine a little more like lift and
+
+6
+00:00:28,825 --> 00:00:34,730
+chi square whether they are good enough to describe additional interesting measures.
+
+7
+00:00:34,730 --> 00:00:39,444
+So lift has been properly used in statistics as well.
+
+8
+00:00:39,444 --> 00:00:41,250
+We look at the same table,
+
+9
+00:00:41,250 --> 00:00:46,180
+the same table we can think B means playing basketball,
+
+10
+00:00:46,180 --> 00:00:48,690
+C means eating cereal.
+
+11
+00:00:48,690 --> 00:00:51,785
+So we have the exact same distribution.
+
+12
+00:00:51,785 --> 00:00:54,129
+Then for this continuous table,
+
+13
+00:00:54,129 --> 00:00:56,885
+we use lift to compute it.
+
+14
+00:00:56,885 --> 00:01:01,730
+The lift is defined as this: B and C are two item sets.
+
+15
+00:01:01,730 --> 00:01:04,470
+For rule B implies C,
+
+16
+00:01:04,470 --> 00:01:10,194
+that confidence if its divided by C support, we get lift.
+
+17
+00:01:10,194 --> 00:01:19,890
+Or we can say if BC this lose support divided by B support times C support.
+
+18
+00:01:19,890 --> 00:01:22,945
+So for this lift,
+
+19
+00:01:22,945 --> 00:01:27,010
+the general rule is if the lift is one,
+
+20
+00:01:27,010 --> 00:01:29,915
+then these two items are independent.
+
+21
+00:01:29,915 --> 00:01:31,265
+If it's greater than one,
+
+22
+00:01:31,265 --> 00:01:33,670
+they are positively correlated.
+
+23
+00:01:33,670 --> 00:01:35,469
+If it is less than one,
+
+24
+00:01:35,469 --> 00:01:37,440
+they are negative correlated.
+
+25
+00:01:37,440 --> 00:01:39,790
+For our example data set,
+
+26
+00:01:39,790 --> 00:01:49,050
+we will calculate a lift of B and C and B and not C. We divide 0.89 and 1.33.
+
+27
+00:01:49,050 --> 00:01:53,545
+Then from those data sets and the rules we've broken C,
+
+28
+00:01:53,545 --> 00:01:59,705
+B and C should be negative correlated because the lift is less than one.
+
+29
+00:01:59,705 --> 00:02:05,675
+B and not C are positive co-related because the lift is greater than one.
+
+30
+00:02:05,675 --> 00:02:12,569
+This actually fix our problem because we know B and C should be negative correlated,
+
+31
+00:02:12,569 --> 00:02:16,275
+B and not C should be positive correlated.
+
+32
+00:02:16,275 --> 00:02:18,310
+So this looks very nice.
+
+33
+00:02:18,310 --> 00:02:25,180
+Let's look at another measure popularly used in statistics as well called chi square.
+
+34
+00:02:25,180 --> 00:02:27,640
+In chi square, the definition,
+
+35
+00:02:27,640 --> 00:02:30,580
+we need to calculate the expected value.
+
+36
+00:02:30,580 --> 00:02:32,874
+How to calculate the expected value?
+
+37
+00:02:32,874 --> 00:02:38,270
+If we can see this 400 is a real value, it's observed value.
+
+38
+00:02:38,270 --> 00:02:41,650
+But expect value is just based on the distribution.
+
+39
+00:02:41,650 --> 00:02:47,640
+For example C and not C the distribution is 700 over 250.
+
+40
+00:02:47,640 --> 00:02:56,505
+This is three to one and all 600 students with three to one you get 450 versus 150.
+
+41
+00:02:56,505 --> 00:02:59,515
+In that case, we probably can't see,
+
+42
+00:02:59,515 --> 00:03:01,530
+we still can't use the popular,
+
+43
+00:03:01,530 --> 00:03:05,735
+the rules like if chi square is zero, they are independent.
+
+44
+00:03:05,735 --> 00:03:11,310
+It's greater than zero, they are correlated either positively or negatively.
+
+45
+00:03:11,310 --> 00:03:17,860
+So we need additional test to see whether they are positively or negatively correlated.
+
+46
+00:03:17,860 --> 00:03:19,930
+Now for our example,
+
+47
+00:03:19,930 --> 00:03:24,595
+we can easy calculate chi square should be almost 76.
+
+48
+00:03:24,595 --> 00:03:28,525
+So B and C should be correlated.
+
+49
+00:03:28,525 --> 00:03:34,270
+Further, we can say they are negatively correlated because the expected value is 450.
+
+50
+00:03:34,270 --> 00:03:37,585
+The observed value is only 400. It's less.
+
+51
+00:03:37,585 --> 00:03:41,130
+So these teams can solve the problem as well.
+
+52
+00:03:41,130 --> 00:03:47,800
+But the problem becomes whether lift and chi square are good in all the cases.
+
+53
+00:03:47,800 --> 00:03:52,255
+Let's examine some interesting case.
+
+54
+00:03:52,255 --> 00:03:59,445
+In this case, you probably can see this not B not C actually is quite big.
+
+55
+00:03:59,445 --> 00:04:02,459
+There are 100000.
+
+56
+00:04:02,459 --> 00:04:07,500
+These actually called null transactions because the transactions contain neither B nor
+
+57
+00:04:07,500 --> 00:04:12,690
+C. And if we just look at a B and C relationship,
+
+58
+00:04:12,690 --> 00:04:15,445
+we first see B and C should be negative
+
+59
+00:04:15,445 --> 00:04:19,315
+correlated because it's not easy to get B and C together.
+
+60
+00:04:19,315 --> 00:04:22,960
+B and not C is far bigger.
+
+61
+00:04:22,960 --> 00:04:26,355
+C and not B is also far bigger.
+
+62
+00:04:26,355 --> 00:04:28,510
+But if we use a lift,
+
+63
+00:04:28,510 --> 00:04:30,634
+we compute a lift B and C,
+
+64
+00:04:30,634 --> 00:04:34,919
+we will get this 8.44 which is far bigger than one.
+
+65
+00:04:34,919 --> 00:04:39,150
+That shows B and C should be strongly positive correlated.
+
+66
+00:04:39,150 --> 00:04:40,970
+This seems not right.
+
+67
+00:04:40,970 --> 00:04:45,840
+Either we tried to use this same contingency table.
+
+68
+00:04:45,840 --> 00:04:48,090
+We add the expected value.
+
+69
+00:04:48,090 --> 00:04:49,975
+We do the computation.
+
+70
+00:04:49,975 --> 00:04:55,130
+We will find chi square is bigger than zero.
+
+71
+00:04:55,130 --> 00:05:00,170
+In the meantime, you observed value is far bigger than the expected value.
+
+72
+00:05:00,170 --> 00:05:05,331
+So we also should say B and C are strongly positively correlated.
+
+73
+00:05:05,331 --> 00:05:07,855
+This seems to be wrong.
+
+74
+00:05:07,855 --> 00:05:09,339
+What's the problem?
+
+75
+00:05:09,339 --> 00:05:12,150
+Actually, there are too many null transactions.
+
+76
+00:05:12,150 --> 00:05:15,115
+That may make things distorted.
+
+77
+00:05:15,115 --> 00:05:17,659
+We need to fix it.

@@ -1,0 +1,142 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Description
+ </h1>
+ <p>
+  In this programming assignment, you are required to implement the Apriori algorithm and apply it to mine frequent itemsets from a real-life data set.
+ </p>
+ <h2 level="2">
+  Input
+ </h2>
+ <p>
+  The provided input file ("categories.txt") consists of the category lists of 77,185 places in the US. Each line corresponds to the category list of one place, where the list consists of a number of category instances (e.g., hotels, restaurants, etc.) that are separated by semicolons.
+ </p>
+ <p>
+  An example line is provided below:
+ </p>
+ <p>
+  Local Services;IT Services &amp; Computer Repair
+ </p>
+ <p>
+  In the example above, the corresponding place has two category instances: "Local Services" and "IT Services &amp; Computer Repair".
+ </p>
+ <asset assettype="generic" extension="txt" id="ouZfeTahEeaayA5yRZsQDQ" name="categories">
+ </asset>
+ <h2 level="2">
+  Output
+ </h2>
+ <p>
+  You need to implement the Apriori algorithm and use it to mine category sets that are frequent in the input data. When implementing the Apriori algorithm, you may use any programming language you like. We only need your result pattern file, not your source code file.
+ </p>
+ <p>
+  After implementing the Apriori algorithm, please set the relative minimum support to 0.01 and run it on the 77,185 category lists. In other words, you need to extract all the category sets that have an absolute support larger than 771.
+ </p>
+ <p>
+  <strong>
+   Part 1
+  </strong>
+ </p>
+ <p>
+  Please output all the
+  <em>
+   length-1
+  </em>
+  frequent categories with their absolute supports into a text file named "patterns.txt". Every line corresponds to exactly one frequent category and should be in the following format:
+ </p>
+ <p>
+  support:category
+ </p>
+ <p>
+  For example, suppose a category (Fast Food) has an absolute support 3000, then the line corresponding to this frequent category set in "patterns.txt" should be:
+ </p>
+ <p>
+  3000:Fast Food
+ </p>
+ <p>
+  <strong>
+   Part 2
+  </strong>
+ </p>
+ <p>
+  Please write all the frequent category sets along with their absolute supports into a text file named "patterns.txt". Every line corresponds to exactly one frequent category set and should be in the following format:
+ </p>
+ <p>
+  support:category_1;category_2;category_3;...
+ </p>
+ <p>
+  For example, suppose a category set (Fast Food; Restaurants) has an absolute support 2851, then the line corresponding to this frequent category set in "patterns.txt" should be:
+ </p>
+ <p>
+  2851:Fast Food;Restaurants
+ </p>
+ <h2 level="2">
+  Important Tips
+ </h2>
+ <p>
+  Make sure that you format each line correctly in the output file. For instance, use a semicolon instead of another character to separate the categories for each frequent category set.
+ </p>
+ <p>
+  In the result pattern file, the order of the categories does not matter. For example, the following two cases will be considered equivalent by the grader:
+ </p>
+ <p>
+  Case 1:
+ </p>
+ <p>
+  2851:Fast Food;Restaurants
+ </p>
+ <p>
+  Case 2:
+ </p>
+ <p>
+  2851:Restaurants;Fast Food
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

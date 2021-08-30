@@ -1,0 +1,459 @@
+1
+00:00:00,050 --> 00:00:06,422
+[SOUND] Now we are going to
+discuss another interesting
+
+2
+00:00:06,422 --> 00:00:11,387
+problem, mining compressed patterns.
+
+3
+00:00:11,387 --> 00:00:16,900
+We know frequent pattern mining may
+often generate many many patterns.
+
+4
+00:00:16,900 --> 00:00:21,520
+But in many of such patterns
+may share some similarity.
+
+5
+00:00:21,520 --> 00:00:24,680
+Maybe there is scattered, but not so
+
+6
+00:00:24,680 --> 00:00:27,420
+meaningful if you generate
+all those patterns.
+
+7
+00:00:27,420 --> 00:00:29,570
+Let's look at such an example.
+
+8
+00:00:29,570 --> 00:00:34,200
+Suppose we finally get five pattern IDs.
+
+9
+00:00:34,200 --> 00:00:39,250
+So you perceive these five
+patterns are like P1 and P2.
+
+10
+00:00:40,310 --> 00:00:44,400
+They are very similar and
+their supports are also very similar.
+
+11
+00:00:45,500 --> 00:00:49,600
+But P2 and P3,
+they are similar in item sets but
+
+12
+00:00:49,600 --> 00:00:51,360
+their supports are rather different.
+
+13
+00:00:52,930 --> 00:00:54,650
+Can we compress them?
+
+14
+00:00:54,650 --> 00:00:58,750
+When we first examine closed patterns,
+actually for
+
+15
+00:00:58,750 --> 00:01:01,930
+closed pattern,
+there's nothing you can compress.
+
+16
+00:01:01,930 --> 00:01:06,500
+The reason is closed pattern
+require the supports are identical,
+
+17
+00:01:06,500 --> 00:01:08,110
+then you can compress them.
+
+18
+00:01:08,110 --> 00:01:12,210
+But none of them have
+identical support counts.
+
+19
+00:01:12,210 --> 00:01:15,080
+So nothing can be compressed.
+
+20
+00:01:15,080 --> 00:01:16,750
+What about max pattern?
+
+21
+00:01:16,750 --> 00:01:22,100
+Of course we can use max pattern,
+that's P3, to represent all the patterns.
+
+22
+00:01:22,100 --> 00:01:26,524
+But on the other hand you probably see P3,
+this support,
+
+23
+00:01:26,524 --> 00:01:29,694
+is rather different from all the others.
+
+24
+00:01:29,694 --> 00:01:34,500
+To use P3 you may lose a lot of
+information on the support of
+
+25
+00:01:34,500 --> 00:01:35,982
+other patterns.
+
+26
+00:01:35,982 --> 00:01:40,428
+So that desired output
+actually is P2 P3 and P4.
+
+27
+00:01:40,428 --> 00:01:46,257
+The reason you probably can see is P1 and
+P2, they share a similar item sets and
+
+28
+00:01:46,257 --> 00:01:49,650
+also they share very
+similar support counts.
+
+29
+00:01:50,680 --> 00:01:55,540
+So we may need a good measure to
+see what things can be compressed.
+
+30
+00:01:55,540 --> 00:01:59,220
+A good measure could be
+pattern distance measure.
+
+31
+00:01:59,220 --> 00:02:03,090
+We use this definition to
+define the pattern distance.
+
+32
+00:02:03,090 --> 00:02:06,705
+You probably can look at a P1 and
+P2 when we look at this.
+
+33
+00:02:06,705 --> 00:02:13,140
+P1 and P2, their transaction,
+intersection of their transaction ID.
+
+34
+00:02:13,140 --> 00:02:14,340
+What should be the count?
+
+35
+00:02:14,340 --> 00:02:19,493
+The number of transactions they can
+intersect, actually it's a smaller one
+
+36
+00:02:19,493 --> 00:02:24,416
+here, because every transaction
+containing P2 must also contain P1.
+
+37
+00:02:24,416 --> 00:02:30,060
+So their support counts intersection
+should be this number, okay?
+
+38
+00:02:30,060 --> 00:02:31,470
+What about the unit?
+
+39
+00:02:31,470 --> 00:02:35,960
+The unit actually says all those
+transactions, because we know all
+
+40
+00:02:35,960 --> 00:02:41,480
+the transactions, P1 must also
+containing the transactions of P2.
+
+41
+00:02:41,480 --> 00:02:45,780
+So their unit number should
+be this number, okay?
+
+42
+00:02:45,780 --> 00:02:50,460
+In that case,we perceive these
+two numbers very close to one.
+
+43
+00:02:51,590 --> 00:02:56,710
+Then the distance 1 minus
+this very close to 1 number,
+
+44
+00:02:56,710 --> 00:02:59,870
+you get something very close to 0.
+
+45
+00:02:59,870 --> 00:03:03,318
+That means their pattern
+distance is rather small.
+
+46
+00:03:03,318 --> 00:03:08,200
+Based on this,
+we probably can see we may be able
+
+47
+00:03:08,200 --> 00:03:13,470
+to define a theta clustering or
+theta cover.
+
+48
+00:03:13,470 --> 00:03:16,470
+That means if we can see the pattern P,
+
+49
+00:03:16,470 --> 00:03:20,810
+the theta cover of pattern P
+is finding those patterns,
+
+50
+00:03:20,810 --> 00:03:25,868
+all the pattern can be expressed by this,
+the distance is within delta.
+
+51
+00:03:25,868 --> 00:03:31,490
+Actually, you probably see, P2 is a good
+one, because P2 essentially can cover P1,
+
+52
+00:03:31,490 --> 00:03:39,480
+because P1 just have a little less item
+sets, but their support is so close.
+
+53
+00:03:39,480 --> 00:03:43,640
+To that extent we may say they
+are within this theta cover.
+
+54
+00:03:44,640 --> 00:03:46,585
+So for data clustering,
+
+55
+00:03:46,585 --> 00:03:52,709
+we will be able to cluster P1 P2 together
+using P2 to represent the pattern.
+
+56
+00:03:52,709 --> 00:03:56,631
+So that means if we do
+this data clustering,
+
+57
+00:03:56,631 --> 00:04:03,310
+then all the patterns in the cluster
+can be represented by one pattern, P.
+
+58
+00:04:03,310 --> 00:04:09,560
+So the problem becomes whether we should
+mine all the patterns then compress them,
+
+59
+00:04:09,560 --> 00:04:14,110
+or should directly mine
+these compressed patterns.
+
+60
+00:04:14,110 --> 00:04:18,290
+Actually there's a efficient method
+which can directly mine those compressed
+
+61
+00:04:18,290 --> 00:04:19,250
+patterns.
+
+62
+00:04:19,250 --> 00:04:24,329
+I'm not going to get into the detail but
+you may refer to this interesting paper.
+
+63
+00:04:24,329 --> 00:04:31,836
+Okay, then another interesting thinking
+is Redundancy-Aware Top-k Patterns.
+
+64
+00:04:31,836 --> 00:04:36,940
+That means we want to get a desired
+pattern which is similar to the compressed
+
+65
+00:04:36,940 --> 00:04:41,140
+one, because want to get high
+significance and low redundancy.
+
+66
+00:04:41,140 --> 00:04:43,850
+These kind of of set up patterns, okay.
+
+67
+00:04:43,850 --> 00:04:48,890
+Let's look at this a, b, c, d,
+four different kind of compression.
+
+68
+00:04:48,890 --> 00:04:52,160
+Actually a is a set of original patterns.
+
+69
+00:04:52,160 --> 00:04:57,176
+There are cluster shields,
+their pattern distance, and the color
+
+70
+00:04:57,176 --> 00:05:03,790
+the darker shows is more significant,
+the lighter shows is less significant.
+
+71
+00:05:03,790 --> 00:05:07,550
+Okay, in that case you probably
+can see in this bigger cluster,
+
+72
+00:05:07,550 --> 00:05:09,700
+there are three patterns.
+
+73
+00:05:09,700 --> 00:05:11,780
+They are quite significant.
+
+74
+00:05:11,780 --> 00:05:18,520
+If you just do the top-k pattern mining,
+that means you take it as a support count,
+
+75
+00:05:18,520 --> 00:05:23,910
+or other significant measure,
+you would only find these three patterns.
+
+76
+00:05:23,910 --> 00:05:28,600
+Suppose we wanted only find top three,
+then all the remaining
+
+77
+00:05:28,600 --> 00:05:33,900
+patterns like here in the other
+cluster is completely missing.
+
+78
+00:05:33,900 --> 00:05:40,200
+But if you say I just do the
+summarization, try to find no clusters.
+
+79
+00:05:40,200 --> 00:05:43,580
+And within each cluster
+try to find their centers.
+
+80
+00:05:43,580 --> 00:05:48,400
+Then you'll pretty well find those
+less significant patterns, so
+
+81
+00:05:48,400 --> 00:05:50,960
+this may not be a good balance.
+
+82
+00:05:50,960 --> 00:05:57,220
+Actually better balance is you take care
+of both significance and the redundancy.
+
+83
+00:05:57,220 --> 00:06:02,760
+Simply says, you look at this one,
+there is something very significant.
+
+84
+00:06:02,760 --> 00:06:05,710
+And that they are also
+in the cluster center
+
+85
+00:06:05,710 --> 00:06:08,098
+you may want to show these patterns.
+
+86
+00:06:08,098 --> 00:06:11,885
+In the meantime,
+suppose you can only show three,
+
+87
+00:06:11,885 --> 00:06:16,037
+you may show these are significant and
+less redundant.
+
+88
+00:06:16,037 --> 00:06:21,740
+This one is significant and
+also it represents this cluster.
+
+89
+00:06:21,740 --> 00:06:26,392
+So the problem becomes how
+to develop efficient and
+
+90
+00:06:26,392 --> 00:06:32,605
+effective method finding such
+redundancy aware top-k patterns.
+
+91
+00:06:32,605 --> 00:06:36,610
+There's an interesting study
+which uses the max marginal
+
+92
+00:06:36,610 --> 00:06:41,025
+significance to measure the combined
+significance of a pattern and
+
+93
+00:06:41,025 --> 00:06:44,920
+develop efficient methods
+to mine such patterns.
+
+94
+00:06:44,920 --> 00:06:48,344
+We are not going to get
+into detail of this method.
+
+95
+00:06:48,344 --> 00:06:52,944
+Interested readers we made
+read the paper we pointed out.
+
+96
+00:06:52,944 --> 00:06:54,500
+Thank you.
+
+97
+00:06:54,500 --> 00:07:04,500
+[MUSIC]

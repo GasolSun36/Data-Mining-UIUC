@@ -1,0 +1,284 @@
+1
+00:00:00,050 --> 00:00:07,120
+[SOUND]
+Now we come down to
+
+2
+00:00:07,120 --> 00:00:13,340
+study another interesting issue called
+mining quantitative associations.
+
+3
+00:00:13,340 --> 00:00:15,705
+What is quantitative association?
+
+4
+00:00:15,705 --> 00:00:18,980
+Quantitative association
+means some attributes
+
+5
+00:00:18,980 --> 00:00:22,890
+after a numerical data like age and
+a salary.
+
+6
+00:00:22,890 --> 00:00:24,950
+So how to mine such rules?
+
+7
+00:00:24,950 --> 00:00:30,052
+There's one way is we can
+do static discretization.
+
+8
+00:00:30,052 --> 00:00:35,621
+The reason we need to do static
+discretization is if you do not discretize
+
+9
+00:00:35,621 --> 00:00:41,214
+them, you're trying to parallelized
+every possible age and a salary.
+
+10
+00:00:41,214 --> 00:00:44,120
+You will not be able to
+find any interesting or
+
+11
+00:00:44,120 --> 00:00:47,270
+sensitive rules with sufficient support.
+
+12
+00:00:47,270 --> 00:00:53,280
+But if we try to say,
+we partition age every ten years,
+
+13
+00:00:53,280 --> 00:00:58,610
+or partition income every
+$10,000 using some predefined
+
+14
+00:00:58,610 --> 00:01:02,810
+concept of hierarchy, we are going to
+be able to construct a data cube and
+
+15
+00:01:02,810 --> 00:01:05,949
+we're going to be able to generate
+some interesting association.
+
+16
+00:01:07,140 --> 00:01:08,990
+But this fixed,
+
+17
+00:01:08,990 --> 00:01:13,880
+predefined concept hierarchy may
+not fit your data distribution.
+
+18
+00:01:13,880 --> 00:01:16,345
+For example, in the university,
+
+19
+00:01:16,345 --> 00:01:20,262
+likely you may want to
+partition the age for students.
+
+20
+00:01:20,262 --> 00:01:25,330
+You may say it's 18 to 20,
+20 to 22, or something like that.
+
+21
+00:01:25,330 --> 00:01:31,756
+But for income, you may say $10,000
+is one partition or low and high.
+
+22
+00:01:31,756 --> 00:01:33,870
+But if you go to hospital,
+
+23
+00:01:33,870 --> 00:01:39,680
+their age distribution you may like
+to say middle age or old or young.
+
+24
+00:01:39,680 --> 00:01:44,300
+So another way is we do
+clustering based on data.
+
+25
+00:01:44,300 --> 00:01:48,600
+That means we take every dimension,
+we study their distribution of the age and
+
+26
+00:01:48,600 --> 00:01:54,240
+income, we perform certain clustering
+algorithm, generate a few clusters,
+
+27
+00:01:54,240 --> 00:02:01,900
+and then we find the parallelized frequent
+pattern of each such cluster of pairs.
+
+28
+00:02:01,900 --> 00:02:07,200
+Then finally there's also popular
+ways to do deviation analysis.
+
+29
+00:02:07,200 --> 00:02:11,360
+That means instead of
+doing fixed interval,
+
+30
+00:02:11,360 --> 00:02:15,755
+we may do based on certain
+condition like gender is female.
+
+31
+00:02:15,755 --> 00:02:21,773
+We may find their mean or a median or
+something, some statistic measure,
+
+32
+00:02:21,773 --> 00:02:26,723
+you will find if the wage mean
+is substantially deviated from
+
+33
+00:02:26,723 --> 00:02:31,620
+the overall mean,
+then this could be an interesting rule.
+
+34
+00:02:31,620 --> 00:02:36,690
+Let's go a little further to see
+how to find some such deviation.
+
+35
+00:02:36,690 --> 00:02:41,290
+We also call extraordinary or
+interesting phenomena.
+
+36
+00:02:41,290 --> 00:02:46,786
+Usually for this we may say the left-hand
+side is a subset of the population and
+
+37
+00:02:46,786 --> 00:02:51,782
+the right-hand side is some kind of
+extraordinary behavior expressed
+
+38
+00:02:51,782 --> 00:02:57,280
+using some statistical measure which
+could deviate from the overall.
+
+39
+00:02:57,280 --> 00:03:03,210
+Then the rule, whether is true rule or
+is just a very exceptional case,
+
+40
+00:03:03,210 --> 00:03:07,000
+we need to do some statistic test,
+like a Z-test,
+
+41
+00:03:07,000 --> 00:03:11,970
+to confirm whether such kind
+of rule is of high confidence.
+
+42
+00:03:13,330 --> 00:03:15,130
+Further, in many cases,
+
+43
+00:03:15,130 --> 00:03:20,820
+you may even want to go deeper to
+get a subset of the population, for
+
+44
+00:03:20,820 --> 00:03:26,270
+example, not only look at the gender as
+female, but look at the location as south.
+
+45
+00:03:26,270 --> 00:03:31,500
+You may get the wage could further
+deviate from the overall mean,
+
+46
+00:03:31,500 --> 00:03:35,890
+or even from the bigger rule
+like a gender is female.
+
+47
+00:03:35,890 --> 00:03:40,320
+So that subrule could become
+a extraordinary subrule
+
+48
+00:03:40,320 --> 00:03:42,670
+associated with its super rule.
+
+49
+00:03:42,670 --> 00:03:49,230
+For example, sometimes you do not have the
+left-hand side as a subset of population,
+
+50
+00:03:49,230 --> 00:03:55,190
+but based on numerical data you can group
+them into certain intervals or clusters.
+
+51
+00:03:55,190 --> 00:04:00,960
+For example, the left-hand
+side could be if the education
+
+52
+00:04:00,960 --> 00:04:06,040
+has pretty many years,
+like 14 to 18 years, and
+
+53
+00:04:06,040 --> 00:04:12,050
+you will find the mean wage actually
+is substantially higher than the mean,
+
+54
+00:04:12,050 --> 00:04:15,740
+so that may form another
+interesting quantitative rule.
+
+55
+00:04:17,460 --> 00:04:21,642
+Efficient methods actually have
+been developed to mine such
+
+56
+00:04:21,642 --> 00:04:23,288
+extraordinary rules.
+
+57
+00:04:23,288 --> 00:04:28,736
+For example,
+one research paper published by Aumann and
+
+58
+00:04:28,736 --> 00:04:37,150
+Lindell@KDD'99 is a very interesting case
+study of a very interesting algorithm.
+
+59
+00:04:37,150 --> 00:04:47,150
+[MUSIC]

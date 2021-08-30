@@ -1,0 +1,446 @@
+1
+00:00:00,025 --> 00:00:07,172
+[SOUND] First, we are going to
+discuss Sequential Pattern and
+
+2
+00:00:07,172 --> 00:00:12,365
+Sequential Pattern Mining, the concept.
+
+3
+00:00:12,365 --> 00:00:14,636
+So the first thing is we should say,
+
+4
+00:00:14,636 --> 00:00:20,090
+sequential pattern mining is very useful,
+has very broad applications.
+
+5
+00:00:20,090 --> 00:00:25,050
+One application could be in
+costumer shopping sequences.
+
+6
+00:00:25,050 --> 00:00:31,250
+For example, you get a loyalty card for
+your shops, you may want to see.
+
+7
+00:00:31,250 --> 00:00:35,900
+Maybe one costumer likely
+going to first buy a laptop,
+
+8
+00:00:35,900 --> 00:00:40,230
+then a digital camera,
+then a smartphone within 6 months.
+
+9
+00:00:40,230 --> 00:00:48,070
+If this forms a pattern, you may be able
+to try to do some kind of advertisement
+
+10
+00:00:48,070 --> 00:00:54,080
+to other similar customers or serving
+some new incentive for this customer.
+
+11
+00:00:54,080 --> 00:00:58,870
+Like a medical treatment form sequences,
+natural disasters like earthquake
+
+12
+00:00:58,870 --> 00:01:05,840
+happening it may have some sequences
+of natural and also human phenomenon.
+
+13
+00:01:05,840 --> 00:01:08,684
+Science engineering a lot
+of things are processes.
+
+14
+00:01:08,684 --> 00:01:11,240
+They evolve along with time.
+
+15
+00:01:11,240 --> 00:01:15,910
+Similarly, stocks markets they have
+some kind of duration of sequences.
+
+16
+00:01:15,910 --> 00:01:19,515
+Weblog click streams,
+calling patterns for telephones and
+
+17
+00:01:19,515 --> 00:01:21,570
+other things forming sequences.
+
+18
+00:01:21,570 --> 00:01:27,290
+Even for software engineering, the program
+execution from sequential patterns.
+
+19
+00:01:27,290 --> 00:01:32,170
+The biological sequences very, very
+useful for analysis like DNA sequences,
+
+20
+00:01:32,170 --> 00:01:33,370
+protein sequences.
+
+21
+00:01:33,370 --> 00:01:39,130
+So we see trying to get
+sequential patterns out of those
+
+22
+00:01:39,130 --> 00:01:44,250
+very big vast applications,
+could be very useful and important.
+
+23
+00:01:44,250 --> 00:01:47,350
+Actually, we can distinguish
+transaction databases,
+
+24
+00:01:47,350 --> 00:01:51,040
+usually may not be important
+to look at their time effect.
+
+25
+00:01:51,040 --> 00:01:54,852
+Sequence databases,
+they have a time stamp attached with it.
+
+26
+00:01:54,852 --> 00:01:59,172
+Time-series databases, usually the time,
+
+27
+00:01:59,172 --> 00:02:06,640
+things happened actually along the even or
+equivalent time intervals.
+
+28
+00:02:06,640 --> 00:02:08,480
+Sometimes, it's very consecutive.
+
+29
+00:02:09,540 --> 00:02:13,050
+Then for sequential patterns,
+actually there are two kinds.
+
+30
+00:02:13,050 --> 00:02:16,830
+One is gapped, another is non-gapped.
+
+31
+00:02:16,830 --> 00:02:23,930
+The gapped pattern means, you do allow
+to have gaps within those patterns.
+
+32
+00:02:23,930 --> 00:02:28,391
+The non-gapped patterns means,
+you will not allow these patterns,
+
+33
+00:02:28,391 --> 00:02:31,120
+the sequence, everything is important.
+
+34
+00:02:31,120 --> 00:02:34,740
+The concept of this important
+if you have gapped and
+
+35
+00:02:34,740 --> 00:02:36,720
+you have to trade them very seriously.
+
+36
+00:02:38,210 --> 00:02:40,390
+For example, for shopping transactions.
+
+37
+00:02:40,390 --> 00:02:44,620
+Probably, you don't care customer in
+the middle buying some other things, so
+
+38
+00:02:44,620 --> 00:02:48,020
+it's not important to study the gaps.
+
+39
+00:02:48,020 --> 00:02:53,580
+Click streams sometimes you may say, some
+click streams, you may care about gaps.
+
+40
+00:02:53,580 --> 00:02:56,700
+Some, you probably do not
+care of gaps that much.
+
+41
+00:02:56,700 --> 00:03:01,390
+For biological sequences,
+in many case you do carry gaps, so
+
+42
+00:03:01,390 --> 00:03:07,180
+the protein sequence or DNA sequences,
+if you insert many things, in
+
+43
+00:03:07,180 --> 00:03:11,949
+the middle of the two DNA sets, sometimes
+you may completely change the function.
+
+44
+00:03:14,000 --> 00:03:18,070
+So let's look at the customer
+shopping sequence
+
+45
+00:03:18,070 --> 00:03:22,700
+as a major example to study how
+to do sequential pattern mining.
+
+46
+00:03:22,700 --> 00:03:26,210
+Sequential pattern mining essentially is,
+you give me a set of sequences.
+
+47
+00:03:27,260 --> 00:03:32,101
+The algorithm is trying to find
+the complete set of frequent sub-sequences
+
+48
+00:03:32,101 --> 00:03:35,364
+satisfying a certain
+minimum support threshold.
+
+49
+00:03:35,364 --> 00:03:37,160
+Let's look at this example.
+
+50
+00:03:38,170 --> 00:03:44,590
+We have a sequence database containing
+four customer shopping sequences.
+
+51
+00:03:44,590 --> 00:03:46,580
+Okay, what's the meaning of this?
+
+52
+00:03:46,580 --> 00:03:49,190
+We look at this particular sequence.
+
+53
+00:03:49,190 --> 00:03:55,070
+This sequence, the parenthesis means this
+one is within the same shopping basket.
+
+54
+00:03:55,070 --> 00:04:02,790
+Then after that, you get another one
+ab that means this ab following ef.
+
+55
+00:04:02,790 --> 00:04:05,300
+But ab is getting together
+at the same time.
+
+56
+00:04:05,300 --> 00:04:11,350
+Similarly, df getting together but
+following ab, and then c, then b, okay.
+
+57
+00:04:11,350 --> 00:04:14,916
+That means each one of these
+you can think is a element.
+
+58
+00:04:14,916 --> 00:04:18,580
+It may contain a set of items or
+you call events.
+
+59
+00:04:19,930 --> 00:04:23,980
+Then this one event may
+follow another one.
+
+60
+00:04:23,980 --> 00:04:29,293
+The items within the event, the order is
+not important because they are in the same
+
+61
+00:04:29,293 --> 00:04:34,302
+shopping basket but for our convenience,
+we can sort them alphabetically.
+
+62
+00:04:34,302 --> 00:04:36,240
+Then what is subsequence?
+
+63
+00:04:37,258 --> 00:04:41,092
+Actually any sub-strings within this line
+
+64
+00:04:41,092 --> 00:04:46,200
+probably can see here
+the subsequence you may have a gap.
+
+65
+00:04:46,200 --> 00:04:52,560
+For example, you say, you can have a,
+you have bc, bc actually you chop this a.
+
+66
+00:04:52,560 --> 00:04:55,580
+You can chop complete ac, then you get d.
+
+67
+00:04:55,580 --> 00:04:59,120
+You can chop one f, you can get it c.
+
+68
+00:04:59,120 --> 00:05:02,550
+So, this one is a subsequence
+of this longer sequence.
+
+69
+00:05:03,800 --> 00:05:08,320
+Then, sequential pattern mining,
+the sequential pattern essentially is
+
+70
+00:05:08,320 --> 00:05:11,520
+if you set a support,
+like a minimum support is 2,
+
+71
+00:05:11,520 --> 00:05:16,580
+that means, at least 2 sequences
+contain the subsequence.
+
+72
+00:05:16,580 --> 00:05:19,684
+You find those subsequence,
+this is a sequential pattern.
+
+73
+00:05:19,684 --> 00:05:23,365
+For example, ab getting together then c,
+
+74
+00:05:23,365 --> 00:05:28,595
+in this sequence database,
+this is a pattern of support 2.
+
+75
+00:05:30,270 --> 00:05:33,924
+So sequential pattern mining algorithm is,
+
+76
+00:05:33,924 --> 00:05:39,211
+you try to develop algorithms
+which are efficient, scalable and
+
+77
+00:05:39,211 --> 00:05:45,284
+these algorithms should find the complete
+set of frequent subsequences.
+
+78
+00:05:45,284 --> 00:05:48,050
+What we call sequential patterns.
+
+79
+00:05:48,050 --> 00:05:54,919
+And also should be able to incorporate
+various kinds of user-defined constraints.
+
+80
+00:05:54,919 --> 00:05:59,112
+For sequential pattern mining,
+actually Apriori property,
+
+81
+00:05:59,112 --> 00:06:04,260
+the property we have used in
+frequent pattern mining still holds.
+
+82
+00:06:04,260 --> 00:06:09,040
+For example, if we say a subsequence
+s sub 1 is infrequent,
+
+83
+00:06:09,040 --> 00:06:14,450
+then any of this supersequence
+cannot be frequent.
+
+84
+00:06:14,450 --> 00:06:18,740
+So that's almost the same idea as Apriori.
+
+85
+00:06:18,740 --> 00:06:24,920
+So based on this idea, we actually
+can develop lots of algorithms.
+
+86
+00:06:24,920 --> 00:06:28,475
+One, represented the algorithm called GSP,
+
+87
+00:06:28,475 --> 00:06:33,684
+Generalized Sequential Pattern mining,
+developed in 1996.
+
+88
+00:06:33,684 --> 00:06:37,749
+Another way is a Vertical
+format-base mining called SPADE,
+
+89
+00:06:37,749 --> 00:06:40,570
+developed in year 2000.
+
+90
+00:06:40,570 --> 00:06:45,386
+The third one we're going to introduce
+is Pattern-growth methods called
+
+91
+00:06:45,386 --> 00:06:48,070
+PrefixSpan developed in year 2001.
+
+92
+00:06:48,070 --> 00:06:54,767
+And then we are going to study mining
+closed sequential patterns called CloSpan.
+
+93
+00:06:54,767 --> 00:06:59,188
+Finally, we're going to discuss
+constraint-based sequential pattern
+
+94
+00:06:59,188 --> 00:06:59,757
+mining.
+
+95
+00:06:59,757 --> 00:07:09,757
+[MUSIC]

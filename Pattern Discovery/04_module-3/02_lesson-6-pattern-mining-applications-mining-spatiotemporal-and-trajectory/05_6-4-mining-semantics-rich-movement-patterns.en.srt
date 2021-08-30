@@ -1,0 +1,160 @@
+1
+00:00:01,590 --> 00:00:06,798
+Now, we study another
+interesting movement pattern
+
+2
+00:00:06,798 --> 00:00:12,016
+called Mining Semantics-Rich
+Movement Patterns.
+
+3
+00:00:12,016 --> 00:00:15,630
+We'll first see what is
+Frequent Movement Pattern?
+
+4
+00:00:16,960 --> 00:00:22,440
+Frequent Movement Pattern is
+a movement sequence, frequently appears
+
+5
+00:00:22,440 --> 00:00:28,114
+in the input trajectory database, but
+we care more on the semantics here.
+
+6
+00:00:28,114 --> 00:00:31,820
+For example,
+from home to Starbucks to office.
+
+7
+00:00:31,820 --> 00:00:38,732
+So maybe people, the home maybe different
+or office maybe different location,
+
+8
+00:00:38,732 --> 00:00:44,732
+but this pattern maybe interesting,
+even we can consider the home and
+
+9
+00:00:44,732 --> 00:00:50,746
+office could be just the same semantic
+units in different locations.
+
+10
+00:00:50,746 --> 00:00:55,288
+So comparing to
+Frequent Movement Pattern versus
+
+11
+00:00:55,288 --> 00:00:59,288
+Frequent Sequential Pattern, we can say,
+
+12
+00:00:59,288 --> 00:01:06,547
+they both are at finding frequent
+subsequences from input sequence database.
+
+13
+00:01:06,547 --> 00:01:10,051
+However, for
+mining frequent movement patterns,
+
+14
+00:01:10,051 --> 00:01:14,748
+we would like to think of similar
+places may need to be grouped together
+
+15
+00:01:14,748 --> 00:01:20,020
+collectively to form frequent subsequences
+from the semantic point of view.
+
+16
+00:01:21,080 --> 00:01:26,070
+Now, we look at
+Mining Semantics-Rich Movement Patterns.
+
+17
+00:01:26,070 --> 00:01:32,280
+The semantics-rich patterns means in
+addition to know how people move from
+
+18
+00:01:32,280 --> 00:01:38,890
+one region to another, we want to also
+understand the functions of the regions.
+
+19
+00:01:38,890 --> 00:01:43,890
+That means we want them see people
+moving from office to restaurant or
+
+20
+00:01:43,890 --> 00:01:44,900
+from home to gym.
+
+21
+00:01:46,640 --> 00:01:50,990
+So, we promote a two-step
+top-down mining approach.
+
+22
+00:01:50,990 --> 00:01:55,742
+The first step is try to find
+a set of a coarse patterns that
+
+23
+00:01:55,742 --> 00:01:59,900
+reflects people semantic
+level transitions.
+
+24
+00:01:59,900 --> 00:02:06,353
+That means as long as a reaching
+carry the similar semantic functions,
+
+25
+00:02:06,353 --> 00:02:12,173
+we may one to consider they
+are the same function or same entity.
+
+26
+00:02:12,173 --> 00:02:17,224
+Then in the step two,
+we split each coarse pattern into several
+
+27
+00:02:17,224 --> 00:02:23,570
+fine-grained ones by grouping
+similar movement snippets together.
+
+28
+00:02:23,570 --> 00:02:29,039
+This time, we'll consider spatial,
+temporal, besides the semantics.
+
+29
+00:02:29,039 --> 00:02:34,170
+We're going to consider spatial and
+temporal features more seriously.
+
+30
+00:02:34,170 --> 00:02:39,586
+A recent study published in
+VLDB 2014 called Splitter,
+
+31
+00:02:39,586 --> 00:02:43,728
+Mining Fine-Grained Sequential Patterns in
+
+32
+00:02:43,728 --> 00:02:49,790
+Semantic Trajectories is an interesting
+study in this direction.
+
+33
+00:02:49,790 --> 00:02:55,159
+[MUSIC]

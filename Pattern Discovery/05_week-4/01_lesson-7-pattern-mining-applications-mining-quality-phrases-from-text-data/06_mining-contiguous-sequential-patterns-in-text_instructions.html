@@ -1,0 +1,149 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Description
+ </h1>
+ <p>
+  In this programming assignment, you are required to implement a contiguous sequential pattern mining algorithm and apply it on text data to mine potential phrase candidates.
+ </p>
+ <h2 level="2">
+  Input
+ </h2>
+ <p>
+  The provided input file ("reviews_sample.txt") consists of 10,000 online reviews from Yelp users.  The reviews have been stemmed (to remove the postfix of each word so words with similar semantics can have the same form), and most of the punctuation has been removed.  Therefore, each line is basically a list of strings separated by spaces.
+ </p>
+ <p>
+  An example line is provided as below:
+ </p>
+ <pre>cold cheap beer good bar food good service looking great pittsburgh style fish sandwich place breading light fish plentiful good side home cut fry good grilled chicken salad steak soup day homemade lot special great place lunch bar snack beer</pre>
+ <p>
+ </p>
+ <asset assettype="generic" extension="txt" id="guUGhkcoEeaKKwrxnBB_sQ" name="reviews_sample">
+ </asset>
+ <h2 level="2">
+  Output
+ </h2>
+ <p>
+  You need to implement an algorithm to mine
+  <em>
+   contiguous
+  </em>
+  sequential patterns that are frequent in the input data.  A contiguous sequential pattern is a sequence of items that frequently appears as a consecutive subsequence in a database of many sequences.  For example, if the database is
+ </p>
+ <pre>A,B,A,C
+A,C,A,B,A,B
+B,A,A,C,D
+</pre>
+ <p>
+  and the minimum support is 2, then patterns like "A,B,A" or "A,C" are both frequent contiguous sequential patterns, while the pattern "A,A" is not a frequent
+  <em>
+   contiguous
+  </em>
+  sequential pattern because in the first two sequences the two A's are not consecutive to each other.  Notice that it is still a frequent sequential pattern though.
+ </p>
+ <p>
+  Also notice that multiple appearances of a subsequence in a single sequence record only counts once.  For example, the pattern "A,B" appears 1 time in the first sequence and 2 times in the second, but its support should be calculated as 2, as there are only 2 records containing subsequence "A,B".
+ </p>
+ <p>
+  When implementing the algorithm, you could use any programming language you like. We only need your result pattern file, not your source code file.
+ </p>
+ <p>
+  Please set the relative minimum support to 0.01 and run it on the given text file.  In other words, you need to extract all the frequent contiguous sequential patterns that have an absolute support no smaller than 100.
+ </p>
+ <p>
+  Please write all the frequent contiguous sequential patterns along with their absolute supports into a text file named "patterns.txt".  Every line corresponds to exactly one pattern you found and should be in the following format:
+ </p>
+ <p>
+  support:item_1;item_2;item_3
+ </p>
+ <p>
+  For example, suppose the phrase "parking lot" has an absolute support 133, then the line corresponding to this frequent contiguous sequential pattern in "patterns.txt" should be:
+ </p>
+ <p>
+  133:parking;lot
+ </p>
+ <p>
+  Notice that the order does matter in sequential pattern mining.  That is to say,
+ </p>
+ <p>
+  133:lot;parking
+ </p>
+ <p>
+  may be graded as incorrect.
+ </p>
+ <h2 level="2">
+  Important Tips
+ </h2>
+ <p>
+  Make sure that you format each line correctly in the output file. For instance, use a semicolon instead of other characters to separate different items in the sequence.
+ </p>
+ <p>
+  Notice that the order does matter in sequential pattern mining.  That is to say,
+ </p>
+ <p>
+  133:lot;parking
+ </p>
+ <p>
+  may be graded as incorrect
+ </p>
+ <p>
+  even if
+ </p>
+ <p>
+  133:parking;lot
+ </p>
+ <p>
+  is a frequent contiguous sequential pattern.
+ </p>
+ <p>
+  Notice that Length-1 patterns should also be included.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

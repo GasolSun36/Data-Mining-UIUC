@@ -1,0 +1,191 @@
+1
+00:00:00,025 --> 00:00:04,315
+[SOUND] Now, I'm going to introduce
+
+2
+00:00:04,315 --> 00:00:09,035
+an interesting algorithm called GSP,
+
+3
+00:00:09,035 --> 00:00:17,054
+that's Apriori-Based Sequential
+Pattern Mining mass search.
+
+4
+00:00:17,054 --> 00:00:18,960
+This mass search is pretty simple.
+
+5
+00:00:20,500 --> 00:00:23,450
+You start from a sequence database.
+
+6
+00:00:24,480 --> 00:00:30,850
+Then you first try to get the singleton
+sequences like the first one appears.
+
+7
+00:00:30,850 --> 00:00:35,280
+That means you scan database once,
+you count every single
+
+8
+00:00:36,320 --> 00:00:40,400
+item that occurred in every sequence.
+
+9
+00:00:40,400 --> 00:00:45,200
+Then you can see a occurs three times,
+occurs five times.
+
+10
+00:00:45,200 --> 00:00:47,993
+So if you said min_sup = 2,
+
+11
+00:00:47,993 --> 00:00:51,990
+likely g and h will be gone
+because their support is only 1.
+
+12
+00:00:51,990 --> 00:00:58,790
+Then you find frequent lens one
+subsequent a, b, c, d, e, f.
+
+13
+00:01:00,510 --> 00:01:05,845
+With this you can combine
+them as candidate
+
+14
+00:01:05,845 --> 00:01:11,170
+sub-sequences, you may have aa,
+ab, ac, ba, bb,
+
+15
+00:01:11,170 --> 00:01:16,650
+bc remember, aa is still important means,
+you first buy aa then, buy another a.
+
+16
+00:01:18,090 --> 00:01:23,710
+Then, for the, for the shopping basket,
+you may get ab together.
+
+17
+00:01:23,710 --> 00:01:31,660
+That's why you may have ab is one event,
+one element, ac is another element.
+
+18
+00:01:31,660 --> 00:01:33,940
+You may get these kind of subsequences.
+
+19
+00:01:33,940 --> 00:01:41,290
+In total, you look at six by six, then
+you get it no six by five divided by two,
+
+20
+00:01:41,290 --> 00:01:47,810
+you will get this number of
+candidate size two sequence.
+
+21
+00:01:47,810 --> 00:01:50,990
+But without Apriori, without this pruning,
+you'll get much more.
+
+22
+00:01:50,990 --> 00:01:56,089
+So even this minimal pruning still can
+reduce search space substantially.
+
+23
+00:01:57,950 --> 00:02:02,440
+So in general,
+we can work out the algorithm like this.
+
+24
+00:02:02,440 --> 00:02:04,570
+You put this one into a loop.
+
+25
+00:02:04,570 --> 00:02:08,790
+At the very beginning, you can scan to
+find length k, which is length one,
+
+26
+00:02:08,790 --> 00:02:10,360
+frequent sequence.
+
+27
+00:02:10,360 --> 00:02:14,350
+Then, based on the Apriori you
+can generate the length two or
+
+28
+00:02:14,350 --> 00:02:17,120
+length k plus one, candidate sequence.
+
+29
+00:02:17,120 --> 00:02:21,530
+then you can go back to check and
+find the real frequent sequence,
+
+30
+00:02:21,530 --> 00:02:27,370
+then you go back to the Apriori
+based candidate generation.
+
+31
+00:02:27,370 --> 00:02:33,240
+So generation test, you can go into
+the loop until no frequent sequence or
+
+32
+00:02:33,240 --> 00:02:34,730
+not candidates can be found.
+
+33
+00:02:36,300 --> 00:02:40,950
+So if you look at the execution
+sequence for this particular dataset,
+
+34
+00:02:40,950 --> 00:02:45,360
+you will find, at the very
+beginning you get a, b, c, d, e, f.
+
+35
+00:02:45,360 --> 00:02:46,440
+And g, h, will be gone.
+
+36
+00:02:46,440 --> 00:02:48,440
+They are painted in blue.
+
+37
+00:02:48,440 --> 00:02:51,960
+So then you can, from here you can go up,
+
+38
+00:02:51,960 --> 00:02:56,580
+get a frequent length-2 sub-sequences.
+
+39
+00:02:56,580 --> 00:03:01,510
+Then you can generate lengths three,
+length four, length five,
+
+40
+00:03:01,510 --> 00:03:05,940
+and here, you cannot go along anymore.
+
+41
+00:03:05,940 --> 00:03:09,524
+So, this is the GSP algorithm
+
+42
+00:03:09,524 --> 00:03:19,524
+[MUSIC]

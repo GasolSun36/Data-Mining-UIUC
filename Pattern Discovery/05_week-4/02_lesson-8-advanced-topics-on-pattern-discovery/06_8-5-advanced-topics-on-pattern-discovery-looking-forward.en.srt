@@ -1,0 +1,284 @@
+1
+00:00:06,070 --> 00:00:10,696
+Now we come down to the very last
+session of this lecture which is also
+
+2
+00:00:10,696 --> 00:00:15,010
+the very last session of this
+short course, Looking Forward.
+
+3
+00:00:16,250 --> 00:00:21,070
+We have studied a lot of
+pattern discovery methods,
+
+4
+00:00:21,070 --> 00:00:27,080
+some advanced concepts,
+some algorithms and lots of applications.
+
+5
+00:00:27,080 --> 00:00:31,140
+We'll probably see there are lots
+of interesting issue to be studied
+
+6
+00:00:31,140 --> 00:00:34,032
+from the first paper in this field,
+
+7
+00:00:34,032 --> 00:00:39,090
+like 1993 up to now year 2015,
+we introduced various
+
+8
+00:00:39,090 --> 00:00:44,170
+kinds of research discoveries and
+methods, even last until today.
+
+9
+00:00:45,330 --> 00:00:50,429
+So this is still interesting research and
+application domain in data mining.
+
+10
+00:00:51,600 --> 00:00:56,260
+So what we want to
+emphasize is how we further
+
+11
+00:00:56,260 --> 00:01:01,720
+build up a new applications using
+invisible pattern mining approach.
+
+12
+00:01:01,720 --> 00:01:03,870
+What is invisible pattern mining?
+
+13
+00:01:03,870 --> 00:01:09,420
+It's you build this pattern mining
+measures into various kinds of functions,
+
+14
+00:01:10,460 --> 00:01:16,190
+like a search function, ranking function,
+recommendation, or other mining functions.
+
+15
+00:01:16,190 --> 00:01:18,660
+Sometimes when people search the web,
+
+16
+00:01:18,660 --> 00:01:24,160
+the may not know they implicitly
+are using pattern mining results.
+
+17
+00:01:24,160 --> 00:01:28,940
+For example, we haven't seen
+we're studying classification,
+
+18
+00:01:28,940 --> 00:01:31,400
+there are so many classification methods.
+
+19
+00:01:31,400 --> 00:01:33,380
+But definitely, frequent,
+
+20
+00:01:33,380 --> 00:01:37,480
+and discriminative-pattern mining
+could be an interesting contribution
+
+21
+00:01:37,480 --> 00:01:42,680
+to the different repositories of
+the methods on classification.
+
+22
+00:01:42,680 --> 00:01:47,740
+Then we also studied a graph indexing and
+a similarity search.
+
+23
+00:01:47,740 --> 00:01:53,010
+When you do indexing you do search,
+you do various kind of retrieval,
+
+24
+00:01:53,010 --> 00:01:57,918
+you may use index constructive
+by pattern analysis.
+
+25
+00:01:57,918 --> 00:02:02,320
+Then even for pattern mining we may
+first mine frequent patterns and
+
+26
+00:02:02,320 --> 00:02:08,160
+doing topic modeling then we can get
+lots of interesting premises and
+
+27
+00:02:08,160 --> 00:02:10,910
+features for effective text mining.
+
+28
+00:02:11,920 --> 00:02:17,090
+When people doing software analysis, you
+may use pattern mining methods to discuss
+
+29
+00:02:17,090 --> 00:02:21,590
+lots of bugs or
+software specification regularities and
+
+30
+00:02:21,590 --> 00:02:25,540
+patterns, which may help us
+to find bugs in software.
+
+31
+00:02:27,120 --> 00:02:31,660
+For spatiotemporal trajectory or
+moment pattern mining,
+
+32
+00:02:31,660 --> 00:02:37,150
+you may see the frequent pattern
+analysis can be an interesting
+
+33
+00:02:37,150 --> 00:02:42,400
+method added to this set of weapons.
+
+34
+00:02:42,400 --> 00:02:48,100
+Then for image mining, multimedia data
+mining, like a video-audio analysis,
+
+35
+00:02:48,100 --> 00:02:53,240
+the pattern analysis could be an implicit
+approach method built inside.
+
+36
+00:02:54,290 --> 00:02:59,760
+Even for biological and chemical data
+analysis, like analyze DNA sequences or
+
+37
+00:02:59,760 --> 00:03:05,950
+biological graphs, lots of pattern
+mining may be used as primitives.
+
+38
+00:03:05,950 --> 00:03:07,870
+Even in clustering for
+
+39
+00:03:07,870 --> 00:03:13,020
+example we are going to study clustering
+in data mining in this course.
+
+40
+00:03:13,020 --> 00:03:16,240
+I'm going to introduce you
+subspace clustering, which
+
+41
+00:03:16,240 --> 00:03:20,270
+actually frequent pattern mining will
+become another interesting technique for
+
+42
+00:03:20,270 --> 00:03:22,030
+subspace clustering.
+
+43
+00:03:23,400 --> 00:03:28,550
+Even people search the web or
+make a recommendation of your products,
+
+44
+00:03:28,550 --> 00:03:32,300
+or study click streams
+to enhance your search.
+
+45
+00:03:32,300 --> 00:03:35,870
+The pattern mining may play
+an important role in this.
+
+46
+00:03:35,870 --> 00:03:39,830
+So, you probably can see pattern
+mining can be applied in many,
+
+47
+00:03:39,830 --> 00:03:41,860
+many different domains.
+
+48
+00:03:41,860 --> 00:03:47,200
+So, this invisible pattern mining
+could be very important taking
+
+49
+00:03:47,200 --> 00:03:53,120
+this as a pre-processing of some
+component in your whole analysis package.
+
+50
+00:03:54,140 --> 00:03:58,270
+So we are facing very big data,
+we're facing lots of challenges but
+
+51
+00:03:58,270 --> 00:04:01,260
+the pattern mining surely is a tool.
+
+52
+00:04:01,260 --> 00:04:06,295
+So I hope by learning this course,
+you will become part of research and
+
+53
+00:04:06,295 --> 00:04:11,250
+development force to push
+pattern mining into new era
+
+54
+00:04:11,250 --> 00:04:13,470
+on post research and applications.
+
+55
+00:04:13,470 --> 00:04:16,820
+Hopefully in the future in your work,
+
+56
+00:04:16,820 --> 00:04:20,530
+you may find using the material
+learned from this course.
+
+57
+00:04:20,530 --> 00:04:25,056
+You're going to develop some
+interesting functions and
+
+58
+00:04:25,056 --> 00:04:29,968
+push the technology into
+application into the new frontier.
+
+59
+00:04:29,968 --> 00:04:31,280
+Thank you.
+
+60
+00:04:31,280 --> 00:04:41,280
+[MUSIC]

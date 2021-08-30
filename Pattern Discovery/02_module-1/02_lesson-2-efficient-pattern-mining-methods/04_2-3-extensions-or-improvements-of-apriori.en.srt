@@ -1,0 +1,483 @@
+1
+00:00:00,461 --> 00:00:07,965
+[MUSIC]
+
+2
+00:00:07,965 --> 00:00:11,978
+Since the proposal of
+the famous Apriori algorithm,
+
+3
+00:00:11,978 --> 00:00:18,870
+there have been many interesting
+extensions or improvements in this method.
+
+4
+00:00:18,870 --> 00:00:20,660
+Let's just examine some of them.
+
+5
+00:00:22,550 --> 00:00:25,230
+So the first line of work is how
+
+6
+00:00:25,230 --> 00:00:30,020
+to reduce the number of passes
+of transaction database scans.
+
+7
+00:00:30,020 --> 00:00:33,950
+We know that database scanning
+involve disk accessing which
+
+8
+00:00:33,950 --> 00:00:35,930
+could be quite expensive.
+
+9
+00:00:35,930 --> 00:00:40,080
+But if you want to find
+size 10 frequent item sets.
+
+10
+00:00:40,080 --> 00:00:42,999
+Likely, you will have to scan
+this database ten times.
+
+11
+00:00:44,020 --> 00:00:45,140
+That's quite expensive.
+
+12
+00:00:46,670 --> 00:00:51,980
+To reduce a number of scans, so
+there's several publications.
+
+13
+00:00:51,980 --> 00:00:56,580
+One is called partitioning method,
+we're going to introduce.
+
+14
+00:00:56,580 --> 00:01:00,110
+Another one called dynamic
+itemset counting method.
+
+15
+00:01:00,110 --> 00:01:03,181
+You will probably notice the first author,
+
+16
+00:01:03,181 --> 00:01:07,510
+Serge Brin who was a PC student
+of Stanford university.
+
+17
+00:01:07,510 --> 00:01:11,170
+The second year, 1998 he actually proposed
+
+18
+00:01:11,170 --> 00:01:15,580
+one of the most famous algorithm
+PageRank and set up a Google company.
+
+19
+00:01:15,580 --> 00:01:16,080
+Okay.
+
+20
+00:01:17,440 --> 00:01:23,982
+So this another line of the work is how
+to shrink the number of candidates.
+
+21
+00:01:23,982 --> 00:01:29,110
+You will generate very large number
+of candidate sets in many cases.
+
+22
+00:01:29,110 --> 00:01:34,630
+How to shrink the number of candidate sets
+to be generated could be a big saving.
+
+23
+00:01:34,630 --> 00:01:39,020
+Hashing method is interesting one for
+mining max patterns.
+
+24
+00:01:39,020 --> 00:01:43,750
+Bayardo also proposed pruning
+by support lower bounding.
+
+25
+00:01:43,750 --> 00:01:48,580
+Another interesting method is
+Toivonen proposed sampling method.
+
+26
+00:01:49,740 --> 00:01:54,110
+The third item's work is to explore
+some special data structures.
+
+27
+00:01:54,110 --> 00:01:58,960
+Some tree projection method
+using H-tree to do H-miner.
+
+28
+00:01:58,960 --> 00:02:02,590
+And hypercube decomposition is
+another interesting method.
+
+29
+00:02:02,590 --> 00:02:07,760
+We're going to introduce a new
+tree structure called FP-tree.
+
+30
+00:02:07,760 --> 00:02:11,420
+Let's look at the first one,
+partitioning method.
+
+31
+00:02:11,420 --> 00:02:15,200
+Partitioning method guarantee
+you only need to scan data twice
+
+32
+00:02:16,420 --> 00:02:22,220
+before you generate all the frequent item
+sets no matter for how many case that is.
+
+33
+00:02:22,220 --> 00:02:26,710
+So they observed a very
+interesting property called
+
+34
+00:02:26,710 --> 00:02:30,770
+any itemset potentially frequent
+in transaction database
+
+35
+00:02:30,770 --> 00:02:35,290
+must be frequent in at least
+one of its partitions.
+
+36
+00:02:35,290 --> 00:02:41,020
+That means suppose you get
+a big transaction database,
+
+37
+00:02:41,020 --> 00:02:44,666
+you partition them into k partitions.
+
+38
+00:02:44,666 --> 00:02:51,010
+If items at X is not frequenting
+any one of these k partitions,
+
+39
+00:02:51,010 --> 00:02:55,190
+it cannot be frequent in this
+global transaction database.
+
+40
+00:02:55,190 --> 00:02:55,980
+Why?
+
+41
+00:02:55,980 --> 00:03:04,200
+Before you can see, if you got items at x
+which is not frequent in the first one.
+
+42
+00:03:04,200 --> 00:03:06,660
+Not frequent in the second one.
+
+43
+00:03:06,660 --> 00:03:09,165
+Even not frequent in the case one.
+
+44
+00:03:09,165 --> 00:03:10,795
+So you add them together.
+
+45
+00:03:10,795 --> 00:03:14,005
+You add all these support together,
+you get a global support.
+
+46
+00:03:14,005 --> 00:03:18,265
+You add all these database together,
+you get a global database.
+
+47
+00:03:18,265 --> 00:03:23,390
+You frequently can see if every one
+is smaller then sigma more times its
+
+48
+00:03:23,390 --> 00:03:28,310
+size then the finally the global
+hour also smaller than 6,
+
+49
+00:03:28,310 --> 00:03:31,660
+sigma times the size of global database.
+
+50
+00:03:31,660 --> 00:03:36,530
+That's why at least one of this
+database contain TDB frequent.
+
+51
+00:03:37,750 --> 00:03:46,830
+So with this operation, you can see this
+partition method will need only two scans.
+
+52
+00:03:46,830 --> 00:03:52,320
+The first scan is you partition
+database into K partition database.
+
+53
+00:03:52,320 --> 00:03:53,880
+How do you partition them?
+
+54
+00:03:53,880 --> 00:03:59,060
+Each partition you want them
+to fit into the main memory.
+
+55
+00:03:59,060 --> 00:03:59,680
+Why?
+
+56
+00:03:59,680 --> 00:04:04,970
+Because no matter how you scan them,
+you will not involve any database I/Os.
+
+57
+00:04:04,970 --> 00:04:11,220
+So that's a reason you can scan once
+you put them the database, you can work
+
+58
+00:04:11,220 --> 00:04:16,640
+on it to derive k frequent items that for
+no matter for how many case you can get.
+
+59
+00:04:16,640 --> 00:04:21,710
+Okay, that means you can derive
+all the local frequent item sets.
+
+60
+00:04:21,710 --> 00:04:22,670
+Okay.
+
+61
+00:04:22,670 --> 00:04:29,830
+Then based on this property you
+can do the second scan like this.
+
+62
+00:04:29,830 --> 00:04:34,420
+You can say,
+since any frequent item set in
+
+63
+00:04:34,420 --> 00:04:38,430
+one of these k transactions
+can be potentially frequent.
+
+64
+00:04:38,430 --> 00:04:43,400
+So the global candidate sets
+is which is frequenting
+
+65
+00:04:43,400 --> 00:04:48,040
+any one of them,
+it will be a global candidate item set.
+
+66
+00:04:48,040 --> 00:04:53,600
+Then, the second scan, just count
+against each database kind of those
+
+67
+00:04:53,600 --> 00:04:57,730
+counts of the global candidate sets.
+
+68
+00:04:57,730 --> 00:05:00,970
+Then you will get their account,
+you add them together,
+
+69
+00:05:00,970 --> 00:05:05,400
+you will be able to derive
+global frequent patterns.
+
+70
+00:05:05,400 --> 00:05:10,960
+That's why this method is guaranteed
+to scan the database only twice.
+
+71
+00:05:10,960 --> 00:05:12,539
+So this is pretty interesting.
+
+72
+00:05:14,470 --> 00:05:20,340
+Another method I'm going to introduce to
+you called Direct Hashing and Pruning.
+
+73
+00:05:20,340 --> 00:05:25,000
+This method is trying to reduce
+a number of candidate sets
+
+74
+00:05:25,000 --> 00:05:29,120
+based on hashing and pruning techniques.
+
+75
+00:05:29,120 --> 00:05:32,400
+The general philosophy can be like this,
+okay.
+
+76
+00:05:32,400 --> 00:05:39,314
+The observation is, if the k-itemset is
+frequent, then in this hashing bucket,
+
+77
+00:05:39,314 --> 00:05:45,350
+it contains several potential
+itemsets that must be frequent.
+
+78
+00:05:45,350 --> 00:05:51,480
+So if the hash count is not frequent,
+than any one of them cannot be frequent.
+
+79
+00:05:51,480 --> 00:05:53,210
+The general philosophy like this.
+
+80
+00:05:53,210 --> 00:05:53,960
+Okay.
+
+81
+00:05:53,960 --> 00:05:57,900
+Why are you going to derive
+the frequent one item?
+
+82
+00:05:57,900 --> 00:06:01,020
+In the mean time you set
+of the hash entry for
+
+83
+00:06:01,020 --> 00:06:06,580
+the potential two itemsets but
+why you set a hash entry rather than count
+
+84
+00:06:06,580 --> 00:06:10,810
+each one because there could be many,
+many distinct items.
+
+85
+00:06:10,810 --> 00:06:14,440
+So the frequent tool items as before,
+you get a frequent 1,
+
+86
+00:06:14,440 --> 00:06:17,860
+the candidate 2 could be really,
+really big.
+
+87
+00:06:17,860 --> 00:06:21,570
+But if you set a hash entry
+to get several items,
+
+88
+00:06:21,570 --> 00:06:25,390
+share 1 hash entry,
+the whole hash table will not be too big.
+
+89
+00:06:26,750 --> 00:06:32,050
+Then the interesting thing is,
+while you derive frequent one itemset,
+
+90
+00:06:32,050 --> 00:06:37,940
+you also can cut many two itemsets
+that can not be frequent.
+
+91
+00:06:37,940 --> 00:06:41,290
+For example suppose our
+minimum support count is 70.
+
+92
+00:06:41,290 --> 00:06:46,536
+Then this one has only 35,
+this one has only 58.
+
+93
+00:06:46,536 --> 00:06:51,810
+That implies those items,
+none of those items can be frequent.
+
+94
+00:06:51,810 --> 00:06:55,270
+Because they share this entry,
+
+95
+00:06:55,270 --> 00:06:58,180
+their support count is
+still below the threshold.
+
+96
+00:06:58,180 --> 00:07:04,270
+So only the second one, this bd,
+be, de, the support is quite big.
+
+97
+00:07:04,270 --> 00:07:08,270
+The past support threshold,
+these could be poked.
+
+98
+00:07:08,270 --> 00:07:11,970
+This may contain the real candidates sets.
+
+99
+00:07:11,970 --> 00:07:12,540
+Okay.
+
+100
+00:07:12,540 --> 00:07:15,846
+That's a reading you can
+reduce the number of
+
+101
+00:07:15,846 --> 00:07:20,805
+candidates substantially using
+this hashing and pruning method.
+
+102
+00:07:20,805 --> 00:07:30,805
+[MUSIC]

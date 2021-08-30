@@ -1,0 +1,403 @@
+1
+00:00:01,580 --> 00:00:08,040
+Now we study another interesting issue
+called Mining Periodic Movement Patterns.
+
+2
+00:00:10,450 --> 00:00:14,690
+Usually the sensor may
+register movement data, but
+
+3
+00:00:14,690 --> 00:00:19,240
+in many cases you may
+have very sparse data.
+
+4
+00:00:19,240 --> 00:00:23,230
+Just giving you a very
+interesting example.
+
+5
+00:00:23,230 --> 00:00:26,849
+For example, animal scientists or
+bird scientists,
+
+6
+00:00:26,849 --> 00:00:31,140
+they would like to study animal
+movements and bird movements.
+
+7
+00:00:31,140 --> 00:00:35,270
+They put censors on
+the body of those animals.
+
+8
+00:00:36,466 --> 00:00:41,140
+But remember the sensor
+usually is pretty small,
+
+9
+00:00:41,140 --> 00:00:46,330
+on the other hand it will last,
+it will need to be last for a long time.
+
+10
+00:00:46,330 --> 00:00:49,910
+Like, for a study of bird migration,
+
+11
+00:00:49,910 --> 00:00:54,428
+a sensor on the body of the bird
+is expected to last for a year.
+
+12
+00:00:54,428 --> 00:00:58,715
+So, how could a sensor be lasting for
+
+13
+00:00:58,715 --> 00:01:03,150
+a year without charging the battery?
+
+14
+00:01:04,780 --> 00:01:09,600
+The only thing you can think is
+we will get very sparse data,
+
+15
+00:01:09,600 --> 00:01:15,580
+like 24 hours we may only register
+one GPS location although
+
+16
+00:01:15,580 --> 00:01:20,326
+24 hours the birds may fly very far away.
+
+17
+00:01:20,326 --> 00:01:22,920
+Then if we want to find the periodicity,
+
+18
+00:01:24,140 --> 00:01:29,350
+the interesting thing could
+be it's very hard to find
+
+19
+00:01:29,350 --> 00:01:34,390
+the periodicity if there's not overlap,
+just because the data is so sparse.
+
+20
+00:01:35,500 --> 00:01:41,170
+Then just to look at how to,
+thinking about bird flying patterns,
+
+21
+00:01:42,640 --> 00:01:48,840
+we just think the bird, suppose this
+place is the nest of the bird, okay.
+
+22
+00:01:48,840 --> 00:01:51,550
+Then, if you just look at the bird,
+
+23
+00:01:51,550 --> 00:01:56,650
+how they exactly fly with
+a very sparse sensor data,
+
+24
+00:01:56,650 --> 00:02:02,030
+you'll not be able to find any meaningful
+periodic patterns of bird flying.
+
+25
+00:02:03,220 --> 00:02:06,170
+However, you may find every night,
+
+26
+00:02:06,170 --> 00:02:09,915
+every evening the birds were
+flying back to the nest.
+
+27
+00:02:09,915 --> 00:02:15,070
+[COUGH] In the morning it
+will fly out from the nest.
+
+28
+00:02:15,070 --> 00:02:18,610
+So, from the nest point of view or
+
+29
+00:02:18,610 --> 00:02:22,989
+from the cluster center point of
+view it does have some periodicity.
+
+30
+00:02:24,540 --> 00:02:31,150
+Then we may take such location
+as our reference spots.
+
+31
+00:02:31,150 --> 00:02:36,864
+That means the reference spots can
+be detected using density-based
+
+32
+00:02:36,864 --> 00:02:41,880
+method because they come
+back quite frequently.
+
+33
+00:02:41,880 --> 00:02:47,696
+Then with this,
+if we do just based on the nest,
+
+34
+00:02:47,696 --> 00:02:53,080
+we say when they're in the nest,
+when they're out of the nest,
+
+35
+00:02:53,080 --> 00:02:59,130
+so we will be able to find a nice and
+interesting periodic patterns.
+
+36
+00:02:59,130 --> 00:03:02,900
+That means the periodicity is more obvious
+
+37
+00:03:03,970 --> 00:03:08,010
+when we look at the binary sequence
+like in and out of the nest.
+
+38
+00:03:09,010 --> 00:03:13,660
+So that's interesting [INAUDIBLE]
+can see if we only think of
+
+39
+00:03:13,660 --> 00:03:18,650
+a nest the periodicity will
+be able to be detected for
+
+40
+00:03:18,650 --> 00:03:23,669
+each reference spot using
+Fourier Transform and auto-correlation.
+
+41
+00:03:25,200 --> 00:03:29,360
+Now we look at an interesting
+example on mining
+
+42
+00:03:29,360 --> 00:03:34,610
+periodic patterns with sparse data.
+
+43
+00:03:34,610 --> 00:03:38,818
+This is a real data sets about
+birds flying in North America.
+
+44
+00:03:38,818 --> 00:03:44,583
+So this actually accumulate
+three-year bird migration data,
+
+45
+00:03:44,583 --> 00:03:47,750
+they are very, very sparse.
+
+46
+00:03:47,750 --> 00:03:51,719
+However, if you based on the dense points,
+
+47
+00:03:51,719 --> 00:03:56,226
+you take those dense
+regions as reference spots,
+
+48
+00:03:56,226 --> 00:04:00,516
+you will be able to find
+a periodicity because in
+
+49
+00:04:00,516 --> 00:04:05,149
+the winter they're going
+to fly down to the South.
+
+50
+00:04:05,149 --> 00:04:08,957
+In the summer they may
+fly back to the North.
+
+51
+00:04:08,957 --> 00:04:15,400
+In the middle they may fly some
+places to have some other activities,
+
+52
+00:04:15,400 --> 00:04:20,300
+so you will find a few
+interesting reference spots.
+
+53
+00:04:21,380 --> 00:04:25,880
+Once we detect periodicity based
+on those reference points,
+
+54
+00:04:25,880 --> 00:04:30,820
+we will be able to summarize such
+patterns in a periodic way because we
+
+55
+00:04:30,820 --> 00:04:36,200
+find a period and
+we find the nice periodic patterns.
+
+56
+00:04:36,200 --> 00:04:41,529
+So this is an interesting study,
+based on the very sparse
+
+57
+00:04:41,529 --> 00:04:47,866
+data we will be able to mine periodic
+behaviors for moving objects.
+
+58
+00:04:47,866 --> 00:04:53,759
+Then the previous study we
+will assume the periodicity
+
+59
+00:04:53,759 --> 00:05:01,060
+can be detected because the period
+is sort of knowing, okay.
+
+60
+00:05:01,060 --> 00:05:08,340
+Then, in many cases, the time related
+data can be scattered and sparse.
+
+61
+00:05:08,340 --> 00:05:12,230
+For example, phone calls at a location,
+they could be very sparse.
+
+62
+00:05:13,230 --> 00:05:17,730
+And then for such sparse data,
+if we look at the time,
+
+63
+00:05:17,730 --> 00:05:23,730
+we will be able to map
+the calling time in the sequence
+
+64
+00:05:23,730 --> 00:05:29,290
+based on the time you're say 5,
+13, 26, 29.
+
+65
+00:05:29,290 --> 00:05:36,962
+If you map this into the time sequence,
+it's very hard to find a periodicity.
+
+66
+00:05:36,962 --> 00:05:44,080
+Then what about if we can
+guess a right period, like t.
+
+67
+00:05:44,080 --> 00:05:47,067
+If t is 20, if we guess it right,
+
+68
+00:05:47,067 --> 00:05:52,221
+you probably can easily see
+they form a very dense cluster.
+
+69
+00:05:52,221 --> 00:05:58,191
+However, if you got a wrong
+guess on the period,
+
+70
+00:05:58,191 --> 00:06:05,920
+likely this mapping will be
+scattered along the whole period.
+
+71
+00:06:05,920 --> 00:06:10,647
+So that means the projection
+on the true period,
+
+72
+00:06:10,647 --> 00:06:16,320
+it will show highly skewed
+(clustered) distribution.
+
+73
+00:06:16,320 --> 00:06:20,520
+Based on this observation,
+some in-depth study and
+
+74
+00:06:20,520 --> 00:06:27,220
+algorithm have been developed
+to detect the true pattern
+
+75
+00:06:27,220 --> 00:06:32,580
+in a mining event periodicity
+from incomplete observations.
+
+76
+00:06:32,580 --> 00:06:39,290
+So in this whole session,
+we discussed a few interesting issues.
+
+77
+00:06:39,290 --> 00:06:46,170
+We studied Mining Spatial Associations,
+Mining Spatial Colocation Patterns,
+
+78
+00:06:46,170 --> 00:06:50,800
+Mining and Aggregating Patterns
+over Multiple Trajectories,
+
+79
+00:06:50,800 --> 00:06:56,600
+Mining Semantics-Rich Movement Patterns
+and Mining Periodic Movement Patterns.
+
+80
+00:06:57,830 --> 00:07:02,385
+In this session we actually used
+the following research papers.
+
+81
+00:07:02,385 --> 00:07:04,937
+If you would like to know more,
+
+82
+00:07:04,937 --> 00:07:09,758
+we strongly encourage you to
+read those research papers.
+
+83
+00:07:09,758 --> 00:07:11,316
+Thank you.
+
+84
+00:07:11,316 --> 00:07:21,316
+[MUSIC]
