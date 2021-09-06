@@ -1,0 +1,530 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Cluster Analysis Syllabus
+ </h1>
+ <h2 level="2">
+  Course Description
+ </h2>
+ <p>
+  In this course you will learn concepts and methodologies for cluster analysis, which is also known as clustering, data segmentation, or unsupervised learning.  Cluster analysis is an important subfield of data mining.  We will introduce the basic concepts of cluster analysis and then study a set of typical clustering methodologies, algorithms, and applications. This includes partitioning methods such as k-means, hierarchical methods such as BIRCH, density-based methods such as DBSCAN, and grid-based methods such as CLIQUE.  We will also discuss methods for clustering validation.  The learning will be enhanced by some clustering software and some programming assignments.
+ </p>
+ <h2 level="2">
+  Course Goals and Objectives
+ </h2>
+ <p>
+  Upon successful completion of this course, you will be able to:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Recall basic concepts, methods, and applications of cluster analysis, including the concept of clustering, the requirements and challenges of cluster analysis, a multi-dimensional categorization of cluster analysis, and an overview of typical clustering methodologies
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn multiple distance or similarity measures for cluster analysis, including Euclidean and Minkowski Distances, proximity measures for symmetric and asymmetric binary variables, distance measures between categorical attributes, ordinal attributes, and mixed types, proximity measures between two vectors, Cosine similarity, and correlation measures between two variables: covariance and correlation coefficient
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn popular distance-based partitioning algorithms for cluster analysis, including K-Means, K-Medians, K-Medoids, and the Kernel K-Means algorithms
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn hierarchical clustering algorithms, including basic agglomerative and divisive clustering algorithms, BIRCH: a micro-clustering-based approach, CURE which explore well-scattered representative points, CHAMELEON which explores graph partitioning on the KNN Graph of the data, and a probabilistic hierarchical clustering approach
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn density-based approach to cluster analysis which can group dense regions of arbitrary shape, such as DBScan and OPTICS
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn grid-based approach which organizes individual regions of the data space into a grid-like structure, such as STING and CLIQUE
+   </p>
+  </li>
+  <li>
+   <p>
+    Study concepts and methods for clustering evaluation and validation by introducing clustering validation using external measures and internal measures and the measures for evaluating cluster stability and clustering tendency
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Textbook and Readings
+ </h2>
+ <p>
+  Although the lectures are designed to be self-contained, we recommend (but do not require) that students refer to the book:
+ </p>
+ <p>
+  Han, J., Kamber, M., &amp; Pei, J. (2011).
+  <em>
+   Data Mining: Concepts and Techniques
+  </em>
+  (3rd ed.). Waltham: Morgan Kaufmann.
+ </p>
+ <p>
+  You can download a PDF version of
+  <a href="https://d396qusza40orc.cloudfront.net/clusteranalysis/Han_Data Mining 3e_Chapters 2%2C10%2C11%2C13.pdf">
+   Chapters 2, 10, 11, and 13
+  </a>
+  from
+  <em>
+   Data Mining: Concepts and Techniques
+  </em>
+  , 3rd Edition for free.
+ </p>
+ <p>
+  If you would like to purchase the entire textbook, the publisher has an exclusive offer just for Coursera students. You can save 30% on either the print or eBook version of
+  <em>
+   Data Mining: Concepts and Techniques
+  </em>
+  , 3rd Edition and receive free shipping on all orders. Here is how it works:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <a href="http://store.elsevier.com/product.jsp?isbn=9780123814791">
+     Add the book to your cart
+    </a>
+    .
+   </p>
+  </li>
+  <li>
+   <p>
+    Enter code
+    <strong>
+     COMP315
+    </strong>
+    and click
+    <strong>
+     Apply
+    </strong>
+    .
+   </p>
+  </li>
+  <li>
+   <p>
+    The discount will be applied to the list price and cannot be combined with other promotions.
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Course Outline
+ </h2>
+ <p>
+  This course consists of
+  <strong>
+   4 weekly modules
+  </strong>
+  ,
+  <strong>
+   with 6 lessons
+  </strong>
+  .
+ </p>
+ <p>
+  Please note: there are no required readings for this course. All readings listed below are optional.
+ </p>
+ <table columns="3" rows="5">
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Module
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Key Concepts
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Suggested Readings from
+      <em>
+       Data Mining: Concepts and Techniques
+      </em>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 1 (Lesson 1 - 2)
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Cluster Analysis: An Introduction   •	Similarity Measures for Cluster Analysis
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Chapter 2:  Getting to Know Your Data •	Chapter 10:  Cluster Analysis: Basic Concepts and Methods
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 2 (Lesson  3 - 4 part 1)
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Partitioning-Based Clustering Methods  •	Hierarchical Clustering Methods (Part I)
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Chapter 10:  Cluster Analysis: Basic Concepts and Methods
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 3 (Lesson 4 part 2 - 5)
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Hierarchical Clustering Methods (Part I)   •	Density-Based and Grid-Based Clustering Methods
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Chapter 10:  Cluster Analysis: Basic Concepts and Methods
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 4 (Lesson 6)
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Cluster Validation
+    </p>
+   </td>
+   <td>
+    <p>
+     •	Chapter 10:  Cluster Analysis: Basic Concepts and Methods
+    </p>
+   </td>
+  </tr>
+ </table>
+ <h2 level="2">
+  Elements of This Course
+ </h2>
+ <p>
+  The course is comprised of the following elements:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     Lecture videos.
+    </strong>
+    Each week your instructor will teach you the concepts you need to know through a collection of short video lectures. You may either stream these videos for playback within the browser by clicking on their titles, or you can download each video for later offline playback by clicking the download icon.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>
+     In-video questions
+    </strong>
+    . Some lectures have questions associated with them to help verify your understanding of the topics. These questions will automatically appear while watching the video if you stream the video through your browser. The questions are available as a separate downloadable text file for those who prefer to download the videos. These questions do not contribute toward your final score in the class.
+   </p>
+  </li>
+ </ul>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     Lesson Quizzes
+    </strong>
+    . Each lesson will include one graded quiz. Your cumulative score will be used when calculating your final score in the class. There is no time limit for how long you take to complete each quiz. The deadline for all quizzes is the last day of the course.
+   </p>
+  </li>
+  <li>
+   <p>
+    <strong>
+     Programming Assignments.
+    </strong>
+    There are two required programming assignments for this class. The first programming assigmment is about implementing the K-means clustering algorithm, and the second programming assignment is about implementing clustering validation measures.
+    <strong>
+     Both programming assignments are required for the Course Certificate
+    </strong>
+    .
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  How to Pass This Course
+ </h2>
+ <p>
+  To qualify for a Course Certificate, simply start verifying your coursework at the beginning of the course,
+  <strong>
+   get a 75% or higher on all graded lesson quizzes, an 80% or higher on all programming assignments
+  </strong>
+  , and pay the fee. Coursera
+  <a href="https://learner.coursera.help/hc/en-us/articles/209819033-Apply-for-Financial-Aid">
+   Financial Aid
+  </a>
+  is available to offset the registration cost for learners with demonstrated economic needs. If you have questions about Course Certificates,
+  <a href="https://learner.coursera.help/hc/en-us/sections/201895943-Course-Certificates">
+   please see the help topics here
+  </a>
+  .
+ </p>
+ <p>
+  Also note that this course is the fourth course in the
+  <a href="https://www.coursera.org/specializations/data-mining">
+   <strong>
+    Data Mining Specialization
+   </strong>
+  </a>
+  offered by the University of Illinois at Urbana-Champaign. By earning a Course Certificate in this course, you are on your way toward earning a
+  <a href="https://www.coursera.org/specializations/data-mining">
+   Specialization Certificate in Data Mining
+  </a>
+  . You may also choose to pre-pay for the entire Specialization at a discount. See more information about
+  <a href="https://learner.coursera.help/hc/en-us/articles/209819073-Payment-policies">
+   Specialization payments
+  </a>
+  here.
+ </p>
+ <p>
+  <strong>
+   If you choose not to pay the fee
+  </strong>
+  , you can still audit the course. You will still be able to view all videos and view required assessments. Auditing does not include the option to submit required assessments. As such, you will not be able to earn a grade or a Course Certificate.
+ </p>
+ <p>
+  <strong>
+   The following table explains the breakdown for what is required in order to pass the class and qualify for a Course Certificate. You must pass each and every required activity in order to pass this course.
+  </strong>
+ </p>
+ <table columns="5" rows="4">
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Activity
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Required?
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Number per Lesson
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Estimated time per module
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      % required to pass
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Lecture Videos
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     Yes
+    </p>
+   </td>
+   <td>
+    <p>
+     Varies
+    </p>
+   </td>
+   <td>
+    <p>
+     One hour
+    </p>
+   </td>
+   <td>
+    <p>
+     N/A
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Lesson Quizzes
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     Yes
+    </p>
+   </td>
+   <td>
+    <p>
+     1
+    </p>
+   </td>
+   <td>
+    <p>
+     One hour
+    </p>
+   </td>
+   <td>
+    <p>
+     75% or higher
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Programmming Assignments
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     Yes
+    </p>
+   </td>
+   <td>
+    <p>
+     1 in Lesson 3 and 1 in Lesson 6
+    </p>
+   </td>
+   <td>
+    <p>
+     3 hours
+    </p>
+   </td>
+   <td>
+    <p>
+     80% or higher
+    </p>
+   </td>
+  </tr>
+ </table>
+ <h2 level="2">
+  Getting and Giving Help
+ </h2>
+ <p>
+  You can get/give help via the following means:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://courserahelp.zendesk.com/hc/en-us/">
+      Learner Help Center
+     </a>
+    </strong>
+    to find information regarding specific technical problems. For example, technical problems would include error messages, difficulty submitting assignments, or problems with video playback. If you cannot find an answer in the documentation, you can also report your problem to the Coursera staff by clicking on the
+    <strong>
+     Contact Us!
+    </strong>
+    link available on each topic's page within the Learner Help Center.
+   </p>
+  </li>
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://www.coursera.org/learn/cluster-analysis/discussions/forums/iS8thn-0EeaH8Qo9CRMCiw">
+      Content Issues
+     </a>
+    </strong>
+    forum to report errors in lecture video content, assignment questions and answers, assignment grading, text and links on course pages, or the content of other course materials. University of Illinois staff and Community Mentors will monitor this forum and respond to issues.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Note: Due to the large number of learners enrolled in this course, I am not able to answer emails sent directly to my account. Rather, all questions should be reported as described above.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

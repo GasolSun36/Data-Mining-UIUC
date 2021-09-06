@@ -1,0 +1,91 @@
+1
+00:00:00,248 --> 00:00:06,745
+[MUSIC]
+
+2
+00:00:06,745 --> 00:00:11,680
+We first discussed basic concepts
+of density-based clustering.
+
+3
+00:00:12,950 --> 00:00:15,470
+What is density-based clustering?
+
+4
+00:00:15,470 --> 00:00:18,530
+Essentially, we do
+clustering-based on density.
+
+5
+00:00:19,750 --> 00:00:22,190
+Which is a local clustering criterion,
+
+6
+00:00:22,190 --> 00:00:26,760
+that means just to look at surroundings
+to see how dense this reading could be.
+
+7
+00:00:28,290 --> 00:00:31,810
+We may introduce density-connected points.
+
+8
+00:00:32,965 --> 00:00:37,800
+Its major features are we
+can discover clusters
+
+9
+00:00:37,800 --> 00:00:42,427
+of arbitrary shape rather than just
+compact or something like a sphere.
+
+10
+00:00:43,450 --> 00:00:46,500
+It can handle noise nicely.
+
+11
+00:00:46,500 --> 00:00:49,300
+You may just use one scan because
+
+12
+00:00:49,300 --> 00:00:53,550
+it only examines the local
+region to justify its density.
+
+13
+00:00:54,550 --> 00:00:58,380
+But it needs density parameters
+as a termination condition.
+
+14
+00:00:59,510 --> 00:01:01,350
+There are several interesting studies.
+
+15
+00:01:01,350 --> 00:01:06,160
+For example, DBSCAN,
+we are going to cover in this lecture.
+
+16
+00:01:07,170 --> 00:01:10,680
+Optics, we are going to
+cover also in this lecture.
+
+17
+00:01:10,680 --> 00:01:14,790
+Denclue, we may not have time to cover it,
+but it's in the textbook.
+
+18
+00:01:19,630 --> 00:01:21,960
+CLIQUE, developed by
+Rakesh Agrawal's group,
+
+19
+00:01:21,960 --> 00:01:24,072
+we will cover it in
+the grid-based lecture.
+
+20
+00:01:25,566 --> 00:01:35,566
+[MUSIC]

@@ -1,0 +1,136 @@
+1
+00:00:00,382 --> 00:00:03,277
+[SOUND] In this session,
+
+2
+00:00:03,277 --> 00:00:08,924
+we're going to provide a multi-dimensional
+
+3
+00:00:08,924 --> 00:00:13,710
+categorization of cluster analysis.
+
+4
+00:00:13,710 --> 00:00:20,326
+Cluster analysis can be
+viewed in many different way.
+
+5
+00:00:20,326 --> 00:00:24,995
+We will provide a multi-dimensional
+categorization on all the different
+
+6
+00:00:24,995 --> 00:00:25,667
+methods.
+
+7
+00:00:25,667 --> 00:00:30,339
+The first categorization
+is based on techniques,
+
+8
+00:00:30,339 --> 00:00:36,104
+based on different techniques
+employed in cluster analysis.
+
+9
+00:00:36,104 --> 00:00:40,608
+We can consider these
+are density-based methods or
+
+10
+00:00:40,608 --> 00:00:45,828
+they are distance-based methods or
+grid-based methods or
+
+11
+00:00:45,828 --> 00:00:50,139
+probabilistic generative
+model based methods.
+
+12
+00:00:50,139 --> 00:00:54,953
+Or we are essentially using
+dimensionality reduction measures
+
+13
+00:00:54,953 --> 00:00:59,588
+to reduce the dimensions before
+we do effective clustering or
+
+14
+00:00:59,588 --> 00:01:03,777
+we can directly perform high
+dimensional clustering or
+
+15
+00:01:03,777 --> 00:01:08,339
+whether the measures are scalable for
+large data analysis.
+
+16
+00:01:08,339 --> 00:01:14,099
+And the second categorization
+is based on data type-centered.
+
+17
+00:01:14,099 --> 00:01:18,247
+So that means different kinds
+of data types likely were used,
+
+18
+00:01:18,247 --> 00:01:20,971
+rather different clustering methods.
+
+19
+00:01:20,971 --> 00:01:25,986
+For example, how to cluster
+numerical data, category data,
+
+20
+00:01:25,986 --> 00:01:30,148
+text data, multimedia data,
+time-series data,
+
+21
+00:01:30,148 --> 00:01:35,274
+sequence data, stream data,
+network data or uncertain data.
+
+22
+00:01:35,274 --> 00:01:39,466
+The third categorization is whether we can
+
+23
+00:01:39,466 --> 00:01:44,131
+provide additional insights for
+clustering.
+
+24
+00:01:44,131 --> 00:01:47,702
+For example,
+we can provide a visual insights or
+
+25
+00:01:47,702 --> 00:01:52,320
+we can incorporate some kind of
+semi-slightly supervision or
+
+26
+00:01:52,320 --> 00:01:58,262
+we can use ensemble-based measures or
+we can use validation-based measures.
+
+27
+00:01:58,262 --> 00:02:04,519
+All these, we're going to get into
+more detail in the next sessions.
+
+28
+00:02:04,519 --> 00:02:06,121
+Thank you.
+
+29
+00:02:06,121 --> 00:02:16,121
+[MUSIC]

@@ -1,0 +1,156 @@
+1
+00:00:00,025 --> 00:00:07,211
+[SOUND] Now we get into
+clustering evaluation,
+
+2
+00:00:07,211 --> 00:00:12,379
+measuring clustering quality.
+
+3
+00:00:12,379 --> 00:00:17,377
+Measuring clustering quality is an
+important issue just because clustering is
+
+4
+00:00:17,377 --> 00:00:19,760
+unsupervised measure.
+
+5
+00:00:19,760 --> 00:00:23,930
+We want to evaluate the goodness
+of clustering results
+
+6
+00:00:23,930 --> 00:00:27,670
+by either some internal or
+external measures.
+
+7
+00:00:27,670 --> 00:00:32,480
+Unfortunately there's no commonly
+recognized best suitable measure
+
+8
+00:00:32,480 --> 00:00:34,060
+in practice.
+
+9
+00:00:34,060 --> 00:00:39,330
+But there are three categories of
+measures we call external measures,
+
+10
+00:00:39,330 --> 00:00:42,030
+internal measures and relative measures.
+
+11
+00:00:43,110 --> 00:00:46,930
+For external measures,
+we can consider they are supervised,
+
+12
+00:00:47,940 --> 00:00:53,500
+employ criteria not inherent
+to the datasets itself.
+
+13
+00:00:53,500 --> 00:00:58,210
+That means we may have some prior or
+expert knowledge.
+
+14
+00:00:58,210 --> 00:01:00,307
+For example, some ground truth.
+
+15
+00:01:00,307 --> 00:01:06,070
+Then we can comparing the clustering
+results against the prior or
+
+16
+00:01:06,070 --> 00:01:10,830
+expert specified knowledge,
+using certain clustering quality measure.
+
+17
+00:01:12,240 --> 00:01:15,670
+Then the second kinds of measure
+are called internal measure,
+
+18
+00:01:15,670 --> 00:01:17,540
+which is unsupervised.
+
+19
+00:01:17,540 --> 00:01:21,930
+That means the criteria
+derived from the data itself.
+
+20
+00:01:21,930 --> 00:01:26,940
+In that case, we will evaluate the
+goodness of clustering by considering how
+
+21
+00:01:26,940 --> 00:01:33,050
+well the clusters are separated and
+how compact the clusters are.
+
+22
+00:01:33,050 --> 00:01:36,350
+For example,
+we can use silhouette coefficient.
+
+23
+00:01:37,950 --> 00:01:40,240
+The third one is a relative measure.
+
+24
+00:01:40,240 --> 00:01:45,050
+That means we can directly compare
+different class rings using
+
+25
+00:01:45,050 --> 00:01:49,910
+those obtained via different parameter
+setting for the same algorithm.
+
+26
+00:01:49,910 --> 00:01:55,470
+For example, For the same algorithm,
+we use different number of clusters.
+
+27
+00:01:55,470 --> 00:01:59,100
+We may generate different
+clustering results.
+
+28
+00:01:59,100 --> 00:02:03,294
+We may want to compare those results to,
+for example,
+
+29
+00:02:03,294 --> 00:02:07,395
+we can use silhouette
+coefficient to see how nicely,
+
+30
+00:02:07,395 --> 00:02:13,504
+by setting a certain number of clusters,
+the clusters are better separated and
+
+31
+00:02:13,504 --> 00:02:17,334
+you, within each cluster
+they are more compact so
+
+32
+00:02:17,334 --> 00:02:22,836
+this is a relative measure to
+comparing different parameter setting.
+
+33
+00:02:22,836 --> 00:02:32,836
+[MUSIC]

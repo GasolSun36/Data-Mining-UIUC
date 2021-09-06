@@ -1,0 +1,381 @@
+1
+00:00:00,025 --> 00:00:05,549
+[SOUND] Now we examine Session 2:
+
+2
+00:00:05,549 --> 00:00:14,239
+Distance on
+Numerical Data: Minkowski Distance.
+
+3
+00:00:14,239 --> 00:00:19,590
+So we first introduced data matrix and
+dissimilarity matrix, or distance matrix.
+
+4
+00:00:20,780 --> 00:00:26,660
+Data matrix is referenced in the typical
+matrix form is we have n data points,
+
+5
+00:00:26,660 --> 00:00:28,490
+we use n rows.
+
+6
+00:00:28,490 --> 00:00:33,280
+We have l dimensions, we use l
+columns to reference this data set.
+
+7
+00:00:34,970 --> 00:00:39,940
+The distance matrix or
+dissimilar matrix usually is referenced in
+
+8
+00:00:39,940 --> 00:00:44,205
+triangular matrix because
+you have n data points,
+
+9
+00:00:44,205 --> 00:00:49,070
+we register only the distance
+between like objects
+
+10
+00:00:49,070 --> 00:00:53,890
+one versus one or
+two versus one to look at their distance.
+
+11
+00:00:55,300 --> 00:00:59,630
+But the distance function usually
+could be quite different, but
+
+12
+00:00:59,630 --> 00:01:02,621
+different kinds of variables, like a real,
+
+13
+00:01:02,621 --> 00:01:07,201
+boolean, categorical, ordinal,
+ratio, and vector variables.
+
+14
+00:01:07,201 --> 00:01:10,522
+Their distance definition
+could be different.
+
+15
+00:01:10,522 --> 00:01:15,100
+Moreover, sometimes they may have
+weights associated with those
+
+16
+00:01:15,100 --> 00:01:20,180
+different variables based on
+the applications and data semantics.
+
+17
+00:01:20,180 --> 00:01:22,290
+We are going to introduce this more later.
+
+18
+00:01:24,070 --> 00:01:25,710
+Then, we look at an example.
+
+19
+00:01:25,710 --> 00:01:30,900
+Suppose we have four points,
+four objects in two dimensional space.
+
+20
+00:01:32,400 --> 00:01:35,900
+Then the data matrix is rampant
+in this typical form, okay.
+
+21
+00:01:37,390 --> 00:01:43,580
+Then for dissimilarity matrix, or
+distance matrix, for Euclidean distance,
+
+22
+00:01:43,580 --> 00:01:48,760
+you can see the matrix is in this way,
+like x1, x1, they are identical.
+
+23
+00:01:48,760 --> 00:01:50,610
+Their distance is 0.
+
+24
+00:01:50,610 --> 00:01:56,290
+x2, x1, their computation
+is based on the distance.
+
+25
+00:01:56,290 --> 00:02:01,190
+This part is two, this distance is three,
+you take the sum of the square area.
+
+26
+00:02:01,190 --> 00:02:03,070
+You take square root, you get this value.
+
+27
+00:02:05,060 --> 00:02:09,610
+Then in general, we define
+the Minkowski distance of this formula.
+
+28
+00:02:10,640 --> 00:02:17,020
+It means if we have area dimensions for
+object i and object j.
+
+29
+00:02:18,390 --> 00:02:24,140
+Then their distance is defined by
+taking every dimension to look
+
+30
+00:02:24,140 --> 00:02:29,520
+at their absolute value of their distance,
+then to the power of p,
+
+31
+00:02:29,520 --> 00:02:34,710
+then you sum them up, get the root of p.
+
+32
+00:02:34,710 --> 00:02:36,600
+Then we get the Minkowski distance.
+
+33
+00:02:37,830 --> 00:02:43,030
+Such distance that P is the order
+we usually also call this
+
+34
+00:02:43,030 --> 00:02:47,710
+distance this LP norm.
+
+35
+00:02:47,710 --> 00:02:51,880
+The Minkowski distance in
+general have these properties.
+
+36
+00:02:51,880 --> 00:02:55,676
+The first property is called positivity.
+
+37
+00:02:55,676 --> 00:03:00,200
+It means, the distance be equal zero when
+
+38
+00:03:00,200 --> 00:03:03,130
+they are identical otherwise
+they are greater in there.
+
+39
+00:03:03,130 --> 00:03:07,650
+The second property called symmetry means
+
+40
+00:03:08,690 --> 00:03:13,670
+the distance between I and J, distance
+between J and I should be identical.
+
+41
+00:03:15,330 --> 00:03:20,490
+Then the third one called
+triangular inequality means for
+
+42
+00:03:20,490 --> 00:03:24,580
+the distance between i and j.
+
+43
+00:03:24,580 --> 00:03:30,990
+If you go through k, that means you
+go first to k, then from k to j.
+
+44
+00:03:30,990 --> 00:03:38,089
+That distance should be no less
+than directly go from i to j.
+
+45
+00:03:38,089 --> 00:03:45,519
+Should be greater than or equal to d(i,j).
+
+46
+00:03:45,519 --> 00:03:50,780
+The distance measure that satisfies these
+three properties are metric distance.
+
+47
+00:03:52,100 --> 00:03:59,050
+Notice not all the distance are metric for
+example set difference is not metric.
+
+48
+00:03:59,050 --> 00:04:02,180
+Of course in this lecture we
+mainly discuss metric distance.
+
+49
+00:04:03,910 --> 00:04:09,408
+Then we look at some special
+cases of Minkowski distance.
+
+50
+00:04:09,408 --> 00:04:13,980
+If p = 1, we call L1 norm,
+they also call Manhattan or
+
+51
+00:04:13,980 --> 00:04:16,700
+city block distance define this formula.
+
+52
+00:04:17,720 --> 00:04:22,437
+In particular, if we are dealing
+with binary vectors we call these
+
+53
+00:04:22,437 --> 00:04:26,660
+Hamming distance is the number
+of bits that are different.
+
+54
+00:04:28,959 --> 00:04:34,990
+Then if p equals two,
+you can find also L2 norm.
+
+55
+00:04:34,990 --> 00:04:40,250
+As Euclidean distance defined
+the typical way like this, and
+
+56
+00:04:40,250 --> 00:04:46,740
+this vary for the middle one I think for
+all people, okay?
+
+57
+00:04:46,740 --> 00:04:51,830
+Then if p goes to infinity means
+we're dealing with L infinity norm or
+
+58
+00:04:51,830 --> 00:04:57,654
+L max norm,
+this is also caused supernum distance.
+
+59
+00:04:57,654 --> 00:05:03,270
+Is that you find, is limit for
+p goes for infinity.
+
+60
+00:05:04,610 --> 00:05:09,563
+In that case, actually
+the distance is really the maximum
+
+61
+00:05:09,563 --> 00:05:13,923
+difference between any
+attribute of the vectors.
+
+62
+00:05:13,923 --> 00:05:18,507
+For example you can see for
+F, from 1 to L.
+
+63
+00:05:18,507 --> 00:05:23,050
+The maximum such absolute
+value of the distance,
+
+64
+00:05:23,050 --> 00:05:28,880
+is the distance of L infinity norm or
+supremum distance.
+
+65
+00:05:28,880 --> 00:05:34,210
+Let's look at some examples, for
+the same data sets, we get a four points.
+
+66
+00:05:34,210 --> 00:05:36,540
+We get two dimensions.
+
+67
+00:05:36,540 --> 00:05:43,540
+Then we look at the Manhattan distance
+is just a city block distance.
+
+68
+00:05:43,540 --> 00:05:49,270
+For example from x2 to x1 you
+
+69
+00:05:49,270 --> 00:05:54,500
+will go three blocks down
+then two blocks left.
+
+70
+00:05:54,500 --> 00:05:57,880
+So the Manhattan distance is 3 plus 2,
+we get 5, okay.
+
+71
+00:05:59,240 --> 00:06:02,740
+Of course x1 to x1 itself, is 0.
+
+72
+00:06:02,740 --> 00:06:10,980
+And you Euclidean distance, as we
+discussed already, that's the measure.
+
+73
+00:06:10,980 --> 00:06:14,582
+For Supremum distance, L infinity norm.
+
+74
+00:06:14,582 --> 00:06:17,857
+You probably can see x2 to x1.
+
+75
+00:06:17,857 --> 00:06:23,816
+So probably you can see the difference
+is you first go down 3 blocks for
+
+76
+00:06:23,816 --> 00:06:28,370
+Manhattan distance,
+you can see you get a 3 plus 2.
+
+77
+00:06:28,370 --> 00:06:33,178
+But for Supremum distance you
+could just see which attribute
+
+78
+00:06:33,178 --> 00:06:37,702
+would give the maximum distance or
+maximum difference so
+
+79
+00:06:37,702 --> 00:06:44,505
+you probably can see the maximum amount is
+3 instead of 2 that's why x2 to x1 is 3.
+
+80
+00:06:44,505 --> 00:06:49,079
+So it's pretty easy to compute, thank you.
+
+81
+00:06:49,079 --> 00:06:59,079
+[MUSIC]

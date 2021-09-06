@@ -1,0 +1,35 @@
+Hi. I am Hong Lay Drong. I am teaching assistant
+of this Coursera course. Today, I'm going to introduce how to
+use an online clustering tool to apply an agglomerative hierarchical
+clustering algorithm on real data sets. The technical details of the hierarchical
+clustering algorithms already introduced in previous slides. If you're not familiar with
+the technical details, you may want to review
+the previous lessons. There are several different ways
+to implement the hierarchical clustering algorithm. The major difference is on how
+do you define the dissimilarity. And to clarify in this system, we use average link
+definition of dissimilarity. In this example, we're going to use
+the data set of gene expression. You can find the list of such data
+sets in the link given in this slide. In this data set, each row represents a
+gene, and each column represents a sample. The value in this data set
+represents the measured gene expression of a certain gene
+within the surgeon sample. To start with, we select the surgeon
+gene expression data set and insert the name of the data set. Here, we use an example of GDS10 data set. Click on submit. Here is how a hierarchical
+clustering result looks like. This part visualized
+the clustering results of genes represented by a dendrogram. If you want to get a clustering results
+with a certain clustered number, let's say, if you want to get
+a clustering results with four clusters, we can cut at a certain point of
+the dendrogram and get clustering results. Similarly, here's a dendrogram of samples. And a heat map visualize
+a clustering data set. And a larger value is
+represented by green color and smaller value is represented by red color. On the website, you can actually
+interact with the clustering results. As you can see,
+if I want to determine a certain branch, the dendrogram, we can select
+a certain branch, click and hold, To determine and see more details
+on the clustering results. I'm going to zoom out, you can simply
+click on this unzoom rows button, To get to the original results. If you want to perform hierarchical
+clustering on your own data set, you can also do so on the website. Upload the data set here. This is the data set of restaurant
+locations in Waterloo, Canada. Choose hierarchical clustering as
+a clustering method and as I said, the number of clusters here. Click on submit. The visualization of the clustering
+results is going to be shown here. Of course, you can also try
+different parameter settings or try these algorithms on different real
+data sets to see how the results differ. If you're interested in exploring more
+on hierarchical clustering algorithm, here are some open questions. Thank you, and enjoy. [MUSIC] [MUSIC] [SOUND]

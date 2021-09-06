@@ -1,0 +1,120 @@
+1
+00:00:06,224 --> 00:00:11,080
+The first session is on
+what is Cluster Analysis?
+
+2
+00:00:11,080 --> 00:00:17,740
+To understand what is cluster analysis,
+we should know first what is a cluster?
+
+3
+00:00:17,740 --> 00:00:21,720
+A cluster is actually
+a collection of data objects,
+
+4
+00:00:21,720 --> 00:00:25,690
+those objects are similar
+within the same cluster.
+
+5
+00:00:25,690 --> 00:00:29,770
+That means the objects are similar to
+one another within the same group.
+
+6
+00:00:30,830 --> 00:00:35,420
+And they are rather different,
+or they are dissimilar, or
+
+7
+00:00:35,420 --> 00:00:40,230
+unrelated, to the objects in other
+groups or in other clusters.
+
+8
+00:00:40,230 --> 00:00:44,560
+Okay, then cluster analysis which
+is also called clustering or
+
+9
+00:00:44,560 --> 00:00:51,150
+data segmentation, the essential is
+getting a set of tape data points.
+
+10
+00:00:51,150 --> 00:00:57,579
+The cluster analysis is to partition them
+into a set of clusters, or set of groups.
+
+11
+00:00:58,590 --> 00:01:02,390
+They are as similar as possible
+within the same group and
+
+12
+00:01:02,390 --> 00:01:06,020
+as far apart as possible
+among different groups.
+
+13
+00:01:07,840 --> 00:01:11,090
+Cluster analysis is unsupervised learning,
+
+14
+00:01:11,090 --> 00:01:15,280
+in the sense there's
+no predefined classes.
+
+15
+00:01:15,280 --> 00:01:20,484
+This is very different from classification
+which needs supervised learning or
+
+16
+00:01:20,484 --> 00:01:25,430
+needs to give in the class labors then you
+can construct the classification models.
+
+17
+00:01:27,040 --> 00:01:31,170
+There are many ways to use
+our apply cluster analysis,
+
+18
+00:01:31,170 --> 00:01:36,100
+essentially cluster analysis can
+either provide as a stand alone
+
+19
+00:01:36,100 --> 00:01:40,620
+tool to get insight into your
+data distribution like a summary.
+
+20
+00:01:42,230 --> 00:01:48,135
+Or you can serve, you can use it
+to serve as pre-processing step or
+
+21
+00:01:48,135 --> 00:01:51,932
+intermediate step for other algorithms,
+
+22
+00:01:51,932 --> 00:01:57,627
+like a classification or
+a prediction or like many other tasks,
+
+23
+00:01:57,627 --> 00:02:01,970
+including data mining and
+other applications.
+
+24
+00:02:01,970 --> 00:02:04,222
+Thank you.
+
+25
+00:02:04,222 --> 00:02:14,222
+[MUSIC]

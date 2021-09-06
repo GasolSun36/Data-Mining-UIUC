@@ -1,0 +1,236 @@
+1
+00:00:00,012 --> 00:00:06,704
+[SOUND] Now we examine
+
+2
+00:00:06,704 --> 00:00:12,760
+distance between categorical attributes,
+ordinal attributes, and mixed types.
+
+3
+00:00:13,980 --> 00:00:16,330
+What are categorical attributes?
+
+4
+00:00:16,330 --> 00:00:17,660
+Categorical attributes,
+
+5
+00:00:17,660 --> 00:00:23,280
+also called nominal attributes because
+their value references by names.
+
+6
+00:00:23,280 --> 00:00:28,990
+Take color as a example, we may have
+yellow, red, orange, blue, green.
+
+7
+00:00:28,990 --> 00:00:37,160
+If we get their positions in color
+spectrum in physics, they are not ordered.
+
+8
+00:00:37,160 --> 00:00:42,017
+In the sense either the two values
+are the same or they are different.
+
+9
+00:00:42,017 --> 00:00:45,130
+The same as profession and
+many other things.
+
+10
+00:00:46,580 --> 00:00:48,990
+Then how to calculate their distance.
+
+11
+00:00:48,990 --> 00:00:51,648
+We can use simple matching method.
+
+12
+00:00:51,648 --> 00:00:58,954
+For example, suppose there are total
+p variables, and their m matches.
+
+13
+00:00:58,954 --> 00:01:03,110
+Then the number of mismatch is p minus m.
+
+14
+00:01:03,110 --> 00:01:04,970
+So their distance between i and
+
+15
+00:01:04,970 --> 00:01:10,650
+j will be the number of mismatches
+versus the total number of variables.
+
+16
+00:01:12,030 --> 00:01:16,160
+Another measure is we can
+mapthem into binary variables.
+
+17
+00:01:16,160 --> 00:01:20,660
+That means each value like red if they
+
+18
+00:01:20,660 --> 00:01:25,300
+are existing as a red
+we write down as one.
+
+19
+00:01:25,300 --> 00:01:28,690
+If they are not red,
+we write down as zero.
+
+20
+00:01:28,690 --> 00:01:36,810
+Then we can change the categorical
+attributes into a set of binary variables.
+
+21
+00:01:36,810 --> 00:01:39,610
+Then we can use the previous
+binary attribute
+
+22
+00:01:39,610 --> 00:01:41,460
+evaluation function to evaluate them.
+
+23
+00:01:43,430 --> 00:01:46,890
+Another kind of variable
+called ordinal variables.
+
+24
+00:01:46,890 --> 00:01:50,400
+Ordinal variable means they do have order.
+
+25
+00:01:50,400 --> 00:01:56,080
+They can be discrete like a rank,
+like a military rank,
+
+26
+00:01:56,080 --> 00:02:01,790
+or even the rank for undergraduate
+students in the university, okay.
+
+27
+00:02:01,790 --> 00:02:05,840
+Or they could be continuous,
+like time, okay?
+
+28
+00:02:05,840 --> 00:02:07,960
+Then order becomes important.
+
+29
+00:02:09,190 --> 00:02:11,300
+For example, in the University,
+
+30
+00:02:11,300 --> 00:02:15,820
+a freshman is a first year,
+a senior is a fourth year student.
+
+31
+00:02:17,080 --> 00:02:22,170
+In that sense, we can replace
+ordinal variable value by its rank.
+
+32
+00:02:23,390 --> 00:02:27,880
+Then we can map any particular
+
+33
+00:02:27,880 --> 00:02:32,380
+variable using this formula map
+onto this either 0 or 1, okay.
+
+34
+00:02:33,850 --> 00:02:34,830
+Just give you an example.
+
+35
+00:02:34,830 --> 00:02:41,385
+For example, we can map freshman into
+0 because their position is 1- 1 0.
+
+36
+00:02:41,385 --> 00:02:47,490
+And the same for senior it is four so
+by the total range is four.
+
+37
+00:02:47,490 --> 00:02:50,060
+That's why they map into one.
+
+38
+00:02:50,060 --> 00:02:53,060
+Then the distance for
+example between freshman and
+
+39
+00:02:53,060 --> 00:02:57,740
+senior would be one minus zero,
+their distance is one.
+
+40
+00:02:57,740 --> 00:02:59,250
+But between junior and
+
+41
+00:02:59,250 --> 00:03:02,840
+senior their distance is only
+one third because with this one,
+
+42
+00:03:04,080 --> 00:03:09,860
+now we can compute the other dissimilarity
+using the interval scale variables.
+
+43
+00:03:11,320 --> 00:03:16,440
+What about we get a dataset may
+contain all attribute types,
+
+44
+00:03:16,440 --> 00:03:23,010
+nominal symmetric binary,
+asymmetric binary, numerical or ordinal.
+
+45
+00:03:23,010 --> 00:03:26,770
+No one can use a weighted
+formula to combine the facts.
+
+46
+00:03:28,430 --> 00:03:30,760
+Then, if they are numerical data,
+
+47
+00:03:30,760 --> 00:03:34,910
+we can use normalize the distance,
+like [INAUDIBLE].
+
+48
+00:03:34,910 --> 00:03:41,050
+If they are binary, or nominal data, we
+can use this formula as we just discussed.
+
+49
+00:03:41,050 --> 00:03:45,964
+If they are ordinal data we can compute
+their distance using this formula.
+
+50
+00:03:45,964 --> 00:03:50,965
+Then we can combine all their effects
+to compute their overall distance.
+
+51
+00:03:50,965 --> 00:04:00,965
+[MUSIC]

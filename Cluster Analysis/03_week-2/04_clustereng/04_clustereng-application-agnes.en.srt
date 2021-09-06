@@ -1,0 +1,253 @@
+1
+00:00:01,060 --> 00:00:01,760
+Hi.
+
+2
+00:00:01,760 --> 00:00:03,110
+I am Hong Lay Drong.
+
+3
+00:00:03,110 --> 00:00:06,230
+I am teaching assistant
+of this Coursera course.
+
+4
+00:00:06,230 --> 00:00:11,190
+Today, I'm going to introduce how to
+use an online clustering tool to apply
+
+5
+00:00:11,190 --> 00:00:16,040
+an agglomerative hierarchical
+clustering algorithm on real data sets.
+
+6
+00:00:16,040 --> 00:00:20,950
+The technical details of the hierarchical
+clustering algorithms already
+
+7
+00:00:20,950 --> 00:00:22,950
+introduced in previous slides.
+
+8
+00:00:23,970 --> 00:00:26,780
+If you're not familiar with
+the technical details,
+
+9
+00:00:26,780 --> 00:00:29,000
+you may want to review
+the previous lessons.
+
+10
+00:00:30,770 --> 00:00:33,962
+There are several different ways
+to implement the hierarchical
+
+11
+00:00:33,962 --> 00:00:35,620
+clustering algorithm.
+
+12
+00:00:35,620 --> 00:00:39,197
+The major difference is on how
+do you define the dissimilarity.
+
+13
+00:00:40,220 --> 00:00:43,097
+And to clarify in this system,
+
+14
+00:00:43,097 --> 00:00:47,870
+we use average link
+definition of dissimilarity.
+
+15
+00:00:47,870 --> 00:00:52,000
+In this example, we're going to use
+the data set of gene expression.
+
+16
+00:00:53,340 --> 00:00:57,350
+You can find the list of such data
+sets in the link given in this slide.
+
+17
+00:00:58,810 --> 00:01:04,900
+In this data set, each row represents a
+gene, and each column represents a sample.
+
+18
+00:01:06,030 --> 00:01:10,323
+The value in this data set
+represents the measured gene
+
+19
+00:01:10,323 --> 00:01:14,820
+expression of a certain gene
+within the surgeon sample.
+
+20
+00:01:14,820 --> 00:01:19,496
+To start with, we select the surgeon
+gene expression data set and
+
+21
+00:01:19,496 --> 00:01:21,800
+insert the name of the data set.
+
+22
+00:01:22,950 --> 00:01:27,400
+Here, we use an example of GDS10 data set.
+
+23
+00:01:27,400 --> 00:01:30,004
+Click on submit.
+
+24
+00:01:32,127 --> 00:01:34,780
+Here is how a hierarchical
+clustering result looks like.
+
+25
+00:01:36,050 --> 00:01:39,740
+This part visualized
+the clustering results of genes
+
+26
+00:01:39,740 --> 00:01:42,030
+represented by a dendrogram.
+
+27
+00:01:42,030 --> 00:01:45,370
+If you want to get a clustering results
+with a certain clustered number,
+
+28
+00:01:45,370 --> 00:01:49,570
+let's say, if you want to get
+a clustering results with four clusters,
+
+29
+00:01:49,570 --> 00:01:55,250
+we can cut at a certain point of
+the dendrogram and get clustering results.
+
+30
+00:01:55,250 --> 00:01:58,500
+Similarly, here's a dendrogram of samples.
+
+31
+00:01:59,840 --> 00:02:03,810
+And a heat map visualize
+a clustering data set.
+
+32
+00:02:04,850 --> 00:02:08,640
+And a larger value is
+represented by green color and
+
+33
+00:02:08,640 --> 00:02:11,110
+smaller value is represented by red color.
+
+34
+00:02:12,970 --> 00:02:17,940
+On the website, you can actually
+interact with the clustering results.
+
+35
+00:02:19,400 --> 00:02:23,428
+As you can see,
+if I want to determine a certain branch,
+
+36
+00:02:23,428 --> 00:02:28,257
+the dendrogram, we can select
+a certain branch, click and hold,
+
+37
+00:02:30,201 --> 00:02:34,360
+To determine and see more details
+on the clustering results.
+
+38
+00:02:35,460 --> 00:02:40,471
+I'm going to zoom out, you can simply
+click on this unzoom rows button,
+
+39
+00:02:45,968 --> 00:02:47,960
+To get to the original results.
+
+40
+00:02:50,060 --> 00:02:54,240
+If you want to perform hierarchical
+clustering on your own data set,
+
+41
+00:02:54,240 --> 00:02:56,730
+you can also do so on the website.
+
+42
+00:02:56,730 --> 00:02:57,920
+Upload the data set here.
+
+43
+00:02:59,040 --> 00:03:03,522
+This is the data set of restaurant
+locations in Waterloo, Canada.
+
+44
+00:03:05,250 --> 00:03:09,678
+Choose hierarchical clustering as
+a clustering method and as I said,
+
+45
+00:03:09,678 --> 00:03:12,330
+the number of clusters here.
+
+46
+00:03:12,330 --> 00:03:13,170
+Click on submit.
+
+47
+00:03:15,170 --> 00:03:19,010
+The visualization of the clustering
+results is going to be shown here.
+
+48
+00:03:20,190 --> 00:03:24,499
+Of course, you can also try
+different parameter settings or
+
+49
+00:03:24,499 --> 00:03:30,174
+try these algorithms on different real
+data sets to see how the results differ.
+
+50
+00:03:31,899 --> 00:03:36,823
+If you're interested in exploring more
+on hierarchical clustering algorithm,
+
+51
+00:03:36,823 --> 00:03:38,690
+here are some open questions.
+
+52
+00:03:39,800 --> 00:03:42,701
+Thank you, and enjoy.
+
+53
+00:03:42,701 --> 00:03:45,864
+[MUSIC]
+
+54
+00:03:49,961 --> 00:03:55,729
+[MUSIC]
+
+55
+00:03:57,336 --> 00:04:03,030
+[SOUND]

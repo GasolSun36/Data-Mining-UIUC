@@ -1,0 +1,153 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Description
+ </h1>
+ <p>
+  In this programming assignment, you are required to implement the k-means algorithm and apply it to a real-life data set.
+ </p>
+ <h2 level="2">
+  Input
+ </h2>
+ <p>
+  The provided input file ("places.txt") consists of the locations of 300 places in the US. Each location is a two-dimensional point that represents the longitude and latitude of the place. For example, "-112.1,33.5" means the longitude of the place is -112.1, and the latitude is 33.5.
+ </p>
+ <asset assettype="generic" extension="txt" id="F4PAITZ2EeaayA5yRZsQDQ" name="places">
+ </asset>
+ <h2 level="2">
+  Output
+ </h2>
+ <p>
+  You are required to implement the k-means algorithm and use it to cluster the 300 locations into
+  <strong>
+   three
+  </strong>
+  clusters, such that the locations in the same cluster are geographically close to each other.
+ </p>
+ <p>
+  After reading in the 300 locations in "places.txt" and applying the k-means algorithm (with k = 3), you are required to generate an output file named "clusters.txt".  The output file should contain exactly 300 lines, where each line represents the cluster label of each location.  Every line should be in the format: location_id cluster_label.
+ </p>
+ <p>
+  An example snippet of the output "clusters.txt" file is provided below:
+ </p>
+ <p>
+  0 1
+ </p>
+ <p>
+  1 0
+ </p>
+ <p>
+  2 1
+ </p>
+ <p>
+  3 2
+ </p>
+ <p>
+  4 0
+ </p>
+ <p>
+  In the above, the five lines denote the cluster ids of the first five locations in the input file, which means:
+ </p>
+ <p>
+  The first location belongs to cluster "1"
+ </p>
+ <p>
+  The second location belongs to cluster "0"
+ </p>
+ <p>
+  The third location belongs to cluster "1"
+ </p>
+ <p>
+  The fourth location belongs to cluster "2"
+ </p>
+ <p>
+  The fifth location belongs to cluster "0"
+ </p>
+ <h2 level="2">
+  Important Tips
+ </h2>
+ <p>
+  When implementing the K-means algorithm, you could use any programming language you like. We only need the generated cluster label file.
+ </p>
+ <p>
+  Make sure that you format each line correctly in the output file.  For instance, use space instead of comma to separate the data point id and the cluster label.
+ </p>
+ <p>
+  In the input file "places.txt", the id of the location starts from 0.  That is, the first line in "places.txt" has id 0, the second line has id 1, ..., and the last place has id 299.
+ </p>
+ <p>
+  When generating the output file, please note that the order of the cluster labels does not matter.  For example, if there are three clusters, you can use either [0, 1, 2] or [2, 1, 0] as labels for them --- it is correct as long as you use three distinct integer ids. Thus, the following two cases will be considered equivalent by the grader:
+ </p>
+ <p>
+  Case 1:
+ </p>
+ <p>
+  0 0
+ </p>
+ <p>
+  1 1
+ </p>
+ <p>
+  2 2
+ </p>
+ <p>
+  Case 2:
+ </p>
+ <p>
+  0 2
+ </p>
+ <p>
+  1 1
+ </p>
+ <p>
+  2 0
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

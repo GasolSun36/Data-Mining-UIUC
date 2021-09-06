@@ -1,0 +1,103 @@
+1
+00:00:00,006 --> 00:00:06,877
+[SOUND] In the first
+section we will introduce,
+
+2
+00:00:06,877 --> 00:00:13,758
+Basic Concepts of Hierarchical Algorithms.
+
+3
+00:00:13,758 --> 00:00:16,637
+So what is hierarchical clustering?
+
+4
+00:00:16,637 --> 00:00:24,398
+The hierarchical clustering means we can
+start from either singleton cluster,
+
+5
+00:00:24,398 --> 00:00:30,229
+iteratively merge them into
+higher level clusters, okay.
+
+6
+00:00:30,229 --> 00:00:33,659
+Or we can start from
+one big macro cluster,
+
+7
+00:00:33,659 --> 00:00:39,290
+iteratively split the bigger
+cluster into smaller ones.
+
+8
+00:00:39,290 --> 00:00:44,410
+Then in this way we will
+generate a clustering hierarchy,
+
+9
+00:00:44,410 --> 00:00:46,670
+drawn as a dendrogram like this.
+
+10
+00:00:46,670 --> 00:00:50,407
+There is no requirement to specify K,
+the number of clusters.
+
+11
+00:00:50,407 --> 00:00:52,868
+And it is more deterministic.
+
+12
+00:00:52,868 --> 00:00:57,411
+There is no iterative refinement process.
+
+13
+00:00:57,411 --> 00:01:02,771
+Hierarchical clustering methods
+contain two categories of algorithms.
+
+14
+00:01:02,771 --> 00:01:07,272
+In general, the hierarchical
+clustering methods have two
+
+15
+00:01:07,272 --> 00:01:12,120
+categories of algorithms,
+one called agglomerative.
+
+16
+00:01:12,120 --> 00:01:16,970
+It start with singleton clusters,
+continuously merge two
+
+17
+00:01:16,970 --> 00:01:22,970
+clusters at a time to build
+bottom-up hierarchy of clusters.
+
+18
+00:01:22,970 --> 00:01:27,370
+The second category is
+called divisive cluster.
+
+19
+00:01:27,370 --> 00:01:31,960
+Essentially, it starts
+with a huge macro-cluster,
+
+20
+00:01:31,960 --> 00:01:35,600
+then split them continuous
+into two groups.
+
+21
+00:01:35,600 --> 00:01:38,679
+It will generate a top-down
+hierarchy of clusters.
+
+22
+00:01:38,679 --> 00:01:48,679
+[MUSIC]

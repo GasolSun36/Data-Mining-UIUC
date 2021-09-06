@@ -1,0 +1,525 @@
+1
+00:00:00,000 --> 00:00:05,707
+[MUSIC]
+
+2
+00:00:05,707 --> 00:00:11,850
+>> In this session, we're going to examine
+agglomerative clustering algorithms.
+
+3
+00:00:11,850 --> 00:00:17,180
+We already introduced the general
+concepts of, you know,
+
+4
+00:00:17,180 --> 00:00:21,380
+agglomerative and
+divideditive clustering algorithms.
+
+5
+00:00:21,380 --> 00:00:24,580
+Now we look,
+from the computer science point of view,
+
+6
+00:00:24,580 --> 00:00:29,460
+we can think agglomerative clustering
+essentially is a bottom up clustering.
+
+7
+00:00:29,460 --> 00:00:32,500
+That means we start from
+the single den clusters,
+
+8
+00:00:32,500 --> 00:00:36,700
+that means every single element
+treated as one cluster.
+
+9
+00:00:36,700 --> 00:00:42,000
+Then we try to merge
+their nearest neighbor
+
+10
+00:00:42,000 --> 00:00:46,690
+into bigger, bigger clusters and
+eventually merge them into one cluster.
+
+11
+00:00:46,690 --> 00:00:49,840
+This one is a bottom up, or
+agglomerative clustering.
+
+12
+00:00:51,460 --> 00:00:55,770
+In Kaufmann and
+Rousseeuw's 1990 book they describe
+
+13
+00:00:55,770 --> 00:01:00,940
+one algorithm they call AGNES,
+or AGglomerative NESting.
+
+14
+00:01:00,940 --> 00:01:06,320
+This algorithm uses a single-link method,
+or we call nearest neighbor method.
+
+15
+00:01:06,320 --> 00:01:10,660
+And the dissimilarity matrix
+try to continuously merge
+
+16
+00:01:11,870 --> 00:01:15,820
+nodes that have the least dissimilarity,
+or the nearest neighbor.
+
+17
+00:01:15,820 --> 00:01:20,100
+Eventually, all the nodes
+merged into one cluster, okay.
+
+18
+00:01:20,100 --> 00:01:23,741
+That means you start from the singleton,
+you try to find its,
+
+19
+00:01:23,741 --> 00:01:25,709
+everyone's nearest neighbor.
+
+20
+00:01:25,709 --> 00:01:31,954
+Then you check the, the, the closest
+nearest neighbor, you try to merge them.
+
+21
+00:01:31,954 --> 00:01:32,910
+Okay.
+
+22
+00:01:32,910 --> 00:01:36,400
+Then once you merge into bigger
+cluster you're looking at cluster,
+
+23
+00:01:36,400 --> 00:01:39,520
+cluster their nearest
+neighbor they're single-link.
+
+24
+00:01:39,520 --> 00:01:44,910
+Then decide which one to merge eventually
+you'll merge everything into one cluster.
+
+25
+00:01:44,910 --> 00:01:49,770
+Actually in the rear agglomerative
+clustering algorithms,
+
+26
+00:01:49,770 --> 00:01:53,640
+they vary different similarity measures.
+
+27
+00:01:53,640 --> 00:01:56,610
+For example, we just discussed AGNES.
+
+28
+00:01:56,610 --> 00:02:01,780
+It uses nearest neighbor we
+called single-link measure.
+
+29
+00:02:01,780 --> 00:02:05,330
+You also can use the farthest neighbor,
+or diameter.
+
+30
+00:02:05,330 --> 00:02:06,510
+That's complete link.
+
+31
+00:02:07,640 --> 00:02:10,360
+Then you can use group average.
+
+32
+00:02:10,360 --> 00:02:14,510
+That means you average of
+everything based on their distance.
+
+33
+00:02:14,510 --> 00:02:17,740
+Every pair of elements, you average them.
+
+34
+00:02:17,740 --> 00:02:21,480
+Then you calculate the distance
+based on the average link.
+
+35
+00:02:21,480 --> 00:02:23,230
+Or we can use central link,
+
+36
+00:02:23,230 --> 00:02:28,239
+that means we look at the distance
+between the centroids of those clusters.
+
+37
+00:02:29,280 --> 00:02:34,090
+Let's examine a little detail
+on these different links.
+
+38
+00:02:34,090 --> 00:02:38,347
+We first look at the single link,
+or we call nearest neighbor.
+
+39
+00:02:38,347 --> 00:02:39,290
+Okay.
+
+40
+00:02:39,290 --> 00:02:43,872
+So the similarity or
+the distance between the two
+
+41
+00:02:43,872 --> 00:02:48,343
+clusters is defined based
+on the most similar or
+
+42
+00:02:48,343 --> 00:02:52,605
+the closest elements
+in these two clusters.
+
+43
+00:02:52,605 --> 00:02:53,380
+Okay.
+
+44
+00:02:53,380 --> 00:02:56,961
+Just to give you an example,
+suppose one is in U.S., one is in Cuba,
+
+45
+00:02:56,961 --> 00:02:59,200
+you want to find their closest points.
+
+46
+00:02:59,200 --> 00:03:03,620
+Likely in the U.S.,
+it will be the Key West.
+
+47
+00:03:03,620 --> 00:03:09,620
+So such kind of merging essentially
+is you examine its neighbors,
+
+48
+00:03:09,620 --> 00:03:12,110
+or the close regions.
+
+49
+00:03:12,110 --> 00:03:15,450
+So, you know the overall
+structure of the cluster.
+
+50
+00:03:15,450 --> 00:03:20,760
+So, in that context,
+you will be able to find irregular shaped,
+
+51
+00:03:20,760 --> 00:03:23,790
+or non-elliptical shaped,
+group of objects.
+
+52
+00:03:23,790 --> 00:03:28,248
+This link is also sensitive to noise and
+outliers.
+
+53
+00:03:28,248 --> 00:03:32,984
+Because obviously if you get outlier which
+is very close to the other one, you may,
+
+54
+00:03:32,984 --> 00:03:35,510
+you may decide to merge them.
+
+55
+00:03:35,510 --> 00:03:42,220
+Another approach called complete link is
+you check the diameter of the cluster.
+
+56
+00:03:42,220 --> 00:03:47,400
+The idea is you try to define
+the similarity between the two clusters
+
+57
+00:03:47,400 --> 00:03:49,610
+based on their farthest neighbors.
+
+58
+00:03:49,610 --> 00:03:56,600
+That means between the most, the
+de-similar elements in these two objects.
+
+59
+00:03:56,600 --> 00:04:02,090
+For example, if you define the distance
+between U.S. and Cuba, you probably,
+
+60
+00:04:02,090 --> 00:04:07,320
+for the complete link, you may pick
+up the farthest point in Alaska.
+
+61
+00:04:07,320 --> 00:04:09,150
+So that's pretty far apart.
+
+62
+00:04:09,150 --> 00:04:14,110
+So that means you actually try to
+merge the two clusters to form
+
+63
+00:04:14,110 --> 00:04:17,760
+one with the smallest diameter,
+because when you merge them together,
+
+64
+00:04:17,760 --> 00:04:21,338
+you want the final one is pretty compact.
+
+65
+00:04:21,338 --> 00:04:26,850
+You examine non-local behavior,
+you obtain compact shaped clusters.
+
+66
+00:04:26,850 --> 00:04:31,860
+But this measure also
+sensitive to outliers, okay?
+
+67
+00:04:31,860 --> 00:04:35,280
+Because you probably do not even
+want to think about Alaska.
+
+68
+00:04:35,280 --> 00:04:39,320
+You may think about Hawaii or Guam,
+you know, you try to merge them.
+
+69
+00:04:39,320 --> 00:04:41,310
+That's pretty far apart.
+
+70
+00:04:41,310 --> 00:04:46,380
+Then we will look at the average link.
+
+71
+00:04:46,380 --> 00:04:51,520
+The average link between two clusters
+actually is rather expensive to compute.
+
+72
+00:04:51,520 --> 00:04:56,430
+Because what you want to calculate
+is the average distance between all
+
+73
+00:04:56,430 --> 00:05:01,460
+the elements in one cluster and
+all the elements in the other cluster.
+
+74
+00:05:01,460 --> 00:05:05,180
+That means you calculate all
+the pairs of the two clusters,
+
+75
+00:05:05,180 --> 00:05:07,000
+then you try to average them.
+
+76
+00:05:07,000 --> 00:05:12,090
+For example, if you have a number of
+
+77
+00:05:12,090 --> 00:05:16,110
+cluster in C sub a is N sub a, and
+
+78
+00:05:16,110 --> 00:05:21,910
+a number of elements in
+cluster C sub b is N sub b.
+
+79
+00:05:21,910 --> 00:05:26,140
+So what you want to care,
+the distance, essentially you will get
+
+80
+00:05:26,140 --> 00:05:31,070
+total number of pairs is
+N sub a times N sub b.
+
+81
+00:05:31,070 --> 00:05:33,460
+That's pretty big, you know, average time.
+
+82
+00:05:35,500 --> 00:05:40,250
+So an easy way, or
+a more efficient way to calculate
+
+83
+00:05:40,250 --> 00:05:47,220
+the the distance between two clusters,
+actually use centroid link.
+
+84
+00:05:47,220 --> 00:05:52,560
+The centroid link means you calculate
+the centroid of cluster C sub a,
+
+85
+00:05:52,560 --> 00:05:57,690
+the centroid of cluster C sub b,
+then the distance between
+
+86
+00:05:57,690 --> 00:06:02,660
+the two clusters is defined by
+the distance between these two centroids.
+
+87
+00:06:04,180 --> 00:06:09,070
+And you may even want to put
+a weight there for example,
+
+88
+00:06:09,070 --> 00:06:14,040
+if the cluster C sub a has many,
+many points versus
+
+89
+00:06:14,040 --> 00:06:18,720
+C cluster C sub b,
+you want to take this into consideration.
+
+90
+00:06:18,720 --> 00:06:26,010
+Then we introduce GAAC, or
+group averaged agglomerative clustering.
+
+91
+00:06:26,010 --> 00:06:30,610
+That means,
+if you assume the two clusters C sub a and
+
+92
+00:06:30,610 --> 00:06:36,530
+C sub b be merged into one cluster,
+C sub a unit b,
+
+93
+00:06:36,530 --> 00:06:43,212
+then the centroid will be defined by,
+you get a centroid of C sub a.
+
+94
+00:06:43,212 --> 00:06:47,890
+But you'll time the number
+of elements in the cluster,
+
+95
+00:06:47,890 --> 00:06:54,810
+then you get a centroid of C C sub b
+of cluster C sub b, bigger C sub b.
+
+96
+00:06:54,810 --> 00:07:00,070
+Then the, you want also times
+their number of elements.
+
+97
+00:07:00,070 --> 00:07:02,640
+Then you finally normalize them, okay?
+
+98
+00:07:02,640 --> 00:07:07,920
+So this is the GAAC measure.
+
+99
+00:07:07,920 --> 00:07:13,240
+Another interesting Y is people
+define one called Ward's criterion.
+
+100
+00:07:13,240 --> 00:07:18,970
+This Y's centering is to measure
+the increase, once you do this merge.
+
+101
+00:07:18,970 --> 00:07:23,965
+Remember, once you merge the two clusters,
+C sub a and
+
+102
+00:07:23,965 --> 00:07:29,393
+C sub b into C, the sub union b the SSE,
+the sum of the squared
+
+103
+00:07:29,393 --> 00:07:35,164
+distance were increased because
+the cluster becomes bigger.
+
+104
+00:07:35,164 --> 00:07:36,170
+Okay.
+
+105
+00:07:36,170 --> 00:07:40,370
+Then once it's increased you want
+to see the original clustering.
+
+106
+00:07:40,370 --> 00:07:41,290
+What's the difference?
+
+107
+00:07:41,290 --> 00:07:44,376
+What's the increase you've got on this?
+
+108
+00:07:44,376 --> 00:07:49,398
+Okay, this why is defined
+using this criteria and
+
+109
+00:07:49,398 --> 00:07:55,730
+essentially is you look at the distance
+between the two centroids and
+
+110
+00:07:55,730 --> 00:08:01,535
+then you, based on this weight,
+you calculate the increase.
+
+111
+00:08:01,535 --> 00:08:04,030
+[MUSIC]

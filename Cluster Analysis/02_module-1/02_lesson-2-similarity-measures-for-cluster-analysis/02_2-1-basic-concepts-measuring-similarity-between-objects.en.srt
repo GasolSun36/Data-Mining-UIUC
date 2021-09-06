@@ -1,0 +1,199 @@
+1
+00:00:00,000 --> 00:00:03,309
+[MUSIC]
+
+2
+00:00:06,397 --> 00:00:11,360
+Basic concepts means how to measure
+similarity between objects.
+
+3
+00:00:12,620 --> 00:00:18,520
+Since clustering is
+an unsupervised learning process,
+
+4
+00:00:18,520 --> 00:00:23,550
+so we do not have predefined levels
+to judge whether it's right or wrong.
+
+5
+00:00:23,550 --> 00:00:28,720
+So how can we judge
+a clustering process is good?
+
+6
+00:00:28,720 --> 00:00:32,909
+That means whether it will
+produce high-quality clusters.
+
+7
+00:00:34,010 --> 00:00:39,080
+Usually, we keep two measures,
+one called high intra-class similarity,
+
+8
+00:00:39,080 --> 00:00:42,110
+the other called low
+inter-class similarity.
+
+9
+00:00:42,110 --> 00:00:44,860
+What is high intra-class similarity?
+
+10
+00:00:44,860 --> 00:00:49,430
+That means you want to see
+the objects within the same cluster,
+
+11
+00:00:49,430 --> 00:00:51,730
+they are rather similar,
+they are cohesive.
+
+12
+00:00:53,300 --> 00:00:58,130
+You also want to see
+inter-class similarity
+
+13
+00:00:58,130 --> 00:01:02,640
+is low in the sense you want to see
+the objects in different clusters.
+
+14
+00:01:02,640 --> 00:01:06,240
+They are rather dissimilar,
+or they are distinctive.
+
+15
+00:01:08,510 --> 00:01:09,860
+So to measure this,
+
+16
+00:01:09,860 --> 00:01:15,370
+we need some separate quality function
+to measure how good a cluster it is.
+
+17
+00:01:16,600 --> 00:01:20,680
+However, it is hard to define
+what is similar enough or
+
+18
+00:01:20,680 --> 00:01:25,030
+good enough and the answer usually
+could be quite subjective.
+
+19
+00:01:26,350 --> 00:01:31,080
+That's the reason we want to look
+at different similarity measures or
+
+20
+00:01:31,080 --> 00:01:35,890
+the similarity functions for different
+applications, but they are critical for
+
+21
+00:01:35,890 --> 00:01:36,750
+cluster analysis.
+
+22
+00:01:38,550 --> 00:01:43,378
+For terminologies, people actually
+want to distinguish a quite
+
+23
+00:01:43,378 --> 00:01:47,681
+interesting similar things
+called similarity measure,
+
+24
+00:01:47,681 --> 00:01:51,380
+dissimilarity measure,
+or proximity measure.
+
+25
+00:01:52,770 --> 00:01:55,690
+What is similarity measure or
+similarity function?
+
+26
+00:01:55,690 --> 00:02:00,430
+Usually, similarity function
+is a real value function
+
+27
+00:02:00,430 --> 00:02:03,580
+to quantify the similarity
+between two objects.
+
+28
+00:02:05,190 --> 00:02:10,340
+Usually the higher value,
+it means more similar.
+
+29
+00:02:10,340 --> 00:02:13,250
+So the value range is 0 to 1.
+
+30
+00:02:13,250 --> 00:02:14,930
+0 means there's no similarity.
+
+31
+00:02:14,930 --> 00:02:18,840
+1 means they are completely similar,
+or they are identical.
+
+32
+00:02:21,280 --> 00:02:25,490
+Then similar to similarity,
+many people want to use dissimilarity,
+
+33
+00:02:25,490 --> 00:02:26,740
+or distance measure.
+
+34
+00:02:28,000 --> 00:02:32,960
+Distance measure or distance function
+is a new micro measure to measure how
+
+35
+00:02:32,960 --> 00:02:37,170
+different these two objects are.
+
+36
+00:02:37,170 --> 00:02:42,140
+To some extent, dissimilarities,
+inverse of similarities,
+
+37
+00:02:42,140 --> 00:02:46,630
+that means the lower or
+the shorter the distance, the more alike.
+
+38
+00:02:47,670 --> 00:02:53,920
+The minimum dissimilarity is 0, means
+there are completely similar or identical.
+
+39
+00:02:53,920 --> 00:03:00,190
+The value range could be either 0 to 1 or
+0 to infinity based on the definition.
+
+40
+00:03:02,090 --> 00:03:04,821
+Another term called proximity,
+
+41
+00:03:04,821 --> 00:03:10,289
+this is usually referred to either
+similarity or dissimilarity.
+
+42
+00:03:10,289 --> 00:03:20,289
+[MUSIC]

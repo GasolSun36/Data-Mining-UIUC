@@ -1,0 +1,338 @@
+1
+00:00:02,460 --> 00:00:03,370
+Hello, everyone.
+
+2
+00:00:03,370 --> 00:00:04,810
+This is.
+
+3
+00:00:04,810 --> 00:00:07,710
+I'm a teaching assistant for
+the Classroom Management course.
+
+4
+00:00:08,770 --> 00:00:12,530
+Today, I'm glad to give you a brief
+introduction to ClusterEnG,
+
+5
+00:00:12,530 --> 00:00:15,760
+which is a tool that allows
+you to play with different
+
+6
+00:00:15,760 --> 00:00:18,250
+classroom algorithms you have
+learned from the course.
+
+7
+00:00:20,020 --> 00:00:22,440
+First of all, what is ClusterEnG?
+
+8
+00:00:22,440 --> 00:00:26,350
+ClusterEnG are to developed by
+the Computational Biology Group at UIUC.
+
+9
+00:00:27,550 --> 00:00:32,160
+It allows the users to perform ClusterEnG
+analysis in an interactive way.
+
+10
+00:00:32,160 --> 00:00:34,960
+On ClusterEnG,
+you can create your own data,
+
+11
+00:00:34,960 --> 00:00:38,020
+choose different ClusterEnG algorithms,
+and the results.
+
+12
+00:00:39,360 --> 00:00:43,270
+We recommend you to play with it,
+because it can help you understand
+
+13
+00:00:43,270 --> 00:00:46,390
+how different the ClusterEnG
+algorithms work in practice.
+
+14
+00:00:47,670 --> 00:00:52,466
+To use ClusterEnG you will first need to
+visit a website which is provided here.
+
+15
+00:00:54,991 --> 00:01:00,230
+After opening ClusterEnG, you will see
+that it includes three major steps.
+
+16
+00:01:00,230 --> 00:01:01,940
+The first step is data preparation.
+
+17
+00:01:03,050 --> 00:01:06,440
+And second step is choosing
+the Algorithms, and
+
+18
+00:01:06,440 --> 00:01:08,910
+the parameters that you want to use.
+
+19
+00:01:08,910 --> 00:01:14,640
+And final step is the visualization
+of the cluster results.
+
+20
+00:01:14,640 --> 00:01:16,650
+In the rest of this tutorial,
+
+21
+00:01:16,650 --> 00:01:19,379
+we'll introduce the details
+of those three steps.
+
+22
+00:01:20,480 --> 00:01:22,400
+In the data preparation step,
+
+23
+00:01:22,400 --> 00:01:26,830
+you need to prepare the data that you
+want to perform classroom analysis on.
+
+24
+00:01:26,830 --> 00:01:28,340
+There are two choices.
+
+25
+00:01:28,340 --> 00:01:31,710
+The first one is to upload
+the own data file that you have.
+
+26
+00:01:32,830 --> 00:01:36,190
+The uploaded file could
+either be in CSV format
+
+27
+00:01:36,190 --> 00:01:38,980
+where the elements
+are separated by commas.
+
+28
+00:01:38,980 --> 00:01:44,680
+Or the TXT format where the elements
+are separated by spaces which helps.
+
+29
+00:01:44,680 --> 00:01:50,680
+To give you a concrete example, here I
+have created very simple CSV file that
+
+30
+00:01:50,680 --> 00:01:56,290
+includes 15 data points, and
+each data point is two dimensional.
+
+31
+00:01:56,290 --> 00:01:58,765
+After choosing the created data file,
+
+32
+00:01:58,765 --> 00:02:01,774
+I just need to hit the start
+button to upload it.
+
+33
+00:02:04,135 --> 00:02:06,619
+And after uploading, I choose rows here,
+
+34
+00:02:06,619 --> 00:02:11,430
+because all the little points are stored
+as rows in the uploaded file.
+
+35
+00:02:11,430 --> 00:02:15,000
+Also, I choose no here,
+because I don't have row names or
+
+36
+00:02:15,000 --> 00:02:16,770
+IDs in my first data file.
+
+37
+00:02:17,940 --> 00:02:18,820
+Another option for
+
+38
+00:02:18,820 --> 00:02:22,799
+preparing the data is to use the sample
+data size provided by clustering.
+
+39
+00:02:23,930 --> 00:02:26,780
+Once you're done with preparing the data,
+next
+
+40
+00:02:26,780 --> 00:02:32,290
+step is choose the clustering algorithm
+and the parameters that you want to use.
+
+41
+00:02:32,290 --> 00:02:36,430
+As you can see from the website,
+clustering actually covers a quite
+
+42
+00:02:36,430 --> 00:02:41,079
+wide range of different clustering
+algorithms including k-means, k-medoids,
+
+43
+00:02:41,079 --> 00:02:42,651
+hierarchical clustering.
+
+44
+00:02:43,780 --> 00:02:45,720
+DBSCAN and several others.
+
+45
+00:02:46,920 --> 00:02:52,270
+If you are not sure which clustering
+algorithm you should use, there's
+
+46
+00:02:52,270 --> 00:02:57,640
+actually a tutorial page on the website
+that compares the different pros and
+
+47
+00:02:57,640 --> 00:03:00,620
+cons of different clustering algorithms.
+
+48
+00:03:00,620 --> 00:03:05,110
+You can read through them and choose the
+appropriate algorithm based on your needs.
+
+49
+00:03:05,110 --> 00:03:10,850
+For our simulator, lets just use k
+means as our class algorithm and
+
+50
+00:03:10,850 --> 00:03:13,950
+that sets the number of
+class rows to three.
+
+51
+00:03:13,950 --> 00:03:18,970
+Then we hit submit to round k
+means on the uploaded file.
+
+52
+00:03:18,970 --> 00:03:23,399
+The final step is to initialize and
+interpret the classroom results.
+
+53
+00:03:24,490 --> 00:03:28,740
+Since classroom is designed to
+support both low dimensional and
+
+54
+00:03:28,740 --> 00:03:32,930
+high dimensional data class range,
+we visualize the results
+
+55
+00:03:32,930 --> 00:03:37,730
+using PCA which is a very well known
+dimension reduction technique.
+
+56
+00:03:37,730 --> 00:03:42,680
+There are two different models, the first
+one is two-dimensional models Which
+
+57
+00:03:42,680 --> 00:03:49,760
+provides the clustering plots on two
+of the first rate principal components.
+
+58
+00:03:49,760 --> 00:03:53,120
+And the second mode is
+the three-dimensional mode
+
+59
+00:03:53,120 --> 00:03:58,189
+which plots the visualization results
+on the first grid principal components.
+
+60
+00:03:59,400 --> 00:04:04,300
+Since the data file we just used is
+two-dimensional, we only need to look at
+
+61
+00:04:04,300 --> 00:04:09,767
+the first plot under
+the two-dimensional viewing mode.
+
+62
+00:04:09,767 --> 00:04:14,100
+We can see the 15 data points are
+separated into three different clusters
+
+63
+00:04:14,100 --> 00:04:18,940
+by the k-means algorithm, where
+the different clusters are represented
+
+64
+00:04:18,940 --> 00:04:23,680
+using different colors We're now
+introducing the basic usage of ClusterEnG.
+
+65
+00:04:23,680 --> 00:04:27,450
+If you want to know more about this tool
+you can find more resources on their
+
+66
+00:04:27,450 --> 00:04:28,700
+website.
+
+67
+00:04:28,700 --> 00:04:33,726
+Also in the following weeks we'll go
+into the detail of several different
+
+68
+00:04:33,726 --> 00:04:38,860
+clustering algorithms by [INAUDIBLE].
+
+69
+00:04:38,860 --> 00:04:39,580
+Thank you for watching.
+
+70
+00:04:39,580 --> 00:04:45,625
+[SOUND]
+
+71
+00:04:45,625 --> 00:04:54,244
+[MUSIC]
+
+72
+00:04:54,244 --> 00:04:58,988
+[SOUND]

@@ -1,0 +1,204 @@
+1
+00:00:00,590 --> 00:00:02,100
+Hello, students.
+
+2
+00:00:02,100 --> 00:00:05,700
+Today, I'm going to use clusterEnG
+to demonstrate the usage of
+
+3
+00:00:05,700 --> 00:00:10,300
+two publishing based algorithms,
+K- means and K-medoids.
+
+4
+00:00:10,300 --> 00:00:11,935
+As we have learned from the class,
+
+5
+00:00:11,935 --> 00:00:16,640
+K-Means is a very popular publishing
+based clustering algorithm.
+
+6
+00:00:16,640 --> 00:00:20,010
+To partition the given data
+points into k clusters.
+
+7
+00:00:20,010 --> 00:00:24,330
+K-means first selects k
+clusters centers randomly.
+
+8
+00:00:24,330 --> 00:00:24,890
+Then, for
+
+9
+00:00:24,890 --> 00:00:30,220
+every data point K-means computes
+distances to the current k centers.
+
+10
+00:00:30,220 --> 00:00:32,426
+Under sizes to the closest center.
+
+11
+00:00:32,426 --> 00:00:39,330
+After that, K-means needs to update
+the K centers by computing the mean of
+
+12
+00:00:39,330 --> 00:00:45,380
+each cluster, such a process is repeated
+until the K-centers do not change.
+
+13
+00:00:45,380 --> 00:00:49,460
+The K-matter is algorithm is very
+similar to the K-means algorithm.
+
+14
+00:00:49,460 --> 00:00:54,410
+With the only difference that we are not
+updating the center of each cluster we do
+
+15
+00:00:54,410 --> 00:01:00,010
+not compute the mean of all the current
+data points instead, we choose
+
+16
+00:01:00,010 --> 00:01:05,910
+one data point from the cluster that
+minimize the with-in cluster variance.
+
+17
+00:01:05,910 --> 00:01:09,740
+On clustering remember that
+there are three K steps.
+
+18
+00:01:09,740 --> 00:01:13,810
+Data preparation, Algorithm choosing and
+Result visualization.
+
+19
+00:01:14,860 --> 00:01:20,430
+In this two hierarchical, lastly, used
+simple data set that consist of 15 to data
+
+20
+00:01:20,430 --> 00:01:26,320
+points, after uploading the data which
+use K-means as a cluster algorithm.
+
+21
+00:01:26,320 --> 00:01:31,000
+Also, a very important step is choosing
+a number of clusters for K-means.
+
+22
+00:01:31,000 --> 00:01:33,210
+Here, we say this parameter to straight.
+
+23
+00:01:34,630 --> 00:01:38,970
+But the value of this parameter depends
+on the specific specification and
+
+24
+00:01:38,970 --> 00:01:41,910
+the data set used in practice,
+
+25
+00:01:41,910 --> 00:01:45,980
+we can try out different parameter
+values and determine the triple one.
+
+26
+00:01:47,540 --> 00:01:49,850
+The running k means with k equal three
+
+27
+00:01:50,870 --> 00:01:54,070
+we cluster the data points
+into three clusters.
+
+28
+00:01:55,890 --> 00:01:58,400
+As we can see from these plots
+
+29
+00:01:58,400 --> 00:02:03,339
+the original 15 data points are separated
+into three very clear clusters.
+
+30
+00:02:04,370 --> 00:02:07,460
+We can also try out different k values.
+
+31
+00:02:07,460 --> 00:02:13,732
+Let's say if we said k equals five, and
+k means again on the same set of sides.
+
+32
+00:02:13,732 --> 00:02:18,730
+Then, we're actually imposing finer
+regularity on the classroom process.
+
+33
+00:02:19,740 --> 00:02:22,140
+As we can see from the new plot.
+
+34
+00:02:22,140 --> 00:02:27,290
+The data points that our ration may belong
+to the same class are now separated into
+
+35
+00:02:27,290 --> 00:02:28,820
+two different clusters.
+
+36
+00:02:28,820 --> 00:02:33,140
+The k-medoids algorithm is
+very similar to k-means.
+
+37
+00:02:33,140 --> 00:02:38,390
+You can still use the process to
+run k-medoids on the same div sets.
+
+38
+00:02:38,390 --> 00:02:42,859
+And you'll find out that the clustering
+results will be very similar.
+
+39
+00:02:45,835 --> 00:02:49,480
+You can get more information
+about those two algorisms.
+
+40
+00:02:49,480 --> 00:02:51,570
+You can also visit
+a tutorial of that page.
+
+41
+00:02:52,770 --> 00:02:54,724
+So that concludes today's tutorial.
+
+42
+00:02:54,724 --> 00:02:57,274
+Thanks for watching.
+
+43
+00:02:57,274 --> 00:03:00,331
+[MUSIC]
+
+44
+00:03:02,692 --> 00:03:12,692
+[MUSIC]

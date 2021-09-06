@@ -1,0 +1,319 @@
+1
+00:00:00,016 --> 00:00:08,376
+[SOUND] In this session, we are going to
+introduce another kind of measures for
+
+2
+00:00:08,376 --> 00:00:14,432
+clustering validation called
+the Relative Measures.
+
+3
+00:00:14,432 --> 00:00:20,930
+We already introduced external
+measure when we have [INAUDIBLE].
+
+4
+00:00:20,930 --> 00:00:27,100
+We also introduced internal measure when
+we try to measure the intro cluster,
+
+5
+00:00:27,100 --> 00:00:31,330
+they are very compact, and
+inter cluster, they are far apart.
+
+6
+00:00:32,640 --> 00:00:36,540
+Now, we want to look at
+what is relative measure.
+
+7
+00:00:36,540 --> 00:00:42,140
+Relative measure actually is trying
+to direct compare different clusters.
+
+8
+00:00:43,330 --> 00:00:48,310
+Especially for those obtained
+using the same algorithm but
+
+9
+00:00:48,310 --> 00:00:50,420
+different parameter setting.
+
+10
+00:00:50,420 --> 00:00:56,680
+For example, like if we all use k-means
+to cluster a group of things but
+
+11
+00:00:56,680 --> 00:01:03,071
+in that case, we want to measure for
+different cluster instantiation.
+
+12
+00:01:03,071 --> 00:01:07,785
+Which one gave you the best clustering or
+a different case for
+
+13
+00:01:07,785 --> 00:01:13,745
+k from one to certain number,
+which k gives you the best clustering.
+
+14
+00:01:13,745 --> 00:01:18,559
+In that case, we were measured
+as using relative measure.
+
+15
+00:01:20,440 --> 00:01:25,360
+And, one interesting measure
+called silhouette coefficient
+
+16
+00:01:25,360 --> 00:01:28,600
+can be used for relative measure, okay?
+
+17
+00:01:28,600 --> 00:01:35,650
+But, actually, silhouette coefficient
+also popularly used as internal measure.
+
+18
+00:01:35,650 --> 00:01:42,800
+That means we will be able to use it to
+check cluster cohesion and separation.
+
+19
+00:01:44,040 --> 00:01:47,480
+So, I first introduce it
+as an internal measure
+
+20
+00:01:47,480 --> 00:01:50,110
+before I introduce it
+as an external measure.
+
+21
+00:01:51,500 --> 00:01:53,867
+So for every point, x sub i,
+
+22
+00:01:53,867 --> 00:01:59,630
+we can calculate its silhouette
+coefficient, s sub i, okay?
+
+23
+00:01:59,630 --> 00:02:00,900
+How we calculate it?
+
+24
+00:02:00,900 --> 00:02:06,398
+We use this formula this formula actually,
+mu sub n,
+
+25
+00:02:06,398 --> 00:02:11,830
+is the mean distance to
+the point of its own cluster.
+
+26
+00:02:11,830 --> 00:02:16,490
+Simply says, if we find this
+point in the blue cluster, okay?
+
+27
+00:02:16,490 --> 00:02:21,566
+We're going to see this x sub i,
+actually to all the points
+
+28
+00:02:21,566 --> 00:02:27,540
+in it's own cluster that
+distance we want to reach them.
+
+29
+00:02:27,540 --> 00:02:32,195
+We get a mean distance that's mu sub n.
+
+30
+00:02:32,195 --> 00:02:36,265
+Then what is mu sub out's mean, okay?
+
+31
+00:02:36,265 --> 00:02:41,455
+That means we want to see this
+blue point to its closest
+
+32
+00:02:41,455 --> 00:02:46,365
+cluster which is this orange one,
+to its closest cluster.
+
+33
+00:02:46,365 --> 00:02:51,439
+All the points its closest cluster,
+we calculate their mean distance,
+
+34
+00:02:51,439 --> 00:02:54,620
+that's this value, mu sub out mean, okay?
+
+35
+00:02:54,620 --> 00:02:57,010
+Then what we want to
+see is their distance,
+
+36
+00:02:58,300 --> 00:03:02,086
+you probably can clearly see for
+any point x sub i.
+
+37
+00:03:02,086 --> 00:03:07,190
+You want that the internal distance,
+its rhythm is small but
+
+38
+00:03:07,190 --> 00:03:10,910
+even to its closest cluster,
+this average reason be big.
+
+39
+00:03:10,910 --> 00:03:15,160
+So, to that extent, this value usually
+
+40
+00:03:15,160 --> 00:03:19,830
+should be positive and
+the more positive the better, okay?
+
+41
+00:03:19,830 --> 00:03:25,860
+Then we, we normalize it, we divide by the
+maximum value between this mu out mean.
+
+42
+00:03:27,450 --> 00:03:30,000
+And the mu n, and
+if we pick up the two, so
+
+43
+00:03:30,000 --> 00:03:34,520
+it simply says that this division
+must be smaller than one.
+
+44
+00:03:34,520 --> 00:03:38,340
+But on the other hand, if this cluster
+to one, simply says, it's better because
+
+45
+00:03:38,340 --> 00:03:43,510
+the internal is very compact to
+the outside is the reasonably big.
+
+46
+00:03:43,510 --> 00:03:46,507
+This is only for one point,
+what is for the whole clustering?
+
+47
+00:03:46,507 --> 00:03:49,510
+Okay, so silhouette coefficient for
+
+48
+00:03:49,510 --> 00:03:53,150
+the whole clustering is you
+take all the end points.
+
+49
+00:03:53,150 --> 00:03:57,866
+You calculate every one's
+silhouette coefficient s sub i.
+
+50
+00:03:57,866 --> 00:04:02,500
+I from 1 to n you calculate all
+the s sub i, you normalize it,
+
+51
+00:04:02,500 --> 00:04:05,710
+you divide it by the number of points n.
+
+52
+00:04:05,710 --> 00:04:10,570
+You get the whole clusterings
+silhouette coefficient.
+
+53
+00:04:10,570 --> 00:04:15,340
+Of course, these silhouette coefficient,
+if it's closer to plus 1, it,
+
+54
+00:04:15,340 --> 00:04:17,000
+it implies good clustering.
+
+55
+00:04:17,000 --> 00:04:23,050
+Because the internal one to its own points
+is rather close to the other cluster,
+
+56
+00:04:23,050 --> 00:04:25,240
+even to the closest one, is really far.
+
+57
+00:04:26,980 --> 00:04:32,490
+So we also can use this silhouette
+coefficient as a relative measure.
+
+58
+00:04:32,490 --> 00:04:37,570
+For example, we can use it to estimate
+the number of clusters in the data, say,
+
+59
+00:04:37,570 --> 00:04:38,520
+what is the best of k.
+
+60
+00:04:40,540 --> 00:04:45,990
+We can pick a value that yield the best
+at clustering, that means yielding
+
+61
+00:04:45,990 --> 00:04:52,690
+the high value for SC and SC sub i, okay?
+
+62
+00:04:52,690 --> 00:04:57,490
+For example, you can, thinking about,
+you did a lot of clustering, okay?
+
+63
+00:04:57,490 --> 00:05:04,040
+For all the i's, you want to see which
+one give you the best clustering?
+
+64
+00:05:04,040 --> 00:05:08,120
+That means which one gives you
+the highest silhouette coefficient?
+
+65
+00:05:08,120 --> 00:05:11,320
+Then you can pick up that instantiation,
+pick that k.
+
+66
+00:05:12,660 --> 00:05:17,897
+So that's the usage of silhouette
+coefficient as a relative measure.
+
+67
+00:05:17,897 --> 00:05:27,897
+[MUSIC]

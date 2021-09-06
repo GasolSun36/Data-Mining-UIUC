@@ -1,0 +1,174 @@
+1
+00:00:06,080 --> 00:00:11,858
+Starting this session, we are going to
+introduce grid-based clustering methods.
+
+2
+00:00:11,858 --> 00:00:15,550
+What is grid-based clustering method?
+
+3
+00:00:15,550 --> 00:00:19,000
+Essentially, it is you
+consider the whole space.
+
+4
+00:00:19,000 --> 00:00:25,120
+Can be partitioned into
+multi-resolution grid structure.
+
+5
+00:00:25,120 --> 00:00:29,880
+Then you work on the cells
+in this grid structure
+
+6
+00:00:29,880 --> 00:00:32,790
+to perform multi-resolution clustering.
+
+7
+00:00:34,010 --> 00:00:36,690
+That means we can partition the data space
+
+8
+00:00:36,690 --> 00:00:41,400
+into a finite number of cells
+to form a grid structure.
+
+9
+00:00:41,400 --> 00:00:46,105
+For example,
+on the plane you may be able to,
+
+10
+00:00:46,105 --> 00:00:53,060
+to partition this plane into a 10 by 10 or
+100 by 100, these kind of grid structure.
+
+11
+00:00:53,060 --> 00:00:55,770
+Then you may find a cluster, so
+
+12
+00:00:55,770 --> 00:00:59,710
+dense regions from the cells
+in the grid structure.
+
+13
+00:00:59,710 --> 00:01:02,700
+That means you have a higher or
+lower resolution, or
+
+14
+00:01:02,700 --> 00:01:06,470
+refined resolution or
+cross resolution in your clustering.
+
+15
+00:01:08,120 --> 00:01:13,550
+So, a typical clustering algorithm have
+the following features and challenges.
+
+16
+00:01:13,550 --> 00:01:15,800
+The first thing is very obvious.
+
+17
+00:01:15,800 --> 00:01:22,720
+It is efficient and scalable in the sense,
+once you partition the number of cells,
+
+18
+00:01:22,720 --> 00:01:28,120
+usually number of cells, even you say
+10 by 10, you only have 100 cells.
+
+19
+00:01:28,120 --> 00:01:33,630
+It is much smaller the number of
+data points, it could be minutes.
+
+20
+00:01:33,630 --> 00:01:36,580
+The second one is its uniformity.
+
+21
+00:01:36,580 --> 00:01:40,117
+It means it is uniform,
+because you get a ten by ten.
+
+22
+00:01:40,117 --> 00:01:43,659
+It's a 3D uniform structure,
+but it, it's hard and
+
+23
+00:01:43,659 --> 00:01:46,440
+are highly irregular data distribution.
+
+24
+00:01:48,130 --> 00:01:50,720
+The third feature is locality.
+
+25
+00:01:50,720 --> 00:01:55,070
+That means it's limited by
+the predefined cell size and
+
+26
+00:01:55,070 --> 00:01:58,300
+borders and
+the predefined density threshold.
+
+27
+00:01:59,840 --> 00:02:02,939
+The first one is a curse
+of dimensionality,
+
+28
+00:02:02,939 --> 00:02:06,642
+means it's hard to cluster
+high dimensional data.
+
+29
+00:02:06,642 --> 00:02:11,402
+We're going to introduce two
+methods in this lecture,
+
+30
+00:02:11,402 --> 00:02:17,177
+one called STING, called
+a Statistic Information Grid Approach,
+
+31
+00:02:17,177 --> 00:02:22,138
+developed by Wei Wang, Joe Yang,
+and Dick Muntz at UCLA,
+
+32
+00:02:22,138 --> 00:02:25,908
+published in 1997, VLDB Conference.
+
+33
+00:02:25,908 --> 00:02:30,283
+Another one, CLIQUE,
+which is both grid-based and
+
+34
+00:02:30,283 --> 00:02:34,571
+a subspace clustering,
+an interesting methodology for
+
+35
+00:02:34,571 --> 00:02:39,842
+subpace clustering developed by
+Rakesh Agrawal, Johannes Gehrke,
+
+36
+00:02:39,842 --> 00:02:45,762
+Gunopulos, and Raghavan at IBM,
+published in 1998 SIGMOD Conference.
+
+37
+00:02:45,762 --> 00:02:55,762
+[MUSIC]

@@ -1,0 +1,122 @@
+1
+00:00:00,012 --> 00:00:05,078
+[SOUND] Hi, in this session, we're going
+
+2
+00:00:05,078 --> 00:00:10,885
+to discuss applications
+of cluster analysis.
+
+3
+00:00:10,885 --> 00:00:15,470
+Cluster analysis has lots of applications.
+
+4
+00:00:15,470 --> 00:00:20,818
+For example, it has been properly
+used as pre-processing step or
+
+5
+00:00:20,818 --> 00:00:24,742
+intermediate step for
+other data mining tasks.
+
+6
+00:00:24,742 --> 00:00:29,325
+For example, you can generate complex
+summary of data for classification,
+
+7
+00:00:29,325 --> 00:00:33,781
+pattern discovery, hypothesis
+generation and testing and many others.
+
+8
+00:00:33,781 --> 00:00:39,698
+And it also has been popularly used for
+outlier detection,
+
+9
+00:00:39,698 --> 00:00:48,119
+because outliers can be considered those
+points that are far away from any cluster.
+
+10
+00:00:48,119 --> 00:00:52,565
+Cluster analysis also has been used for
+data summarization,
+
+11
+00:00:52,565 --> 00:00:54,708
+compression and reduction.
+
+12
+00:00:54,708 --> 00:00:58,084
+For example, in im, image processing,
+
+13
+00:00:58,084 --> 00:01:03,492
+vector quantization has been using
+cluster analysis quite a lot.
+
+14
+00:01:03,492 --> 00:01:08,830
+Cluster analysis also can be used for
+collaborative filtering,
+
+15
+00:01:08,830 --> 00:01:13,198
+recommendation systems or
+customer segmentation,
+
+16
+00:01:13,198 --> 00:01:19,615
+because clusters can be used to find
+like-minded users or similar products.
+
+17
+00:01:19,615 --> 00:01:26,215
+Cluster analysis also has been used for
+trend detection, for dynamic data.
+
+18
+00:01:26,215 --> 00:01:29,779
+For example, we can cluster stream data or
+
+19
+00:01:29,779 --> 00:01:34,531
+detecting trends and
+patterns in dynamic data strings.
+
+20
+00:01:34,531 --> 00:01:40,566
+And cluster analysis also has been
+used for multimedia data analysis,
+
+21
+00:01:40,566 --> 00:01:45,405
+biological data analysis and
+social network analysis.
+
+22
+00:01:45,405 --> 00:01:52,367
+For example, we can use cluster
+clustering methods to cluster images or
+
+23
+00:01:52,367 --> 00:01:58,045
+videos or audio clips or
+we can use cluster analysis on genes and
+
+24
+00:01:58,045 --> 00:02:02,998
+protein sequences and
+many other interesting tasks.
+
+25
+00:02:02,998 --> 00:02:03,498
+Thank you.
+
+26
+00:02:03,498 --> 00:02:13,498
+[MUSIC]

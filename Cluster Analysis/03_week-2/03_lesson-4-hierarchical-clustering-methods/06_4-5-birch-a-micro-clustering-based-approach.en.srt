@@ -1,0 +1,483 @@
+1
+00:00:00,690 --> 00:00:05,989
+[SOUND] In this session we
+are going to introduce you
+
+2
+00:00:05,989 --> 00:00:12,805
+an interesting extension of
+hierarchical clustering method,
+
+3
+00:00:12,805 --> 00:00:18,628
+called BIRCH: A Micro-Clustering
+Based Approach.
+
+4
+00:00:18,628 --> 00:00:23,794
+BIRCH is an abbreviation of
+Balance Iterative Reducing and
+
+5
+00:00:23,794 --> 00:00:27,250
+Clustering Using Hierarchies.
+
+6
+00:00:27,250 --> 00:00:33,540
+It was developed by a group of researchers
+in University of Wisconsin in 1996.
+
+7
+00:00:33,540 --> 00:00:38,670
+The general philosophy is,
+it incrementally constructs
+
+8
+00:00:38,670 --> 00:00:42,720
+a CF tree, or
+called a Clustering Feature tree,
+
+9
+00:00:42,720 --> 00:00:47,040
+which is a hierarchical data structure for
+multiphase clustering.
+
+10
+00:00:48,110 --> 00:00:50,403
+For phase 1, essentially,
+
+11
+00:00:50,403 --> 00:00:55,950
+it scans the database to construct
+an initial in-memory CF tree.
+
+12
+00:00:55,950 --> 00:00:59,230
+Which is a multi-level
+compression of the data that
+
+13
+00:00:59,230 --> 00:01:03,910
+tries to preserve the inherent
+clustering structure of the data.
+
+14
+00:01:05,220 --> 00:01:09,680
+Then at Phase 2, it uses an arbitrary
+
+15
+00:01:09,680 --> 00:01:14,354
+clustering algorithm to cluster
+the leaf nodes of the CF-tree.
+
+16
+00:01:15,870 --> 00:01:19,680
+The key idea is multilevel clustering.
+
+17
+00:01:19,680 --> 00:01:23,200
+The low level it does micro-clustering,
+
+18
+00:01:23,200 --> 00:01:28,690
+therefore reduces the complexity,
+and increases scalability.
+
+19
+00:01:29,840 --> 00:01:33,670
+At the high level,
+it does macro-clustering.
+
+20
+00:01:33,670 --> 00:01:36,470
+It leaves enough flexibility for
+
+21
+00:01:36,470 --> 00:01:40,430
+high level clustering using
+different clustering methodologies.
+
+22
+00:01:41,820 --> 00:01:45,310
+The BIRCH methods scales linearly.
+
+23
+00:01:45,310 --> 00:01:50,083
+That means you, it finds a good
+clustering with a single scan, and
+
+24
+00:01:50,083 --> 00:01:54,860
+then improves the quality
+with a few additional scans.
+
+25
+00:01:54,860 --> 00:01:59,200
+The clustering feature we first
+introduce is the CF vector in BIRCH.
+
+26
+00:02:01,560 --> 00:02:05,620
+The BIRCH Clustering Feature essentially
+is suppose you get these five
+
+27
+00:02:05,620 --> 00:02:07,450
+points into one cluster.
+
+28
+00:02:07,450 --> 00:02:08,180
+okay?
+
+29
+00:02:08,180 --> 00:02:14,430
+Then suppose these are the five points,
+their positions, okay?
+
+30
+00:02:14,430 --> 00:02:19,140
+Then the CF vector
+contains three components.
+
+31
+00:02:19,140 --> 00:02:21,690
+One is the number of data points.
+
+32
+00:02:21,690 --> 00:02:27,070
+The second is a linear sum of
+the points in the cluster.
+
+33
+00:02:27,070 --> 00:02:31,555
+The third one is square
+sum of the N points.
+
+34
+00:02:31,555 --> 00:02:32,990
+Okay.
+
+35
+00:02:32,990 --> 00:02:38,500
+So you probably can see the,
+the first one, 5 means there are 5 points.
+
+36
+00:02:38,500 --> 00:02:42,385
+The second one acts as a linear
+sum of each dimension.
+
+37
+00:02:42,385 --> 00:02:43,690
+Okay.
+
+38
+00:02:43,690 --> 00:02:49,710
+The third one actually is
+the squared sum of each dimension.
+
+39
+00:02:49,710 --> 00:02:54,310
+So the Clustering Feature essentially
+is the summary of the statistics of
+
+40
+00:02:54,310 --> 00:02:59,395
+a given sub-cluster, which you can
+consider the number is the zeroth,
+
+41
+00:02:59,395 --> 00:03:03,950
+the first one is the linear,
+the second one is the second moments
+
+42
+00:03:03,950 --> 00:03:08,590
+of the sub-cluster from
+the statistic point of view.
+
+43
+00:03:08,590 --> 00:03:12,538
+That means it will register
+the crucial measurements of the, for
+
+44
+00:03:12,538 --> 00:03:16,690
+computing cluster and
+utilizes storage quite efficiently.
+
+45
+00:03:16,690 --> 00:03:18,225
+So we can look at the,
+
+46
+00:03:18,225 --> 00:03:23,515
+the general concepts of centroid,
+radius, and diameter.
+
+47
+00:03:23,515 --> 00:03:24,640
+Okay.
+
+48
+00:03:24,640 --> 00:03:28,840
+The centroid essentially is
+the center of the cluster, okay?
+
+49
+00:03:28,840 --> 00:03:34,892
+Then, suppose we have a vector
+of N dimensions, x sub i.
+
+50
+00:03:34,892 --> 00:03:35,890
+Okay.
+
+51
+00:03:35,890 --> 00:03:41,000
+Then, the centroid is essentially
+computed by the sum of
+
+52
+00:03:41,000 --> 00:03:46,600
+all the points in this cluster divided
+by the number of points in the cluster,
+
+53
+00:03:46,600 --> 00:03:49,515
+so that what we get is
+a centroid of the cluster.
+
+54
+00:03:49,515 --> 00:03:51,090
+Okay.
+
+55
+00:03:51,090 --> 00:03:54,940
+Then the radius actually is
+the average distance from the member
+
+56
+00:03:54,940 --> 00:03:56,880
+objects to the centroid.
+
+57
+00:03:56,880 --> 00:04:01,940
+That essentially is every one you
+get a difference with the centroid,
+
+58
+00:04:01,940 --> 00:04:07,240
+then we use the sum of
+their square distance.
+
+59
+00:04:07,240 --> 00:04:09,913
+Divide by the number of
+points in the cluster.
+
+60
+00:04:09,913 --> 00:04:11,790
+Take their square root.
+
+61
+00:04:11,790 --> 00:04:15,190
+Essentially it's the square
+root of the average distance
+
+62
+00:04:15,190 --> 00:04:18,510
+from any point of
+the cluster to its centroid.
+
+63
+00:04:19,630 --> 00:04:20,920
+What is diameter?
+
+64
+00:04:20,920 --> 00:04:25,730
+Diameter essentially is average
+pairwise distance within the cluster.
+
+65
+00:04:25,730 --> 00:04:31,800
+That means if x i and x j is within the
+same cluster, so essentially what we want,
+
+66
+00:04:31,800 --> 00:04:37,650
+we will find is there are total
+n times n minus 1 pairs and
+
+67
+00:04:37,650 --> 00:04:42,780
+we sum up all these pairwise distance
+then you get the square root.
+
+68
+00:04:42,780 --> 00:04:43,920
+That's the diameter.
+
+69
+00:04:45,580 --> 00:04:49,530
+Then we look at CF Tree
+structure in BIRCH.
+
+70
+00:04:49,530 --> 00:04:54,260
+The CF Tree Structure essentially
+is very much like a, B+-tree.
+
+71
+00:04:54,260 --> 00:04:57,620
+We can do incremental
+insertion of the new points.
+
+72
+00:04:57,620 --> 00:05:03,240
+That means when the new points come,
+okay, we can find the closest leaf entry.
+
+73
+00:05:03,240 --> 00:05:04,790
+Start from the root.
+
+74
+00:05:04,790 --> 00:05:08,940
+Okay, then we try,
+traverse we find the closest entry,
+
+75
+00:05:08,940 --> 00:05:13,270
+we can add points to the leaf entry and
+update the Clustering Feature, CF.
+
+76
+00:05:14,990 --> 00:05:20,070
+If this entry diameter is greater
+than the maximum diameter,
+
+77
+00:05:20,070 --> 00:05:24,650
+then we'll split the leaf and
+if it's possibly we
+
+78
+00:05:24,650 --> 00:05:30,060
+even will be able to split parents
+based on the B+-tree algorithm.
+
+79
+00:05:30,060 --> 00:05:35,270
+A CF tree has two parameters,
+one called branching factor.
+
+80
+00:05:35,270 --> 00:05:37,710
+That means the maximum number of children.
+
+81
+00:05:37,710 --> 00:05:42,045
+Another is maximum diameter of
+sub-clusters stored at the leaf nodes.
+
+82
+00:05:42,045 --> 00:05:45,774
+Then a CF tree essentially is
+height-balanced tree that stores
+
+83
+00:05:45,774 --> 00:05:47,850
+the clustering features.
+
+84
+00:05:47,850 --> 00:05:53,690
+The non-leaf nodes store the sums of
+clustering features of their children.
+
+85
+00:05:55,680 --> 00:05:59,965
+So we can see BIRCH is an interesting
+algorithm, because it, it is
+
+86
+00:05:59,965 --> 00:06:06,100
+an integration of agglomerative clustering
+with other flexible clustering methods.
+
+87
+00:06:06,100 --> 00:06:09,542
+The low level we do micro-clustering.
+
+88
+00:06:09,542 --> 00:06:13,690
+We explore the CF feature and
+BIRCH tree structure.
+
+89
+00:06:13,690 --> 00:06:17,770
+It preserves the inherent
+clustering structure of the data.
+
+90
+00:06:18,890 --> 00:06:22,050
+At the high level we do macro-clustering.
+
+91
+00:06:22,050 --> 00:06:28,380
+It provides sufficient flexibility for
+integration with other clustering methods.
+
+92
+00:06:28,380 --> 00:06:32,910
+So this method act, impact to
+many other clustering methods and
+
+93
+00:06:32,910 --> 00:06:35,240
+applications for large data sets.
+
+94
+00:06:36,260 --> 00:06:37,710
+There are some concerns.
+
+95
+00:06:37,710 --> 00:06:39,790
+One is the,
+
+96
+00:06:39,790 --> 00:06:45,950
+the BIRCH tree is still sensitive to
+the insertion order of the data points.
+
+97
+00:06:45,950 --> 00:06:50,240
+Another is,
+since the leaf nodes has a fixed size,
+
+98
+00:06:50,240 --> 00:06:54,130
+the clustering obtained
+may not be as natural.
+
+99
+00:06:54,130 --> 00:06:59,550
+And also, the clusters tend to be
+spherical given the radius and
+
+100
+00:06:59,550 --> 00:07:01,930
+diameter measure as the major parameters.
+
+101
+00:07:03,890 --> 00:07:08,296
+Still, it is pretty
+interesting algorithm and
+
+102
+00:07:08,296 --> 00:07:12,379
+it can generate quite effective clusters.
+
+103
+00:07:12,379 --> 00:07:22,379
+[MUSIC]

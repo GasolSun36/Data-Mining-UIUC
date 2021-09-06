@@ -1,0 +1,508 @@
+1
+00:00:00,025 --> 00:00:05,923
+[SOUND] Hi,
+in this session we are going to introduce
+
+2
+00:00:05,923 --> 00:00:10,727
+an interesting hierarchical clustering
+
+3
+00:00:10,727 --> 00:00:15,255
+algorithm extension called CHAMELEON
+
+4
+00:00:15,255 --> 00:00:20,055
+which is a graph partitioning on the KNN,
+
+5
+00:00:20,055 --> 00:00:25,151
+means Kenya's neighbor graph of the data.
+
+6
+00:00:25,151 --> 00:00:30,717
+So, this graph partitioning
+based approach was developed
+
+7
+00:00:30,717 --> 00:00:37,295
+in 1999 by a group of researchers
+at the University of Minnesota.
+
+8
+00:00:37,295 --> 00:00:40,520
+CHAMELEON actually has
+some interesting points.
+
+9
+00:00:40,520 --> 00:00:44,960
+It measures the similarity
+based on a dynamic model.
+
+10
+00:00:44,960 --> 00:00:48,320
+Essentially two clusters are merged.
+
+11
+00:00:48,320 --> 00:00:53,680
+Only if the interconnectivity and
+the closeness between the two clusters
+
+12
+00:00:53,680 --> 00:01:00,690
+are high relative to their internal
+interconnectivity of the clusters.
+
+13
+00:01:00,690 --> 00:01:03,940
+And a closeness of items
+within the clusters.
+
+14
+00:01:05,280 --> 00:01:09,580
+CHAMELEON is a graph-based,
+two-phase algorithm.
+
+15
+00:01:09,580 --> 00:01:15,050
+In the first phase,
+it uses a graph partitioning algorithm.
+
+16
+00:01:15,050 --> 00:01:18,650
+Essentially, it cluster objects into
+
+17
+00:01:18,650 --> 00:01:22,600
+a large number of relatively
+small sub-clusters.
+
+18
+00:01:22,600 --> 00:01:24,340
+Also, we call it graphlets.
+
+19
+00:01:25,580 --> 00:01:29,960
+Then, in the second phase,
+it uses an agglomerative
+
+20
+00:01:29,960 --> 00:01:34,620
+hierarchical clustering algorithm
+to find the genuine clusters
+
+21
+00:01:34,620 --> 00:01:39,630
+by repeatedly combining these
+sub-clusters or these graphlets.
+
+22
+00:01:40,770 --> 00:01:43,630
+Let's look at the overall
+framework of CHAMELEON.
+
+23
+00:01:45,510 --> 00:01:47,590
+Suppose we have a large data set.
+
+24
+00:01:49,230 --> 00:01:56,156
+Then we can use K-NN graph to merge
+them into sparse graph like this.
+
+25
+00:01:56,156 --> 00:01:58,920
+What is K-NN graph?
+
+26
+00:01:58,920 --> 00:02:02,870
+Essentially we can see that two points,
+P and Q, are connected.
+
+27
+00:02:02,870 --> 00:02:05,720
+If Q is among the top k
+closest neighbors of p,
+
+28
+00:02:05,720 --> 00:02:09,920
+then based on this k nearest neighbor,
+you construct this graph.
+
+29
+00:02:11,530 --> 00:02:14,640
+Then we'll repartition this graph
+
+30
+00:02:14,640 --> 00:02:19,477
+into a good number of smaller subclusters,
+or called graphlets.
+
+31
+00:02:21,510 --> 00:02:28,330
+After this partitioning, we are going to
+merge them into high quality clusters.
+
+32
+00:02:28,330 --> 00:02:32,610
+How we merge those graphlets
+back to the bigger clusters?
+
+33
+00:02:32,610 --> 00:02:37,750
+Essentially the,
+the merge is based on these two measures.
+
+34
+00:02:37,750 --> 00:02:43,680
+One we call relative interconnectivity,
+another we call relative closeness.
+
+35
+00:02:43,680 --> 00:02:48,140
+Relatively interconnectivity means
+the connectivity of C sub 1 and
+
+36
+00:02:48,140 --> 00:02:52,910
+C sub 2 over their respective
+internal connectivity.
+
+37
+00:02:54,120 --> 00:02:55,080
+Okay.
+
+38
+00:02:55,080 --> 00:03:02,710
+Then the relative closeness is defined as
+closeness between clusters C sub 1 and
+
+39
+00:03:02,710 --> 00:03:07,629
+C sub 2 over their respective
+internal closeness.
+
+40
+00:03:09,850 --> 00:03:14,220
+Let's look at the,
+the messert in some detail.
+
+41
+00:03:15,270 --> 00:03:17,992
+The first is KNN graph.
+
+42
+00:03:17,992 --> 00:03:19,860
+What is KNN graph?
+
+43
+00:03:19,860 --> 00:03:21,280
+Let's look at the example.
+
+44
+00:03:22,500 --> 00:03:25,030
+This is the original two
+dimensional data set.
+
+45
+00:03:26,090 --> 00:03:30,890
+So the first nearest neighbor,
+one nearest neighbor graph is for
+
+46
+00:03:30,890 --> 00:03:34,940
+each point, each you know, object.
+
+47
+00:03:34,940 --> 00:03:38,140
+You just find the top
+one closest neighbor.
+
+48
+00:03:38,140 --> 00:03:41,360
+For example,
+this ones closest neighbor could be here,
+
+49
+00:03:41,360 --> 00:03:43,700
+this ones close neighbor could be here.
+
+50
+00:03:43,700 --> 00:03:48,490
+Then you construct a subgraph
+based on these you get a one,
+
+51
+00:03:49,510 --> 00:03:52,720
+you get a one, one nearest neighbor graph.
+
+52
+00:03:53,790 --> 00:03:58,030
+For two nearest neighbor graph is you,
+for each point,
+
+53
+00:03:58,030 --> 00:04:03,630
+you look their two, top two nearest
+neighbor, construct a graph like this.
+
+54
+00:04:03,630 --> 00:04:07,810
+Three nearest neighbor graph is for
+each point, you look at their top
+
+55
+00:04:07,810 --> 00:04:11,430
+three nearest neighbors in
+a constructed graph like this.
+
+56
+00:04:11,430 --> 00:04:12,580
+Okay?
+
+57
+00:04:12,580 --> 00:04:17,620
+Then, we look at their absolute
+interconnectivity between C
+
+58
+00:04:17,620 --> 00:04:20,220
+sub i and C sub j.
+
+59
+00:04:20,220 --> 00:04:21,530
+Okay.
+
+60
+00:04:21,530 --> 00:04:25,180
+These absolute in,
+interconnectivity is, essentially,
+
+61
+00:04:25,180 --> 00:04:27,790
+the sum of the weight of the edges.
+
+62
+00:04:27,790 --> 00:04:32,730
+That connects vertices in C
+sub i to vertices in C sub j.
+
+63
+00:04:32,730 --> 00:04:37,050
+Essentially you look at
+the weighted sum of these edges.
+
+64
+00:04:38,560 --> 00:04:43,070
+Then the internal connectivity
+of the cluster C sub i
+
+65
+00:04:43,070 --> 00:04:46,840
+essentially the size of
+its min-cut bisector,
+
+66
+00:04:46,840 --> 00:04:52,270
+the weighted sum of these edges partition
+the graph into two roughly equal parts.
+
+67
+00:04:52,270 --> 00:04:55,610
+Then you look at the weighted sum
+of the edges of these partition.
+
+68
+00:04:57,360 --> 00:05:03,590
+Then the relative interconnectivity,
+RI, essentially is for C sub i and
+
+69
+00:05:03,590 --> 00:05:09,740
+C sub j is defined by their ab,
+absolute interconnectivity divided by or
+
+70
+00:05:09,740 --> 00:05:16,380
+you can say normalized by the average
+of their respective interconnectivity.
+
+71
+00:05:16,380 --> 00:05:22,210
+Then we look at the relative closeness and
+the merge of sub-clusters.
+
+72
+00:05:22,210 --> 00:05:27,320
+Relative closeness between
+a pair of clusters C sub i and
+
+73
+00:05:27,320 --> 00:05:30,230
+C sub j is defined as follows.
+
+74
+00:05:30,230 --> 00:05:35,500
+The first is what is absolute
+closeness between C sub i and C sub j.
+
+75
+00:05:36,550 --> 00:05:41,480
+The absolute closeness essentially is
+the average weight of the edges connected
+
+76
+00:05:41,480 --> 00:05:45,285
+these, the vertices between
+these two clusters.
+
+77
+00:05:46,510 --> 00:05:53,152
+Then their internal essentially
+the internal closeness like
+
+78
+00:05:53,152 --> 00:05:58,754
+this internal closeness of C sub
+i internal closeness of C sub j,
+
+79
+00:05:58,754 --> 00:06:04,046
+is the average weight of the edges
+that belong to the min-cut
+
+80
+00:06:04,046 --> 00:06:09,210
+bisector of clusters C sub i and
+C sub j, respectively.
+
+81
+00:06:09,210 --> 00:06:14,145
+That means you look at what
+is min-cut bisector cut
+
+82
+00:06:14,145 --> 00:06:18,130
+this cluster, or cutting this cluster.
+
+83
+00:06:18,130 --> 00:06:22,194
+Then you'll find,
+their average weights of the edges.
+
+84
+00:06:22,194 --> 00:06:22,694
+Okay.
+
+85
+00:06:23,820 --> 00:06:30,080
+Then you probably can see the relativeness
+is, is the absolute closeness
+
+86
+00:06:30,080 --> 00:06:35,379
+normalized with their inproportionally
+defined internal closeness.
+
+87
+00:06:37,430 --> 00:06:41,160
+Then how do we merge sub-clusters?
+
+88
+00:06:41,160 --> 00:06:45,790
+Essentially is we will only
+merge those pairs of clusters
+
+89
+00:06:45,790 --> 00:06:48,660
+whose relative interconnectivity and
+
+90
+00:06:48,660 --> 00:06:53,210
+relative closeness are both above
+some user specified threshold.
+
+91
+00:06:54,232 --> 00:06:58,905
+That means we only merge those maximizing
+the function that combines relative
+
+92
+00:06:58,905 --> 00:07:01,550
+interconnectivity and relative closeness.
+
+93
+00:07:01,550 --> 00:07:05,020
+That means even we find
+those pair are mergeable,
+
+94
+00:07:05,020 --> 00:07:10,790
+we still want to find these merge,
+we're maximizing the function.
+
+95
+00:07:10,790 --> 00:07:17,160
+Then based on the implementation and
+experiments we properly can see,
+
+96
+00:07:17,160 --> 00:07:22,560
+CHAMELEON actually can cluster
+complex objects like this.
+
+97
+00:07:22,560 --> 00:07:23,060
+Okay.
+
+98
+00:07:23,060 --> 00:07:28,270
+This actually, these are all the different
+points with different density
+
+99
+00:07:28,270 --> 00:07:32,640
+different shapes,
+as well as lots of noise points.
+
+100
+00:07:34,210 --> 00:07:38,440
+Even with different shapes,
+different density and different shapes and
+
+101
+00:07:38,440 --> 00:07:39,970
+different noises,
+
+102
+00:07:39,970 --> 00:07:45,970
+we still can see CHAMELEON actually
+generates pretty high quality clusters.
+
+103
+00:07:45,970 --> 00:07:46,620
+Okay.
+
+104
+00:07:46,620 --> 00:07:51,187
+That simply says CHAMELEON
+using this graph partioning and
+
+105
+00:07:51,187 --> 00:07:57,409
+emerging methods is pretty robust and
+generate a pretty high quality clusters.
+
+106
+00:07:57,409 --> 00:08:01,824
+Even it is in the spirit
+of hierarchical clustering,
+
+107
+00:08:01,824 --> 00:08:06,348
+it does do a lot of good with
+this graph-based method.
+
+108
+00:08:06,348 --> 00:08:16,348
+[MUSIC]

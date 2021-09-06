@@ -1,0 +1,735 @@
+1
+00:00:04,940 --> 00:00:10,110
+In the last session
+we discussed DB scan,
+
+2
+00:00:10,110 --> 00:00:12,810
+a density-based
+clustering methods.
+
+3
+00:00:12,810 --> 00:00:15,360
+For the same group of authors,
+
+4
+00:00:15,360 --> 00:00:17,160
+they later invented
+
+5
+00:00:17,160 --> 00:00:20,385
+another interesting
+algorithm called OPTICS,
+
+6
+00:00:20,385 --> 00:00:24,720
+ordering points to identify
+clustering structures.
+
+7
+00:00:24,720 --> 00:00:26,685
+Why they wanted to do that?
+
+8
+00:00:26,685 --> 00:00:31,485
+Just because DBscan is
+sensitive to parameter setting.
+
+9
+00:00:31,485 --> 00:00:36,980
+So OPTICS extended DBscan
+but make it is much
+
+10
+00:00:36,980 --> 00:00:39,980
+less sensitive to
+parameter setting
+
+11
+00:00:39,980 --> 00:00:43,355
+because it can find
+a clustering structure.
+
+12
+00:00:43,355 --> 00:00:46,940
+This algorithm was developed
+by almost the same group of
+
+13
+00:00:46,940 --> 00:00:51,230
+authors in SIGMOD 1999.
+
+14
+00:00:51,230 --> 00:00:54,620
+We can have a simple operation.
+
+15
+00:00:54,620 --> 00:00:57,665
+Suppose we fix one parameter of
+
+16
+00:00:57,665 --> 00:01:01,145
+DBscan say minimum
+number of points.
+
+17
+00:01:01,145 --> 00:01:04,655
+Then for density-based clusters
+
+18
+00:01:04,655 --> 00:01:07,400
+with respect to high density,
+
+19
+00:01:07,400 --> 00:01:11,945
+that means you just
+need a small radius
+
+20
+00:01:11,945 --> 00:01:17,420
+to cover the number of
+minimum points like five,
+
+21
+00:01:17,420 --> 00:01:22,295
+these dense clusters
+are completely
+
+22
+00:01:22,295 --> 00:01:27,725
+contained in clusters with
+respect to a lower density.
+
+23
+00:01:27,725 --> 00:01:31,070
+Simply it says,
+the dense cluster is deeply
+
+24
+00:01:31,070 --> 00:01:34,560
+nested in the less
+dense clusters because,
+
+25
+00:01:34,560 --> 00:01:38,960
+less dense cluster
+needs a bigger radius
+
+26
+00:01:38,960 --> 00:01:44,435
+to cover the same number
+of minimum points.
+
+27
+00:01:44,435 --> 00:01:48,110
+So if we observe
+this one we probably can
+
+28
+00:01:48,110 --> 00:01:51,725
+see we may have high
+density points,
+
+29
+00:01:51,725 --> 00:01:55,115
+it should be processed
+first or deeper,
+
+30
+00:01:55,115 --> 00:01:58,945
+in order to find a high
+density cluster first,
+
+31
+00:01:58,945 --> 00:02:02,120
+then we can plot them
+
+32
+00:02:02,120 --> 00:02:06,360
+into a reachability plot
+for datasets.
+
+33
+00:02:06,770 --> 00:02:10,850
+OPTICS actually stores
+such a clustering structure
+
+34
+00:02:10,850 --> 00:02:13,055
+using two pieces of information,
+
+35
+00:02:13,055 --> 00:02:15,950
+core distance and the
+reachability distance.
+
+36
+00:02:15,950 --> 00:02:18,215
+We will introduced
+in the next slide,
+
+37
+00:02:18,215 --> 00:02:22,055
+but let's look at
+this reachability plot.
+
+38
+00:02:22,055 --> 00:02:26,315
+If we got this set of datasets,
+
+39
+00:02:26,315 --> 00:02:30,859
+then if we study their
+reachability distance,
+
+40
+00:02:30,859 --> 00:02:34,030
+since the points
+belonging to a cluster,
+
+41
+00:02:34,030 --> 00:02:36,410
+have lower reachability
+distance to
+
+42
+00:02:36,410 --> 00:02:39,230
+their nearest neighbors
+simply it says you just need
+
+43
+00:02:39,230 --> 00:02:44,720
+a smaller disk to cover
+the minimum number of points.
+
+44
+00:02:44,720 --> 00:02:50,570
+So your Epsilon disk radius
+should be smaller.
+
+45
+00:02:50,570 --> 00:02:53,630
+That means the valley should
+
+46
+00:02:53,630 --> 00:02:57,155
+contain the very dense clusters.
+
+47
+00:02:57,155 --> 00:02:59,030
+The deeper the valley,
+
+48
+00:02:59,030 --> 00:03:00,695
+the denser the cluster.
+
+49
+00:03:00,695 --> 00:03:03,200
+So you probably can
+see if we order
+
+50
+00:03:03,200 --> 00:03:06,019
+them according to their
+reachability distance,
+
+51
+00:03:06,019 --> 00:03:09,215
+we probably can plot
+them into a graph.
+
+52
+00:03:09,215 --> 00:03:12,740
+So you can easily find
+the clustering instructors.
+
+53
+00:03:12,740 --> 00:03:15,805
+So that's the trick of OPTICS.
+
+54
+00:03:15,805 --> 00:03:19,764
+Then let's look at how OPTICS
+
+55
+00:03:19,764 --> 00:03:23,855
+is defining core distance and
+the reachability distance.
+
+56
+00:03:23,855 --> 00:03:26,195
+We first look at
+the core distance.
+
+57
+00:03:26,195 --> 00:03:30,110
+For a core distance of
+an object p like this one
+
+58
+00:03:30,110 --> 00:03:34,680
+is the smallest
+Epsilon value such
+
+59
+00:03:34,680 --> 00:03:39,120
+that piece Epsilons
+neighborhood will
+
+60
+00:03:39,120 --> 00:03:40,815
+contain at least the
+
+61
+00:03:40,815 --> 00:03:44,130
+minimum points objects,
+for example five.
+
+62
+00:03:44,130 --> 00:03:47,085
+Let's see if you say p,
+
+63
+00:03:47,085 --> 00:03:49,100
+you'll try to find its radius to
+
+64
+00:03:49,100 --> 00:03:51,560
+cover five points like one,
+
+65
+00:03:51,560 --> 00:03:53,405
+two, three, four, five points.
+
+66
+00:03:53,405 --> 00:03:55,265
+Now you probably can see
+
+67
+00:03:55,265 --> 00:03:58,985
+this Epsilon should
+be three millimeters.
+
+68
+00:03:58,985 --> 00:04:01,550
+Simply say three
+millimeter you will
+
+69
+00:04:01,550 --> 00:04:04,490
+be able to cover five points,
+
+70
+00:04:04,490 --> 00:04:08,585
+that's actually is the
+definition of the core distance.
+
+71
+00:04:08,585 --> 00:04:13,995
+Simply it says if
+p is so isolated,
+
+72
+00:04:13,995 --> 00:04:16,385
+you just cannot find
+
+73
+00:04:16,385 --> 00:04:20,480
+enough neighbors to cover
+the minimum points.
+
+74
+00:04:20,480 --> 00:04:22,805
+Then we say this core distance is
+
+75
+00:04:22,805 --> 00:04:26,230
+undefined because you
+would stretch so large,
+
+76
+00:04:26,230 --> 00:04:28,810
+you just cannot find
+enough neighbors.
+
+77
+00:04:28,810 --> 00:04:30,980
+On the other hand,
+
+78
+00:04:30,980 --> 00:04:34,010
+if you can find the minimum
+number of points,
+
+79
+00:04:34,010 --> 00:04:36,080
+then this minimum
+number of points
+
+80
+00:04:36,080 --> 00:04:38,885
+distance of p is
+the core distance.
+
+81
+00:04:38,885 --> 00:04:41,080
+For example here like this p,
+
+82
+00:04:41,080 --> 00:04:44,140
+you just need a three
+millimeter to cover this,
+
+83
+00:04:44,140 --> 00:04:47,795
+then the core distance
+is three millimeter.
+
+84
+00:04:47,795 --> 00:04:51,800
+Then we look at
+reachability distance.
+
+85
+00:04:51,800 --> 00:04:55,365
+The reachability distance is from
+
+86
+00:04:55,365 --> 00:04:59,430
+a core object q.
+Reachability distance of p,
+
+87
+00:04:59,430 --> 00:05:02,115
+you want to reach this q,
+
+88
+00:05:02,115 --> 00:05:05,930
+what you want to define is
+the minimum radius value
+
+89
+00:05:05,930 --> 00:05:10,500
+which makes p density
+reachable from q.
+
+90
+00:05:10,500 --> 00:05:16,515
+If you want to see if
+p can reach q from q,
+
+91
+00:05:16,515 --> 00:05:21,560
+then you just to see if
+q is not a core object.
+
+92
+00:05:21,560 --> 00:05:26,070
+Simply it says no matter
+how big your stretch is,
+
+93
+00:05:26,070 --> 00:05:29,270
+just cannot have enough object
+
+94
+00:05:29,270 --> 00:05:31,565
+to get a minimum
+number of points,
+
+95
+00:05:31,565 --> 00:05:35,590
+then this reachability
+distance is undefined.
+
+96
+00:05:35,590 --> 00:05:39,750
+Otherwise, you just to
+see which one is bigger.
+
+97
+00:05:39,750 --> 00:05:42,420
+Is it the core distance,
+is it bigger,
+
+98
+00:05:42,420 --> 00:05:46,230
+or the distance from
+q to p is bigger?
+
+99
+00:05:46,230 --> 00:05:51,680
+For this picture you probably
+can see is if you look at
+
+100
+00:05:51,680 --> 00:05:54,980
+the reachability distance from
+
+101
+00:05:54,980 --> 00:05:57,590
+q to p rather than from p to q,
+
+102
+00:05:57,590 --> 00:06:00,800
+we just looked at it
+from q to p. If q1 to
+
+103
+00:06:00,800 --> 00:06:06,209
+p is smaller than
+the core distance,
+
+104
+00:06:06,209 --> 00:06:08,450
+then the core distance
+
+105
+00:06:08,450 --> 00:06:10,880
+should be the
+reachability distance.
+
+106
+00:06:10,880 --> 00:06:15,485
+Otherwise, like this
+q2 try to reach p,
+
+107
+00:06:15,485 --> 00:06:20,070
+then if it's bigger
+than the core distance,
+
+108
+00:06:20,070 --> 00:06:21,995
+then the reachability distance
+
+109
+00:06:21,995 --> 00:06:24,890
+is the distance between p and q2.
+
+110
+00:06:24,890 --> 00:06:27,050
+So that's essentially is
+
+111
+00:06:27,050 --> 00:06:29,240
+the definition of
+reachability distance.
+
+112
+00:06:29,240 --> 00:06:32,620
+That mean how big your disk is in
+
+113
+00:06:32,620 --> 00:06:36,695
+order to reach enough
+number of minimum points.
+
+114
+00:06:36,695 --> 00:06:39,725
+To calculate this,
+the complexity is
+
+115
+00:06:39,725 --> 00:06:43,085
+O (N log ) if you have index.
+
+116
+00:06:43,085 --> 00:06:44,640
+N is number of points,
+
+117
+00:06:44,640 --> 00:06:46,935
+so it is not too bad.
+
+118
+00:06:46,935 --> 00:06:49,780
+Then based on this idea,
+
+119
+00:06:49,780 --> 00:06:52,880
+we actually work out
+these clustering structure.
+
+120
+00:06:52,880 --> 00:06:55,535
+The structural graph,
+the nice thing
+
+121
+00:06:55,535 --> 00:06:58,425
+is this method produces
+
+122
+00:06:58,425 --> 00:07:00,410
+special clustering ordering of
+
+123
+00:07:00,410 --> 00:07:02,450
+the data points with respect
+
+124
+00:07:02,450 --> 00:07:05,120
+to density-based
+clustering structure.
+
+125
+00:07:05,120 --> 00:07:08,270
+Then the clustering structure
+
+126
+00:07:08,270 --> 00:07:10,610
+actually it contains information
+
+127
+00:07:10,610 --> 00:07:13,215
+equivalent to density-based of
+
+128
+00:07:13,215 --> 00:07:15,410
+clustering corresponding to
+
+129
+00:07:15,410 --> 00:07:18,050
+a broad range of
+parameter settings.
+
+130
+00:07:18,050 --> 00:07:20,750
+For example, the first
+thing is you fix
+
+131
+00:07:20,750 --> 00:07:24,070
+the minimum number of points
+you'll get this plot.
+
+132
+00:07:24,070 --> 00:07:25,880
+With this plot for example,
+
+133
+00:07:25,880 --> 00:07:28,880
+you see there are
+four major clusters.
+
+134
+00:07:28,880 --> 00:07:30,920
+If you do not think this one is
+
+135
+00:07:30,920 --> 00:07:33,350
+something you actually
+can find a one,
+
+136
+00:07:33,350 --> 00:07:35,645
+two, three, four clusters.
+
+137
+00:07:35,645 --> 00:07:40,845
+Even you change the
+number of minimum points,
+
+138
+00:07:40,845 --> 00:07:45,950
+you will still be able to find
+the same number one, two,
+
+139
+00:07:45,950 --> 00:07:47,630
+three, four, of course,
+
+140
+00:07:47,630 --> 00:07:50,360
+the plot is somehow
+changed the shape
+
+141
+00:07:50,360 --> 00:07:53,835
+with the different
+minimum number of points,
+
+142
+00:07:53,835 --> 00:07:56,265
+but still we can
+find four clusters.
+
+143
+00:07:56,265 --> 00:07:59,000
+Moreover, you can
+find nested clusters.
+
+144
+00:07:59,000 --> 00:08:01,324
+For example, this bigger cluster
+
+145
+00:08:01,324 --> 00:08:04,055
+has three deeply nested clusters.
+
+146
+00:08:04,055 --> 00:08:05,980
+When you look at
+this bigger cluster,
+
+147
+00:08:05,980 --> 00:08:10,560
+it contains if you'd see
+the deeper one you'd see one,
+
+148
+00:08:10,560 --> 00:08:14,690
+two, three deeper clusters
+corresponding to this.
+
+149
+00:08:14,690 --> 00:08:18,140
+So you probably can see
+this is a very nice
+
+150
+00:08:18,140 --> 00:08:21,890
+you'd use different lie
+on the Epsilon.
+
+151
+00:08:21,890 --> 00:08:23,735
+You actually can find
+
+152
+00:08:23,735 --> 00:08:27,455
+the bigger cluster and
+nested clustering structures.
+
+153
+00:08:27,455 --> 00:08:31,115
+So it is a pretty
+interesting algorithm
+
+154
+00:08:31,115 --> 00:08:35,675
+and you can actually use
+automatic or interactive.
+
+155
+00:08:35,675 --> 00:08:38,525
+If you do clustering analysis,
+
+156
+00:08:38,525 --> 00:08:41,000
+you can find intrinsic
+
+157
+00:08:41,000 --> 00:08:44,420
+even hierarchically nested
+clustering structures.
+
+158
+00:08:44,420 --> 00:08:49,700
+So this is a pretty interesting
+extension to DBscan,
+
+159
+00:08:49,700 --> 00:08:53,970
+that's the OPTICS algorithm.

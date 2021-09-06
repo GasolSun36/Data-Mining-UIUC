@@ -1,0 +1,358 @@
+1
+00:00:00,000 --> 00:00:03,748
+[MUSIC]
+
+2
+00:00:05,978 --> 00:00:12,207
+In this session, I'm going to introduce
+the K-median and the K-modes clustering
+
+3
+00:00:12,207 --> 00:00:18,010
+methods as two interesting alternatives
+to the K-means clustering method.
+
+4
+00:00:19,230 --> 00:00:21,720
+Why we want to do K-Medians.
+
+5
+00:00:21,720 --> 00:00:26,160
+Because medians are better than
+means when we encounter outliers.
+
+6
+00:00:27,590 --> 00:00:32,140
+Medians usually less sensitive
+to outliers comparing to means.
+
+7
+00:00:32,140 --> 00:00:37,220
+For example, in a large firm, okay,
+there could be many employees.
+
+8
+00:00:37,220 --> 00:00:41,770
+We want to find the median salary,
+even when you're adding,
+
+9
+00:00:41,770 --> 00:00:46,760
+when you add a few top executives,
+the mean salary may change quite a lot.
+
+10
+00:00:46,760 --> 00:00:49,390
+The median could still be very stable.
+
+11
+00:00:51,020 --> 00:00:55,630
+So that's the reason, instead of
+computing the mean value of the object
+
+12
+00:00:55,630 --> 00:01:01,410
+in the cluster, so
+we take the medians of the centroid.
+
+13
+00:01:01,410 --> 00:01:03,500
+And we use L1 norm.
+
+14
+00:01:03,500 --> 00:01:08,970
+That means the distance
+as our distance measure.
+
+15
+00:01:08,970 --> 00:01:14,500
+The criterion function for the K-Medians
+algorithm is written as this.
+
+16
+00:01:14,500 --> 00:01:21,435
+The center is sum, the total sum should
+be K from one to the number of cluster K,
+
+17
+00:01:21,435 --> 00:01:28,388
+and for each cluster the object in the
+cluster you just look at the difference.
+
+18
+00:01:28,388 --> 00:01:33,200
+The difference take the absolute value
+
+19
+00:01:33,200 --> 00:01:37,350
+of their distance to the median.
+
+20
+00:01:37,350 --> 00:01:41,680
+The K-Medians clustering algorithm
+essentially is written as follows.
+
+21
+00:01:41,680 --> 00:01:45,680
+The first,
+at the very beginning we selected
+
+22
+00:01:45,680 --> 00:01:49,820
+K points as the initial
+representative objects.
+
+23
+00:01:49,820 --> 00:01:53,270
+That means as initial K medians.
+
+24
+00:01:53,270 --> 00:02:00,010
+Then we get into this loop, we assign
+every point to its nearest median.
+
+25
+00:02:00,010 --> 00:02:05,770
+Then we re-compute the median using
+the median of each individual feature.
+
+26
+00:02:07,170 --> 00:02:12,340
+Then this process repeats until
+the convergence criterion is satisfied.
+
+27
+00:02:14,310 --> 00:02:20,246
+Then we look at k-modes as another
+interesting alternative to k-means.
+
+28
+00:02:20,246 --> 00:02:24,044
+K-modes essentially is to
+handle categorical data.
+
+29
+00:02:24,044 --> 00:02:30,980
+Because K-Means cannot handle
+non-numerical, categorical, data.
+
+30
+00:02:30,980 --> 00:02:35,000
+Of course we can map
+categorical value to 1 or 0.
+
+31
+00:02:35,000 --> 00:02:39,095
+However, this mapping cannot
+generate the quality clusters for
+
+32
+00:02:39,095 --> 00:02:40,120
+high-dimensional data.
+
+33
+00:02:41,650 --> 00:02:46,790
+Then people propose K-Modes
+method which is an extension
+
+34
+00:02:46,790 --> 00:02:51,350
+to K-Means by replacing the means
+of the clusters with modes.
+
+35
+00:02:53,300 --> 00:02:56,620
+The Similarity measure
+between object X and
+
+36
+00:02:56,620 --> 00:03:01,560
+the center of cluster Z is
+written as follows, okay.
+
+37
+00:03:01,560 --> 00:03:05,490
+This is the similarity,
+we can see distance measured,
+
+38
+00:03:05,490 --> 00:03:07,660
+distance function, okay.
+
+39
+00:03:07,660 --> 00:03:12,793
+For the jth field of object x,
+that means x sub j, and
+
+40
+00:03:12,793 --> 00:03:19,346
+look at the jth field of the cluster
+center z, what's a distance?
+
+41
+00:03:19,346 --> 00:03:25,918
+It essentially is if this object is not
+equal to the center on the same attribute,
+
+42
+00:03:25,918 --> 00:03:31,333
+essentially say they are different,
+then we just say the distance
+
+43
+00:03:31,333 --> 00:03:37,750
+is one because it's very dissimilar,
+or the distance is largest.
+
+44
+00:03:37,750 --> 00:03:40,690
+However, when this value is equal
+
+45
+00:03:40,690 --> 00:03:45,860
+to this attribute center here
+then we use this formula.
+
+46
+00:03:45,860 --> 00:03:50,830
+This formula actually means if
+there are many many objects occur
+
+47
+00:03:50,830 --> 00:03:54,110
+the same in this cluster, okay.
+
+48
+00:03:54,110 --> 00:03:57,060
+Then, this value actual be very small.
+
+49
+00:03:57,060 --> 00:04:03,420
+For example if the attribute cluster,
+there's only one value.
+
+50
+00:04:03,420 --> 00:04:07,920
+But if very frequent,
+then this guy have to equal to this value.
+
+51
+00:04:07,920 --> 00:04:14,780
+Then, this division where it lead to one,
+and the distance is smallest.
+
+52
+00:04:14,780 --> 00:04:19,260
+In most cases,
+the more frequent for this j value,
+
+53
+00:04:20,890 --> 00:04:26,810
+and this one would be closer to one,
+so the distance is smaller.
+
+54
+00:04:26,810 --> 00:04:31,760
+And if this one is very rare you
+go to the very rare value and
+
+55
+00:04:31,760 --> 00:04:34,530
+the number of distinct value is quite big.
+
+56
+00:04:34,530 --> 00:04:37,350
+So this your distance is closer to l.
+
+57
+00:04:38,360 --> 00:04:40,080
+But this is a quite reasonable definition.
+
+58
+00:04:41,580 --> 00:04:47,350
+That means this dc measure, distance
+function is essentially frequency-based.
+
+59
+00:04:47,350 --> 00:04:51,710
+The more frequented the closer
+the last frequent and
+
+60
+00:04:51,710 --> 00:04:55,110
+there are far away evan it
+may equal to this value.
+
+61
+00:04:55,110 --> 00:05:00,180
+The whole algorithm that were not list
+here but is still based on the iterative
+
+62
+00:05:00,180 --> 00:05:05,480
+one we first will object cluster
+assignment then to centroid
+
+63
+00:05:05,480 --> 00:05:10,340
+update then we take this one into loop and
+tear the criterion reached.
+
+64
+00:05:12,190 --> 00:05:18,503
+Then there is another iterative
+method called fuzzy K-Modes method.
+
+65
+00:05:18,503 --> 00:05:22,907
+The fuzzy K-Modes method essentially
+is to calculate a fuzzy cluster
+
+66
+00:05:22,907 --> 00:05:26,700
+membership value for
+each object to it's cluster.
+
+67
+00:05:26,700 --> 00:05:30,895
+Simply says,
+you give a fuzzy cluster value,
+
+68
+00:05:30,895 --> 00:05:37,148
+if it's very close to this cluster,
+the fuzzy value is closer to 1.
+
+69
+00:05:37,148 --> 00:05:43,166
+It's far away from this cluster, and the
+fuzzy value is somewhat closer to zero.
+
+70
+00:05:43,166 --> 00:05:49,193
+Okay, and if we have the data some
+attributes are categorical attributes,
+
+71
+00:05:49,193 --> 00:05:56,069
+some attributes are numerical attributes
+we can use K-Prototype method essentially
+
+72
+00:05:56,069 --> 00:06:02,024
+for numerical one we can use a method
+the function similar to the K-Means.
+
+73
+00:06:02,024 --> 00:06:06,929
+And the categorical one we
+can use similar to K-Mode and
+
+74
+00:06:06,929 --> 00:06:12,471
+finally we integrate this,
+we can get a K-Prototype method.
+
+75
+00:06:12,471 --> 00:06:22,471
+[MUSIC]

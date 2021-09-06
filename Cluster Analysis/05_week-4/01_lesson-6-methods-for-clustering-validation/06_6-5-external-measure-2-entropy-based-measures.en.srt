@@ -1,0 +1,421 @@
+1
+00:00:00,008 --> 00:00:06,038
+[SOUND].
+
+2
+00:00:06,038 --> 00:00:10,886
+In this session we are going
+to introduce another group of
+
+3
+00:00:10,886 --> 00:00:15,546
+external measures called
+entropy-based measures.
+
+4
+00:00:15,546 --> 00:00:20,870
+We know entropy is a very useful
+information theory measure.
+
+5
+00:00:22,070 --> 00:00:25,950
+Not only is information theory
+also used in data mining,
+
+6
+00:00:25,950 --> 00:00:27,470
+mission learning quite a lot.
+
+7
+00:00:29,500 --> 00:00:35,100
+Entropy essentially is representing
+the amount of otherness
+
+8
+00:00:35,100 --> 00:00:40,130
+of the,
+of the information in all the partitions.
+
+9
+00:00:40,130 --> 00:00:45,760
+So we still use this graph,
+this figure to represent
+
+10
+00:00:45,760 --> 00:00:51,520
+conceptually we have ground truths
+represented by different color points,
+
+11
+00:00:51,520 --> 00:00:56,870
+we have clusters represented
+by different ellipses.
+
+12
+00:00:56,870 --> 00:00:59,870
+For entropy of clustering C.
+
+13
+00:00:59,870 --> 00:01:01,580
+Suppose we got R clusters.
+
+14
+00:01:01,580 --> 00:01:08,560
+It's, it's essentially this is
+the entropy of every particular cluster.
+
+15
+00:01:08,560 --> 00:01:13,830
+Then we add all these clusters together
+we get entropy for the clustering C.
+
+16
+00:01:15,100 --> 00:01:17,320
+Then for each cluster,
+
+17
+00:01:17,320 --> 00:01:21,890
+actually the entropy is based
+on the probability of C sub i.
+
+18
+00:01:21,890 --> 00:01:25,990
+The probability of clustering
+C sub i is based on the number
+
+19
+00:01:25,990 --> 00:01:30,640
+of points in this cluster divided
+by the total number of points.
+
+20
+00:01:32,540 --> 00:01:37,930
+Then entropy of partitioning T is
+essentially defined a similar way.
+
+21
+00:01:37,930 --> 00:01:44,765
+Suppose we have ground truths
+j from 1 to k, these k groups.
+
+22
+00:01:44,765 --> 00:01:45,415
+Okay?
+
+23
+00:01:45,415 --> 00:01:51,904
+So for each ground truth is,
+PT sub i we actually can get a,
+
+24
+00:01:51,904 --> 00:01:59,885
+the probability of the ground truth as
+defined by these P sub t, sub i, okay.
+
+25
+00:01:59,885 --> 00:02:03,315
+Then we add all their
+entropies together for
+
+26
+00:02:03,315 --> 00:02:07,225
+all the K ground truths we get a ground
+truth for the whole partition.
+
+27
+00:02:09,200 --> 00:02:12,840
+Then what we're interested
+in is the entropy of
+
+28
+00:02:12,840 --> 00:02:15,470
+T with respect to clustering C sub i.
+
+29
+00:02:15,470 --> 00:02:21,540
+That means we want to see how the ground
+truth is distributed within each cluster.
+
+30
+00:02:22,650 --> 00:02:27,430
+So you probably can see this j
+represent the ground truth, and
+
+31
+00:02:27,430 --> 00:02:30,820
+the i represents the really clusters.
+
+32
+00:02:30,820 --> 00:02:35,100
+So we probably want to
+see such distribution so
+
+33
+00:02:35,100 --> 00:02:39,930
+we can work out the entropy of T
+with respect to the cluster C sub i.
+
+34
+00:02:40,960 --> 00:02:46,240
+Then if we want to get to the conditional
+entropy of T with respect
+
+35
+00:02:46,240 --> 00:02:51,070
+to whole clustering C,
+then we just add all these together.
+
+36
+00:02:51,070 --> 00:02:56,020
+Because this one is just for
+cluster C sub i, but
+
+37
+00:02:56,020 --> 00:03:02,700
+we total have r clusters, we add all
+these up proportionally, then we will get
+
+38
+00:03:02,700 --> 00:03:08,170
+the whole conditional entropy of T with
+respect to the whole clustering of C.
+
+39
+00:03:09,670 --> 00:03:13,980
+Conceptually, we can see the more of
+a cluster's membership has split into
+
+40
+00:03:13,980 --> 00:03:17,850
+different partitions,
+the higher the conditional entropy.
+
+41
+00:03:17,850 --> 00:03:20,120
+That's the less desirable.
+
+42
+00:03:20,120 --> 00:03:21,550
+You probably can see if,
+
+43
+00:03:21,550 --> 00:03:26,010
+if you're partitions, wide spread into
+different clusters it is no good.
+
+44
+00:03:26,010 --> 00:03:26,510
+Okay.
+
+45
+00:03:28,040 --> 00:03:32,088
+For perfect clustering the conditional
+entropy value should be 0.
+
+46
+00:03:32,088 --> 00:03:37,920
+The worse conditional entropy value,
+is log k.
+
+47
+00:03:37,920 --> 00:03:40,720
+We can use a transformation
+formula like this.
+
+48
+00:03:40,720 --> 00:03:45,760
+We can transfer on this
+conditional entropy To be
+
+49
+00:03:45,760 --> 00:03:51,960
+the joint-entropy,
+minus the clustering's entropy.
+
+50
+00:03:51,960 --> 00:03:55,510
+So, you probably can see, that's
+the conditional formula transformation.
+
+51
+00:03:55,510 --> 00:03:57,630
+We're not getting to detail,
+but you can check it.
+
+52
+00:03:59,780 --> 00:04:03,130
+Another very useful measure used for
+
+53
+00:04:03,130 --> 00:04:06,610
+external measure is
+Normalized Mutual Information.
+
+54
+00:04:07,720 --> 00:04:12,020
+We use a similar figure
+to sketch the idea.
+
+55
+00:04:12,020 --> 00:04:18,920
+The Mutual Information is also defined in,
+information's theory, introduced there.
+
+56
+00:04:18,920 --> 00:04:23,370
+But it's also very useful in
+machine learning and data mining.
+
+57
+00:04:23,370 --> 00:04:24,090
+Okay.
+
+58
+00:04:24,090 --> 00:04:28,550
+Essentially, the mutual information
+quantifies the amount of shared
+
+59
+00:04:28,550 --> 00:04:33,430
+information, between the clustering C and
+the partitioning T.
+
+60
+00:04:33,430 --> 00:04:39,270
+So you can probably see the formula, we
+have r clusters, we have k ground truths.
+
+61
+00:04:39,270 --> 00:04:45,360
+So they are mutual information essentially
+so adding all these up together.
+
+62
+00:04:45,360 --> 00:04:49,100
+This is a similar formula as entropy, but
+
+63
+00:04:49,100 --> 00:04:54,400
+it's different because you can probably
+see this part is really, this ij's
+
+64
+00:04:54,400 --> 00:04:59,770
+probability divided by this cross rings
+property and a partitioning's property.
+
+65
+00:05:01,520 --> 00:05:06,010
+That means we want to measure
+the dependency between the observed joint
+
+66
+00:05:06,010 --> 00:05:12,120
+probability p sub ij of C and T,
+
+67
+00:05:12,120 --> 00:05:17,910
+and the expected joint probability
+of PC sub i and PT sub j.
+
+68
+00:05:17,910 --> 00:05:20,059
+Under the independence assumption.
+
+69
+00:05:21,150 --> 00:05:22,920
+Of course, if c and
+
+70
+00:05:22,920 --> 00:05:28,530
+t are really independent that means
+they really want equal distance to this.
+
+71
+00:05:28,530 --> 00:05:33,530
+Then you probably can see
+this is one actually when
+
+72
+00:05:33,530 --> 00:05:37,310
+you take log this becomes 0, okay.
+
+73
+00:05:37,310 --> 00:05:41,868
+Of course in this case,
+this is no good because it implies these
+
+74
+00:05:41,868 --> 00:05:46,840
+ground truths actually scatter
+r around different clusters.
+
+75
+00:05:46,840 --> 00:05:49,970
+However there's no upper bound
+on the mutual information,
+
+76
+00:05:49,970 --> 00:05:52,600
+which is less desirable.
+
+77
+00:05:52,600 --> 00:05:57,250
+That's why we need to introduce
+a normalized mutual information.
+
+78
+00:05:57,250 --> 00:06:02,450
+That means we want to normalize the range
+from 0 to the highest wines one.
+
+79
+00:06:03,590 --> 00:06:09,900
+Then the value close to 1 actually
+indicates a good clustering, a value close
+
+80
+00:06:09,900 --> 00:06:15,450
+to 0 means they are almost accompanied
+to random independent assignment.
+
+81
+00:06:15,450 --> 00:06:19,800
+Okay, then this normalized mutual
+information essentially is you
+
+82
+00:06:19,800 --> 00:06:21,400
+take the mutual information.
+
+83
+00:06:21,400 --> 00:06:27,780
+Divide by the entropy of clustering and
+divided by entropy of partitioning.
+
+84
+00:06:27,780 --> 00:06:31,260
+You product them together,
+take their square root, or
+
+85
+00:06:31,260 --> 00:06:33,140
+you can transfer in this way.
+
+86
+00:06:33,140 --> 00:06:35,770
+So this is, quite useful,
+
+87
+00:06:35,770 --> 00:06:41,218
+because you will know once you're
+clustering based on your external measure.
+
+88
+00:06:41,218 --> 00:06:48,235
+Your cluster becomes perfect if
+their value is very close to one.
+
+89
+00:06:48,235 --> 00:06:58,235
+[MUSIC]

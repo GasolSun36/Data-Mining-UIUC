@@ -1,0 +1,269 @@
+1
+00:00:00,012 --> 00:00:07,951
+[SOUND]
+As we just had discussed,
+
+2
+00:00:07,951 --> 00:00:14,880
+the quality of K-means clustering is quite
+sensitive to the initial relation status.
+
+3
+00:00:16,040 --> 00:00:19,890
+Then we need to see how to
+do good in initialization so
+
+4
+00:00:19,890 --> 00:00:23,830
+we find a good quality
+clustering using K-means method.
+
+5
+00:00:25,330 --> 00:00:27,980
+I just gave you a simple
+example everybody can see.
+
+6
+00:00:27,980 --> 00:00:31,900
+Different initializations may generate
+rather different clustering results.
+
+7
+00:00:33,320 --> 00:00:35,860
+Some may not be optimal at all.
+
+8
+00:00:35,860 --> 00:00:39,840
+Just give you example,
+suppose we have only four points,
+
+9
+00:00:39,840 --> 00:00:41,210
+we will find two clusters.
+
+10
+00:00:42,580 --> 00:00:46,670
+If we initialize in the solid circle.
+
+11
+00:00:46,670 --> 00:00:52,470
+That means these two points get into one
+cluster like if we give you the center
+
+12
+00:00:52,470 --> 00:00:58,410
+like this two, they will attract these
+two and these two as in one cluster.
+
+13
+00:00:58,410 --> 00:01:03,360
+Then actually it becomes stabilized,
+because you calculate the center,
+
+14
+00:01:03,360 --> 00:01:05,120
+the center is still here.
+
+15
+00:01:05,120 --> 00:01:06,510
+They will not move.
+
+16
+00:01:06,510 --> 00:01:10,980
+So then you find a pretty ugly cluster,
+because you perceive these,
+
+17
+00:01:10,980 --> 00:01:14,300
+if you vertically group
+things into two clusters.
+
+18
+00:01:14,300 --> 00:01:20,030
+The sum of the square distance or
+SSE actually become rather small.
+
+19
+00:01:21,370 --> 00:01:25,410
+From this point of view
+we know the quality of
+
+20
+00:01:25,410 --> 00:01:29,650
+a clustering could be very
+sensitive to the initialization.
+
+21
+00:01:30,760 --> 00:01:37,059
+More recently, MacQueen in 1967 said
+we should select the k seeds randomly.
+
+22
+00:01:38,490 --> 00:01:44,192
+Now we need to run this algorithm
+multiple times using different seeds.
+
+23
+00:01:44,192 --> 00:01:48,891
+In some software package,
+they may even say,
+
+24
+00:01:48,891 --> 00:01:52,632
+run these algorithms 200 times.
+
+25
+00:01:52,632 --> 00:01:57,916
+Finally find which one you derive
+the best K-Means cluster simply
+
+26
+00:01:57,916 --> 00:02:03,499
+says you want to find the SSE,
+the sum of the square arrow is minimized.
+
+27
+00:02:03,499 --> 00:02:10,094
+There are many other methods also
+proposed for better initialization.
+
+28
+00:02:10,094 --> 00:02:16,470
+For example, there's one called K-Means++,
+proposed in 2007.
+
+29
+00:02:16,470 --> 00:02:21,030
+Essentially this ++
+initialization is as follows.
+
+30
+00:02:21,030 --> 00:02:25,790
+The first centroid that you can select
+randomly, but then the next centroid to be
+
+31
+00:02:25,790 --> 00:02:30,720
+selected, you try to find the farthest
+point from the currently selected points.
+
+32
+00:02:32,270 --> 00:02:36,780
+That means a selection based
+on weighted probability score
+
+33
+00:02:36,780 --> 00:02:41,160
+based on a different probability you
+select which is best for the next one.
+
+34
+00:02:42,420 --> 00:02:47,920
+Then this selection continues until
+all the k centroids are obtained.
+
+35
+00:02:47,920 --> 00:02:50,280
+That initialization is done.
+
+36
+00:02:50,280 --> 00:02:51,894
+Then we can run the K-Means algorithm.
+
+37
+00:02:53,520 --> 00:02:55,650
+I'll give you a simple
+example of protein C,
+
+38
+00:02:57,250 --> 00:03:00,330
+poor initialization may lead
+to some poor clustering.
+
+39
+00:03:00,330 --> 00:03:03,500
+For example we take the same data sets,
+
+40
+00:03:03,500 --> 00:03:08,590
+those black points as we've shown before,
+now we give you two
+
+41
+00:03:08,590 --> 00:03:13,490
+same choice initialized as the red
+lines here, the blue lines here.
+
+42
+00:03:14,560 --> 00:03:21,020
+With this initialization,
+we can get clusters,
+
+43
+00:03:21,020 --> 00:03:28,450
+we can assign these objects into two
+different clusters in different colors.
+
+44
+00:03:28,450 --> 00:03:35,230
+One, the upper part,
+those parts assigned to the red cluster.
+
+45
+00:03:35,230 --> 00:03:37,540
+The lower part assigned
+to the blue cluster.
+
+46
+00:03:38,920 --> 00:03:41,430
+Then we can recalculate the center again.
+
+47
+00:03:41,430 --> 00:03:44,550
+You can probably see
+the center actually moved.
+
+48
+00:03:44,550 --> 00:03:48,590
+And with this recalculation we
+can re-assign those points.
+
+49
+00:03:48,590 --> 00:03:50,630
+You can run this if you want.
+
+50
+00:03:50,630 --> 00:03:56,050
+You probably can see finally they're
+stable like this, but actually,
+
+51
+00:03:56,050 --> 00:04:00,840
+this is not a very good cluster at all.
+
+52
+00:04:00,840 --> 00:04:05,270
+That means that this run of the K-Means
+generates a poor quality clustering.
+
+53
+00:04:05,270 --> 00:04:09,560
+That is simply giving us a simple show.
+
+54
+00:04:09,560 --> 00:04:13,953
+We do need some smart interrelations or
+
+55
+00:04:13,953 --> 00:04:19,685
+multiple random initialization
+is the best ones.
+
+56
+00:04:19,685 --> 00:04:24,305
+So this is the initialization
+of K-Means clustering.
+
+57
+00:04:25,953 --> 00:04:35,953
+[MUSIC]

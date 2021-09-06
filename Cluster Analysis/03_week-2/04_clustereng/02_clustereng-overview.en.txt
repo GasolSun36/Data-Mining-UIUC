@@ -1,0 +1,52 @@
+Hello, everyone. This is. I'm a teaching assistant for
+the Classroom Management course. Today, I'm glad to give you a brief
+introduction to ClusterEnG, which is a tool that allows
+you to play with different classroom algorithms you have
+learned from the course. First of all, what is ClusterEnG? ClusterEnG are to developed by
+the Computational Biology Group at UIUC. It allows the users to perform ClusterEnG
+analysis in an interactive way. On ClusterEnG,
+you can create your own data, choose different ClusterEnG algorithms,
+and the results. We recommend you to play with it,
+because it can help you understand how different the ClusterEnG
+algorithms work in practice. To use ClusterEnG you will first need to
+visit a website which is provided here. After opening ClusterEnG, you will see
+that it includes three major steps. The first step is data preparation. And second step is choosing
+the Algorithms, and the parameters that you want to use. And final step is the visualization
+of the cluster results. In the rest of this tutorial, we'll introduce the details
+of those three steps. In the data preparation step, you need to prepare the data that you
+want to perform classroom analysis on. There are two choices. The first one is to upload
+the own data file that you have. The uploaded file could
+either be in CSV format where the elements
+are separated by commas. Or the TXT format where the elements
+are separated by spaces which helps. To give you a concrete example, here I
+have created very simple CSV file that includes 15 data points, and
+each data point is two dimensional. After choosing the created data file, I just need to hit the start
+button to upload it. And after uploading, I choose rows here, because all the little points are stored
+as rows in the uploaded file. Also, I choose no here,
+because I don't have row names or IDs in my first data file. Another option for preparing the data is to use the sample
+data size provided by clustering. Once you're done with preparing the data,
+next step is choose the clustering algorithm
+and the parameters that you want to use. As you can see from the website,
+clustering actually covers a quite wide range of different clustering
+algorithms including k-means, k-medoids, hierarchical clustering. DBSCAN and several others. If you are not sure which clustering
+algorithm you should use, there's actually a tutorial page on the website
+that compares the different pros and cons of different clustering algorithms. You can read through them and choose the
+appropriate algorithm based on your needs. For our simulator, lets just use k
+means as our class algorithm and that sets the number of
+class rows to three. Then we hit submit to round k
+means on the uploaded file. The final step is to initialize and
+interpret the classroom results. Since classroom is designed to
+support both low dimensional and high dimensional data class range,
+we visualize the results using PCA which is a very well known
+dimension reduction technique. There are two different models, the first
+one is two-dimensional models Which provides the clustering plots on two
+of the first rate principal components. And the second mode is
+the three-dimensional mode which plots the visualization results
+on the first grid principal components. Since the data file we just used is
+two-dimensional, we only need to look at the first plot under
+the two-dimensional viewing mode. We can see the 15 data points are
+separated into three different clusters by the k-means algorithm, where
+the different clusters are represented using different colors We're now
+introducing the basic usage of ClusterEnG. If you want to know more about this tool
+you can find more resources on their website. Also in the following weeks we'll go
+into the detail of several different clustering algorithms by [INAUDIBLE]. Thank you for watching. [SOUND] [MUSIC] [SOUND]

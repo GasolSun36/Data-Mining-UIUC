@@ -1,0 +1,754 @@
+1
+00:00:00,025 --> 00:00:05,934
+[SOUND].
+
+2
+00:00:05,934 --> 00:00:10,394
+In this session, we are going to discuss
+correlation measures between two
+
+3
+00:00:10,394 --> 00:00:15,655
+variables, especially we will introduce
+covariance and a correlation coefficient.
+
+4
+00:00:18,237 --> 00:00:23,025
+Before we introduce covariance
+between two variables,
+
+5
+00:00:23,025 --> 00:00:29,800
+we will first examine, or
+review the variance for single variable.
+
+6
+00:00:29,800 --> 00:00:30,620
+What is variance?
+
+7
+00:00:31,820 --> 00:00:34,350
+I think you all know what is average.
+
+8
+00:00:34,350 --> 00:00:38,360
+For example the average salary
+of employees in a company.
+
+9
+00:00:39,810 --> 00:00:44,410
+The average also core mean mathematically,
+as mu.
+
+10
+00:00:45,670 --> 00:00:52,240
+So mu is actually the expected value of X,
+however, if we just use mean,
+
+11
+00:00:52,240 --> 00:00:58,100
+we may not be sufficiently
+represent the trend or
+
+12
+00:00:58,100 --> 00:01:03,490
+the spread of the value in the variable X.
+
+13
+00:01:03,490 --> 00:01:04,030
+Okay.
+
+14
+00:01:04,030 --> 00:01:11,880
+For example, we may not only like to
+know the average salary in a company,
+
+15
+00:01:11,880 --> 00:01:16,540
+but we also like to know
+how this value spreads.
+
+16
+00:01:16,540 --> 00:01:21,110
+That means whether they are very
+close to the middle, to the mean or
+
+17
+00:01:21,110 --> 00:01:22,660
+they are widespread.
+
+18
+00:01:22,660 --> 00:01:27,100
+They have many very high salaries and
+many very low salaries.
+
+19
+00:01:28,540 --> 00:01:33,914
+In that case,
+we introduce the concept of variance.
+
+20
+00:01:33,914 --> 00:01:38,898
+Which actually,
+is to measure how much the value of X
+
+21
+00:01:38,898 --> 00:01:43,780
+deviate from the mean, or
+the expected value of X.
+
+22
+00:01:43,780 --> 00:01:49,899
+Essentially we'll use sigma square
+to wrap in the variance of X.
+
+23
+00:01:49,899 --> 00:01:53,318
+Sigma is called a standard deviation.
+
+24
+00:01:53,318 --> 00:01:58,429
+Variance of X actually is
+expected value of X deviates
+
+25
+00:01:58,429 --> 00:02:02,972
+from the mean if we take
+the square simply says,
+
+26
+00:02:02,972 --> 00:02:10,262
+no matter if it's positive or negative,
+we all change them into positive.
+
+27
+00:02:10,262 --> 00:02:16,640
+Then if X is a discrete variable, okay,
+then the formula is written like this.
+
+28
+00:02:16,640 --> 00:02:20,622
+It simply says we use
+some of this function.
+
+29
+00:02:20,622 --> 00:02:26,780
+This function is actually X deviate
+from the meal, from the mean value.
+
+30
+00:02:26,780 --> 00:02:29,720
+Take the square times X density function.
+
+31
+00:02:31,660 --> 00:02:36,870
+If X is a continuous variable,
+so we will take integral,
+
+32
+00:02:36,870 --> 00:02:41,655
+where the range is from
+minus infinity to infinity.
+
+33
+00:02:41,655 --> 00:02:45,873
+To that stand we see
+variance is the expected
+
+34
+00:02:45,873 --> 00:02:50,750
+value of the square
+deviation from the mean.
+
+35
+00:02:50,750 --> 00:02:55,488
+For this formula,
+we can also do a little transformation.
+
+36
+00:02:55,488 --> 00:02:58,150
+For example, we can transform for
+
+37
+00:02:58,150 --> 00:03:04,790
+the expect value of X square
+deviation from the mean.
+
+38
+00:03:04,790 --> 00:03:11,980
+We can write down it's the expected
+value of X square minus means square.
+
+39
+00:03:13,260 --> 00:03:16,870
+This transformation actually has
+been introduced in many textbooks.
+
+40
+00:03:16,870 --> 00:03:19,720
+It's quite simple when I
+continue to introduce here.
+
+41
+00:03:19,720 --> 00:03:25,116
+In many cases, if we write in this form,
+it may lead to more efficient computation,
+
+42
+00:03:25,116 --> 00:03:28,842
+especially when you want to
+do incremental computation.
+
+43
+00:03:30,510 --> 00:03:35,851
+If we take a sample, then the sample
+variance is actually the average
+
+44
+00:03:35,851 --> 00:03:40,930
+square deviation of the data value
+xi from the sample mean mu hat.
+
+45
+00:03:42,090 --> 00:03:47,470
+So the sample variance is
+written as sigma hat square.
+
+46
+00:03:47,470 --> 00:03:53,160
+So we often use this formula, I'll use
+a similar transform formula to compute it.
+
+47
+00:03:53,160 --> 00:03:57,230
+Now we introduce a covariance for
+two variables.
+
+48
+00:03:57,230 --> 00:04:03,135
+Once we get two variables, X1 and X2,
+we want to see how these two variable,
+
+49
+00:04:03,135 --> 00:04:07,793
+they change together,
+whether they're going up together or
+
+50
+00:04:07,793 --> 00:04:12,470
+going down together Which would
+be the positive covariance.
+
+51
+00:04:14,360 --> 00:04:16,630
+Let's look at the definition.
+
+52
+00:04:16,630 --> 00:04:22,640
+The definition, actually, original
+definition is X1 minus mu 1 square.
+
+53
+00:04:22,640 --> 00:04:29,201
+Now we see, actually these two
+variable we want to see X1,
+
+54
+00:04:29,201 --> 00:04:34,200
+the difference from it's mean value of X1.
+
+55
+00:04:34,200 --> 00:04:39,098
+X2 the difference from X2's mean value,
+or expected value.
+
+56
+00:04:39,098 --> 00:04:41,740
+And then we look at
+their expectation okay.
+
+57
+00:04:42,740 --> 00:04:47,056
+Mathematically we also can
+transform this into this form.
+
+58
+00:04:49,744 --> 00:04:55,755
+If we get a sample covariance, we look at
+the sample covariance between X1 and X2.
+
+59
+00:04:55,755 --> 00:05:02,940
+So the sample covariance is calculated by
+their difference from the sample mean.
+
+60
+00:05:04,490 --> 00:05:08,250
+So that's also popular to use.
+
+61
+00:05:08,250 --> 00:05:11,120
+Actually, the sample covariance
+
+62
+00:05:11,120 --> 00:05:14,260
+can be considered as
+a generalization of sample variance.
+
+63
+00:05:15,690 --> 00:05:21,050
+For example, originally we'll want
+to look at the two variables X1 and
+
+64
+00:05:21,050 --> 00:05:24,610
+the X2, their covariance.
+
+65
+00:05:24,610 --> 00:05:30,760
+But if we think this 2, X1 and
+X2, we replace it by X1.
+
+66
+00:05:30,760 --> 00:05:37,250
+That means we just look at the two
+variable X1, X1, what is their covariance?
+
+67
+00:05:37,250 --> 00:05:40,330
+Then we can represent these two by one.
+
+68
+00:05:41,520 --> 00:05:46,120
+Then in that case this sample covariance
+of formula., we'll look at this formula,
+
+69
+00:05:46,120 --> 00:05:51,480
+we change the variable from i2 to i1 and
+mu2 to mu1 hat.
+
+70
+00:05:52,500 --> 00:05:55,716
+So then we'll derive this formula, and
+
+71
+00:05:55,716 --> 00:06:00,360
+this formula essentially is sigma1 hat,
+it's square.
+
+72
+00:06:01,880 --> 00:06:07,120
+So we probably can easily see,
+the sample variance is just a special
+
+73
+00:06:07,120 --> 00:06:11,790
+case of sample covariance when
+the two variables are just the same.
+
+74
+00:06:13,720 --> 00:06:18,196
+When the covariance
+value is greater than 0,
+
+75
+00:06:18,196 --> 00:06:21,650
+we say it is a positive covariance.
+
+76
+00:06:21,650 --> 00:06:26,060
+If it's this value is less than
+0 it is negative covariance.
+
+77
+00:06:27,430 --> 00:06:33,430
+If these two variables are independent,
+then their covariance is 0.
+
+78
+00:06:33,430 --> 00:06:35,824
+However, the converse is not true.
+
+79
+00:06:35,824 --> 00:06:40,174
+That means not when the covariance is 0,
+
+80
+00:06:40,174 --> 00:06:45,530
+then that mean X1 and
+X2 are always independent.
+
+81
+00:06:46,650 --> 00:06:51,370
+Only under certain additional assumptions,
+for example,
+
+82
+00:06:51,370 --> 00:06:56,550
+if the data follows multivariate
+normal distributions.
+
+83
+00:06:57,550 --> 00:07:02,969
+In that case the covariance
+of 0 implies independence.
+
+84
+00:07:04,834 --> 00:07:07,850
+Now we will look at a concrete example.
+
+85
+00:07:07,850 --> 00:07:12,627
+Suppose we have two stocks, X1 and X2.
+
+86
+00:07:12,627 --> 00:07:18,480
+They have the following values in one
+week, like these five pairs of values.
+
+87
+00:07:20,440 --> 00:07:24,664
+Then the question is, whether the stock
+
+88
+00:07:24,664 --> 00:07:29,757
+effected by the same industry trends,
+term is,
+
+89
+00:07:29,757 --> 00:07:34,865
+whether their price will rise or
+fall together.
+
+90
+00:07:34,865 --> 00:07:36,349
+Then we calculate their covariance.
+
+91
+00:07:36,349 --> 00:07:44,051
+We were be able to know whether they
+are possibly correlate on that one.
+
+92
+00:07:44,051 --> 00:07:47,938
+So if we look at a covariance
+formula especially,
+
+93
+00:07:47,938 --> 00:07:51,557
+we use more simplified
+computation formula.
+
+94
+00:07:51,557 --> 00:07:56,963
+Then we can carry the expect value
+of X1 which is the mean value of X1.
+
+95
+00:07:56,963 --> 00:08:01,631
+Expect value of X2,
+which is the mean value of X2,
+
+96
+00:08:01,631 --> 00:08:07,692
+then we look at their covarience
+actually is, we use this formula.
+
+97
+00:08:07,692 --> 00:08:11,592
+We look at their product,
+their dot product,
+
+98
+00:08:11,592 --> 00:08:18,260
+then divide by sum of them,
+divide by the number of variable pairs.
+
+99
+00:08:18,260 --> 00:08:26,200
+Then we minus, this is expected value
+of X1 and expected value of X2.
+
+100
+00:08:26,200 --> 00:08:29,272
+Then we get the finer value is 4.
+
+101
+00:08:29,272 --> 00:08:33,984
+That is, the covariance is greater than 0,
+
+102
+00:08:33,984 --> 00:08:39,446
+that means X1 and X2,
+they rise or fall together.
+
+103
+00:08:42,452 --> 00:08:47,670
+Then if want to normalize them,
+we will introduce correlation coefficient.
+
+104
+00:08:47,670 --> 00:08:50,240
+That means for two numerical variables,
+
+105
+00:08:50,240 --> 00:08:56,710
+we want to study their correlation which
+essentially is the standard covariance.
+
+106
+00:08:56,710 --> 00:09:01,052
+That mean we want o normalize the
+covariance value where it is the standard
+
+107
+00:09:01,052 --> 00:09:02,810
+deviation of each variable.
+
+108
+00:09:03,810 --> 00:09:08,390
+So it is defined as correlation
+coefficient as the covariance
+
+109
+00:09:08,390 --> 00:09:13,240
+divided by the product of
+their standards deviation.
+
+110
+00:09:13,240 --> 00:09:18,340
+Or you can say, the covariance is
+divided by the product of variance,
+
+111
+00:09:18,340 --> 00:09:20,078
+get their square root.
+
+112
+00:09:22,690 --> 00:09:28,880
+So, if we look at sample correlation for
+2 attributes X1 and
+
+113
+00:09:28,880 --> 00:09:35,902
+X2, then essentially we get a row 1,
+2 hat is equal to the sigma 1,
+
+114
+00:09:35,902 --> 00:09:40,902
+1's hat is essentially
+their sample covariance
+
+115
+00:09:40,902 --> 00:09:45,330
+divided by the sample standard deviation.
+
+116
+00:09:45,330 --> 00:09:48,092
+In a concrete formula we
+can write in this way.
+
+117
+00:09:51,114 --> 00:09:56,144
+Then, if this correlation
+coefficient is greater than 0,
+
+118
+00:09:56,144 --> 00:10:00,000
+that means A and
+B are positively correlated.
+
+119
+00:10:01,710 --> 00:10:03,987
+That means X1's values increase as X2's.
+
+120
+00:10:03,987 --> 00:10:09,490
+The higher value greater than 0,
+the stronger correlation.
+
+121
+00:10:11,100 --> 00:10:16,201
+If rho 1, 2 equals 0,
+that implies they are independent
+
+122
+00:10:16,201 --> 00:10:21,540
+under the same assumption as
+discussed in the co-variance.
+
+123
+00:10:21,540 --> 00:10:23,755
+If they are less than 0,
+they are negatively correlated.
+
+124
+00:10:26,717 --> 00:10:31,047
+Then we can look at
+the a set of variables.
+
+125
+00:10:31,047 --> 00:10:33,408
+We can see for example, for
+
+126
+00:10:33,408 --> 00:10:38,751
+2 variables when they're
+perfectly negative correlated,
+
+127
+00:10:38,751 --> 00:10:44,412
+they line up like this,
+their correlation coefficient is -1.
+
+128
+00:10:44,412 --> 00:10:50,038
+Then if they become not so
+perfectly negative correlated,
+
+129
+00:10:50,038 --> 00:10:52,520
+you will see their trend.
+
+130
+00:10:53,830 --> 00:10:58,809
+When this value is 0, that's,
+you could not see anything
+
+131
+00:10:58,809 --> 00:11:03,302
+like a positive correlated or
+negative correlated.
+
+132
+00:11:03,302 --> 00:11:06,985
+But when you gradually grow
+these correlation coefficient,
+
+133
+00:11:06,985 --> 00:11:10,885
+you will see their value become more and
+more correlated.
+
+134
+00:11:10,885 --> 00:11:16,229
+When they are perfect correlated,
+then their correlation coefficient is 1.
+
+135
+00:11:16,229 --> 00:11:22,600
+That simply says the correlation
+coefficient value range is from -1 to 1.
+
+136
+00:11:22,600 --> 00:11:23,520
+Okay.
+
+137
+00:11:23,520 --> 00:11:29,462
+Then if we draw this in the scatter plot,
+we'll see the set of points,
+
+138
+00:11:29,462 --> 00:11:35,432
+their correlation coefficient
+changes from -1 to 1 in this shape.
+
+139
+00:11:37,685 --> 00:11:41,870
+In many cases,
+we may want to write for 2 variables,
+
+140
+00:11:41,870 --> 00:11:44,846
+we may want to write their variance and
+
+141
+00:11:44,846 --> 00:11:50,440
+the correlation information into
+the 2 by 2 covariance matrix form.
+
+142
+00:11:52,250 --> 00:11:57,860
+For example, you may say the variable
+1 is self correlation there,
+
+143
+00:11:57,860 --> 00:12:01,355
+essentially is their variance Is this 1.
+
+144
+00:12:01,355 --> 00:12:05,870
+And for their coverence between 1 and
+
+145
+00:12:05,870 --> 00:12:12,218
+2 is defined here between 2 and
+1 is defined here and
+
+146
+00:12:12,218 --> 00:12:17,040
+then that's variable 2's variance.
+
+147
+00:12:17,040 --> 00:12:24,190
+So this is a typical 2
+by 2 covariance matrix.
+
+148
+00:12:24,190 --> 00:12:29,153
+In general if we have t,
+d numerical attributes,
+
+149
+00:12:29,153 --> 00:12:35,299
+that means suppose we find a data
+sets it has [INAUDIBLE] rows and
+
+150
+00:12:35,299 --> 00:12:41,343
+d columns that means we really
+have d numerical attributes.
+
+151
+00:12:41,343 --> 00:12:47,215
+Then their covariance matrix
+essentially written in this form.
+
+152
+00:12:47,215 --> 00:12:52,646
+We can see this is the variance
+of variable 1, this is variable
+
+153
+00:12:52,646 --> 00:12:58,705
+of the second dimentions and
+this is the variance of the d dimentions.
+
+154
+00:12:58,705 --> 00:13:03,437
+And the covariance for
+each one would be lining up like this.
+
+155
+00:13:05,748 --> 00:13:09,840
+And we give a few interesting
+additional reading.
+
+156
+00:13:09,840 --> 00:13:12,193
+These are the several books,
+
+157
+00:13:12,193 --> 00:13:18,041
+they contain interesting chapters
+discussing the different measures.
+
+158
+00:13:18,041 --> 00:13:18,753
+Thank you.
+
+159
+00:13:20,695 --> 00:13:30,695
+[MUSIC]

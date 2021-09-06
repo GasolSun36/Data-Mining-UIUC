@@ -1,0 +1,474 @@
+1
+00:00:00,025 --> 00:00:05,795
+[SOUND] In this session,
+we are going to introduce
+
+2
+00:00:05,795 --> 00:00:12,562
+a density-based clustering
+algorithm called DBSCAN.
+
+3
+00:00:12,562 --> 00:00:18,454
+DBSCAN is a density-based spatial
+clustering algorithm introduced
+
+4
+00:00:18,454 --> 00:00:24,080
+by Martin Ester,
+Hanz-Peter Kriegel's group in KDD 1996.
+
+5
+00:00:24,080 --> 00:00:28,180
+This paper received
+the highest impact paper award
+
+6
+00:00:28,180 --> 00:00:32,700
+in the conference of KDD of 2014.
+
+7
+00:00:32,700 --> 00:00:36,940
+This paper developed
+an interesting algorithms
+
+8
+00:00:36,940 --> 00:00:41,280
+that can discover clusters
+of arbitrary shape.
+
+9
+00:00:41,280 --> 00:00:44,460
+Actually, DBSCAN itself is acronym
+
+10
+00:00:44,460 --> 00:00:49,450
+of density-based spatial clustering
+of applications with noise.
+
+11
+00:00:50,840 --> 00:00:56,480
+The method introduced a new notion
+called density-based notion of cluster.
+
+12
+00:00:56,480 --> 00:01:02,139
+That means a cluster is defined as
+a maximal set of density-connected points.
+
+13
+00:01:04,120 --> 00:01:06,780
+It defines two parameters.
+
+14
+00:01:06,780 --> 00:01:13,050
+One called Epsom or EPS, it's
+the maximum radius of the neighborhood.
+
+15
+00:01:13,050 --> 00:01:16,330
+That simply says, if you have a point q
+
+16
+00:01:17,330 --> 00:01:21,480
+using the radius epsom,
+supposedly is 1 cm.
+
+17
+00:01:21,480 --> 00:01:26,605
+You want to find out how many
+points include in q's disk.
+
+18
+00:01:26,605 --> 00:01:29,830
+Then minimum points,
+
+19
+00:01:29,830 --> 00:01:34,350
+a minimum number of points in
+the Epsom neighborhood of a point.
+
+20
+00:01:34,350 --> 00:01:39,780
+For example, you can define minimum
+point as p then this q for sure is
+
+21
+00:01:39,780 --> 00:01:47,070
+quite dense because it contains
+like 11 points within its radius.
+
+22
+00:01:47,070 --> 00:01:54,590
+Then we can define the Epsom neighborhood
+of a point q which is defined as follows.
+
+23
+00:01:54,590 --> 00:01:58,080
+For any point p is distance
+
+24
+00:01:59,200 --> 00:02:03,810
+to q if it's decimal equal to Epsom
+
+25
+00:02:03,810 --> 00:02:08,540
+then this p actually belonged
+to this Epsom neighborhood of q.
+
+26
+00:02:09,990 --> 00:02:13,460
+For example, if you look at this
+point you probably can see.
+
+27
+00:02:13,460 --> 00:02:18,850
+If using this one as q this neighborhood
+is including like 5 points so
+
+28
+00:02:18,850 --> 00:02:21,790
+this one we actually can't
+call this one as a call.
+
+29
+00:02:21,790 --> 00:02:25,050
+But if a does not have
+that many neighborhood but
+
+30
+00:02:25,050 --> 00:02:29,374
+it can be reached by the cluster,
+we call is a spotter.
+
+31
+00:02:29,374 --> 00:02:34,155
+But if it's isolated
+cannot form the cluster
+
+32
+00:02:34,155 --> 00:02:39,540
+cannot be reachable by other clusters,
+we call this one outlier or noise.
+
+33
+00:02:39,540 --> 00:02:44,494
+Now we look at an, a concept
+called directly density-reachable.
+
+34
+00:02:44,494 --> 00:02:49,908
+Directly density-reachable means, for
+example, p is directly reachable by q.
+
+35
+00:02:49,908 --> 00:02:55,424
+The reasoning is p actually is within q's
+
+36
+00:02:55,424 --> 00:03:03,140
+Epsom neighborhood on the other hand,
+q itself is a core point because
+
+37
+00:03:03,140 --> 00:03:08,750
+q's disk contain a number of points that's
+greater than the minimum number of points.
+
+38
+00:03:10,660 --> 00:03:14,773
+Then we define another notion
+called density-reachable.
+
+39
+00:03:14,773 --> 00:03:19,850
+Density-reachable means
+a point p is density-reachable
+
+40
+00:03:19,850 --> 00:03:25,640
+from a point q with respect
+to the radius Epsom and
+
+41
+00:03:25,640 --> 00:03:28,612
+minimum number of points,
+if there is a chain.
+
+42
+00:03:28,612 --> 00:03:32,440
+There's a transitive closure, okay?
+
+43
+00:03:32,440 --> 00:03:35,610
+You get the point p1 to pn.
+
+44
+00:03:35,610 --> 00:03:38,580
+P1 actually is q then you can go to p2,
+
+45
+00:03:38,580 --> 00:03:42,570
+then p2 is density reachable to p,
+eventually.
+
+46
+00:03:42,570 --> 00:03:48,760
+Then we will say these p, i plus 1 is
+directly density reachable from p i and
+
+47
+00:03:48,760 --> 00:03:53,670
+finally p stands a reachable
+from upon a q because there is
+
+48
+00:03:53,670 --> 00:03:58,460
+a transitive closure of
+directly density-reachable.
+
+49
+00:03:58,460 --> 00:04:02,425
+Then we define another notion
+called density-connected.
+
+50
+00:04:03,510 --> 00:04:08,156
+Then we can say point of p
+it's density connected to
+
+51
+00:04:08,156 --> 00:04:12,800
+point q if there exists a point o,
+which is
+
+52
+00:04:12,800 --> 00:04:18,490
+density-reachable to p and
+also density reachable to q.
+
+53
+00:04:18,490 --> 00:04:24,230
+That means p and q both can be at
+the border but as long as there is point
+
+54
+00:04:24,230 --> 00:04:29,850
+o which can be directly
+density-reachable to these two points.
+
+55
+00:04:29,850 --> 00:04:33,420
+Then these two points
+are density-connected or
+
+56
+00:04:33,420 --> 00:04:35,450
+we say they are in the same cluster.
+
+57
+00:04:37,480 --> 00:04:40,700
+So we introduce then the DBSCAN algorithm.
+
+58
+00:04:42,090 --> 00:04:46,010
+The algorithm actually is saying
+arbitrarily select upon a p
+
+59
+00:04:46,010 --> 00:04:51,360
+that means at the very beginning you
+can select at any point starting point.
+
+60
+00:04:51,360 --> 00:04:55,600
+Then you retrieve all the points
+density-reachable from p
+
+61
+00:04:55,600 --> 00:04:59,300
+with respect to Epsom and
+the minimum number of points.
+
+62
+00:04:59,300 --> 00:05:05,930
+That means you try to find from this
+p how far it can density-reachable.
+
+63
+00:05:05,930 --> 00:05:08,570
+That means you first find
+directly density-reachable
+
+64
+00:05:08,570 --> 00:05:11,548
+then find its transitive closure or
+the reachable y, okay?
+
+65
+00:05:11,548 --> 00:05:15,810
+That means you find a core and
+then you find the border.
+
+66
+00:05:15,810 --> 00:05:19,560
+If p is a core point then
+the cluster is formed because it
+
+67
+00:05:19,560 --> 00:05:22,730
+will reach from anywhere,
+you'll find you can't reach it.
+
+68
+00:05:22,730 --> 00:05:27,890
+But if p is a border point, like this one
+is a border point, this one is a border
+
+69
+00:05:27,890 --> 00:05:34,480
+point, then no point at density- reachable
+from p for example, like this point, okay?
+
+70
+00:05:34,480 --> 00:05:40,656
+No point it can't be density-reachable,
+then you were think to this one is,
+
+71
+00:05:40,656 --> 00:05:44,564
+noise [INAUDIBLE].
+
+72
+00:05:44,564 --> 00:05:46,760
+Then the DBSCAN where the, the,
+
+73
+00:05:46,760 --> 00:05:51,360
+the next point in the database, it means
+you try to find a new point to start.
+
+74
+00:05:51,360 --> 00:05:55,490
+You will continue this
+process until all the points
+
+75
+00:05:55,490 --> 00:05:59,060
+have been processed so this is the output.
+
+76
+00:06:00,640 --> 00:06:07,540
+This algorithm is quite efficient
+in the sense if you spatial index,
+
+77
+00:06:07,540 --> 00:06:14,000
+so it accesses neighbors very fast then
+the computational complexity of DBSCAN
+
+78
+00:06:14,000 --> 00:06:18,760
+is O(nlogn),
+where n is a number of database objects.
+
+79
+00:06:20,470 --> 00:06:25,710
+Otherwise, the complexity is O
+n square because you have to
+
+80
+00:06:25,710 --> 00:06:29,008
+check all the points every time but
+
+81
+00:06:29,008 --> 00:06:33,860
+it comparatively this one is
+still pretty efficient algorithm.
+
+82
+00:06:35,500 --> 00:06:39,710
+However, DBSCAN is sensitive
+to the setting of parameters,
+
+83
+00:06:40,900 --> 00:06:48,810
+this one was published by Karypis
+group in 1999 in computer magazine.
+
+84
+00:06:49,970 --> 00:06:54,880
+They show the DBSCAN, for
+example, if you said the minimum
+
+85
+00:06:54,880 --> 00:06:59,850
+number point is full but
+Epsom you said this disc size,
+
+86
+00:06:59,850 --> 00:07:05,640
+the radius size is 0.5 you actually
+find pretty nice clusters.
+
+87
+00:07:05,640 --> 00:07:11,310
+However, if you said 0.4 you can
+see the clusters found many but
+
+88
+00:07:11,310 --> 00:07:12,270
+they are pretty ugly.
+
+89
+00:07:14,200 --> 00:07:19,390
+For the same experiments, you could see
+for these number of points, if you set
+
+90
+00:07:19,390 --> 00:07:26,370
+minimum number of points for the Epsom
+is 5.0 you find a cross like this.
+
+91
+00:07:26,370 --> 00:07:30,450
+If principally,
+probably even should find two clusters.
+
+92
+00:07:30,450 --> 00:07:36,430
+On the other hand, if you select point
+3.5 you find a bunch of clusters but
+
+93
+00:07:36,430 --> 00:07:38,900
+they break nice cluster into many.
+
+94
+00:07:40,050 --> 00:07:44,695
+If you set up upon sweep on zero, you
+will find it pretty ugly scenes because
+
+95
+00:07:44,695 --> 00:07:49,370
+there are many many small scattered
+points you found many small clusters.
+
+96
+00:07:50,920 --> 00:07:56,680
+So we may need to invent another message,
+try to fix this one.
+
+97
+00:07:56,680 --> 00:08:03,160
+That means to make the master less
+sensitive to the setting of parameters.
+
+98
+00:08:03,160 --> 00:08:08,500
+This is the one we're going to
+discuss in the next session.
+
+99
+00:08:08,500 --> 00:08:18,500
+[MUSIC]

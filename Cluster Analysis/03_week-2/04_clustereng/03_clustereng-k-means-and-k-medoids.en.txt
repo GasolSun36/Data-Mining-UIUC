@@ -1,0 +1,30 @@
+Hello, students. Today, I'm going to use clusterEnG
+to demonstrate the usage of two publishing based algorithms,
+K- means and K-medoids. As we have learned from the class, K-Means is a very popular publishing
+based clustering algorithm. To partition the given data
+points into k clusters. K-means first selects k
+clusters centers randomly. Then, for every data point K-means computes
+distances to the current k centers. Under sizes to the closest center. After that, K-means needs to update
+the K centers by computing the mean of each cluster, such a process is repeated
+until the K-centers do not change. The K-matter is algorithm is very
+similar to the K-means algorithm. With the only difference that we are not
+updating the center of each cluster we do not compute the mean of all the current
+data points instead, we choose one data point from the cluster that
+minimize the with-in cluster variance. On clustering remember that
+there are three K steps. Data preparation, Algorithm choosing and
+Result visualization. In this two hierarchical, lastly, used
+simple data set that consist of 15 to data points, after uploading the data which
+use K-means as a cluster algorithm. Also, a very important step is choosing
+a number of clusters for K-means. Here, we say this parameter to straight. But the value of this parameter depends
+on the specific specification and the data set used in practice, we can try out different parameter
+values and determine the triple one. The running k means with k equal three we cluster the data points
+into three clusters. As we can see from these plots the original 15 data points are separated
+into three very clear clusters. We can also try out different k values. Let's say if we said k equals five, and
+k means again on the same set of sides. Then, we're actually imposing finer
+regularity on the classroom process. As we can see from the new plot. The data points that our ration may belong
+to the same class are now separated into two different clusters. The k-medoids algorithm is
+very similar to k-means. You can still use the process to
+run k-medoids on the same div sets. And you'll find out that the clustering
+results will be very similar. You can get more information
+about those two algorisms. You can also visit
+a tutorial of that page. So that concludes today's tutorial. Thanks for watching. [MUSIC] [MUSIC]

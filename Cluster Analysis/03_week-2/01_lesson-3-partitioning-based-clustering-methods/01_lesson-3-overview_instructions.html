@@ -1,0 +1,329 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Lesson 3: Partitioning-Based Clustering Methods
+ </h1>
+ <h2 level="2">
+  Overview
+ </h2>
+ <p>
+  In this lesson, you will learn the general concepts and methods of partitioning-based clustering. You will learn what the K-Means clustering algorithm is, how to initialize the algorithm to understand why it is necessary to explore other alternative partitioning methods, and learn the K-Medoids, K-Medians, and K-Modes clustering algorithms. Finally, we introduce the concepts and methods of the Kernel K-Means clustering.
+ </p>
+ <h2 level="2">
+  Time
+ </h2>
+ <p>
+  This lesson should take
+  <strong>
+   approximately five hours
+  </strong>
+  of dedicated time to complete, with its videos and assignments.
+ </p>
+ <h2 level="2">
+  Lessons
+ </h2>
+ <p>
+  The activities for this lesson are listed below (with assignments in bold italics):
+ </p>
+ <table columns="2" rows="4">
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Lesson Title
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Estimated Time Required
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Lesson 3 Video Lectures
+    </p>
+   </td>
+   <td>
+    <p>
+     One hour
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      <em>
+       Lesson 3 Quiz
+      </em>
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     One hour
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      <em>
+       Lesson 3 Programming Assignment
+      </em>
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     Three hours
+    </p>
+   </td>
+  </tr>
+ </table>
+ <h2 level="2">
+  Goals and Objectives
+ </h2>
+ <p>
+  Upon successful completion of this lesson, you will be able to:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Understand the basic concepts of partitioning algorithms
+   </p>
+  </li>
+  <li>
+   <p>
+    Know what the K-Means clustering method is and how to initialize the K-Means clustering algorithm
+   </p>
+  </li>
+  <li>
+   <p>
+    Know why it is necessary to explore other alternative partitioning methods and what the K-Medoids clustering method is
+   </p>
+  </li>
+  <li>
+   <p>
+    Understand the concepts of K-Medians and K-Modes clustering methods
+   </p>
+  </li>
+  <li>
+   <p>
+    Know the concepts and how to use the Kernel K-Means clustering method
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Key Phrases/Concepts
+ </h2>
+ <p>
+  Keep your eyes open for the following key terms or phrases as you interact with the lectures and complete the activities.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Partitioning algorithms, objective function, sum of squared errors (SSE)
+   </p>
+  </li>
+  <li>
+   <p>
+    The K-Means clustering method, K-Means++
+   </p>
+  </li>
+  <li>
+   <p>
+    The K-Medoids clustering method, PAM, CLARA, CLARANS
+   </p>
+  </li>
+  <li>
+   <p>
+    The K-Medians clustering algorithm, the K-Modes clustering algorithm
+   </p>
+  </li>
+  <li>
+   <p>
+    The Kernel K-Means clustering method, kernel functions, RBF kernel
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Guiding Questions
+ </h2>
+ <p>
+  Develop your answers to the following guiding questions while watching lectures and working on assignments throughout the lesson.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    What are partitioning algorithms for cluster analysis?   Why is it an interesting approach?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is the K-Means clustering method?  How efficient is it?
+   </p>
+  </li>
+  <li>
+   <p>
+    Why does one need to be careful at initialization of K-Means clustering? What are interesting initialization methods?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is the K-Medoids clustering method?   Why may it generate better quality clusters than K-Means in some cases?  What is the bottleneck of the K-Medoids clustering method?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are the K-Medians and K-Modes clustering methods?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is the Kernel K-Means clustering method?  Why is it useful?
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Additional Readings and Resources
+ </h2>
+ <p>
+  The following readings are optional:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     Chapter 10: Cluster analysis: Basic concepts and methods, Section 10.2 – Partitioning methods
+    </strong>
+    in Han, J., Kamber. M., &amp; Pei, J. (2011). Data Mining: Concepts and Techniques (3rd ed.). Walford: Morgan Kaufmann.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Note that you can download a PDF version of
+  <a href="https://d396qusza40orc.cloudfront.net/clusteranalysis/Han_Data%20Mining%203e_Chapters%202%2C10%2C11%2C13.pdf">
+   Chapters 2, 10, 11, and 13
+  </a>
+  from Data Mining:Concepts and Techniques, 3rd Edition for free.
+ </p>
+ <h2 level="2">
+  Tips for Success
+ </h2>
+ <p>
+  To do well this lesson, I recommend that you do the following:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Review the video lectures a number of times to gain a solid understanding of the key questions and concepts introduced this week.
+   </p>
+  </li>
+  <li>
+   <p>
+    When possible, provide tips and suggestions to your peers in this class. As a learning community, we can help each other learn and grow. One way of doing this is by helping to address the questions that your peers pose. By engaging with each other, we’ll all learn better.
+   </p>
+  </li>
+  <li>
+   <p>
+    It’s always a good idea to refer to the video lectures and chapter readings we've read during this week and reference them in your responses. When appropriate, critique the information presented.
+   </p>
+  </li>
+  <li>
+   <p>
+    Take notes while you read the materials and watch the lectures for this week. By taking notes, you are interacting with the material and will find that it is easier to remember and to understand. With your notes, you’ll also find that it’s easier to complete your assignments. So, go ahead, do yourself a favor; take some notes!
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Getting and Giving Help
+ </h2>
+ <p>
+  You can get/give help via the following means:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://courserahelp.zendesk.com/hc/en-us/">
+      Learner Help Center
+     </a>
+    </strong>
+    to find information regarding specific technical problems. For example, technical problems would include error messages, difficulty submitting assignments, or problems with video playback. If you cannot find an answer in the documentation, you can also report your problem to the Coursera staff by clicking on the
+    <strong>
+     Contact Us!
+    </strong>
+    link available on each topic's page within the Learner Help Center.
+   </p>
+  </li>
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://www.coursera.org/learn/cluster-analysis/discussions/forums/iS8thn-0EeaH8Qo9CRMCiw">
+      Content Issues
+     </a>
+    </strong>
+    forum to report errors in lecture video content, assignment questions and answers, assignment grading, text and links on course pages, or the content of other course materials. University of Illinois staff and Community Mentors will monitor this forum and respond to issues.
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

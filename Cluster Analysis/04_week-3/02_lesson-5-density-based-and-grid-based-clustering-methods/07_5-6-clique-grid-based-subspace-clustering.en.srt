@@ -1,0 +1,403 @@
+1
+00:00:00,293 --> 00:00:07,425
+[SOUND]
+In this session,
+
+2
+00:00:07,425 --> 00:00:14,288
+we are going to introduce CLIQUE, a
+grid-based subspace clustering algorithm.
+
+3
+00:00:14,288 --> 00:00:19,760
+This algorithm, CLIQUE, actually is
+an abbreviation of Clustering In QUEst.
+
+4
+00:00:19,760 --> 00:00:23,020
+QUEst is an IBM data mining system.
+
+5
+00:00:24,190 --> 00:00:27,600
+It was developed by a group
+of researchers at IBM.
+
+6
+00:00:27,600 --> 00:00:32,050
+It was published in SIGMOD,
+1998 conference.
+
+7
+00:00:34,400 --> 00:00:40,860
+CLIQUE is a density-based,
+grid-based subspace clustering algorithm.
+
+8
+00:00:40,860 --> 00:00:42,660
+Why it is grid-based?
+
+9
+00:00:42,660 --> 00:00:47,565
+Because it discretizes the data
+space through a grid structure, and
+
+10
+00:00:47,565 --> 00:00:52,870
+estimates the density by counting
+the number of points in a grid cell.
+
+11
+00:00:52,870 --> 00:00:55,070
+Why it is density-based?
+
+12
+00:00:55,070 --> 00:01:01,590
+Because a cluster actually is maximal set
+of connected dense units in a subspace.
+
+13
+00:01:02,820 --> 00:01:06,470
+That means a unit is dense
+in the fraction of the total
+
+14
+00:01:06,470 --> 00:01:11,490
+data points contained in the units,
+it exceeds certain parameters.
+
+15
+00:01:11,490 --> 00:01:18,070
+Then you try to connect those dense
+units into a structure, into a cluster.
+
+16
+00:01:18,070 --> 00:01:20,619
+That means it is density-based.
+
+17
+00:01:20,619 --> 00:01:22,662
+But why it is subspace clustering?
+
+18
+00:01:22,662 --> 00:01:28,450
+Because it starts from a low dimension,
+like a single dimension.
+
+19
+00:01:28,450 --> 00:01:33,950
+For this particular subspace,
+you try to find neighboring dense cells
+
+20
+00:01:33,950 --> 00:01:40,190
+in arbitrary subspace, and
+you can grow into 2-D, 3-D and
+
+21
+00:01:40,190 --> 00:01:46,670
+find the maximum number of dimensions
+in this subspace, it contains clusters.
+
+22
+00:01:46,670 --> 00:01:52,090
+It also discovers a minimum
+description of the clusters.
+
+23
+00:01:53,370 --> 00:01:57,960
+That means for this particular algorithm,
+it automatically identifies
+
+24
+00:01:57,960 --> 00:02:02,975
+the subspaces of a high
+dimensional data space that allow
+
+25
+00:02:02,975 --> 00:02:07,250
+a better clustering than the original
+space using the Apriori principle.
+
+26
+00:02:09,380 --> 00:02:10,610
+Let's look at an example.
+
+27
+00:02:11,920 --> 00:02:17,520
+Suppose we want to find
+the clusters based on salary,
+
+28
+00:02:17,520 --> 00:02:20,860
+age and number of vacation weeks.
+
+29
+00:02:22,310 --> 00:02:28,056
+And we can first start from one dimension,
+to find out where are the dense points.
+
+30
+00:02:28,056 --> 00:02:31,266
+For example, if you just look at salary,
+
+31
+00:02:31,266 --> 00:02:35,960
+you may find the salary at
+the dense points is 20K to 50K.
+
+32
+00:02:35,960 --> 00:02:40,718
+That part is pretty dense,
+especially around 40K.
+
+33
+00:02:40,718 --> 00:02:47,460
+You find that the age is
+pretty dense between 30 to 50,
+
+34
+00:02:47,460 --> 00:02:52,250
+and is very few, probably, lower ones.
+
+35
+00:02:52,250 --> 00:02:57,150
+Then, based on number of vacation,
+you probably can see the vacation
+
+36
+00:02:57,150 --> 00:03:01,670
+is clustered around two to four weeks.
+
+37
+00:03:03,690 --> 00:03:08,291
+That means we find a dense
+region in each subspace,
+
+38
+00:03:08,291 --> 00:03:12,357
+then generate their minimum descriptions.
+
+39
+00:03:12,357 --> 00:03:17,264
+Then we use this dense region to find
+the promising candidates in 2-D space
+
+40
+00:03:17,264 --> 00:03:19,421
+based on the Apriori principle.
+
+41
+00:03:19,421 --> 00:03:25,061
+It simply says, if you find
+it's dense in 1-D on salary and
+
+42
+00:03:25,061 --> 00:03:31,695
+on 1-D on h, then you probably can
+find that they are combined at one,
+
+43
+00:03:31,695 --> 00:03:38,020
+that is, you try to find clusters
+within this candidate's space.
+
+44
+00:03:39,310 --> 00:03:45,005
+Similarly, you can find the clusters
+within the candidates for
+
+45
+00:03:45,005 --> 00:03:48,706
+the space in salary and vacation, okay?
+
+46
+00:03:48,706 --> 00:03:53,444
+Then we can repeat this process
+in the level-wise manner in
+
+47
+00:03:53,444 --> 00:03:58,386
+higher dimensional subspaces
+using the Apriori principle.
+
+48
+00:03:58,386 --> 00:04:04,400
+It simply says, if you find a dense
+in this 2-D part and this 2-D part,
+
+49
+00:04:04,400 --> 00:04:11,290
+then you may find the candidates in this
+3-D region based on their intersections.
+
+50
+00:04:14,070 --> 00:04:16,780
+So the major step of the CLIQUE algorithm
+
+51
+00:04:16,780 --> 00:04:20,600
+is first try to identify
+subspace that contains clusters.
+
+52
+00:04:20,600 --> 00:04:25,310
+That means we can partition the database
+space into the grid structure,
+
+53
+00:04:25,310 --> 00:04:30,670
+then find the number of points that lie
+inside each cell of the grid partition.
+
+54
+00:04:30,670 --> 00:04:33,430
+Then try to identify the subspaces
+
+55
+00:04:33,430 --> 00:04:36,730
+that contain the clusters
+using the Apriori principle.
+
+56
+00:04:38,340 --> 00:04:42,100
+That is, we try to identify clusters, and
+
+57
+00:04:42,100 --> 00:04:48,745
+as a second step determine the dense
+units in all subspace of the interests.
+
+58
+00:04:48,745 --> 00:04:54,876
+Then we determine the connected, dense
+units in all the subspaces of interests.
+
+59
+00:04:54,876 --> 00:04:58,236
+Then, we will generate the minimal
+descriptions of the cluster.
+
+60
+00:04:58,236 --> 00:05:03,987
+That means determine the maximal regions
+that cover a cluster of the connected
+
+61
+00:05:03,987 --> 00:05:08,790
+dense units, then determine
+the minimal cover of each cluster.
+
+62
+00:05:11,090 --> 00:05:16,050
+So this master,
+the interesting points is it
+
+63
+00:05:16,050 --> 00:05:21,410
+automatically finds subspaces of
+the highest dimensionality as long
+
+64
+00:05:21,410 --> 00:05:26,704
+as a high density cluster
+exists in those subspaces.
+
+65
+00:05:28,260 --> 00:05:32,440
+Because if you find a 2-D,
+you'll try to find their intersection.
+
+66
+00:05:32,440 --> 00:05:38,037
+If the 2-D form a cluster,
+the intersection is 3-D space,
+
+67
+00:05:38,037 --> 00:05:41,640
+likely you may be able to find clusters.
+
+68
+00:05:42,700 --> 00:05:48,377
+It is an insensitive to
+the order of records, the input,
+
+69
+00:05:48,377 --> 00:05:54,200
+and also does not assume
+a particular data distribution.
+
+70
+00:05:54,200 --> 00:05:57,470
+And it scales linearly with
+the size of the input, and
+
+71
+00:05:57,470 --> 00:06:03,430
+has good scalability as the number of
+dimensions when the data increases.
+
+72
+00:06:03,430 --> 00:06:05,230
+But this is a quite efficient algorithm.
+
+73
+00:06:06,550 --> 00:06:08,880
+The weakness of the method, essentially,
+
+74
+00:06:08,880 --> 00:06:14,170
+is because we use the grid-based
+clustering approach.
+
+75
+00:06:14,170 --> 00:06:20,200
+So the quality of the results will
+depend on how to choose the number and
+
+76
+00:06:20,200 --> 00:06:23,220
+width of the partitions and
+the grid cells.
+
+77
+00:06:25,300 --> 00:06:29,270
+Nevertheless, it's a very interesting
+subspace clustering method.
+
+78
+00:06:30,960 --> 00:06:38,096
+Finally, I should say all the original
+papers on this density-based and
+
+79
+00:06:38,096 --> 00:06:42,690
+grid-based clustering are listed here.
+
+80
+00:06:42,690 --> 00:06:50,770
+Also, for Sheryl Aggarwal and
+Reddy's book there are two chapters.
+
+81
+00:06:50,770 --> 00:06:54,870
+One is called Density-Based Clustering
+by Martin Ester,
+
+82
+00:06:54,870 --> 00:07:00,470
+another is called Grid-Based Clustering
+by Cheng, Wang and Batista.
+
+83
+00:07:00,470 --> 00:07:06,753
+They have a very good summary and
+also introduce many more methods on
+
+84
+00:07:06,753 --> 00:07:13,047
+density-based clustering and
+grid-based clustering methods.
+
+85
+00:07:13,047 --> 00:07:23,047
+[MUSIC]

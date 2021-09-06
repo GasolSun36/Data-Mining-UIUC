@@ -1,0 +1,448 @@
+1
+00:00:00,000 --> 00:00:04,961
+[SOUND] Hi, in the last session of this
+
+2
+00:00:04,961 --> 00:00:09,924
+lecture, we're going to introduce
+
+3
+00:00:09,924 --> 00:00:15,056
+Kernel K-Means Clustering method.
+
+4
+00:00:15,056 --> 00:00:16,894
+What is Kernel K-Means?
+
+5
+00:00:17,900 --> 00:00:23,020
+Essentially is we know K-Means
+can only detect clusters that
+
+6
+00:00:23,020 --> 00:00:29,550
+are linearly separable, they will have
+difficulty to handle non-convex clusters.
+
+7
+00:00:30,650 --> 00:00:35,470
+For example, if you look at this
+set up data points if we say,
+
+8
+00:00:35,470 --> 00:00:41,970
+k equals 2 we want to find these
+two clusters of different color.
+
+9
+00:00:41,970 --> 00:00:46,530
+For example, the red one is
+a core part right in the center,
+
+10
+00:00:46,530 --> 00:00:51,088
+the blue one is a big ring
+surrounding this circle.
+
+11
+00:00:51,088 --> 00:00:57,820
+However, for K-Means, you can only
+find something linearly separable.
+
+12
+00:00:57,820 --> 00:01:04,330
+Likely, you will chop every cluster in two
+half and you find something quite ugly.
+
+13
+00:01:06,730 --> 00:01:12,350
+Then our idea is if we can project
+data onto a high-dimensional
+
+14
+00:01:12,350 --> 00:01:17,140
+kernel space and then perform
+K-Means clustering on this space.
+
+15
+00:01:18,320 --> 00:01:22,400
+We may be able to solve this
+problem of the clustering problem.
+
+16
+00:01:22,400 --> 00:01:26,350
+That means we'll remark data
+plans in the input space
+
+17
+00:01:26,350 --> 00:01:31,030
+on to a high damage in our feature
+space using the corner function.
+
+18
+00:01:31,030 --> 00:01:34,420
+Then we perform a K-means
+on the map feature space.
+
+19
+00:01:35,960 --> 00:01:40,420
+Of course, by doing so their computation
+or complexity could be higher.
+
+20
+00:01:41,860 --> 00:01:43,470
+Because we need to compute and
+
+21
+00:01:43,470 --> 00:01:49,400
+store n by n kernel matrix generated from
+the kernel function on the original data.
+
+22
+00:01:50,580 --> 00:01:56,457
+If the original data contain n objects,
+if this n is large,
+
+23
+00:01:56,457 --> 00:02:00,935
+then n by n kernel matrix
+could be very large.
+
+24
+00:02:03,421 --> 00:02:08,308
+Actually the widely studied the spectral
+clustering can be considered as
+
+25
+00:02:08,308 --> 00:02:13,310
+a variant of Kernel K-Means clustering,
+that's this Kernel K-Means.
+
+26
+00:02:13,310 --> 00:02:16,450
+It's a pretty interesting.
+
+27
+00:02:16,450 --> 00:02:20,050
+Let's look at kernel functions and
+Kernel K-Means clustering.
+
+28
+00:02:21,050 --> 00:02:23,320
+The typical Kernel functions, for example,
+
+29
+00:02:23,320 --> 00:02:28,760
+we may have polynomial kernel of degree h,
+you use this formula.
+
+30
+00:02:28,760 --> 00:02:32,840
+If we have Gaussian radial basis function,
+
+31
+00:02:32,840 --> 00:02:38,000
+RBF, the RBF Kernel is
+a typical Gaussian function.
+
+32
+00:02:39,300 --> 00:02:43,600
+Sigmoid kernel is defined in this way, and
+
+33
+00:02:43,600 --> 00:02:48,960
+the formula for
+kernel matrix X that means for
+
+34
+00:02:48,960 --> 00:02:53,250
+any two points, Xi sub i and X sub j.
+
+35
+00:02:53,250 --> 00:03:00,780
+Within cluster C sub k then we can map
+into this kernel function in this way
+
+36
+00:03:00,780 --> 00:03:06,780
+then if we want to compute
+sum of the square errors.
+
+37
+00:03:06,780 --> 00:03:11,720
+Okay so a Kernel K-Means the formula
+is as follows whether you can see is
+
+38
+00:03:11,720 --> 00:03:16,570
+we want to find the number
+of clusters from one to K.
+
+39
+00:03:16,570 --> 00:03:23,870
+K is a number of clusters then from each
+cluster, each point in cluster C sub K,
+
+40
+00:03:24,890 --> 00:03:31,280
+this part where we just need to use
+some of the squared distance phi Xi,
+
+41
+00:03:31,280 --> 00:03:35,210
+and the cluster center C sub k.
+
+42
+00:03:35,210 --> 00:03:40,590
+Then the formula for the cluster
+centroid is very similar to the K-means.
+
+43
+00:03:40,590 --> 00:03:46,090
+As we use C sub k, the center essentially
+
+44
+00:03:46,090 --> 00:03:52,030
+is defined by the sum of this function
+divided by the size of this cluster.
+
+45
+00:03:52,030 --> 00:03:56,580
+The clustering can be performed even
+without actual individual projection
+
+46
+00:03:56,580 --> 00:04:01,530
+of this one for the data points with what
+we needed just computing those formulas.
+
+47
+00:04:02,670 --> 00:04:08,420
+Here I give you the Kernel function
+to see how we can do the mapping.
+
+48
+00:04:09,700 --> 00:04:17,402
+Suppose we want to check how to map
+the real points into this RBF corner.
+
+49
+00:04:17,402 --> 00:04:21,970
+Okay we are given five
+original points like this.
+
+50
+00:04:21,970 --> 00:04:26,165
+X sub 1, X sub 2, X sub 3 to X sub 5.
+
+51
+00:04:26,165 --> 00:04:29,770
+For these five points
+this is original space.
+
+52
+00:04:29,770 --> 00:04:34,380
+If we set sigma equals to 4
+actually you can set sigma to
+
+53
+00:04:34,380 --> 00:04:37,520
+other values as well, okay.
+
+54
+00:04:37,520 --> 00:04:41,650
+Equals to 4, the calculation
+just a little nicer and simpler.
+
+55
+00:04:41,650 --> 00:04:47,540
+So you probably can see then if we
+want to calculate this distance,
+
+56
+00:04:47,540 --> 00:04:52,100
+okay, this formula, this formula
+that is on the top of this part.
+
+57
+00:04:52,100 --> 00:04:56,300
+What we can see is x1 is zero zero, so
+
+58
+00:04:56,300 --> 00:05:01,750
+there are two zeroes, and x two,
+x is four four, these two fours.
+
+59
+00:05:01,750 --> 00:05:07,210
+So when you compute this distance you
+basically compute the sum of their square
+
+60
+00:05:07,210 --> 00:05:11,710
+distance, equals 32,
+then based on these formulas or
+
+61
+00:05:11,710 --> 00:05:15,400
+we get a e to the power
+minus 32 divide by 2.
+
+62
+00:05:15,400 --> 00:05:22,130
+Times 4 square, then you get to
+without a e, to the power of minus 1.
+
+63
+00:05:23,750 --> 00:05:29,650
+Then you can see for this mapping suppose
+sigma equals 4, what we can get is for
+
+64
+00:05:29,650 --> 00:05:34,540
+k is when i equals one, you'll get x1, x1.
+
+65
+00:05:34,540 --> 00:05:38,700
+You look at x1, x1 they're the same so
+
+66
+00:05:38,700 --> 00:05:44,450
+this part is essentially you derive
+as zero okay because of this mapping.
+
+67
+00:05:45,970 --> 00:05:52,440
+Then if you get x1, x2,
+what you can see here is you get
+
+68
+00:05:52,440 --> 00:05:56,510
+this value e to the power of -1.
+
+69
+00:05:56,510 --> 00:05:58,650
+Similarly you can derive other values.
+
+70
+00:05:58,650 --> 00:06:03,343
+What you see is originally
+you have five points,once
+
+71
+00:06:03,343 --> 00:06:08,146
+you map to this RPF kernel
+space we get a 5 by 5 matrix.
+
+72
+00:06:08,146 --> 00:06:12,953
+That's why the computation could
+be more expensive because you
+
+73
+00:06:12,953 --> 00:06:14,650
+map into n by n matrix.
+
+74
+00:06:16,420 --> 00:06:22,430
+Now we want to calculation the Kernel
+K-Means clustering using this example.
+
+75
+00:06:23,530 --> 00:06:28,550
+For this example what you can see is
+these are the original data points
+
+76
+00:06:30,000 --> 00:06:31,550
+for this data set.
+
+77
+00:06:31,550 --> 00:06:36,980
+If we want to use K-Means to
+generate the two clusters,
+
+78
+00:06:36,980 --> 00:06:39,060
+you will be able to generate like this.
+
+79
+00:06:39,060 --> 00:06:44,170
+This is pretty ugly,
+because you can see this very
+
+80
+00:06:44,170 --> 00:06:49,160
+dense kernel will be split, and
+this ring will be split as well.
+
+81
+00:06:49,160 --> 00:06:53,370
+You generate something really very ugly,
+not like a quality cluster.
+
+82
+00:06:54,670 --> 00:06:58,720
+However, if we are to
+Gaussian RBF Kernel transformation
+
+83
+00:06:58,720 --> 00:07:03,170
+mapped it into a Kernel Matrix K for
+any two points.
+
+84
+00:07:03,170 --> 00:07:04,320
+Using this function and
+
+85
+00:07:04,320 --> 00:07:08,170
+the Gaussian Kernel, we'll be able
+to generate pretty nice clusters.
+
+86
+00:07:09,580 --> 00:07:15,330
+That means the K-Means clustering actually
+is conducted on a mapped data and
+
+87
+00:07:15,330 --> 00:07:18,020
+then we can generate the quality clusters.
+
+88
+00:07:18,020 --> 00:07:22,460
+That's why the Gaussian K-Means Clustering
+could be rather powerful.
+
+89
+00:07:23,870 --> 00:07:30,610
+Here are a set of interesting references,
+you want to look at it.
+
+90
+00:07:30,610 --> 00:07:37,770
+The first on is MacQueen's paper, Lloyd
+paper as you can see is published in 1982.
+
+91
+00:07:37,770 --> 00:07:43,910
+Actually in 1957,
+there was a Bell Lab papers collections,
+
+92
+00:07:45,430 --> 00:07:50,890
+essentially the material was first appear
+in 1957 in Bell Lab internal report, okay.
+
+93
+00:07:52,400 --> 00:07:55,850
+Then the other interesting papers and
+
+94
+00:07:55,850 --> 00:08:00,281
+books you may like to read,
+as well, thank you.
+
+95
+00:08:00,281 --> 00:08:10,281
+[MUSIC]

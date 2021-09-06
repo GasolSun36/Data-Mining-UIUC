@@ -1,0 +1,414 @@
+1
+00:00:00,044 --> 00:00:05,815
+[SOUND]
+
+2
+00:00:05,815 --> 00:00:08,691
+Hi, in this session we are going to
+
+3
+00:00:08,691 --> 00:00:14,161
+provide a brief overview of
+typical clustering methodologies.
+
+4
+00:00:14,161 --> 00:00:16,705
+There are many clustering methods.
+
+5
+00:00:16,705 --> 00:00:22,493
+They can be roughly categorized into
+a few clustering methodologies.
+
+6
+00:00:22,493 --> 00:00:27,640
+The first method's called
+distance-based methods.
+
+7
+00:00:27,640 --> 00:00:29,730
+Essentially there are two
+kinds of methods.
+
+8
+00:00:29,730 --> 00:00:35,740
+One called partitioning algorithms,
+the other we call hierarchical algorithms.
+
+9
+00:00:35,740 --> 00:00:38,525
+Partitioning algorithms essentially is,
+
+10
+00:00:38,525 --> 00:00:43,970
+partitioning the data in a high
+dimension space, into multiple clusters.
+
+11
+00:00:43,970 --> 00:00:47,427
+The typical methods include K-Means,
+K-Medoids,
+
+12
+00:00:47,427 --> 00:00:50,976
+K-Medians, those methods
+we are going to introduce.
+
+13
+00:00:50,976 --> 00:00:57,689
+For hierarchical algorithms, essentially
+we can either do an agglomerative,
+
+14
+00:00:57,689 --> 00:01:02,723
+or we call bottom-up,
+merging many points into clusters,
+
+15
+00:01:02,723 --> 00:01:09,259
+merging small clusters into bigger ones,
+then from hierarchical clusters.
+
+16
+00:01:09,259 --> 00:01:12,720
+Or we can use divisive methods.
+
+17
+00:01:12,720 --> 00:01:17,444
+Start with a single big,
+all the data is encased in one cluster,
+
+18
+00:01:17,444 --> 00:01:22,695
+then we try to split them,
+divide them using the top-down splitting,
+
+19
+00:01:22,695 --> 00:01:25,455
+into smaller and smaller clusters.
+
+20
+00:01:25,455 --> 00:01:31,750
+And then the second methodology,
+called density-based methods.
+
+21
+00:01:31,750 --> 00:01:34,000
+The third one called grid-based methods.
+
+22
+00:01:34,000 --> 00:01:36,356
+Of course they have some linkages as well.
+
+23
+00:01:36,356 --> 00:01:39,650
+Density-based method essentially is,
+
+24
+00:01:39,650 --> 00:01:45,860
+we can think the database space,
+made at a high-level granularity,
+
+25
+00:01:45,860 --> 00:01:51,270
+may you think about it with certain grade,
+or
+
+26
+00:01:51,270 --> 00:01:57,770
+certain structures, or certain k nearest
+neighbors, we may find certain density.
+
+27
+00:01:57,770 --> 00:02:02,470
+For the dense small regions,
+we can merge them into bigger regions.
+
+28
+00:02:02,470 --> 00:02:06,610
+In this way,
+we will be able to find clusters,
+
+29
+00:02:06,610 --> 00:02:10,550
+those events regions,
+with arbitrary shape.
+
+30
+00:02:12,030 --> 00:02:13,772
+The grid-based method,
+
+31
+00:02:13,772 --> 00:02:19,200
+essentially is partitioning the data
+space into grid-like structures.
+
+32
+00:02:19,200 --> 00:02:25,080
+Each grid is a summary of
+the characteristics of the data,
+
+33
+00:02:25,080 --> 00:02:28,472
+in the lower grid or lower cells.
+
+34
+00:02:28,472 --> 00:02:33,783
+Then the third method is called
+probabilistic and generative models,
+
+35
+00:02:33,783 --> 00:02:37,953
+that means we can model data
+from a generative process.
+
+36
+00:02:37,953 --> 00:02:42,897
+We can assume underneath, there
+are certain distributions, for example,
+
+37
+00:02:42,897 --> 00:02:44,882
+mixture of Gaussians, okay?
+
+38
+00:02:44,882 --> 00:02:49,287
+Then with the data,
+we can think the current points
+
+39
+00:02:49,287 --> 00:02:54,205
+are generated from these
+underlying generative model,
+
+40
+00:02:54,205 --> 00:02:58,480
+or underlying generative mechanisms.
+
+41
+00:02:58,480 --> 00:03:00,328
+Then we can model parameters,
+
+42
+00:03:00,328 --> 00:03:06,550
+using a Expectation-Maximization
+algorithm we are going to introduce.
+
+43
+00:03:06,550 --> 00:03:13,030
+Based on the available data sets, we may
+try to find the maximum likelihood fit.
+
+44
+00:03:14,430 --> 00:03:15,800
+And based on this fit,
+
+45
+00:03:15,800 --> 00:03:21,850
+we will be able to estimate the generative
+probability of the underlying data points.
+
+46
+00:03:21,850 --> 00:03:24,820
+And based on this, we may find the models.
+
+47
+00:03:24,820 --> 00:03:32,070
+Then, in many cases the data may be
+sitting in a high-dimensional space.
+
+48
+00:03:32,070 --> 00:03:37,150
+We may need to study
+high-dimensional clustering methods.
+
+49
+00:03:38,340 --> 00:03:42,743
+One influential method
+called subspace clustering,
+
+50
+00:03:42,743 --> 00:03:47,920
+essentially you try to find
+the clusters on various subspaces.
+
+51
+00:03:49,990 --> 00:03:54,932
+So, that method can be categorized
+into bottom-up methods,
+
+52
+00:03:54,932 --> 00:04:02,180
+top-down high-dimensional clustering
+method, or correlation-based methods.
+
+53
+00:04:02,180 --> 00:04:06,618
+We will also introduce some interesting
+method, a delta clustering.
+
+54
+00:04:06,618 --> 00:04:11,860
+Then, for high-dimensional clustering,
+
+55
+00:04:11,860 --> 00:04:16,820
+there are many methods developed for
+dimensionality reduction.
+
+56
+00:04:16,820 --> 00:04:21,880
+Essentially is we can
+think the height dimension
+
+57
+00:04:21,880 --> 00:04:26,900
+is in a vertical form there,
+containing lots of columns.
+
+58
+00:04:26,900 --> 00:04:30,600
+And for those columns,
+when we perform clustering,
+
+59
+00:04:30,600 --> 00:04:34,130
+essentially the columns are clustered,
+the rows or
+
+60
+00:04:34,130 --> 00:04:38,770
+columns can be clustered together,
+we call co-clustering.
+
+61
+00:04:38,770 --> 00:04:42,800
+There are several typical methods.
+
+62
+00:04:42,800 --> 00:04:47,990
+One is probabilistic
+latent semantic indexing.
+
+63
+00:04:47,990 --> 00:04:53,520
+Later, people develop another method
+called Latent Dirichlet Allocation.
+
+64
+00:04:53,520 --> 00:05:00,960
+So PLSI or LDA, are typical topic
+modeling methods for text data.
+
+65
+00:05:00,960 --> 00:05:07,750
+Essentially, we can think the text can
+be clustered into multiple topics.
+
+66
+00:05:07,750 --> 00:05:11,730
+Each topic is a cluster, and each topic
+
+67
+00:05:11,730 --> 00:05:16,600
+is associated with a set of words, or
+we can think of they are dimensions.
+
+68
+00:05:16,600 --> 00:05:22,390
+And also a set of documents, you can
+think they are rows, simultaneously.
+
+69
+00:05:22,390 --> 00:05:26,400
+And the second popular
+study method's called
+
+70
+00:05:26,400 --> 00:05:30,240
+nonnegative matrix factorization, NMF.
+
+71
+00:05:30,240 --> 00:05:34,705
+This is a kind of co-clustering
+method you can think as,
+
+72
+00:05:34,705 --> 00:05:38,798
+you'll get a nonnegative
+matrix because the word,
+
+73
+00:05:38,798 --> 00:05:43,370
+a word frequencies in documents
+are nonnegative, okay?
+
+74
+00:05:43,370 --> 00:05:50,230
+They are zero or more, but
+they are nonnegative values in the matrix.
+
+75
+00:05:50,230 --> 00:05:54,415
+For this nonnegative matrix,
+we can approximately
+
+76
+00:05:54,415 --> 00:05:59,171
+factorize it into two nonnegative
+lower ranked matrices,
+
+77
+00:05:59,171 --> 00:06:03,756
+type U and V,
+that will reduce the number of dimensions.
+
+78
+00:06:03,756 --> 00:06:08,255
+Another very interesting
+method we're going to study
+
+79
+00:06:08,255 --> 00:06:11,560
+is called spectral clustering.
+
+80
+00:06:11,560 --> 00:06:16,420
+That means we use a spectrum of
+the similarity matrix of the data,
+
+81
+00:06:16,420 --> 00:06:19,310
+to perform dimensionality reduction.
+
+82
+00:06:19,310 --> 00:06:22,470
+The higher dimension
+reduced into the lower,
+
+83
+00:06:22,470 --> 00:06:27,320
+fewer dimensions, then we can perform
+clustering in fewer dimensions.
+
+84
+00:06:27,320 --> 00:06:29,000
+That's spectral clustering methods.
+
+85
+00:06:30,050 --> 00:06:34,664
+In this course, we are going to
+study many low-dimension and
+
+86
+00:06:34,664 --> 00:06:37,948
+high-dimension clustering methods, and
+
+87
+00:06:37,948 --> 00:06:42,756
+study their different variations,
+and applications as well.
+
+88
+00:06:42,756 --> 00:06:52,756
+[MUSIC]

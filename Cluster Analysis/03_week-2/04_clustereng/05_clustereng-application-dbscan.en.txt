@@ -1,0 +1,28 @@
+Hi, my name is Sun lee Jong. I'm a kitchen assistant
+of this Coursera course. Today, I'm going to introduce, how to
+use an online cresting tool to apply and to visualize the DBSCAN algorithm
+from the real data set. DBSCAN algorithm is introduced
+in test the base algorithm. If you're not familiar with the technical
+details you may want to review the slides. The data site that we're using today
+is a Yelp restaurant data site. It contains locations of a hundred
+restaurants in Waterloo, Canada. Each location is represented
+by its longitude and latitude. And we find this data
+set in course material. To start with,
+we upload a data set file to the website, select the given data set file and
+then click on Start button. The website is going to have
+it automatically uploaded. Then, make sure we're clustering by rows,
+instead of clustering by columns. Because each row here actually
+represents a location. Now, we choose a classroom
+method to the DBSCAN and insert the parameter value for epsilon. Epsilon is the parameter in DBSCAN
+algorithm, defines the neighborhood. Here, we choose epsilon to be 0.005. Click on Submit. Here is a visualization of
+the clustering results. Because we are running the algorithm
+on a two dimensional dataset. We only need to look at this
+very first visualization figure. Each card represents a certain cluster. And one of our cluster actually
+represents the others. As you can see from this visualization,
+one of the most important characteristics of the DBSCAN algorithm, is that they can
+generate clusters of arbitrary shape, in self clusters of just. So I want to try different
+parameter settings to see how the classroom
+result is different. And I also want to try the classroom
+algorithms different view of datasets. If you're interested about exploring
+more about DBSCAN algorithms, here are some interesting open
+questions about the algorithm. Thank you. [SOUND] [MUSIC] [SOUND]

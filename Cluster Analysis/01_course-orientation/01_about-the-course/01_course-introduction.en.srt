@@ -1,0 +1,402 @@
+1
+00:00:00,000 --> 00:00:06,496
+[SOUND]
+Hi
+
+2
+00:00:06,496 --> 00:00:11,010
+welcome to the course,
+Cluster Analysis in Data Mining.
+
+3
+00:00:11,010 --> 00:00:15,470
+Before starting this course, I'm going
+to give you a general course overview.
+
+4
+00:00:16,530 --> 00:00:20,200
+First, what is cluster analysis?
+
+5
+00:00:20,200 --> 00:00:25,550
+Actually when you fly over a city,
+you can easily identify fields,
+
+6
+00:00:25,550 --> 00:00:31,030
+forests, commercial area, and
+residential areas based on their features,
+
+7
+00:00:31,030 --> 00:00:35,610
+without anybody's explicit training or
+labeling.
+
+8
+00:00:35,610 --> 00:00:39,430
+This is the power of cluster analysis.
+
+9
+00:00:39,430 --> 00:00:43,260
+In this course,
+I'm going to systematically
+
+10
+00:00:43,260 --> 00:00:48,450
+introduce you the concepts and
+methods of cluster analysis.
+
+11
+00:00:48,450 --> 00:00:51,420
+And help answering the following question.
+
+12
+00:00:52,550 --> 00:00:56,760
+What are the different proximity
+measures for effective clustering?
+
+13
+00:00:58,070 --> 00:01:03,170
+Can we cluster a massive number
+of data points efficiently?
+
+14
+00:01:03,170 --> 00:01:10,480
+Can we find clusters of arbitrary shape
+and at multilevels of granularity?
+
+15
+00:01:11,580 --> 00:01:16,210
+How can we judge the quality of
+the clusters discovered by our system?
+
+16
+00:01:17,980 --> 00:01:21,790
+Cluster analysis bring a lot
+of value to data mining.
+
+17
+00:01:22,900 --> 00:01:26,680
+What is the value of cluster analysis?
+
+18
+00:01:26,680 --> 00:01:29,960
+Cluster analysis may help you partition
+
+19
+00:01:29,960 --> 00:01:33,930
+massive data into groups
+based on its features.
+
+20
+00:01:34,930 --> 00:01:40,210
+Cluster analysis also will help
+subsequent data mining processes,
+
+21
+00:01:40,210 --> 00:01:44,900
+such a pattern discovery,
+classification and outlier analysis.
+
+22
+00:01:46,430 --> 00:01:50,990
+What roles does cluster analysis play
+in the data mining specialization?
+
+23
+00:01:52,450 --> 00:01:58,238
+You will learn various scalable methods
+to find clusters from massive data.
+
+24
+00:01:58,238 --> 00:02:03,390
+You will learn how to mine different
+kinds of clusters effectively.
+
+25
+00:02:03,390 --> 00:02:08,020
+You'll also learn how to evaluate
+the quality of the clusters you'll find.
+
+26
+00:02:08,020 --> 00:02:12,980
+And you will see cluster analysis
+will help with classification,
+
+27
+00:02:12,980 --> 00:02:16,030
+outlier analysis and
+other data mining tasks.
+
+28
+00:02:17,570 --> 00:02:21,721
+Cluster analysis has
+its broad applications.
+
+29
+00:02:21,721 --> 00:02:27,007
+For example, for data summarization,
+compression, and reduction, like
+
+30
+00:02:27,007 --> 00:02:32,310
+image processing or vector quantization,
+you will need cluster analysis.
+
+31
+00:02:33,490 --> 00:02:37,900
+For collaborative filtering,
+recommendation systems, or
+
+32
+00:02:37,900 --> 00:02:43,551
+customer segmentation,
+you will find like-minded
+
+33
+00:02:43,551 --> 00:02:47,600
+users or
+similar products by cluster analysis.
+
+34
+00:02:48,630 --> 00:02:54,520
+For dynamic trend detection,
+you will find clustering stream data and
+
+35
+00:02:54,520 --> 00:02:58,779
+detecting trends and
+patterns will be very effective.
+
+36
+00:02:59,870 --> 00:03:03,850
+For multimedia analysis,
+biological data analysis, and
+
+37
+00:03:03,850 --> 00:03:09,130
+social network analysis you'll
+find you may have effecting
+
+38
+00:03:09,130 --> 00:03:13,920
+measures to group audio/video clips and
+
+39
+00:03:13,920 --> 00:03:17,660
+finding clusters of
+gene protein sequences.
+
+40
+00:03:19,280 --> 00:03:25,400
+Cluster analysis is a key intermediate
+step for many other data mining tasks.
+
+41
+00:03:25,400 --> 00:03:29,780
+For example, you want to generate
+a compact summary of data for
+
+42
+00:03:29,780 --> 00:03:34,220
+classification, pattern discovery,
+hypothesis generation and
+
+43
+00:03:34,220 --> 00:03:37,420
+testing your neat cluster masses.
+
+44
+00:03:37,420 --> 00:03:39,640
+You wana find outlier detection.
+
+45
+00:03:39,640 --> 00:03:45,417
+Actually, outliers are those
+far away from any cluster.
+
+46
+00:03:45,417 --> 00:03:50,321
+In this course,
+the major reference of the readings is
+
+47
+00:03:50,321 --> 00:03:54,905
+my own textbook published in 2011,
+which is,
+
+48
+00:03:54,905 --> 00:03:58,637
+Data Mining: Concepts and Techniques,
+
+49
+00:03:58,637 --> 00:04:03,240
+the 3rd edition,
+published by Morgan Kaufmann.
+
+50
+00:04:04,780 --> 00:04:09,420
+In this book,
+we will only used two chapters.
+
+51
+00:04:09,420 --> 00:04:12,555
+The first is Chapter 2.
+
+52
+00:04:12,555 --> 00:04:15,010
+[INAUDIBLE] just cover
+
+53
+00:04:15,010 --> 00:04:19,760
+section 2.4: Measuring Data Similarity and
+dissimilarity.
+
+54
+00:04:20,860 --> 00:04:27,710
+And then Chapter 4 is a major
+source related to this textbook.
+
+55
+00:04:27,710 --> 00:04:33,210
+The textbook of Chapter 4 is a major
+source related to this seminar,
+
+56
+00:04:33,210 --> 00:04:38,330
+this lecture, called Cluster
+Analysis: Basic Concepts and Methods.
+
+57
+00:04:39,670 --> 00:04:44,110
+Other references will be listed
+at the end of each lecture video.
+
+58
+00:04:45,690 --> 00:04:51,370
+For the course structure,
+we will have six lessons.
+
+59
+00:04:51,370 --> 00:04:55,450
+Lesson 1 is,
+Cluster Analysis: An Introduction.
+
+60
+00:04:55,450 --> 00:05:00,200
+Lesson 2 is, Similarity Measures for
+Cluster Analysis.
+
+61
+00:05:00,200 --> 00:05:05,456
+These two lessons from the first module,
+Module 1.
+
+62
+00:05:05,456 --> 00:05:11,058
+Then, Lesson 3:
+Partitioning-Based Clustering Methods.
+
+63
+00:05:11,058 --> 00:05:18,053
+An, Lesson 4(Part
+I): Hierarchical Clustering Methods (I),
+
+64
+00:05:18,053 --> 00:05:21,258
+from the contents of Module 2.
+
+65
+00:05:21,258 --> 00:05:27,890
+Then the Part II of Lesson 2,
+Hierarchical Clustering Methods (II).
+
+66
+00:05:27,890 --> 00:05:30,855
+And, Lesson 5: Density-Based and
+
+67
+00:05:30,855 --> 00:05:36,144
+Grid-Based Clustering Methods,
+form the contents of Module 3.
+
+68
+00:05:37,320 --> 00:05:42,803
+Finally, Lesson 6: Clustering Validation,
+
+69
+00:05:42,803 --> 00:05:46,688
+forms the material for Module 4.
+
+70
+00:05:46,688 --> 00:05:51,200
+For general information about this course,
+I'm Jiawei Han.
+
+71
+00:05:51,200 --> 00:05:54,960
+I'm a professor in the Department
+of Computer Science,
+
+72
+00:05:54,960 --> 00:05:58,850
+University of Illinois
+at Urbana-Champaign.
+
+73
+00:05:58,850 --> 00:06:00,594
+I'm the instructor.
+
+74
+00:06:00,594 --> 00:06:04,590
+We have some teaching assistants
+on the web to help you.
+
+75
+00:06:05,810 --> 00:06:07,128
+The course prerequisites.
+
+76
+00:06:07,128 --> 00:06:11,690
+Just as long as you are familiar
+with basic data structure and
+
+77
+00:06:11,690 --> 00:06:16,080
+algorithms, you like to work hard,
+you're quite okay.
+
+78
+00:06:17,390 --> 00:06:21,830
+For course assessments,
+we have in-video questions to
+
+79
+00:06:21,830 --> 00:06:25,840
+help you understand the course materials.
+
+80
+00:06:25,840 --> 00:06:31,460
+Then we need you to pass some
+minimum requirements for
+
+81
+00:06:31,460 --> 00:06:37,200
+lesson quizzes and
+two programming assignments.
+
+82
+00:06:37,200 --> 00:06:38,070
+Thank you.
+
+83
+00:06:38,070 --> 00:06:40,970
+Hope you will enjoy this course.
+
+84
+00:06:40,970 --> 00:06:41,470
+Thank you.
+
+85
+00:06:41,470 --> 00:06:51,470
+[MUSIC]

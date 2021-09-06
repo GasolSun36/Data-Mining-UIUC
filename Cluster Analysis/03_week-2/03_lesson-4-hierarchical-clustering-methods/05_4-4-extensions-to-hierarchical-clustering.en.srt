@@ -1,0 +1,171 @@
+1
+00:00:00,000 --> 00:00:05,878
+[MUSIC]
+
+2
+00:00:05,878 --> 00:00:08,757
+Hi, in this and subsequent sessions,
+
+3
+00:00:08,757 --> 00:00:14,180
+we are going to discuss several
+Extensions to Hierarchical Clustering.
+
+4
+00:00:15,400 --> 00:00:20,300
+Hierarchical clustering methods
+look simple, but on the other hand,
+
+5
+00:00:20,300 --> 00:00:25,060
+there are some weaknesses of
+hierarchical clustering method.
+
+6
+00:00:25,060 --> 00:00:31,770
+The first weakness is the master can
+never undo what was done previously.
+
+7
+00:00:31,770 --> 00:00:37,160
+For dividing methods, you first try
+to figure out how to divide one
+
+8
+00:00:37,160 --> 00:00:39,800
+cluster into two subclusters.
+
+9
+00:00:39,800 --> 00:00:42,990
+But once you divide them
+into two subclusters,
+
+10
+00:00:42,990 --> 00:00:48,040
+you work on each subcluster and
+try to do further splitting.
+
+11
+00:00:48,040 --> 00:00:51,510
+You will never be able to
+merge them back again and
+
+12
+00:00:51,510 --> 00:00:55,048
+try to adjust to some particular elements.
+
+13
+00:00:55,048 --> 00:01:03,060
+Even for agglomerative clustering,
+the philosophy is similar in a sense.
+
+14
+00:01:03,060 --> 00:01:08,740
+Once you try to merge two
+clusters into one, the subsequent
+
+15
+00:01:08,740 --> 00:01:13,190
+you know, analysis will be
+treating this one as one unit.
+
+16
+00:01:13,190 --> 00:01:16,180
+You will never split it again, and
+
+17
+00:01:16,180 --> 00:01:22,090
+you try to see whether other subcluster
+obtained so far can be further merged.
+
+18
+00:01:23,660 --> 00:01:29,910
+This, you know, require you for
+every split or merge must be final.
+
+19
+00:01:29,910 --> 00:01:34,360
+That's too high requirement to
+generate high-quality clusters.
+
+20
+00:01:34,360 --> 00:01:40,190
+The second problem is the masters
+may not scale well just because
+
+21
+00:01:40,190 --> 00:01:45,480
+every time when you try to merge,
+you try to check all the possible pairs.
+
+22
+00:01:45,480 --> 00:01:50,350
+So the complexity is at least n square,
+when you want to split,
+
+23
+00:01:50,350 --> 00:01:55,240
+you try many different possible choices,
+to try to find the best to split but
+
+24
+00:01:55,240 --> 00:01:56,910
+complexity is also high.
+
+25
+00:01:58,990 --> 00:02:04,650
+There are some developments other
+hierarchical clustering algorithms.
+
+26
+00:02:04,650 --> 00:02:08,290
+In this lecture,
+we are going to introduce three of them.
+
+27
+00:02:08,290 --> 00:02:13,803
+One is a BIRCH, developed in 1996,
+you use micro-clustering,
+
+28
+00:02:13,803 --> 00:02:18,700
+macro-clustering idea, so
+using clustering feature tree and
+
+29
+00:02:18,700 --> 00:02:22,470
+incrementally adjust
+the quality of subclusters.
+
+30
+00:02:22,470 --> 00:02:26,690
+The second one we are going to introduce
+is called CURE, developed in 1998.
+
+31
+00:02:26,690 --> 00:02:30,030
+That method essentially is to,
+
+32
+00:02:30,030 --> 00:02:36,290
+representing the cluster using a set of
+well-scattered representative points.
+
+33
+00:02:36,290 --> 00:02:40,330
+The third one, CHAMELEON,
+it was developed in 1999,
+
+34
+00:02:40,330 --> 00:02:46,120
+it used graph partitioning methods on
+K-nearest neighbor graph of the data.
+
+35
+00:02:46,120 --> 00:02:51,212
+We will introduce all these three,
+one by one.
+
+36
+00:02:51,212 --> 00:03:01,212
+[MUSIC]

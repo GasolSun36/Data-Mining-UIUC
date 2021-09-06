@@ -1,0 +1,218 @@
+1
+00:00:00,038 --> 00:00:06,179
+[MUSIC]
+
+2
+00:00:06,179 --> 00:00:10,860
+We first introduced STING,
+the first grid based method which
+
+3
+00:00:10,860 --> 00:00:14,650
+is statistic information
+in the grid structure.
+
+4
+00:00:16,780 --> 00:00:22,010
+This method called statistic
+information grid approach.
+
+5
+00:00:23,370 --> 00:00:26,530
+Essentially you can think the gray
+structure looks like this.
+
+6
+00:00:26,530 --> 00:00:29,880
+You got multiple layers.
+
+7
+00:00:29,880 --> 00:00:34,570
+That means the spacial area's
+defined into rectangular cells
+
+8
+00:00:34,570 --> 00:00:36,809
+at the different levels of revolution.
+
+9
+00:00:37,810 --> 00:00:40,970
+Then these cells actually
+form a tree structure.
+
+10
+00:00:40,970 --> 00:00:44,910
+That means each cell at a higher layer,
+
+11
+00:00:44,910 --> 00:00:50,200
+each cell actually store a summary
+of the lower level set of cells.
+
+12
+00:00:50,200 --> 00:00:55,110
+That means the cell at a higher level
+contains a number of small cells
+
+13
+00:00:55,110 --> 00:00:57,870
+of the next lower level.
+
+14
+00:00:57,870 --> 00:01:01,620
+To that extent,
+it forms a hierarchical tree structure.
+
+15
+00:01:03,320 --> 00:01:07,920
+What the cell will store, statistical
+information of each cell that is
+
+16
+00:01:07,920 --> 00:01:13,530
+calculated and stored beforehand and
+then can be used to answer queries.
+
+17
+00:01:13,530 --> 00:01:17,010
+That means you can calculate
+the statistical information
+
+18
+00:01:17,010 --> 00:01:21,080
+that is corresponding set of
+cells at the lower layer.
+
+19
+00:01:22,870 --> 00:01:28,950
+Then the parameter of the higher level
+cells, the calculation contains a bunch of
+
+20
+00:01:28,950 --> 00:01:35,419
+statistical information including number
+of points in the cell which is a count.
+
+21
+00:01:36,480 --> 00:01:39,830
+Then their mean, their standard deviation,
+
+22
+00:01:39,830 --> 00:01:45,190
+the minimum value, the maximum value and
+also the type of distribution.
+
+23
+00:01:45,190 --> 00:01:49,610
+For example whether these points
+form a normal distribution,
+
+24
+00:01:49,610 --> 00:01:53,399
+a uniform distribution or
+other kinds of distributions.
+
+25
+00:01:55,600 --> 00:02:00,630
+So if we store the cell
+in a hierarchical way,
+
+26
+00:02:00,630 --> 00:02:05,050
+to process a region query
+including finding clusters,
+
+27
+00:02:05,050 --> 00:02:09,220
+we can start at the root
+of this grid structure.
+
+28
+00:02:09,220 --> 00:02:13,919
+And proceed to the next lower level
+using this STING indexing structure.
+
+29
+00:02:15,030 --> 00:02:20,820
+That means we can calculate the likelihood
+a cell is relevant to the query at some
+
+30
+00:02:20,820 --> 00:02:25,110
+confidence level using the statistical
+information stored in the cell.
+
+31
+00:02:26,510 --> 00:02:29,870
+Once we are confident, we need to go down,
+
+32
+00:02:29,870 --> 00:02:35,310
+only children of the likely relevant
+cells are recursively explored.
+
+33
+00:02:35,310 --> 00:02:39,580
+So it is quite localized,
+it could be quite efficient.
+
+34
+00:02:39,580 --> 00:02:43,840
+We can repeat this process until
+the bottom layer is reached.
+
+35
+00:02:43,840 --> 00:02:50,740
+The advantage is this structure
+is query-independent.
+
+36
+00:02:50,740 --> 00:02:56,070
+And the process can be easily paralyzed
+and we can do incremental update as well.
+
+37
+00:02:57,190 --> 00:03:00,370
+Also the efficiency is very good.
+
+38
+00:03:00,370 --> 00:03:03,940
+That means the complexity
+is quite low because
+
+39
+00:03:03,940 --> 00:03:09,200
+if the K is number of grid
+cells at the lowest level.
+
+40
+00:03:09,200 --> 00:03:14,040
+Then the complexity is big O linear to K,
+
+41
+00:03:15,280 --> 00:03:19,670
+where K is much less than N,
+the number of data points.
+
+42
+00:03:20,740 --> 00:03:24,890
+However, it's disadvantages,
+because you formed a grid structure,
+
+43
+00:03:24,890 --> 00:03:27,070
+you may lose a lot of details.
+
+44
+00:03:27,070 --> 00:03:32,345
+The probabilistic nature
+of the higher level may
+
+45
+00:03:32,345 --> 00:03:39,429
+imply a loss of accuracy in the lower
+level for query processing.
+
+46
+00:03:39,429 --> 00:03:49,429
+[MUSIC]

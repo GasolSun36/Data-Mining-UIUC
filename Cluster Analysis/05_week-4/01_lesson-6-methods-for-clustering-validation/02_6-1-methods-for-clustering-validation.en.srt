@@ -1,0 +1,75 @@
+1
+00:00:00,180 --> 00:00:04,391
+[MUSIC]
+
+2
+00:00:06,597 --> 00:00:11,610
+We first introduce some basic
+concepts of clustering validation.
+
+3
+00:00:13,210 --> 00:00:17,750
+We know clustering is unsupervised method,
+
+4
+00:00:17,750 --> 00:00:22,260
+in the sense we do not have
+any expert to judge whether
+
+5
+00:00:22,260 --> 00:00:27,000
+this clustering is good or
+what should be clustered.
+
+6
+00:00:27,000 --> 00:00:30,378
+So it is important to
+evaluate clustering quality.
+
+7
+00:00:30,378 --> 00:00:34,970
+That means evaluating
+the goodness of the clustering.
+
+8
+00:00:34,970 --> 00:00:38,980
+Also we want evaluate
+clustering stability.
+
+9
+00:00:38,980 --> 00:00:45,150
+That means to understand the sensitivity
+of the clustering results to various
+
+10
+00:00:45,150 --> 00:00:49,590
+algorithm parameters, for
+example, the number of clusters.
+
+11
+00:00:49,590 --> 00:00:55,860
+That means, what number of clusters is
+really good based on our evaluation.
+
+12
+00:00:55,860 --> 00:00:58,550
+The third one is clustering tendency.
+
+13
+00:00:59,660 --> 00:01:04,200
+That means whether it's
+suitable to do clustering.
+
+14
+00:01:04,200 --> 00:01:08,995
+That means whether the data has
+inherent to grouping structure,
+
+15
+00:01:08,995 --> 00:01:13,625
+then we should, for
+some kind of clustering, to discover it.
+
+16
+00:01:13,625 --> 00:01:23,625
+[MUSIC]

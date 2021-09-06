@@ -1,0 +1,277 @@
+1
+00:00:06,020 --> 00:00:10,721
+[SOUND] Hi, in this session we
+are going to introduce another
+
+2
+00:00:10,721 --> 00:00:15,518
+expansion to hierarchical
+clustering method called CURE:
+
+3
+00:00:15,518 --> 00:00:20,421
+clustering using well-scattered
+representative points.
+
+4
+00:00:20,421 --> 00:00:25,470
+And it was done by a group of
+researchers at Bell Labs in 1998.
+
+5
+00:00:25,470 --> 00:00:31,020
+CURE actually represents a cluster
+
+6
+00:00:31,020 --> 00:00:35,300
+using a set of well scattered
+representative points.
+
+7
+00:00:35,300 --> 00:00:37,670
+Let's look at the details of the CURE.
+
+8
+00:00:39,220 --> 00:00:44,990
+Actually, for CURE, the first interesting
+thing is redefining the clustering
+
+9
+00:00:44,990 --> 00:00:51,280
+distance to be the minimum distance
+between the representative points chosen.
+
+10
+00:00:51,280 --> 00:00:54,350
+But how to choose representative points?
+
+11
+00:00:54,350 --> 00:00:58,600
+Actually is you can consider each group,
+
+12
+00:00:58,600 --> 00:01:03,900
+you may have some points which is closer
+to the center of this group of data.
+
+13
+00:01:03,900 --> 00:01:08,690
+You can consider this as
+a representative point of this group.
+
+14
+00:01:08,690 --> 00:01:09,600
+Okay?
+
+15
+00:01:09,600 --> 00:01:15,930
+Then for this group of data,
+their distance between the clusters
+
+16
+00:01:15,930 --> 00:01:21,230
+actually is their minimum distance
+between the represented points.
+
+17
+00:01:22,770 --> 00:01:28,200
+This actually incorporate the ideas
+of both single link and average link.
+
+18
+00:01:28,200 --> 00:01:32,330
+Single link in the s, in the sense that
+you still look at the minimum distance of,
+
+19
+00:01:32,330 --> 00:01:37,160
+between clusters, but
+you do not look at every point.
+
+20
+00:01:37,160 --> 00:01:38,970
+You look at the representative.
+
+21
+00:01:38,970 --> 00:01:43,670
+This is the literal, like,
+average link, or centroid link.
+
+22
+00:01:43,670 --> 00:01:46,090
+Because we choose those scatter points,
+
+23
+00:01:46,090 --> 00:01:50,530
+it will help CURE capture
+the cluster of arbitrary shapes.
+
+24
+00:01:50,530 --> 00:01:55,240
+Because you can see if
+you get different shapes,
+
+25
+00:01:55,240 --> 00:01:59,900
+you look at the representative
+points some particular shape,
+
+26
+00:01:59,900 --> 00:02:04,450
+actually the, the representative point,
+it will reduce the complexity.
+
+27
+00:02:04,450 --> 00:02:05,150
+Okay.
+
+28
+00:02:05,150 --> 00:02:11,440
+Another interesting point is,
+if you use a shrinking factor, alpha.
+
+29
+00:02:11,440 --> 00:02:13,930
+That means that the points
+actually are shrink
+
+30
+00:02:13,930 --> 00:02:16,750
+towards a centroid by a factor alpha.
+
+31
+00:02:18,150 --> 00:02:20,690
+Okay.
+For, for example you can see the,
+
+32
+00:02:20,690 --> 00:02:26,190
+left side, okay,
+this group you can find these red points,
+
+33
+00:02:26,190 --> 00:02:29,160
+a set of representative points.
+
+34
+00:02:29,160 --> 00:02:33,010
+Then, we look at the centroid
+of these points.
+
+35
+00:02:33,010 --> 00:02:36,585
+You actually shrink this group of
+points toward the centroid, so
+
+36
+00:02:36,585 --> 00:02:40,680
+you probably can see these red points
+actually shrank towards the center.
+
+37
+00:02:42,020 --> 00:02:47,770
+Once it's shrank, it has a greater effect
+to outliers than to the normal points.
+
+38
+00:02:47,770 --> 00:02:52,300
+Because of the outlier, even you have
+a chance to find outliers pretty
+
+39
+00:02:52,300 --> 00:02:57,430
+far away from this and you take it
+as a rate, representative point.
+
+40
+00:02:57,430 --> 00:03:02,930
+Because it is far away from
+the center with this factor alpha,
+
+41
+00:03:02,930 --> 00:03:06,420
+it will shrink dramatically
+towards the center, okay?
+
+42
+00:03:06,420 --> 00:03:11,680
+That's why the outlier,
+effect will be minimized, okay?
+
+43
+00:03:11,680 --> 00:03:17,770
+So, you probably can see, with this,
+map, transformation, okay?
+
+44
+00:03:17,770 --> 00:03:23,270
+It improves the efficiency and, and
+it moreover improved the effectiveness.
+
+45
+00:03:23,270 --> 00:03:27,480
+Actually the paper also taking a set of
+
+46
+00:03:27,480 --> 00:03:31,690
+the points you know form
+into different shapes.
+
+47
+00:03:31,690 --> 00:03:36,174
+You'll probably see if you use
+a typical like a k-mean space approach
+
+48
+00:03:36,174 --> 00:03:39,298
+you're going to find
+the cluster in the center.
+
+49
+00:03:39,298 --> 00:03:41,370
+You'll find a very ugly shape.
+
+50
+00:03:41,370 --> 00:03:44,070
+And, these kind of clusters we're,
+
+51
+00:03:44,070 --> 00:03:49,080
+actually getting into you know,
+these ugly shaped cluster,
+
+52
+00:03:49,080 --> 00:03:54,200
+we're painting those connected objects
+into different clusters, different colors.
+
+53
+00:03:55,830 --> 00:04:01,724
+However, using, using CURE,
+we will be able to find very nice,
+
+54
+00:04:01,724 --> 00:04:07,509
+you know, group the points you
+perceive all these shapes,
+
+55
+00:04:07,509 --> 00:04:14,090
+those points, closer together
+even it is not a spherical shape.
+
+56
+00:04:14,090 --> 00:04:16,444
+You'll still find very nice clusters.
+
+57
+00:04:16,444 --> 00:04:23,997
+That's a power
+
+58
+00:04:23,997 --> 00:04:28,646
+of CURE.
+
+59
+00:04:28,646 --> 00:04:34,459
+[MUSIC]

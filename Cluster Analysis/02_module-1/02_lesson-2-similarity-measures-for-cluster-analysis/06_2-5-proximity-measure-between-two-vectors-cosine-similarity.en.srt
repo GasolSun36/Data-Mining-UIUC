@@ -1,0 +1,169 @@
+1
+00:00:00,705 --> 00:00:05,568
+[MUSIC]
+
+2
+00:00:05,568 --> 00:00:09,743
+In this session,
+we're going to introduce cosine
+
+3
+00:00:09,743 --> 00:00:14,501
+similarity as approximate
+measure between two vectors,
+
+4
+00:00:14,501 --> 00:00:21,116
+how we look at the cosine similarity
+between two vectors, how they are defined.
+
+5
+00:00:21,116 --> 00:00:25,655
+So we can take a text document as example.
+
+6
+00:00:25,655 --> 00:00:30,200
+A text document can be
+represented by a bag of words or
+
+7
+00:00:30,200 --> 00:00:32,690
+more precise a bag of terms.
+
+8
+00:00:32,690 --> 00:00:36,624
+Each document can be
+represented as a long vector,
+
+9
+00:00:36,624 --> 00:00:41,479
+each attribute recording
+the frequency of a particular term.
+
+10
+00:00:41,479 --> 00:00:45,020
+The term can be a word or
+it can be a phrase.
+
+11
+00:00:45,020 --> 00:00:53,552
+5 means the term team, actually occurring
+in Document 1, five times, okay.
+
+12
+00:00:53,552 --> 00:00:59,056
+So, we want to compare the similarity
+between Document 1 and Document 2.
+
+13
+00:00:59,056 --> 00:01:01,169
+So how similar they are?
+
+14
+00:01:01,169 --> 00:01:03,874
+We could use cosine similarity to do that.
+
+15
+00:01:03,874 --> 00:01:08,367
+Other vector objects like gene
+features in micro-arrays can be
+
+16
+00:01:08,367 --> 00:01:12,371
+represented in the similar
+way as a long vector, 'kay.
+
+17
+00:01:12,371 --> 00:01:16,025
+For information retrieval,
+biological taxonomy,
+
+18
+00:01:16,025 --> 00:01:19,843
+gene feature mapping,
+like a micro-array analysis,
+
+19
+00:01:19,843 --> 00:01:24,890
+these are good applications to compare
+similarity between two vectors.
+
+20
+00:01:24,890 --> 00:01:28,280
+The cosine measure is defined as follows.
+
+21
+00:01:28,280 --> 00:01:29,225
+For example,
+
+22
+00:01:29,225 --> 00:01:34,990
+we can consider the term-frequency
+vector to look at their similarity.
+
+23
+00:01:34,990 --> 00:01:39,247
+They are defined by dot
+product of these two
+
+24
+00:01:39,247 --> 00:01:44,222
+vectors divided by
+the product of their lengths.
+
+25
+00:01:44,222 --> 00:01:50,840
+So we look at the, the cosine similarity
+definition, and take as an example.
+
+26
+00:01:50,840 --> 00:01:55,946
+Suppose d sub 1 and
+d sub 2 are the vectors of
+
+27
+00:01:55,946 --> 00:02:01,880
+these two documents, okay,
+then we can calculate
+
+28
+00:02:01,880 --> 00:02:07,406
+their vectors dot product as follows,
+'kay.
+
+29
+00:02:07,406 --> 00:02:12,239
+Then we can calculate the length
+of each one of d sub 1's lengths,
+
+30
+00:02:12,239 --> 00:02:15,508
+calculate using this formula, okay.
+
+31
+00:02:15,508 --> 00:02:17,847
+D sub 2's two lengths eh,
+
+32
+00:02:17,847 --> 00:02:23,764
+can be calculated also using the square
+root of sum of their product.
+
+33
+00:02:23,764 --> 00:02:29,719
+Then the cosine similarity can be
+calculated using the formula given above.
+
+34
+00:02:29,719 --> 00:02:34,762
+We can see their cosine
+similarity is 0.94,
+
+35
+00:02:34,762 --> 00:02:40,180
+simply says these two
+documents are quite similar.
+
+36
+00:02:40,180 --> 00:02:50,180
+[MUSIC]

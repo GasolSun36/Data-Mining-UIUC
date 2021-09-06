@@ -1,0 +1,196 @@
+1
+00:00:00,157 --> 00:00:05,847
+[SOUND]
+So
+
+2
+00:00:05,847 --> 00:00:11,250
+first, we will introduce basic
+concepts of partitioning algorithms.
+
+3
+00:00:11,250 --> 00:00:15,410
+The partitioning method is essentially
+to discover the groupings in the data.
+
+4
+00:00:16,510 --> 00:00:23,260
+That means you get K groups if you want to
+partition, I mean, 2K groups by optimizing
+
+5
+00:00:23,260 --> 00:00:28,250
+a specific object function, for
+example, sum of the square distance.
+
+6
+00:00:29,410 --> 00:00:33,348
+And then we iteratively improve
+the quality of such partitioning.
+
+7
+00:00:33,348 --> 00:00:36,695
+So the K-partitioning method,
+
+8
+00:00:36,695 --> 00:00:42,799
+we partition a dataset D of n
+objects into a set of K clusters.
+
+9
+00:00:42,799 --> 00:00:47,112
+Then we definitely can
+iteratively improve it, so
+
+10
+00:00:47,112 --> 00:00:51,626
+that an object function is optimized,
+for example,
+
+11
+00:00:51,626 --> 00:00:57,846
+the object function could be the sum
+of the square distance is minimized,
+
+12
+00:00:57,846 --> 00:01:03,290
+where C sub k is the centroid or
+medoid of cluster capital C sub k.
+
+13
+00:01:03,290 --> 00:01:11,070
+So a typical objective function is Sum of
+Squared Errors is often written as SSE.
+
+14
+00:01:12,170 --> 00:01:16,817
+So a clustering, okay, for the SSE,
+
+15
+00:01:16,817 --> 00:01:22,345
+is sum of K clusters,
+k is from 1 to K, okay.
+
+16
+00:01:22,345 --> 00:01:28,423
+Then for each such cluster if
+an object's i is in this cluster,
+
+17
+00:01:28,423 --> 00:01:36,230
+then the square error that simply says
+the distance of sum of these squares.
+
+18
+00:01:36,230 --> 00:01:41,720
+These such distance, the whole function,
+is a K clusters, and
+
+19
+00:01:41,720 --> 00:01:47,100
+each cluster get its points to its
+center the sum of such a square,
+
+20
+00:01:47,100 --> 00:01:48,410
+distance or square errors.
+
+21
+00:01:49,480 --> 00:01:52,812
+We want to minimize this
+objective function.
+
+22
+00:01:52,812 --> 00:01:58,321
+Then in general what we can think,
+conceptual we can think of this,
+
+23
+00:01:58,321 --> 00:02:01,510
+if you get a very nice K cluster, then,
+
+24
+00:02:01,510 --> 00:02:06,170
+all the objects to the center
+is somehow shorter, okay.
+
+25
+00:02:07,330 --> 00:02:12,810
+It is shorter than the sum of the square
+distance or the square errors.
+
+26
+00:02:12,810 --> 00:02:15,380
+Actually, it will be pretty small.
+
+27
+00:02:15,380 --> 00:02:19,000
+That's why we can't get
+within the cluster center,
+
+28
+00:02:19,000 --> 00:02:22,520
+the sum of the square
+error is pretty small.
+
+29
+00:02:22,520 --> 00:02:27,950
+Then if we get a K such thing, we add them
+together, the whole thing will be smaller.
+
+30
+00:02:27,950 --> 00:02:33,580
+For the K-partitioning method, essentially
+the problem is given a K, the number
+
+31
+00:02:33,580 --> 00:02:38,488
+of clusters, we want to find a partition
+of these K clusters that optimize
+
+32
+00:02:38,488 --> 00:02:43,975
+the chosen partitioning criterion, for
+example, the sum of square distance.
+
+33
+00:02:45,860 --> 00:02:49,550
+However, to find a global optimal,
+
+34
+00:02:49,550 --> 00:02:53,720
+actually we need to exhaustively
+enumerate all partitioning because
+
+35
+00:02:53,720 --> 00:02:57,340
+the potential number of partitioning
+actually is exponential.
+
+36
+00:02:57,340 --> 00:03:00,929
+So more realistically,
+we should get a heuristic method,
+
+37
+00:03:00,929 --> 00:03:03,097
+that means the greedy algorithms.
+
+38
+00:03:03,097 --> 00:03:08,324
+For example, the typically used
+like the K-Means, K-Medians,
+
+39
+00:03:08,324 --> 00:03:13,366
+K-Medoids and all the other methods
+are all greedy algorithms or
+
+40
+00:03:13,366 --> 00:03:17,231
+heuristic methods to find
+such a nice partition.
+
+41
+00:03:17,231 --> 00:03:27,231
+[MUSIC]

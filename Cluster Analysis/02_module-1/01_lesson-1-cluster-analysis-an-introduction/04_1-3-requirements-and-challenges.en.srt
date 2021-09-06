@@ -1,0 +1,298 @@
+1
+00:00:00,149 --> 00:00:05,790
+[MUSIC]
+
+2
+00:00:05,790 --> 00:00:09,743
+In this session we're going
+to study the requirements and
+
+3
+00:00:09,743 --> 00:00:12,091
+challenges of cluster analysis.
+
+4
+00:00:13,270 --> 00:00:18,060
+There are many things to considered for
+cluster analysis.
+
+5
+00:00:18,060 --> 00:00:18,770
+For example,
+
+6
+00:00:18,770 --> 00:00:24,020
+the first one people are often to
+consider is partitioning criteria.
+
+7
+00:00:24,020 --> 00:00:26,826
+That means whether we want
+to get a single level or
+
+8
+00:00:26,826 --> 00:00:31,230
+multiple-level hierarchical partitioning.
+
+9
+00:00:31,230 --> 00:00:35,330
+In many cases,
+multi-level hierarchical partitioning or
+
+10
+00:00:35,330 --> 00:00:39,260
+what we call hierarchical clustering
+could be quite desirable.
+
+11
+00:00:40,810 --> 00:00:44,300
+The second thing we
+want to consider whether
+
+12
+00:00:44,300 --> 00:00:48,860
+how the clusters can separate the objects.
+
+13
+00:00:48,860 --> 00:00:55,160
+It can be hard or exclusive,
+or soft, non-exclusive.
+
+14
+00:00:55,160 --> 00:00:58,360
+The exclusive means one object,
+
+15
+00:00:58,360 --> 00:01:02,696
+like one customer,
+can belong to only one region, okay.
+
+16
+00:01:02,696 --> 00:01:09,130
+Non-exclusive, for example, one document
+may belong to more than one cluster.
+
+17
+00:01:10,170 --> 00:01:13,990
+Then for a similarity measure,
+
+18
+00:01:13,990 --> 00:01:17,878
+there could be many different
+kinds of similarity measures.
+
+19
+00:01:17,878 --> 00:01:22,320
+For example,
+distance-based using Euclidean space or
+
+20
+00:01:22,320 --> 00:01:25,130
+a road network or vector space.
+
+21
+00:01:26,520 --> 00:01:33,220
+Or we can use connectivity-based, for
+example, based on density or contiguity.
+
+22
+00:01:33,220 --> 00:01:38,490
+The fourth one that we are going
+to discuss is clustering space.
+
+23
+00:01:38,490 --> 00:01:42,610
+That means, whether we want to
+do full space clustering, or
+
+24
+00:01:42,610 --> 00:01:44,999
+we want to do subspace clustering.
+
+25
+00:01:46,120 --> 00:01:51,970
+Full space means especially in the low
+dimensional, for example in 2D,
+
+26
+00:01:51,970 --> 00:01:56,010
+two dimensional space,
+in the area or in the region,
+
+27
+00:01:56,010 --> 00:02:02,190
+whether we want to find the clusters
+in those region, in the full 2D space.
+
+28
+00:02:02,190 --> 00:02:05,550
+Or only we want to project
+on the 1D subspace.
+
+29
+00:02:06,890 --> 00:02:10,180
+However in many high
+dimensional clustering,
+
+30
+00:02:10,180 --> 00:02:16,490
+it is hard to find meaningful
+clusters in a very high damage space.
+
+31
+00:02:16,490 --> 00:02:22,470
+But it is possible to find interesting
+clusters in the subspaces.
+
+32
+00:02:22,470 --> 00:02:26,760
+For example, in the corresponding
+lower dimensional space.
+
+33
+00:02:26,760 --> 00:02:31,040
+So the subspace clustering
+also becomes very important.
+
+34
+00:02:31,040 --> 00:02:37,520
+Then, for cluster analysis, there
+are many requirements and challenges.
+
+35
+00:02:37,520 --> 00:02:41,770
+The first, most important thing
+is the quality of clustering.
+
+36
+00:02:41,770 --> 00:02:48,253
+Means whether we are going to deal
+with different kinds of attributes,
+
+37
+00:02:48,253 --> 00:02:53,980
+numerical one, categorical data,
+text, multimedia data,
+
+38
+00:02:53,980 --> 00:02:57,994
+networks, or a mixture of multiple types.
+
+39
+00:02:57,994 --> 00:03:03,072
+Whether we can discover
+clusters with arbitrary shape,
+
+40
+00:03:03,072 --> 00:03:09,217
+like an oil spill, or whether we will
+be able to deal with noisy data.
+
+41
+00:03:11,705 --> 00:03:18,290
+Then the second important issue
+people consider is scalability.
+
+42
+00:03:18,290 --> 00:03:24,700
+That means whether we will be able in
+a very big amount of data environment,
+
+43
+00:03:24,700 --> 00:03:27,200
+whether we can cluster all the data or
+
+44
+00:03:27,200 --> 00:03:32,560
+we must draw some sample and
+cluster only on the sample rate.
+
+45
+00:03:34,120 --> 00:03:37,230
+Whether we can handle
+high dimensional data, or
+
+46
+00:03:37,230 --> 00:03:40,430
+we can only project them
+in the low dimension space.
+
+47
+00:03:41,750 --> 00:03:49,260
+And whether we can do timely incremental
+clustering, especially for data streams.
+
+48
+00:03:49,260 --> 00:03:52,030
+Whether we can do stream clustering.
+
+49
+00:03:52,030 --> 00:03:56,020
+Especially whether the cluster results
+
+50
+00:03:56,020 --> 00:04:00,300
+may not be sensitive to
+the input order of the data.
+
+51
+00:04:00,300 --> 00:04:05,240
+Another important issue we need to
+handle is constraint-based clustering.
+
+52
+00:04:05,240 --> 00:04:11,200
+That means users usually have their
+own thinking on the preference or
+
+53
+00:04:11,200 --> 00:04:15,150
+constraints of the cluster
+they want to derive.
+
+54
+00:04:15,150 --> 00:04:17,190
+They may have domain knowledge.
+
+55
+00:04:17,190 --> 00:04:21,720
+They may know certain subspaces
+could be more interesting.
+
+56
+00:04:21,720 --> 00:04:24,860
+They may even raise queries.
+
+57
+00:04:24,860 --> 00:04:31,360
+So can we handle clustering given
+user preference or constraints?
+
+58
+00:04:31,360 --> 00:04:37,740
+The final issue we are going to discuss
+is interpretability and usability.
+
+59
+00:04:37,740 --> 00:04:44,290
+Simply says the clustering
+whether they can derive
+
+60
+00:04:44,290 --> 00:04:48,800
+meaningful clusters which
+can be understood by people,
+
+61
+00:04:48,800 --> 00:04:53,090
+can be used by many applications,
+can interpret data nicely.
+
+62
+00:04:54,230 --> 00:04:58,910
+All these are a very important issue
+we are going to study in this lecture.
+
+63
+00:04:58,910 --> 00:05:08,910
+[MUSIC]

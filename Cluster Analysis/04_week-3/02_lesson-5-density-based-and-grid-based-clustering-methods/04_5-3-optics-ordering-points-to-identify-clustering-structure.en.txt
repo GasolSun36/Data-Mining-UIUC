@@ -1,0 +1,101 @@
+In the last session
+we discussed DB scan, a density-based
+clustering methods. For the same group of authors, they later invented another interesting
+algorithm called OPTICS, ordering points to identify
+clustering structures. Why they wanted to do that? Just because DBscan is
+sensitive to parameter setting. So OPTICS extended DBscan
+but make it is much less sensitive to
+parameter setting because it can find
+a clustering structure. This algorithm was developed
+by almost the same group of authors in SIGMOD 1999. We can have a simple operation. Suppose we fix one parameter of DBscan say minimum
+number of points. Then for density-based clusters with respect to high density, that means you just
+need a small radius to cover the number of
+minimum points like five, these dense clusters
+are completely contained in clusters with
+respect to a lower density. Simply it says,
+the dense cluster is deeply nested in the less
+dense clusters because, less dense cluster
+needs a bigger radius to cover the same number
+of minimum points. So if we observe
+this one we probably can see we may have high
+density points, it should be processed
+first or deeper, in order to find a high
+density cluster first, then we can plot them into a reachability plot
+for datasets. OPTICS actually stores
+such a clustering structure using two pieces of information, core distance and the
+reachability distance. We will introduced
+in the next slide, but let's look at
+this reachability plot. If we got this set of datasets, then if we study their
+reachability distance, since the points
+belonging to a cluster, have lower reachability
+distance to their nearest neighbors
+simply it says you just need a smaller disk to cover
+the minimum number of points. So your Epsilon disk radius
+should be smaller. That means the valley should contain the very dense clusters. The deeper the valley, the denser the cluster. So you probably can
+see if we order them according to their
+reachability distance, we probably can plot
+them into a graph. So you can easily find
+the clustering instructors. So that's the trick of OPTICS. Then let's look at how OPTICS is defining core distance and
+the reachability distance. We first look at
+the core distance. For a core distance of
+an object p like this one is the smallest
+Epsilon value such that piece Epsilons
+neighborhood will contain at least the minimum points objects,
+for example five. Let's see if you say p, you'll try to find its radius to cover five points like one, two, three, four, five points. Now you probably can see this Epsilon should
+be three millimeters. Simply say three
+millimeter you will be able to cover five points, that's actually is the
+definition of the core distance. Simply it says if
+p is so isolated, you just cannot find enough neighbors to cover
+the minimum points. Then we say this core distance is undefined because you
+would stretch so large, you just cannot find
+enough neighbors. On the other hand, if you can find the minimum
+number of points, then this minimum
+number of points distance of p is
+the core distance. For example here like this p, you just need a three
+millimeter to cover this, then the core distance
+is three millimeter. Then we look at
+reachability distance. The reachability distance is from a core object q.
+Reachability distance of p, you want to reach this q, what you want to define is
+the minimum radius value which makes p density
+reachable from q. If you want to see if
+p can reach q from q, then you just to see if
+q is not a core object. Simply it says no matter
+how big your stretch is, just cannot have enough object to get a minimum
+number of points, then this reachability
+distance is undefined. Otherwise, you just to
+see which one is bigger. Is it the core distance,
+is it bigger, or the distance from
+q to p is bigger? For this picture you probably
+can see is if you look at the reachability distance from q to p rather than from p to q, we just looked at it
+from q to p. If q1 to p is smaller than
+the core distance, then the core distance should be the
+reachability distance. Otherwise, like this
+q2 try to reach p, then if it's bigger
+than the core distance, then the reachability distance is the distance between p and q2. So that's essentially is the definition of
+reachability distance. That mean how big your disk is in order to reach enough
+number of minimum points. To calculate this,
+the complexity is O (N log ) if you have index. N is number of points, so it is not too bad. Then based on this idea, we actually work out
+these clustering structure. The structural graph,
+the nice thing is this method produces special clustering ordering of the data points with respect to density-based
+clustering structure. Then the clustering structure actually it contains information equivalent to density-based of clustering corresponding to a broad range of
+parameter settings. For example, the first
+thing is you fix the minimum number of points
+you'll get this plot. With this plot for example, you see there are
+four major clusters. If you do not think this one is something you actually
+can find a one, two, three, four clusters. Even you change the
+number of minimum points, you will still be able to find
+the same number one, two, three, four, of course, the plot is somehow
+changed the shape with the different
+minimum number of points, but still we can
+find four clusters. Moreover, you can
+find nested clusters. For example, this bigger cluster has three deeply nested clusters. When you look at
+this bigger cluster, it contains if you'd see
+the deeper one you'd see one, two, three deeper clusters
+corresponding to this. So you probably can see
+this is a very nice you'd use different lie
+on the Epsilon. You actually can find the bigger cluster and
+nested clustering structures. So it is a pretty
+interesting algorithm and you can actually use
+automatic or interactive. If you do clustering analysis, you can find intrinsic even hierarchically nested
+clustering structures. So this is a pretty interesting
+extension to DBscan, that's the OPTICS algorithm.

@@ -1,0 +1,403 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Lesson 6: Methods for Clustering Validation
+ </h1>
+ <h2 level="2">
+  Overview
+ </h2>
+ <p>
+  In this lesson, you will learn clustering validation methods.  We will introduce the basic concepts of clustering validation and discuss typical clustering validation measures.   We first introduce external measures, such as matching-based measures, entropy-based measures, and pairwise measures.  Then we introduce internal measures and relative measures for clustering validation.   We will also discuss how to evaluate cluster stability and clustering tendency.
+ </p>
+ <h2 level="2">
+  Time
+ </h2>
+ <p>
+  This lesson should take
+  <strong>
+   approximately five hours
+  </strong>
+  of dedicated time to complete, with its videos and assignments.
+ </p>
+ <h2 level="2">
+  Lessons
+ </h2>
+ <p>
+  The activities for this lesson are listed below:
+ </p>
+ <table columns="2" rows="4">
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Lesson Title
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Estimated Time Required
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Lesson 6 Video Lectures
+    </p>
+   </td>
+   <td>
+    <p>
+     One hour
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      <em>
+       Lesson 6 Quiz
+      </em>
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     One hour
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      <em>
+       Lesson 6 Programming Assignment
+      </em>
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     Three hours
+    </p>
+   </td>
+  </tr>
+ </table>
+ <h2 level="2">
+  Goals and Objectives
+ </h2>
+ <p>
+  Upon successful completion of this lesson, you will be able to:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Understand the basic concepts of clustering validation and evaluation of clustering quality
+   </p>
+  </li>
+  <li>
+   <p>
+    Know the importance of evaluation of clustering quality
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn a few typical external measures for clustering validation, including matching-based measures, entropy-based measures, and pairwise measures
+   </p>
+  </li>
+  <li>
+   <p>
+    Learn a few typical internal measures and relative measures for clustering validation
+   </p>
+  </li>
+  <li>
+   <p>
+    Know how to evaluate cluster stability and clustering tendency
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Key Phrases/Concepts
+ </h2>
+ <p>
+  Keep your eyes open for the following key terms or phrases as you interact with the lectures and complete the activities.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Clustering validation, clustering evaluation, clustering quality
+   </p>
+  </li>
+  <li>
+   <p>
+    Criteria for clustering evaluation: cluster homogeneity, cluster completeness, rag bag, small cluster preservation
+   </p>
+  </li>
+  <li>
+   <p>
+    External measures for clustering validation: Matching-based measures, entropy-based measures, pairwise measures
+   </p>
+  </li>
+  <li>
+   <p>
+    Matching-based measures:  purity, maximum matching, F-measure
+   </p>
+  </li>
+  <li>
+   <p>
+    Entropy-based measures: conditional entropy, normalized mutual information (NMI)
+   </p>
+  </li>
+  <li>
+   <p>
+    Pairwise measures – Four possibilities: True positive (TP), FN, FP, TN; Jaccard coefficient
+   </p>
+  </li>
+  <li>
+   <p>
+    Internal measures for clustering validation: Beta-CV measure, normalized cu,t and modularity
+   </p>
+  </li>
+  <li>
+   <p>
+    Relative measures: Silhouette coefficient
+   </p>
+  </li>
+  <li>
+   <p>
+    Cluster stability: Finding the best k
+   </p>
+  </li>
+  <li>
+   <p>
+    Clustering tendency: Spatial histogram for clusterability assessment
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Guiding Questions
+ </h2>
+ <p>
+  Develop your answers to the following guiding questions while watching lectures and working on assignments throughout the lesson.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    What are the major issues in clustering validation and assessment?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is clustering validation?
+   </p>
+  </li>
+  <li>
+   <p>
+    Why do we need three categorization of measures, including external, internal, and relative measures, in clustering evaluation?
+   </p>
+  </li>
+  <li>
+   <p>
+    What is an external measure for clustering validation?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are the essential criteria to judge if a clustering is of high quality?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are the major differences among these measures: matching-based measures, entropy-based measures, and pairwise measures?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are examples of how to use external measures in clustering validation?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are the internal measures for clustering validation?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are examples of how to use internal measures in clustering validation?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are the relative measures for clustering validation?
+   </p>
+  </li>
+  <li>
+   <p>
+    What are examples of how to use relative measures in clustering validation?
+   </p>
+  </li>
+  <li>
+   <p>
+    Why is it useful to check cluster stability?
+   </p>
+  </li>
+  <li>
+   <p>
+    How can we judge clustering tendency effectively?
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Additional Readings and Resources
+ </h2>
+ <p>
+  The following readings are optional:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     Chapter 10: Cluster analysis: Basic concepts and methods, Section 10.6 – Evaluation of clustering
+    </strong>
+    in Han, J., Kamber. M., &amp; Pei, J. (2011). Data Mining: Concepts and Techniques (3rd ed.). Walford: Morgan Kaufmann.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Note that you can download a PDF version of
+  <a href="https://d396qusza40orc.cloudfront.net/clusteranalysis/Han_Data%20Mining%203e_Chapters%202%2C10%2C11%2C13.pdf">
+   Chapters 2, 10, 11, and 13
+  </a>
+  from
+  <em>
+   Data Mining:Concepts and Techniques
+  </em>
+  , 3rd Edition for free.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     Chapter 17: Clustering validation
+    </strong>
+    in Zaki, M. J, &amp; Meira, Jr., W. (2014). Data Mining and Analysis: Fundamental Concepts and Algorithms. Cambridge: Cambridge University Press.
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Tips for Success
+ </h2>
+ <p>
+  To do well this lesson, I recommend that you do the following:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Review the video lectures a number of times to gain a solid understanding of the key questions and concepts introduced this week.
+   </p>
+  </li>
+  <li>
+   <p>
+    When possible, provide tips and suggestions to your peers in this class. As a learning community, we can help each other learn and grow. One way of doing this is by helping to address the questions that your peers pose. By engaging with each other, we’ll all learn better.
+   </p>
+  </li>
+  <li>
+   <p>
+    It’s always a good idea to refer to the video lectures and chapter readings we've read during this week and reference them in your responses. When appropriate, critique the information presented.
+   </p>
+  </li>
+  <li>
+   <p>
+    Take notes while you read the materials and watch the lectures for this week. By taking notes, you are interacting with the material and will find that it is easier to remember and to understand. With your notes, you’ll also find that it’s easier to complete your assignments. So, go ahead, do yourself a favor; take some notes!
+   </p>
+  </li>
+ </ul>
+ <h2 level="2">
+  Getting and Giving Help
+ </h2>
+ <p>
+  You can get/give help via the following means:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://courserahelp.zendesk.com/hc/en-us/">
+      Learner Help Center
+     </a>
+    </strong>
+    to find information regarding specific technical problems. For example, technical problems would include error messages, difficulty submitting assignments, or problems with video playback. If you cannot find an answer in the documentation, you can also report your problem to the Coursera staff by clicking on the
+    <strong>
+     Contact Us!
+    </strong>
+    link available on each topic's page within the Learner Help Center.
+   </p>
+  </li>
+  <li>
+   <p>
+    Use the
+    <strong>
+     <a href="https://www.coursera.org/learn/cluster-analysis/discussions/forums/iS8thn-0EeaH8Qo9CRMCiw">
+      Content Issues
+     </a>
+    </strong>
+    forum to report errors in lecture video content, assignment questions and answers, assignment grading, text and links on course pages, or the content of other course materials. University of Illinois staff and Community Mentors will monitor this forum and respond to issues.
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
